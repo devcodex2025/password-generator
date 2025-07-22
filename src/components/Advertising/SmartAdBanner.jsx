@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import AdSense from 'react-adsense';
 import SeoAccordion from "@/components/SeoAccordion";
 
-const SmartAdBanner = ({ 
+const SmartAdBanner = ({
   adSlot = '8766567218',
   className = '',
   style = {},
@@ -19,16 +19,18 @@ const SmartAdBanner = ({
       if (typeof window !== 'undefined' && !window.adsbygoogle) {
         return true;
       }
-      
-      const testAd = document.createElement('div');
-      testAd.className = 'adsbygoogle';
-      testAd.style.cssText = 'position: absolute; left: -10000px; width: 1px; height: 1px;';
-      document.body.appendChild(testAd);
-      
-      const isBlocked = testAd.offsetHeight === 0;
-      document.body.removeChild(testAd);
-      
-      return isBlocked;
+      if (typeof document !== "undefined") {
+        const testAd = document.createElement('div');
+        testAd.className = 'adsbygoogle';
+        testAd.style.cssText = 'position: absolute; left: -10000px; width: 1px; height: 1px;';
+        document.body.appendChild(testAd);
+
+        const isBlocked = testAd.offsetHeight === 0;
+        document.body.removeChild(testAd);
+
+        return isBlocked;
+      }
+
     } catch (error) {
       return true;
     }
@@ -109,7 +111,7 @@ const SmartAdBanner = ({
   };
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className={`smart-ad-container ${className}`}
       style={{
@@ -127,7 +129,7 @@ const SmartAdBanner = ({
         slot={adSlot}
         format="auto"
         responsive="true"
-        style={{ 
+        style={{
           display: 'block',
           minHeight: '90px',
           minWidth: '320px'

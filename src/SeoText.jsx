@@ -1,5 +1,5 @@
 import React from "react";
-import welcome from "./images/welcome-img.svg";
+import welcome from "../public/images/welcome-img.svg";
 import lang from "./lang.json";
 
 function t(key, language) {

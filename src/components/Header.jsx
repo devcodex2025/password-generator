@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import hamburger from './images/hamburger.png'
-import Logo from "./logo.svg";
 import Box from '@mui/material/Box';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
@@ -16,10 +14,10 @@ import { useNavigate } from "react-router-dom";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from '@mui/material/IconButton';
-import { ThemeContext } from './App';
-import LogoDark from "./images/logo-dark.svg";
-import lang from './lang.json';
-import { getLanguagesWithFlags, getLanguageSelectionText, getThemeText, getAvailableLanguages } from './utils/languageUtils';
+import Image from 'next/image';
+import { ThemeContext } from '../context/ThemeContext';
+import lang from '../lang.json';
+import { getLanguagesWithFlags, getLanguageSelectionText, getThemeText, getAvailableLanguages } from '../utils/languageUtils';
 
 // Додаємо CSS стилі для анімації
 const languageIconStyles = `
@@ -424,8 +422,8 @@ const Header = ({ onLanguageChange }) => {
   return (
     <header className="py-7 px-2 flex justify-between items-center">
       <div className="flex items-center">
-        <img
-          src={isDarkMode ? LogoDark : Logo}
+        <Image
+          src='/images/logo.svg'
           alt="Generate Password To Me - Secure Password Generator Logo"
           className="w-[50%] h-6 mr-1 logo"
           loading="eager"
@@ -479,8 +477,8 @@ const Header = ({ onLanguageChange }) => {
       <div className=" flex lg:hidden">
         {['top'].map((anchor) => (
           <React.Fragment key={anchor}>
-            <img 
-              src={hamburger} 
+            <Image 
+              src='/images/hamburger.png' 
               alt="Navigation menu toggle" 
               onClick={toggleDrawer(anchor, true)} 
               className={`cursor-pointer${isDarkMode ? ' hamburger-dark' : ''}`}

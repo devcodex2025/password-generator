@@ -1,8 +1,7 @@
 import React, { useEffect, useContext } from "react";
-import Logo from "./logo.svg";
-import LogoDark from "./images/logo-dark.svg";
-import { ThemeContext } from "./App";
-import lang from './lang.json';
+import Image from "next/image";
+import { ThemeContext } from "../context/ThemeContext";
+import lang from '../lang.json';
 
 const referalLink = "https://hostinger.com.ua?REFERRALCODE=1098786";
 
@@ -98,23 +97,29 @@ const Footer = ({ language }) => {
 
   // Додаємо CSS стилі для посилань
   useEffect(() => {
-    const styleElement = document.createElement("style");
-    styleElement.textContent = linkStyles;
-    document.head.appendChild(styleElement);
+    if (typeof document !== "undefined") {
+      const styleElement = document.createElement("style");
+      styleElement.textContent = linkStyles;
+      document.head.appendChild(styleElement);
 
-    return () => {
-      document.head.removeChild(styleElement);
-    };
+      return () => {
+        document.head.removeChild(styleElement);
+      };
+    }
+
   }, []);
 
   return (
     <>
       <footer className="w-full py-4 px-2 flex flex-wrap flex-col gap-5 lg:flex-row justify-between items-center">
         <div className="flex items-center">
-          <img
-            src={isDarkMode ? LogoDark : Logo}
+          <Image
+            src={isDarkMode ? "/images/logo-dark.svg" : "/images/logo.svg"}
             alt="Generate Password To Me - Secure Password Generator Logo"
+            width={24}
+            height={24}
             className="w-6 h-6 mr-1 logo"
+            priority
           />
         </div>
         {/* <ul className="lg:flex items-center hidden text-decoration-none gap-5 text-xl font-medium">

@@ -1,0 +1,45 @@
+            <head>
+                <meta name="theme-color" content="#000000" />
+                <meta name="google-adsense-account" content="ca-pub-5995594246081561" />
+                {/* DNS prefetch for external domains */}
+                <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+                <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
+
+                {/* Font optimization */}
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5995594246081561" crossOrigin="anonymous"></script>
+                <link rel="manifest" href="/manifest.json" />
+                <title>Generate Secure Passwords Online - Free and Easy Password Generator Tool</title>
+                <meta
+                    name="description"
+                    content="Our password generator tool allows you to easily create strong and secure passwords for all of your online accounts. Generate password online with just a few clicks and options to set password length and character sets. Protect yourself from potential security breaches."
+                />
+
+                {/* --- Critical CSS for above-the-fold content --- */}
+                <style
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                    .shadow 
+                    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+                     0 1px 2px 0 rgba(0, 0, 0, 0.06);
+                    }
+                     `,
+                    }}
+                />
+
+
+                {/* --- Google tag manager script --- */}
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-22LZX0XFLM"></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {dataLayer.push(arguments); }
+                    gtag('js', new Date());
+                    gtag('config', 'G-22LZX0XFLM');
+                `,
+                    }}
+                />
+            </head>

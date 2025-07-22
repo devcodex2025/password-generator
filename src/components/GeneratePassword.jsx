@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useCallback, useRef, useMemo, useContext, lazy, Suspense } from "react";
+"use client";
+
+import React, { createContext, useState, useEffect, useCallback, useRef, useMemo, useContext, lazy, Suspense } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ThemeContext } from "./App";
+import { CustomThemeProvider } from "@/context/ThemeContext";
 import Header from "./Header";
 import Footer from "./Footer";
 import HowToUse from "./HowToUse.jsx";
@@ -14,17 +16,17 @@ import FileCopyIcon from "@mui/icons-material/FileCopy";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import { useReward } from "react-rewards";
 import zxcvbn from "zxcvbn";
-import passwordImage from "./images/password.png";
-import refreash from "./images/refreash.png";
-import seoData from "./SeoData";
+import seoData from "../SeoData.js";
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
-import lang from "./lang.json";
-import { rankColor } from "./functions/RankColor";
-import { getStrengthWord } from "./functions/GetStrengthWord";
-import './index.css';
+import lang from "../lang.json";
+import { rankColor } from "../functions/RankColor.js";
+import { getStrengthWord } from "../functions/GetStrengthWord.js";
+import '../styles/index.css';
 import { Analytics } from "@vercel/analytics/react"
-import { getAvailableLanguages } from './utils/languageUtils';
-import SeoAccordion from "./components/SeoAccordion";
+import { getAvailableLanguages } from '../utils/languageUtils.js';
+import SeoAccordion from "./SeoAccordion.jsx";
+import Image from "next/image";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
 
@@ -65,7 +67,7 @@ function PasswordRow({
   const copyDisabledStyle = isAnimating
     ? { pointerEvents: "none", opacity: 0.5, cursor: "not-allowed" }
     : { cursor: "pointer" };
-    
+
   return (
     <div
       className="flex relative items-center flex-row lg:flex-row gap-2 h-auto w-[100%] my-5 lg:my-1 flex-wrap lg:flex-nowrap"
@@ -101,18 +103,18 @@ function PasswordRow({
           >
             {t("generate_short", language)}
           </button>
-          <img
+          <Image
             onClick={() => {
               onGenerate(index);
             }}
-            src={refreash}
+            src="/images/refreash.png"
             alt="refresh"
-            className={`${isDarkMode ? "invert brightness-0": ""} flex mr-2 h-[15px] md:h-[20px]`}
+            className={`${isDarkMode ? "invert brightness-0" : ""} flex mr-2 h-[15px] md:h-[20px]`}
             style={{ cursor: "pointer" }}
             loading="lazy"
             decoding="async"
-            // width={20}
-            // height={20}
+            width={20}
+            height={20}
           />
         </div>
       </div>
@@ -135,15 +137,17 @@ function PasswordRow({
           style={{ cursor: "pointer" }}
         >
           {t("generate_short", language)}
-          <img
+          <Image
             onClick={(e) => {
               e.stopPropagation();
               onGenerate(index);
             }}
-            src={refreash}
+            src="/images/refreash.png"
             alt="refresh"
             className="flex h-[15px] md:h-[20px] ml-2"
             style={{ cursor: "pointer" }}
+            width={20}
+            height={20}
           />
         </button>
       </div>
@@ -300,7 +304,7 @@ const AnimatedPassword = ({ length = 7 }) => {
     </span>
   );
 };
-
+// @ts-ignore
 const getEffectiveLanguage = (propLang) => {
   if (propLang && supportedLangs.includes(propLang)) return propLang;
   const browserLang = navigator.language.slice(0, 2);
@@ -313,13 +317,13 @@ const hreflangMap = {
 };
 
 // Lazy load non-critical components
-const SeoText = lazy(() => import('./SeoText'));
-const SeoList = lazy(() => import('./SeoList'));
-const AdBanner = lazy(() => import('./components/Advertising/Adbanner'));
-const AdBannerSecond = lazy(() => import('./components/Advertising/AddbannerSecond'));
-const CookieConsentComponent = lazy(() => import('./components/CookieConsent/CookieConsent'));
+const SeoText = lazy(() => import('../SeoText.jsx'));
+const SeoList = lazy(() => import('../SeoList.jsx'));
+const AdBanner = lazy(() => import('./Advertising/Adbanner.jsx'));
+const AdBannerSecond = lazy(() => import('./Advertising/AddbannerSecond.jsx'));
+const CookieConsentComponent = lazy(() => import('./CookieConsent/CookieConsent.tsx'));
 
-export default function GeneratePassword() {
+export default function GeneratePassword({language: propLanguage}) {
   const { isDarkMode } = useContext(ThemeContext);
   const [snackbars, setSnackbars] = useState([]);
   const [passwordLength, setPasswordLength] = useState(12);
@@ -351,7 +355,7 @@ export default function GeneratePassword() {
 
   const handleCheckboxChange = (characterSet) => {
     let newSelectedCharacterSets;
-    
+
     if (selectedCharacterSets.includes(characterSet)) {
       // Перевіряємо, чи не намагаємося зняти останню галочку
       if (selectedCharacterSets.length <= 1) {
@@ -372,23 +376,23 @@ export default function GeneratePassword() {
     } else {
       newSelectedCharacterSets = [...selectedCharacterSets, characterSet];
     }
-    
+
     setSelectedCharacterSets(newSelectedCharacterSets);
-    
+
     // Перевіряємо, чи поточні налаштування відповідають вибраному стандарту
     const currentStandardConfig = passwordStandards[selectedStandard];
     const standardSets = new Set(currentStandardConfig.requiredSets);
     const selectedSets = new Set(newSelectedCharacterSets);
-    
+
     // Якщо налаштування не відповідають стандарту, встановлюємо кастомний стандарт
-    const isStandardCompliant = currentStandardConfig.requiredSets.every(set => 
+    const isStandardCompliant = currentStandardConfig.requiredSets.every(set =>
       newSelectedCharacterSets.includes(set)
     );
-    
+
     if (!isStandardCompliant) {
       setSelectedStandard('custom');
     }
-    
+
     // Генеруємо новий пароль з оновленими налаштуваннями
     setTimeout(() => {
       const updatedPasswords = [...passwords];
@@ -397,7 +401,7 @@ export default function GeneratePassword() {
         newSelectedCharacterSets.forEach((set) => {
           characters += characterSets[set];
         });
-        
+
         if (characters.length === 0) {
           updatedPasswords[i] = "";
           // Показуємо попередження тільки один раз, якщо не вибрано жодного набору символів
@@ -415,7 +419,7 @@ export default function GeneratePassword() {
           }
           continue;
         }
-        
+
         let password = "";
         for (let j = 0; j < passwordLength; j++) {
           password += characters.charAt(
@@ -438,12 +442,12 @@ export default function GeneratePassword() {
         selectedCharacterSets.forEach((set) => {
           characters += characterSets[set];
         });
-        
+
         if (characters.length === 0) {
           generatedPasswords.push("");
           continue;
         }
-        
+
         let password = "";
         for (let j = 0; j < passwordLength; j++) {
           password += characters.charAt(
@@ -463,17 +467,20 @@ export default function GeneratePassword() {
   }, [GeneratePasswords]);
 
   useEffect(() => {
-    const seoInfo = seoData.find((data) => data.language === language);
-    if (seoInfo) {
-      document.title = seoInfo.title;
-      let metaDesc = document.querySelector('meta[name="description"]');
-      if (!metaDesc) {
-        metaDesc = document.createElement('meta');
-        metaDesc.name = 'description';
-        document.head.appendChild(metaDesc);
+    if (typeof document !== "undefined") {
+      const seoInfo = seoData.find((data) => data.language === language);
+      if (seoInfo) {
+        document.title = seoInfo.title;
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (!metaDesc) {
+          metaDesc = document.createElement('meta');
+          metaDesc.name = 'description';
+          document.head.appendChild(metaDesc);
+        }
+        metaDesc.content = seoInfo.description;
       }
-      metaDesc.content = seoInfo.description;
     }
+
   }, [language]);
 
   const rewardTypes = ["confetti", "balloons", "emoji"];
@@ -486,7 +493,7 @@ export default function GeneratePassword() {
   });
   const [isAnimating, setIsAnimating] = useState(false);
   const ANIMATION_DURATION = 250; // ms (lifetime + запас)
-  
+
   const runReward = (type = "confetti") => {
     if (isAnimating) {
       rewardQueue.current.push(type);
@@ -553,27 +560,27 @@ export default function GeneratePassword() {
 
   const handleGeneratePassword = (index) => {
     const standardConfig = passwordStandards[selectedStandard];
-    
+
     // Ensure minimum length for the selected standard
     const effectiveLength = Math.max(passwordLength, standardConfig.minLength);
-    
+
     // Generate password with required characters from each set
     let password = "";
-    
+
     if (selectedStandard === 'custom') {
       // Для кастомного стандарту генеруємо пароль тільки з вибраних наборів символів
       let allCharacters = "";
       selectedCharacterSets.forEach((set) => {
         allCharacters += characterSets[set];
       });
-      
+
       if (allCharacters.length === 0) {
         const updatedPasswords = [...passwords];
         updatedPasswords[index] = "";
         setPasswords(updatedPasswords);
         return;
       }
-      
+
       for (let i = 0; i < effectiveLength; i++) {
         password += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
       }
@@ -585,22 +592,22 @@ export default function GeneratePassword() {
           password += chars.charAt(Math.floor(Math.random() * chars.length));
         }
       });
-      
+
       // Потім заповнюємо решту випадковими символами з усіх вибраних наборів
       let allCharacters = "";
       selectedCharacterSets.forEach((set) => {
         allCharacters += characterSets[set];
       });
-      
+
       // Додаємо решту символів до бажаної довжини
       for (let i = password.length; i < effectiveLength; i++) {
         password += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
       }
     }
-    
+
     // Перемішуємо пароль, щоб уникнути передбачуваних патернів
     password = password.split('').sort(() => Math.random() - 0.5).join('');
-    
+
     const updatedPasswords = [...passwords];
     updatedPasswords[index] = password;
     setPasswords(updatedPasswords);
@@ -614,14 +621,13 @@ export default function GeneratePassword() {
       language={language}
       onGenerate={handleGeneratePassword}
       onCopy={handleCopyClick}
-      refreash={refreash}
       isAnimating={isAnimating}
       isDarkMode={isDarkMode}
     />
   ));
 
   const firstPasswordInput = passwords.length > 0 ? passwordInputs[0] : null;
-  
+
   // Мемоізуємо важкі обчислення аналізу сили паролю
   const passwordStrengthAnalysis = useMemo(() => {
     if (passwords.length === 0) {
@@ -697,7 +703,7 @@ export default function GeneratePassword() {
   const handleStandardChange = (standard) => {
     setSelectedStandard(standard);
     const standardConfig = passwordStandards[standard];
-    
+
     if (standard === 'custom') {
       // Для кастомного стандарту встановлюємо мінімальну довжину 4
       setPasswordLength(Math.max(passwordLength, standardConfig.minLength));
@@ -732,7 +738,7 @@ export default function GeneratePassword() {
         {renderedSnackbars}
         <main className="w-full">
           <Analytics />
-          <div className={`flex flex-col justify-center items-center mb-4 w-full rounded-72 pt-10 md:pt-32 ${isDarkMode ? "dark:bg-[#1a1a1a]" : "bg-[#E5F6FF]"} lg:bg-[url('./images/vector-bg.svg')] lg:bg-no-repeat lg:bg-center lg:bg-cover lg:bg-blend-overlay`}>
+          <div className={`flex flex-col justify-center items-center mb-4 w-full rounded-72 pt-10 md:pt-32 ${isDarkMode ? "dark:bg-[#1a1a1a]" : "bg-[#E5F6FF]"} lg:bg-[url('/images/vector-bg.svg')] lg:bg-no-repeat lg:bg-center lg:bg-cover lg:bg-blend-overlay`}>
             <h1 className={`page-title mx-2 md:mb-2 text-[30px] lg:text-[50px] font-bold tracking-tight text-center ${isDarkMode ? 'text-[#e0e0e0]' : 'text-gray-900'}`}>
               {t("main_title", language)}
             </h1>
@@ -742,10 +748,10 @@ export default function GeneratePassword() {
             <div className={`w-full lg:w-9/12 xl:w-9/12 2xl:w-7/12 flex flex-col ${isDarkMode ? "bg-[#1c1c1c]" : "bg-white"} drop-shadow-lg  rounded-48 shadow p-[20px] md:p-[60px] relative`}>
               <div className="absolute hidden bg-white drop-shadow-lg  top-[-20px] left-[-140px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex items-center gap-2">
                 <div className={`p-[12px] rounded-full ${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'} mr-3 ml-2 my-1`}>
-                  <img 
-                    src={passwordImage} 
-                    alt="password" 
-                    width={20} 
+                  <Image
+                    src="/images/password.png"
+                    alt="password"
+                    width={20}
                     height={20}
                     loading="lazy"
                     decoding="async"
@@ -758,10 +764,10 @@ export default function GeneratePassword() {
               {/* bottom passaword lock */}
               <div className={`${isDarkMode ? "bg-[#2d2d2d]" : "bg-white"} absolute hidden justify-start drop-shadow-lg  top-[150px] right-[-120px] border-[#E5F6FF] border-2 border-solid rounded-[120px]  py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex lg:items-center gap-2`}>
                 <div className={`p-[12px] rounded-full ${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'} mr-3 ml-2 my-1`}>
-                  <img 
-                    src={passwordImage} 
-                    alt="password" 
-                    width={20} 
+                  <Image
+                    src="/images/password.png"
+                    alt="password"
+                    width={20}
                     height={20}
                     loading="lazy"
                     decoding="async"
@@ -784,7 +790,7 @@ export default function GeneratePassword() {
                     <RemoveCircleOutlineIcon onClick={() => {
                       const newLength = Math.max(selectedStandard === 'custom' ? 4 : passwordStandards[selectedStandard].minLength, passwordLength - 1);
                       setPasswordLength(newLength);
-                      
+
                       // Якщо нова довжина не відповідає вибраному стандарту, переходимо на кастомний
                       if (selectedStandard !== 'custom') {
                         const standardConfig = passwordStandards[selectedStandard];
@@ -793,14 +799,14 @@ export default function GeneratePassword() {
                         }
                       }
                     }} style={{ cursor: "pointer" }} />
-                    <Slider 
-                      value={passwordLength} 
-                      min={selectedStandard === 'custom' ? 4 : passwordStandards[selectedStandard].minLength} 
-                      max={100} 
+                    <Slider
+                      value={passwordLength}
+                      min={selectedStandard === 'custom' ? 4 : passwordStandards[selectedStandard].minLength}
+                      max={100}
                       onChange={(e) => {
                         const newLength = e.target.value;
                         setPasswordLength(newLength);
-                        
+
                         // Якщо нова довжина не відповідає вибраному стандарту, переходимо на кастомний
                         if (selectedStandard !== 'custom') {
                           const standardConfig = passwordStandards[selectedStandard];
@@ -808,16 +814,16 @@ export default function GeneratePassword() {
                             setSelectedStandard('custom');
                           }
                         }
-                      }} 
-                      aria-label="Password length slider" 
-                      aria-describedby="password-length-label" 
-                      valueLabelDisplay="auto" 
-                      className="h-[15px]" 
+                      }}
+                      aria-label="Password length slider"
+                      aria-describedby="password-length-label"
+                      valueLabelDisplay="auto"
+                      className="h-[15px]"
                     />
                     <AddCircleOutlineIcon onClick={() => {
                       const newLength = Math.min(100, passwordLength + 1);
                       setPasswordLength(newLength);
-                      
+
                       // Якщо нова довжина не відповідає вибраному стандарту, переходимо на кастомний
                       if (selectedStandard !== 'custom') {
                         const standardConfig = passwordStandards[selectedStandard];
@@ -895,7 +901,7 @@ export default function GeneratePassword() {
               {restPasswordInputs}
               {passwords.length >= 2 ? (
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-2">
-                  <Button 
+                  <Button
                     className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'} ${isDarkMode ? 'text-[#e0e0e0]' : 'text-white'} font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
                     onClick={handleCopyAllClick}
                     disabled={isAnimating}
@@ -904,7 +910,7 @@ export default function GeneratePassword() {
                     <FileCopyIcon sx={{ marginRight: 1, fontSize: { xs: '18px', sm: '20px' } }} />
                     {t("copy_all", language)}
                   </Button>
-                  <Button 
+                  <Button
                     className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'} ${isDarkMode ? 'text-[#e0e0e0]' : 'text-white'} font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
                     onClick={handleDownloadAllClick}
                     disabled={isAnimating}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import welcome from "@/images/welcome-img.svg";
+import Image from 'next/image';
 import lang from "@/lang.json";
 
 function t(key, language) {
@@ -20,13 +20,14 @@ const SeoAccordion = ({ language }) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mt-4">
               {/* Left Column - Introduction */}
               <div className="space-y-4">
-                <img 
-                  src={welcome} 
+                <Image 
+                  src="/images/welcome-img.svg" 
                   alt="Welcome to Password Generator" 
                   className="w-full h-auto rounded-lg shadow-lg"
+                  width={600}
+                  height={400}
                   loading="lazy"
-                  decoding="async"
-                />
+                  />
                 <div className="space-y-4">
                   <p className="text-[18px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed" dangerouslySetInnerHTML={{ __html: t("seotext_intro1", language) }} />
                   <p className="text-[18px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed" dangerouslySetInnerHTML={{ __html: t("seotext_intro2", language) }} />

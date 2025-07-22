@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
-@import './styles/colors.css';
+@import 'colors.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -381,7 +381,7 @@ header {
   height: 30px !important;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url('./images/selector.png') !important;
+  background-image: url('/images/selector.png') !important;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -667,7 +667,7 @@ ol {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('./images/vector-bg.svg');
+  background-image: url('/images/vector-bg.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
