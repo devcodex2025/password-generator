@@ -1,5 +1,5 @@
 import React from 'react';
-import lang from '../lang.json';
+import lang from './lang.json';
 
 function t(key, language) {
   return lang[key] && lang[key][language] ? lang[key][language] : key;

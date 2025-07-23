@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import Image from "next/image";
 import { ThemeContext } from "../context/ThemeContext";
-import lang from '../lang.json';
+import lang from './lang.json';
 
 const referalLink = "https://hostinger.com.ua?REFERRALCODE=1098786";
 

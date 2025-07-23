@@ -6,7 +6,7 @@ import { CustomThemeProvider } from "@/context/ThemeContext";
 import CssBaseline from "@mui/material/CssBaseline";
 import { HelmetProvider } from "react-helmet-async";
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
-const GeneratePassword = dynamic(() => import("@/components/GeneratePassword"), { ssr: false });
+const GeneratePassword = dynamic(() => import("@/components/PasswordGenerator/PasswordGenerator"), { ssr: false });
 import TagManager from "react-gtm-module";
 
 const TagManagerArgs = {
@@ -21,7 +21,7 @@ export function ClientOnly({ language }: { language: string }) {
     <CustomThemeProvider>
       <CssBaseline />
       <HelmetProvider>
-        <GeneratePassword language={language} />
+        <GeneratePassword language={language}/>
       </HelmetProvider>
     </CustomThemeProvider>
   );

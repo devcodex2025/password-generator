@@ -1,25 +1,27 @@
-import React, { createContext, useState, useEffect, useContext } from "react";
+'use client';
+
+import React, { useState, useEffect, useContext } from 'react';
+import { useRouter } from 'next/navigation';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
+// import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+// import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import InputLabel from '@mui/material/InputLabel';
-import Flag from 'react-world-flags';
-import { useNavigate } from "react-router-dom";
+import { Flag } from 'lucide-react';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from '@mui/material/IconButton';
 import Image from 'next/image';
-import { ThemeContext } from '../context/ThemeContext';
-import lang from '../lang.json';
+import { ThemeContext } from '@/context/ThemeContext'; // Updated path
+import lang from './lang.json';
 import { getLanguagesWithFlags, getLanguageSelectionText, getThemeText, getAvailableLanguages } from '../utils/languageUtils';
 
-// Додаємо CSS стилі для анімації
+// CSS styles for animation
 const languageIconStyles = `
   .language-flag {
     transition: all 0.3s ease;
@@ -76,15 +78,9 @@ const languageIconStyles = `
   }
   
   @keyframes languagePulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.15);
-    }
-    100% {
-      transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
   }
   
   .flag-container.language-change-animation {
@@ -92,18 +88,11 @@ const languageIconStyles = `
   }
   
   @keyframes flagRotate {
-    0% {
-      transform: rotate(0deg) scale(1);
-    }
-    50% {
-      transform: rotate(180deg) scale(1.2);
-    }
-    100% {
-      transform: rotate(360deg) scale(1);
-    }
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
   }
   
-  /* Стилі для всіх посилань */
   a {
     transition: all 0.3s ease;
     position: relative;
@@ -130,7 +119,6 @@ const languageIconStyles = `
     width: 100%;
   }
   
-  /* Спеціальні стилі для посилань в навігації */
   .nav-link {
     transition: all 0.3s ease;
     position: relative;
@@ -160,7 +148,6 @@ const languageIconStyles = `
     transform: scaleX(1);
   }
   
-  /* Стилі для зовнішніх посилань */
   .external-link {
     transition: all 0.3s ease;
     position: relative;
@@ -183,82 +170,74 @@ const languageIconStyles = `
   }
 `;
 
-function t(key, language) {
+function t(key: string, language: string) {
   return lang[key] && lang[key][language] ? lang[key][language] : key;
 }
 
 const menuItems = [
   {
-    label: (language) => t('menu_aboutus', language),
+    label: (language: string) => t('menu_aboutus', language),
     href: '#aboutus',
   },
   {
-    label: (language) => t('menu_howtouse', language),
+    label: (language: string) => t('menu_howtouse', language),
     href: '#howtouse',
   },
   {
-    label: (language) => t('menu_guide', language),
+    label: (language: string) => t('menu_guide', language),
     href: '#guide',
   },
 ];
 
-const Header = ({ onLanguageChange }) => {
-  const navigate = useNavigate();
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
-  
-  // Отримуємо доступні мови автоматично
+interface HeaderProps {
+  onLanguageChange: (language: string) => void;
+}
+
+const Header = ({ onLanguageChange }: HeaderProps) => {
+  const router = useRouter();
+  const { isDarkMode, toggleMode } = useContext(ThemeContext); // Use toggleMode
+
+  // Get available languages
   const availableLanguages = getAvailableLanguages();
   const languages = getLanguagesWithFlags();
-  
-  const [language, setLanguage] = useState(() => {
-    const pathSegments = window.location.pathname.split("/");
+
+  const [language, setLanguage] = useState<string>(() => {
+    const pathSegments = typeof window !== 'undefined' ? window.location.pathname.split('/') : [''];
     const languageFromURL = pathSegments[1];
-    
+
     if (availableLanguages.includes(languageFromURL)) {
       return languageFromURL;
     }
 
-    const browserLanguage = navigator.language || navigator.userLanguage;
+    const browserLanguage = typeof navigator !== 'undefined' ? (navigator.language || navigator.userLanguage) : 'en';
     const languageCode = browserLanguage.split(/[-_]/)[0];
-    const mappedLanguageCode = languageCode === "uk" ? "ua" : languageCode;
+    const mappedLanguageCode = languageCode === 'uk' ? 'ua' : languageCode;
 
-    if (availableLanguages.includes(mappedLanguageCode)) {
-      return mappedLanguageCode;
-    } else {
-      return "en";
-    }
+    return availableLanguages.includes(mappedLanguageCode) ? mappedLanguageCode : 'en';
   });
 
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    // Save the selected language to localStorage
-    localStorage.setItem("language", language);
-
-    // Notify the parent component about the language change
-    onLanguageChange(language);
-
-    // Automatically navigate to the language-specific route
-    navigate(`/${language}`);
-
-    // Додаю зміну атрибута lang у <html>
     if (typeof document !== 'undefined') {
+      localStorage.setItem('language', language);
+      onLanguageChange(language);
+      router.push(`/${language}`);
       document.documentElement.lang = language;
     }
-  }, [language, onLanguageChange, navigate]);
+  }, [language, onLanguageChange, router]);
 
-  // Додаємо CSS стилі для анімації
+  // Add CSS styles for animation
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.textContent = languageIconStyles;
     document.head.appendChild(styleElement);
-
     return () => {
       document.head.removeChild(styleElement);
     };
   }, []);
 
-  // Додаю стилі для hamburger-dark
+  // Add styles for hamburger-dark
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.textContent = `
@@ -272,7 +251,7 @@ const Header = ({ onLanguageChange }) => {
     };
   }, []);
 
-  // Додаю стилі для select.language-select у dark mode
+  // Add styles for select.language-select in dark mode
   useEffect(() => {
     const styleElement = document.createElement('style');
     styleElement.textContent = `
@@ -292,19 +271,21 @@ const Header = ({ onLanguageChange }) => {
     };
   }, []);
 
-  const [state, setState] = React.useState({
-    top: false,
-  });
+  const [state, setState] = useState({ top: false });
 
-  // Контроль overflow body при відкритті/закритті меню
+  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const lang = event.target.value;
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 600);
+    setLanguage(lang);
+  };
+
   useEffect(() => {
-    const isAnyDrawerOpen = Object.values(state).some(open => open);
-    
+    const isAnyDrawerOpen = Object.values(state).some((open) => open);
     if (isAnyDrawerOpen) {
       const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
       document.body.style.overflowY = 'hidden';
-      
       return () => {
         document.body.style.overflow = originalOverflow || 'auto';
         document.body.style.overflowY = 'auto';
@@ -312,45 +293,21 @@ const Header = ({ onLanguageChange }) => {
     }
   }, [state]);
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+  const toggleDrawer = (anchor: string, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (event.type === 'keydown' && ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')) {
       return;
     }
-
     setState({ ...state, [anchor]: open });
   };
 
-  const list = (anchor) => (
+  const list = (anchor: string) => (
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
       role="presentation"
-    // onClick={toggleDrawer(anchor, false)}
-    // onKeyDown={toggleDrawer(anchor, false)}
+      // onClick={toggleDrawer(anchor, false)}
+      // onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List sx={{ px: "10px" }}>
-        {/* {menuItems.map((menuItem) => (
-          <ListItem key={menuItem.href} disablePadding>
-            <Link 
-              href={menuItem.href} 
-              underline="none"
-              sx={{ 
-                fontSize: '22px', 
-                fontWeight: 'bolder', 
-                color: 'black',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  color: '#2A4E63',
-                  transform: 'scale(1.05)',
-                  textDecoration: 'underline'
-                }
-              }}
-            >
-              <ListItemText primary={menuItem.label(language)} />
-            </Link>
-          </ListItem>
-        ))}
-
-        <Divider /> */}
+      <List sx={{ px: '10px' }}>
         <ListItem>
           <InputLabel id="language-select-label" sx={{ width: '100%' }}>
             {getLanguageSelectionText(language)}
@@ -358,9 +315,7 @@ const Header = ({ onLanguageChange }) => {
           <Select
             labelId="language-select-label"
             id="language-select"
-            sx={{
-              width: '100%'
-            }}
+            sx={{ width: '100%' }}
             value={language}
             onChange={handleLanguageChange}
           >
@@ -378,52 +333,32 @@ const Header = ({ onLanguageChange }) => {
             ))}
           </Select>
         </ListItem>
-        
         <ListItem>
           <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
             <span style={{ fontSize: '22px', fontWeight: 400, color: isDarkMode ? '#e0e0e0' : 'black' }}>
               {getThemeText(language)}
             </span>
-             <IconButton 
-              onClick={toggleTheme} 
+            <IconButton
+              onClick={toggleMode} // Use toggleMode
               color="inherit"
-              sx={{ 
+              sx={{
                 color: isDarkMode ? '#e0e0e0' : '#071016',
-                '&:hover': {
-                  color: '#2A4E63',
-                  transform: 'scale(1.05)'
-                }
+                '&:hover': { color: '#2A4E63', transform: 'scale(1.05)' },
               }}
             >
               {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton> 
+            </IconButton>
           </div>
         </ListItem>
       </List>
     </Box>
   );
 
-
-  const handleLanguageChange = (event) => {
-    const lang = event.target.value;
-    
-    // Запускаємо анімацію
-    setIsAnimating(true);
-    
-    // Зупиняємо анімацію через 600ms
-    setTimeout(() => {
-      setIsAnimating(false);
-    }, 600);
-    
-    setLanguage(lang);
-    navigate(`/${lang}`);
-  };
-
   return (
     <header className="py-7 px-2 flex justify-between items-center">
       <div className="flex items-center">
         <Image
-          src='/images/logo.svg'
+          src="/images/logo.svg"
           alt="Generate Password To Me - Secure Password Generator Logo"
           className="w-[50%] h-6 mr-1 logo"
           loading="eager"
@@ -432,39 +367,26 @@ const Header = ({ onLanguageChange }) => {
           height={24}
         />
       </div>
-       <ul className="lg:flex justify-end w-[55%] items-center hidden text-decoration-none gap-5 text-[#071016] text-xl font-medium">
-        {/* <li className="cursor-pointer transition-all duration-300 hover:text-[#2A4E63] hover:scale-105">
-          <a href="#aboutus" className="nav-link">{t('menu_aboutus', language)}</a>
-        </li>
-        <li className="cursor-pointer transition-all duration-300 hover:text-[#2A4E63] hover:scale-105">
-          <a href="#howtouse" className="nav-link">{t('menu_howtouse', language)}</a>
-        </li>
-        <li className="cursor-pointer transition-all duration-300 hover:text-[#2A4E63] hover:scale-105">
-          <a href="#guide" className="nav-link">{t('menu_guide', language)}</a>
-        </li> */}
+      <ul className="lg:flex justify-end w-[55%] items-center hidden text-decoration-none gap-5 text-[#071016] text-xl font-medium">
         <li>
-          <IconButton 
-            onClick={toggleTheme} 
+          <IconButton
+            onClick={toggleMode} // Use toggleMode
             color="inherit"
             className="transition-all duration-300 hover:scale-105"
-            sx={{ 
+            sx={{
               color: isDarkMode ? '#e0e0e0' : '#071016',
-              '&:hover': {
-                color: '#2A4E63',
-                transform: 'scale(1.05)'
-              }
+              '&:hover': { color: '#2A4E63', transform: 'scale(1.05)' },
             }}
           >
             {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
         </li>
       </ul>
-
-      <select 
-        name="Language" 
-        value={language} 
-        onChange={handleLanguageChange} 
-        id="eng" 
+      <select
+        name="Language"
+        value={language}
+        onChange={handleLanguageChange}
+        id="eng"
         className={`language-select py-3 lg:flex hidden px-4 justify-center border-2 border-[#2A4E63] rounded-[60px] bg-transparent w-auto ${isAnimating ? 'language-change-animation' : ''}`}
       >
         {languages.map((lang) => (
@@ -473,14 +395,13 @@ const Header = ({ onLanguageChange }) => {
           </option>
         ))}
       </select>
-
-      <div className=" flex lg:hidden">
+      <div className="flex lg:hidden">
         {['top'].map((anchor) => (
           <React.Fragment key={anchor}>
-            <Image 
-              src='/images/hamburger.png' 
-              alt="Navigation menu toggle" 
-              onClick={toggleDrawer(anchor, true)} 
+            <Image
+              src="/images/hamburger.png"
+              alt="Navigation menu toggle"
+              onClick={toggleDrawer(anchor, true)}
               className={`cursor-pointer${isDarkMode ? ' hamburger-dark' : ''}`}
               loading="lazy"
               decoding="async"
@@ -495,8 +416,8 @@ const Header = ({ onLanguageChange }) => {
                 '& .MuiDrawer-paper': {
                   width: { xs: '100vw', sm: 250 },
                   maxWidth: { xs: '100vw', sm: 250 },
-                  boxSizing: 'border-box'
-                }
+                  boxSizing: 'border-box',
+                },
               }}
             >
               {list(anchor)}

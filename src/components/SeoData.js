@@ -1,4 +1,4 @@
-import { getAvailableLanguages } from './utils/languageUtils';
+import { getAvailableLanguages } from '../utils/languageUtils';
 
 // Базові SEO дані для кожної мови
 const seoDataMap = {

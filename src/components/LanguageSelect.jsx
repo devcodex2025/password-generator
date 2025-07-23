@@ -2,7 +2,7 @@ import React from 'react';
 import Radio from '@mui/material/Radio';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { getLanguagesWithFlags } from './utils/languageUtils';
+import { getLanguagesWithFlags } from '../utils/languageUtils';
 
 function LanguageSelector({ language, setLanguage }) {
   const languages = getLanguagesWithFlags();

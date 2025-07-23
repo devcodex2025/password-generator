@@ -1,4 +1,4 @@
-import lang from '../lang.json';
+import lang from '../components/lang.json';
 
 // Функція для отримання всіх доступних мов з lang.json
 export const getAvailableLanguages = () => {

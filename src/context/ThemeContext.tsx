@@ -6,10 +6,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 interface ThemeContextType {
   isDarkMode: boolean;
-  toggleTheme: () => void;
+  toggleMode: () => void;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const defaultContextValue: ThemeContextType = {
+  isDarkMode: false,
+  toggleMode: () => {},
+};
+export const ThemeContext = createContext<ThemeContextType>(defaultContextValue);
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
@@ -19,10 +23,12 @@ export const useTheme = () => {
   return context;
 };
 
-export { ThemeContext };
-
 export const CustomThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const toggleMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
 
   useEffect(() => {
     // Перевірка на клієнтське середовище
@@ -35,10 +41,6 @@ export const CustomThemeProvider = ({ children }: { children: React.ReactNode })
       }
     }
   }, []);
-
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-  };
 
   const theme = useMemo(() => {
     const mode = isDarkMode ? 'dark' : 'light';
@@ -64,7 +66,7 @@ export const CustomThemeProvider = ({ children }: { children: React.ReactNode })
   }, [isDarkMode]);
 
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
+    <ThemeContext.Provider value={{ isDarkMode, toggleMode }}>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         {children}
