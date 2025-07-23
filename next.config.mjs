@@ -1,4 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  distDir: './dist', // Changes the build output directory to `./dist/`.
+// @ts-check
+ 
+module.exports = async (phase, { defaultConfig }) => {
+  /**
+   * @type {import('next').NextConfig}
+   */
+  const nextConfig = {
+    /* config options here */
+  }
+  return nextConfig
 }
