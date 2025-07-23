@@ -14,19 +14,37 @@ import { Analytics } from '@vercel/analytics/react';
 import { CustomThemeProvider, useTheme } from '../../context/ThemeContext';
 import SEO from '@/components/SEO';
 import { useRouter } from 'next/navigation';
+import { getAvailableLanguages } from '@/utils/languageUtils';
+
+// Клонуємо i18n для ізоляції мови в межах запиту
+import { cloneDeep } from 'lodash';
 
 interface PageProps {
   params: Promise<{ locale: string }>; // Update params to be a Promise
 }
 export default function Page({ params }: PageProps) {
+  const router = useRouter();
   const { locale } = use(params);
   const { isDarkMode } = useTheme();
-  const router = useRouter();
+  const supportedLanguages = getAvailableLanguages();
+
+  // Синхронізація i18n із локаллю до рендерингу
+  if (typeof window === 'undefined') {
+    // Виконується на сервері
+    if (supportedLanguages.includes(locale) && i18n.language !== locale) {
+      i18n.changeLanguage(locale);
+    } else if (!supportedLanguages.includes(locale)) {
+      i18n.changeLanguage('en');
+    }
+  }
+
   // Define onLanguageChange to handle language changes from Header
   const onLanguageChange = (newLanguage: string) => {
     i18n.changeLanguage(newLanguage);
     router.push(`/${newLanguage}`);
   };
+
+
 
   return (
     <CustomThemeProvider>
@@ -39,7 +57,7 @@ export default function Page({ params }: PageProps) {
           />
           <main className="w-full">
             <Analytics />
-            <PasswordGenerator />
+            <PasswordGenerator language={locale} />
             <Suspense fallback={null}>
               <AdBanner language={locale} isDarkMode={isDarkMode} />
             </Suspense>

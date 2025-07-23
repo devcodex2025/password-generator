@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo, useRef, useContext } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useReward } from 'react-rewards';
 import zxcvbn from 'zxcvbn';
@@ -17,6 +17,7 @@ import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import Image from 'next/image';
 import AnimatedPassword from './AnimatedPassword';
 import { SnackbarMessage } from '@/app/types/SnackBar';
+import i18n from '@/components/i18n';
 
 const characterSets: Record<string, string> = {
   'A-Z': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -43,8 +44,12 @@ const passwordStandards: Record<string, { minLength: number; requiredSets: strin
   },
 };
 
-export default function PasswordGenerator() {
-  const { t } = useTranslation();
+interface PasswordGeneratorProps {
+  language: string;
+}
+
+export default function PasswordGenerator({ language }: PasswordGeneratorProps) {
+  const { t, ready } = useTranslation();
   const { isDarkMode } = useContext(ThemeContext);
   const [snackbars, setSnackbars] = useState<SnackbarMessage[]>([]);
   const [passwordLength, setPasswordLength] = useState<number>(12);
@@ -62,6 +67,13 @@ export default function PasswordGenerator() {
   });
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const ANIMATION_DURATION = 250;
+
+  // Клієнтська синхронізація (резервна)
+  useEffect(() => {
+    if (language && i18n.language !== language) {
+      i18n.changeLanguage(language);
+    }
+  }, [language]);
 
   const generatePassword = useCallback(
     (index: number) => {
@@ -240,22 +252,19 @@ export default function PasswordGenerator() {
 
   return (
     <div
-      className={`flex flex-col justify-center items-center mb-4 w-full rounded-[72px] pt-10 md:pt-32 ${
-        isDarkMode ? 'dark:bg-[#1a1a1a]' : 'bg-[#E5F6FF]'
-      } lg:bg-[url('/images/vector-bg.svg')] lg:bg-no-repeat lg:bg-center lg:bg-cover lg:bg-blend-overlay`}
+      className={`flex flex-col justify-center items-center mb-4 w-full rounded-[72px] pt-10 md:pt-32 ${isDarkMode ? 'dark:bg-[#1a1a1a]' : 'bg-[#E5F6FF]'
+        } lg:bg-[url('/images/vector-bg.svg')] lg:bg-no-repeat lg:bg-center lg:bg-cover lg:bg-blend-overlay`}
     >
       <h1
-        className={`page-title mx-2 md:mb-2 text-[30px] lg:text-[50px] font-bold tracking-tight text-center ${
-          isDarkMode ? 'text-[#e0e0e0]' : 'text-gray-900'
-        }`}
+        className={`page-title mx-2 md:mb-2 text-[30px] lg:text-[50px] font-bold tracking-tight text-center ${isDarkMode ? 'text-[#e0e0e0]' : 'text-gray-900'
+          }`}
       >
         {t('main_title')}
       </h1>
       <p className="text-center text-[22px] text-[#2A4E63] mx-2 mb-4">{t('main_subtitle')}</p>
       <div
-        className={`w-full lg:w-9/12 xl:w-9/12 2xl:w-7/12 flex flex-col ${
-          isDarkMode ? 'bg-[#1c1c1c]' : 'bg-white'
-        } drop-shadow-lg rounded-[48px] shadow p-[20px] md:p-[60px] relative`}
+        className={`w-full lg:w-9/12 xl:w-9/12 2xl:w-7/12 flex flex-col ${isDarkMode ? 'bg-[#1c1c1c]' : 'bg-white'
+          } drop-shadow-lg rounded-[48px] shadow p-[20px] md:p-[60px] relative`}
       >
         <div
           id="centerReward"
@@ -270,9 +279,8 @@ export default function PasswordGenerator() {
         />
         <div className="absolute hidden bg-white drop-shadow-lg top-[-20px] left-[-140px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex items-center gap-2">
           <div
-            className={`p-[12px] rounded-full ${
-              isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'
-            } mr-3 ml-2 my-1`}
+            className={`p-[12px] rounded-full ${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'
+              } mr-3 ml-2 my-1`}
           >
             <Image
               src="/images/password.png"
@@ -288,14 +296,12 @@ export default function PasswordGenerator() {
           </p>
         </div>
         <div
-          className={`${
-            isDarkMode ? 'bg-[#2d2d2d]' : 'bg-white'
-          } absolute hidden justify-start drop-shadow-lg top-[150px] right-[-120px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex lg:items-center gap-2`}
+          className={`${isDarkMode ? 'bg-[#2d2d2d]' : 'bg-white'
+            } absolute hidden justify-start drop-shadow-lg top-[150px] right-[-120px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex lg:items-center gap-2`}
         >
           <div
-            className={`p-[12px] rounded-full ${
-              isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'
-            } mr-3 ml-2 my-1`}
+            className={`p-[12px] rounded-full ${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'
+              } mr-3 ml-2 my-1`}
           >
             <Image
               src="/images/password.png"
@@ -354,11 +360,9 @@ export default function PasswordGenerator() {
         {passwords.length >= 2 && (
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-2">
             <Button
-              className={`${
-                isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'
-              } ${
-                isDarkMode ? 'text-[#e0e0e0]' : 'text-white'
-              } font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
+              className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'
+                } ${isDarkMode ? 'text-[#e0e0e0]' : 'text-white'
+                } font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
               onClick={handleCopyAllClick}
               disabled={isAnimating}
               style={isAnimating ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
@@ -367,11 +371,9 @@ export default function PasswordGenerator() {
               {t('copy_all')}
             </Button>
             <Button
-              className={`${
-                isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'
-              } ${
-                isDarkMode ? 'text-[#e0e0e0]' : 'text-white'
-              } font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
+              className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'
+                } ${isDarkMode ? 'text-[#e0e0e0]' : 'text-white'
+                } font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
               onClick={handleDownloadAllClick}
               disabled={isAnimating}
               style={isAnimating ? { opacity: 0.5, cursor: 'not-allowed' } : {}}

@@ -19,6 +19,8 @@ import Image from 'next/image';
 import { ThemeContext } from '@/context/ThemeContext'; // Updated path
 import { getLanguagesWithFlags, getLanguageSelectionText, getThemeText } from '../utils/languageUtils';
 import { SelectChangeEvent } from '@mui/material/Select';
+import { getAvailableLanguages } from '../utils/languageUtils'; // Ensure this utility function is defined
+
 
 // CSS styles for animation
 const languageIconStyles = `
@@ -175,11 +177,35 @@ interface HeaderProps {
 }
 
 const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
-  const [language, setLanguage] = useState(currentLanguage);
+  const availableLanguages = getAvailableLanguages();
+  const [language, setLanguage] = useState<string>(() => {
+    const pathSegments = typeof window !== 'undefined' ? window.location.pathname.split('/') : [''];
+    const languageFromURL = pathSegments[1];
+    if (availableLanguages.includes(languageFromURL)) {
+      return languageFromURL;
+    }
 
+    const browserLanguage = typeof navigator !== 'undefined' ? navigator.language : 'en';
+    const languageCode = browserLanguage.split(/[-_]/)[0];
+    const mappedLanguageCode = languageCode === 'uk' ? 'ua' : languageCode;
+
+    return availableLanguages.includes(mappedLanguageCode) ? mappedLanguageCode : 'en';
+  });
+
+  // Перевіряємо, чи маршрут є кореневим (/), і перенаправляємо
   useEffect(() => {
-    setLanguage(currentLanguage);
-  }, [currentLanguage]);
+    const pathSegments = typeof window !== 'undefined' ? window.location.pathname.split('/') : [''];
+    const isRootPath = pathSegments[1] === '' || pathSegments[1] === undefined;
+
+    if (isRootPath) {
+      const browserLanguage = typeof navigator !== 'undefined' ? navigator.language.split(/[-_]/)[0] : 'en';
+      const mappedLanguageCode = browserLanguage === 'uk' ? 'ua' : browserLanguage;
+      const defaultLanguage = availableLanguages.includes(mappedLanguageCode) ? mappedLanguageCode : 'en';
+      onLanguageChange(defaultLanguage); // Викликаємо onLanguageChange для перенаправлення
+    } else if (currentLanguage !== language) {
+      setLanguage(currentLanguage); // Синхронізуємо з пропсом
+    }
+  }, [currentLanguage, onLanguageChange, language, availableLanguages]);
 
   const handleLanguageChange = (event: SelectChangeEvent) => {
     const lang = event.target.value;
@@ -191,23 +217,8 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
   const { isDarkMode, toggleMode } = useContext(ThemeContext); // Use toggleMode
 
   // Get available languages
-  // const availableLanguages = getAvailableLanguages();
+
   const languages = getLanguagesWithFlags();
-
-  // const [language, setLanguage] = useState<string>(() => {
-  //   const pathSegments = typeof window !== 'undefined' ? window.location.pathname.split('/') : [''];
-  //   const languageFromURL = pathSegments[1];
-
-  //   if (availableLanguages.includes(languageFromURL)) {
-  //     return languageFromURL;
-  //   }
-
-  //   const browserLanguage = typeof navigator !== 'undefined' ? navigator.language : 'en';
-  //   const languageCode = browserLanguage.split(/[-_]/)[0];
-  //   const mappedLanguageCode = languageCode === 'uk' ? 'ua' : languageCode;
-
-  //   return availableLanguages.includes(mappedLanguageCode) ? mappedLanguageCode : 'en';
-  // });
 
   const [isAnimating] = useState(false);
 
@@ -437,8 +448,8 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               onClose={toggleDrawer(anchor, false)}
               sx={{
                 '& .MuiDrawer-paper': {
-                  width: { xs: '100vw'},
-                  maxWidth: { xs: '100vw'},
+                  width: { xs: '100vw' },
+                  maxWidth: { xs: '100vw' },
                   boxSizing: 'border-box',
                 },
               }}
