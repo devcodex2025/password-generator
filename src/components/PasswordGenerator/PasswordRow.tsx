@@ -2,8 +2,6 @@
 
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
-import { useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
 
 interface PasswordRowProps {
   password: string;

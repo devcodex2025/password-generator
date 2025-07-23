@@ -43,7 +43,7 @@ const passwordStandards: Record<string, { minLength: number; requiredSets: strin
   },
 };
 
-export default function PasswordGenerator({ language }: { language: string }) {
+export default function PasswordGenerator() {
   const { t } = useTranslation();
   const { isDarkMode } = useContext(ThemeContext);
   const [snackbars, setSnackbars] = useState<SnackbarMessage[]>([]);

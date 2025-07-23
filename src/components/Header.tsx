@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useContext } from 'react';
-import { useRouter } from 'next/navigation';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 // import Divider from '@mui/material/Divider';
@@ -12,14 +11,14 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 // import Link from '@mui/material/Link';
 import InputLabel from '@mui/material/InputLabel';
-import { Flag } from 'lucide-react';
+import Flag from 'react-world-flags'
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from '@mui/material/IconButton';
 import Image from 'next/image';
 import { ThemeContext } from '@/context/ThemeContext'; // Updated path
-import lang from './lang.json';
-import { getLanguagesWithFlags, getLanguageSelectionText, getThemeText, getAvailableLanguages } from '../utils/languageUtils';
+import { getLanguagesWithFlags, getLanguageSelectionText, getThemeText } from '../utils/languageUtils';
+import { SelectChangeEvent } from '@mui/material/Select';
 
 // CSS styles for animation
 const languageIconStyles = `
@@ -170,62 +169,47 @@ const languageIconStyles = `
   }
 `;
 
-function t(key: string, language: string) {
-  return lang[key] && lang[key][language] ? lang[key][language] : key;
-}
-
-const menuItems = [
-  {
-    label: (language: string) => t('menu_aboutus', language),
-    href: '#aboutus',
-  },
-  {
-    label: (language: string) => t('menu_howtouse', language),
-    href: '#howtouse',
-  },
-  {
-    label: (language: string) => t('menu_guide', language),
-    href: '#guide',
-  },
-];
-
 interface HeaderProps {
   onLanguageChange: (language: string) => void;
+  currentLanguage: string;
 }
 
-const Header = ({ onLanguageChange }: HeaderProps) => {
-  const router = useRouter();
+const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
+  const [language, setLanguage] = useState(currentLanguage);
+
+  useEffect(() => {
+    setLanguage(currentLanguage);
+  }, [currentLanguage]);
+
+  const handleLanguageChange = (event: SelectChangeEvent) => {
+    const lang = event.target.value;
+    setLanguage(lang);
+    onLanguageChange(lang);
+  };
+
+
   const { isDarkMode, toggleMode } = useContext(ThemeContext); // Use toggleMode
 
   // Get available languages
-  const availableLanguages = getAvailableLanguages();
+  // const availableLanguages = getAvailableLanguages();
   const languages = getLanguagesWithFlags();
 
-  const [language, setLanguage] = useState<string>(() => {
-    const pathSegments = typeof window !== 'undefined' ? window.location.pathname.split('/') : [''];
-    const languageFromURL = pathSegments[1];
+  // const [language, setLanguage] = useState<string>(() => {
+  //   const pathSegments = typeof window !== 'undefined' ? window.location.pathname.split('/') : [''];
+  //   const languageFromURL = pathSegments[1];
 
-    if (availableLanguages.includes(languageFromURL)) {
-      return languageFromURL;
-    }
+  //   if (availableLanguages.includes(languageFromURL)) {
+  //     return languageFromURL;
+  //   }
 
-    const browserLanguage = typeof navigator !== 'undefined' ? (navigator.language || navigator.userLanguage) : 'en';
-    const languageCode = browserLanguage.split(/[-_]/)[0];
-    const mappedLanguageCode = languageCode === 'uk' ? 'ua' : languageCode;
+  //   const browserLanguage = typeof navigator !== 'undefined' ? navigator.language : 'en';
+  //   const languageCode = browserLanguage.split(/[-_]/)[0];
+  //   const mappedLanguageCode = languageCode === 'uk' ? 'ua' : languageCode;
 
-    return availableLanguages.includes(mappedLanguageCode) ? mappedLanguageCode : 'en';
-  });
+  //   return availableLanguages.includes(mappedLanguageCode) ? mappedLanguageCode : 'en';
+  // });
 
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      localStorage.setItem('language', language);
-      onLanguageChange(language);
-      router.push(`/${language}`);
-      document.documentElement.lang = language;
-    }
-  }, [language, onLanguageChange, router]);
+  const [isAnimating] = useState(false);
 
   // Add CSS styles for animation
   useEffect(() => {
@@ -271,14 +255,21 @@ const Header = ({ onLanguageChange }: HeaderProps) => {
     };
   }, []);
 
-  const [state, setState] = useState({ top: false });
+  // const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const lang = event.target.value;
+  //   setIsAnimating(true);
+  //   setTimeout(() => setIsAnimating(false), 600);
+  //   if (lang !== language) {
+  //     onLanguageChange(lang); // основний контроль мови тут
+  //   }
+  // };
 
-  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const lang = event.target.value;
-    setIsAnimating(true);
-    setTimeout(() => setIsAnimating(false), 600);
-    setLanguage(lang);
-  };
+  const [state, setState] = useState<Record<Anchor, boolean>>({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
 
   useEffect(() => {
     const isAnyDrawerOpen = Object.values(state).some((open) => open);
@@ -292,22 +283,27 @@ const Header = ({ onLanguageChange }: HeaderProps) => {
       };
     }
   }, [state]);
+  type Anchor = 'left' | 'right' | 'top' | 'bottom';
+  const toggleDrawer =
+    (anchor: Anchor, open: boolean) =>
+      (event: React.KeyboardEvent | React.MouseEvent) => {
+        if (
+          event.type === 'keydown' &&
+          ((event as React.KeyboardEvent).key === 'Tab' ||
+            (event as React.KeyboardEvent).key === 'Shift')
+        ) {
+          return;
+        }
+        setState({ ...state, [anchor]: open });
+      };
 
-  const toggleDrawer = (anchor: string, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-    if (event.type === 'keydown' && ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')) {
-      return;
-    }
-    setState({ ...state, [anchor]: open });
-  };
-
-  const list = (anchor: string) => (
+  const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : '100vw' }}
       role="presentation"
-      // onClick={toggleDrawer(anchor, false)}
-      // onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List sx={{ px: '10px' }}>
+      <List sx={{ px: 2 }}>
+        {/* Language Selector */}
         <ListItem>
           <InputLabel id="language-select-label" sx={{ width: '100%' }}>
             {getLanguageSelectionText(language)}
@@ -315,47 +311,65 @@ const Header = ({ onLanguageChange }: HeaderProps) => {
           <Select
             labelId="language-select-label"
             id="language-select"
-            sx={{ width: '100%' }}
             value={language}
             onChange={handleLanguageChange}
+            sx={{ width: '100%' }}
           >
             {languages.map((lang) => (
               <MenuItem key={lang.value} value={lang.value}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <div className={`flag-container flex align-center ${isAnimating ? 'language-change-animation' : ''}`}>
-                    <span className="language-flag" style={{ marginRight: 8 }}>
-                      <Flag code={lang.flagCode} width={32} />
-                    </span>
-                  </div>
-                  <span className="ml-2">{lang.label}</span>
+                  <span
+                    className={`flag-container flex align-center ${isAnimating ? 'language-change-animation' : ''
+                      }`}
+                    style={{ marginRight: 8 }}
+                  >
+                    <Flag code={lang.flagCode} width={32} />
+                  </span>
+                  <span>{lang.label}</span>
                 </div>
               </MenuItem>
             ))}
           </Select>
         </ListItem>
+
+        {/* Theme Toggle */}
         <ListItem>
-          <div style={{ display: 'flex', alignItems: 'center', width: '100%', justifyContent: 'space-between' }}>
-            <span style={{ fontSize: '22px', fontWeight: 400, color: isDarkMode ? '#e0e0e0' : 'black' }}>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            width="100%"
+          >
+            <span
+              style={{
+                fontSize: 22,
+                fontWeight: 400,
+                color: isDarkMode ? '#e0e0e0' : 'black',
+              }}
+            >
               {getThemeText(language)}
             </span>
             <IconButton
-              onClick={toggleMode} // Use toggleMode
+              onClick={toggleMode}
               color="inherit"
               sx={{
                 color: isDarkMode ? '#e0e0e0' : '#071016',
-                '&:hover': { color: '#2A4E63', transform: 'scale(1.05)' },
+                '&:hover': {
+                  color: '#2A4E63',
+                  transform: 'scale(1.05)',
+                },
               }}
             >
               {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
-          </div>
+          </Box>
         </ListItem>
       </List>
     </Box>
   );
 
   return (
-    <header className="py-7 px-2 flex justify-between items-center">
+    <header className="py-7 px-2 flex justify-between items-center w-full">
       <div className="flex items-center">
         <Image
           src="/images/logo.svg"
@@ -385,7 +399,9 @@ const Header = ({ onLanguageChange }: HeaderProps) => {
       <select
         name="Language"
         value={language}
-        onChange={handleLanguageChange}
+        onChange={(e) =>
+          handleLanguageChange({ target: { value: e.target.value } } as SelectChangeEvent)
+        }
         id="eng"
         className={`language-select py-3 lg:flex hidden px-4 justify-center border-2 border-[#2A4E63] rounded-[60px] bg-transparent w-auto ${isAnimating ? 'language-change-animation' : ''}`}
       >
@@ -396,7 +412,7 @@ const Header = ({ onLanguageChange }: HeaderProps) => {
         ))}
       </select>
       <div className="flex lg:hidden">
-        {['top'].map((anchor) => (
+        {(['top'] as Anchor[]).map((anchor) => (
           <React.Fragment key={anchor}>
             <Image
               src="/images/hamburger.png"
@@ -407,6 +423,13 @@ const Header = ({ onLanguageChange }: HeaderProps) => {
               decoding="async"
               width={24}
               height={24}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  toggleDrawer(anchor, true)(e);
+                }
+              }}
             />
             <Drawer
               anchor={anchor}
@@ -414,8 +437,8 @@ const Header = ({ onLanguageChange }: HeaderProps) => {
               onClose={toggleDrawer(anchor, false)}
               sx={{
                 '& .MuiDrawer-paper': {
-                  width: { xs: '100vw', sm: 250 },
-                  maxWidth: { xs: '100vw', sm: 250 },
+                  width: { xs: '100vw'},
+                  maxWidth: { xs: '100vw'},
                   boxSizing: 'border-box',
                 },
               }}
@@ -425,6 +448,7 @@ const Header = ({ onLanguageChange }: HeaderProps) => {
           </React.Fragment>
         ))}
       </div>
+
     </header>
   );
 };

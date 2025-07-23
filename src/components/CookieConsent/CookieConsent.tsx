@@ -17,8 +17,8 @@ const CookieConsentComponent = ({ language }) => {
   const isInitializedRef = useRef(false);
 
   useEffect(() => {
-    console.log('🔄 CookieConsent: language змінився на:', language);
-    console.log('🔄 CookieConsent: попередня мова:', prevLanguageRef.current);
+    // console.log('🔄 CookieConsent: language змінився на:', language);
+    // console.log('🔄 CookieConsent: попередня мова:', prevLanguageRef.current);
   }, [language]);
 
   useEffect(() => {

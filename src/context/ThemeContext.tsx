@@ -1,7 +1,7 @@
 'use client'
 
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
-import { ThemeProvider as MuiThemeProvider, createTheme} from '@mui/material/styles';
+import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 interface ThemeContextType {
@@ -11,7 +11,7 @@ interface ThemeContextType {
 
 const defaultContextValue: ThemeContextType = {
   isDarkMode: false,
-  toggleMode: () => {},
+  toggleMode: () => { },
 };
 export const ThemeContext = createContext<ThemeContextType>(defaultContextValue);
 
@@ -26,7 +26,7 @@ export const useTheme = () => {
 export const CustomThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const toggleMode = () => {
+  const toggleMode = () => {
     setIsDarkMode((prev) => !prev);
   };
 
@@ -63,6 +63,22 @@ export const CustomThemeProvider = ({ children }: { children: React.ReactNode })
         },
       },
     });
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
+      const root = document.body;
+
+      // додавання/видалення класу dark
+      if (isDarkMode) {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
+
+      // збереження в localStorage
+      window.localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+    }
   }, [isDarkMode]);
 
   return (

@@ -28,18 +28,18 @@ export default function Page({ params }: PageProps) {
     router.push(`/${newLanguage}`);
   };
 
-  // Set initial i18next language
-  i18n.changeLanguage(locale);
-
   return (
     <CustomThemeProvider>
       <I18nextProvider i18n={i18n}>
         <SEO />
         <div className={`container ${locale} mx-auto px-3`}>
-          <Header onLanguageChange={onLanguageChange} />
+          <Header
+            onLanguageChange={onLanguageChange}
+            currentLanguage={locale}
+          />
           <main className="w-full">
             <Analytics />
-            <PasswordGenerator language={locale} />
+            <PasswordGenerator />
             <Suspense fallback={null}>
               <AdBanner language={locale} isDarkMode={isDarkMode} />
             </Suspense>
