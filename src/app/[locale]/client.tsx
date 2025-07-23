@@ -13,7 +13,7 @@ const TagManagerArgs = {
   gtmId: 'GTM-KR2SHTKB'
 };
 
-export function ClientOnly() {
+export function ClientOnly(language: string) {
   useEffect(() => {
   TagManager.initialize(TagManagerArgs);
 }, []);
@@ -21,7 +21,7 @@ export function ClientOnly() {
     <CustomThemeProvider>
       <CssBaseline />
       <HelmetProvider>
-        <GeneratePassword/>
+        <GeneratePassword language={language}/>
       </HelmetProvider>
     </CustomThemeProvider>
   );
