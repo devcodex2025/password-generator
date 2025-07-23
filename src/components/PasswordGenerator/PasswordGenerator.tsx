@@ -49,7 +49,7 @@ interface PasswordGeneratorProps {
 }
 
 export default function PasswordGenerator({ language }: PasswordGeneratorProps) {
-  const { t, ready } = useTranslation();
+  const { t } = useTranslation();
   const { isDarkMode } = useContext(ThemeContext);
   const [snackbars, setSnackbars] = useState<SnackbarMessage[]>([]);
   const [passwordLength, setPasswordLength] = useState<number>(12);

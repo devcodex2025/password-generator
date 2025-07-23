@@ -17,7 +17,7 @@ import { useRouter } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 
 // Клонуємо i18n для ізоляції мови в межах запиту
-import { cloneDeep } from 'lodash';
+// import { cloneDeep } from 'lodash';
 
 interface PageProps {
   params: Promise<{ locale: string }>; // Update params to be a Promise
