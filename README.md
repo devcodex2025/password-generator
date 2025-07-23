@@ -16,7 +16,7 @@ A modern web app for generating secure passwords with an intuitive interface and
 - ⚡ **Fast performance** – instant password generation
 - 🍪 **Cookie consent** – GDPR compliant cookie management
 - 📈 **AdSense integration** – smart ad display with fallback handling
-- 🎯 **SEO** – seo optimized application
+- 🎯 **SEO** – SEO optimized website
 
 ## 🚀 Quick Start
 
