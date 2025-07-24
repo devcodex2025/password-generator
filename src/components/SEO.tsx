@@ -3,6 +3,7 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import seoData from './SeoData';
+import { usePathname } from 'next/navigation';
 
 const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
 const hreflangMap: Record<string, string> = { ua: 'uk' };
@@ -10,6 +11,9 @@ const hreflangMap: Record<string, string> = { ua: 'uk' };
 export default function SEO() {
   const { i18n } = useTranslation();
   const language = i18n.language;
+  const pathname = usePathname();
+  const baseUrl = 'https://generatepasswordto.me';
+  const canonicalUrl = `${baseUrl}${pathname}`.replace(/\/$/, '');
 
   useEffect(() => {
     const seoInfo = seoData.find((data) => data.language === language);
@@ -34,6 +38,8 @@ export default function SEO() {
         content={seoData.find((data) => data.language === language)?.description}
       />
       <meta property="og:locale" content={language === 'ua' ? 'uk_UA' : language} />
+      <link rel="canonical" href={canonicalUrl} />
+      
       {supportedLangs.map((lang) => (
         <link
           key={lang}
