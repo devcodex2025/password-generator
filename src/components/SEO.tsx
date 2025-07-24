@@ -27,6 +27,7 @@ export default function SEO() {
 
   return (
     <>
+      <meta name="google-adsense-account" content="ca-pub-5995594246081561" />
       <meta property="og:title" content={seoData.find((data) => data.language === language)?.title} />
       <meta
         property="og:description"
