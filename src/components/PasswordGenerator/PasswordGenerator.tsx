@@ -261,7 +261,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       >
         {t('main_title')}
       </h1>
-      <p className="text-center text-[22px] text-[#2A4E63] mx-2 mb-4">{t('main_subtitle')}</p>
+      <h2 className="text-center text-[22px] text-[#2A4E63] mx-2 mb-4 font-normal">{t('main_subtitle')}</h2>
       <div
         className={`w-full lg:w-9/12 xl:w-9/12 2xl:w-7/12 flex flex-col ${isDarkMode ? 'bg-[#1c1c1c]' : 'bg-white'
           } drop-shadow-lg rounded-[48px] shadow p-[20px] md:p-[60px] relative`}
@@ -277,7 +277,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
             zIndex: 9999,
           }}
         />
-        <div className="absolute hidden bg-white drop-shadow-lg top-[-20px] left-[-140px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex items-center gap-2">
+        <div className="absolute hidden bg-white drop-shadow-lg top-[-20px] left-[-140px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex items-center gap-2 overflow-hidden ">
           <div
             className={`p-[12px] rounded-full ${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'
               } mr-3 ml-2 my-1`}
@@ -297,7 +297,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         </div>
         <div
           className={`${isDarkMode ? 'bg-[#2d2d2d]' : 'bg-white'
-            } absolute hidden justify-start drop-shadow-lg top-[150px] right-[-120px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex lg:items-center gap-2`}
+            } absolute hidden justify-start drop-shadow-lg top-[150px] right-[-120px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex lg:items-center gap-2 overflow-hidden`}
         >
           <div
             className={`p-[12px] rounded-full ${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'
