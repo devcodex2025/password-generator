@@ -1,6 +1,7 @@
 type SupportedLang = 'en' | 'ua' | 'es' | 'fr' | 'de' | 'it' | 'pt' | 'ru' | 'zh' | 'ja' | 'pl';
 
 interface UnitTranslations {
+  century: [singular: string, plural: string];
   year: [singular: string, plural: string];
   month: [singular: string, plural: string];
   day: [singular: string, plural: string];
@@ -13,6 +14,7 @@ interface UnitTranslations {
 
 const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
   en: {
+    century: ['century', 'centuries'],
     year: ['year', 'years'],
     month: ['month', 'months'],
     day: ['day', 'days'],
@@ -23,6 +25,7 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     lessThanASecond: 'less than a second',
   },
   ua: {
+    century: ['століття', 'століть'],
     year: ['рік', 'років'],
     month: ['місяць', 'місяців'],
     day: ['день', 'днів'],
@@ -33,6 +36,7 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     lessThanASecond: 'менше ніж секунда',
   },
   es: {
+    century: ['siglo', 'siglos'],
     year: ['año', 'años'],
     month: ['mes', 'meses'],
     day: ['día', 'días'],
@@ -43,6 +47,7 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     lessThanASecond: 'menos de un segundo',
   },
   fr: {
+    century: ['siècle', 'siècles'],
     year: ['an', 'ans'],
     month: ['mois', 'mois'],
     day: ['jour', 'jours'],
@@ -53,6 +58,7 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     lessThanASecond: 'moins d’une seconde',
   },
   de: {
+    century: ['Jahrhundert', 'Jahrhunderte'],
     year: ['Jahr', 'Jahre'],
     month: ['Monat', 'Monate'],
     day: ['Tag', 'Tage'],
@@ -63,6 +69,7 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     lessThanASecond: 'weniger als eine Sekunde',
   },
   it: {
+    century: ['secolo', 'secoli'],
     year: ['anno', 'anni'],
     month: ['mese', 'mesi'],
     day: ['giorno', 'giorni'],
@@ -73,6 +80,7 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     lessThanASecond: 'meno di un secondo',
   },
   pt: {
+    century: ['século', 'séculos'],
     year: ['ano', 'anos'],
     month: ['mês', 'meses'],
     day: ['dia', 'dias'],
@@ -83,6 +91,7 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     lessThanASecond: 'menos de um segundo',
   },
   ru: {
+    century: ['век', 'веков'],
     year: ['год', 'лет'],
     month: ['месяц', 'месяцев'],
     day: ['день', 'дней'],
@@ -93,6 +102,7 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     lessThanASecond: 'меньше секунды',
   },
   zh: {
+    century: ['世纪', '世纪'],
     year: ['年', '年'],
     month: ['个月', '个月'],
     day: ['天', '天'],
@@ -103,6 +113,7 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     lessThanASecond: '少于一秒',
   },
   ja: {
+    century: ['世紀', '世紀'],
     year: ['年', '年'],
     month: ['ヶ月', 'ヶ月'],
     day: ['日', '日'],
@@ -113,6 +124,7 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     lessThanASecond: '1秒未満',
   },
   pl: {
+    century: ['wiek', 'wieków'],
     year: ['rok', 'lat'],
     month: ['miesiąc', 'miesięcy'],
     day: ['dzień', 'dni'],
@@ -148,7 +160,7 @@ export function formatCrackTime(enDisplay: string, langCode: string): string {
     return tr.lessThanASecond;
   }
 
-  const match = normalized.match(/^(\d+[\d,\.]*)\s+(year|month|day|hour|minute|second)s?$/);
+  const match = normalized.match(/^(\d+[\d,\.]*)\s+(century|year|month|day|hour|minute|second)s?$/);
   if (match) {
     const numRaw = match[1];
     const unit = match[2] as keyof Omit<UnitTranslations, 'instant' | 'lessThanASecond'>;
@@ -160,6 +172,7 @@ export function formatCrackTime(enDisplay: string, langCode: string): string {
 
   // Fallback: quick replacements of units inside arbitrary strings
   return enDisplay
+    .replace(/centuries?/gi, tr.century[1])
     .replace(/years?/gi, tr.year[1])
     .replace(/months?/gi, tr.month[1])
     .replace(/days?/gi, tr.day[1])
