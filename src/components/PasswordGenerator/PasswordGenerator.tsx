@@ -240,7 +240,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
     const scoreColor = rankColor(CrackScore);
     const strengthColor = { color: scoreColor };
     const strengthWordScoreLocalized = formatCrackTime(
-      TimeToCrackResult.crack_times_display.offline_slow_hashing_1e4_per_second,
+      String(TimeToCrackResult.crack_times_display.offline_slow_hashing_1e4_per_second),
       i18n.language
     );
 
