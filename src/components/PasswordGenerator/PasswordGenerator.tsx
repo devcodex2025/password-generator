@@ -11,6 +11,7 @@ import PasswordStandards from './PasswordStandards';
 import { ThemeContext } from '../../context/ThemeContext';
 import { rankColor } from '../../functions/RankColor';
 import { getStrengthWord } from '../../functions/GetStrengthWord';
+import { formatCrackTime } from '@/functions/formatCrackTime';
 import { Button, Snackbar } from '@mui/material';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
@@ -235,12 +236,13 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
 
     const TimeToCrackResult = zxcvbn(passwords[0]);
     const CrackScore = TimeToCrackResult.score;
-    const strengthWord = getStrengthWord(CrackScore, t);
+    const strengthWord = getStrengthWord(CrackScore, i18n.language);
     const scoreColor = rankColor(CrackScore);
     const strengthColor = { color: scoreColor };
-    const strengthWordScoreLocalized = t('time_to_crack', {
-      time: TimeToCrackResult.crack_times_display.offline_slow_hashing_1e4_per_second,
-    });
+    const strengthWordScoreLocalized = formatCrackTime(
+      TimeToCrackResult.crack_times_display.offline_slow_hashing_1e4_per_second,
+      i18n.language
+    );
 
     return {
       strengthWord,
