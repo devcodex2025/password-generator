@@ -160,6 +160,34 @@ export function formatCrackTime(enDisplay: string, langCode: string): string {
     return tr.lessThanASecond;
   }
 
+  // Handle bare plural without a leading number (e.g., "centuries") for better natural phrasing
+  if (normalized === 'centuries') {
+    switch (lang) {
+      case 'ua':
+        return 'кілька ' + TRANSLATIONS.ua.century[1]; // кілька століть
+      case 'es':
+        return 'varios ' + TRANSLATIONS.es.century[1];
+      case 'fr':
+        return 'plusieurs ' + TRANSLATIONS.fr.century[1];
+      case 'de':
+        return TRANSLATIONS.de.century[1];
+      case 'it':
+        return 'parecchi ' + TRANSLATIONS.it.century[1];
+      case 'pt':
+        return 'vários ' + TRANSLATIONS.pt.century[1];
+      case 'ru':
+        return 'несколько ' + TRANSLATIONS.ru.century[1];
+      case 'zh':
+        return TRANSLATIONS.zh.century[1];
+      case 'ja':
+        return TRANSLATIONS.ja.century[1];
+      case 'pl':
+        return 'kilka ' + TRANSLATIONS.pl.century[1];
+      default:
+        return TRANSLATIONS.en.century[1];
+    }
+  }
+
   const match = normalized.match(/^(\d+[\d,\.]*)\s+(century|year|month|day|hour|minute|second)s?$/);
   if (match) {
     const numRaw = match[1];
