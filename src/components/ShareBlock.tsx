@@ -218,9 +218,9 @@ export default function ShareBlock({ className, title = 'Generate secure passwor
 
   // Localized short share text (safe for networks with limits)
   const shareText = useMemo(() => {
-    const base = preview.title || t.snippet
-    return base.length > 140 ? base.slice(0, 137) + '…' : base
-  }, [preview.title, t.snippet])
+    const baseCandidate = (title && title.trim().length > 0) ? title : (preview.title || t.snippet)
+    return baseCandidate.length > 140 ? baseCandidate.slice(0, 137) + '…' : baseCandidate
+  }, [title, preview.title, t.snippet])
 
   const share = useMemo(() => {
     const text = shareText

@@ -1,5 +1,4 @@
 import { getAvailableLanguages } from '../utils/languageUtils';
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const semanticCore = require('../../docs/semantic-core.json');
 
 // Побудова SEO-даних із семантичного ядра
