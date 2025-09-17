@@ -1,6 +1,8 @@
 import React from "react";
 import Image from 'next/image';
 import lang from "./lang.json";
+import SEOKeywords from './SEOKeywords';
+import ShareBlock from './ShareBlock';
 
 function t(key, language) {
   return lang[key] && lang[key][language] ? lang[key][language] : key;
@@ -17,16 +19,20 @@ function SeoText(props) {
             {t("seotext_title", language)}
           </h2>
           <Image 
-            src="../public/images/welcome-img.svg" 
+            src="/images/welcome-img.svg" 
             alt="Welcome to secure password generation" 
             className="sepia-60 w-full hover:sepia-0 transition-all duration-300 rounded-lg"
             loading="lazy"
             decoding="async"
             width={500}
+            height={300}
+            priority
           />
           <div className="space-y-4 flex-grow">
             <p className="text-[18px] text-[#071016] leading-relaxed" dangerouslySetInnerHTML={{ __html: t("seotext_intro1", language) }} />
             <p className="text-[18px] text-[#071016] leading-relaxed" dangerouslySetInnerHTML={{ __html: t("seotext_intro2", language) }} />
+            <SEOKeywords language={language} />
+            <ShareBlock className="mt-4" language={language} />
           </div>
         </div>
         {/* Right Column - Why Choose Us Section */}

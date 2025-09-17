@@ -2,6 +2,8 @@ import React from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import Image from 'next/image';
 import lang from "./lang.json";
+import SEOKeywords from './SEOKeywords';
+import ShareBlock from './ShareBlock';
 
 function t(key, language) {
   return lang[key] && lang[key][language] ? lang[key][language] : key;
@@ -26,11 +28,12 @@ const SeoAccordion = ({ language }) => {
                   className="w-full h-auto rounded-lg shadow-lg"
                   width={600}
                   height={400}
-                  loading="lazy"
+                  priority
                   />
                 <div className="space-y-4">
                   <p className="text-[18px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed" dangerouslySetInnerHTML={{ __html: t("seotext_intro1", language) }} />
                   <p className="text-[18px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed" dangerouslySetInnerHTML={{ __html: t("seotext_intro2", language) }} />
+                  <SEOKeywords language={language} />
                 </div>
               </div>
               {/* Right Column - Why Choose Us */}
@@ -53,6 +56,7 @@ const SeoAccordion = ({ language }) => {
                   </ul>
                 </div>
               </div>
+              <ShareBlock className="mt-6" language={language} />
             </div>
           </AccordionContent>
         </AccordionItem>

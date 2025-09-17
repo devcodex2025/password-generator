@@ -386,7 +386,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           src="/images/logo.svg"
           alt="Generate Password To Me - Secure Password Generator Logo"
           className="w-[50%] h-6 mr-1 logo"
-          loading="eager"
+          priority
           decoding="async"
           width={24}
           height={24}
@@ -430,7 +430,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               alt="Navigation menu toggle"
               onClick={toggleDrawer(anchor, true)}
               className={`cursor-pointer${isDarkMode ? ' hamburger-dark' : ''}`}
-              loading="lazy"
+              loading="eager"
               decoding="async"
               width={24}
               height={24}

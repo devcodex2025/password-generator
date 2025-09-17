@@ -1,5 +1,6 @@
 import React from "react";
 import lang from './lang.json';
+import SEOKeywords from './SEOKeywords';
 
 function t(key, language) {
   return lang[key] && lang[key][language] ? lang[key][language] : key;
@@ -18,6 +19,7 @@ function SeoList(props) {
           <p className="mb-6" dangerouslySetInnerHTML={{ __html: t('seolist_intro1', language) }} />
           
           <p className="mb-6" dangerouslySetInnerHTML={{ __html: t('seolist_intro2', language) }} />
+          <SEOKeywords language={language} />
         </div>
 
         {/* Main 3-column grid */}

@@ -1,5 +1,7 @@
 import React from 'react';
 import lang from './lang.json';
+import SEOKeywords from './SEOKeywords';
+import ShareBlock from './ShareBlock';
 
 function t(key, language) {
   return lang[key] && lang[key][language] ? lang[key][language] : key;
@@ -22,6 +24,8 @@ const AboutUs = ({ language }) => {
                             <p dangerouslySetInnerHTML={{ __html: t('aboutus_intro', language) }} />
                             
                             <p dangerouslySetInnerHTML={{ __html: t('aboutus_team', language) }} />
+                    <SEOKeywords language={language} />
+                            <ShareBlock className="mt-4" language={language} />
                         </div>
                         
                         <div className="bg-blue-50 p-4 rounded-lg">

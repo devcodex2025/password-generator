@@ -8,6 +8,23 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link rel="preload" as="image" href="/images/logo.svg" type="image/svg+xml" />
+                <link rel="preload" as="image" href="/images/welcome-img.svg" type="image/svg+xml" />
+                <link rel="preload" as="image" href="/images/vector-bg.svg" type="image/svg+xml" />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="generatepasswordto.me" />
+                <meta property="og:title" content="Generate Strong Passwords | generatepasswordto.me" />
+                <meta property="og:description" content="Create strong, secure passwords instantly. NIST 800-63B and PCI DSS aligned." />
+                <meta property="og:image" content="/android-chrome-512x512.png" />
+                <meta property="og:url" content="https://generatepasswordto.me" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Generate Strong Passwords | generatepasswordto.me" />
+                <meta name="twitter:description" content="Create strong, secure passwords instantly. NIST 800-63B and PCI DSS aligned." />
+                <meta name="twitter:image" content="/android-chrome-512x512.png" />
+            </head>
             <body className="w-full">
                 <CustomThemeProvider>
                     <div id="root">{children}</div>
