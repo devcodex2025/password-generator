@@ -16,6 +16,7 @@ A modern web app for generating secure passwords with an intuitive interface and
 - ⚡ **Fast performance** – instant password generation
 - 🍪 **Cookie consent** – GDPR compliant cookie management
 - 📈 **AdSense integration** – smart ad display with fallback handling
+- 🎯 **SEO** – SEO optimized password app
 
 ## 🚀 Quick Start
 
@@ -194,6 +195,8 @@ Our password generator complies with the highest international security standard
 - Google AdSense integration with smart fallback
 - Feature usage analytics
 - Error tracking
+
+> GA4 setup: set `NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX` in your `.env.local` (or Vercel → Project Settings → Environment Variables) and redeploy; social share and password actions are tracked via gtag events.
 
 ## 🍪 Cookie Management
 

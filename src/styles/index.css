@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
+@import 'colors.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Varela Round', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Шрифти для різних мов */
+.container.ua *,
+.container.ru * {
+  font-family: 'Arsenal', sans-serif !important;
+}
+
+.container.zh *,
+.container.ja * {
+  font-family: 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans', sans-serif !important;
+}
+
+/* Специфічні шрифти для китайської та японської */
+.container.zh {
+  font-family: 'Noto Sans SC', sans-serif !important;
+}
+
+.container.ja {
+  font-family: 'Noto Sans JP', sans-serif !important;
+}
+
+/* Польська мова використовує латинський алфавіт, тому Varela Round */
+.container.pl * {
+  font-family: 'Varela Round', sans-serif !important;
+}
+
+/* Dark mode styles */
+.dark {
+  background-color: var(--dark-theme-bg);
+  color: var(--dark-theme-white);
+}
+
+.dark body {
+  background-color: var(--dark-theme-bg);
+  color: var(--dark-theme-white);
+}
+
+.dark header {
+  background-color: var(--dark-theme-bg) !important;
+  color: var(--dark-theme-text);
+}
+
+.dark .bg-white {
+  background-color: #2d2d2d;
+}
+
+.dark .bg-gray-50 {
+  background-color: #3a3a3a !important;
+}
+
+.dark .bg-blue-50 {
+  background-color: #1e3a8a !important;
+}
+
+.dark .bg-green-50 {
+  background-color: #166534 !important;
+}
+
+.dark .text-gray-900 {
+  color: var(--dark-theme-white) !important;
+}
+
+.dark .text-[#071016] {
+  color: var(--dark-theme-white) !important;
+}
+
+.dark .text-[#2A4E63] {
+  color: var(--success-color) !important;
+}
+
+.dark .border-[#E5F6FF] {
+  border-color: #374151 !important;
+}
+
+.dark .bg-[#E5F6FF] {
+  background-color: #1f2937 !important;
+}
+.page-title{
+  font-weight: 700 !important;
+}
+.dark .drop-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .border-2 {
+  border-color: #2a4e63!important;
+}
+
+.dark input {
+  background-color: #121212 !important;
+  color: var(--dark-theme-white) !important;
+}
+
+.dark input::placeholder {
+  color: #9ca3af !important;
+}
+
+.dark .MuiSlider-rail {
+  background-color: #374151 !important;
+}
+
+.dark .MuiSlider-track {
+  background-color: var(--success-color) !important;
+}
+
+.dark .MuiSlider-thumb {
+  background-color: var(--success-color) !important;
+}
+
+/* Прибирання бордера зі слайдера у чорній темі */
+.dark .MuiSlider-rail {
+  border: none !important;
+  outline: none !important;
+}
+
+.dark .css-14pt78w-MuiSlider-rail {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Прибирання всіх меж та контурів слайдера у чорній темі */
+.dark .MuiSlider-root {
+  outline: none !important;
+  border: none !important;
+}
+
+.dark .MuiSlider-root * {
+  outline: none !important;
+  border: none !important;
+}
+
+.dark .MuiSlider-track {
+  outline: none !important;
+  border: none !important;
+}
+
+.dark .MuiSlider-thumb {
+  outline: none !important;
+  border: none !important;
+}
+
+.dark .css-1gv0vcd-MuiSlider-track,
+.dark .css-1t2bqnt {
+  outline: none !important;
+  border: none !important;
+}
+
+.dark .MuiCheckbox-root {
+  color: var(--success-color) !important;
+}
+
+.dark .MuiCheckbox-root.Mui-checked {
+  color: var(--success-color) !important;
+}
+
+.dark .MuiButton-root {
+  background-color: var(--accent-color) !important;
+  color: var(--dark-theme-white) !important;
+}
+
+.dark .MuiButton-root:hover {
+  background-color: #1e3a8a !important;
+}
+
+.dark .MuiDrawer-paper {
+  background-color: #2d2d2d !important;
+  color: var(--dark-theme-white) !important;
+}
+
+/* Мобільне меню - обмеження ширини */
+@media (max-width: 600px) {
+  .MuiDrawer-paper {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+}
+
+/* Запобігання зміні розміру контейнера при відкритті модальних вікон */
+@media (min-width: 768px) {
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  } 
+}
+
+/* Обмеження максимальної ширини контейнера для ПК */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1400px !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1600px !important;
+  }
+}
+
+/* Відновлення скролу після закриття модальних вікон */
+body {
+  overflow-y: auto !important;
+}
+
+.dark .MuiSelect-select {
+  background-color: #374151 !important;
+  color: var(--dark-theme-white) !important;
+}
+
+.dark .MuiMenuItem-root {
+  background-color: #374151 !important;
+  color: var(--dark-theme-white) !important;
+}
+
+.dark .MuiMenuItem-root:hover {
+  background-color: #4b5563 !important;
+}
+
+.dark .MuiInputLabel-root {
+  color: #9ca3af !important;
+}
+
+.dark .MuiFormControlLabel-label {
+  color: var(--dark-theme-white) !important;
+}
+
+.dark :is(a, h1, h2, h3, h4, h5, p, ul,li, label, span) {
+  color: var(--dark-theme-text);
+}
+
+
+
+/* Light mode styles (default) */
+strong {
+  font-weight: 700;
+}
+
+button {
+  font-family: 'Varela Round', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.container.ua button,
+.container.ru button {
+  font-family: 'Arsenal', sans-serif !important;
+  font-weight: 500;
+}
+
+.container.zh button,
+.container.ja button {
+  font-family: 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans', sans-serif !important;
+}
+
+.container.pl button {
+  font-family: 'Varela Round', sans-serif !important;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: 'Varela Round', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.container.ua h2,
+.container.ru h2 {
+  font-family: 'Arsenal', sans-serif !important;
+}
+
+.container.zh h2,
+.container.ja h2 {
+  font-family: 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans', sans-serif !important;
+}
+
+.container.pl h2 {
+  font-family: 'Varela Round', sans-serif !important;
+}
+
+header a,
+footer a {
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 400;
+}
+
+.container.ua header a,
+.container.ua footer a,
+.container.ru header a,
+.container.ru footer a {
+  font-family: 'Arsenal', sans-serif !important;
+}
+
+.container.zh header a,
+.container.zh footer a,
+.container.ja header a,
+.container.ja footer a {
+  font-family: 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans', sans-serif !important;
+}
+
+.container.pl header a,
+.container.pl footer a {
+  font-family: 'Varela Round', sans-serif !important;
+}
+
+#eng {
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  text-align: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+header {
+  background-color: white !important;
+  width: 100%;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+
+}
+
+
+
+.makeStyles-languageSelect-11:before {
+  border: none;
+}
+
+.makeStyles-languageSelect-11 {
+  /* color: black; */
+  border: 3px solid #2A4E63 !important;
+  padding: 8px 30px !important;
+  border-radius: 60px !important;
+}
+
+.css-eg0mwd-MuiSlider-thumb::after,
+.css-7drnjp::after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  width: 30px !important;
+  height: 30px !important;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('/images/selector.png') !important;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 600px) {
+  .css-eg0mwd-MuiSlider-thumb::after {
+    height: 20px !important;
+    width: 20px !important;
+  }
+}
+
+
+.css-14pt78w-MuiSlider-rail {
+  display: block;
+  position: absolute;
+  border-radius: inherit;
+  background-color: transparent;
+  opacity: 0.38;
+  width: 100%;
+  height: inherit;
+  padding: 2px;
+  border: 1px solid black;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+.css-1gv0vcd-MuiSlider-track,
+.css-1t2bqnt {
+  display: block;
+  position: absolute;
+  background-color: #133346 !important;
+  -webkit-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, width 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, bottom 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, width 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, bottom 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  height: inherit;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@layer utilities {
+  .rounded-72 {
+    border-radius: 72px;
+  }
+
+  .rounded-48 {
+    border-radius: 48px;
+  }
+
+  .rounded-24 {
+    border-radius: 24px;
+  }
+}
+
+.container.en header a,
+.container.en footer a,
+header a,
+footer a {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 18px;
+  /* 100% */
+  text-decoration: none;
+}
+
+.sepia-60 {
+  filter: grayscale(1);
+}
+
+ol {
+  list-style: decimal;
+}
+
+/* Додаткові стилі для різних мов */
+.container.ua,
+.container.ru {
+  font-family: 'Arsenal', sans-serif !important;
+}
+
+.container.zh {
+  font-family: 'Noto Sans SC', sans-serif !important;
+}
+
+.container.ja {
+  font-family: 'Noto Sans JP', sans-serif !important;
+}
+
+/* Стилі для всіх інших латинських мов */
+.container.en,
+.container.es,
+.container.fr,
+.container.de,
+.container.it,
+.container.pt {
+  font-family: 'Varela Round', sans-serif !important;
+}
+
+/* Стилі для заголовків та тексту в різних мовах */
+.container.ua h1,
+.container.ua h2,
+.container.ua h3,
+.container.ua h4,
+.container.ua h5,
+.container.ua h6,
+.container.ua p,
+.container.ua span,
+.container.ua div,
+.container.ru h1,
+.container.ru h2,
+.container.ru h3,
+.container.ru h4,
+.container.ru h5,
+.container.ru h6,
+.container.ru p,
+.container.ru span,
+.container.ru div {
+  font-family: 'Arsenal', sans-serif !important;
+}
+
+.container.zh h1,
+.container.zh h2,
+.container.zh h3,
+.container.zh h4,
+.container.zh h5,
+.container.zh h6,
+.container.zh p,
+.container.zh span,
+.container.zh div {
+  font-family: 'Noto Sans SC', sans-serif !important;
+}
+
+.container.ja h1,
+.container.ja h2,
+.container.ja h3,
+.container.ja h4,
+.container.ja h5,
+.container.ja h6,
+.container.ja p,
+.container.ja span,
+.container.ja div {
+  font-family: 'Noto Sans JP', sans-serif !important;
+}
+
+/* AdSense Styles */
+.ad-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ad-container:empty {
+  display: none;
+}
+
+/* Hide ad containers that don't have content */
+.ad-container:not(:has(*)) {
+  display: none;
+}
+
+/* Hide ads when they fail to load */
+.ad-container.failed {
+  display: none;
+}
+
+/* AdSense container fixes */
+.smart-ad-container {
+  min-width: 320px !important;
+  min-height: 90px !important;
+  overflow: hidden;
+}
+
+.smart-ad-container:empty {
+  display: none;
+}
+
+/* Ensure ad containers have proper dimensions */
+.ad-container {
+  min-width: 320px !important;
+  min-height: 90px !important;
+}
+
+/* Responsive ad adjustments */
+@media (max-width: 768px) {
+  .smart-ad-container,
+  .ad-container {
+    min-width: 300px !important;
+    min-height: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .smart-ad-container,
+  .ad-container {
+    min-width: 280px !important;
+    min-height: 50px !important;
+  }
+}
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Background image opacity control */
+.bg-vector-opacity::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/vector-bg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.3; /* Змініть це значення від 0 до 1 для контролю прозорості */
+  z-index: -1;
+}
+
+.bg-vector-opacity {
+  position: relative;
+}

@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "Generate Password To Me",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,18 +15,27 @@
     "@testing-library/user-event": "^14.5.1",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@types/react-gtm-module": "^2.0.4",
     "@vercel/analytics": "^1.5.0",
     "ajv": "^8.12.0",
     "bootstrap": "^5.3.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "i": "^0.3.7",
+    "i18n": "^0.15.1",
+    "i18next": "^23.15.1",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.525.0",
+    "next": "^15.4.3",
+    "next-sitemap": "^4.2.3",
+    "npm": "^11.4.2",
     "react": "^18.2.0",
     "react-adsense": "^0.1.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
     "react-gtm-module": "^2.0.11",
     "react-helmet-async": "^2.0.5",
+    "react-i18next": "^15.0.1",
     "react-icons": "^4.11.0",
     "react-icons-kit": "^2.0.0",
     "react-rewards": "^2.1.0",
@@ -40,15 +49,14 @@
     "zxcvbn": "^4.4.2"
   },
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "next start",
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "next"
     ]
   },
   "browserslist": {
@@ -64,12 +72,16 @@
     ]
   },
   "devDependencies": {
+    "@types/node": "24.1.0",
+    "@types/react-world-flags": "^1.6.0",
+    "@types/zxcvbn": "^4.4.5",
     "@vitejs/plugin-react": "^4.6.0",
     "autoprefixer": "^10.4.21",
+    "eslint": "^9.31.0",
+    "eslint-config-next": "^15.4.3",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.2.4",
-    "terser": "^5.43.1",
-    "vite": "^7.0.0"
+    "terser": "^5.43.1"
   },
   "engines": {
     "node": ">=18.0.0",

@@ -4,21 +4,21 @@ import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import pluginConfig from './CookieConsentConfig';
 
 const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
-
-const getEffectiveLanguage = (propLang) => {
+const getEffectiveLanguage = (propLang: string | undefined) => {
   if (propLang && supportedLangs.includes(propLang)) return propLang;
   const browserLang = navigator.language.slice(0, 2);
   if (supportedLangs.includes(browserLang)) return browserLang;
   return 'en';
 };
 
+// @ts-ignore
 const CookieConsentComponent = ({ language }) => {
   const prevLanguageRef = useRef(null);
   const isInitializedRef = useRef(false);
 
   useEffect(() => {
-    console.log('🔄 CookieConsent: language змінився на:', language);
-    console.log('🔄 CookieConsent: попередня мова:', prevLanguageRef.current);
+    // console.log('🔄 CookieConsent: language змінився на:', language);
+    // console.log('🔄 CookieConsent: попередня мова:', prevLanguageRef.current);
   }, [language]);
 
   useEffect(() => {

@@ -1,0 +1,272 @@
+{
+  "topic": "password generator / генератор паролів / генератор паролей / generatore di password / générateur de mots de passe / password generator (de, pt, pl) / generador de contraseñas / 密码生成器 / パスワードジェネレーター",
+  "languages": ["en", "ua", "es", "fr", "de", "it", "pt", "ru", "zh", "ja", "pl"],
+  "keywords": {
+    "en": {
+      "high": [
+        "password generator",
+        "strong password",
+        "secure password",
+        "random password",
+        "password strength"
+      ],
+      "medium": [
+        "generate passwords online",
+        "password security",
+        "password manager",
+        "two-factor authentication",
+        "NIST password guidelines",
+        "PCI DSS password requirements"
+      ],
+      "low": [
+        "cryptographically secure passwords",
+        "passphrase generator",
+        "entropy calculator",
+        "password policy best practices",
+        "avoid common passwords"
+      ]
+    },
+    "ua": {
+      "high": [
+        "генератор паролів",
+        "надійний пароль",
+        "безпечний пароль",
+        "випадковий пароль",
+        "надійність пароля"
+      ],
+      "medium": [
+        "згенерувати пароль онлайн",
+        "безпека паролів",
+        "менеджер паролів",
+        "двофакторна автентифікація",
+        "рекомендації NIST щодо паролів",
+        "вимоги PCI DSS до паролів"
+      ],
+      "low": [
+        "криптографічно безпечні паролі",
+        "генератор парольних фраз",
+        "обчислення ентропії",
+        "кращі практики політики паролів",
+        "уникати поширених паролів"
+      ]
+    },
+    "es": {
+      "high": [
+        "generador de contraseñas",
+        "contraseña segura",
+        "contraseña fuerte",
+        "contraseña aleatoria",
+        "fuerza de la contraseña"
+      ],
+      "medium": [
+        "generar contraseñas online",
+        "seguridad de contraseñas",
+        "gestor de contraseñas",
+        "autenticación de dos factores",
+        "directrices NIST de contraseñas",
+        "requisitos PCI DSS de contraseñas"
+      ],
+      "low": [
+        "contraseñas criptográficamente seguras",
+        "generador de frases de paso",
+        "calculadora de entropía",
+        "mejores prácticas de política de contraseñas",
+        "evitar contraseñas comunes"
+      ]
+    },
+    "fr": {
+      "high": [
+        "générateur de mots de passe",
+        "mot de passe sécurisé",
+        "mot de passe fort",
+        "mot de passe aléatoire",
+        "solidité du mot de passe"
+      ],
+      "medium": [
+        "générer des mots de passe en ligne",
+        "sécurité des mots de passe",
+        "gestionnaire de mots de passe",
+        "authentification à deux facteurs",
+        "recommandations NIST",
+        "exigences PCI DSS"
+      ],
+      "low": [
+        "mots de passe cryptographiquement sécurisés",
+        "générateur de phrase secrète",
+        "calcul d'entropie",
+        "meilleures pratiques de politique de mots de passe",
+        "éviter les mots de passe courants"
+      ]
+    },
+    "de": {
+      "high": [
+        "Passwort Generator",
+        "sicheres Passwort",
+        "starkes Passwort",
+        "zufälliges Passwort",
+        "Passwortstärke"
+      ],
+      "medium": [
+        "Passwörter online generieren",
+        "Passwortsicherheit",
+        "Passwort-Manager",
+        "Zwei-Faktor-Authentifizierung",
+        "NIST Passwort Richtlinien",
+        "PCI DSS Passwort Anforderungen"
+      ],
+      "low": [
+        "kryptografisch sichere Passwörter",
+        "Passphrase Generator",
+        "Entropie Rechner",
+        "Passwort Richtlinien Best Practices",
+        "häufige Passwörter vermeiden"
+      ]
+    },
+    "it": {
+      "high": [
+        "generatore di password",
+        "password sicura",
+        "password forte",
+        "password casuale",
+        "forza della password"
+      ],
+      "medium": [
+        "generare password online",
+        "sicurezza delle password",
+        "gestore di password",
+        "autenticazione a due fattori",
+        "linee guida NIST sulle password",
+        "requisiti PCI DSS per password"
+      ],
+      "low": [
+        "password crittograficamente sicure",
+        "generatore di passphrase",
+        "calcolo dell'entropia",
+        "best practice per la policy password",
+        "evitare password comuni"
+      ]
+    },
+    "pt": {
+      "high": [
+        "gerador de senhas",
+        "senha segura",
+        "senha forte",
+        "senha aleatória",
+        "força da senha"
+      ],
+      "medium": [
+        "gerar senhas online",
+        "segurança de senhas",
+        "gerenciador de senhas",
+        "autenticação de dois fatores",
+        "diretrizes NIST de senhas",
+        "requisitos PCI DSS de senhas"
+      ],
+      "low": [
+        "senhas criptograficamente seguras",
+        "gerador de passphrase",
+        "calculadora de entropia",
+        "boas práticas de política de senhas",
+        "evitar senhas comuns"
+      ]
+    },
+    "ru": {
+      "high": [
+        "генератор паролей",
+        "надежный пароль",
+        "безопасный пароль",
+        "случайный пароль",
+        "надежность пароля"
+      ],
+      "medium": [
+        "сгенерировать пароль онлайн",
+        "безопасность паролей",
+        "менеджер паролей",
+        "двухфакторная аутентификация",
+        "рекомендации NIST по паролям",
+        "требования PCI DSS к паролям"
+      ],
+      "low": [
+        "криптографически безопасные пароли",
+        "генератор парольных фраз",
+        "калькулятор энтропии",
+        "лучшие практики политики паролей",
+        "избегать распространенных паролей"
+      ]
+    },
+    "zh": {
+      "high": [
+        "密码生成器",
+        "强密码",
+        "安全密码",
+        "随机密码",
+        "密码强度"
+      ],
+      "medium": [
+        "在线生成密码",
+        "密码安全",
+        "密码管理器",
+        "双重身份验证",
+        "NIST 密码指南",
+        "PCI DSS 密码要求"
+      ],
+      "low": [
+        "加密安全的密码",
+        "口令短语生成器",
+        "熵计算器",
+        "密码策略最佳实践",
+        "避免常见密码"
+      ]
+    },
+    "ja": {
+      "high": [
+        "パスワードジェネレーター",
+        "強力なパスワード",
+        "安全なパスワード",
+        "ランダムパスワード",
+        "パスワード強度"
+      ],
+      "medium": [
+        "オンラインでパスワードを生成",
+        "パスワードのセキュリティ",
+        "パスワードマネージャー",
+        "二要素認証",
+        "NISTのパスワード指針",
+        "PCI DSSのパスワード要件"
+      ],
+      "low": [
+        "暗号的に安全なパスワード",
+        "パスフレーズジェネレーター",
+        "エントロピー計算",
+        "パスワードポリシーのベストプラクティス",
+        "一般的なパスワードを避ける"
+      ]
+    },
+    "pl": {
+      "high": [
+        "generator haseł",
+        "silne hasło",
+        "bezpieczne hasło",
+        "losowe hasło",
+        "siła hasła"
+      ],
+      "medium": [
+        "generuj hasła online",
+        "bezpieczeństwo haseł",
+        "menedżer haseł",
+        "uwierzytelnianie dwuskładnikowe",
+        "wytyczne NIST dotyczące haseł",
+        "wymagania PCI DSS dotyczące haseł"
+      ],
+      "low": [
+        "kryptograficznie bezpieczne hasła",
+        "generator fraz haseł",
+        "kalkulator entropii",
+        "najlepsze praktyki polityki haseł",
+        "unikaj popularnych haseł"
+      ]
+    }
+  }
+}
+
+

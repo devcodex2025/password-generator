@@ -15,15 +15,15 @@ const pluginConfig: CookieConsentConfig = {
       flipButtons: false,
     },
   },
-
+// @ts-ignore
   onFirstConsent: function ({ cookie }) {
     // console.log('onFirstAction fired');
   },
-
+// @ts-ignore
   onConsent: function ({ cookie }) {
     // console.log('onConsent fired ...');
   },
-
+// @ts-ignore
   onChange: function ({ changedCategories, cookie }) {
     // console.log('onChange fired ...');
   },

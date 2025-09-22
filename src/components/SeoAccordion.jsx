@@ -1,7 +1,9 @@
 import React from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import welcome from "@/images/welcome-img.svg";
-import lang from "@/lang.json";
+import Image from 'next/image';
+import lang from "./lang.json";
+import SEOKeywords from './SEOKeywords';
+import ShareBlock from './ShareBlock';
 
 function t(key, language) {
   return lang[key] && lang[key][language] ? lang[key][language] : key;
@@ -10,7 +12,7 @@ function t(key, language) {
 const SeoAccordion = ({ language }) => {
   return (
     <div className="w-full max-w-6xl mx-auto my-8 px-4 lg:px-8">
-      <Accordion type="multiple" className="rounded-2xl border border-[#E5F6FF] dark:border-[#374151] bg-white dark:bg-[#1c1c1c] shadow p-6 lg:p-8">
+      <Accordion type="single" collapsible className="rounded-2xl border border-[#E5F6FF] dark:border-[#374151] bg-white dark:bg-[#1c1c1c] shadow p-6 lg:p-8">
         {/* SEO Welcome Section */}
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
@@ -20,16 +22,18 @@ const SeoAccordion = ({ language }) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mt-4">
               {/* Left Column - Introduction */}
               <div className="space-y-4">
-                <img 
-                  src={welcome} 
+                <Image 
+                  src="/images/welcome-img.svg" 
                   alt="Welcome to Password Generator" 
                   className="w-full h-auto rounded-lg shadow-lg"
-                  loading="lazy"
-                  decoding="async"
-                />
+                  width={600}
+                  height={400}
+                  priority
+                  />
                 <div className="space-y-4">
                   <p className="text-[18px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed" dangerouslySetInnerHTML={{ __html: t("seotext_intro1", language) }} />
                   <p className="text-[18px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed" dangerouslySetInnerHTML={{ __html: t("seotext_intro2", language) }} />
+                  <SEOKeywords language={language} />
                 </div>
               </div>
               {/* Right Column - Why Choose Us */}
@@ -52,6 +56,7 @@ const SeoAccordion = ({ language }) => {
                   </ul>
                 </div>
               </div>
+              <ShareBlock className="mt-6" language={language} />
             </div>
           </AccordionContent>
         </AccordionItem>
