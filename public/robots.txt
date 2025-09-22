@@ -3,7 +3,26 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.generatepasswordto.me
+Host: https://generatepasswordto.me
 
 # Sitemaps
-Sitemap: https://www.generatepasswordto.me/sitemap.xml
+Sitemap: https://generatepasswordto.me/sitemap.xml
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /

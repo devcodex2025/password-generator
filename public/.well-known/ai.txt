@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/private
+
+Policy: content may be crawled and used for non-commercial AI training and answer generation with attribution to generatepasswordto.me
+
