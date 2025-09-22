@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, use } from 'react'; // Add use from react
+import { Suspense, use } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/components/i18n';
 import seoData from '@/components/SeoData';
@@ -18,13 +18,12 @@ import { useRouter } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 import ShareBlock from '@/components/ShareBlock';
 import React from 'react';
-import i18n from '@/components/i18n';
 
 // Клонуємо i18n для ізоляції мови в межах запиту
 // import { cloneDeep } from 'lodash';
 
 interface PageProps {
-  params: Promise<{ locale: string }>; // Update params to be a Promise
+  params: Promise<{ locale: string }>;
 }
 export default function Page({ params }: PageProps) {
   const router = useRouter();

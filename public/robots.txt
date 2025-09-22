@@ -7,22 +7,3 @@ Host: https://www.generatepasswordto.me
 
 # Sitemaps
 Sitemap: https://www.generatepasswordto.me/sitemap.xml
-
-# AI Crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /

@@ -8,9 +8,8 @@ const hreflangMap: Record<string, string> = { ua: 'uk' };
 
 export const dynamic = 'force-static';
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const locale = params?.locale || 'en';
-  const hrefLang = hreflangMap[locale] || locale;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
   const canonical = `${baseUrl}/${locale}`.replace(/\/$/, '');
 
   return {
@@ -32,14 +31,14 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   };
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const locale = params?.locale || 'en';
+  const { locale } = await params;
   const htmlLang = hreflangMap[locale] || locale;
 
   return (
