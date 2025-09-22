@@ -106,7 +106,7 @@ export default function PasswordRow({
         style={password ? copyDisabledStyle : { cursor: 'not-allowed', opacity: 0.5 }}
         onClick={handleCopy}
       >
-        {copied ? t('snackbar_copied') : t('copy')}
+        {copied ? t('copied_short') : t('copy')}
       </button>
     </div>
   );

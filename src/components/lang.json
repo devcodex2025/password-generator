@@ -116,6 +116,19 @@
     "ja": "パスワードが正常にコピーされました",
     "pl": "Hasło zostało pomyślnie skopiowane"
   },
+  "copied_short": {
+    "ua": "Скопійовано",
+    "en": "Copied",
+    "es": "Copiado",
+    "fr": "Copié",
+    "de": "Kopiert",
+    "it": "Copiato",
+    "pt": "Copiado",
+    "ru": "Скопировано",
+    "zh": "已复制",
+    "ja": "コピーしました",
+    "pl": "Skopiowano"
+  },
   "snackbar_all_copied": {
     "ua": "Усі паролі успішно скопійовано",
     "en": "All passwords copied successfully",
