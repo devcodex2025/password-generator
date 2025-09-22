@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import Image from "next/image";
 import { ThemeContext } from "../context/ThemeContext";
 import lang from './lang.json';
+import seoData from './SeoData';
 
 const referalLink = "https://hostinger.com.ua?REFERRALCODE=1098786";
 
@@ -171,6 +172,13 @@ const Footer = ({ language }) => {
           </div>
         </div>
       </footer>
+      {/* Visually hidden TL;DR for GEO/AEO, present in DOM but hidden */}
+      <div className="sr-only" aria-hidden="true">
+        <h2>TL;DR</h2>
+        <p>
+          {(seoData.find(d => d.language === (language || 'en')) || seoData.find(d => d.language === 'en'))?.description}
+        </p>
+      </div>
     </>
   );
 };

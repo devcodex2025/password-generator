@@ -90,12 +90,6 @@ export default function Page({ params }: PageProps) {
           );
         })()}
         <div className={`container ${locale} mx-auto px-3`}>
-          <section className="max-w-6xl mx-auto mt-4 mb-6 px-4 py-3 rounded-lg bg-blue-50 dark:bg-[#2A4E63]">
-            <h2 className="text-lg font-semibold text-[#111827] dark:text-[#e0e0e0] mb-1">TL;DR</h2>
-            <p className="text-[16px] text-[#071016] dark:text-[#e0e0e0]">
-              {seoData.find((d) => d.language === locale)?.description || seoData.find((d) => d.language === 'en')?.description}
-            </p>
-          </section>
           <Header
             onLanguageChange={onLanguageChange}
             currentLanguage={locale}
