@@ -24,6 +24,24 @@ export default function RootLayout({
                 <meta name="twitter:title" content="Generate Strong Passwords | generatepasswordto.me" />
                 <meta name="twitter:description" content="Create strong, secure passwords instantly. NIST 800-63B and PCI DSS aligned." />
                 <meta name="twitter:image" content="/android-chrome-512x512.png" />
+                {/* Google Analytics */}
+                {process.env.NEXT_PUBLIC_GA_ID ? (
+                  <>
+                    <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}></script>
+                    <script
+                      dangerouslySetInnerHTML={{
+                        __html: `
+                          window.dataLayer = window.dataLayer || [];
+                          function gtag(){dataLayer.push(arguments);} 
+                          gtag('js', new Date());
+                          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                            anonymize_ip: true,
+                          });
+                        `,
+                      }}
+                    />
+                  </>
+                ) : null}
             </head>
             <body className="w-full">
                 <CustomThemeProvider>

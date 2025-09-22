@@ -69,6 +69,13 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const ANIMATION_DURATION = 250;
 
+  // GA helper
+  const ga = (event: string, params: Record<string, any> = {}) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', event, params);
+    }
+  };
+
   // Клієнтська синхронізація (резервна)
   useEffect(() => {
     if (language && i18n.language !== language) {
@@ -130,6 +137,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       const updatedPasswords = [...passwords];
       updatedPasswords[index] = password;
       setPasswords(updatedPasswords);
+      ga('password_generated', { length: effectiveLength, standard: selectedStandard });
     },
     [passwords, passwordLength, selectedCharacterSets, selectedStandard, t]
   );
@@ -157,6 +165,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         generatedPasswords.push(password);
       }
       setPasswords(generatedPasswords);
+      ga('passwords_generated_batch', { count: newQuantity, length: passwordLength });
     } else if (currentQuantity > quantity) {
       setPasswords(passwords.slice(0, quantity));
     }
@@ -177,6 +186,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         setSnackbars((prev) => prev.filter((s) => s.id !== Date.now()));
       }, 500);
       runReward('confetti');
+      ga('password_copied', { index });
     }
   };
 
@@ -191,6 +201,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         setSnackbars((prev) => prev.filter((s) => s.id !== Date.now()));
       }, 500);
       runReward('balloons');
+      ga('passwords_copied_all', { count: passwords.length });
     }
   };
 
@@ -205,6 +216,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       link.click();
       document.body.removeChild(link);
       runReward('emoji');
+      ga('passwords_downloaded', { count: passwords.length });
     }
   };
 
@@ -254,7 +266,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
 
   return (
     <div
-      className={`flex flex-col justify-center items-center mb-4 w-full rounded-[72px] pt-10 md:pt-32 ${isDarkMode ? 'dark:bg-[#1a1a1a]' : 'bg-[#E5F6FF]'
+      className={`flex flex-col justify-center items-center mb-4 w-full rounded-[72px] pt-10 md:pt-32 ${isDarkMode ? 'dark:bg[#1a1a1a]' : 'bg-[#E5F6FF]'
         } lg:bg-[url('/images/vector-bg.svg')] lg:bg-no-repeat lg:bg-center lg:bg-cover lg:bg-blend-overlay`}
     >
       <h1
@@ -281,8 +293,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         />
         <div className="absolute hidden bg-white drop-shadow-lg top-[-20px] left-[-140px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex items-center gap-2 overflow-hidden ">
           <div
-            className={`p-[12px] rounded-full ${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'
-              } mr-3 ml-2 my-1`}
+            className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'} mr-3 ml-2 my-1 p-[12px] rounded-full`}
           >
             <Image
               src="/images/password.png"
@@ -298,12 +309,10 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           </p>
         </div>
         <div
-          className={`${isDarkMode ? 'bg-[#2d2d2d]' : 'bg-white'
-            } absolute hidden justify-start drop-shadow-lg top-[150px] right-[-120px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex lg:items-center gap-2 overflow-hidden`}
+          className={`${isDarkMode ? 'bg-[#2d2d2d]' : 'bg-white'} absolute hidden justify-start drop-shadow-lg top-[150px] right-[-120px] border-[#E5F6FF] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex lg:items-center gap-2 overflow-hidden`}
         >
           <div
-            className={`p-[12px] rounded-full ${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'
-              } mr-3 ml-2 my-1`}
+            className={`${isDarkMode ? 'bg[#05a9ff]' : 'bg-[#E5F6FF]'} mr-3 ml-2 my-1 p-[12px] rounded-full`}
           >
             <Image
               src="/images/password.png"
@@ -362,9 +371,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         {passwords.length >= 2 && (
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-2">
             <Button
-              className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'
-                } ${isDarkMode ? 'text-[#e0e0e0]' : 'text-white'
-                } font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
+              className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'} ${isDarkMode ? 'text-[#e0e0e0]' : 'text-white'} font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
               onClick={handleCopyAllClick}
               disabled={isAnimating}
               style={isAnimating ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
@@ -373,9 +380,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
               {t('copy_all')}
             </Button>
             <Button
-              className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'
-                } ${isDarkMode ? 'text-[#e0e0e0]' : 'text-white'
-                } font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
+              className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'} ${isDarkMode ? 'text-[#e0e0e0]' : 'text-white'} font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
               onClick={handleDownloadAllClick}
               disabled={isAnimating}
               style={isAnimating ? { opacity: 0.5, cursor: 'not-allowed' } : {}}

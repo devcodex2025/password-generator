@@ -2,6 +2,7 @@
 
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
+import React, { useState } from 'react';
 
 interface PasswordRowProps {
   password: string;
@@ -24,6 +25,13 @@ export default function PasswordRow({
   const copyDisabledStyle = isAnimating
     ? { pointerEvents: 'none' as const, opacity: 0.5, cursor: 'not-allowed' }
     : { cursor: 'pointer' };
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    onCopy(index);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1000);
+  };
 
   return (
     <div className="flex relative items-center flex-row lg:flex-row gap-2 h-auto w-full my-5 lg:my-1 flex-wrap lg:flex-nowrap">
@@ -96,9 +104,9 @@ export default function PasswordRow({
           isDarkMode ? 'text-[#e0e0e0]' : 'text-white'
         } font-semibold text-[16px] md:text-[20px] rounded-[60px] py-[12px]`}
         style={password ? copyDisabledStyle : { cursor: 'not-allowed', opacity: 0.5 }}
-        onClick={() => onCopy(index)}
+        onClick={handleCopy}
       >
-        {t('copy')}
+        {copied ? t('snackbar_copied') : t('copy')}
       </button>
     </div>
   );

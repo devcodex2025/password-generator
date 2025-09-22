@@ -15,6 +15,7 @@ import { CustomThemeProvider, useTheme } from '../../context/ThemeContext';
 import SEO from '@/components/SEO';
 import { useRouter } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
+import ShareBlock from '@/components/ShareBlock';
 
 // Клонуємо i18n для ізоляції мови в межах запиту
 // import { cloneDeep } from 'lodash';
@@ -64,6 +65,9 @@ export default function Page({ params }: PageProps) {
             <Suspense fallback={<div className="h-96 bg-gray-100 animate-pulse rounded" />}>
               <SeoAccordion language={locale} />
             </Suspense>
+            <div className="max-w-6xl mx-auto px-4">
+              <ShareBlock language={locale} className="mt-6" />
+            </div>
             <Suspense fallback={null}>
               <AdBannerSecond language={locale} isDarkMode={isDarkMode} />
             </Suspense>
