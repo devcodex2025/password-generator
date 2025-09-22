@@ -260,7 +260,7 @@ export default function ShareBlock({ className, title = 'Generate secure passwor
 
   return (
     <div className={`rounded-24 border border-[#E5F6FF] dark:border-[#374151] bg-white dark:bg-[#1c1c1c] p-4 ${className || ''}`}>
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex flex-wrap items-center justify-between mb-3">
         <h4 className="text-[#071016] dark:text-[#e0e0e0] font-semibold">{t.share}</h4>
         <span className="text-sm text-gray-500 dark:text-gray-300">{t.help}</span>
       </div>
@@ -273,7 +273,7 @@ export default function ShareBlock({ className, title = 'Generate secure passwor
           <div className="text-xs text-[#374151] dark:text-[#9ca3af] line-clamp-2">{preview.description}</div>
         </div>
       </div>
-      <div className="grid grid-cols-6 sm:grid-cols-6 md:grid-cols-6 gap-3">
+      <div className="flex flex-wrap gap-3">
         <a href={share.twitter} title={t.twitter} aria-label={t.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-[#E8F5FD] hover:bg-[#d7eefe] ring-1 ring-black/5 dark:ring-white/10 transition" onClick={() => onShareClick('twitter')}>
           <Image src="/images/twitter.png" alt={t.twitter} width={18} height={18} className="object-contain" />
         </a>
