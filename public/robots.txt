@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://www.generatepasswordto.me
+
+# Sitemaps
+Sitemap: https://www.generatepasswordto.me/sitemap.xml
