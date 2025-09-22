@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { CustomThemeProvider } from '@/context/ThemeContext';
 import '@/styles/index.css';
 
-const baseUrl = 'https://generatepasswordto.me';
+const baseUrl = 'https://www.generatepasswordto.me';
 const supportedLangs = ['en','ua','es','fr','de','it','pt','ru','zh','ja','pl'];
 const hreflangMap: Record<string, string> = { ua: 'uk' };
 

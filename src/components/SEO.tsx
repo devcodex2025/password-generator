@@ -12,7 +12,7 @@ export default function SEO() {
   const { i18n } = useTranslation();
   const language = i18n.language;
   const pathname = usePathname();
-  const baseUrl = 'https://generatepasswordto.me';
+  const baseUrl = 'https://www.generatepasswordto.me';
   const canonicalUrl = `${baseUrl}${pathname}`.replace(/\/$/, '');
 
   useEffect(() => {
@@ -44,11 +44,11 @@ export default function SEO() {
         <link
           key={lang}
           rel="alternate"
-          href={`https://generatepasswordto.me/${lang}`}
+          href={`https://www.generatepasswordto.me/${lang}`}
           hrefLang={hreflangMap[lang] || lang}
         />
       ))}
-      <link rel="alternate" href="https://generatepasswordto.me/en" hrefLang="x-default" />
+      <link rel="alternate" href="https://www.generatepasswordto.me/en" hrefLang="x-default" />
     </>
   );
 }

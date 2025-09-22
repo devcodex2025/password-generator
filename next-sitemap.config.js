@@ -8,7 +8,7 @@ const getAvailableLanguages = () => {
   return Object.keys(lang[firstKeyWithLanguages]);
 };
 
-const siteUrl = 'https://generatepasswordto.me';
+const siteUrl = 'https://www.generatepasswordto.me';
 const availableLanguages = getAvailableLanguages();
 
 module.exports = {

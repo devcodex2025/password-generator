@@ -3,10 +3,10 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://generatepasswordto.me
+Host: https://www.generatepasswordto.me
 
 # Sitemaps
-Sitemap: https://generatepasswordto.me/sitemap.xml
+Sitemap: https://www.generatepasswordto.me/sitemap.xml
 
 # AI Crawlers
 User-agent: GPTBot
