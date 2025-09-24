@@ -1,4 +1,30 @@
 {
+  "share_message": {
+    "ua": "Ваш пароль згенеровано з допомогою - GeneratePasswordTo.Me\nПароль - ",
+    "en": "Your password has been generated using - GeneratePasswordTo.Me\nPassword - ",
+    "es": "Tu contraseña ha sido generada usando - GeneratePasswordTo.Me\nContraseña - ",
+    "fr": "Votre mot de passe a été généré à l'aide de - GeneratePasswordTo.Me\nMot de passe - ",
+    "de": "Ihr Passwort wurde mit - GeneratePasswordTo.Me generiert\nPasswort - ",
+    "it": "La tua password è stata generata utilizzando - GeneratePasswordTo.Me\nPassword - ",
+    "pt": "Sua senha foi gerada usando - GeneratePasswordTo.Me\nSenha - ",
+    "ru": "Ваш пароль был сгенерирован с помощью - GeneratePasswordTo.Me\nПароль - ",
+    "zh": "您的密码已使用 - GeneratePasswordTo.Me 生成\n密码 - ",
+    "ja": "あなたのパスワードは - GeneratePasswordTo.Me を使用して生成されました\nパスワード - ",
+    "pl": "Twoje hasło zostało wygenerowane za pomocą - GeneratePasswordTo.Me\nHasło - "
+},
+    "share-password": {
+    "ua": "Поділитись паролем",
+    "en": "Share password",
+    "es": "Compartir contraseña",
+    "fr": "Partager le mot de passe",
+    "de": "Passwort teilen",
+    "it": "Condividi la password",
+    "pt": "Compartilhar senha",
+    "ru": "Поделиться паролем",
+    "zh": "分享密码",
+    "ja": "パスワードを共有する",
+    "pl": "Udostępnij hasło"
+  },
   "main_title": {
     "ua": "Потрібен унікальний, безпечний Пароль?",
     "en": "Need a Unique, Secure Password?",
