@@ -3,15 +3,18 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { LoadingProgress } from '@/components/ui/LoadingProgress';
 
 interface ThemeContextType {
   isDarkMode: boolean;
   toggleMode: () => void;
+  isInitialized: boolean;
 }
 
 const defaultContextValue: ThemeContextType = {
   isDarkMode: false,
   toggleMode: () => { },
+  isInitialized: false,
 };
 export const ThemeContext = createContext<ThemeContextType>(defaultContextValue);
 
@@ -24,23 +27,61 @@ export const useTheme = () => {
 };
 
 export const CustomThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // Initialize with system preference if available, otherwise default to light mode
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false;
+    if (window.localStorage.getItem('darkMode') !== null) {
+      return JSON.parse(window.localStorage.getItem('darkMode') || 'false');
+    }
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches || false;
+  });
+  const [isInitialized, setIsInitialized] = useState(false);
 
   const toggleMode = () => {
-    setIsDarkMode((prev) => !prev);
+    setIsDarkMode((prev: boolean) => !prev);
   };
 
   useEffect(() => {
-    // Перевірка на клієнтське середовище
-    if (typeof window !== "undefined" && typeof window.localStorage !== "undefined" && typeof window.matchMedia !== "undefined") {
-      const saved = window.localStorage.getItem('darkMode');
-      if (saved !== null) {
-        setIsDarkMode(JSON.parse(saved));
+    let timeout: NodeJS.Timeout;
+    
+    const initializeTheme = () => {
+      if (typeof window === "undefined") return;
+
+      // Apply theme class based on state
+      if (isDarkMode) {
+        document.body.classList.add('dark');
       } else {
-        setIsDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.body.classList.remove('dark');
       }
-    }
-  }, []);
+
+      // Save to localStorage
+      window.localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+
+      // Set initialized after a short delay to ensure smooth loading
+      timeout = setTimeout(() => {
+        setIsInitialized(true);
+      }, 400);
+    };
+
+    initializeTheme();
+
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia?.('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!window.localStorage.getItem('darkMode')) {
+        setIsDarkMode(e.matches);
+      }
+    };
+    
+    mediaQuery?.addEventListener('change', handleChange);
+
+    // Cleanup
+    return () => {
+      if (timeout) clearTimeout(timeout);
+      document.body.classList.remove('dark');
+      mediaQuery?.removeEventListener('change', handleChange);
+    };
+  }, [isDarkMode]);
 
   const theme = useMemo(() => {
     const mode = isDarkMode ? 'dark' : 'light';
@@ -66,26 +107,29 @@ export const CustomThemeProvider = ({ children }: { children: React.ReactNode })
   }, [isDarkMode]);
 
   useEffect(() => {
+    if (!isInitialized) return;
+
     if (typeof window !== "undefined" && typeof document !== "undefined") {
       const root = document.body;
-
-      // додавання/видалення класу dark
+      
+      // Remove theme class first to prevent mixing
+      root.classList.remove('dark');
+      
+      // Add dark class if needed
       if (isDarkMode) {
         root.classList.add('dark');
-      } else {
-        root.classList.remove('dark');
       }
 
-      // збереження в localStorage
+      // Save to localStorage
       window.localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
     }
-  }, [isDarkMode]);
+  }, [isDarkMode, isInitialized]);
 
   return (
-    <ThemeContext.Provider value={{ isDarkMode, toggleMode }}>
+    <ThemeContext.Provider value={{ isDarkMode, toggleMode, isInitialized }}>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        {children}
+        {isInitialized ? children : <LoadingProgress />}
       </MuiThemeProvider>
     </ThemeContext.Provider>
   );
