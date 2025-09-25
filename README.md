@@ -2,6 +2,8 @@
 
 A modern web app for generating secure passwords with an intuitive interface and support for multiple languages including Ukrainian and English.
 
+![Generate Password Application / Generate Password to me](public/images/generate_password_app.png)
+
 ## ✨ Features
 
 - 🔒 **Secure password generation** – uses cryptographically strong algorithms
