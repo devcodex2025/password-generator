@@ -115,7 +115,7 @@ const Footer = ({ language }) => {
       <footer className="w-full py-4 px-2 flex flex-wrap flex-col gap-5 lg:flex-row justify-between items-center">
         <div className="flex items-center">
           <Image
-            src={isDarkMode ? "/images/logo-dark.svg" : "/images/logo.svg"}
+            src={isDarkMode ? "/images/logo.svg" : "/images/logo.svg"}
             alt="Generate Password To Me - Secure Password Generator Logo"
             width={24}
             height={24}
