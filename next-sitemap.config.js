@@ -14,18 +14,38 @@ const availableLanguages = getAvailableLanguages();
 module.exports = {
   siteUrl,
   generateRobotsTxt: true,
+  generateIndexSitemap: false,
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,
-
+  exclude: ['/server-sitemap.xml'],
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
+    additionalSitemaps: [
+      `${siteUrl}/sitemap.xml`,
+    ],
+  },
   additionalPaths: async (config) => {
     return availableLanguages.map((langCode) => {
-      // Не припускаємось, що '/' завжди англійська
       return {
-        loc: `/${langCode}`, // завжди явно /ua, /en тощо
+        loc: `/${langCode}`,
         changefreq: 'weekly',
         priority: 0.9,
+        lastmod: new Date().toISOString(),
       };
     });
+  },
+  transform: async (config, path) => {
+    return {
+      loc: path,
+      changefreq: 'weekly',
+      priority: path === '/' ? 1.0 : 0.8,
+      lastmod: new Date().toISOString(),
+    };
   },
 };

@@ -3,7 +3,6 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { LoadingProgress } from '@/components/ui/LoadingProgress';
 
 interface ThemeContextType {
   isDarkMode: boolean;
@@ -43,7 +42,7 @@ export const CustomThemeProvider = ({ children }: { children: React.ReactNode })
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-    
+
     const initializeTheme = () => {
       if (typeof window === "undefined") return;
 
@@ -72,7 +71,7 @@ export const CustomThemeProvider = ({ children }: { children: React.ReactNode })
         setIsDarkMode(e.matches);
       }
     };
-    
+
     mediaQuery?.addEventListener('change', handleChange);
 
     // Cleanup
@@ -111,10 +110,10 @@ export const CustomThemeProvider = ({ children }: { children: React.ReactNode })
 
     if (typeof window !== "undefined" && typeof document !== "undefined") {
       const root = document.body;
-      
+
       // Remove theme class first to prevent mixing
       root.classList.remove('dark');
-      
+
       // Add dark class if needed
       if (isDarkMode) {
         root.classList.add('dark');
@@ -129,7 +128,7 @@ export const CustomThemeProvider = ({ children }: { children: React.ReactNode })
     <ThemeContext.Provider value={{ isDarkMode, toggleMode, isInitialized }}>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        {isInitialized ? children : <LoadingProgress />}
+        {children}
       </MuiThemeProvider>
     </ThemeContext.Provider>
   );
