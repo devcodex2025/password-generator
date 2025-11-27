@@ -99,9 +99,7 @@ export default function Page({ params }: PageProps) {
             <Suspense fallback={null}>
               <AdBanner language={locale} isDarkMode={isDarkMode} />
             </Suspense>
-            <Suspense fallback={<div className="h-96 bg-gray-100 animate-pulse rounded" />}>
-              <SeoAccordion language={locale} />
-            </Suspense>
+            <SeoAccordion language={locale} />
             <div className="max-w-6xl mx-auto px-4">
               <ShareBlock language={locale} className="mt-6" />
             </div>

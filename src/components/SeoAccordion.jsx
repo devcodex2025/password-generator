@@ -18,7 +18,7 @@ const SeoAccordion = ({ language }) => {
           <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
             {t("seotext_title", language)}
           </AccordionTrigger>
-          <AccordionContent>
+          <AccordionContent forceMount={true}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mt-4">
               {/* Left Column - Introduction */}
               <div className="space-y-4">
@@ -66,7 +66,7 @@ const SeoAccordion = ({ language }) => {
           <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
             {t("seolist_title", language)}
           </AccordionTrigger>
-          <AccordionContent>
+          <AccordionContent forceMount={true}>
             <div className="text-[18px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed mb-8">
               <p className="mb-6" dangerouslySetInnerHTML={{ __html: t('seolist_intro1', language) }} />
               <p className="mb-6" dangerouslySetInnerHTML={{ __html: t('seolist_intro2', language) }} />
@@ -137,7 +137,7 @@ const SeoAccordion = ({ language }) => {
           <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
             {t('howtouse_title', language)}
           </AccordionTrigger>
-          <AccordionContent>
+          <AccordionContent forceMount={true}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end mt-4">
               {/* Left Column - Basic Steps */}
               <div className="space-y-6 h-full flex flex-col">
@@ -201,7 +201,7 @@ const SeoAccordion = ({ language }) => {
           <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
             {t('aboutus_title', language)}
           </AccordionTrigger>
-          <AccordionContent>
+          <AccordionContent forceMount={true}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end mt-4">
               {/* Left Column - Who We Are */}
               <div className="space-y-6 h-full flex flex-col">
@@ -249,7 +249,7 @@ const SeoAccordion = ({ language }) => {
           <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
             {t('security_standards_title', language)}
           </AccordionTrigger>
-          <AccordionContent>
+          <AccordionContent forceMount={true}>
             <div className="space-y-8">
               {/* Introduction */}
               <div className="text-[18px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed">

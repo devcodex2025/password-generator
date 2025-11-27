@@ -40,10 +40,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       type: 'website',
       images: [
         {
-          url: '/android-chrome-512x512.png',
-          width: 512,
-          height: 512,
-          alt: 'Generate Password To Me Logo',
+          url: '/images/generate-password-preview.png',
+          width: 1200,
+          height: 630,
+          alt: 'Generate Password To Me Preview',
         },
       ],
       locale: locale === 'ua' ? 'uk_UA' : locale,
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: 'summary_large_image',
       title: title,
       description: description,
-      images: ['/android-chrome-512x512.png'],
+      images: ['/images/generate-password-preview.png'],
     },
     robots: {
       index: true,
