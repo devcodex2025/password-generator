@@ -4,8 +4,8 @@ import { redirect } from 'next/navigation';
 import { headers } from 'next/headers';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 
-export default function RootPage() {
-  const headersList = headers();
+export default async function RootPage() {
+  const headersList = await headers();
   const browserLanguage = headersList.get('accept-language')?.split(',')[0].split('-')[0];
   const supportedLanguages = getAvailableLanguages();
   const mappedLanguage = browserLanguage === 'uk' ? 'ua' : browserLanguage;
