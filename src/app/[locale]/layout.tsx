@@ -13,7 +13,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const canonical = `${baseUrl}/${locale}`.replace(/\/$/, '');
 
-  // Отримуємо локалізовані SEO дані
   const seoInfo = seoData.find((data) => data.language === locale) || seoData.find((data) => data.language === 'en');
   const title = seoInfo?.title || 'Generate Strong Passwords | generatepasswordto.me';
   const description = seoInfo?.description || 'Create strong, secure passwords instantly. NIST 800-63B and PCI DSS aligned. Free online password generator tool.';

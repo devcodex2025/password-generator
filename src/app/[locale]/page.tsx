@@ -12,7 +12,7 @@ import AdBannerSecond from '@/components/Advertising/AdbannerSecond';
 import CookieConsent from '@/components/CookieConsent/CookieConsent';
 import { Analytics } from '@vercel/analytics/react';
 import { CustomThemeProvider, useTheme } from '../../context/ThemeContext';
-import SEO from '@/components/SEO';
+
 import { useRouter } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 import ShareBlock from '@/components/ShareBlock';
@@ -51,7 +51,7 @@ export default function Page({ params }: PageProps) {
   return (
     <CustomThemeProvider>
       <I18nextProvider i18n={i18n}>
-        <SEO />
+
         {/* FAQPage JSON-LD for GEO (localized) */}
         {(() => {
           const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
