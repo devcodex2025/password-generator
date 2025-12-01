@@ -9,7 +9,9 @@ export default async function RootPage() {
   const browserLanguage = headersList.get('accept-language')?.split(',')[0].split('-')[0];
   const supportedLanguages = getAvailableLanguages();
   const mappedLanguage = browserLanguage === 'uk' ? 'ua' : browserLanguage;
-  const defaultLanguage = supportedLanguages.includes(mappedLanguage) ? mappedLanguage : 'en';
+    const defaultLanguage = (typeof mappedLanguage === 'string' && supportedLanguages.includes(mappedLanguage))
+    ? mappedLanguage
+    : 'en';
 
   redirect(`/${defaultLanguage}`);
 }
