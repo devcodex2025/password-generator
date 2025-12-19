@@ -2,11 +2,25 @@ import type { Metadata } from 'next';
 import { CustomThemeProvider } from '@/context/ThemeContext';
 import '@/styles/index.css';
 import seoData from '@/components/SeoData';
-import FaqSchema from '@/components/FaqSchema';
+import Script from 'next/script';
+import lang from '@/components/lang.json';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
 const hreflangMap: Record<string, string> = { ua: 'uk' };
+const ogLocaleMap: Record<string, string> = {
+  en: 'en_US',
+  ua: 'uk_UA',
+  es: 'es_ES',
+  fr: 'fr_FR',
+  de: 'de_DE',
+  it: 'it_IT',
+  pt: 'pt_PT',
+  ru: 'ru_RU',
+  zh: 'zh_CN',
+  ja: 'ja_JP',
+  pl: 'pl_PL',
+};
 
 export const dynamic = 'force-static';
 
@@ -26,6 +40,24 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     description: description,
     keywords: ['password generator', 'strong password', 'secure password', 'random password', 'password strength'],
+    viewport: {
+      width: 'device-width',
+      initialScale: 1,
+    },
+    other: {
+      'google-adsense-account': 'ca-pub-5995594246081561',
+    },
+    manifest: '/manifest.json',
+    icons: {
+      icon: [
+        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/favicon.ico', sizes: 'any' },
+      ],
+      apple: [
+        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      ],
+    },
     alternates: {
       canonical,
       languages: Object.fromEntries(
@@ -46,7 +78,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           alt: 'Generate Password To Me Preview',
         },
       ],
-      locale: locale === 'ua' ? 'uk_UA' : locale,
+      locale: ogLocaleMap[locale] || 'en_US',
     },
     twitter: {
       card: 'summary_large_image',
@@ -81,25 +113,52 @@ export default async function LocaleLayout({
   const { locale } = await params;
   const htmlLang = hreflangMap[locale] || locale;
 
+  // Generate FAQ Schema data
+  const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+  
+  const t = (key: string): string => {
+    // @ts-expect-error - dynamic access to lang object
+    const langEntry = lang[key];
+    if (!langEntry || typeof langEntry !== 'object') return '';
+    const raw = langEntry[locale];
+    return stripHtml(raw || '');
+  };
+
+  const qa = [
+    {
+      q: t('howtouse_title') || 'How to use the password generator?',
+      a: [t('howtouse_intro'), t('howtouse_step1'), t('howtouse_step2'), t('howtouse_step3')]
+        .filter(Boolean)
+        .join(' '),
+    },
+    {
+      q: t('seotext_why_title') || 'Why use this password generator?',
+      a: [t('seotext_why1'), t('seotext_why2')].filter(Boolean).join(' '),
+    },
+    {
+      q: t('security_standards_title') || 'Security standards compliance',
+      a: [t('nist_compliance_desc'), t('pci_dss_compliance_desc')].filter(Boolean).join(' '),
+    },
+  ].filter(item => item.q && item.a);
+
+  const faqJson = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: qa.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
   return (
     <html lang={htmlLang}>
       <head>
-        <FaqSchema locale={locale} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" as="image" href="/images/logo.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/images/welcome-img.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/images/vector-bg.svg" type="image/svg+xml" />
-        {/* <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="generatepasswordto.me" />
-        <meta property="og:title" content="Generate Strong Passwords | generatepasswordto.me" />
-        <meta property="og:description" content="Create strong, secure passwords instantly. NIST 800-63B and PCI DSS aligned." />
-        <meta property="og:image" content="/android-chrome-512x512.png" />
-        <meta property="og:url" content="https://generatepasswordto.me" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Generate Strong Passwords | generatepasswordto.me" />
-        <meta name="twitter:description" content="Create strong, secure passwords instantly. NIST 800-63B and PCI DSS aligned." />
-        <meta name="twitter:image" content="/android-chrome-512x512.png" /> */}
         {process.env.NEXT_PUBLIC_GA_ID ? (
           <>
             <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}></script>
@@ -119,6 +178,12 @@ export default async function LocaleLayout({
         ) : null}
       </head>
       <body className="w-full">
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }}
+          strategy="beforeInteractive"
+        />
         <CustomThemeProvider>
           {children}
         </CustomThemeProvider>
