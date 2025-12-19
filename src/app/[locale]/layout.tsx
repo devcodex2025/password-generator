@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { CustomThemeProvider } from '@/context/ThemeContext';
 import '@/styles/index.css';
 import seoData from '@/components/SeoData';
+import FaqSchema from '@/components/FaqSchema';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
@@ -83,6 +84,7 @@ export default async function LocaleLayout({
   return (
     <html lang={htmlLang}>
       <head>
+        <FaqSchema locale={locale} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" as="image" href="/images/logo.svg" type="image/svg+xml" />

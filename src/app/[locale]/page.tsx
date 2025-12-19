@@ -51,43 +51,6 @@ export default function Page({ params }: PageProps) {
   return (
     <CustomThemeProvider>
       <I18nextProvider i18n={i18n}>
-
-        {/* FAQPage JSON-LD for GEO (localized) */}
-        {(() => {
-          const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
-          const t = (key: string) => {
-            const raw = i18n.getResource(locale, 'translation', key) as string | undefined;
-            return stripHtml(raw || '');
-          };
-          const qa = [
-            {
-              q: t('howtouse_title') || 'How to use the password generator?',
-              a: [t('howtouse_intro'), t('howtouse_step1'), t('howtouse_step2'), t('howtouse_step3')]
-                .filter(Boolean)
-                .join(' '),
-            },
-            {
-              q: t('seotext_why_title') || 'Why use this password generator?',
-              a: [t('seotext_why1'), t('seotext_why2')].filter(Boolean).join(' '),
-            },
-            {
-              q: t('security_standards_title') || 'Security standards compliance',
-              a: [t('nist_compliance_desc'), t('pci_dss_compliance_desc')].filter(Boolean).join(' '),
-            },
-          ].filter(item => item.q && item.a);
-          const faqJson = {
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: qa.map(({ q, a }) => ({
-              '@type': 'Question',
-              name: q,
-              acceptedAnswer: { '@type': 'Answer', text: a },
-            })),
-          };
-          return (
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }} />
-          );
-        })()}
         <div className={`container ${locale} mx-auto px-3`}>
           <Header
             onLanguageChange={onLanguageChange}
