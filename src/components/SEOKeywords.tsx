@@ -1,4 +1,4 @@
-import React from 'react';
+
 import semanticCore from '../../docs/semantic-core.json';
 
 type SemanticCore = {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import SharePassword from './SharePassword';
 
@@ -10,7 +10,7 @@ interface PcShareBtnProps {
 const PcShareBtn: React.FC<PcShareBtnProps> = ({ password = '', isDarkMode }) => {
   const [showShareMenu, setShowShareMenu] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) { // lg breakpoint in Tailwind is 1024px
         setShowShareMenu(false);

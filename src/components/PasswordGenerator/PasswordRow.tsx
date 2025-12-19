@@ -2,7 +2,7 @@
 
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import GenerateButton from './buttons/GenerateBtn';
 import CopyButton from './buttons/CopyBtn';
 import ShareButton from './buttons/ShareBtn';

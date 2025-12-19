@@ -1,7 +1,7 @@
 'use client'
 
 import dynamic from "next/dynamic";
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { CustomThemeProvider } from "@/context/ThemeContext";
 import CssBaseline from "@mui/material/CssBaseline";
 import 'vanilla-cookieconsent/dist/cookieconsent.css';

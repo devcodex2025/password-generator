@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useMemo, useRef, useContext } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useReward } from 'react-rewards';
 import zxcvbn from 'zxcvbn';

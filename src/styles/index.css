@@ -73,19 +73,19 @@
   color: var(--dark-theme-white) !important;
 }
 
-.dark .text-[#071016] {
+.dark [class*="text-[#071016]"] {
   color: var(--dark-theme-white) !important;
 }
 
-.dark .text-[#2A4E63] {
+.dark [class*="text-[#2A4E63]"] {
   color: var(--success-color) !important;
 }
 
-.dark .border-[#E5F6FF] {
+.dark [class*="border-[#E5F6FF]"] {
   border-color: #374151 !important;
 }
 
-.dark .bg-[#E5F6FF] {
+.dark [class*="bg-[#E5F6FF]"] {
   background-color: #1f2937 !important;
 }
 .page-title{

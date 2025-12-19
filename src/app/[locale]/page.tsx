@@ -16,7 +16,6 @@ import { CustomThemeProvider, useTheme } from '../../context/ThemeContext';
 import { useRouter } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 import ShareBlock from '@/components/ShareBlock';
-import React from 'react';
 
 // Клонуємо i18n для ізоляції мови в межах запиту
 // import { cloneDeep } from 'lodash';

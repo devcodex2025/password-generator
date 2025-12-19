@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, Fragment } from 'react';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 // import Divider from '@mui/material/Divider';
@@ -424,7 +424,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
       </select>
       <div className="flex lg:hidden">
         {(['top'] as Anchor[]).map((anchor) => (
-          <React.Fragment key={anchor}>
+          <Fragment key={anchor}>
             <Image
               src="/images/hamburger.png"
               alt="Navigation menu toggle"
@@ -456,7 +456,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             >
               {list(anchor)}
             </Drawer>
-          </React.Fragment>
+          </Fragment>
         ))}
       </div>
 

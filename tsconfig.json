@@ -14,7 +14,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -37,8 +37,10 @@
   "include": [
     ".next/types/**/*.ts",
     "src",
-    "./dist/types/**/*.ts"
-, "next-sitemap.config.js"  ],
+    "./dist/types/**/*.ts",
+    "next-sitemap.config.js",
+    ".next/dev/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

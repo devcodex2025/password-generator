@@ -1,5 +1,5 @@
 'use client'
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import Image from 'next/image'
 import seoData from './SeoData'
 
