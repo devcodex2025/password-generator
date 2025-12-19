@@ -4,6 +4,42 @@ import '@/styles/index.css';
 import seoData from '@/components/SeoData';
 import Script from 'next/script';
 import lang from '@/components/lang.json';
+import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
+
+const arsenal = Arsenal({ 
+  subsets: ['cyrillic', 'latin'], 
+  weight: ['400', '700'], 
+  variable: '--font-arsenal',
+  display: 'swap',
+});
+
+const varelaRound = Varela_Round({ 
+  subsets: ['latin'], 
+  weight: ['400'], 
+  variable: '--font-varela-round',
+  display: 'swap',
+});
+
+const notoSans = Noto_Sans({ 
+  subsets: ['latin'], 
+  weight: ['400', '700'], 
+  variable: '--font-noto-sans',
+  display: 'swap',
+});
+
+const notoSansJP = Noto_Sans_JP({ 
+  subsets: ['latin'], 
+  weight: ['400', '700'], 
+  variable: '--font-noto-sans-jp',
+  display: 'swap',
+});
+
+const notoSansSC = Noto_Sans_SC({ 
+  subsets: ['latin'], 
+  weight: ['400', '700'], 
+  variable: '--font-noto-sans-sc',
+  display: 'swap',
+});
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
@@ -154,8 +190,6 @@ export default async function LocaleLayout({
   return (
     <html lang={htmlLang}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preload" as="image" href="/images/logo.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/images/welcome-img.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/images/vector-bg.svg" type="image/svg+xml" />
@@ -177,7 +211,7 @@ export default async function LocaleLayout({
           </>
         ) : null}
       </head>
-      <body className="w-full">
+      <body className={`w-full ${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}>
         <Script
           id="faq-schema"
           type="application/ld+json"

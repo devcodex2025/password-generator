@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap');
 @import 'colors.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: 'Varela Round', sans-serif;
+  font-family: var(--font-varela-round), sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -15,26 +12,26 @@
 /* Шрифти для різних мов */
 .container.ua *,
 .container.ru * {
-  font-family: 'Arsenal', sans-serif !important;
+  font-family: var(--font-arsenal), sans-serif !important;
 }
 
 .container.zh *,
 .container.ja * {
-  font-family: 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans', sans-serif !important;
+  font-family: var(--font-noto-sans-sc), var(--font-noto-sans-jp), var(--font-noto-sans), sans-serif !important;
 }
 
 /* Специфічні шрифти для китайської та японської */
 .container.zh {
-  font-family: 'Noto Sans SC', sans-serif !important;
+  font-family: var(--font-noto-sans-sc), sans-serif !important;
 }
 
 .container.ja {
-  font-family: 'Noto Sans JP', sans-serif !important;
+  font-family: var(--font-noto-sans-jp), sans-serif !important;
 }
 
 /* Польська мова використовує латинський алфавіт, тому Varela Round */
 .container.pl * {
-  font-family: 'Varela Round', sans-serif !important;
+  font-family: var(--font-varela-round), sans-serif !important;
 }
 
 /* Dark mode styles */
@@ -78,11 +75,11 @@
 }
 
 .dark [class*="text-[#2A4E63]"] {
-  color: var(--success-color) !important;
+  color: #bae6fd !important;
 }
 
 .dark [class*="border-[#E5F6FF]"] {
-  border-color: #374151 !important;
+  border-color: #374151;
 }
 
 .dark [class*="bg-[#E5F6FF]"] {
@@ -100,11 +97,11 @@
 }
 
 .dark .border-2 {
-  border-color: #2a4e63!important;
+  border-color: #374151;
 }
 
 .dark input {
-  background-color: #121212 !important;
+  background-color: #1f2937 !important;
   color: var(--dark-theme-white) !important;
 }
 
@@ -171,12 +168,13 @@
 }
 
 .dark .MuiButton-root {
-  background-color: var(--accent-color) !important;
-  color: var(--dark-theme-white) !important;
+  background-color: #2A4E63 !important;
+  color: #ffffff !important;
+  border: 1px solid #374151 !important;
 }
 
 .dark .MuiButton-root:hover {
-  background-color: #1e3a8a !important;
+  background-color: #3a6ea5 !important;
 }
 
 .dark .MuiDrawer-paper {
@@ -259,50 +257,50 @@ strong {
 }
 
 button {
-  font-family: 'Varela Round', sans-serif;
+  font-family: var(--font-varela-round), sans-serif;
   font-style: normal;
   font-weight: 400;
 }
 
 .container.ua button,
 .container.ru button {
-  font-family: 'Arsenal', sans-serif !important;
+  font-family: var(--font-arsenal), sans-serif !important;
   font-weight: 500;
 }
 
 .container.zh button,
 .container.ja button {
-  font-family: 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans', sans-serif !important;
+  font-family: var(--font-noto-sans-sc), var(--font-noto-sans-jp), var(--font-noto-sans), sans-serif !important;
 }
 
 .container.pl button {
-  font-family: 'Varela Round', sans-serif !important;
+  font-family: var(--font-varela-round), sans-serif !important;
   font-weight: 400;
 }
 
 h2 {
-  font-family: 'Varela Round', sans-serif;
+  font-family: var(--font-varela-round), sans-serif;
   font-style: normal;
   font-weight: 700;
 }
 
 .container.ua h2,
 .container.ru h2 {
-  font-family: 'Arsenal', sans-serif !important;
+  font-family: var(--font-arsenal), sans-serif !important;
 }
 
 .container.zh h2,
 .container.ja h2 {
-  font-family: 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans', sans-serif !important;
+  font-family: var(--font-noto-sans-sc), var(--font-noto-sans-jp), var(--font-noto-sans), sans-serif !important;
 }
 
 .container.pl h2 {
-  font-family: 'Varela Round', sans-serif !important;
+  font-family: var(--font-varela-round), sans-serif !important;
 }
 
 header a,
 footer a {
-  font-family: 'Varela Round', sans-serif;
+  font-family: var(--font-varela-round), sans-serif;
   font-weight: 400;
 }
 
@@ -310,19 +308,19 @@ footer a {
 .container.ua footer a,
 .container.ru header a,
 .container.ru footer a {
-  font-family: 'Arsenal', sans-serif !important;
+  font-family: var(--font-arsenal), sans-serif !important;
 }
 
 .container.zh header a,
 .container.zh footer a,
 .container.ja header a,
 .container.ja footer a {
-  font-family: 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans', sans-serif !important;
+  font-family: var(--font-noto-sans-sc), var(--font-noto-sans-jp), var(--font-noto-sans), sans-serif !important;
 }
 
 .container.pl header a,
 .container.pl footer a {
-  font-family: 'Varela Round', sans-serif !important;
+  font-family: var(--font-varela-round), sans-serif !important;
 }
 
 #eng {
@@ -449,7 +447,7 @@ header {
 .container.en footer a,
 header a,
 footer a {
-  font-family: 'Varela Round', sans-serif;
+  font-family: var(--font-varela-round), sans-serif;
   font-size: 18px;
   font-style: normal;
   line-height: 18px;
@@ -468,15 +466,15 @@ ol {
 /* Додаткові стилі для різних мов */
 .container.ua,
 .container.ru {
-  font-family: 'Arsenal', sans-serif !important;
+  font-family: var(--font-arsenal), sans-serif !important;
 }
 
 .container.zh {
-  font-family: 'Noto Sans SC', sans-serif !important;
+  font-family: var(--font-noto-sans-sc), sans-serif !important;
 }
 
 .container.ja {
-  font-family: 'Noto Sans JP', sans-serif !important;
+  font-family: var(--font-noto-sans-jp), sans-serif !important;
 }
 
 /* Стилі для всіх інших латинських мов */
@@ -486,7 +484,7 @@ ol {
 .container.de,
 .container.it,
 .container.pt {
-  font-family: 'Varela Round', sans-serif !important;
+  font-family: var(--font-varela-round), sans-serif !important;
 }
 
 /* Стилі для заголовків та тексту в різних мовах */
@@ -508,7 +506,7 @@ ol {
 .container.ru p,
 .container.ru span,
 .container.ru div {
-  font-family: 'Arsenal', sans-serif !important;
+  font-family: var(--font-arsenal), sans-serif !important;
 }
 
 .container.zh h1,
@@ -520,7 +518,7 @@ ol {
 .container.zh p,
 .container.zh span,
 .container.zh div {
-  font-family: 'Noto Sans SC', sans-serif !important;
+  font-family: var(--font-noto-sans-sc), sans-serif !important;
 }
 
 .container.ja h1,
@@ -532,7 +530,7 @@ ol {
 .container.ja p,
 .container.ja span,
 .container.ja div {
-  font-family: 'Noto Sans JP', sans-serif !important;
+  font-family: var(--font-noto-sans-jp), sans-serif !important;
 }
 
 /* AdSense Styles */
@@ -621,25 +619,25 @@ ol {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 0 0% 7.1%;
+    --foreground: 0 0% 87.8%;
+    --card: 0 0% 17.6%;
+    --card-foreground: 0 0% 87.8%;
+    --popover: 0 0% 17.6%;
+    --popover-foreground: 0 0% 87.8%;
+    --primary: 202 40% 28%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 0 0% 87.8%;
+    --muted: 215 19.3% 26.7%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 215 28% 17%;
+    --accent-foreground: 0 0% 87.8%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 215 19.3% 26.7%;
+    --input: 215 19.3% 26.7%;
+    --ring: 201 100% 51%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;

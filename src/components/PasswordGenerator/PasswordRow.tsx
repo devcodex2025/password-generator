@@ -45,17 +45,15 @@ export default function PasswordRow({
   return (
     <div className="flex relative items-center flex-row lg:flex-row gap-2 h-auto w-full my-5 lg:my-1 flex-wrap lg:flex-nowrap">
       <div
-        className={`${isDarkMode ? 'border-none' : 'border-[#E5F6FF]'
-          } py-1 lg:px-4 w-full lg:w-[80%] flex items-center border-2 h-14 border-solid rounded-[120px] text-[#071016] text-[12px] md:text-[20px]`}
-        style={isDarkMode ? { backgroundColor: '#121212' } : {}}
+        className={`py-1 lg:px-4 w-full lg:w-[80%] flex items-center border-2 h-14 border-solid rounded-[120px] text-[#071016] text-[12px] md:text-[20px] border-[#E5F6FF] dark:border-transparent bg-white dark:bg-[#1f2937]`}
       >
         <input
           type="text"
           value={password || ''}
-          className="rounded-[40px] ml-[16px] border-none outline-none h-full w-[80%] lg:w-[80%] md:py-5 flex-grow text-base lg:text-lg"
+          className="rounded-[40px] ml-[16px] border-none outline-none h-full w-[80%] lg:w-[80%] md:py-5 flex-grow text-base lg:text-lg bg-transparent dark:text-white"
           readOnly
         />
-        <div className="hidden md:flex items-center lg:justify-end justify-center flex-nowrap w-full lg:max-w-[300px] max-w-[150px] h-full bg-[#E5F6FF] lg:bg-transparent rounded-[40px]">
+        <div className="hidden md:flex items-center lg:justify-end justify-center flex-nowrap w-full lg:max-w-[300px] max-w-[150px] h-full bg-[#E5F6FF] dark:bg-transparent lg:bg-transparent rounded-[40px]">
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
@@ -64,7 +62,7 @@ export default function PasswordRow({
             {t('generate')}
           </GenerateButton>
           <button
-            className="bg-[#E5F6FF] text-[#2A4E63] font-semibold text-[16px] md:text-[18px] flex lg:hidden lg:text-[24px] rounded-[60px] px-[8px] md:px-[10px] py-[10px] md:py-[12px] lg:my-0 mx-2 whitespace-nowrap justify-center py-0 items-center px-2 h-full"
+            className="bg-[#E5F6FF] dark:bg-[#2A4E63] dark:text-white dark:border dark:border-[#374151] text-[#2A4E63] font-semibold text-[16px] md:text-[18px] flex lg:hidden lg:text-[24px] rounded-[60px] px-[8px] md:px-[10px] py-[10px] md:py-[12px] lg:my-0 mx-2 whitespace-nowrap justify-center py-0 items-center px-2 h-full"
             onClick={() => onGenerate(index)}
             style={{ cursor: 'pointer' }}
           >

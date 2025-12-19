@@ -1,4 +1,30 @@
 {
+  "footer_opensource": {
+    "ua": "Відкритий код та безпека",
+    "en": "Open Source & Secure",
+    "es": "Código abierto y seguro",
+    "fr": "Open Source et sécurisé",
+    "de": "Open Source & Sicher",
+    "it": "Open Source e sicuro",
+    "pt": "Código aberto e seguro",
+    "ru": "Открытый код и безопасность",
+    "zh": "开源且安全",
+    "ja": "オープンソースで安全",
+    "pl": "Open Source i bezpieczne"
+  },
+  "generated_locally": {
+    "ua": "Генерується локально у вашому браузері",
+    "en": "Generated locally in your browser",
+    "es": "Generado localmente en tu navegador",
+    "fr": "Généré localement dans votre navigateur",
+    "de": "Lokal in Ihrem Browser generiert",
+    "it": "Generato localmente nel tuo browser",
+    "pt": "Gerado localmente no seu navegador",
+    "ru": "Генерируется локально в вашем браузере",
+    "zh": "在您的浏览器中本地生成",
+    "ja": "ブラウザでローカルに生成されます",
+    "pl": "Wygenerowano lokalnie w przeglądarce"
+  },
   "share_message": {
     "ua": "Ваш пароль згенеровано з допомогою - GeneratePasswordTo.Me\nПароль - ",
     "en": "Your password has been generated using - GeneratePasswordTo.Me\nPassword - ",

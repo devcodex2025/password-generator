@@ -27,71 +27,25 @@ const SharePassword: React.FC<SharePasswordProps> = ({ password, isDarkMode }) =
 
   return (
     <div
-      className={`share-password-menu bg-[#E5F6FF] ${isDarkMode ? '' : ''}`}
-      style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '12px' }}
+      className={`share-password-menu bg-[#E5F6FF] dark:bg-[#2d2d2d] flex flex-col gap-2 p-3`}
     >
       <button
-        className="share-btn telegram"
+        className="share-btn telegram flex items-center gap-2 bg-[#E5F6FF] dark:bg-[#2d2d2d] text-[#2A4E63] dark:text-white rounded-md px-3 py-2 border-none cursor-pointer font-medium transition-all hover:border-b-2 hover:border-[#2A4E63] dark:hover:bg-[#374151]"
         onClick={() => window.open(shareLinks.telegram(password), '_blank')}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          background: '#E5F6FF',
-          color: '#2A4E63',
-          borderRadius: '6px',
-          padding: '8px 12px',
-          border: 'none',
-          cursor: 'pointer',
-          fontWeight: 500,
-          transition: 'border-bottom 0.2s',
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.borderBottom = '2px solid #2A4E63')}
-        onMouseLeave={(e) => (e.currentTarget.style.borderBottom = 'none')}
       >
-        <TelegramIcon /> Telegram
+        <TelegramIcon sx={{ color: '#2AABEE' }} /> Telegram
       </button>
       <button
-        className="share-btn whatsapp"
+        className="share-btn whatsapp flex items-center gap-2 bg-[#E5F6FF] dark:bg-[#2d2d2d] text-[#2A4E63] dark:text-white rounded-md px-3 py-2 border-none cursor-pointer font-medium transition-all hover:border-b-2 hover:border-[#2A4E63] dark:hover:bg-[#374151]"
         onClick={() => window.open(shareLinks.whatsapp(password), '_blank')}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          background: '#E5F6FF',
-          color: '#2A4E63',
-          borderRadius: '6px',
-          padding: '8px 12px',
-          border: 'none',
-          cursor: 'pointer',
-          fontWeight: 500,
-          transition: 'border-bottom 0.2s',
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.borderBottom = '2px solid #2A4E63')}
-        onMouseLeave={(e) => (e.currentTarget.style.borderBottom = 'none')}
       >
-        <WhatsAppIcon /> WhatsApp
+        <WhatsAppIcon sx={{ color: '#25D366' }} /> WhatsApp
       </button>
       <button
-        className="share-btn email"
+        className="share-btn email flex items-center gap-2 bg-[#E5F6FF] dark:bg-[#2d2d2d] text-[#2A4E63] dark:text-white rounded-md px-3 py-2 border-none cursor-pointer font-medium transition-all hover:border-b-2 hover:border-[#2A4E63] dark:hover:bg-[#374151]"
         onClick={() => window.open(shareLinks.email(password), '_blank')}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          background: '#E5F6FF',
-          color: '#2A4E63',
-          borderRadius: '6px',
-          padding: '8px 12px',
-          border: 'none',
-          cursor: 'pointer',
-          fontWeight: 500,
-          transition: 'border-bottom 0.2s',
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.borderBottom = '2px solid #2A4E63')}
-        onMouseLeave={(e) => (e.currentTarget.style.borderBottom = 'none')}
       >
-        <EmailIcon /> Email
+        <EmailIcon sx={{ color: '#EA4335' }} /> Email
       </button>
     </div>
   );

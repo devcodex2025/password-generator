@@ -33,17 +33,7 @@ const PcShareBtn: React.FC<PcShareBtnProps> = ({ password = '', isDarkMode }) =>
         height={20}
       />
       {showShareMenu && (
-        <div style={{
-          position: 'absolute',
-          top: '110%',
-          right: 0,
-          zIndex: 10,
-          minWidth: '180px',
-          background: '#E5F6FF',
-          borderRadius: '12px',
-          boxShadow: '0 2px 12px rgba(0,0,0,0.10)',
-          padding: '8px',
-        }}>
+        <div className="absolute top-[110%] right-0 z-10 min-w-[180px] bg-[#E5F6FF] dark:bg-[#2d2d2d] rounded-xl shadow-lg p-2 border border-transparent dark:border-[#374151]">
           <SharePassword password={password} isDarkMode={isDarkMode} />
         </div>
       )}

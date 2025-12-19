@@ -3,7 +3,6 @@
 import { useState, useEffect, useCallback, useMemo, useRef, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useReward } from 'react-rewards';
-import zxcvbn from 'zxcvbn';
 import PasswordRow from './PasswordRow';
 import PasswordSettings from './PasswordSettings';
 import PasswordStrength from './PasswordStrength';
@@ -15,6 +14,7 @@ import { formatCrackTime } from '@/functions/formatCrackTime';
 import { Button, Snackbar } from '@mui/material';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import Image from 'next/image';
 import AnimatedPassword from './AnimatedPassword';
 import { SnackbarMessage } from '@/app/types/SnackBar';
@@ -236,32 +236,49 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
     }, ANIMATION_DURATION);
   };
 
-  const passwordStrengthAnalysis = useMemo(() => {
-    if (passwords.length === 0) {
-      return {
-        strengthWord: '',
-        scoreColor: '#000',
-        strengthColor: { color: '#000' },
-        strengthWordScoreLocalized: '',
-      };
-    }
+  const [passwordStrengthAnalysis, setPasswordStrengthAnalysis] = useState({
+    strengthWord: '',
+    scoreColor: '#000',
+    strengthColor: { color: '#000' },
+    strengthWordScoreLocalized: '',
+  });
 
-    const TimeToCrackResult = zxcvbn(passwords[0]);
-    const CrackScore = TimeToCrackResult.score;
-    const strengthWord = getStrengthWord(CrackScore, i18n.language);
-    const scoreColor = rankColor(CrackScore);
-    const strengthColor = { color: scoreColor };
-    const strengthWordScoreLocalized = formatCrackTime(
-      String(TimeToCrackResult.crack_times_display.offline_slow_hashing_1e4_per_second),
-      i18n.language
-    );
+  useEffect(() => {
+    const calculateStrength = async () => {
+      if (passwords.length === 0) {
+        setPasswordStrengthAnalysis({
+          strengthWord: '',
+          scoreColor: '#000',
+          strengthColor: { color: '#000' },
+          strengthWordScoreLocalized: '',
+        });
+        return;
+      }
 
-    return {
-      strengthWord,
-      scoreColor,
-      strengthColor,
-      strengthWordScoreLocalized,
+      try {
+        const zxcvbn = (await import('zxcvbn')).default;
+        const TimeToCrackResult = zxcvbn(passwords[0]);
+        const CrackScore = TimeToCrackResult.score;
+        const strengthWord = getStrengthWord(CrackScore, i18n.language);
+        const scoreColor = rankColor(CrackScore);
+        const strengthColor = { color: scoreColor };
+        const strengthWordScoreLocalized = formatCrackTime(
+          String(TimeToCrackResult.crack_times_display.offline_slow_hashing_1e4_per_second),
+          i18n.language
+        );
+
+        setPasswordStrengthAnalysis({
+          strengthWord,
+          scoreColor,
+          strengthColor,
+          strengthWordScoreLocalized,
+        });
+      } catch (error) {
+        console.error("Failed to load zxcvbn", error);
+      }
     };
+
+    calculateStrength();
   }, [passwords, t]);
 
   return (
@@ -383,6 +400,10 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
             </Button>
           </div>
         )}
+        <div className={`mt-4 flex items-center justify-center gap-2 text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+          <VerifiedUserIcon sx={{ fontSize: 16 }} />
+          <span>{t('generated_locally')}</span>
+        </div>
         {snackbars.map((snackbar) => (
           <Snackbar
             key={snackbar.id}
