@@ -30,13 +30,10 @@ export default function Page({ params }: PageProps) {
   const supportedLanguages = getAvailableLanguages();
 
   // Синхронізація i18n із локаллю до рендерингу
-  if (typeof window === 'undefined') {
-    // Виконується на сервері
-    if (supportedLanguages.includes(locale) && i18n.language !== locale) {
-      i18n.changeLanguage(locale);
-    } else if (!supportedLanguages.includes(locale)) {
-      i18n.changeLanguage('en');
-    }
+  if (supportedLanguages.includes(locale) && i18n.language !== locale) {
+    i18n.changeLanguage(locale);
+  } else if (!supportedLanguages.includes(locale) && i18n.language !== 'en') {
+    i18n.changeLanguage('en');
   }
 
   // Define onLanguageChange to handle language changes from Header
