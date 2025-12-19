@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo, useRef, useContext } from 'react';
+import { useState, useEffect, useCallback, useRef, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useReward } from 'react-rewards';
 import PasswordRow from './PasswordRow';

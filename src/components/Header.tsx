@@ -12,8 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 // import Link from '@mui/material/Link';
 import InputLabel from '@mui/material/InputLabel';
 import Flag from 'react-world-flags'
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { Brightness4, Brightness7 } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import Image from 'next/image';
 import { ThemeContext } from '@/context/ThemeContext'; // Updated path
@@ -371,7 +370,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
                 },
               }}
             >
-              {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+              {isDarkMode ? <Brightness7 /> : <Brightness4 />}
             </IconButton>
           </Box>
         </ListItem>
@@ -403,7 +402,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               '&:hover': { color: '#2A4E63', transform: 'scale(1.05)' },
             }}
           >
-            {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+            {isDarkMode ? <Brightness7 /> : <Brightness4 />}
           </IconButton>
         </li>
       </ul>

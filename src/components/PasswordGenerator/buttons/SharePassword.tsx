@@ -9,7 +9,7 @@ interface SharePasswordProps {
   isDarkMode?: boolean;
 }
 
-const SharePassword: React.FC<SharePasswordProps> = ({ password, isDarkMode }) => {
+const SharePassword: React.FC<SharePasswordProps> = ({ password }) => {
   const { t } = useTranslation();
 
   const getShareText = (password: string) => {
