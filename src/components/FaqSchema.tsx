@@ -4,17 +4,15 @@ interface FaqSchemaProps {
   locale: string;
 }
 
-type LangKey = keyof typeof lang;
-type LocaleKey = 'en' | 'ua' | 'es' | 'fr' | 'de' | 'it' | 'pt' | 'ru' | 'zh' | 'ja' | 'pl';
-
 export default function FaqSchema({ locale }: FaqSchemaProps) {
   const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
   
   const t = (key: string): string => {
-    const langEntry = lang[key as LangKey];
-    if (!langEntry) return '';
-    const raw = langEntry[locale as LocaleKey];
-    return stripHtml((raw as string) || '');
+    // @ts-expect-error - dynamic access to lang object
+    const langEntry = lang[key];
+    if (!langEntry || typeof langEntry !== 'object') return '';
+    const raw = langEntry[locale];
+    return stripHtml(raw || '');
   };
 
   const qa = [
