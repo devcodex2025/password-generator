@@ -1,14 +1,12 @@
-import React, { useEffect, useContext } from "react";
+﻿import React, { useEffect, useContext } from "react";
 import Image from "next/image";
 import { ThemeContext } from "../context/ThemeContext";
 import lang from './lang.json';
 import seoData from './SeoData';
 
-const referalLink = "https://hostinger.com.ua?REFERRALCODE=1098786";
-
-// CSS стилі для посилань
+// CSS СЃС‚РёР»С– РґР»СЏ РїРѕСЃРёР»Р°РЅСЊ
 const linkStyles = `
-  /* Стилі для всіх посилань */
+  /* РЎС‚РёР»С– РґР»СЏ РІСЃС–С… РїРѕСЃРёР»Р°РЅСЊ */
   a {
     transition: all 0.3s ease;
     position: relative;
@@ -35,7 +33,7 @@ const linkStyles = `
     width: 100%;
   }
   
-  /* Спеціальні стилі для посилань в навігації */
+  /* РЎРїРµС†С–Р°Р»СЊРЅС– СЃС‚РёР»С– РґР»СЏ РїРѕСЃРёР»Р°РЅСЊ РІ РЅР°РІС–РіР°С†С–С— */
   .nav-link {
     transition: all 0.3s ease;
     position: relative;
@@ -65,7 +63,7 @@ const linkStyles = `
     transform: scaleX(1);
   }
   
-  /* Стилі для зовнішніх посилань */
+  /* РЎС‚РёР»С– РґР»СЏ Р·РѕРІРЅС–С€РЅС–С… РїРѕСЃРёР»Р°РЅСЊ */
   .external-link {
     transition: all 0.3s ease;
     position: relative;
@@ -78,7 +76,7 @@ const linkStyles = `
   }
   
   .external-link::after {
-    content: ' ↗';
+    content: ' в†—';
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -96,7 +94,7 @@ const Footer = ({ language }) => {
   const currentYear = new Date().getFullYear();
   const { isDarkMode } = useContext(ThemeContext);
 
-  // Додаємо CSS стилі для посилань
+  // Р”РѕРґР°С”РјРѕ CSS СЃС‚РёР»С– РґР»СЏ РїРѕСЃРёР»Р°РЅСЊ
   useEffect(() => {
     if (typeof document !== "undefined") {
       const styleElement = document.createElement("style");
@@ -147,7 +145,7 @@ const Footer = ({ language }) => {
         </ul> */}
         <div className="flex lg:flex-row flex-col xs:flex-wrap lg:flex-nowrap w-full">
           <div className="text-[18px] md:w-full lg:w-1/2 lg:text-left md:text-center font-medium my-5 ml-2">
-            {t('footer_copyright', language)} ©{" "}
+            {t('footer_copyright', language)} В©{" "}
             <span className=" text-[#05a9ff] font-bold">
               GeneratePasswordTo.Me{" "}
             </span>
@@ -167,21 +165,6 @@ const Footer = ({ language }) => {
                   <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
                 </svg>
               </a>
-              {language === 'ua' && (
-                <div>
-                  <p className="inline">
-                    {t('footer_working_with', language) + ' '}
-                  </p>
-                  <a
-                    className="external-link text-[18px] inline text-[#05a9ff] font-semibold cursor-pointer"
-                    href={referalLink}
-                    rel="nofollow"
-                  >
-                    {" "}
-                    Hostinger
-                  </a>
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -198,3 +181,4 @@ const Footer = ({ language }) => {
 };
 
 export default Footer;
+

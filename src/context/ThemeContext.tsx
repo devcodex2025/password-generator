@@ -25,46 +25,38 @@ export const useTheme = () => {
   return context;
 };
 
-export const CustomThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  // Initialize with system preference if available, otherwise default to light mode
+export const CustomThemeProvider = ({
+  children,
+  initialDarkMode = false,
+}: {
+  children: React.ReactNode;
+  initialDarkMode?: boolean;
+}) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return false;
-    if (window.localStorage.getItem('darkMode') !== null) {
-      return JSON.parse(window.localStorage.getItem('darkMode') || 'false');
+    if (typeof window === 'undefined') return initialDarkMode;
+
+    const saved = window.localStorage.getItem('darkMode');
+    if (saved !== null) {
+      return JSON.parse(saved);
     }
+
+    if (typeof document !== 'undefined') {
+      return document.documentElement.classList.contains('dark');
+    }
+
     return window.matchMedia?.('(prefers-color-scheme: dark)').matches || false;
   });
-  const [isInitialized, setIsInitialized] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(() => typeof window !== 'undefined');
 
   const toggleMode = () => {
     setIsDarkMode((prev: boolean) => !prev);
   };
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    if (typeof window === 'undefined') return;
 
-    const initializeTheme = () => {
-      if (typeof window === "undefined") return;
+    setIsInitialized(true);
 
-      // Apply theme class based on state
-      if (isDarkMode) {
-        document.body.classList.add('dark');
-      } else {
-        document.body.classList.remove('dark');
-      }
-
-      // Save to localStorage
-      window.localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-
-      // Set initialized after a short delay to ensure smooth loading
-      timeout = setTimeout(() => {
-        setIsInitialized(true);
-      }, 400);
-    };
-
-    initializeTheme();
-
-    // Listen for system theme changes
     const mediaQuery = window.matchMedia?.('(prefers-color-scheme: dark)');
     const handleChange = (e: MediaQueryListEvent) => {
       if (!window.localStorage.getItem('darkMode')) {
@@ -73,14 +65,10 @@ export const CustomThemeProvider = ({ children }: { children: React.ReactNode })
     };
 
     mediaQuery?.addEventListener('change', handleChange);
-
-    // Cleanup
     return () => {
-      if (timeout) clearTimeout(timeout);
-      document.body.classList.remove('dark');
       mediaQuery?.removeEventListener('change', handleChange);
     };
-  }, [isDarkMode]);
+  }, []);
 
   const theme = useMemo(() => {
     const mode = isDarkMode ? 'dark' : 'light';
@@ -106,22 +94,12 @@ export const CustomThemeProvider = ({ children }: { children: React.ReactNode })
   }, [isDarkMode]);
 
   useEffect(() => {
-    if (!isInitialized) return;
+    if (!isInitialized || typeof document === 'undefined' || typeof window === 'undefined') return;
 
-    if (typeof window !== "undefined" && typeof document !== "undefined") {
-      const root = document.body;
-
-      // Remove theme class first to prevent mixing
-      root.classList.remove('dark');
-
-      // Add dark class if needed
-      if (isDarkMode) {
-        root.classList.add('dark');
-      }
-
-      // Save to localStorage
-      window.localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    }
+    document.documentElement.classList.toggle('dark', isDarkMode);
+    document.body.classList.toggle('dark', isDarkMode);
+    window.localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+    document.cookie = `theme=${isDarkMode ? 'dark' : 'light'}; path=/; max-age=31536000; samesite=lax`;
   }, [isDarkMode, isInitialized]);
 
   return (

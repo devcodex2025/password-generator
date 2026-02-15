@@ -18,7 +18,7 @@ module.exports = {
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,
-  exclude: ['/server-sitemap.xml'],
+  exclude: ['/', '/server-sitemap.xml'],
   robotsTxtOptions: {
     policies: [
       {
@@ -41,10 +41,13 @@ module.exports = {
     });
   },
   transform: async (config, path) => {
+    const localePathMatch = path.match(/^\/([a-z]{2})$/i);
+    const locale = localePathMatch ? localePathMatch[1] : null;
+
     return {
       loc: path,
       changefreq: 'weekly',
-      priority: path === '/' ? 1.0 : 0.8,
+      priority: locale ? 0.9 : 0.8,
       lastmod: new Date().toISOString(),
     };
   },

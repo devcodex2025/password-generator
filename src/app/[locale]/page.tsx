@@ -11,7 +11,7 @@ import AdBanner from '@/components/Advertising/Adbanner';
 import AdBannerSecond from '@/components/Advertising/AdbannerSecond';
 import CookieConsent from '@/components/CookieConsent/CookieConsent';
 import { Analytics } from '@vercel/analytics/react';
-import { CustomThemeProvider, useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 
 import { useRouter } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
@@ -45,33 +45,31 @@ export default function Page({ params }: PageProps) {
 
 
   return (
-    <CustomThemeProvider>
-      <I18nextProvider i18n={i18n}>
-        <div className={`container ${locale} mx-auto px-3`}>
-          <Header
-            onLanguageChange={onLanguageChange}
-            currentLanguage={locale}
-          />
-          <main className="w-full">
-            <Analytics />
-            <PasswordGenerator language={locale} />
-            <Suspense fallback={null}>
-              <AdBanner language={locale} isDarkMode={isDarkMode} />
-            </Suspense>
-            <SeoAccordion language={locale} />
-            <div className="max-w-6xl mx-auto px-4">
-              <ShareBlock language={locale} className="mt-6" />
-            </div>
-            <Suspense fallback={null}>
-              <AdBannerSecond language={locale} isDarkMode={isDarkMode} />
-            </Suspense>
-          </main>
-          <Footer language={locale} />
+    <I18nextProvider i18n={i18n}>
+      <div className={`container ${locale} mx-auto px-3`}>
+        <Header
+          onLanguageChange={onLanguageChange}
+          currentLanguage={locale}
+        />
+        <main className="w-full">
+          <Analytics />
+          <PasswordGenerator language={locale} />
           <Suspense fallback={null}>
-            <CookieConsent language={locale} />
+            <AdBanner language={locale} isDarkMode={isDarkMode} />
           </Suspense>
-        </div>
-      </I18nextProvider>
-    </CustomThemeProvider>
+          <SeoAccordion language={locale} />
+          <div className="max-w-6xl mx-auto px-4">
+            <ShareBlock language={locale} className="mt-6" />
+          </div>
+          <Suspense fallback={null}>
+            <AdBannerSecond language={locale} isDarkMode={isDarkMode} />
+          </Suspense>
+        </main>
+        <Footer language={locale} />
+        <Suspense fallback={null}>
+          <CookieConsent language={locale} />
+        </Suspense>
+      </div>
+    </I18nextProvider>
   );
 }

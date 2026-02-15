@@ -1,6 +1,6 @@
 
 
-import { redirect } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 import { headers } from 'next/headers';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 
@@ -13,5 +13,5 @@ export default async function RootPage() {
     ? mappedLanguage
     : 'en';
 
-  redirect(`/${defaultLanguage}`);
+  permanentRedirect(`/${defaultLanguage}`);
 }

@@ -4,6 +4,7 @@ import '@/styles/index.css';
 import seoData from '@/components/SeoData';
 import Script from 'next/script';
 import lang from '@/components/lang.json';
+import { cookies } from 'next/headers';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
 
 const arsenal = Arsenal({ 
@@ -58,8 +59,6 @@ const ogLocaleMap: Record<string, string> = {
   pl: 'pl_PL',
 };
 
-export const dynamic = 'force-static';
-
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const canonical = `${baseUrl}/${locale}`.replace(/\/$/, '');
@@ -67,6 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const seoInfo = seoData.find((data) => data.language === locale) || seoData.find((data) => data.language === 'en');
   const title = seoInfo?.title || 'Generate Strong Passwords | generatepasswordto.me';
   const description = seoInfo?.description || 'Create strong, secure passwords instantly. NIST 800-63B and PCI DSS aligned. Free online password generator tool.';
+  const keywords = seoInfo?.keywords || ['password generator', 'strong password', 'secure password', 'random password', 'password strength'];
 
   return {
     metadataBase: new URL(baseUrl),
@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       default: title
     },
     description: description,
-    keywords: ['password generator', 'strong password', 'secure password', 'random password', 'password strength'],
+    keywords,
     viewport: {
       width: 'device-width',
       initialScale: 1,
@@ -96,9 +96,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     alternates: {
       canonical,
-      languages: Object.fromEntries(
-        supportedLangs.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}`])
-      ),
+      languages: {
+        ...Object.fromEntries(
+          supportedLangs.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}`])
+        ),
+        'x-default': `${baseUrl}/en`,
+      },
     },
     openGraph: {
       title: title,
@@ -148,6 +151,9 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const htmlLang = hreflangMap[locale] || locale;
+  const cookieStore = await cookies();
+  const savedTheme = cookieStore.get('theme')?.value;
+  const initialDarkMode = savedTheme === 'dark';
 
   // Generate FAQ Schema data
   const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
@@ -190,6 +196,22 @@ export default async function LocaleLayout({
   return (
     <html lang={htmlLang}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                try {
+                  var saved = localStorage.getItem('darkMode');
+                  var isDark = saved !== null
+                    ? JSON.parse(saved)
+                    : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  document.cookie = 'theme=' + (isDark ? 'dark' : 'light') + '; path=/; max-age=31536000; samesite=lax';
+                  document.documentElement.classList.toggle('dark', !!isDark);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <link rel="preload" as="image" href="/images/logo.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/images/welcome-img.svg" type="image/svg+xml" />
         <link rel="preload" as="image" href="/images/vector-bg.svg" type="image/svg+xml" />
@@ -218,7 +240,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }}
           strategy="beforeInteractive"
         />
-        <CustomThemeProvider>
+        <CustomThemeProvider initialDarkMode={initialDarkMode}>
           {children}
         </CustomThemeProvider>
       </body>
