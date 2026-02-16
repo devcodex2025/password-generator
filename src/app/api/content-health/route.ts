@@ -28,11 +28,89 @@ function safeMongoHost(uri: string | undefined): string | null {
   }
 }
 
+function parseBool(value: string | null): boolean | null {
+  if (value == null) return null;
+  const normalized = value.trim().toLowerCase();
+  if (normalized === 'true' || normalized === '1' || normalized === 'yes') return true;
+  if (normalized === 'false' || normalized === '0' || normalized === 'no') return false;
+  return null;
+}
+
+function getMongoTlsDiagnostics(mongoUri: string | undefined) {
+  const base = {
+    nodeVersion: process.version,
+    opensslVersion: process.versions?.openssl || null,
+    env: {
+      NODE_TLS_REJECT_UNAUTHORIZED: process.env.NODE_TLS_REJECT_UNAUTHORIZED || null,
+      MONGODB_SERVER_SELECTION_TIMEOUT_MS: process.env.MONGODB_SERVER_SELECTION_TIMEOUT_MS || null,
+      MONGODB_TLS: process.env.MONGODB_TLS || null,
+      MONGODB_SSL: process.env.MONGODB_SSL || null,
+      MONGODB_TLS_ALLOW_INVALID_CERTIFICATES: process.env.MONGODB_TLS_ALLOW_INVALID_CERTIFICATES || null,
+      MONGODB_TLS_ALLOW_INVALID_HOSTNAMES: process.env.MONGODB_TLS_ALLOW_INVALID_HOSTNAMES || null,
+      MONGODB_TLS_INSECURE: process.env.MONGODB_TLS_INSECURE || null,
+    },
+  };
+
+  if (!mongoUri) {
+    return { ...base, uriParsed: false };
+  }
+
+  try {
+    const url = new URL(mongoUri);
+    return {
+      ...base,
+      uriParsed: true,
+      uriScheme: url.protocol.replace(':', ''),
+      host: url.host || null,
+      query: {
+        tls: parseBool(url.searchParams.get('tls')),
+        ssl: parseBool(url.searchParams.get('ssl')),
+        tlsAllowInvalidCertificates: parseBool(url.searchParams.get('tlsAllowInvalidCertificates')),
+        tlsAllowInvalidHostnames: parseBool(url.searchParams.get('tlsAllowInvalidHostnames')),
+        tlsInsecure: parseBool(url.searchParams.get('tlsInsecure')),
+        authMechanism: url.searchParams.get('authMechanism'),
+        retryWrites: parseBool(url.searchParams.get('retryWrites')),
+      },
+    };
+  } catch {
+    return {
+      ...base,
+      uriParsed: false,
+      uriScheme: mongoUri.startsWith('mongodb+srv://')
+        ? 'mongodb+srv'
+        : mongoUri.startsWith('mongodb://')
+          ? 'mongodb'
+          : 'unknown',
+      host: safeMongoHost(mongoUri),
+    };
+  }
+}
+
+function formatMongoError(error: unknown) {
+  if (!error) return null;
+  if (error instanceof Error) {
+    const e = error as Error & { code?: string | number; cause?: unknown };
+    const cause = e.cause instanceof Error
+      ? { name: e.cause.name, message: e.cause.message }
+      : e.cause
+        ? String(e.cause)
+        : null;
+    return {
+      name: e.name,
+      code: e.code ?? null,
+      message: e.message,
+      cause,
+    };
+  }
+  return { name: 'UnknownError', code: null, message: String(error), cause: null };
+}
+
 async function checkMongo() {
   const mongoUri = process.env.MONGODB_URI;
   const dbName = process.env.MONGODB_DB_NAME || 'generatepassword';
   const collectionName = process.env.MONGODB_COLLECTION || 'content_guides';
   const timeout = Number.parseInt(process.env.MONGODB_SERVER_SELECTION_TIMEOUT_MS || '3000', 10);
+  const tlsDiagnostics = getMongoTlsDiagnostics(mongoUri);
 
   if (!mongoUri) {
     return {
@@ -41,6 +119,7 @@ async function checkMongo() {
       host: null,
       dbName,
       collectionName,
+      tlsDiagnostics,
     };
   }
 
@@ -81,16 +160,19 @@ async function checkMongo() {
       collectionName,
       totalDocuments: total,
       locales: localeBuckets,
+      tlsDiagnostics,
     };
   } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
+    const formatted = formatMongoError(error);
     return {
       status: 'error' as HealthStatus,
       hasMongoUri: true,
       host: safeMongoHost(mongoUri),
       dbName,
       collectionName,
-      error: message,
+      error: formatted?.message || String(error),
+      errorDetails: formatted,
+      tlsDiagnostics,
     };
   } finally {
     try {
