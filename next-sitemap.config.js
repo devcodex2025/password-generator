@@ -10,6 +10,18 @@ const getAvailableLanguages = () => {
 
 const siteUrl = 'https://www.generatepasswordto.me';
 const availableLanguages = getAvailableLanguages();
+const guideSlugs = [
+  'how-to-create-strong-passwords',
+  'password-manager-vs-manual-storage',
+  'passphrase-vs-password-entropy',
+  'nist-800-63b-password-rules',
+  'pci-dss-password-requirements',
+  'what-to-do-after-password-breach',
+  'two-factor-authentication-basics',
+  'common-password-mistakes',
+  'team-password-policy-template',
+  'secure-password-generator-guide',
+];
 
 module.exports = {
   siteUrl,
@@ -31,14 +43,30 @@ module.exports = {
     ],
   },
   additionalPaths: async (config) => {
-    return availableLanguages.map((langCode) => {
-      return {
+    const localePages = availableLanguages.map((langCode) => ({
         loc: `/${langCode}`,
         changefreq: 'weekly',
         priority: 0.9,
         lastmod: new Date().toISOString(),
-      };
-    });
+    }));
+
+    const guideIndexPages = availableLanguages.map((langCode) => ({
+      loc: `/${langCode}/guides`,
+      changefreq: 'weekly',
+      priority: 0.8,
+      lastmod: new Date().toISOString(),
+    }));
+
+    const guideArticlePages = availableLanguages.flatMap((langCode) =>
+      guideSlugs.map((slug) => ({
+        loc: `/${langCode}/guides/${slug}`,
+        changefreq: 'monthly',
+        priority: 0.7,
+        lastmod: new Date().toISOString(),
+      }))
+    );
+
+    return [...localePages, ...guideIndexPages, ...guideArticlePages];
   },
   transform: async (config, path) => {
     const localePathMatch = path.match(/^\/([a-z]{2})$/i);

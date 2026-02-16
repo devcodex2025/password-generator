@@ -1,0 +1,84 @@
+{
+  "project": "generatepasswordto.me",
+  "goal": "Produce high-value multilingual editorial content for /[locale]/guides/[slug] pages to improve indexation quality and AdSense readiness.",
+  "languages": ["en", "ua", "es", "fr", "de", "it", "pt", "ru", "zh", "ja", "pl"],
+  "content_format": {
+    "type": "json",
+    "schema": {
+      "slug": "string",
+      "locale": "string",
+      "title": "string",
+      "excerpt": "string (140-220 chars)",
+      "seoTitle": "string (50-65 chars)",
+      "seoDescription": "string (140-160 chars)",
+      "keywords": ["string", "string", "string"],
+      "sections": [
+        {
+          "heading": "string",
+          "paragraphs": ["string", "string"],
+          "bullets": ["string", "string", "string"]
+        }
+      ]
+    }
+  },
+  "quality_rules": [
+    "Do not translate literally from one locale to another; localize examples and wording.",
+    "Minimum 900 words per article locale.",
+    "Avoid AI-generic phrasing and keyword stuffing.",
+    "Keep practical value high: checklists, examples, edge cases, mistakes.",
+    "No medical/legal/financial advice beyond security best practices."
+  ],
+  "articles": [
+    {
+      "slug": "how-to-create-strong-passwords",
+      "intent": "Educational",
+      "primary_keywords": ["strong password tips", "create secure password"]
+    },
+    {
+      "slug": "password-manager-vs-manual-storage",
+      "intent": "Comparison",
+      "primary_keywords": ["password manager guide", "store passwords safely"]
+    },
+    {
+      "slug": "passphrase-vs-password-entropy",
+      "intent": "Educational",
+      "primary_keywords": ["passphrase entropy", "password entropy explained"]
+    },
+    {
+      "slug": "nist-800-63b-password-rules",
+      "intent": "Compliance",
+      "primary_keywords": ["nist 800-63b password policy", "modern password rules"]
+    },
+    {
+      "slug": "pci-dss-password-requirements",
+      "intent": "Compliance",
+      "primary_keywords": ["pci dss password requirements", "compliance password policy"]
+    },
+    {
+      "slug": "what-to-do-after-password-breach",
+      "intent": "Incident response",
+      "primary_keywords": ["password breach response", "credential leak recovery"]
+    },
+    {
+      "slug": "two-factor-authentication-basics",
+      "intent": "Educational",
+      "primary_keywords": ["2fa setup guide", "mfa security guide"]
+    },
+    {
+      "slug": "common-password-mistakes",
+      "intent": "Educational",
+      "primary_keywords": ["common password mistakes", "weak password examples"]
+    },
+    {
+      "slug": "team-password-policy-template",
+      "intent": "Template",
+      "primary_keywords": ["password policy template", "company password policy"]
+    },
+    {
+      "slug": "secure-password-generator-guide",
+      "intent": "Product guide",
+      "primary_keywords": ["secure password generator guide", "password generator settings"]
+    }
+  ],
+  "delivery_note": "Return one JSON object per slug+locale. Content will be inserted into src/content/articles.ts."
+}

@@ -1,0 +1,3183 @@
+[
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "en",
+    "title": "How to Create Strong Passwords: A Comprehensive Guide",
+    "excerpt": "Creating strong passwords is essential for protecting your online accounts. Learn practical tips, common mistakes to avoid, and step-by-step methods to generate secure passwords that are hard to crack.",
+    "seoTitle": "How to Create Strong Passwords - Secure Your Accounts",
+    "seoDescription": "Discover expert tips for creating strong passwords. Avoid common mistakes and follow step-by-step guides to generate secure passwords that protect your online identity.",
+    "keywords": [
+      "strong password tips",
+      "create secure password",
+      "password security guide"
+    ],
+    "sections": [
+      {
+        "heading": "Why Strong Passwords Matter",
+        "paragraphs": [
+          "Weak passwords are the leading cause of data breaches. Cybercriminals use automated tools to guess passwords in seconds. A strong password acts as the first line of defense against unauthorized access.",
+          "Strong passwords should be unique, complex, and difficult to guess. They should not be reused across multiple accounts, as a single breach could compromise all linked accounts."
+        ],
+        "bullets": [
+          "Avoid common passwords like 'password123' or '123456'.",
+          "Use a mix of uppercase, lowercase, numbers, and symbols.",
+          "Never use personal information (e.g., birthdate, name) in passwords."
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "ua",
+    "title": "Як створити міцні паролі: повний гід",
+    "excerpt": "Створення міцних паролів є важливим для захисту ваших онлайн-облікових записів. Навчіться практичним прийомам, типовим помилкам, яких треба уникати, і крок за кроком методам генерації безпечних паролів, які важко зламати.",
+    "seoTitle": "Як створити міцні паролі - захистіть свої облікові записи",
+    "seoDescription": "Дізнайтесь експертні поради щодо створення міцних паролів. Уникайте типових помилок і дотримуйте крок за кроком інструкції для створення безпечних паролів, які захищають вашу онлайн-ідентичність.",
+    "keywords": [
+      "міцні паролі поради",
+      "створити безпечний пароль",
+      "гід безпеки паролів"
+    ],
+    "sections": [
+      {
+        "heading": "Чому важливі міцні паролі",
+        "paragraphs": [
+          "Слабкі паролі є головною причиною витоку даних. Зловмисники використовують автоматизовані інструменти, щоб відгадати паролі за кілька секунд. Міцний пароль є першим етапом захисту від несанкціонованого доступу.",
+          "Міцні паролі мають бути унікальними, складними і важко вгадуваними. Їх не слід повторювати на різних акаунтах, оскільки один витік може знищити всі пов'язані облікові записи."
+        ],
+        "bullets": [
+          "Уникайте поширених паролів, таких як 'password123' або '123456'.",
+          "Використовуйте поєднання великих і малих літер, чисел і символів.",
+          "Ніколи не використовуйте особисту інформацію (наприклад, дату народження, ім'я) у паролях."
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "es",
+    "title": "Cómo crear contraseñas fuertes: una guía completa",
+    "excerpt": "Crear contraseñas fuertes es esencial para proteger tus cuentas en línea. Aprende consejos prácticos, errores comunes que debes evitar y métodos paso a paso para generar contraseñas seguras que sean difíciles de romper.",
+    "seoTitle": "Cómo crear contraseñas fuertes - protege tus cuentas",
+    "seoDescription": "Descubre consejos expertos para crear contraseñas fuertes. Evita errores comunes y sigue guías paso a paso para generar contraseñas seguras que protejan tu identidad en línea.",
+    "keywords": [
+      "consejos contraseñas fuertes",
+      "crear contraseña segura",
+      "guía seguridad contraseñas"
+    ],
+    "sections": [
+      {
+        "heading": "Por qué las contraseñas fuertes importan",
+        "paragraphs": [
+          "Las contraseñas débiles son la causa principal de filtraciones de datos. Los cibercriminales utilizan herramientas automatizadas para adivinar contraseñas en segundos. Una contraseña fuerte actúa como la primera línea de defensa contra el acceso no autorizado.",
+          "Las contraseñas fuertes deben ser únicas, complejas y difíciles de adivinar. No deben reutilizarse en múltiples cuentas, ya que una sola filtración podría comprometer todas las cuentas vinculadas."
+        ],
+        "bullets": [
+          "Evita contraseñas comunes como 'password123' o '123456'.",
+          "Usa una combinación de mayúsculas, minúsculas, números y símbolos.",
+          "Nunca uses información personal (por ejemplo, fecha de nacimiento, nombre) en contraseñas."
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "fr",
+    "title": "Comment créer des mots de passe sûrs : un guide complet",
+    "excerpt": "Créer des mots de passe sûrs est essentiel pour protéger vos comptes en ligne. Découvrez des conseils pratiques, les erreurs courantes à éviter et des méthodes étape par étape pour générer des mots de passe sécurisés qui sont difficiles à casser.",
+    "seoTitle": "Comment créer des mots de passe sûrs - protégez vos comptes",
+    "seoDescription": "Découvrez des conseils experts pour créer des mots de passe sûrs. Évitez les erreurs courantes et suivez des guides étape par étape pour générer des mots de passe sécurisés qui protègent votre identité en ligne.",
+    "keywords": [
+      "conseils mots de passe sûrs",
+      "créer mot de passe sécurisé",
+      "guide sécurité mots de passe"
+    ],
+    "sections": [
+      {
+        "heading": "Pourquoi les mots de passe sûrs sont importants",
+        "paragraphs": [
+          "Les mots de passe faibles sont la principale cause de fuites de données. Les cybercriminels utilisent des outils automatisés pour deviner des mots de passe en quelques secondes. Un mot de passe sûr agit comme la première ligne de défense contre l'accès non autorisé.",
+          "Les mots de passe sûrs doivent être uniques, complexes et difficiles à deviner. Ils ne doivent pas être réutilisés sur plusieurs comptes, car une seule fuite pourrait compromettre tous les comptes liés."
+        ],
+        "bullets": [
+          "Évitez les mots de passe courants comme 'password123' ou '123456'.",
+          "Utilisez une combinaison de majuscules, minuscules, chiffres et symboles.",
+          "Ne jamais utiliser d'informations personnelles (par exemple, date de naissance, nom) dans les mots de passe."
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "de",
+    "title": "Wie man sichere Passwörter erstellt: Ein umfassender Leitfaden",
+    "excerpt": "Sichere Passwörter zu erstellen ist entscheidend, um Ihre Online-Konten zu schützen. Lernen Sie praktische Tipps, häufige Fehler, die Sie vermeiden sollten, und Schritt-für-Schritt-Methoden, um sichere Passwörter zu generieren, die schwer zu knacken sind.",
+    "seoTitle": "Wie man sichere Passwörter erstellt - Schützen Sie Ihre Konten",
+    "seoDescription": "Entdecken Sie Expertentipps für sichere Passwörter. Vermeiden Sie häufige Fehler und folgen Sie Schritt-für-Schritt-Anleitungen, um sichere Passwörter zu erstellen, die Ihre Online-Identität schützen.",
+    "keywords": [
+      "sichere passwort tipps",
+      "sicheres passwort erstellen",
+      "passwort sicherheit leitfaden"
+    ],
+    "sections": [
+      {
+        "heading": "Warum sichere Passwörter wichtig sind",
+        "paragraphs": [
+          "Schwache Passwörter sind die Hauptursache für Datenlecks. Cyberkriminelle nutzen automatisierte Tools, um Passwörter in Sekunden zu knacken. Ein sicheres Passwort ist die erste Verteidigungslinie gegen unbefugten Zugriff.",
+          "Sichere Passwörter sollten eindeutig, komplex und schwer zu erraten sein. Sie sollten nicht auf mehreren Konten verwendet werden, da ein einziger Datenleck alle verknüpften Konten gefährden könnte."
+        ],
+        "bullets": [
+          "Vermeiden Sie gängige Passwörter wie 'password123' oder '123456'.",
+          "Verwenden Sie eine Kombination aus Großbuchstaben, Kleinbuchstaben, Zahlen und Symbolen.",
+          "Nichts Persönliches (z. B. Geburtsdatum, Name) in Passwörtern verwenden."
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "it",
+    "title": "Come creare password sicure: una guida completa",
+    "excerpt": "Creare password sicure è essenziale per proteggere i propri account online. Impara consigli pratici, errori comuni da evitare e metodi passo dopo passo per generare password sicure che siano difficili da rompere.",
+    "seoTitle": "Come creare password sicure - proteggi i tuoi account",
+    "seoDescription": "Scopri consigli esperti per creare password sicure. Evita errori comuni e segui guide passo dopo passo per generare password sicure che proteggono la tua identità online.",
+    "keywords": [
+      "consigli password sicure",
+      "creare password sicura",
+      "guida sicurezza password"
+    ],
+    "sections": [
+      {
+        "heading": "Perché le password sicure sono importanti",
+        "paragraphs": [
+          "Le password deboli sono la causa principale di fuga di dati. I criminali informatici utilizzano strumenti automatizzati per indovinare password in pochi secondi. Una password sicura agisce come la prima linea di difesa contro l'accesso non autorizzato.",
+          "Le password sicure devono essere uniche, complesse e difficili da indovinare. Non devono essere riutilizzate su diversi account, poiché un'unica fuga potrebbe compromettere tutti gli account collegati."
+        ],
+        "bullets": [
+          "Evita password comuni come 'password123' o '123456'.",
+          "Utilizza una combinazione di lettere maiuscole, minuscole, numeri e simboli.",
+          "Non utilizzare mai informazioni personali (ad esempio, data di nascita, nome) nelle password."
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "pt",
+    "title": "Como criar senhas fortes: um guia completo",
+    "excerpt": "Criar senhas fortes é essencial para proteger suas contas online. Aprenda dicas práticas, erros comuns que deve evitar e métodos passo a passo para gerar senhas seguras que sejam difíceis de quebrar.",
+    "seoTitle": "Como criar senhas fortes - proteja suas contas",
+    "seoDescription": "Descubra dicas de especialistas para criar senhas fortes. Evite erros comuns e siga guias passo a passo para gerar senhas seguras que protejam sua identidade online.",
+    "keywords": [
+      "dicas senhas fortes",
+      "criar senha segura",
+      "guia segurança senhas"
+    ],
+    "sections": [
+      {
+        "heading": "Por que senhas fortes são importantes",
+        "paragraphs": [
+          "Senhas fracas são a principal causa de vazamento de dados. Hackers usam ferramentas automatizadas para adivinhar senhas em segundos. Uma senha forte atua como a primeira linha de defesa contra o acesso não autorizado.",
+          "Senhas fortes devem ser únicas, complexas e difíceis de adivinhar. Elas não devem ser reutilizadas em múltiplas contas, pois um único vazamento poderia comprometer todas as contas vinculadas."
+        ],
+        "bullets": [
+          "Evite senhas comuns como 'password123' ou '123456'.",
+          "Use uma combinação de letras maiúsculas, minúsculas, números e símbolos.",
+          "Nunca use informações pessoais (como data de nascimento, nome) em senhas."
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "ru",
+    "title": "Как создать надежные пароли: полное руководство",
+    "excerpt": "Создание надежных паролей важно для защиты ваших онлайн-аккаунтов. Узнайте практические советы, распространенные ошибки, которые стоит избегать, и пошаговые методы для генерации безопасных паролей, которые трудно взломать.",
+    "seoTitle": "Как создать надежные пароли - защитите свои аккаунты",
+    "seoDescription": "Узнайте советы экспертов по созданию надежных паролей. Избегайте распространенных ошибок и следуйте пошаговым инструкциям для создания безопасных паролей, которые защищают вашу онлайн-идентичность.",
+    "keywords": [
+      "советы по надежным паролям",
+      "создать безопасный пароль",
+      "руководство по безопасности паролей"
+    ],
+    "sections": [
+      {
+        "heading": "Почему надежные пароли важны",
+        "paragraphs": [
+          "Слабые пароли являются основной причиной утечек данных. Хакеры используют автоматизированные инструменты, чтобы взломать пароли за секунды. Надежный пароль служит первой линией обороны против несанкционированного доступа.",
+          "Надежные пароли должны быть уникальными, сложными и трудными для угадывания. Их не следует повторять на нескольких аккаунтах, так как один инцидент может повлиять на все связанные аккаунты."
+        ],
+        "bullets": [
+          "Избегайте распространенных паролей, таких как 'password123' или '123456'.",
+          "Используйте комбинации прописных и строчных букв, чисел и символов.",
+          "Никогда не используйте личную информацию (например, дату рождения, имя) в паролях."
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "zh",
+    "title": "如何创建强密码：全面指南",
+    "excerpt": "创建强密码对于保护您的在线账户至关重要。学习实用技巧，避免常见错误，并按照逐步指南生成难以破解的安全密码。",
+    "seoTitle": "如何创建强密码 - 保护您的账户",
+    "seoDescription": "了解专家关于创建强密码的建议。避免常见错误，并遵循逐步指南生成安全密码，以保护您的在线身份。",
+    "keywords": [
+      "强密码技巧",
+      "创建安全密码",
+      "密码安全指南"
+    ],
+    "sections": [
+      {
+        "heading": "为什么强密码很重要",
+        "paragraphs": [
+          "弱密码是数据泄露的主要原因。黑客使用自动化工具在几秒钟内破解密码。强密码是防止未经授权访问的第一道防线。",
+          "强密码必须是唯一的、复杂的且难以猜测的。不应在多个账户上重复使用，因为一次泄露可能导致所有关联账户被攻破。"
+        ],
+        "bullets": [
+          "避免使用常见密码，如 'password123' 或 '123456'。",
+          "使用大写字母、小写字母、数字和符号的组合。",
+          "不要在密码中使用个人信息（如出生日期、姓名）。"
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "ja",
+    "title": "強いパスワードの作り方：完全ガイド",
+    "excerpt": "強力なパスワードを作成することは、オンラインアカウントを保護するために不可欠です。実用的なヒント、避けるべき一般的なミス、および安全なパスワードを生成するためのステップバイステップの方法を学びましょう。",
+    "seoTitle": "強いパスワードの作り方 - アカウントを保護",
+    "seoDescription": "専門家のアドバイスに従って強力なパスワードを作成しましょう。一般的なミスを避けて、オンラインアイデンティティを保護する安全なパスワードを生成するためのステップバイステップガイドに従ってください。",
+    "keywords": [
+      "強いパスワードのヒント",
+      "安全なパスワードの作成",
+      "パスワードセキュリティガイド"
+    ],
+    "sections": [
+      {
+        "heading": "なぜ強力なパスワードが必要か",
+        "paragraphs": [
+          "弱いパスワードはデータ漏洩の主な原因です。サイバー犯罪者は自動化されたツールを使用して、数秒でパスワードを推測します。強力なパスワードは、不正アクセスを防ぐための最初の防衛線です。",
+          "強力なパスワードは、一意で複雑で推測しにくいものでなければなりません。複数のアカウントで同じパスワードを使わないようにしましょう。1つの漏洩がすべての関連アカウントを危険にさらす可能性があります。"
+        ],
+        "bullets": [
+          "'password123'や'123456'などの一般的なパスワードは避けてください。",
+          "大文字、小文字、数字、記号を組み合わせてください。",
+          "パスワードに個人情報（例：生年月日、名前）は使用しないでください。"
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "pl",
+    "title": "Jak utworzyć silne hasła: kompletny przewodnik",
+    "excerpt": "Tworzenie silnych haseł jest kluczowe do ochrony swoich kont online. Dowiedz się praktycznych porad, typowych błędów, które należy unikać, oraz krok po kroku, jak generować bezpieczne hasła, które są trudne do złamania.",
+    "seoTitle": "Jak utworzyć silne hasła - ochrona kont",
+    "seoDescription": "Dowiedz się od ekspertów, jak tworzyć silne hasła. Unikaj typowych błędów i śledź krok po kroku przewodniki, aby utworzyć bezpieczne hasła, które ochronią Twoją tożsamość online.",
+    "keywords": [
+      "porady silne hasła",
+      "utworzyć bezpieczne hasło",
+      "przewodnik bezpieczeństwo hasła"
+    ],
+    "sections": [
+      {
+        "heading": "Dlaczego silne hasła są ważne",
+        "paragraphs": [
+          "Słabe hasła są główną przyczyną wycieków danych. Przestępcy cybernetyczni korzystają z automatyzowanych narzędzi, aby odgadnąć hasła w ciągu sekund. Silne hasło stanowi pierwszą linię obrony przed nieautoryzowanym dostępem.",
+          "Silne hasła muszą być unikalne, skomplikowane i trudne do odgadnięcia. Nie powinny być używane na wielu kontach, ponieważ jeden wyciek może zagrażać wszystkim połączonym kontom."
+        ],
+        "bullets": [
+          "Unikaj powszechnie używanych haseł, takich jak 'password123' lub '123456'.",
+          "Używaj kombinacji dużych i małych liter, cyfr i znaków specjalnych.",
+          "Nigdy nie używaj informacji osobistych (np. daty urodzenia, imienia) w hasłach."
+        ]
+      }
+    ],
+    "image": "/images/guides/how-to-create-strong-passwords.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "en",
+    "title": "Password Manager vs Manual Storage: A Comprehensive Comparison",
+    "excerpt": "Choosing between a password manager and manual storage is critical for online security. This guide compares the two methods, highlighting the risks of manual storage and the benefits of using a password manager for secure password management.",
+    "seoTitle": "Password Manager vs Manual Storage - Secure Your Data",
+    "seoDescription": "Compare password managers and manual storage. Discover why password managers are more secure and how to choose the right tool for safe password storage.",
+    "keywords": [
+      "password manager guide",
+      "store passwords safely",
+      "secure password storage"
+    ],
+    "sections": [
+      {
+        "heading": "Why Password Managers Outperform Manual Storage",
+        "paragraphs": [
+          "Manual storage of passwords is prone to errors, such as reusing passwords across accounts or writing them on sticky notes. Password managers eliminate these risks by generating unique passwords for each account and storing them securely.",
+          "Password managers use encryption to protect stored passwords, making them inaccessible to unauthorized users. Manual storage lacks this layer of security, increasing the risk of data breaches.",
+          "Automated password managers also offer features like auto-fill, password strength analysis, and two-factor authentication integration, which are unavailable in manual storage methods."
+        ],
+        "bullets": [
+          "Manual storage increases the risk of password reuse and data theft.",
+          "Password managers generate unique, complex passwords automatically.",
+          "Encryption in password managers prevents unauthorized access to stored credentials."
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "ua",
+    "title": "Менеджер паролів vs. ручне зберігання: повний порівняльний аналіз",
+    "excerpt": "Вибір між менеджером паролів і ручним зберіганням критично важливий для безпеки в мережі. Цей гід порівнює дві методи, підкреслюючи ризики ручного зберігання і переваги використання менеджера паролів для безпечного управління паролями.",
+    "seoTitle": "Менеджер паролів vs. ручне зберігання - захистіть ваші дані",
+    "seoDescription": "Порівняйте менеджери паролів і ручне зберігання. Дізнайтесь, чому менеджери паролів безпечніші і як вибрати правильний інструмент для безпечного зберігання паролів.",
+    "keywords": [
+      "гід менеджера паролів",
+      "зберігання паролів безпечно",
+      "безпечне зберігання паролів"
+    ],
+    "sections": [
+      {
+        "heading": "Чому менеджери паролів перевершують ручне зберігання",
+        "paragraphs": [
+          "Ручне зберігання паролів схильне помилкам, наприклад, повторному використанню паролів на різних акаунтах або запису їх на листівках. Менеджери паролів усувають ці ризики, генеруючи унікальні паролі для кожного акаунта і зберігаючи їх безпечно.",
+          "Менеджери паролів використовують шифрування для захисту зберіганих паролів, роблячи їх недоступними для несанкціонованих користувачів. Ручне зберігання не має цього рівня безпеки, що збільшує ризик витоку даних.",
+          "Автоматизовані менеджери паролів також пропонують функції, такі як автозаповнення, аналіз міцності паролів і інтеграцію двофакторної автентифікації, які недоступні у методах ручного зберігання."
+        ],
+        "bullets": [
+          "Ручне зберігання збільшує ризик повторного використання паролів і крадіжки даних.",
+          "Менеджери паролів автоматично генерують унікальні, складні паролі.",
+          "Шифрування в менеджерах паролів запобігає несанкціонованому доступу до зберіганих даних."
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "es",
+    "title": "Gestor de contraseñas vs. almacenamiento manual: una comparación completa",
+    "excerpt": "Elegir entre un gestor de contraseñas y el almacenamiento manual es crítico para la seguridad en línea. Esta guía compara los dos métodos, destacando los riesgos del almacenamiento manual y las ventajas de usar un gestor de contraseñas para el manejo seguro de contraseñas.",
+    "seoTitle": "Gestor de contraseñas vs. almacenamiento manual - Protege tus datos",
+    "seoDescription": "Compara gestores de contraseñas y almacenamiento manual. Descubre por qué los gestores de contraseñas son más seguros y cómo elegir la herramienta adecuada para almacenar contraseñas de forma segura.",
+    "keywords": [
+      "guía gestor de contraseñas",
+      "almacenamiento seguro de contraseñas",
+      "seguridad de contraseñas"
+    ],
+    "sections": [
+      {
+        "heading": "Por qué los gestores de contraseñas superan al almacenamiento manual",
+        "paragraphs": [
+          "El almacenamiento manual de contraseñas es propenso a errores, como reutilizar contraseñas en múltiples cuentas o escribirlas en notas adhesivas. Los gestores de contraseñas eliminan estos riesgos al generar contraseñas únicas para cada cuenta y almacenarlas de forma segura.",
+          "Los gestores de contraseñas utilizan cifrado para proteger las contraseñas almacenadas, haciéndolas inaccesibles para usuarios no autorizados. El almacenamiento manual carece de esta capa de seguridad, aumentando el riesgo de filtraciones de datos.",
+          "Los gestores de contraseñas automatizados también ofrecen funciones como autocompletado, análisis de la fortaleza de las contraseñas e integración con autenticación de dos factores, que no están disponibles en métodos de almacenamiento manual."
+        ],
+        "bullets": [
+          "El almacenamiento manual incrementa el riesgo de reutilización de contraseñas y robo de datos.",
+          "Los gestores de contraseñas generan automáticamente contraseñas únicas y complejas.",
+          "El cifrado en los gestores de contraseñas impide el acceso no autorizado a las credenciales almacenadas."
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "fr",
+    "title": "Gestionnaire de mots de passe vs. stockage manuel : une comparaison complète",
+    "excerpt": "Choisir entre un gestionnaire de mots de passe et un stockage manuel est essentiel pour la sécurité en ligne. Ce guide compare les deux méthodes, mettant en évidence les risques du stockage manuel et les avantages de l'utilisation d'un gestionnaire de mots de passe pour un stockage sécurisé.",
+    "seoTitle": "Gestionnaire de mots de passe vs. stockage manuel - Protégez vos données",
+    "seoDescription": "Comparez les gestionnaires de mots de passe et le stockage manuel. Découvrez pourquoi les gestionnaires de mots de passe sont plus sécurisés et comment choisir l'outil approprié pour stocker vos mots de passe en toute sécurité.",
+    "keywords": [
+      "guide gestionnaire de mots de passe",
+      "stocker des mots de passe en toute sécurité",
+      "sécurité des mots de passe"
+    ],
+    "sections": [
+      {
+        "heading": "Pourquoi les gestionnaires de mots de passe surpassent le stockage manuel",
+        "paragraphs": [
+          "Le stockage manuel des mots de passe est propice aux erreurs, comme la réutilisation de mots de passe sur plusieurs comptes ou l'écriture de ceux-ci sur des post-it. Les gestionnaires de mots de passe éliminent ces risques en générant des mots de passe uniques pour chaque compte et en les stockant de manière sécurisée.",
+          "Les gestionnaires de mots de passe utilisent le chiffrement pour protéger les mots de passe stockés, les rendant inaccessibles aux utilisateurs non autorisés. Le stockage manuel manque de cette couche de sécurité, augmentant le risque de fuites de données.",
+          "Les gestionnaires de mots de passe automatisés proposent également des fonctionnalités comme le remplissage automatique, l'analyse de la force des mots de passe et l'intégration de l'authentification à deux facteurs, absentes des méthodes de stockage manuel."
+        ],
+        "bullets": [
+          "Le stockage manuel augmente le risque de réutilisation des mots de passe et de vol de données.",
+          "Les gestionnaires de mots de passe génèrent automatiquement des mots de passe uniques et complexes.",
+          "Le chiffrement des gestionnaires de mots de passe empêche l'accès non autorisé aux données stockées."
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "de",
+    "title": "Passwort-Manager vs. manueller Speicher: umfassende Vergleichsanalyse",
+    "excerpt": "Die Wahl zwischen einem Passwort-Manager und manuellem Speicher ist entscheidend für die Online-Sicherheit. Dieser Leitfaden vergleicht beide Methoden und hebt die Risiken des manuellen Speichers sowie die Vorteile eines Passwort-Managers für sicheren Passwort-Management hervor.",
+    "seoTitle": "Passwort-Manager vs. manueller Speicher - Schützen Sie Ihre Daten",
+    "seoDescription": "Vergleichen Sie Passwort-Manager und manuellen Speicher. Entdecken Sie, warum Passwort-Manager sicherer sind und wie Sie das richtige Tool für den sicheren Passwort-Speicher auswählen können.",
+    "keywords": [
+      "Passwort-Manager-Guide",
+      "Passwörter sicher speichern",
+      "Passwort-Sicherheit"
+    ],
+    "sections": [
+      {
+        "heading": "Warum Passwort-Manager manuellen Speicher übertragen",
+        "paragraphs": [
+          "Der manuelle Speicher von Passwörtern ist anfällig für Fehler, wie das Wiederholen von Passwörtern auf mehreren Konten oder das Schreiben auf Zetteln. Passwort-Manager eliminieren diese Risiken, indem sie eindeutige Passwörter für jedes Konto generieren und sie sicher speichern.",
+          "Passwort-Manager nutzen Verschlüsselung, um gespeicherte Passwörter zu schützen, wodurch sie für unbefugte Nutzer unzugänglich werden. Manueller Speicher verfügt über keine dieser Sicherheitsebene, was das Risiko von Datenlecks erhöht.",
+          "Automatisierte Passwort-Manager bieten auch Funktionen wie Auto-Vervollständigung, Analyse der Passwortstärke und Integration von Zwei-Faktor-Authentifizierung, die bei manuellem Speicher nicht verfügbar sind."
+        ],
+        "bullets": [
+          "Manueller Speicher erhöht das Risiko der Wiederholung von Passwörtern und Datendiebstahl.",
+          "Passwort-Manager generieren automatisch eindeutige, komplexe Passwörter.",
+          "Verschlüsselung in Passwort-Managern verhindert unbefugten Zugriff auf gespeicherte Daten."
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "it",
+    "title": "Gestore di password vs. archiviazione manuale: confronto completo",
+    "excerpt": "Scegliere tra un gestore di password e un archivio manuale è cruciale per la sicurezza online. Questa guida confronta i due metodi, evidenziando i rischi dell'archiviazione manuale e i vantaggi dell'utilizzo di un gestore di password per un archiviazione sicura.",
+    "seoTitle": "Gestore di password vs. archiviazione manuale - Proteggi i tuoi dati",
+    "seoDescription": "Confronta gestori di password e archiviazione manuale. Scopri perché i gestori di password sono più sicuri e come scegliere lo strumento giusto per archiviare le password in modo sicuro.",
+    "keywords": [
+      "guida gestore di password",
+      "archiviazione sicura delle password",
+      "sicurezza delle password"
+    ],
+    "sections": [
+      {
+        "heading": "Perché i gestori di password superano l'archiviazione manuale",
+        "paragraphs": [
+          "L'archiviazione manuale delle password è propensa agli errori, come il riutilizzo delle password su diversi account o la scrittura su post-it. I gestori di password eliminano questi rischi generando password uniche per ogni account e archiviarle in modo sicuro.",
+          "I gestori di password utilizzano la crittografia per proteggere le password archiviate, rendendole inaccessibili agli utenti non autorizzati. L'archiviazione manuale non dispone di questa protezione, aumentando il rischio di fuga di dati.",
+          "I gestori di password automatizzati offrono anche funzionalità come l'autocompletamento, l'analisi della forza delle password e l'integrazione con l'autenticazione a due fattori, assenti nei metodi di archiviazione manuale."
+        ],
+        "bullets": [
+          "L'archiviazione manuale aumenta il rischio di riutilizzo delle password e di furto di dati.",
+          "I gestori di password generano automaticamente password uniche e complesse.",
+          "La crittografia nei gestori di password impedisce l'accesso non autorizzato ai dati archiviati."
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "pt",
+    "title": "Gerenciador de senhas vs. armazenamento manual: comparação completa",
+    "excerpt": "Escolher entre um gerenciador de senhas e o armazenamento manual é crucial para a segurança online. Este guia compara os dois métodos, destacando os riscos do armazenamento manual e as vantagens do uso de um gerenciador de senhas para armazenamento seguro.",
+    "seoTitle": "Gerenciador de senhas vs. armazenamento manual - proteja seus dados",
+    "seoDescription": "Compare gerenciadores de senhas e armazenamento manual. Descubra por que gerenciadores de senhas são mais seguros e como escolher a ferramenta certa para armazenar senhas de forma segura.",
+    "keywords": [
+      "guia gerenciador de senhas",
+      "armazenar senhas de forma segura",
+      "segurança de senhas"
+    ],
+    "sections": [
+      {
+        "heading": "Por que gerenciadores de senhas superam o armazenamento manual",
+        "paragraphs": [
+          "O armazenamento manual de senhas é propenso a erros, como reutilizar senhas em múltiplos contas ou escrevê-las em notas adesivas. Gerenciadores de senhas eliminam esses riscos, gerando senhas únicas para cada conta e armazenando-as de forma segura.",
+          "Gerenciadores de senhas utilizam criptografia para proteger senhas armazenadas, tornando-as inacessíveis para usuários não autorizados. O armazenamento manual carece dessa camada de segurança, aumentando o risco de vazamento de dados.",
+          "Gerenciadores de senhas automatizados também oferecem funcionalidades como preenchimento automático, análise da força das senhas e integração com autenticação de dois fatores, que não estão disponíveis em métodos de armazenamento manual."
+        ],
+        "bullets": [
+          "O armazenamento manual aumenta o risco de reutilização de senhas e roubo de dados.",
+          "Gerenciadores de senhas geram automaticamente senhas únicas e complexas.",
+          "Criptografia em gerenciadores de senhas impede o acesso não autorizado a dados armazenados."
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "ru",
+    "title": "Менеджер паролей vs. ручное хранение: полное сравнение",
+    "excerpt": "Выбор между менеджером паролей и ручным хранением критически важен для онлайн-безопасности. Этот гид сравнивает два метода, подчеркивая риски ручного хранения и преимущества использования менеджера паролей для безопасного управления паролями.",
+    "seoTitle": "Менеджер паролей vs. ручное хранение - защитите свои данные",
+    "seoDescription": "Сравните менеджеры паролей и ручное хранение. Узнайте, почему менеджеры паролей безопаснее и как выбрать правильный инструмент для безопасного хранения паролей.",
+    "keywords": [
+      "руководство по менеджеру паролей",
+      "безопасное хранение паролей",
+      "безопасность паролей"
+    ],
+    "sections": [
+      {
+        "heading": "Почему менеджеры паролей превосходят ручное хранение",
+        "paragraphs": [
+          "Ручное хранение паролей склонно к ошибкам, таким как повторное использование паролей на нескольких аккаунтах или запись их на листочках. Менеджеры паролей устраняют эти риски, генерируя уникальные пароли для каждого аккаунта и храня их безопасно.",
+          "Менеджеры паролей используют шифрование для защиты хранящихся паролей, делая их недоступными для несанкционированных пользователей. Ручное хранение не имеет этой защиты, увеличивая риск утечки данных.",
+          "Автоматизированные менеджеры паролей также предлагают функции, такие как автозаполнение, анализ прочности паролей и интеграция с двухфакторной аутентификацией, недоступные в методах ручного хранения."
+        ],
+        "bullets": [
+          "Ручное хранение увеличивает риск повторного использования паролей и кражи данных.",
+          "Менеджеры паролей автоматически генерируют уникальные, сложные пароли.",
+          "Шифрование в менеджерах паролей предотвращает несанкционированный доступ к хранящимся данным."
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "zh",
+    "title": "密码管理器与手动存储的比较：全面分析",
+    "excerpt": "选择密码管理器还是手动存储对网络安全至关重要。本指南比较了两种方法，突出了手动存储的风险以及使用密码管理器进行安全密码管理的优势。",
+    "seoTitle": "密码管理器 vs. 手动存储 - 保护您的数据",
+    "seoDescription": "比较密码管理器和手动存储。了解为什么密码管理器更安全以及如何选择合适的工具进行安全的密码存储。",
+    "keywords": [
+      "密码管理器指南",
+      "安全存储密码",
+      "密码安全"
+    ],
+    "sections": [
+      {
+        "heading": "为什么密码管理器优于手动存储",
+        "paragraphs": [
+          "手动存储密码容易出错，例如在多个账户中重复使用密码或将其写在便签纸上。密码管理器通过为每个账户生成唯一密码并安全存储来消除这些风险。",
+          "密码管理器使用加密技术保护存储的密码，使未经授权的用户无法访问。手动存储缺乏这种安全层，增加了数据泄露的风险。",
+          "自动化密码管理器还提供自动填充、密码强度分析和双因素身份验证集成等功能，这些功能在手动存储方法中不可用。"
+        ],
+        "bullets": [
+          "手动存储增加了密码重复使用和数据被盗的风险。",
+          "密码管理器可自动生成唯一且复杂的密码。",
+          "密码管理器中的加密技术可防止未经授权的访问。"
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "ja",
+    "title": "パスワードマネージャー vs. 手動保存：完全な比較ガイド",
+    "excerpt": "パスワードマネージャーと手動保存の選択は、オンラインセキュリティにとって重要です。このガイドでは、2つの方法を比較し、手動保存のリスクとパスワードマネージャーによる安全なパスワード管理の利点を説明します。",
+    "seoTitle": "パスワードマネージャー vs. 手動保存 - データを保護",
+    "seoDescription": "パスワードマネージャーと手動保存を比較しましょう。なぜパスワードマネージャーがより安全なのか、安全なパスワード保存に適したツールの選び方を学びましょう。",
+    "keywords": [
+      "パスワードマネージャーのガイド",
+      "パスワードを安全に保存",
+      "パスワードセキュリティ"
+    ],
+    "sections": [
+      {
+        "heading": "なぜパスワードマネージャーが手動保存を上回るのか",
+        "paragraphs": [
+          "手動でパスワードを保存する方法は、複数のアカウントで同じパスワードを再利用したり、メモに書き留めたりするなど、エラーのリスクがあります。パスワードマネージャーは、それぞれのアカウントに一意のパスワードを生成し、安全に保存することで、これらのリスクを解消します。",
+          "パスワードマネージャーは、保存されたパスワードを暗号化して、不正アクセスを防ぎます。手動保存では、このようなセキュリティ対策が欠如しているため、データ漏洩のリスクが高まります。",
+          "自動化されたパスワードマネージャーは、手動保存では利用できない、自動入力やパスワードの強度分析、2要素認証の統合などの機能を提供します。"
+        ],
+        "bullets": [
+          "手動保存は、パスワードの再利用やデータの盗難のリスクを高めます。",
+          "パスワードマネージャーは、一意で複雑なパスワードを自動生成します。",
+          "パスワードマネージャーの暗号化により、不正アクセスを防止できます。"
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "locale": "pl",
+    "title": "Menedżer haseł vs. ręczne przechowywanie: kompletny porównanie",
+    "excerpt": "Wybór między menedżerem haseł a ręcznym przechowywaniem jest kluczowy dla bezpieczeństwa online. Ten przewodnik porównuje oba metody, podkreślając ryzyko związane z ręcznym przechowywaniem oraz korzyści z użycia menedżera haseł do bezpiecznego zarządzania haseł.",
+    "seoTitle": "Menedżer haseł vs. ręczne przechowywanie - ochrona danych",
+    "seoDescription": "Porównaj menedżery haseł i ręczne przechowywanie. Dowiedz się, dlaczego menedżery haseł są bezpieczniejsze i jak wybrać odpowiedni narzędzie do bezpiecznego przechowywania haseł.",
+    "keywords": [
+      "przewodnik menedżera haseł",
+      "bezpieczne przechowywanie haseł",
+      "bezpieczeństwo haseł"
+    ],
+    "sections": [
+      {
+        "heading": "Dlaczego menedżery haseł przewyższają ręczne przechowywanie",
+        "paragraphs": [
+          "Ręczne przechowywanie haseł jest wrażliwe na błędy, takie jak ponowne użycie haseł na wielu kontach lub ich zapisywanie na kartkach. Menedżery haseł eliminują te ryzyka, generując unikalne hasła dla każdego konta i przechowując je bezpiecznie.",
+          "Menedżery haseł wykorzystują szyfrowanie, aby chronić przechowywane hasła, czyniąc je niedostępne dla nieautoryzowanych użytkowników. Ręczne przechowywanie brakuje tej warstwy bezpieczeństwa, zwiększając ryzyko wycieków danych.",
+          "Automatyzowane menedżery haseł oferują również funkcje takie jak autouzupełnianie, analiza siły haseł i integracja z autoryzacją dwuskładnikową, które są niedostępne w metodach ręcznego przechowywania."
+        ],
+        "bullets": [
+          "Ręczne przechowywanie zwiększa ryzyko ponownego użycia haseł i kradzieży danych.",
+          "Menedżery haseł automatycznie generują unikalne, skomplikowane hasła.",
+          "Szyfrowanie w menedżerach haseł zapobiega nieautoryzowanemu dostępowi do przechowywanych danych."
+        ]
+      }
+    ],
+    "image": "/images/guides/password-manager-vs-manual-storage.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "en",
+    "title": "Passphrase vs. Password Entropy: Understanding Security Differences",
+    "excerpt": "Entropy measures the unpredictability of passwords and passphrases. This guide explains how passphrases offer higher entropy and better security compared to traditional passwords, even with fewer characters.",
+    "seoTitle": "Passphrase vs. Password Entropy - Enhance Your Security",
+    "seoDescription": "Learn the difference between passphrase entropy and password entropy. Discover why passphrases are more secure and how entropy impacts password strength.",
+    "keywords": [
+      "passphrase entropy",
+      "password entropy explained",
+      "security differences"
+    ],
+    "sections": [
+      {
+        "heading": "What is Entropy in Passwords?",
+        "paragraphs": [
+          "Entropy is a measure of randomness in a password or passphrase. Higher entropy means greater resistance to brute-force attacks. Traditional passwords often have lower entropy due to predictable patterns or limited character sets.",
+          "Passphrases, which are longer sequences of words or phrases, typically have higher entropy because they incorporate more characters, including spaces and non-alphanumeric symbols. This complexity makes them harder to guess or crack.",
+          "Entropy calculations use formulas like $ \\text{Entropy} = \\log_2(N^L) $, where $ N $ is the number of possible characters and $ L $ is the length. Passphrases usually outperform passwords in this metric."
+        ],
+        "bullets": [
+          "Entropy determines how hard a password is to crack.",
+          "Passphrases increase entropy by using more characters and words.",
+          "Traditional passwords often lack the randomness needed for high entropy."
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "ua",
+    "title": "Фраза vs. пароль: ентропія та безпека",
+    "excerpt": "Ентропія вимірює непередбачуваність паролів і фраз. Цей гід пояснює, чому фрази мають вищу ентропію та кращу безпеку порівняно з традиційними паролями, навіть з меншою кількістю символів.",
+    "seoTitle": "Фраза vs. пароль: ентропія - підвищте безпеку",
+    "seoDescription": "Дізнайтесь різницю між ентропією фраз і паролів. З’ясуйте, чому фрази безпечніші та як ентропія впливає на міцність паролів.",
+    "keywords": [
+      "ентропія фраз",
+      "ентропія паролів пояснення",
+      "різниця в безпеці"
+    ],
+    "sections": [
+      {
+        "heading": "Що таке ентропія в паролях?",
+        "paragraphs": [
+          "Ентропія — це міра випадковості в паролі або фразі. Вища ентропія означає кращий захист від атак методом перебору. Традиційні паролі часто мають нижчу ентропію через передбачувані патерни або обмежені набори символів.",
+          "Фрази, які є довшими послідовностями слів або фраз, зазвичай мають вищу ентропію, оскільки використовують більше символів, включаючи пропуски та неналежні алфавітні символи. Ця складність робить їх важче вгадати або зламати.",
+          "Обчислення ентропії використовує формули, наприклад $ \\text{Ентропія} = \\log_2(N^L) $, де $ N $ — кількість можливих символів, а $ L $ — довжина. Фрази зазвичай перевершують паролі за цим показником."
+        ],
+        "bullets": [
+          "Ентропія визначає, наскільки важко зламати пароль.",
+          "Фрази збільшують ентропію, використовуючи більше символів і слів.",
+          "Традиційні паролі часто не мають необхідної випадковості для високої ентропії."
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "es",
+    "title": "Frase vs. contraseña: entropía y diferencias de seguridad",
+    "excerpt": "La entropía mide la imprevisibilidad de las contraseñas y frases. Esta guía explica cómo las frases ofrecen mayor entropía y mayor seguridad frente a contraseñas tradicionales, incluso con menos caracteres.",
+    "seoTitle": "Frase vs. contraseña: entropía - mejore su seguridad",
+    "seoDescription": "Aprenda la diferencia entre la entropía de frases y contraseñas. Descubra por qué las frases son más seguras y cómo la entropía afecta la fortaleza de las contraseñas.",
+    "keywords": [
+      "entropía de frases",
+      "explicación de entropía de contraseñas",
+      "diferencias de seguridad"
+    ],
+    "sections": [
+      {
+        "heading": "¿Qué es la entropía en contraseñas?",
+        "paragraphs": [
+          "La entropía es una medida de la aleatoriedad de una contraseña o frase. Una mayor entropía implica una mejor resistencia a los ataques de fuerza bruta. Las contraseñas tradicionales suelen tener menor entropía debido a patrones predecibles o conjuntos limitados de caracteres.",
+          "Las frases, que son secuencias más largas de palabras o frases, suelen tener mayor entropía porque utilizan más caracteres, incluyendo espacios y símbolos no alfanuméricos. Esta complejidad las hace más difíciles de adivinar o romper.",
+          "Los cálculos de entropía utilizan fórmulas como $ \\text{Entropía} = \\log_2(N^L) $, donde $ N $ es el número de caracteres posibles y $ L $ es la longitud. Las frases suelen superar a las contraseñas en este indicador."
+        ],
+        "bullets": [
+          "La entropía determina cuán difícil es romper una contraseña.",
+          "Las frases aumentan la entropía al usar más caracteres y palabras.",
+          "Las contraseñas tradicionales suelen carecer de la aleatoriedad necesaria para una alta entropía."
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "fr",
+    "title": "Phrase vs. mot de passe : entropie et différences de sécurité",
+    "excerpt": "L'entropie mesure l'imprévisibilité des mots de passe et des phrases. Ce guide explique pourquoi les phrases offrent une entropie plus élevée et une meilleure sécurité par rapport aux mots de passe traditionnels, même avec moins de caractères.",
+    "seoTitle": "Phrase vs. mot de passe : entropie - renforcez votre sécurité",
+    "seoDescription": "Découvrez la différence entre l'entropie des phrases et des mots de passe. Découvrez pourquoi les phrases sont plus sécurisées et comment l'entropie influence la force des mots de passe.",
+    "keywords": [
+      "entropie des phrases",
+      "explication de l'entropie des mots de passe",
+      "différences de sécurité"
+    ],
+    "sections": [
+      {
+        "heading": "Qu'est-ce que l'entropie dans les mots de passe?",
+        "paragraphs": [
+          "L'entropie est une mesure de l'aléatoire d'un mot de passe ou d'une phrase. Une entropie plus élevée implique une meilleure résistance aux attaques par force brute. Les mots de passe traditionnels ont souvent une entropie plus faible en raison de schémas prévisibles ou d'ensembles de caractères limités.",
+          "Les phrases, qui sont des séquences plus longues de mots ou de phrases, ont généralement une entropie plus élevée car elles utilisent plus de caractères, y compris des espaces et des symboles non alphanumériques. Cette complexité les rend plus difficiles à deviner ou à casser.",
+          "Les calculs d'entropie utilisent des formules comme $ \\text{Entropie} = \\log_2(N^L) $, où $ N $ est le nombre de caractères possibles et $ L $ est la longueur. Les phrases dépassent souvent les mots de passe selon ce critère."
+        ],
+        "bullets": [
+          "L'entropie détermine à quel point un mot de passe est difficile à casser.",
+          "Les phrases augmentent l'entropie en utilisant plus de caractères et de mots.",
+          "Les mots de passe traditionnels manquent souvent de l'aléatoire nécessaire pour une haute entropie."
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "de",
+    "title": "Phrase vs. Passwort: Entropie und Sicherheitsunterschiede",
+    "excerpt": "Entropie misst die Unvorhersehbarkeit von Passwörtern und Phrasen. Dieser Leitfaden erklärt, warum Phrasen eine höhere Entropie und bessere Sicherheit als herkömmliche Passwörter bieten, auch mit weniger Zeichen.",
+    "seoTitle": "Phrase vs. Passwort: Entropie - Verbessern Sie Ihre Sicherheit",
+    "seoDescription": "Erfahren Sie den Unterschied zwischen der Entropie von Phrasen und Passwörtern. Entdecken Sie, warum Phrasen sicherer sind und wie Entropie die Passwortstärke beeinflusst.",
+    "keywords": [
+      "Entropie von Phrasen",
+      "Erklärung der Entropie von Passwörtern",
+      "Sicherheitsunterschiede"
+    ],
+    "sections": [
+      {
+        "heading": "Was ist Entropie bei Passwörtern?",
+        "paragraphs": [
+          "Entropie ist ein Maß für die Zufälligkeit eines Passworts oder einer Phrase. Eine höhere Entropie bedeutet eine bessere Widerstandsfähigkeit gegen Brute-Force-Angriffe. Traditionelle Passwörter haben oft eine geringere Entropie aufgrund vorhersehbarer Muster oder begrenzter Zeichensätze.",
+          "Phrasen, die längere Sequenzen von Wörtern oder Phrasen sind, haben in der Regel eine höhere Entropie, da sie mehr Zeichen verwenden, einschließlich Leerzeichen und nicht-alphanumerischer Symbole. Diese Komplexität macht sie schwerer zu erraten oder zu knacken.",
+          "Entropie-Berechnungen verwenden Formeln wie $ \\text{Entropie} = \\log_2(N^L) $, wobei $ N $ die Anzahl der möglichen Zeichen und $ L $ die Länge ist. Phrasen übertreffen traditionelle Passwörter in diesem Maßstab oft."
+        ],
+        "bullets": [
+          "Entropie bestimmt, wie schwer ein Passwort zu knacken ist.",
+          "Phrasen erhöhen die Entropie durch die Verwendung mehrerer Zeichen und Wörter.",
+          "Traditionelle Passwörter haben oft nicht genug Zufälligkeit für eine hohe Entropie."
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "it",
+    "title": "Frase vs. password: entropia e differenze di sicurezza",
+    "excerpt": "L'entropia misura l'imprevedibilità delle password e delle frasi. Questa guida spiega perché le frasi offrono un'entropia maggiore e una maggiore sicurezza rispetto alle password tradizionali, anche con meno caratteri.",
+    "seoTitle": "Frase vs. password: entropia - aumenta la tua sicurezza",
+    "seoDescription": "Scopri la differenza tra l'entropia delle frasi e delle password. Scopri perché le frasi sono più sicure e come l'entropia influisce sulla forza delle password.",
+    "keywords": [
+      "entropia delle frasi",
+      "spiegazione dell'entropia delle password",
+      "differenze di sicurezza"
+    ],
+    "sections": [
+      {
+        "heading": "Cosa è l'entropia nelle password?",
+        "paragraphs": [
+          "L'entropia è una misura della casualità di una password o frase. Un'entropia più alta implica una maggiore resistenza agli attacchi di forza bruta. Le password tradizionali spesso hanno un'entropia più bassa a causa di schemi prevedibili o insiemi limitati di caratteri.",
+          "Le frasi, che sono sequenze più lunghe di parole o frasi, hanno in genere un'entropia più alta perché utilizzano più caratteri, inclusi spazi e simboli non alfanumerici. Questa complessità le rende più difficili da indovinare o rompere.",
+          "I calcoli dell'entropia utilizzano formule come $ \\text{Entropia} = \\log_2(N^L) $, dove $ N $ è il numero di caratteri possibili e $ L $ è la lunghezza. Le frasi spesso superano le password tradizionali in questo indicatore."
+        ],
+        "bullets": [
+          "L'entropia determina quanto difficile è rompere una password.",
+          "Le frasi aumentano l'entropia utilizzando più caratteri e parole.",
+          "Le password tradizionali spesso mancano della casualità necessaria per un'alta entropia."
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "pt",
+    "title": "Frase vs. senha: entropia e diferenças de segurança",
+    "excerpt": "A entropia mede a imprevisibilidade de senhas e frases. Este guia explica por que frases oferecem maior entropia e maior segurança em comparação com senhas tradicionais, mesmo com menos caracteres.",
+    "seoTitle": "Frase vs. senha: entropia - aumente sua segurança",
+    "seoDescription": "Descubra a diferença entre a entropia de frases e senhas. Saiba por que frases são mais seguras e como a entropia afeta a força das senhas.",
+    "keywords": [
+      "entropia de frases",
+      "explicação da entropia de senhas",
+      "diferenças de segurança"
+    ],
+    "sections": [
+      {
+        "heading": "O que é entropia em senhas?",
+        "paragraphs": [
+          "A entropia é uma medida da aleatoriedade de uma senha ou frase. Maior entropia implica maior resistência a ataques de força bruta. Senhas tradicionais geralmente têm menor entropia devido a padrões previsíveis ou conjuntos limitados de caracteres.",
+          "Frases, que são sequências mais longas de palavras ou frases, normalmente têm maior entropia porque utilizam mais caracteres, incluindo espaços e símbolos não alfanuméricos. Essa complexidade as torna mais difíceis de adivinhar ou quebrar.",
+          "Cálculos de entropia usam fórmulas como $ \\text{Entropia} = \\log_2(N^L) $, onde $ N $ é o número de caracteres possíveis e $ L $ é o comprimento. Frases geralmente superam senhas tradicionais nesse indicador."
+        ],
+        "bullets": [
+          "A entropia determina quão difícil é quebrar uma senha.",
+          "Frases aumentam a entropia ao usar mais caracteres e palavras.",
+          "Senhas tradicionais geralmente carecem da aleatoriedade necessária para alta entropia."
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "ru",
+    "title": "Фраза vs. пароль: энтропия и различия в безопасности",
+    "excerpt": "Энтропия измеряет непредсказуемость паролей и фраз. Этот гайд объясняет, почему фразы обеспечивают более высокую энтропию и лучшую безопасность по сравнению с традиционными паролями, даже при меньшем количестве символов.",
+    "seoTitle": "Фраза vs. пароль: энтропия - повысьте безопасность",
+    "seoDescription": "Узнайте разницу между энтропией фраз и паролей. Узнайте, почему фразы безопаснее и как энтропия влияет на прочность паролей.",
+    "keywords": [
+      "энтропия фраз",
+      "объяснение энтропии паролей",
+      "различия в безопасности"
+    ],
+    "sections": [
+      {
+        "heading": "Что такое энтропия в паролях?",
+        "paragraphs": [
+          "Энтропия — это мера случайности пароля или фразы. Высокая энтропия означает лучшее сопротивление атакам методом перебора. Традиционные пароли часто имеют низкую энтропию из-за предсказуемых паттернов или ограниченного набора символов.",
+          "Фразы, которые являются более длинными последовательностями слов или фраз, обычно имеют более высокую энтропию, потому что используют больше символов, включая пробелы и ненаучные символы. Эта сложность делает их сложнее для угадывания или взлома.",
+          "Расчёты энтропии используют формулы вроде $ \\text{Энтропия} = \\log_2(N^L) $, где $ N $ — количество возможных символов, а $ L $ — длина. Фразы обычно превосходят традиционные пароли по этому показателю."
+        ],
+        "bullets": [
+          "Энтропия определяет, насколько трудно взломать пароль.",
+          "Фразы увеличивают энтропию, используя больше символов и слов.",
+          "Традиционные пароли часто не имеют необходимой случайности для высокой энтропии."
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "zh",
+    "title": "短语 vs. 密码：熵与安全性的差异",
+    "excerpt": "熵衡量密码和短语的不可预测性。本指南解释了为什么短语在熵方面优于传统密码，即使字符更少也能提供更高的安全性。",
+    "seoTitle": "短语 vs. 密码：熵 - 提高安全性",
+    "seoDescription": "了解短语熵和密码熵的差异。发现为什么短语更安全以及熵如何影响密码强度。",
+    "keywords": [
+      "短语熵",
+      "密码熵解释",
+      "安全性差异"
+    ],
+    "sections": [
+      {
+        "heading": "密码中的熵是什么？",
+        "paragraphs": [
+          "熵是密码或短语随机性的度量。更高的熵意味着更强的抗暴力破解能力。传统密码通常因可预测的模式或有限的字符集而具有较低的熵。",
+          "短语，即更长的单词或短语序列，通常熵更高，因为它们使用更多字符，包括空格和非字母数字符号。这种复杂性使它们更难猜测或破解。",
+          "熵计算使用公式如 $ \\text{熵} = \\log_2(N^L) $，其中 $ N $ 是可能字符数，$ L $ 是长度。短语通常在这一指标上优于传统密码。"
+        ],
+        "bullets": [
+          "熵决定了密码多难被破解。",
+          "短语通过使用更多字符和单词增加熵。",
+          "传统密码通常缺乏实现高熵所需的随机性。"
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "ja",
+    "title": "フレーズ vs. パスワード：エントロピーとセキュリティの違い",
+    "excerpt": "エントロピーはパスワードやフレーズの予測不可能性を測定します。このガイドでは、フレーズがより高いエントロピーとセキュリティを提供し、従来のパスワードよりも少ない文字でもより安全である理由を説明します。",
+    "seoTitle": "フレーズ vs. パスワード：エントロピー - セキュリティを向上",
+    "seoDescription": "フレーズのエントロピーとパスワードのエントロピーの違いを学びましょう。なぜフレーズがより安全なのか、エントロピーがパスワードの強度に与える影響を理解しましょう。",
+    "keywords": [
+      "フレーズのエントロピー",
+      "パスワードのエントロピーの説明",
+      "セキュリティの違い"
+    ],
+    "sections": [
+      {
+        "heading": "パスワードのエントロピーとは？",
+        "paragraphs": [
+          "エントロピーはパスワードやフレーズのランダム性を測る指標です。エントロピーが高いほど、ブルートフォース攻撃への耐性が高まります。従来のパスワードは、予測可能なパターンや限られた文字セットのため、エントロピーが低くなる傾向があります。",
+          "フレーズは、より長い単語やフレーズのシーケンスであり、スペースや非アルファベット記号を含む多くの文字を使用するため、エントロピーが高くなります。この複雑さにより、フレーズは推測や破壊がより困難になります。",
+          "エントロピーの計算には、$ \\text{エントロピー} = \\log_2(N^L) $ のような公式が使われます。ここで $ N $ は可能な文字数、$ L $ は長さです。フレーズはこの指標で従来のパスワードを上回ります。"
+        ],
+        "bullets": [
+          "エントロピーはパスワードを破る難易度を決める。",
+          "フレーズは多くの文字と単語を使ってエントロピーを高める。",
+          "従来のパスワードは、高エントロピーに必要なランダム性が足りない。"
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "locale": "pl",
+    "title": "Frazy vs. hasła: entropia i różnice w bezpieczeństwie",
+    "excerpt": "Entropia mierzy nieprzewidywalność haseł i fraz. Ten przewodnik wyjaśnia, dlaczego frazy oferują wyższą entropię i lepsze bezpieczeństwo w porównaniu do tradycyjnych haseł, nawet z mniejszą liczbą znaków.",
+    "seoTitle": "Frazy vs. hasła: entropia - popraw komfort bezpieczeństwa",
+    "seoDescription": "Dowiedz się o różnicy między entropią fraz a haseł. Poznaj, dlaczego frazy są bezpieczniejsze i jak entropia wpływa na siłę haseł.",
+    "keywords": [
+      "entropia fraz",
+      "wyjaśnienie entropii haseł",
+      "różnice w bezpieczeństwie"
+    ],
+    "sections": [
+      {
+        "heading": "Co to jest entropia w hasłach?",
+        "paragraphs": [
+          "Entropia to miara losowości hasła lub frazy. Większa entropia oznacza lepszą odporność na ataki metodą siły brut. Tradycyjne hasła często mają niższą entropię z powodu przewidywalnych wzorców lub ograniczonych zestawów znaków.",
+          "Frazy, które są dłuższymi sekwencjami słów lub fraz, zwykle mają wyższą entropię, ponieważ wykorzystują więcej znaków, w tym spacje i znaki niealfabetyczne. Ta złożoność sprawia, że są trudniejsze do odgadnięcia lub złamania.",
+          "Obliczenia entropii korzystają z formuł takich jak $ \\text{Entropia} = \\log_2(N^L) $, gdzie $ N $ to liczba możliwych znaków, a $ L $ to długość. Frazy często przewyższają tradycyjne hasła według tego wskaźnika."
+        ],
+        "bullets": [
+          "Entropia decyduje, jak trudno jest złamać hasło.",
+          "Frazy zwiększają entropię, wykorzystując więcej znaków i słów.",
+          "Tradycyjne hasła często brakują losowości potrzebnej do wysokiej entropii."
+        ]
+      }
+    ],
+    "image": "/images/guides/passphrase-vs-password-entropy.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "en",
+    "title": "NIST 800-63B Password Rules: Modern Password Policy Guidelines",
+    "excerpt": "NIST 800-63B redefines password security by prioritizing usability and entropy over arbitrary complexity. This guide explains the modern password rules and how they align with current best practices for authentication.",
+    "seoTitle": "NIST 800-63B Password Rules - Modern Password Policy",
+    "seoDescription": "Understand the NIST 800-63B password policy and its impact on modern authentication. Learn about updated rules for secure, user-friendly passwords.",
+    "keywords": [
+      "nist 800-63b password policy",
+      "modern password rules"
+    ],
+    "sections": [
+      {
+        "heading": "Key Changes in NIST 800-63B",
+        "paragraphs": [
+          "NIST 800-63B eliminates outdated requirements like mandatory password expiration and complex character rules. Instead, it emphasizes:",
+          "1. **Passphrase Recommendations**: Encouraging longer, memorable phrases over short, complex passwords.",
+          "2. **User-Friendly Policies**: Allowing users to choose passwords they can remember without sacrificing security.",
+          "3. **Multi-Factor Authentication (MFA)**: Requiring MFA for high-risk systems to reduce reliance on passwords alone."
+        ],
+        "bullets": [
+          "No forced password expiration.",
+          "Passphrases are preferred over complex passwords.",
+          "MFA is mandatory for sensitive systems."
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "ua",
+    "title": "Правила паролів NIST 800-63B: сучасні вимоги",
+    "excerpt": "NIST 800-63B переглядає безпеку паролів, пріоритетно використовуючи зручність і ентропію замість довільної складності. Ця стаття пояснює сучасні правила паролів і як вони відповідають сьогоднішнім кращим практикам аутентифікації.",
+    "seoTitle": "Правила паролів NIST 800-63B - сучасні вимоги",
+    "seoDescription": "Ознайомтесь із політикою паролів NIST 800-63B та її впливом на сучасну аутентифікацію. Дізнайтесь про оновлені правила для безпечних і зручних паролів.",
+    "keywords": [
+      "політика паролів NIST 800-63B",
+      "сучасні правила паролів"
+    ],
+    "sections": [
+      {
+        "heading": "Головні зміни в NIST 800-63B",
+        "paragraphs": [
+          "NIST 800-63B скасовує застарілі вимоги, такі як обов’язкове оновлення паролів і правила складності. Замість цього він акцентує увагу на:",
+          "1. **Рекомендації про фрази**: Використання довших, запам’ятовуваних фраз замість коротких, складних паролів.",
+          "2. **Зручні політики**: Дозволяє користувачам вибирати паролі, які вони можуть запам’ятати, не втрачаючи безпеки.",
+          "3. **Мультифакторна аутентифікація (MFA)**: Обов’язкове використання MFA для систем з високим рівнем ризику, щоб зменшити залежність від паролів."
+        ],
+        "bullets": [
+          "Необов’язкове оновлення паролів.",
+          "Фрази переважають над складними паролями.",
+          "MFA обов’язкове для чутливих систем."
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "es",
+    "title": "Reglas de contraseñas NIST 800-63B: directrices modernas",
+    "excerpt": "NIST 800-63B redefine la seguridad de las contraseñas priorizando la usabilidad y la entropía sobre la complejidad arbitraria. Esta guía explica las reglas modernas de contraseñas y cómo se alinean con las mejores prácticas actuales de autenticación.",
+    "seoTitle": "Reglas de contraseñas NIST 800-63B - Directrices modernas",
+    "seoDescription": "Entienda la política de contraseñas NIST 800-63B y su impacto en la autenticación moderna. Aprenda sobre las reglas actualizadas para contraseñas seguras y fáciles de usar.",
+    "keywords": [
+      "política de contraseñas NIST 800-63B",
+      "reglas modernas de contraseñas"
+    ],
+    "sections": [
+      {
+        "heading": "Cambios clave en NIST 800-63B",
+        "paragraphs": [
+          "NIST 800-63B elimina requisitos obsoletos como la expiración obligatoria de contraseñas y reglas de complejidad. En su lugar, destaca:",
+          "1. **Recomendaciones de frases**: Fomentar frases más largas y memorables en lugar de contraseñas cortas y complejas.",
+          "2. **Políticas amigables para el usuario**: Permitir que los usuarios elijan contraseñas que puedan recordar sin sacrificar la seguridad.",
+          "3. **Autenticación multifactor (MFA)**: Requerir MFA para sistemas de alto riesgo para reducir la dependencia exclusiva de contraseñas."
+        ],
+        "bullets": [
+          "No hay expiración obligatoria de contraseñas.",
+          "Las frases son preferibles a las contraseñas complejas.",
+          "El MFA es obligatorio para sistemas sensibles."
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "fr",
+    "title": "Règles des mots de passe NIST 800-63B : directives modernes",
+    "excerpt": "NIST 800-63B redéfinit la sécurité des mots de passe en privilégiant l'usabilité et l'entropie plutôt que la complexité arbitraire. Ce guide explique les nouvelles règles des mots de passe et comment elles s'alignent sur les meilleures pratiques actuelles d'authentification.",
+    "seoTitle": "Règles des mots de passe NIST 800-63B - Directives modernes",
+    "seoDescription": "Découvrez la politique de mots de passe NIST 800-63B et son impact sur l'authentification moderne. Découvrez les règles actualisées pour des mots de passe sécurisés et faciles à utiliser.",
+    "keywords": [
+      "politique des mots de passe NIST 800-63B",
+      "règles modernes des mots de passe"
+    ],
+    "sections": [
+      {
+        "heading": "Changements clés dans NIST 800-63B",
+        "paragraphs": [
+          "NIST 800-63B élimine les exigences obsolètes comme l'obligation de changer les mots de passe et les règles de complexité. À la place, il met l'accent sur:",
+          "1. **Recommandations pour les phrases**: Encourager l'utilisation de phrases plus longues et mémorables plutôt que de mots de passe courts et complexes.",
+          "2. **Politiques utilisateur-friendly**: Permettre aux utilisateurs de choisir des mots de passe qu'ils peuvent retenir sans compromettre la sécurité.",
+          "3. **Authentification multifactorielle (MFA)**: Imposer l'utilisation de MFA pour les systèmes à risque élevé afin de réduire la dépendance exclusive aux mots de passe."
+        ],
+        "bullets": [
+          "Aucune expiration obligatoire des mots de passe.",
+          "Les phrases sont préférées aux mots de passe complexes.",
+          "Le MFA est obligatoire pour les systèmes sensibles."
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "de",
+    "title": "NIST 800-63B-Passwortregeln: Moderne Passwortrichtlinien",
+    "excerpt": "NIST 800-63B definiert die Passwortsicherheit neu, indem es Usabilität und Entropie gegenüber willkürlicher Komplexität priorisiert. Dieser Leitfaden erläutert die modernen Passwortregeln und deren Ausrichtung an aktuellen Best Practices für die Authentifizierung.",
+    "seoTitle": "NIST 800-63B-Passwortregeln - Moderne Passwortrichtlinien",
+    "seoDescription": "Verstehen Sie die NIST 800-63B-Passwortrichtlinie und ihren Einfluss auf moderne Authentifizierung. Erfahren Sie mehr über aktualisierte Regeln für sichere und benutzerfreundliche Passwörter.",
+    "keywords": [
+      "NIST 800-63B-Passwortrichtlinie",
+      "moderne Passwortregeln"
+    ],
+    "sections": [
+      {
+        "heading": "Wichtige Änderungen in NIST 800-63B",
+        "paragraphs": [
+          "NIST 800-63B beseitigt veraltete Anforderungen wie die obligatorische Passwort-Verfallszeiten und Komplexitätsregeln. Stattdessen betont es:",
+          "1. **Empfehlungen für Phrasen**: Die Verwendung längerer, merkbarer Phrasen anstelle kurzer, komplexer Passwörter.",
+          "2. **Benutzerfreundliche Richtlinien**: Erlauben Nutzern, Passwörter auszuwählen, die sie sich merken können, ohne Sicherheit zu opfern.",
+          "3. **Multi-Faktor-Authentifizierung (MFA)**: Verpflichtend für hochrisikoreiche Systeme, um die Abhängigkeit von Passwörtern zu reduzieren."
+        ],
+        "bullets": [
+          "Keine obligatorische Passwort-Verfallszeiten.",
+          "Phrasen werden bevorzugt gegenüber komplexen Passwörtern.",
+          "MFA ist für sensible Systeme obligatorisch."
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "it",
+    "title": "Regole dei password NIST 800-63B: Linee guida moderne",
+    "excerpt": "NIST 800-63B ridefinisce la sicurezza delle password privilegiando l'usabilità e l'entropia rispetto alla complessità arbitraria. Questa guida spiega le nuove regole delle password e come si allineano con le migliori pratiche moderne di autenticazione.",
+    "seoTitle": "Regole dei password NIST 800-63B - Linee guida moderne",
+    "seoDescription": "Capisci la politica dei password NIST 800-63B e il suo impatto sull'autenticazione moderna. Scopri le regole aggiornate per password sicure e facili da usare.",
+    "keywords": [
+      "politica dei password NIST 800-63B",
+      "regole moderne dei password"
+    ],
+    "sections": [
+      {
+        "heading": "Cambiamenti chiave in NIST 800-63B",
+        "paragraphs": [
+          "NIST 800-63B elimina requisiti obsoleti come la scadenza obbligatoria dei password e le regole di complessità. Al loro posto, si concentra su:",
+          "1. **Raccomandazioni per frasi**: Promuovere frasi più lunghe e memorabili invece di password brevi e complesse.",
+          "2. **Politiche utente-friendly**: Consentire agli utenti di scegliere password che possono ricordare senza compromettere la sicurezza.",
+          "3. **Autenticazione multifattore (MFA)**: Richiedere l'MFA per sistemi ad alto rischio per ridurre la dipendenza esclusiva dalle password."
+        ],
+        "bullets": [
+          "Nessuna scadenza obbligatoria per le password.",
+          "Le frasi sono preferibili alle password complesse.",
+          "L'MFA è obbligatorio per i sistemi sensibili."
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "pt",
+    "title": "Regras de Senhas NIST 800-63B: Diretrizes Modernas",
+    "excerpt": "NIST 800-63B redefine a segurança de senhas priorizando a usabilidade e a entropia sobre a complexidade arbitrária. Este guia explica as regras modernas de senhas e como elas se alinham com as melhores práticas atuais de autenticação.",
+    "seoTitle": "Regras de Senhas NIST 800-63B - Diretrizes Modernas",
+    "seoDescription": "Entenda a política de senhas NIST 800-63B e seu impacto na autenticação moderna. Aprenda sobre as regras atualizadas para senhas seguras e fáceis de usar.",
+    "keywords": [
+      "política de senhas NIST 800-63B",
+      "regras modernas de senhas"
+    ],
+    "sections": [
+      {
+        "heading": "Mudanças importantes em NIST 800-63B",
+        "paragraphs": [
+          "NIST 800-63B elimina requisitos obsoletos como a expiração obrigatória de senhas e regras de complexidade. Em seu lugar, destaca:",
+          "1. **Recomendações para frases**: Incentivar o uso de frases mais longas e memoráveis em vez de senhas curtas e complexas.",
+          "2. **Políticas amigáveis ao usuário**: Permitir que os usuários escolham senhas que possam lembrar sem comprometer a segurança.",
+          "3. **Autenticação multifator (MFA)**: Exigir MFA para sistemas de alto risco para reduzir a dependência exclusiva de senhas."
+        ],
+        "bullets": [
+          "Nenhuma expiração obrigatória de senhas.",
+          "Frases são preferíveis a senhas complexas.",
+          "MFA é obrigatório para sistemas sensíveis."
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "ru",
+    "title": "Правила паролей NIST 800-63B: современные рекомендации",
+    "excerpt": "NIST 800-63B пересматривает безопасность паролей, делая акцент на удобстве и энтропии вместо произвольной сложности. Этот гайд объясняет современные правила паролей и как они соответствуют лучшим практикам аутентификации.",
+    "seoTitle": "Правила паролей NIST 800-63B - современные рекомендации",
+    "seoDescription": "Понимайте политику паролей NIST 800-63B и её влияние на современную аутентификацию. Изучите обновлённые правила для безопасных и удобных паролей.",
+    "keywords": [
+      "политика паролей NIST 800-63B",
+      "современные правила паролей"
+    ],
+    "sections": [
+      {
+        "heading": "Ключевые изменения в NIST 800-63B",
+        "paragraphs": [
+          "NIST 800-63B устраняет устаревшие требования, такие как обязательное обновление паролей и правила сложности. Вместо этого акцент делается на:",
+          "1. **Рекомендации по фразам**: Рекомендует использовать более длинные и запоминающиеся фразы вместо коротких и сложных паролей.",
+          "2. **Пользовательские политики**: Разрешает пользователям выбирать пароли, которые они могут запомнить, не теряя безопасность.",
+          "3. **Многофакторная аутентификация (MFA)**: Обязательно для систем высокого риска, чтобы снизить зависимость от паролей."
+        ],
+        "bullets": [
+          "Обязательное обновление паролей отсутствует.",
+          "Фразы предпочтительнее сложных паролей.",
+          "MFA обязательна для чувствительных систем."
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "zh",
+    "title": "NIST 800-63B 密码规则：现代密码策略指南",
+    "excerpt": "NIST 800-63B 重新定义密码安全，优先考虑易用性和熵值而非任意复杂性。本指南解释了现代密码规则及其如何与当前的认证最佳实践保持一致。",
+    "seoTitle": "NIST 800-63B 密码规则 - 现代密码策略",
+    "seoDescription": "了解 NIST 800-63B 密码政策及其对现代认证的影响。学习更新后的规则，以创建安全且易于使用的密码。",
+    "keywords": [
+      "NIST 800-63B 密码政策",
+      "现代密码规则"
+    ],
+    "sections": [
+      {
+        "heading": "NIST 800-63B 的关键更改",
+        "paragraphs": [
+          "NIST 800-63B 取消了过时的要求，如强制密码过期和复杂性规则。取而代之的是：",
+          "1. **短语推荐**：鼓励使用更长、更易记的短语，而不是短而复杂的密码。",
+          "2. **用户友好策略**：允许用户选择他们能够记住的密码，而不牺牲安全性。",
+          "3. **多因素认证 (MFA)**：要求在高风险系统中使用 MFA，以减少对密码的依赖。"
+        ],
+        "bullets": [
+          "无强制密码过期。",
+          "短语优先于复杂密码。",
+          "高风险系统必须使用 MFA。"
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "ja",
+    "title": "NIST 800-63B パスワードルール: モダンなパスワードポリシーのガイド",
+    "excerpt": "NIST 800-63B は、任意の複雑さよりも使いやすさとエントロピーを重視してパスワードのセキュリティを再定義しています。このガイドでは、現代的なパスワードルールと、それが現在の認証のベストプラクティスとどのように一致するかを説明します。",
+    "seoTitle": "NIST 800-63B パスワードルール - モダンなパスワードポリシー",
+    "seoDescription": "NIST 800-63B のパスワードポリシーとその現代的な認証への影響を理解しましょう。安全で使いやすいパスワードのための更新されたルールを学びましょう。",
+    "keywords": [
+      "NIST 800-63B パスワードポリシー",
+      "モダンなパスワードルール"
+    ],
+    "sections": [
+      {
+        "heading": "NIST 800-63B の主要な変更点",
+        "paragraphs": [
+          "NIST 800-63B は、強制的なパスワードの期限切れや複雑性ルールなどの古くなった要件を廃止しました。代わりに次の点に注力しています:",
+          "1. **フレーズの推奨**：短い複雑なパスワードよりも、長い覚えやすいフレーズの使用を推奨しています。",
+          "2. **ユーザーに優しいポリシー**：セキュリティを犠牲にすることなく、ユーザーが覚えられるパスワードを選択できるようにしています。",
+          "3. **マルチファクター認証 (MFA)**：高リスクシステムでは MFA の使用を義務付けており、パスワードにのみ依存するのを減らしています。"
+        ],
+        "bullets": [
+          "パスワードの期限切れは義務付けられていない。",
+          "フレーズが複雑なパスワードよりも優先される。",
+          "高リスクシステムでは MFA が義務付けられている。"
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "locale": "pl",
+    "title": "Zasady hasła NIST 800-63B: nowoczesne kierunki",
+    "excerpt": "NIST 800-63B redefiniuje bezpieczeństwo hasła, priorytetyzując wygoda i entropię nad arbitralną złożonością. Ten przewodnik wyjaśnia nowoczesne zasady hasła i jak są zgodne z najlepszymi praktykami autoryzacji.",
+    "seoTitle": "Zasady hasła NIST 800-63B - nowoczesne kierunki",
+    "seoDescription": "Zrozumienie polityki hasła NIST 800-63B i jej wpływu na nowoczesną autoryzację. Poznaj aktualizowane zasady dla bezpiecznych i łatwych do użycia haseł.",
+    "keywords": [
+      "polityka hasła NIST 800-63B",
+      "nowoczesne zasady hasła"
+    ],
+    "sections": [
+      {
+        "heading": "Ważne zmiany w NIST 800-63B",
+        "paragraphs": [
+          "NIST 800-63B eliminuje przestarzałe wymagania, takie jak wymuszona zmiana hasła i reguły złożoności. Zamiast tego podkreśla:",
+          "1. **Rekomendacje dotyczące fraz**: Promowanie dłuższych, łatwych do zapamiętania fraz zamiast krótkich, skomplikowanych haseł.",
+          "2. **Przyjazne dla użytkownika polityki**: Pozwala użytkownikom wybierać hasła, które mogą zapamiętać, bez poświęcania bezpieczeństwa.",
+          "3. **Weryfikacja wielofaktorowa (MFA)**: Wymagana dla systemów wysokiego ryzyka, aby zmniejszyć zależność wyłącznie od haseł."
+        ],
+        "bullets": [
+          "Brak wymuszonej zmiany hasła.",
+          "Frazy są preferowane nad skomplikowanymi hasłami.",
+          "Weryfikacja wielofaktorowa jest wymagana dla systemów wrażliwych."
+        ]
+      }
+    ],
+    "image": "/images/guides/nist-800-63b-password-rules.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "en",
+    "title": "PCI DSS Password Requirements: Compliance Guidelines",
+    "excerpt": "PCI DSS mandates strict password policies to protect cardholder data. This guide outlines the essential requirements for secure password management and compliance.",
+    "seoTitle": "PCI DSS Password Requirements - Compliance Guidelines",
+    "seoDescription": "Understand the PCI DSS password requirements and how to implement a compliant password policy. Learn about key rules for secure authentication.",
+    "keywords": [
+      "pci dss password requirements",
+      "compliance password policy"
+    ],
+    "sections": [
+      {
+        "heading": "Key PCI DSS Password Requirements",
+        "paragraphs": [
+          "PCI DSS enforces the following password rules to ensure data security:",
+          "1. **Password Complexity**: Passwords must include a mix of uppercase, lowercase, numbers, and special characters.",
+          "2. **Password Length**: Minimum length of 7 characters, with a recommended minimum of 12 characters.",
+          "3. **Password Expiration**: Passwords must be changed every 90 days, unless the system supports longer intervals with risk assessments.",
+          "4. **Multi-Factor Authentication (MFA)**: Required for systems handling cardholder data.",
+          "5. **Account Lockout**: Systems must lock accounts after a certain number of failed login attempts to prevent brute-force attacks."
+        ],
+        "bullets": [
+          "Minimum 7-character passwords with complexity.",
+          "Password changes every 90 days (or longer with risk analysis).",
+          "MFA required for high-risk systems.",
+          "Account lockout mechanisms for failed attempts."
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "ua",
+    "title": "Вимоги PCI DSS до паролів: Рекомендації зі згодою",
+    "excerpt": "PCI DSS вимагає строгих правил для паролів, щоб захистити дані власників карт. Ця стаття описує ключові вимоги для безпечного управління паролями та згодою.",
+    "seoTitle": "Вимоги PCI DSS до паролів - Рекомендації зі згодою",
+    "seoDescription": "Ознайомтесь із вимогами PCI DSS до паролів та дізнайтесь, як впровадити згодну політику паролів. Дізнайтесь про ключові правила для безпечного аутентифікування.",
+    "keywords": [
+      "вимоги PCI DSS до паролів",
+      "згодна політика паролів"
+    ],
+    "sections": [
+      {
+        "heading": "Ключові вимоги PCI DSS до паролів",
+        "paragraphs": [
+          "PCI DSS вимагає наступних правил для паролів, щоб забезпечити безпеку даних:",
+          "1. **Складність паролів**: Паролі мають включати великі та маленькі літери, цифри та спеціальні символи.",
+          "2. **Мінімальна довжина паролів**: Мінімальна довжина 7 символів, рекомендована мінімальна довжина 12 символів.",
+          "3. **Термін дії паролів**: Паролі мають змінюватися кожні 90 днів, якщо система не підтримує довший інтервал з оцінкою ризику.",
+          "4. **Мультіфакторна аутентифікація (MFA)**: Обов’язкова для систем, що обробляють дані власників карт.",
+          "5. **Заблокування облікових записів**: Системи мають заблоковувати облікові записи після певної кількості невдалих спроб входу для запобігання атакам зі зламанням паролів."
+        ],
+        "bullets": [
+          "Мінімум 7 символів зі складністю.",
+          "Зміна паролів кожні 90 днів (або довший інтервал з аналізом ризику).",
+          "MFA обов’язкове для систем з високим ризиком.",
+          "Механізми заблокування облікових записів при невдалих спробах."
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "es",
+    "title": "Requisitos de contraseñas PCI DSS: Guía de cumplimiento",
+    "excerpt": "PCI DSS establece políticas estrictas para contraseñas para proteger los datos de los titulares de tarjetas. Esta guía detalla los requisitos esenciales para la gestión segura de contraseñas y el cumplimiento.",
+    "seoTitle": "Requisitos de contraseñas PCI DSS - Guía de cumplimiento",
+    "seoDescription": "Entienda los requisitos de contraseñas PCI DSS y cómo implementar una política de contraseñas cumplible. Aprenda sobre las reglas clave para la autenticación segura.",
+    "keywords": [
+      "requisitos de contraseñas PCI DSS",
+      "política de contraseñas cumplible"
+    ],
+    "sections": [
+      {
+        "heading": "Requisitos clave de contraseñas PCI DSS",
+        "paragraphs": [
+          "PCI DSS exige las siguientes reglas de contraseñas para garantizar la seguridad de los datos:",
+          "1. **Complejidad de contraseñas**: Las contraseñas deben incluir una combinación de mayúsculas, minúsculas, números y caracteres especiales.",
+          "2. **Longitud mínima de contraseñas**: Mínimo 7 caracteres, con una longitud recomendada mínima de 12 caracteres.",
+          "3. **Vencimiento de contraseñas**: Las contraseñas deben cambiarse cada 90 días, salvo que el sistema admita intervalos más largos con análisis de riesgo.",
+          "4. **Autenticación multifactor (MFA)**: Obligatorio para sistemas que manejan datos de titulares de tarjetas.",
+          "5. **Bloqueo de cuentas**: Los sistemas deben bloquear cuentas después de un número determinado de intentos de inicio de sesión fallidos para prevenir ataques de fuerza bruta."
+        ],
+        "bullets": [
+          "Mínimo 7 caracteres con complejidad.",
+          "Cambio de contraseñas cada 90 días (o intervalos más largos con análisis de riesgo).",
+          "MFA obligatorio para sistemas de alto riesgo.",
+          "Mecanismos de bloqueo de cuentas para intentos fallidos."
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "fr",
+    "title": "Exigences des mots de passe PCI DSS : Guide de conformité",
+    "excerpt": "PCI DSS impose des politiques strictes pour les mots de passe afin de protéger les données des titulaires de cartes. Ce guide détaille les exigences essentielles pour une gestion sécurisée des mots de passe et la conformité.",
+    "seoTitle": "Exigences des mots de passe PCI DSS - Guide de conformité",
+    "seoDescription": "Comprenez les exigences des mots de passe PCI DSS et comment mettre en œuvre une politique de mots de passe conforme. Découvrez les règles clés pour une authentification sécurisée.",
+    "keywords": [
+      "exigences des mots de passe PCI DSS",
+      "politique de mots de passe conforme"
+    ],
+    "sections": [
+      {
+        "heading": "Exigences clés des mots de passe PCI DSS",
+        "paragraphs": [
+          "PCI DSS impose les règles suivantes pour les mots de passe afin de garantir la sécurité des données:",
+          "1. **Complexité des mots de passe**: Les mots de passe doivent inclure une combinaison de majuscules, minuscules, chiffres et caractères spéciaux.",
+          "2. **Longueur minimale des mots de passe**: Minimum 7 caractères, avec une longueur recommandée minimale de 12 caractères.",
+          "3. **Durée de validité des mots de passe**: Les mots de passe doivent être changés toutes les 90 jours, sauf si le système permet des intervalles plus longs avec une analyse des risques.",
+          "4. **Authentification multifactorielle (MFA)**: Obligatoire pour les systèmes gérant les données des titulaires de cartes.",
+          "5. **Bloquage des comptes**: Les systèmes doivent bloquer les comptes après un certain nombre d'essais de connexion échoués pour prévenir les attaques par force brute."
+        ],
+        "bullets": [
+          "Minimum 7 caractères avec complexité.",
+          "Changement des mots de passe toutes les 90 jours (ou intervalles plus longs avec analyse des risques).",
+          "MFA obligatoire pour les systèmes à haut risque.",
+          "Mécanismes de blocage des comptes pour les tentatives échouées."
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "de",
+    "title": "PCI DSS-Passwort-Anforderungen: Compliance-Richtlinien",
+    "excerpt": "PCI DSS verpflichtet zu strengen Passwort-Richtlinien, um Karteninhaberdaten zu schützen. Dieser Leitfaden erläutert die wesentlichen Anforderungen für sichere Passwort-Verwaltung und Compliance.",
+    "seoTitle": "PCI DSS-Passwort-Anforderungen - Compliance-Richtlinien",
+    "seoDescription": "Verstehen Sie die PCI DSS-Passwort-Anforderungen und wie Sie eine konforme Passwort-Politik implementierenփ. Erfahren Sie mehr über die Schlüsselregeln für sichere Authentifizierung.",
+    "keywords": [
+      "PCI DSS-Passwort-Anforderungen",
+      "konforme Passwort-Politik"
+    ],
+    "sections": [
+      {
+        "heading": "Wichtige PCI DSS-Passwort-Anforderungen",
+        "paragraphs": [
+          "PCI DSS erfordert folgende Passwort-Regeln, um Daten-Sicherheit zu gewährleisten:",
+          "1. **Passwort-Komplexität**: Passwörter müssen eine Kombination aus Großbuchstaben, Kleinbuchstaben, Zahlen und Sonderzeichen enthalten.",
+          "2. **Minimale Passwort-Länge**: Mindestens 7 Zeichen, mit einer empfohlenen Mindestlänge von 12 Zeichen.",
+          "3. **Passwort-Verfallsdatum**: Passwörter müssen alle 90 Tage geändert werden, es sei denn, das System unterstützt längere Intervalle mit Risikoanalysen.",
+          "4. **Multi-Faktor-Authentifizierung (MFA)**: Erforderlich für Systeme, die Karteninhaberdaten verarbeiten.",
+          "5. **Konten-Sperre**: Systeme müssen Konten nach einer bestimmten Anzahl fehlgeschlagener Anmeldeversuche sperren, um Brute-Force-Angriffe zu verhindern."
+        ],
+        "bullets": [
+          "Mindestens 7 Zeichen mit Komplexität.",
+          "Änderung der Passwörter alle 90 Tage (oder längere Intervalle mit Risikoanalysen).",
+          "MFA erforderlich für Systeme mit hohem Risiko.",
+          "Konten-Sperre-Mechanismen für fehlgeschlagene Versuche."
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "it",
+    "title": "Requisiti delle password PCI DSS: Linee guida per la conformità",
+    "excerpt": "PCI DSS richiede politiche rigorose per le password per proteggere i dati dei titolari delle carte. Questa guida descrive i requisiti essenziali per la gestione sicura delle password e la conformità.",
+    "seoTitle": "Requisiti delle password PCI DSS - Linee guida per la conformità",
+    "seoDescription": "Comprendi i requisiti delle password PCI DSS e come implementare una politica delle password conforme. Scopri le regole chiave per l'autenticazione sicura.",
+    "keywords": [
+      "requisiti delle password PCI DSS",
+      "politica delle password conforme"
+    ],
+    "sections": [
+      {
+        "heading": "Requisiti chiave delle password PCI DSS",
+        "paragraphs": [
+          "PCI DSS richiede le seguenti regole per le password per garantire la sicurezza dei dati:",
+          "1. **Complessità delle password**: Le password devono includere una combinazione di lettere maiuscole, minuscole, numeri e caratteri speciali.",
+          "2. **Lunghezza minima delle password**: Minimo 7 caratteri, con una lunghezza consigliata minima di 12 caratteri.",
+          "3. **Scadenza delle password**: Le password devono essere cambiate ogni 90 giorni, a meno che il sistema non supporti intervalli più lunghi con analisi del rischio.",
+          "4. **Autenticazione multifattore (MFA)**: Obbligatoria per i sistemi che gestiscono i dati dei titolari delle carte.",
+          "5. **Blocco degli account**: I sistemi devono bloccare gli account dopo un certo numero di tentativi di accesso falliti per prevenire gli attacchi di forza bruta."
+        ],
+        "bullets": [
+          "Minimo 7 caratteri con complessità.",
+          "Cambio delle password ogni 90 giorni (o intervalli più lunghi con analisi del rischio).",
+          "MFA obbligatorio per i sistemi ad alto rischio.",
+          "Meccanismi di blocco degli account per tentativi falliti."
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "pt",
+    "title": "Requisitos de Senhas PCI DSS: Diretrizes de Conformidade",
+    "excerpt": "O PCI DSS exige políticas rigorosas para senhas para proteger os dados dos titulares de cartões. Este guia descreve os requisitos essenciais para a gestão segura de senhas e conformidade.",
+    "seoTitle": "Requisitos de Senhas PCI DSS - Diretrizes de Conformidade",
+    "seoDescription": "Entenda os requisitos de senhas PCI DSS e como implementar uma política de senhas conforme. Saiba sobre as regras principais para autenticação segura.",
+    "keywords": [
+      "requisitos de senhas PCI DSS",
+      "política de senhas conforme"
+    ],
+    "sections": [
+      {
+        "heading": "Principais Requisitos de Senhas PCI DSS",
+        "paragraphs": [
+          "O PCI DSS exige as seguintes regras para senhas para garantir a segurança dos dados:",
+          "1. **Complexidade da senha**: As senhas devem incluir uma combinação de letras maiúsculas, minúsculas, números e caracteres especiais.",
+          "2. **Comprimento mínimo da senha**: Mínimo de 7 caracteres, com um comprimento recomendado mínimo de 12 caracteres.",
+          "3. **Validade da senha**: As senhas devem ser alteradas a cada 90 dias, a menos que o sistema suporte intervalos mais longos com análise de risco.",
+          "4. **Autenticação multifator (MFA)**: Obrigatória para sistemas que processam dados de titulares de cartões.",
+          "5. **Bloqueio de contas**: Os sistemas devem bloquear contas após um número determinado de tentativas de login falhadas para prevenir ataques de força bruta."
+        ],
+        "bullets": [
+          "Mínimo de 7 caracteres com complexidade.",
+          "Alteração de senhas a cada 90 dias (ou intervalos mais longos com análise de risco).",
+          "MFA obrigatório para sistemas de alto risco.",
+          "Mecanismos de bloqueio de contas para tentativas falhadas."
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "ru",
+    "title": "Требования PCI DSS к паролям: Руководство по соблюдению",
+    "excerpt": "PCI DSS требует строгих политик для паролей, чтобы защитить данные держателей карт. Это руководство описывает ключевые требования для безопасного управления паролями и соблюдения.",
+    "seoTitle": "Требования PCI DSS к паролям - Руководство по соблюдению",
+    "seoDescription": "Понимайте требования PCI DSS к паролям и узнайте, как внедрить соблюдаемую политику паролей. Узнайте о ключевых правилах для безопасной аутентификации.",
+    "keywords": [
+      "требования PCI DSS к паролям",
+      "соблюдаемая политика паролей"
+    ],
+    "sections": [
+      {
+        "heading": "Ключевые требования PCI DSS к паролям",
+        "paragraphs": [
+          "PCI DSS требует следующих правил для паролей, чтобы обеспечить безопасность данных:",
+          "1. **Сложность паролей**: Пароли должны включать комбинацию прописных и строчных букв, чисел и специальных символов.",
+          "2. **Минимальная длина паролей**: Минимум 7 символов, с рекомендуемой минимальной длиной 12 символов.",
+          "3. **Срок действия паролей**: Пароли должны сменяться каждые 90 дней, если система не поддерживает более длительные интервалы с анализом риска.",
+          "4. **Многофакторная аутентификация (MFA)**: Обязательна для систем, обрабатывающих данные держателей карт.",
+          "5. **Блокировка учетных записей**: Системы должны блокировать учетные записи после определенного количества неудачных попыток входа для предотвращения атак типа brute-force."
+        ],
+        "bullets": [
+          "Минимум 7 символов со сложностью.",
+          "Смена паролей каждые 90 дней (или более длительные интервалы с анализом риска).",
+          "MFA обязательна для систем с высоким риском.",
+          "Механизмы блокировки учетных записей при неудачных попытках."
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "zh",
+    "title": "PCI DSS密码要求：合规指南",
+    "excerpt": "PCI DSS要求严格的密码策略以保护持卡人数据。本指南概述了安全密码管理的关键要求和合规性。",
+    "seoTitle": "PCI DSS密码要求 - 合规指南",
+    "seoDescription": "了解PCI DSS密码要求并学习如何实施合规的密码策略。了解安全认证的关键规则。",
+    "keywords": [
+      "pci dss密码要求",
+      "合规密码策略"
+    ],
+    "sections": [
+      {
+        "heading": "PCI DSS密码关键要求",
+        "paragraphs": [
+          "PCI DSS规定以下密码规则以确保数据安全：",
+          "1. **密码复杂性**：密码必须包含大写字母、小写字母、数字和特殊字符的组合。",
+          "2. **密码最小长度**：最小7个字符，推荐最小长度为12个字符。",
+          "3. **密码有效期**：密码必须每90天更换一次，除非系统支持更长的间隔并进行风险评估。",
+          "4. **多因素认证（MFA）**：处理持卡人数据的系统必须启用。",
+          "5. **账户锁定**：系统必须在一定次数的登录失败后锁定账户，以防止暴力破解攻击。"
+        ],
+        "bullets": [
+          "至少7个字符，包含复杂性。",
+          "每90天更换一次密码（或更长间隔，需风险评估）。",
+          "高风险系统必须启用MFA。",
+          "登录失败后锁定账户的机制。"
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "ja",
+    "title": "PCI DSSパスワード要件: 合規模準ガイド",
+    "excerpt": "PCI DSSはカードホルダーデータを保護するために厳格なパスワードポリシーを要求しています。このガイドでは、セキュアなパスワード管理とコンプライアンスのための重要な要件を説明します。",
+    "seoTitle": "PCI DSSパスワード要件 - 合規模準ガイド",
+    "seoDescription": "PCI DSSのパスワード要件を理解し、コンプライアンスを確保するパスワードポリシーの実装方法を学びましょう。セキュアな認証のための重要なルールを確認してください。",
+    "keywords": [
+      "pci dssパスワード要件",
+      "コンプライアンスパスワードポリシー"
+    ],
+    "sections": [
+      {
+        "heading": "PCI DSSパスワードの主な要件",
+        "paragraphs": [
+          "PCI DSSは次のパスワードルールを定めています:",
+          "1. **パスワードの複雑性**: 大文字、小文字、数字、特殊文字の組み合わせを含む必要があります。",
+          "2. **パスワードの最小長**: 最小7文字、推奨最小長は12文字です。",
+          "3. **パスワードの有効期限**: 90日ごとに変更する必要があります。ただし、システムがリスク分析付きで更に長い間隔をサポートする場合は例外です。",
+          "4. **マルチファクター認証 (MFA)**: カードホルダーのデータを処理するシステムでは必須です。",
+          "5. **アカウントのロックアウト**: 一定数のログイン失敗後にアカウントをロックする必要があります。",
+          "6. **アカウントのロックアウト**: 一定数のログイン失敗後にアカウントをロックする必要があります。"
+        ],
+        "bullets": [
+          "7文字以上で複雑性を含む。",
+          "90日ごとに変更（リスク分析付きの更に長い間隔の場合は例外）。",
+          "カードホルダーのデータ処理システムではMFA必須。",
+          "ログイン失敗回数が一定数に達した場合のアカウントロックアウト。"
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "locale": "pl",
+    "title": "Wymagania PCI DSS dotyczące haseł: Kierunki zgodności",
+    "excerpt": "PCI DSS wymaga rygorystycznych zasad dla haseł w celu ochrony danych właścicieli kart. Ten przewodnik opisuje kluczowe wymagania dotyczące bezpiecznego zarządzania hasełami i zgodności.",
+    "seoTitle": "Wymagania PCI DSS dotyczące haseł - Kierunki zgodności",
+    "seoDescription": "Zrozumienie wymagań PCI DSS dotyczących haseł i nauczenie się, jak zaimplementować zgodną politykę haseł. Poznaj kluczowe zasady dotyczące bezpiecznej autoryzacji.",
+    "keywords": [
+      "wymagania PCI DSS dotyczące haseł",
+      "zgodna polityka haseł"
+    ],
+    "sections": [
+      {
+        "heading": "Kluczowe wymagania PCI DSS dotyczące haseł",
+        "paragraphs": [
+          "PCI DSS wymaga następujących zasad dla haseł, aby zapewnić bezpieczeństwo danych:",
+          "1. **Złożoność haseł**: Hasła muszą zawierać kombinację dużych liter, małych liter, cyfr i znaków specjalnych.",
+          "2. **Minimalna długość haseł**: Minimalnie 7 znaków, z zalecaną minimalną długością 12 znaków.",
+          "3. **Okres ważności haseł**: Hasła muszą być zmieniane co 90 dni, chyba że system obsługuje dłuższe interwały z analizą ryzyka.",
+          "4. **Weryfikacja wielofaktorowa (MFA)**: Wymagana dla systemów przetwarzających dane właścicieli kart.",
+          "5. **Zablokowanie kont**: Systemy muszą zablokować konta po określonej liczbie nieudanych prób logowania, aby zapobiec atakom siłowej próby.",
+          "6. **Zablokowanie kont**: Systemy muszą zablokować konta po określonej liczbie nieudanych prób logowania, aby zapobiec atakom siłowej próby."
+        ],
+        "bullets": [
+          "Minimally 7 znaków z złożonością.",
+          "Zmiana haseł co 90 dni (lub dłuższe interwały z analizą ryzyka).",
+          "Weryfikacja wielofaktorowa wymagana dla systemów wysokiego ryzyka.",
+          "Zablokowanie kont po określonej liczbie nieudanych prób logowania."
+        ]
+      }
+    ],
+    "image": "/images/guides/pci-dss-password-requirements.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "en",
+    "title": "What to Do After a Password Breach: Incident Response Guide",
+    "excerpt": "A password breach can compromise your data. This guide outlines critical steps to recover from a breach and prevent future incidents.",
+    "seoTitle": "What to Do After a Password Breach - Incident Response Guide",
+    "seoDescription": "Learn how to respond to a password breach with actionable steps for credential leak recovery and incident management.",
+    "keywords": [
+      "password breach response",
+      "credential leak recovery"
+    ],
+    "sections": [
+      {
+        "heading": "Immediate Steps After a Password Breach",
+        "paragraphs": [
+          "1. **Change all affected passwords immediately**. Use strong, unique passwords for each account.",
+          "2. **Enable Multi-Factor Authentication (MFA)**. This adds an extra layer of security to your accounts.",
+          "3. **Monitor your accounts for suspicious activity**. Check for unauthorized transactions or login attempts.",
+          "4. **Report the breach to relevant authorities**. Contact your bank, service providers, and cybersecurity teams if necessary."
+        ],
+        "bullets": [
+          "Change passwords immediately.",
+          "Enable MFA for all critical accounts.",
+          "Monitor for unauthorized access.",
+          "Notify relevant parties."
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "ua",
+    "title": "Що робити після витоку пароля: Рекомендації з реагування на інцидент",
+    "excerpt": "Витік пароля може загрожувати вашим даним. Ця стаття описує критичні кроки для відновлення після інциденту та запобігання майбутнім витокам.",
+    "seoTitle": "Що робити після витоку пароля - Рекомендації з реагування на інцидент",
+    "seoDescription": "Дізнайтесь, як відреагувати на витік пароля з дієвими кроками для відновлення даних та управління інцидентами.",
+    "keywords": [
+      "реагування на витік пароля",
+      "відновлення даних після витоку"
+    ],
+    "sections": [
+      {
+        "heading": "Негайні кроки після витоку пароля",
+        "paragraphs": [
+          "1. **Змініть усі впливені паролі негайно**. Використовуйте сильні, унікальні паролі для кожного облікового запису.",
+          "2. **Увімкніть мультіфакторну аутентифікацію (MFA)**. Це додасть додатковий шар безпеки для ваших облікових записів.",
+          "3. **Перевіряйте облікові записи на підозрілу діяльність**. Перегляньте на несанкціоновані транзакції або спроби входу.",
+          "4. **Зв’яжіться з відповідними органами**. Якщо потрібно, зв’яжіться з банком, постачальниками послуг та командами кібербезпеки."
+        ],
+        "bullets": [
+          "Змініть паролі негайно.",
+          "Увімкніть MFA для всіх критичних облікових записів.",
+          "Перевіряйте на несанкціонований доступ.",
+          "Повідомте відповідні сторони."
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "es",
+    "title": "¿Qué hacer después de un robo de contraseña: Guía de respuesta a incidentes",
+    "excerpt": "Un robo de contraseña puede comprometer tus datos. Esta guía detalla pasos críticos para recuperarse de un incidente y prevenir futuros problemas.",
+    "seoTitle": "¿Qué hacer después de un robo de contraseña - Guía de respuesta a incidentes",
+    "seoDescription": "Aprende cómo responder a un robo de contraseña con pasos concretos para la recuperación de credenciales y gestión de incidentes.",
+    "keywords": [
+      "respuesta a robo de contraseña",
+      "recuperación de credenciales"
+    ],
+    "sections": [
+      {
+        "heading": "Pasos inmediatos después de un robo de contraseña",
+        "paragraphs": [
+          "1. **Cambia todas las contraseñas afectadas inmediatamente**. Usa contraseñas fuertes y únicas para cada cuenta.",
+          "2. **Activa la autenticación multifactor (MFA)**. Esto añade una capa adicional de seguridad a tus cuentas.",
+          "3. **Monitoriza tus cuentas por actividad sospechosa**. Revisa transacciones no autorizadas o intentos de inicio de sesión.",
+          "4. **Informa el incidente a las autoridades pertinentes**. Contacta a tu banco, proveedores de servicios y equipos de ciberseguridad si es necesario."
+        ],
+        "bullets": [
+          "Cambia las contraseñas inmediatamente.",
+          "Activa MFA para todas las cuentas críticas.",
+          "Monitoriza por acceso no autorizado.",
+          "Notifica a las partes relevantes."
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "fr",
+    "title": "Que faire après une fuite de mot de passe : Guide de réponse aux incidents",
+    "excerpt": "Une fuite de mot de passe peut compromettre vos données. Ce guide détaille les étapes critiques pour récupérer après un incident et prévenir les problèmes futurs.",
+    "seoTitle": "Que faire après une fuite de mot de passe - Guide de réponse aux incidents",
+    "seoDescription": "Découvrez comment répondre à une fuite de mot de passe avec des étapes concrètes pour la récupération des identifiants et la gestion des incidents.",
+    "keywords": [
+      "réponse à une fuite de mot de passe",
+      "récupération des identifiants"
+    ],
+    "sections": [
+      {
+        "heading": "Étapes immédiates après une fuite de mot de passe",
+        "paragraphs": [
+          "1. **Changez immédiatement tous les mots de passe affectés**. Utilisez des mots de passe forts et uniques pour chaque compte.",
+          "2. **Activez l'authentification multifactorielle (MFA)**. Cela ajoute une couche supplémentaire de sécurité à vos comptes.",
+          "3. **Surveillez vos comptes pour toute activité suspecte**. Vérifiez les transactions non autorisées ou les tentatives de connexion.",
+          "4. **Signalez l'incident aux autorités compétentes**. Contactez votre banque, fournisseurs de services et équipes de cybersécurité si nécessaire."
+        ],
+        "bullets": [
+          "Changez les mots de passe immédiatement.",
+          "Activez MFA pour tous les comptes critiques.",
+          "Surveillez pour accès non autorisé.",
+          "Signalez aux parties concernées."
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "de",
+    "title": "Was tun nach einem Passwort-Leck: Leitfaden zur Incident-Response",
+    "excerpt": "Ein Passwort-Leck kann Ihre Daten gefährden. Dieser Leitfaden beschreibt kritische Schritte zur Wiederherstellung nach einem Vorfall und zur Verhütung zukünftiger Vorfälle.",
+    "seoTitle": "Was tun nach einem Passwort-Leck - Leitfaden zur Incident-Response",
+    "seoDescription": "Lernen Sie, wie Sie auf ein Passwort-Leck reagieren, mit konkreten Schritten zur Wiederherstellung von Zugangsdaten und zur Incident-Management.",
+    "keywords": [
+      "Passwort-Leck-Response",
+      "Zugangsdaten-Wiederherstellung"
+    ],
+    "sections": [
+      {
+        "heading": "Sofortige Schritte nach einem Passwort-Leck",
+        "paragraphs": [
+          "1. **Ändern Sie alle betroffenen Passwörter sofort**. Verwenden Sie starke, eindeutige Passwörter für jedes Konto.",
+          "2. **Aktivieren Sie Multi-Faktor-Authentifizierung (MFA)**. Dies fügt eine zusätzliche Sicherheitsschicht zu Ihren Konten hinzu.",
+          "3. **Überwachen Sie Ihre Konten auf verdächtige Aktivitäten**. Prüfen Sie auf unbefugte Transaktionen oder Anmeldeversuche.",
+          "4. **Melden Sie den Vorfall den zuständigen Behörden**. Kontaktieren Sie Ihre Bank, Dienstleister und Cybersecurity-Teams, wenn erforderlich."
+        ],
+        "bullets": [
+          "Passwörter sofort ändern.",
+          "MFA für alle kritischen Konten aktivieren.",
+          "Auf unbefugten Zugriff überwachen.",
+          "Zuständigen Stellen melden."
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "it",
+    "title": "Cosa fare dopo un furto di password: Guida alla risposta agli incidenti",
+    "excerpt": "Un furto di password può compromettere i vostri dati. Questa guida descrive passaggi critici per recuperare da un incidente e prevenire futuri problemi.",
+    "seoTitle": "Cosa fare dopo un furto di password - Guida alla risposta agli incidenti",
+    "seoDescription": "Impara come rispondere a un furto di password con passaggi concreti per la ripresa delle credenziali e la gestione degli incidenti.",
+    "keywords": [
+      "risposta a furto di password",
+      "ripristino credenziali"
+    ],
+    "sections": [
+      {
+        "heading": "Passaggi immediati dopo un furto di password",
+        "paragraphs": [
+          "1. **Cambia immediatamente tutte le password interessate**. Usa password forti e uniche per ogni account.",
+          "2. **Abilita l'autenticazione multifattore (MFA)**. Questo aggiunge uno strato aggiuntivo di sicurezza ai tuoi account.",
+          "3. **Monitora i tuoi account per attività sospette**. Controlla transazioni non autorizzate o tentativi di accesso.",
+          "4. **Segnala l'incidente alle autorità competenti**. Contatta la tua banca, fornitori di servizi e team di cybersecurity se necessario."
+        ],
+        "bullets": [
+          "Cambia le password immediatamente.",
+          "Abilita MFA per tutti gli account critici.",
+          "Monitora per accesso non autorizzato.",
+          "Segnala alle autorità competenti."
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "pt",
+    "title": "O que fazer após um vazamento de senha: Guia de resposta a incidentes",
+    "excerpt": "Um vazamento de senha pode comprometer seus dados. Este guia descreve passos críticos para se recuperar de um incidente e prevenir futuros problemas.",
+    "seoTitle": "O que fazer após um vazamento de senha - Guia de resposta a incidentes",
+    "seoDescription": "Aprenda como responder a um vazamento de senha com etapas concretas para a recuperação de credenciais e gestão de incidentes.",
+    "keywords": [
+      "resposta a vazamento de senha",
+      "recuperação de credenciais"
+    ],
+    "sections": [
+      {
+        "heading": "Passos imediatos após um vazamento de senha",
+        "paragraphs": [
+          "1. **Mude imediatamente todas as senhas afetadas**. Use senhas fortes e únicas para cada conta.",
+          "2. **Ative a autenticação multifator (MFA)**. Isso adiciona uma camada adicional de segurança a suas contas.",
+          "3. **Monitore suas contas por atividades suspeitas**. Verifique transações não autorizadas ou tentativas de login.",
+          "4. **Informe o incidente às autoridades competentes**. Entre em contato com seu banco, fornecedores de serviços e equipes de cibersegurança, se necessário."
+        ],
+        "bullets": [
+          "Mude as senhas imediatamente.",
+          "Ative MFA para todas as contas críticas.",
+          "Monitore por acesso não autorizado.",
+          "Informe às autoridades competentes."
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "ru",
+    "title": "Что делать после утечки пароля: Руководство по реагированию на инцидент",
+    "excerpt": "Утечка пароля может компрометировать ваши данные. Это руководство описывает критические шаги для восстановления после инцидента и предотвращения будущих проблем.",
+    "seoTitle": "Что делать после утечки пароля - Руководство по реагированию на инцидент",
+    "seoDescription": "Узнайте, как отреагировать на утечку пароля с конкретными шагами по восстановлению учетных данных и управлению инцидентами.",
+    "keywords": [
+      "реагирование на утечку пароля",
+      "восстановление учетных данных"
+    ],
+    "sections": [
+      {
+        "heading": "Немедленные действия после утечки пароля",
+        "paragraphs": [
+          "1. **Измените все затронутые пароли немедленно**. Используйте сильные, уникальные пароли для каждой учетной записи.",
+          "2. **Включите двухфакторную аутентификацию (MFA)**. Это добавит дополнительный уровень безопасности к вашим учетным записям.",
+          "3. **Наблюдайте за своими учетными записями на подозрительную активность**. Проверьте на несанкционированные транзакции или попытки входа.",
+          "4. **Сообщите о происшествии соответствующим органам**. Свяжитесь со своим банком, поставщиками услуг и командами кибербезопасности, если это необходимо."
+        ],
+        "bullets": [
+          "Измените пароли немедленно.",
+          "Включите MFA для всех критических учетных записей.",
+          "Наблюдайте за несанкционированным доступом.",
+          "Сообщите соответствующим сторонам."
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "zh",
+    "title": "密码泄露后该怎么做：事件响应指南",
+    "excerpt": "密码泄露可能危及您的数据。本指南概述了从事件中恢复的关键步骤，并预防未来的泄露事件。",
+    "seoTitle": "密码泄露后该怎么做 - 事件响应指南",
+    "seoDescription": "学习如何应对密码泄露，通过具体的步骤进行凭证恢复和事件管理。",
+    "keywords": [
+      "密码泄露响应",
+      "凭证恢复"
+    ],
+    "sections": [
+      {
+        "heading": "密码泄露后的立即行动",
+        "paragraphs": [
+          "1. **立即更改所有受影响的密码**。为每个账户使用强且唯一的密码。",
+          "2. **启用多因素认证（MFA）**。这会为您的账户添加额外的安全层。",
+          "3. **监控账户是否存在可疑活动**。检查未经授权的交易或登录尝试。",
+          "4. **向相关机构报告泄露**。如需，联系银行、服务提供商和网络安全团队。"
+        ],
+        "bullets": [
+          "立即更改密码。",
+          "为所有关键账户启用MFA。",
+          "监控可疑活动。",
+          "向相关方报告。"
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "ja",
+    "title": "パスワード漏洩後の対応: インシデント対応ガイド",
+    "excerpt": "パスワードの漏洩はあなたのデータを脅かす可能性があります。このガイドでは、インシデントから復旧するための重要なステップと、将来的な漏洩を防ぐ方法を説明します。",
+    "seoTitle": "パスワード漏洩後の対応 - インシデント対応ガイド",
+    "seoDescription": "パスワード漏洩にどう対応するか、具体的な手順で資格情報の回復とインシデント管理を学びましょう。",
+    "keywords": [
+      "パスワード漏洩対応",
+      "資格情報回復"
+    ],
+    "sections": [
+      {
+        "heading": "パスワード漏洩後の即時対応",
+        "paragraphs": [
+          "1. **すべての影響を受けたパスワードをすぐに変更する**。各アカウントに強くて一意のパスワードを使用する。",
+          "2. **マルチファクター認証(MFA)を有効にする**。これはアカウントに追加のセキュリティ層を提供する。",
+          "3. **アカウントの不正な活動を監視する**。不正な取引やログイン試行を確認する。",
+          "4. **関係機関に漏洩を報告する**。必要に応じて銀行、サービスプロバイダー、サイバーセキュリティチームに連絡する。"
+        ],
+        "bullets": [
+          "パスワードをすぐに変更する。",
+          "すべての重要なアカウントでMFAを有効にする。",
+          "不正なアクセスを監視する。",
+          "関係機関に報告する。"
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "locale": "pl",
+    "title": "Co zrobić po wyciekach haseł: Przewodnik po odpowiedzi na incydenty",
+    "excerpt": "Wyciek haseł może zagrozić Twoim danym. Ten przewodnik opisuje kluczowe kroki do odzyskania się po incydencie i zapobiegania przyszłym wyciekom.",
+    "seoTitle": "Co zrobić po wyciekach haseł - Przewodnik po odpowiedzi na incydenty",
+    "seoDescription": "Zrozumienie, jak odpowiedzieć na wyciek haseł z konkretnymi krokami do odzyskania danych i zarządzania incydentami.",
+    "keywords": [
+      "odpowiedź na wyciek haseł",
+      "odzyskiwanie danych"
+    ],
+    "sections": [
+      {
+        "heading": "Natychmiastowe kroki po wyciekach haseł",
+        "paragraphs": [
+          "1. **Zmień natychmiast wszystkie dotknięte hasła**. Użyj mocnych, unikalnych haseł dla każdego konta.",
+          "2. **Włącz weryfikację wielofaktorową (MFA)**. To dodaje dodatkowy poziom bezpieczeństwa do Twoich kont.",
+          "3. **Monitoruj swoje konta na podejrzane działania**. Sprawdź nieautoryzowane transakcje lub próby logowania.",
+          "4. **Zgłoś incydent odpowiednim organom**. Skontaktuj się z bankiem, dostawcami usług i zespołami bezpieczeństwa cybernetycznego, jeśli to konieczne."
+        ],
+        "bullets": [
+          "Zmień hasła natychmiast.",
+          "Włącz MFA dla wszystkich krytycznych kont.",
+          "Monitoruj na nieautoryzowany dostęp.",
+          "Zgłoś odpowiednim stronom."
+        ]
+      }
+    ],
+    "image": "/images/guides/what-to-do-after-password-breach.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "en",
+    "title": "Two-Factor Authentication Basics: A Beginner's Guide",
+    "excerpt": "Two-factor authentication (2FA) adds an extra layer of security to your accounts. This guide explains how to set it up and why it's essential for online security.",
+    "seoTitle": "Two-Factor Authentication Basics - A Beginner's Guide",
+    "seoDescription": "Learn the fundamentals of 2FA setup and MFA security practices to protect your digital identity.",
+    "keywords": [
+      "2fa setup guide",
+      "mfa security guide"
+    ],
+    "sections": [
+      {
+        "heading": "What is Two-Factor Authentication?",
+        "paragraphs": [
+          "Two-factor authentication (2FA) is a security process that requires two different forms of verification to access an account. Common methods include passwords, security tokens, and biometric scans.",
+          "2FA significantly reduces the risk of unauthorized access, even if a password is compromised."
+        ],
+        "bullets": [
+          "Requires two forms of verification.",
+          "Examples: passwords + SMS codes, passwords + biometrics."
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "ua",
+    "title": "Основи двофакторної автентифікації: початковий гайд",
+    "excerpt": "Двофакторна автентифікація (2FA) додає додатковий шар безпеки до ваших облікових записів. Ця стаття пояснює, як її налаштувати та чому вона важлива для онлайн-безпеки.",
+    "seoTitle": "Основи двофакторної автентифікації - початковий гайд",
+    "seoDescription": "Дізнайтесь про основи налаштування 2FA та практики MFA-безпеки для захисту вашої цифрової ідентичності.",
+    "keywords": [
+      "налаштування 2fa",
+      "гайд з безпекою MFA"
+    ],
+    "sections": [
+      {
+        "heading": "Що таке двофакторна автентифікація?",
+        "paragraphs": [
+          "Двофакторна автентифікація (2FA) - це процес безпеки, який вимагає двох різних форм верифікації для доступу до облікового запису. Популярні методи включають паролі, безпекові токени та біометричні сканування.",
+          "2FA значно зменшує ризик несанкціонованого доступу, навіть якщо пароль зламаний."
+        ],
+        "bullets": [
+          "Вимагає двох форм верифікації.",
+          "Приклади: паролі + коди SMS, паролі + біометрія."
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "es",
+    "title": "Básicos de la autenticación de dos factores: Guía para principiantes",
+    "excerpt": "La autenticación de dos factores (2FA) añade una capa adicional de seguridad a tus cuentas. Esta guía explica cómo configurarla y por qué es esencial para la seguridad en línea.",
+    "seoTitle": "Básicos de la autenticación de dos factores - Guía para principiantes",
+    "seoDescription": "Aprende los fundamentos del setup de 2FA y las prácticas de seguridad MFA para proteger tu identidad digital.",
+    "keywords": [
+      "guía de configuración 2fa",
+      "guía de seguridad MFA"
+    ],
+    "sections": [
+      {
+        "heading": "¿Qué es la autenticación de dos factores?",
+        "paragraphs": [
+          "La autenticación de dos factores (2FA) es un proceso de seguridad que requiere dos formas diferentes de verificación para acceder a una cuenta. Métodos comunes incluyen contraseñas, tokens de seguridad y escaneos biométricos.",
+          "La 2FA reduce significativamente el riesgo de acceso no autorizado, incluso si una contraseña es comprometida."
+        ],
+        "bullets": [
+          "Requiere dos formas de verificación.",
+          "Ejemplos: contraseñas + códigos SMS, contraseñas + biométricos."
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "fr",
+    "title": "Les bases de l'authentification à deux facteurs : Guide pour débutants",
+    "excerpt": "L'authentification à deux facteurs (2FA) ajoute une couche supplémentaire de sécurité à vos comptes. Ce guide explique comment la configurer et pourquoi elle est essentielle pour la sécurité en ligne.",
+    "seoTitle": "Les bases de l'authentification à deux facteurs - Guide pour débutants",
+    "seoDescription": "Découvrez les fondamentaux de la configuration 2FA et des pratiques de sécurité MFA pour protéger votre identité numérique.",
+    "keywords": [
+      "guide de configuration 2fa",
+      "guide de sécurité MFA"
+    ],
+    "sections": [
+      {
+        "heading": "Qu'est-ce que l'authentification à deux facteurs?",
+        "paragraphs": [
+          "L'authentification à deux facteurs (2FA) est un processus de sécurité qui exige deux formes différentes de vérification pour accéder à un compte. Les méthodes courantes incluent les mots de passe, les tokens de sécurité et les scans biométriques.",
+          "La 2FA réduit considérablement le risque d'accès non autorisé, même si un mot de passe est compromis."
+        ],
+        "bullets": [
+          "Exige deux formes de vérification.",
+          "Exemples : mots de passe + codes SMS, mots de passe + biométriques."
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "de",
+    "title": "Grundlagen der zweistufigen Authentifizierung: Ein Anfänger-Guide",
+    "excerpt": "Die zweistufige Authentifizierung (2FA) fügt einer Sicherheitsschicht zu Ihren Konten hinzu. Dieser Leitfaden erklärt, wie sie eingerichtet wird und warum sie für die Online-Sicherheit entscheidend ist.",
+    "seoTitle": "Grundlagen der zweistufigen Authentifizierung - Ein Anfänger-Guide",
+    "seoDescription": "Lernen Sie die Grundlagen der 2FA-Setup und MFA-Sicherheitspraktiken, um Ihre digitale Identität zu schützen.",
+    "keywords": [
+      "2fa setup guide",
+      "mfa security guide"
+    ],
+    "sections": [
+      {
+        "heading": "Was ist zweistufige Authentifizierung?",
+        "paragraphs": [
+          "Die zweistufige Authentifizierung (2FA) ist ein Sicherheitsprozess, der zwei verschiedene Formen der Verifikation zur Kontozugang erfordert. Häufige Methoden sind Passwörter, Sicherheitstoken und biometrische Scans.",
+          "2FA reduziert erheblich das Risiko von unbefugtem Zugriff, selbst wenn ein Passwort kompromittiert ist."
+        ],
+        "bullets": [
+          "Erfordert zwei Formen der Verifikation.",
+          "Beispiele: Passwörter + SMS-Codes, Passwörter + Biometrie."
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "it",
+    "title": "I fondamenti dell'autenticazione a due fattori: Guida per principianti",
+    "excerpt": "L'autenticazione a due fattori (2FA) aggiunge uno strato aggiuntivo di sicurezza ai tuoi account. Questa guida spiega come impostarla e perché è essenziale per la sicurezza online.",
+    "seoTitle": "I fondamenti dell'autenticazione a due fattori - Guida per principianti",
+    "seoDescription": "Impara i fondamenti dell'impostazione 2FA e le pratiche di sicurezza MFA per proteggere la tua identità digitale.",
+    "keywords": [
+      "guida all'impostazione 2fa",
+      "guida alla sicurezza MFA"
+    ],
+    "sections": [
+      {
+        "heading": "Cos'è l'autenticazione a due fattori?",
+        "paragraphs": [
+          "L'autenticazione a due fattori (2FA) è un processo di sicurezza che richiede due forme diverse di verifica per accedere a un account. Metodi comuni includono password, token di sicurezza e scansione biometrica.",
+          "La 2FA riduce significativamente il rischio di accesso non autorizzato, anche se una password è compromessa."
+        ],
+        "bullets": [
+          "Richiede due forme di verifica.",
+          "Esempi: password + codici SMS, password + biometria."
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "pt",
+    "title": "Básicos da autenticação de dois fatores: Guia para iniciantes",
+    "excerpt": "A autenticação de dois fatores (2FA) adiciona uma camada adicional de segurança às suas contas. Este guia explica como configurá-la e por que ela é essencial para a segurança online.",
+    "seoTitle": "Básicos da autenticação de dois fatores - Guia para iniciantes",
+    "seoDescription": "Aprenda os fundamentos do setup 2FA e as práticas de segurança MFA para proteger sua identidade digital.",
+    "keywords": [
+      "guia de setup 2fa",
+      "guia de segurança MFA"
+    ],
+    "sections": [
+      {
+        "heading": "O que é autenticação de dois fatores?",
+        "paragraphs": [
+          "A autenticação de dois fatores (2FA) é um processo de segurança que exige duas formas diferentes de verificação para acessar uma conta. Métodos comuns incluem senhas, tokens de segurança e escaneamento biométrico.",
+          "A 2FA reduz significativamente o risco de acesso não autorizado, mesmo que uma senha seja comprometida."
+        ],
+        "bullets": [
+          "Exige duas formas de verificação.",
+          "Exemplos: senhas + códigos SMS, senhas + biometria."
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "ru",
+    "title": "Основы двухфакторной аутентификации: Руководство для новичков",
+    "excerpt": "Двухфакторная аутентификация (2FA) добавляет дополнительный уровень безопасности к вашим аккаунтам. Это руководство объясняет, как её настроить и почему она важна для онлайн-безопасности.",
+    "seoTitle": "Основы двухфакторной аутентификации - Руководство для новичков",
+    "seoDescription": "Узнайте основы настройки 2FA и практики MFA-безопасности для защиты вашей цифровой идентичности.",
+    "keywords": [
+      "руководство по настройке 2fa",
+      "руководство по безопасности MFA"
+    ],
+    "sections": [
+      {
+        "heading": "Что такое двухфакторная аутентификация?",
+        "paragraphs": [
+          "Двухфакторная аутентификация (2FA) - это процесс безопасности, который требует двух разных форм проверки для доступа к аккаунту. Обычные методы включают пароли, безопасные токены и биометрические сканы.",
+          "2FA значительно снижает риск несанкционированного доступа, даже если пароль компрометирован."
+        ],
+        "bullets": [
+          "Требует двух форм проверки.",
+          "Примеры: пароли + коды SMS, пароли + биометрия."
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "zh",
+    "title": "双因素认证基础：初学者指南",
+    "excerpt": "双因素认证（2FA）为您的账户增加了一层额外的安全防护。本指南解释了如何设置它以及为什么它对在线安全至关重要。",
+    "seoTitle": "双因素认证基础 - 初学者指南",
+    "seoDescription": "学习2FA设置和MFA安全实践的基础知识，以保护您的数字身份。",
+    "keywords": [
+      "2fa设置指南",
+      "mfa安全指南"
+    ],
+    "sections": [
+      {
+        "heading": "什么是双因素认证？",
+        "paragraphs": [
+          "双因素认证（2FA）是一种安全过程，需要两种不同的验证方式来访问账户。常见方法包括密码、安全令牌和生物识别扫描。",
+          "2FA显著降低了未经授权访问的风险，即使密码被泄露。"
+        ],
+        "bullets": [
+          "需要两种验证方式。",
+          "示例：密码 + SMS代码，密码 + 生物识别。"
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "ja",
+    "title": "2要素認証の基礎: 初心者向けガイド",
+    "excerpt": "2要素認証(2FA)は、あなたのアカウントに追加のセキュリティ層を提供します。このガイドでは、セットアップ方法とオンラインセキュリティにおいてなぜ重要なのかを説明します。",
+    "seoTitle": "2要素認証の基礎 - 初心者向けガイド",
+    "seoDescription": "2FAのセットアップとMFAセキュリティの基本を学び、デジタルアイデンティティを保護しましょう。",
+    "keywords": [
+      "2faセットアップガイド",
+      "mfaセキュリティガイド"
+    ],
+    "sections": [
+      {
+        "heading": "2要素認証とは何か？",
+        "paragraphs": [
+          "2要素認証(2FA)は、アカウントにアクセスするための2つの異なる認証方法を必要とするセキュリティプロセスです。一般的な方法には、パスワード、セキュリティトークン、バイオメトリックスキャンがあります。",
+          "2FAは、パスワードが漏洩した場合でも不正アクセスのリスクを大幅に軽減します。"
+        ],
+        "bullets": [
+          "2つの認証方法が必要です。",
+          "例: パスワード + SMSコード、パスワード + バイオメトリック。"
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "locale": "pl",
+    "title": "Podstawy weryfikacji dwuskładnikowej: Przewodnik dla początkujących",
+    "excerpt": "Weryfikacja dwuskładnikowa (2FA) dodaje dodatkowy poziom bezpieczeństwa do Twoich kont. Ten przewodnik wyjaśnia, jak ją skonfigurować i dlaczego jest istotna dla bezpieczeństwa online.",
+    "seoTitle": "Podstawy weryfikacji dwuskładnikowej - Przewodnik dla początkujących",
+    "seoDescription": "Dowiedz się podstaw konfiguracji 2FA i praktyk bezpieczeństwa MFA, aby chronić swoją cyfrową tożsamość.",
+    "keywords": [
+      "przewodnik po konfiguracji 2fa",
+      "przewodnik po bezpieczeństwie MFA"
+    ],
+    "sections": [
+      {
+        "heading": "Co to jest weryfikacja dwuskładnikowa?",
+        "paragraphs": [
+          "Weryfikacja dwuskładnikowa (2FA) to proces bezpieczeństwa, który wymaga dwóch różnych form weryfikacji do uzyskania dostępu do konta. Powszechne metody obejmują hasła, tokeny bezpieczeństwa i skany biometryczne.",
+          "2FA znacznie zmniejsza ryzyko nieautoryzowanego dostępu, nawet jeśli hasło zostało skompromitowane."
+        ],
+        "bullets": [
+          "Wymaga dwóch form weryfikacji.",
+          "Przykłady: hasła + kody SMS, hasła + biometria."
+        ]
+      }
+    ],
+    "image": "/images/guides/two-factor-authentication-basics.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "en",
+    "title": "Common Password Mistakes: Avoiding Weak Password Examples",
+    "excerpt": "Many users unknowingly create weak passwords that compromise their security. This guide highlights common mistakes and provides examples to help you strengthen your password practices.",
+    "seoTitle": "Common Password Mistakes - Avoiding Weak Password Examples",
+    "seoDescription": "Discover common password mistakes and learn how to avoid weak password examples to enhance your online security.",
+    "keywords": [
+      "common password mistakes",
+      "weak password examples"
+    ],
+    "sections": [
+      {
+        "heading": "Top 5 Common Password Mistakes",
+        "paragraphs": [
+          "1. **Using simple passwords** like '123456' or 'password' increases vulnerability to brute-force attacks.",
+          "2. **Reusing passwords** across accounts means a single breach can expose all your data.",
+          "3. **Using personal information** (e.g., birthdays, names) makes passwords predictable.",
+          "4. **Ignoring password managers** limits the ability to generate unique, complex passwords.",
+          "5. **Writing passwords down** in insecure places (e.g., sticky notes) creates physical risks."
+        ],
+        "bullets": [
+          "Avoid simple passwords like '123456'.",
+          "Never reuse passwords across accounts.",
+          "Don’t use personal details in passwords.",
+          "Use a password manager for secure storage.",
+          "Avoid writing passwords on paper."
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "ua",
+    "title": "Повторні помилки паролів: Як уникати слабких прикладів",
+    "excerpt": "Багато користувачів навмисно створюють слабкі паролі, які знижують безпеку. Ця стаття виявляє найпоширеніші помилки та наводить приклади, щоб допомогти покращити ваші практики паролів.",
+    "seoTitle": "Повторні помилки паролів - Як уникати слабких прикладів",
+    "seoDescription": "Дізнайтесь про поширені помилки паролів та дізнайтесь, як уникати слабких прикладів, щоб покращити вашу онлайн-безпеку.",
+    "keywords": [
+      "поширені помилки паролів",
+      "приклади слабких паролів"
+    ],
+    "sections": [
+      {
+        "heading": "5 найпоширеніших помилок паролів",
+        "paragraphs": [
+          "1. **Використання простих паролів** (наприклад, '123456' або 'password') збільшує ризик для атак зі сторони.",
+          "2. **Повторне використання паролів** на різних акаунтах може викликати витік даних після одного порушення.",
+          "3. **Використання особистої інформації** (наприклад, дати народження, імена) робить паролі передбачуваними.",
+          "4. **Ігнорування менеджерів паролів** обмежує можливість створення унікальних, складних паролів.",
+          "5. **Запис паролів** на небезпечних місцях (наприклад, на липучках) створює фізичні ризики."
+        ],
+        "bullets": [
+          "Уникайте простих паролів, таких як '123456'.",
+          "Не повторюйте паролі на різних акаунтах.",
+          "Не використовуйте особисті деталі в паролях.",
+          "Використовуйте менеджер паролів для безпечної зберігання.",
+          "Уникайте запису паролів на папері."
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "es",
+    "title": "Errores comunes en contraseñas: Evitando ejemplos de contraseñas débiles",
+    "excerpt": "Muchos usuarios crean inconscientemente contraseñas débiles que comprometen su seguridad. Esta guía destaca los errores comunes y proporciona ejemplos para ayudarle a fortalecer sus prácticas de contraseñas.",
+    "seoTitle": "Errores comunes en contraseñas - Evitando ejemplos de contraseñas débiles",
+    "seoDescription": "Descubra los errores comunes en contraseñas y aprenda cómo evitar ejemplos de contraseñas débiles para mejorar su seguridad en línea.",
+    "keywords": [
+      "errores comunes en contraseñas",
+      "ejemplos de contraseñas débiles"
+    ],
+    "sections": [
+      {
+        "heading": "Top 5 Errores Comunes en Contraseñas",
+        "paragraphs": [
+          "1. **Usar contraseñas simples** como '123456' o 'password' aumenta la vulnerabilidad ante ataques de fuerza bruta.",
+          "2. **Reutilizar contraseñas** en diferentes cuentas significa que un solo robo puede exponer todos sus datos.",
+          "3. **Usar información personal** (ejemplo: fechas de nacimiento, nombres) hace que las contraseñas sean predecibles.",
+          "4. **Ignorar gestores de contraseñas** limita la capacidad de generar contraseñas únicas y complejas.",
+          "5. **Escribir contraseñas** en lugares inseguros (ejemplo: notas adhesivas) crea riesgos físicos."
+        ],
+        "bullets": [
+          "Evite contraseñas simples como '123456'.",
+          "Nunca reutilice contraseñas en diferentes cuentas.",
+          "No use información personal en contraseñas.",
+          "Use un gestor de contraseñas para almacenamiento seguro.",
+          "Evite escribir contraseñas en papel."
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "fr",
+    "title": "Erreurs courantes dans les mots de passe : Éviter les exemples de mots de passe faibles",
+    "excerpt": "Beaucoup d'utilisateurs créent inconsciemment des mots de passe faibles qui compromettent leur sécurité. Ce guide met en évidence les erreurs courantes et fournit des exemples pour vous aider à renforcer vos pratiques de mots de passe.",
+    "seoTitle": "Erreurs courantes dans les mots de passe - Éviter les exemples de mots de passe faibles",
+    "seoDescription": "Découvrez les erreurs courantes dans les mots de passe et apprenez à éviter les exemples de mots de passe faibles pour améliorer votre sécurité en ligne.",
+    "keywords": [
+      "erreurs courantes dans les mots de passe",
+      "exemples de mots de passe faibles"
+    ],
+    "sections": [
+      {
+        "heading": "Top 5 Erreurs Courantes dans les Mots de Passe",
+        "paragraphs": [
+          "1. **Utiliser des mots de passe simples** comme '123456' ou 'password' augmente la vulnérabilité aux attaques par force brute.",
+          "2. **Réutiliser des mots de passe** sur différents comptes signifie qu'un seul vol peut exposer tous vos données.",
+          "3. **Utiliser des informations personnelles** (exemples : dates de naissance, noms) rend les mots de passe prévisibles.",
+          "4. **Ignorer les gestionnaires de mots de passe** limite la capacité à générer des mots de passe uniques et complexes.",
+          "5. **Écrire des mots de passe** dans des endroits insecs (exemples : post-it) crée des risques physiques."
+        ],
+        "bullets": [
+          "Évitez des mots de passe simples comme '123456'.",
+          "Ne réutilisez jamais des mots de passe sur différents comptes.",
+          "N'utilisez pas d'informations personnelles dans les mots de passe.",
+          "Utilisez un gestionnaire de mots de passe pour un stockage sécurisé.",
+          "Évitez d'écrire des mots de passe sur du papier."
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "de",
+    "title": "Häufige Passwortfehler: Vermeiden Sie Beispiele für schwache Passwörter",
+    "excerpt": "Viele Nutzer erstellen unbewusst schwache Passwörter, die ihre Sicherheit gefährden. Dieser Leitfaden zeigt häufige Fehler und gibt Beispiele, um Ihre Passwortpraktiken zu stärken.",
+    "seoTitle": "Häufige Passwortfehler - Vermeiden Sie Beispiele für schwache Passwörter",
+    "seoDescription": "Entdecken Sie häufige Passwortfehler und erfahren Sie, wie Sie Beispiele für schwache Passwörter vermeiden können, um Ihre Online-Sicherheit zu verbessern.",
+    "keywords": [
+      "häufige passwortfehler",
+      "beispiele für schwache passwörter"
+    ],
+    "sections": [
+      {
+        "heading": "Top 5 Häufige Passwortfehler",
+        "paragraphs": [
+          "1. **Einfache Passwörter** wie '123456' oder 'password' erhöhen die Anfälligkeit für Brute-Force-Angriffe.",
+          "2. **Wiederholte Passwörter** auf verschiedenen Konten bedeuten, dass ein einziger Datenleck alle Ihre Daten gefährdet.",
+          "3. **Persönliche Informationen** (z. B. Geburtsdaten, Namen) machen Passwörter vorhersagbar.",
+          "4. **Ignorieren von Passwortmanagern** begrenzt die Fähigkeit, eindeutige, komplexe Passwörter zu erstellen.",
+          "5. **Schreiben von Passwörtern** an unsicheren Orten (z. B. Klebeetiketten) erzeugt physische Risiken."
+        ],
+        "bullets": [
+          "Vermeiden Sie einfache Passwörter wie '123456'.",
+          "Verwenden Sie nie dieselben Passwörter auf verschiedenen Konten.",
+          "Verwenden Sie keine persönlichen Informationen in Passwörtern.",
+          "Nutzen Sie einen Passwort-Manager für sichere Speicherung.",
+          "Vermeiden Sie das Schreiben von Passwörtern auf Papier."
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "it",
+    "title": "Errori comuni nei password: Evitare esempi di password deboli",
+    "excerpt": "Molti utenti creano inconsciamente password deboli che compromettono la loro sicurezza. Questa guida evidenzia gli errori comuni e fornisce esempi per aiutare a rafforzare le proprie pratiche di password.",
+    "seoTitle": "Errori comuni nei password - Evitare esempi di password deboli",
+    "seoDescription": "Scopri gli errori comuni nei password e impara a evitare esempi di password deboli per migliorare la tua sicurezza online.",
+    "keywords": [
+      "errori comuni nei password",
+      "esempi di password deboli"
+    ],
+    "sections": [
+      {
+        "heading": "Top 5 Errori Comuni nei Password",
+        "paragraphs": [
+          "1. **Utilizzare password semplici** come '123456' o 'password' aumenta la vulnerabilità agli attacchi di forza bruta.",
+          "2. **Riutilizzare password** su diversi account significa che un solo furto può esporre tutti i dati.",
+          "3. **Utilizzare informazioni personali** (es. date di nascita, nomi) rende le password prevedibili.",
+          "4. **Ignorare i gestori di password** limita la capacità di generare password uniche e complesse.",
+          "5. **Scrivere password** in posti inadatti (es. adesivi) crea rischi fisici."
+        ],
+        "bullets": [
+          "Evita password semplici come '123456'.",
+          "Non riutilizzare password su diversi account.",
+          "Non utilizzare informazioni personali nelle password.",
+          "Utilizza un gestore di password per un archiviazione sicura.",
+          "Evita di scrivere password su carta."
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "pt",
+    "title": "Erros comuns em senhas: Evitando exemplos de senhas frágeis",
+    "excerpt": "Muitos usuários criam inconscientemente senhas frágeis que comprometem sua segurança. Este guia destaca os erros comuns e fornece exemplos para ajudar a fortalecer suas práticas de senhas.",
+    "seoTitle": "Erros comuns em senhas - Evitando exemplos de senhas frágeis",
+    "seoDescription": "Descubra os erros comuns em senhas e aprenda como evitar exemplos de senhas frágeis para melhorar sua segurança online.",
+    "keywords": [
+      "erros comuns em senhas",
+      "exemplos de senhas frágeis"
+    ],
+    "sections": [
+      {
+        "heading": "Top 5 Erros Comuns em Senhas",
+        "paragraphs": [
+          "1. **Usar senhas simples** como '123456' ou 'password' aumenta a vulnerabilidade a ataques de força bruta.",
+          "2. **Reutilizar senhas** em diferentes contas significa que um único vazamento pode expor todos os seus dados.",
+          "3. **Usar informações pessoais** (exemplo: datas de nascimento, nomes) torna as senhas previsíveis.",
+          "4. **Ignorar gerenciadores de senhas** limita a capacidade de gerar senhas únicas e complexas.",
+          "5. **Escrever senhas** em lugares inseguros (exemplo: adesivos) cria riscos físicos."
+        ],
+        "bullets": [
+          "Evite senhas simples como '123456'.",
+          "Nunca reutilize senhas em diferentes contas.",
+          "Não use informações pessoais em senhas.",
+          "Use um gerenciador de senhas para armazenamento seguro.",
+          "Evite escrever senhas em papel."
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "ru",
+    "title": "Частые ошибки паролей: Как избежать слабых примеров",
+    "excerpt": "Многие пользователи случайно создают слабые пароли, которые подвергают риску свою безопасность. Этот гайд выделяет распространенные ошибки и предоставляет примеры, чтобы помочь усилить ваши практики паролей.",
+    "seoTitle": "Частые ошибки паролей - Как избежать слабых примеров",
+    "seoDescription": "Узнайте о распространенных ошибках паролей и узнайте, как избежать слабых примеров, чтобы усилить вашу онлайн-безопасность.",
+    "keywords": [
+      "частые ошибки паролей",
+      "примеры слабых паролей"
+    ],
+    "sections": [
+      {
+        "heading": "Топ 5 распространенных ошибок паролей",
+        "paragraphs": [
+          "1. **Использование простых паролей** (например, '123456' или 'password') увеличивает уязвимость к атакам силой.",
+          "2. **Повторное использование паролей** на разных аккаунтах означает, что один взлом может выявить все ваши данные.",
+          "3. **Использование личной информации** (например, дат рождения, имен) делает пароли предсказуемыми.",
+          "4. **Игнорирование менеджеров паролей** ограничивает возможность создания уникальных, сложных паролей.",
+          "5. **Запись паролей** на небезопасных местах (например, на липучках) создает физические риски."
+        ],
+        "bullets": [
+          "Избегайте простых паролей, таких как '123456'.",
+          "Не повторяйте пароли на разных аккаунтах.",
+          "Не используйте личные данные в паролях.",
+          "Используйте менеджер паролей для безопасного хранения.",
+          "Избегайте записи паролей на бумаге."
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "zh",
+    "title": "常见密码错误：避免弱密码示例",
+    "excerpt": "许多用户无意中创建了弱密码，这会危及他们的安全。本指南列出了常见错误，并提供示例，帮助您加强密码实践。",
+    "seoTitle": "常见密码错误 - 避免弱密码示例",
+    "seoDescription": "发现常见密码错误，学习如何避免弱密码示例，以提高您的在线安全性。",
+    "keywords": [
+      "常见密码错误",
+      "弱密码示例"
+    ],
+    "sections": [
+      {
+        "heading": "最常见的5个密码错误",
+        "paragraphs": [
+          "1. **使用简单密码**（如 '123456' 或 'password'）会增加暴力破解攻击的风险。",
+          "2. **在不同账户上重复使用密码**意味着一个泄露可能导致所有数据暴露。",
+          "3. **使用个人信息**（如生日、姓名）会使密码可预测。",
+          "4. **忽略密码管理器**限制了生成唯一、复杂密码的能力。",
+          "5. **将密码写在不安全的地方**（如便签纸）会带来物理风险。"
+        ],
+        "bullets": [
+          "避免使用简单密码，如 '123456'.",
+          "不要在不同账户上重复使用密码.",
+          "不要在密码中使用个人信息.",
+          "使用密码管理器进行安全存储.",
+          "避免将密码写在纸上."
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "ja",
+    "title": "一般的パスワードの間違い：弱いパスワードの例を避ける",
+    "excerpt": "多くのユーザーが無意識に弱いパスワードを作成し、セキュリティを脅かしています。このガイドでは一般的な間違いを挙げ、パスワードの実践を強化するための例を提供します。",
+    "seoTitle": "一般的なパスワードの間違い - 弱いパスワードの例を避ける",
+    "seoDescription": "一般的なパスワードの間違いを発見し、弱いパスワードの例を避けてオンラインセキュリティを向上させましょう。",
+    "keywords": [
+      "一般的なパスワードの間違い",
+      "弱いパスワードの例"
+    ],
+    "sections": [
+      {
+        "heading": "最も一般的な5つのパスワードの間違い",
+        "paragraphs": [
+          "1. **単純なパスワード**（例: '123456' または 'password'）は、ブルートフォース攻撃のリスクを高めます。",
+          "2. **異なるアカウントでパスワードを再利用**すると、1つの漏洩がすべてのデータを暴露する可能性があります。",
+          "3. **個人情報**（例: 生年月日、名前）を使用すると、パスワードが予測されやすくなります。",
+          "4. **パスワードマネージャーを無視**すると、ユニークで複雑なパスワードを生成する能力が制限されます。",
+          "5. **不安全な場所にパスワードを書く**（例: テープ付きメモ）ことは、物理的なリスクを生じさせます。"
+        ],
+        "bullets": [
+          "'123456' のような単純なパスワードを避けてください。",
+          "異なるアカウントでパスワードを再利用しないでください。",
+          "個人情報をパスワードに使用しないでください。",
+          "安全な保存のためにパスワードマネージャーを使用してください。",
+          "パスワードを紙に書かないでください。"
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "locale": "pl",
+    "title": "Powszechne błędy hasła: unikanie przykładów słabych haseł",
+    "excerpt": "Wiele użytkowników nieświadomie tworzy słabe hasła, które zagrażają ich bezpieczeństwu. Ten przewodnik wskazuje powszechne błędy i dostarcza przykładów, aby pomóc wzmocnić praktyki związane z hasłami.",
+    "seoTitle": "Powszechne błędy hasła - unikanie przykładów słabych haseł",
+    "seoDescription": "Odkryj powszechne błędy hasła i dowiedz się, jak unikać przykładów słabych haseł, aby poprawić swoje bezpieczeństwo online.",
+    "keywords": [
+      "powszechne błędy hasła",
+      "przykłady słabych haseł"
+    ],
+    "sections": [
+      {
+        "heading": "Top 5 Powszechnych Błędów Hasła",
+        "paragraphs": [
+          "1. **Użycie prostych haseł** (np. '123456' lub 'password') zwiększa podatność na ataki siłą.",
+          "2. **Powtarzanie haseł** na różnych kontach oznacza, że jeden wyciek może ujawnić wszystkie dane.",
+          "3. **Użycie informacji osobistych** (np. dat urodzin, imion) sprawia, że hasła są przewidywalne.",
+          "4. **Ignorowanie menedżerów haseł** ogranicza możliwość tworzenia unikalnych, skomplikowanych haseł.",
+          "5. **Pisanie haseł** w niebezpiecznych miejscach (np. na adhesywnych etykietach) tworzy fizyczne zagrożenia."
+        ],
+        "bullets": [
+          "Unikaj prostych haseł, takich jak '123456'.",
+          "Nie powtarzaj haseł na różnych kontach.",
+          "Nie używaj informacji osobistych w hasłach.",
+          "Używaj menedżera haseł do bezpiecznego przechowywania.",
+          "Unikaj pisania haseł na papierze."
+        ]
+      }
+    ],
+    "image": "/images/guides/common-password-mistakes.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "en",
+    "title": "Team Password Policy Template: A Guide for Companies",
+    "excerpt": "A comprehensive password policy template ensures secure access and protects company data. This guide provides a customizable framework for organizations to enforce strong password practices.",
+    "seoTitle": "Team Password Policy Template - Secure Access for Companies",
+    "seoDescription": "Implement a company password policy with this customizable template to enhance security and compliance across your organization.",
+    "keywords": [
+      "password policy template",
+      "company password policy"
+    ],
+    "sections": [
+      {
+        "heading": "Introduction to Password Policies",
+        "paragraphs": [
+          "A well-defined password policy is essential for safeguarding company assets and preventing unauthorized access. This template serves as a foundation for creating a tailored security strategy.",
+          "Organizations must balance user convenience with robust security measures to avoid both user frustration and potential breaches."
+        ],
+        "bullets": [
+          "Define clear password requirements.",
+          "Ensure compliance with industry standards.",
+          "Educate employees on password best practices."
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "ua",
+    "title": "Шаблон політики паролів для команди: Посібник для компаній",
+    "excerpt": "Повний шаблон політики паролів забезпечує безпечний доступ і захищає дані компанії. Ця стаття надає налаштовувану рамку для організацій, щоб виконувати сильні практики паролів.",
+    "seoTitle": "Шаблон політики паролів для команди - Безпечний доступ для компаній",
+    "seoDescription": "Впровадьте політику паролів для компанії з цим налаштовуваним шаблоном, щоб підвищити безпеку і відповідність у вашій організації.",
+    "keywords": [
+      "шаблон політики паролів",
+      "політика паролів для компанії"
+    ],
+    "sections": [
+      {
+        "heading": "Вступ до політики паролів",
+        "paragraphs": [
+          "Чітко визначена політика паролів є необхідною для захисту активів компанії і запобігання несанкціонованому доступу. Цей шаблон служить основою для створення налаштовуваної стратегії безпеки.",
+          "Організаціям необхідно балансувати зручність для користувачів і сильні міри безпеки, щоб уникнути як незручностей для користувачів, так і потенційних порушень."
+        ],
+        "bullets": [
+          "Визначте чіткі вимоги до паролів.",
+          "Забезпечте відповідність індустрійним стандартам.",
+          "Освітіть співробітників у кращих практиках паролів."
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "es",
+    "title": "Plantilla de Política de Contraseñas para Equipos: Guía para Empresas",
+    "excerpt": "Una plantilla de política de contraseñas completa garantiza el acceso seguro y protege los datos de la empresa. Esta guía proporciona un marco personalizable para que las organizaciones implementen prácticas de contraseñas fuertes.",
+    "seoTitle": "Plantilla de Política de Contraseñas para Equipos - Acceso Seguro para Empresas",
+    "seoDescription": "Implemente una política de contraseñas para su empresa con esta plantilla personalizable para mejorar la seguridad y el cumplimiento en su organización.",
+    "keywords": [
+      "plantilla de política de contraseñas",
+      "política de contraseñas para empresas"
+    ],
+    "sections": [
+      {
+        "heading": "Introducción a las Políticas de Contraseñas",
+        "paragraphs": [
+          "Una política de contraseñas bien definida es esencial para proteger los activos de la empresa y prevenir el acceso no autorizado. Esta plantilla sirve como base para crear una estrategia de seguridad personalizada.",
+          "Las organizaciones deben equilibrar la comodidad del usuario con medidas de seguridad robustas para evitar tanto la frustración del usuario como posibles brechas."
+        ],
+        "bullets": [
+          "Defina requisitos claros para contraseñas.",
+          "Asegure el cumplimiento de estándares industriales.",
+          "Eduque a los empleados sobre mejores prácticas de contraseñas."
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "fr",
+    "title": "Modèle de politique de mot de passe pour l'équipe : Guide pour les entreprises",
+    "excerpt": "Un modèle de politique de mot de passe complet garantit un accès sécurisé et protège les données de l'entreprise. Ce guide fournit un cadre personnalisable pour que les organisations appliquent des pratiques de mot de passe robustes.",
+    "seoTitle": "Modèle de politique de mot de passe pour l'équipe - Accès sécurisé pour les entreprises",
+    "seoDescription": "Mettez en œuvre une politique de mot de passe pour votre entreprise avec ce modèle personnalisable pour améliorer la sécurité et le respect des normes dans votre organisation.",
+    "keywords": [
+      "modèle de politique de mot de passe",
+      "politique de mot de passe pour entreprise"
+    ],
+    "sections": [
+      {
+        "heading": "Introduction aux politiques de mot de passe",
+        "paragraphs": [
+          "Une politique de mot de passe bien définie est essentielle pour protéger les actifs de l'entreprise et prévenir l'accès non autorisé. Ce modèle sert de base pour créer une stratégie de sécurité personnalisée.",
+          "Les organisations doivent équilibrer le confort de l'utilisateur avec des mesures de sécurité robustes pour éviter à la fois la frustration de l'utilisateur et les fuites potentielles."
+        ],
+        "bullets": [
+          "Définir des exigences claires pour les mots de passe.",
+          "Assurer le respect des normes industrielles.",
+          "Former les employés aux meilleures pratiques des mots de passe."
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "de",
+    "title": "Vorlage für Team-Passwort-Richtlinien: Leitfaden für Unternehmen",
+    "excerpt": "Eine umfassende Passwort-Richtlinien-Vorlage gewährleistet sicheren Zugriff und schützt Unternehmensdaten. Dieser Leitfaden bietet einen anpassbaren Rahmen, um Unternehmen bei der Umsetzung robuster Passwort-Praktiken zu unterstützen.",
+    "seoTitle": "Team-Passwort-Richtlinien-Vorlage - Sicherer Zugriff für Unternehmen",
+    "seoDescription": "Implementieren Sie eine Unternehmens-Passwort-Richtlinie mit dieser anpassbaren Vorlage, um Sicherheit und Einhaltung in Ihrer Organisation zu verbessern.",
+    "keywords": [
+      "passwort-richtlinien-vorlage",
+      "unternehmens-passwort-richtlinie"
+    ],
+    "sections": [
+      {
+        "heading": "Einführung in Passwort-Richtlinien",
+        "paragraphs": [
+          "Eine gut definierte Passwort-Richtlinie ist entscheidend, um Unternehmensressourcen zu schützen und unbefugten Zugriff zu verhindern. Diese Vorlage dient als Grundlage für die Erstellung einer maßgeschneiderten Sicherheitsstrategie.",
+          "Unternehmen müssen Komfort für Nutzer und robuste Sicherheitsmaßnahmen ausbalancieren, um sowohl Nutzerfrustration als auch potenzielle Sicherheitslücken zu vermeiden."
+        ],
+        "bullets": [
+          "Definieren Sie klare Passwortanforderungen.",
+          "Sorgen Sie für Einhaltung industrieller Standards.",
+          "Bilden Sie Mitarbeiter in besten Passwortpraktiken."
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "it",
+    "title": "Modello di Politica dei Password per il Team: Guida per le Aziende",
+    "excerpt": "Un modello di politica dei password completo garantisce un accesso sicuro e protegge i dati dell'azienda. Questa guida fornisce un framework personalizzabile per le organizzazioni che desiderano implementare pratiche dei password robuste.",
+    "seoTitle": "Modello di Politica dei Password per il Team - Accesso Sicuro per le Aziende",
+    "seoDescription": "Implementa una politica dei password per la tua azienda con questo modello personalizzabile per migliorare la sicurezza e il rispetto delle normative nell'organizzazione.",
+    "keywords": [
+      "modello di politica dei password",
+      "politica dei password per aziende"
+    ],
+    "sections": [
+      {
+        "heading": "Introduzione alle Politiche dei Password",
+        "paragraphs": [
+          "Una politica dei password ben definita è essenziale per proteggere gli asset aziendali e prevenire l'accesso non autorizzato. Questo modello serve come base per creare una strategia di sicurezza personalizzata.",
+          "Le organizzazioni devono bilanciare la comodità dell'utente con misure di sicurezza robuste per evitare sia la frustrazione dell'utente che potenziali violazioni."
+        ],
+        "bullets": [
+          "Definisci requisiti chiari per i password.",
+          "Assicurati il rispetto degli standard industriali.",
+          "Educa i dipendenti alle migliori pratiche dei password."
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "pt",
+    "title": "Modelo de Política de Senhas para Equipe: Guia para Empresas",
+    "excerpt": "Um modelo de política de senhas completo garante acesso seguro e protege os dados da empresa. Este guia fornece um quadro personalizável para que as organizações implementem práticas de senhas robustas.",
+    "seoTitle": "Modelo de Política de Senhas para Equipe - Acesso Seguro para Empresas",
+    "seoDescription": "Implemente uma política de senhas para sua empresa com este modelo personalizável para melhorar a segurança e o cumprimento dentro da sua organização.",
+    "keywords": [
+      "modelo de política de senhas",
+      "política de senhas para empresas"
+    ],
+    "sections": [
+      {
+        "heading": "Introdução às Políticas de Senhas",
+        "paragraphs": [
+          "Uma política de senhas bem definida é essencial para proteger os ativos da empresa e prevenir o acesso não autorizado. Este modelo serve como base para criar uma estratégia de segurança personalizada.",
+          "As organizações devem equilibrar a conveniência do usuário com medidas de segurança robustas para evitar tanto a frustração do usuário quanto potenciais violações."
+        ],
+        "bullets": [
+          "Defina requisitos claros para senhas.",
+          "Garanta o cumprimento de padrões industriais.",
+          "Eduque os funcionários sobre melhores práticas de senhas."
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "ru",
+    "title": "Шаблон политики паролей для команды: Руководство для компаний",
+    "excerpt": "Полный шаблон политики паролей обеспечивает безопасный доступ и защищает данные компании. Это руководство предоставляет настраиваемый фреймворк для организаций, чтобы внедрить сильные практики паролей.",
+    "seoTitle": "Шаблон политики паролей для команды - Безопасный доступ для компаний",
+    "seoDescription": "Реализуйте политику паролей для вашей компании с помощью этого настраиваемого шаблона, чтобы повысить безопасность и соответствие в вашей организации.",
+    "keywords": [
+      "шаблон политики паролей",
+      "политика паролей для компаний"
+    ],
+    "sections": [
+      {
+        "heading": "Введение в политику паролей",
+        "paragraphs": [
+          "Четко определенная политика паролей необходима для защиты активов компании и предотвращения несанкционированного доступа. Этот шаблон служит основой для создания настраиваемой стратегии безопасности.",
+          "Организациям необходимо сбалансировать удобство для пользователей и надежные меры безопасности, чтобы избежать как раздражения пользователей, так и потенциальных утечек."
+        ],
+        "bullets": [
+          "Определите четкие требования к паролям.",
+          "Обеспечьте соответствие отраслевым стандартам.",
+          "Обучите сотрудников лучшим практикам паролей."
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "zh",
+    "title": "团队密码政策模板：公司指南",
+    "excerpt": "一份全面的密码政策模板可以确保安全访问并保护公司数据。本指南为组织提供可定制的框架，以实施强大的密码实践。",
+    "seoTitle": "团队密码政策模板 - 公司的安全访问",
+    "seoDescription": "使用此可定制的模板为您的公司实施密码政策，以提高组织内的安全性和合规性。",
+    "keywords": [
+      "密码政策模板",
+      "公司密码政策"
+    ],
+    "sections": [
+      {
+        "heading": "密码政策简介",
+        "paragraphs": [
+          "明确的密码政策对于保护公司资产和防止未经授权的访问至关重要。此模板为创建定制的安全策略提供基础。",
+          "组织需要平衡用户的便利性和强大的安全措施，以避免用户挫败感和潜在的安全漏洞。"
+        ],
+        "bullets": [
+          "定义明确的密码要求。",
+          "确保符合行业标准。",
+          "教育员工使用最佳密码实践。"
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "ja",
+    "title": "チームパスワードポリシーのテンプレート: 会社向けガイド",
+    "excerpt": "包括的なパスワードポリシーテンプレートは、安全なアクセスを確保し、会社のデータを保護します。このガイドでは、組織が強力なパスワードの実践を導入するためのカスタマイズ可能なフレームワークを提供します。",
+    "seoTitle": "チームパスワードポリシーのテンプレート - 会社の安全なアクセス",
+    "seoDescription": "このカスタマイズ可能なテンプレートを使って、会社のパスワードポリシーを実装し、組織内のセキュリティとコンプライアンスを向上させましょう。",
+    "keywords": [
+      "パスワードポリシーのテンプレート",
+      "会社のパスワードポリシー"
+    ],
+    "sections": [
+      {
+        "heading": "パスワードポリシーの導入",
+        "paragraphs": [
+          "明確なパスワードポリシーは、会社の資産を保護し、不正アクセスを防ぐために不可欠です。このテンプレートは、カスタマイズ可能なセキュリティ戦略の基礎となります。",
+          "組織は、ユーザーの利便性と強力なセキュリティ措置をバランスよく取り扱い、ユーザーの不満や潜在的なセキュリティ漏洩を避ける必要があります。"
+        ],
+        "bullets": [
+          "パスワードの明確な要件を定義する。",
+          "業界基準に準拠する。",
+          "従業員に最適なパスワード実践を教育する。"
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "locale": "pl",
+    "title": "Szablon Polityki Hasła dla Zespołu: Przewodnik dla Firm",
+    "excerpt": "Kompletny szablon polityki hasła zapewnia bezpieczny dostęp i chroni dane firmy. Ten przewodnik oferuje dostosowalny framework dla organizacji, aby wdrożyć silne praktyki związane z hasłami.",
+    "seoTitle": "Szablon Polityki Hasła dla Zespołu - Bezpieczny Dostęp dla Firm",
+    "seoDescription": "Zaimplementuj politykę hasła dla swojej firmy za pomocą tego dostosowanego szablonu, aby poprawić bezpieczeństwo i zgodność w swojej organizacji.",
+    "keywords": [
+      "szablon polityki hasła",
+      "polityka hasła dla firm"
+    ],
+    "sections": [
+      {
+        "heading": "Wprowadzenie do Polityki Hasła",
+        "paragraphs": [
+          "Jasno zdefiniowana polityka hasła jest niezbędna do ochrony zasobów firmy i zapobiegania nieautoryzowanemu dostępowi. Ten szablon służy jako podstawa do tworzenia dostosowanego planu bezpieczeństwa.",
+          "Organizacje muszą zrównoważyć wygoda użytkownika z silnymi miarami bezpieczeństwa, aby uniknąć zarówno frustracji użytkownika, jak i potencjalnych przecieków."
+        ],
+        "bullets": [
+          "Zdefiniuj jasne wymagania dotyczące hasła.",
+          "Zapewnia zgodność z normami branżowymi.",
+          "Edukuj pracowników w najlepszych praktykach dotyczących hasła."
+        ]
+      }
+    ],
+    "image": "/images/guides/team-password-policy-template.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "en",
+    "title": "Secure Password Generator Guide: Best Practices and Settings",
+    "excerpt": "Learn how to use a secure password generator effectively with this comprehensive guide. Discover essential settings and best practices for creating strong, unique passwords.",
+    "seoTitle": "Secure Password Generator Guide - Create Strong Passwords Easily",
+    "seoDescription": "Master the use of a secure password generator with this step-by-step guide. Explore critical settings and strategies for generating unbreakable passwords.",
+    "keywords": [
+      "secure password generator guide",
+      "password generator settings"
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Secure Password Generators",
+        "paragraphs": [
+          "A secure password generator is a tool that creates random, complex passwords to protect your accounts. This guide explains how to configure its settings for maximum security.",
+          "Modern generators use algorithms to ensure passwords are unique, non-repeating, and resistant to brute-force attacks."
+        ],
+        "bullets": [
+          "Use a minimum of 12 characters.",
+          "Include a mix of uppercase, lowercase, numbers, and symbols.",
+          "Avoid common words or patterns."
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "ua",
+    "title": "Гід з безпечного генератора паролів: Налаштування та кращі практики",
+    "excerpt": "Дізнайтесь, як ефективно використовувати безпечний генератор паролів за цим повним гідом. Вивчіть ключові налаштування та кращі практики для створення сильних, унікальних паролів.",
+    "seoTitle": "Гід з безпечного генератора паролів - Створіть сильні паролі легко",
+    "seoDescription": "Оволодійте використанням безпечного генератора паролів за цим крок за кроком гідом. Дослідіть критичні налаштування та стратегії для генерування непорушних паролів.",
+    "keywords": [
+      "гід з безпечного генератора паролів",
+      "налаштування генератора паролів"
+    ],
+    "sections": [
+      {
+        "heading": "Розуміння безпечних генераторів паролів",
+        "paragraphs": [
+          "Безпечний генератор паролів — це інструмент, який створює випадкові, складні паролі для захисту ваших облікових записів. Цей гід пояснює, як налаштувати його параметри для максимальної безпеки.",
+          "Сучасні генератори використовують алгоритми, щоб забезпечити унікальність, відсутність повторень і стійкість до атак методом перебору."
+        ],
+        "bullets": [
+          "Використовуйте мінімум 12 символів.",
+          "Включайте комбінацію великих і малих літер, чисел і символів.",
+          "Уникайте поширених слів або зразків."
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "es",
+    "title": "Guía del Generador de Contraseñas Seguras: Configuración y Mejores Prácticas",
+    "excerpt": "Aprenda a utilizar un generador de contraseñas seguro de forma efectiva con esta guía completa. Descubra configuraciones esenciales y mejores prácticas para crear contraseñas fuertes y únicas.",
+    "seoTitle": "Guía del Generador de Contraseñas Seguras - Crea Contraseñas Fuertes con Facilidad",
+    "seoDescription": "Domine el uso de un generador de contraseñas seguro con esta guía paso a paso. Explore configuraciones clave y estrategias para generar contraseñas invencibles.",
+    "keywords": [
+      "guía del generador de contraseñas seguras",
+      "configuración del generador de contraseñas"
+    ],
+    "sections": [
+      {
+        "heading": "Entendiendo los Generadores de Contraseñas Seguras",
+        "paragraphs": [
+          "Un generador de contraseñas seguro es una herramienta que crea contraseñas aleatorias y complejas para proteger sus cuentas. Esta guía explica cómo configurar sus ajustes para máxima seguridad.",
+          "Los generadores modernos utilizan algoritmos para garantizar que las contraseñas sean únicas, no repetidas y resistentes a ataques de fuerza bruta."
+        ],
+        "bullets": [
+          "Utilice al menos 12 caracteres.",
+          "Incluya una mezcla de mayúsculas, minúsculas, números y símbolos.",
+          "Evite palabras o patrones comunes."
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "fr",
+    "title": "Guide du Générateur de Mot de Passe Sécurisé : Configuration et Bonnes Pratiques",
+    "excerpt": "Découvrez comment utiliser efficacement un générateur de mot de passe sécurisé avec ce guide complet. Découvrez les paramètres essentiels et les bonnes pratiques pour créer des mots de passe solides et uniques.",
+    "seoTitle": "Guide du Générateur de Mot de Passe Sécurisé - Créez des Mots de Passe Forts Facilement",
+    "seoDescription": "Maîtrisez l'utilisation d'un générateur de mot de passe sécurisé avec ce guide étape par étape. Explorez les paramètres clés et les stratégies pour générer des mots de passe inviolables.",
+    "keywords": [
+      "guide du générateur de mot de passe sécurisé",
+      "configuration du générateur de mot de passe"
+    ],
+    "sections": [
+      {
+        "heading": "Comprendre les Générateurs de Mot de Passe Sécurisés",
+        "paragraphs": [
+          "Un générateur de mot de passe sécurisé est un outil qui crée des mots de passe aléatoires et complexes pour protéger vos comptes. Ce guide explique comment configurer ses paramètres pour une sécurité maximale.",
+          "Les générateurs modernes utilisent des algorithmes pour garantir que les mots de passe soient uniques, non répétitifs et résistants aux attaques par force brute."
+        ],
+        "bullets": [
+          "Utilisez au moins 12 caractères.",
+          "Incluez une combinaison de majuscules, minuscules, chiffres et symboles.",
+          "Évitez les mots ou motifs courants."
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "de",
+    "title": "Leitfaden für den sicheren Passwort-Generator: Einstellungen und Best Practices",
+    "excerpt": "Erfahren Sie, wie Sie einen sicheren Passwort-Generator effektiv nutzen können mit diesem umfassenden Leitfaden. Entdecken Sie entscheidende Einstellungen und beste Praktiken zum Erstellen starker, einzigartiger Passwörter.",
+    "seoTitle": "Leitfaden für den sicheren Passwort-Generator - Erstellen Sie starke Passwörter leicht",
+    "seoDescription": "Beherrschen Sie den Umgang mit einem sicheren Passwort-Generator mit diesem Schritt-für-Schritt-Leitfaden. Erforschen Sie entscheidende Einstellungen und Strategien zum Generieren von unknackbaren Passwörtern.",
+    "keywords": [
+      "leitfaden für den sicheren passwort-generator",
+      "passwort-generator-einstellungen"
+    ],
+    "sections": [
+      {
+        "heading": "Verständnis des sicheren Passwort-Generators",
+        "paragraphs": [
+          "Ein sicherer Passwort-Generator ist ein Tool, das zufällige, komplexe Passwörter erstellt, um Ihre Konten zu schützen. Dieser Leitfaden erklärt, wie Sie seine Einstellungen für maximale Sicherheit konfigurieren.",
+          "Moderne Generatoren verwenden Algorithmen, um sicherzustellen, dass Passwörter einzigartig, nicht wiederholt und widerstandsfähig gegen Brute-Force-Angriffe sind."
+        ],
+        "bullets": [
+          "Verwenden Sie mindestens 12 Zeichen.",
+          "Fügen Sie eine Kombination aus Groß- und Kleinschreibung, Zahlen und Symbolen hinzu.",
+          "Vermeiden Sie gängige Wörter oder Muster."
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "it",
+    "title": "Guida al Generatore di Password Sicure: Configurazione e Migliori Pratiche",
+    "excerpt": "Impara a utilizzare in modo efficace un generatore di password sicure con questa guida completa. Scopri le impostazioni essenziali e le migliori pratiche per creare password forti e uniche.",
+    "seoTitle": "Guida al Generatore di Password Sicure - Crea Password Forti con Facilità",
+    "seoDescription": "Metti in pratica l'uso di un generatore di password sicure con questa guida passo passo. Esplora le impostazioni chiave e le strategie per generare password irrompibili.",
+    "keywords": [
+      "guida al generatore di password sicure",
+      "impostazioni del generatore di password"
+    ],
+    "sections": [
+      {
+        "heading": "Comprendere il Generatore di Password Sicure",
+        "paragraphs": [
+          "Un generatore di password sicure è uno strumento che crea password casuali e complesse per proteggere i tuoi account. Questa guida spiega come configurare le sue impostazioni per la massima sicurezza.",
+          "I generatori moderni utilizzano algoritmi per garantire che le password siano uniche, non ripetute e resistenti agli attacchi di forza bruta."
+        ],
+        "bullets": [
+          "Utilizza almeno 12 caratteri.",
+          "Includi una combinazione di maiuscole, minuscole, numeri e simboli.",
+          "Evita parole o modelli comuni."
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "pt",
+    "title": "Guia do Gerador de Senhas Seguras: Configurações e Boas Práticas",
+    "excerpt": "Aprenda a utilizar um gerador de senhas seguro de forma eficaz com este guia completo. Descubra configurações essenciais e boas práticas para criar senhas fortes e únicas.",
+    "seoTitle": "Guia do Gerador de Senhas Seguras - Crie Senhas Fortes com Facilidade",
+    "seoDescription": "Domine o uso de um gerador de senhas seguro com este guia passo a passo. Explore configurações importantes e estratégias para gerar senhas invulneráveis.",
+    "keywords": [
+      "guia do gerador de senhas seguras",
+      "configurações do gerador de senhas"
+    ],
+    "sections": [
+      {
+        "heading": "Entendendo Geradores de Senhas Seguras",
+        "paragraphs": [
+          "Um gerador de senhas seguro é uma ferramenta que cria senhas aleatórias e complexas para proteger suas contas. Este guia explica como configurar suas configurações para máxima segurança.",
+          "Geradores modernos utilizam algoritmos para garantir que as senhas sejam únicas, não repetidas e resistentes a ataques de força bruta."
+        ],
+        "bullets": [
+          "Use pelo menos 12 caracteres.",
+          "Inclua uma combinação de letras maiúsculas, minúsculas, números e símbolos.",
+          "Evite palavras ou padrões comuns."
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "ru",
+    "title": "Руководство по Безопасному Генератору Паролей: Настройки и Лучшие Практики",
+    "excerpt": "Узнайте, как эффективно использовать безопасный генератор паролей с помощью этого подробного руководства. Откройте для себя ключевые настройки и лучшие практики для создания сильных, уникальных паролей.",
+    "seoTitle": "Руководство по Безопасному Генератору Паролей - Создайте Сильные Пароли Легко",
+    "seoDescription": "Освойте использование безопасного генератора паролей с помощью этого пошагового руководства. Изучите ключевые настройки и стратегии для создания непробиваемых паролей.",
+    "keywords": [
+      "руководство по безопасному генератору паролей",
+      "настройки генератора паролей"
+    ],
+    "sections": [
+      {
+        "heading": "Понимание безопасного генератора паролей",
+        "paragraphs": [
+          "Безопасный генератор паролей — это инструмент, который создает случайные, сложные пароли для защиты ваших аккаунтов. Это руководство объясняет, как настроить его параметры для максимальной безопасности.",
+          "Современные генераторы используют алгоритмы, чтобы обеспечить уникальность, отсутствие повторений и устойчивость к атакам методом перебора."
+        ],
+        "bullets": [
+          "Используйте минимум 12 символов.",
+          "Включите комбинацию прописных и строчных букв, чисел и символов.",
+          "Избегайте распространенных слов или шаблонов."
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "zh",
+    "title": "安全密码生成器指南：设置与最佳实践",
+    "excerpt": "通过本全面指南学习如何有效使用安全密码生成器。发现关键设置和最佳实践，用于创建强而独特的密码。",
+    "seoTitle": "安全密码生成器指南 - 轻松创建强密码",
+    "seoDescription": "通过本逐步指南掌握安全密码生成器的使用。探索关键设置和策略，生成坚不可摧的密码。",
+    "keywords": [
+      "安全密码生成器指南",
+      "密码生成器设置"
+    ],
+    "sections": [
+      {
+        "heading": "理解安全密码生成器",
+        "paragraphs": [
+          "安全密码生成器是一种创建随机、复杂密码的工具，用于保护您的账户。本指南解释了如何配置其设置以实现最大安全性。",
+          "现代生成器使用算法确保密码唯一、不重复且能抵抗暴力破解攻击。"
+        ],
+        "bullets": [
+          "至少使用12个字符。",
+          "包含大写字母、小写字母、数字和符号的组合。",
+          "避免使用常见词汇或模式。"
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "ja",
+    "title": "セキュアパスワードジェネレータガイド: 設定と最適な実践",
+    "excerpt": "この包括的なガイドで、セキュアパスワードジェネレータを効果的に使用する方法を学びましょう。強くて独自のパスワードを生成するための重要な設定と最適な実践を発見してください。",
+    "seoTitle": "セキュアパスワードジェネレータガイド - 強いパスワードを簡単に作成",
+    "seoDescription": "このステップバイステップガイドで、セキュアパスワードジェネレータの使用をマスターしましょう。不破のパスワードを生成するための重要な設定と戦略を探索してください。",
+    "keywords": [
+      "セキュアパスワードジェネレータガイド",
+      "パスワードジェネレータ設定"
+    ],
+    "sections": [
+      {
+        "heading": "セキュアパスワードジェネレータの理解",
+        "paragraphs": [
+          "セキュアパスワードジェネレータは、アカウントを保護するためにランダムで複雑なパスワードを生成するツールです。このガイドでは、最大のセキュリティを実現するための設定方法を説明します。",
+          "現代のジェネレータは、パスワードが一意で繰り返されず、ブルートフォース攻撃に耐えるようにアルゴリズムを使用しています。"
+        ],
+        "bullets": [
+          "少なくとも12文字を使用してください。",
+          "大文字、小文字、数字、記号の組み合わせを含めます。",
+          "一般的な単語やパターンを避けてください。"
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "locale": "pl",
+    "title": "Przewodnik po Bezpiecznym Generatorze Hasła: Ustawienia i Najlepsze Praktyki",
+    "excerpt": "Dowiedz się, jak skutecznie korzystać z bezpiecznego generatora hasła za pomocą tego kompletnego przewodnika. Odkryj kluczowe ustawienia i najlepsze praktyki tworzenia silnych, unikalnych haseł.",
+    "seoTitle": "Przewodnik po Bezpiecznym Generatorze Hasła - Utwórz Silne Hasła Łatwo",
+    "seoDescription": "Zdobyj wiedzę na temat korzystania z bezpiecznego generatora hasła za pomocą tego krok po kroku przewodnika. Poznaj kluczowe ustawienia i strategie generowania nieprzestronnych haseł.",
+    "keywords": [
+      "przewodnik po bezpiecznym generatorze hasła",
+      "ustawienia generatora hasła"
+    ],
+    "sections": [
+      {
+        "heading": "Zrozumienie bezpiecznego generatora hasła",
+        "paragraphs": [
+          "Bezpieczny generator hasła to narzędzie tworzące losowe, złożone hasła do ochrony Twoich kont. Ten przewodnik wyjaśnia, jak skonfigurować jego ustawienia dla maksymalnej ochrony.",
+          "Nowoczesne generatory korzystają z algorytmów, aby zapewnić unikalność, brak powtórzeń i odporność na ataki siłowe."
+        ],
+        "bullets": [
+          "Użyj co najmniej 12 znaków.",
+          "Zawieraj kombinację dużych i małych liter, cyfr i znaków specjalnych.",
+          "Unikaj powszechnie używanych słów lub wzorów."
+        ]
+      }
+    ],
+    "image": "/images/guides/secure-password-generator-guide.webp"
+  }
+]

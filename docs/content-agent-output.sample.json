@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "how-to-create-strong-passwords",
+    "locale": "en",
+    "category": "Security Fundamentals",
+    "readingMinutes": 7,
+    "author": "Security Editorial Team",
+    "updatedAt": "2026-02-15",
+    "title": "How to Create Strong Passwords in 2026",
+    "excerpt": "Practical rules to create strong passwords that resist brute-force and credential stuffing attacks.",
+    "seoTitle": "How to Create Strong Passwords: Practical 2026 Guide",
+    "seoDescription": "Learn practical methods to create strong passwords and improve account security using modern best practices.",
+    "keywords": ["strong passwords", "secure password tips", "password security"],
+    "sections": [
+      {
+        "heading": "Use length over complexity tricks",
+        "paragraphs": [
+          "Prioritize at least 14 to 16 characters for important accounts.",
+          "Longer passwords significantly increase brute-force cost."
+        ],
+        "bullets": [
+          "Use passphrases for memorability",
+          "Avoid predictable substitutions",
+          "Do not reuse credentials"
+        ]
+      }
+    ]
+  }
+]
+

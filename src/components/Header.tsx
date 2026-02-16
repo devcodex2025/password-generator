@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useContext, Fragment } from 'react';
+import { usePathname } from 'next/navigation';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 // import Divider from '@mui/material/Divider';
@@ -15,6 +16,7 @@ import Flag from 'react-world-flags'
 import { Brightness4, Brightness7 } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ThemeContext } from '@/context/ThemeContext'; // Updated path
 import { getLanguagesWithFlags, getLanguageSelectionText, getThemeText } from '../utils/languageUtils';
 import { SelectChangeEvent } from '@mui/material/Select';
@@ -118,6 +120,17 @@ const languageIconStyles = `
   a:hover::after {
     width: 100%;
   }
+
+  .logo-link::after,
+  .logo-link:hover::after {
+    width: 0 !important;
+    display: none !important;
+  }
+
+  .logo-link:hover {
+    color: inherit !important;
+    transform: none !important;
+  }
   
   .nav-link {
     transition: all 0.3s ease;
@@ -176,6 +189,7 @@ interface HeaderProps {
 }
 
 const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
+  const pathname = usePathname();
   const availableLanguages = getAvailableLanguages();
   const [language, setLanguage] = useState<string>(() => {
     const pathSegments = typeof window !== 'undefined' ? window.location.pathname.split('/') : [''];
@@ -378,18 +392,36 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
     </Box>
   );
 
+  const isHomePage = /^\/[^/]+\/?$/.test(pathname || '');
+
   return (
-    <header className="py-7 px-2 flex justify-between items-center w-full">
+    <header className="py-4 lg:py-5 px-2 flex justify-between items-center w-full">
       <div className="flex items-center">
-        <Image
-          src="/images/logo.svg"
-          alt="Generate Password To Me - Secure Password Generator Logo"
-          className="w-[50%] h-6 mr-1 logo"
-          priority
-          decoding="async"
-          width={24}
-          height={24}
-        />
+        {isHomePage ? (
+          <div className="inline-flex">
+            <Image
+              src="/images/logo.svg"
+              alt="Generate Password To Me - Secure Password Generator Logo"
+              className="w-[50%] h-6 mr-1 logo"
+              priority
+              decoding="async"
+              width={24}
+              height={24}
+            />
+          </div>
+        ) : (
+          <Link href={`/${language}`} aria-label="Go to homepage" className="logo-link inline-flex">
+            <Image
+              src="/images/logo.svg"
+              alt="Generate Password To Me - Secure Password Generator Logo"
+              className="w-[50%] h-6 mr-1 logo"
+              priority
+              decoding="async"
+              width={24}
+              height={24}
+            />
+          </Link>
+        )}
       </div>
       <ul className="lg:flex justify-end w-[55%] items-center hidden text-decoration-none gap-5 text-[#071016] text-xl font-medium">
         <li>

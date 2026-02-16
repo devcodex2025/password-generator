@@ -93,7 +93,7 @@ export default function PasswordSettings({
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-between gap-4 items-center mt-1 lg:mt-3">
             <div className="flex flex-col gap-3 items-start mt-8 lg:mt-6">
-                <label htmlFor="password-length" className="text-[16px] md:text-[22px] text-[#2A4E63]">
+                <label htmlFor="password-length" className="hero-muted-label text-[16px] md:text-[22px]">
                     {t('password_length')} {passwordLength}
                 </label>
                 <div className="flex items-center gap-4 w-full">
@@ -138,7 +138,7 @@ export default function PasswordSettings({
                 </div>
             </div>
             <div className="flex flex-col gap-3 items-start">
-                <label htmlFor="quantity" className="text-[16px] md:text-[22px] text-[#2A4E63]">
+                <label htmlFor="quantity" className="hero-muted-label text-[16px] md:text-[22px]">
                     {t('quantity')}
                 </label>
                 <input
@@ -154,7 +154,7 @@ export default function PasswordSettings({
                 />
             </div>
             <div className="flex gap-3 flex-wrap items-center mt-9">
-                <label className="text-[16px] md:text-[22px] text-[#2A4E63]">{t('use_characters')}</label>
+                <label className="hero-muted-label text-[16px] md:text-[22px]">{t('use_characters')}</label>
                 <div className="flex items-start flex-nowrap text-[10px] md:text-[20px]">
                     {Object.keys(characterSets).map((characterSet) => (
                         <div key={characterSet} className="flex items-center gap-2">

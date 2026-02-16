@@ -75,7 +75,19 @@
 }
 
 .dark [class*="text-[#2A4E63]"] {
-  color: #bae6fd !important;
+  color: #000000 !important;
+}
+
+.dark .guide-category-label {
+  color: #9ca3af !important;
+}
+
+.dark .footer-accent-scope [class*="text-[#2A4E63]"] {
+  color: #05a9ff !important;
+}
+
+.dark .footer-accent-scope a {
+  color: #05a9ff !important;
 }
 
 .dark [class*="border-[#E5F6FF]"] {
@@ -97,11 +109,11 @@
 }
 
 .dark .border-2 {
-  border-color: #374151;
+  border-color: #1d2e48;
 }
 
 .dark input {
-  background-color: #1f2937 !important;
+  background-color: #000000 !important;
   color: var(--dark-theme-white) !important;
 }
 
@@ -202,19 +214,19 @@
 /* Обмеження максимальної ширини контейнера для ПК */
 @media (min-width: 1024px) {
   .container {
-    max-width: 1200px !important;
+    max-width: 1280px !important;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
-    max-width: 1400px !important;
+    max-width: 1280px !important;
   }
 }
 
 @media (min-width: 1536px) {
   .container {
-    max-width: 1600px !important;
+    max-width: 1280px !important;
   }
 }
 
@@ -247,6 +259,26 @@ body {
 
 .dark :is(a, h1, h2, h3, h4, h5, p, ul,li, label, span) {
   color: var(--dark-theme-text);
+}
+
+.hero-subtitle {
+  color: #2A4E63;
+}
+
+.dark .hero-subtitle {
+  color: #A1A1AA !important;
+}
+
+.hero-muted-label {
+  color: #2A4E63;
+}
+
+.dark .hero-muted-label {
+  color: #A1A1AA !important;
+}
+
+.dark .floating-pill {
+  border-color: #1d2e48 !important;
 }
 
 

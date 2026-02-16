@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "how-to-create-strong-passwords",
+    "prompt": "Cybersecurity editorial illustration of a robust steel vault lock made from intertwined characters, numbers and symbols floating in organized layers, blue and graphite palette, cinematic soft lighting, minimal background, high detail, no text, no logos",
+    "negativePrompt": "text, letters, watermark, logo, UI screenshot, noisy background, low contrast, blur"
+  },
+  {
+    "slug": "password-manager-vs-manual-storage",
+    "prompt": "Split-scene cybersecurity concept: left side secure encrypted digital vault, right side fragile sticky note and notebook in shadow, balanced composition, realistic 3D editorial style, neutral cool tones, no text, no logos",
+    "negativePrompt": "text, watermark, logo, cartoon style, clutter, distorted hands, unreadable symbols"
+  },
+  {
+    "slug": "passphrase-vs-password-entropy",
+    "prompt": "Abstract entropy visualization: two credential paths, short complex string vs long passphrase represented by expanding geometric probability waves, scientific yet clean style, dark cyan and silver gradients, high clarity, no text",
+    "negativePrompt": "numbers overlay, text labels, equations as text, watermark, logo, chaotic composition"
+  },
+  {
+    "slug": "nist-800-63b-password-rules",
+    "prompt": "Modern compliance cybersecurity scene: checklist board with shield icons and policy folders on a desk, structured orderly layout, professional editorial render, cool neutral palette, subtle depth of field, no text",
+    "negativePrompt": "visible words, legal stamps, logos, watermark, cluttered desk, low detail"
+  },
+  {
+    "slug": "pci-dss-password-requirements",
+    "prompt": "Payment security compliance concept: secure payment terminal protected by layered digital shields and audit documents, enterprise environment, realistic editorial 3D, teal and steel tones, no text, no logos",
+    "negativePrompt": "credit card numbers, visible brand marks, text overlays, watermark, exaggerated neon"
+  },
+  {
+    "slug": "what-to-do-after-password-breach",
+    "prompt": "Incident response cybersecurity illustration: cracked lock being replaced by a new reinforced lock while alert signals fade to green, action-oriented composition, realistic dramatic lighting, no text",
+    "negativePrompt": "panic imagery, blood, hackers with hoodies cliche, text, watermark, logo"
+  },
+  {
+    "slug": "two-factor-authentication-basics",
+    "prompt": "2FA concept art: smartphone approval token and biometric fingerprint glow connected to protected account shield, clean enterprise design, high contrast, modern editorial realism, no text",
+    "negativePrompt": "OTP numbers, app logos, text labels, watermark, clutter, low contrast"
+  },
+  {
+    "slug": "common-password-mistakes",
+    "prompt": "Security mistakes concept: fragile chain of repeated weak locks contrasted with one strong unique lock, symbolic cybersecurity composition, controlled lighting, professional editorial style, no text",
+    "negativePrompt": "text, logos, watermark, comic style, overly busy background"
+  },
+  {
+    "slug": "team-password-policy-template",
+    "prompt": "Company policy workshop scene: team around a digital security board with structured access layers and governance icons, collaborative enterprise atmosphere, realistic editorial render, no text",
+    "negativePrompt": "readable text on boards, corporate logos, watermark, chaotic office scene"
+  },
+  {
+    "slug": "secure-password-generator-guide",
+    "prompt": "Secure password generator concept: configurable controls represented as abstract sliders and entropy particles converging into a hardened key, sleek product-guide style, blue-gray palette, no text",
+    "negativePrompt": "UI screenshot, actual text labels, logos, watermark, oversaturated colors"
+  }
+]

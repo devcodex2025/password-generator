@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { CustomThemeProvider } from '@/context/ThemeContext';
 import '@/styles/index.css';
 import seoData from '@/components/SeoData';
@@ -76,10 +76,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     description: description,
     keywords,
-    viewport: {
-      width: 'device-width',
-      initialScale: 1,
-    },
     other: {
       'google-adsense-account': 'ca-pub-5995594246081561',
     },
@@ -141,6 +137,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
   };
 }
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export default async function LocaleLayout({
   children,
