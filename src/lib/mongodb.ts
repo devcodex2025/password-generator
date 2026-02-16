@@ -35,7 +35,7 @@ export async function getMongoDb(): Promise<MongoDb> {
     throw new Error('MONGODB_URI is not set. Set MONGODB_URI to use CONTENT_SOURCE=mongodb.');
   }
 
-  // Runtime load avoids build issues when optional providers are unused.
+  // Runtime load avoids build issues on local Windows Turbopack setups.
   const nodeRequire = eval('require') as NodeRequire;
   const { MongoClient } = nodeRequire('mongodb') as {
     MongoClient: new (uri: string, options?: { serverSelectionTimeoutMS?: number }) => MongoClientLike;
