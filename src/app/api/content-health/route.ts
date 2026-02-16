@@ -93,7 +93,11 @@ async function checkMongo() {
       error: message,
     };
   } finally {
-    await client.close();
+    try {
+      await client.close();
+    } catch {
+      // Ignore close errors in diagnostics endpoint.
+    }
   }
 }
 
@@ -149,38 +153,50 @@ function detectJsonFallback(guide: Awaited<ReturnType<typeof contentRepository.g
 }
 
 export async function GET() {
-  const source = resolveSource();
-  const probeLocale = process.env.CONTENT_HEALTH_PROBE_LOCALE || 'ua';
-  const probeSlug = process.env.CONTENT_HEALTH_PROBE_SLUG || 'how-to-create-strong-passwords';
+  try {
+    const source = resolveSource();
+    const probeLocale = process.env.CONTENT_HEALTH_PROBE_LOCALE || 'ua';
+    const probeSlug = process.env.CONTENT_HEALTH_PROBE_SLUG || 'how-to-create-strong-passwords';
 
-  const [mongo, postgres, guide] = await Promise.all([
-    checkMongo(),
-    checkPostgres(),
-    contentRepository.getGuide(probeSlug, probeLocale),
-  ]);
+    const [mongo, postgres, guide] = await Promise.all([
+      checkMongo(),
+      checkPostgres(),
+      contentRepository.getGuide(probeSlug, probeLocale),
+    ]);
 
-  return NextResponse.json(
-    {
-      ok: true,
-      timestamp: new Date().toISOString(),
-      source,
-      probe: {
-        slug: probeSlug,
-        locale: probeLocale,
-        returnedLocale: guide?.locale || null,
-        title: guide?.title || null,
-        jsonShellFallbackDetected: detectJsonFallback(guide),
+    return NextResponse.json(
+      {
+        ok: true,
+        timestamp: new Date().toISOString(),
+        source,
+        probe: {
+          slug: probeSlug,
+          locale: probeLocale,
+          returnedLocale: guide?.locale || null,
+          title: guide?.title || null,
+          jsonShellFallbackDetected: detectJsonFallback(guide),
+        },
+        mongo,
+        postgres,
+        envSummary: {
+          hasContentSource: Boolean(process.env.CONTENT_SOURCE),
+          hasMongoUri: Boolean(process.env.MONGODB_URI),
+          hasDatabaseUrl: Boolean(process.env.DATABASE_URL || process.env.SUPABASE_DB_URL),
+          mongoDbName: process.env.MONGODB_DB_NAME || 'generatepassword',
+          mongoCollection: process.env.MONGODB_COLLECTION || 'content_guides',
+        },
       },
-      mongo,
-      postgres,
-      envSummary: {
-        hasContentSource: Boolean(process.env.CONTENT_SOURCE),
-        hasMongoUri: Boolean(process.env.MONGODB_URI),
-        hasDatabaseUrl: Boolean(process.env.DATABASE_URL || process.env.SUPABASE_DB_URL),
-        mongoDbName: process.env.MONGODB_DB_NAME || 'generatepassword',
-        mongoCollection: process.env.MONGODB_COLLECTION || 'content_guides',
+      { status: 200 },
+    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    return NextResponse.json(
+      {
+        ok: false,
+        timestamp: new Date().toISOString(),
+        fatalError: message,
       },
-    },
-    { status: 200 },
-  );
+      { status: 200 },
+    );
+  }
 }
