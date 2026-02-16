@@ -29,6 +29,7 @@ export async function getMongoDb(): Promise<MongoDb> {
 
   const mongoUri = process.env.MONGODB_URI;
   const dbName = process.env.MONGODB_DB_NAME || 'generatepassword';
+  const serverSelectionTimeoutMS = Number.parseInt(process.env.MONGODB_SERVER_SELECTION_TIMEOUT_MS || '3000', 10);
 
   if (!mongoUri) {
     throw new Error('MONGODB_URI is not set. Set MONGODB_URI to use CONTENT_SOURCE=mongodb.');
@@ -37,10 +38,12 @@ export async function getMongoDb(): Promise<MongoDb> {
   // Runtime load avoids build issues when optional providers are unused.
   const nodeRequire = eval('require') as NodeRequire;
   const { MongoClient } = nodeRequire('mongodb') as {
-    MongoClient: new (uri: string) => MongoClientLike;
+    MongoClient: new (uri: string, options?: { serverSelectionTimeoutMS?: number }) => MongoClientLike;
   };
 
-  client = new MongoClient(mongoUri);
+  client = new MongoClient(mongoUri, {
+    serverSelectionTimeoutMS: Number.isFinite(serverSelectionTimeoutMS) ? serverSelectionTimeoutMS : 3000,
+  });
   await client.connect();
   db = client.db(dbName);
   return db;

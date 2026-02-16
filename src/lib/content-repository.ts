@@ -366,15 +366,53 @@ class MongoContentRepository implements ContentRepository {
   }
 }
 
+class SafeFallbackRepository implements ContentRepository {
+  constructor(
+    private readonly primary: ContentRepository,
+    private readonly fallback: ContentRepository,
+  ) {}
+
+  async listGuides(locale: string): Promise<GuideArticleDTO[]> {
+    try {
+      return await this.primary.listGuides(locale);
+    } catch (error) {
+      console.error('[content] Primary provider failed in listGuides, using JSON fallback.', error);
+      return this.fallback.listGuides(locale);
+    }
+  }
+
+  async getGuide(slug: string, locale: string): Promise<GuideArticleDTO | null> {
+    try {
+      return await this.primary.getGuide(slug, locale);
+    } catch (error) {
+      console.error('[content] Primary provider failed in getGuide, using JSON fallback.', error);
+      return this.fallback.getGuide(slug, locale);
+    }
+  }
+}
+
 function createContentRepository(): ContentRepository {
   const source = process.env.CONTENT_SOURCE?.toLowerCase() || 'json';
+  const jsonRepo = new JsonContentRepository();
+
   if (source === 'database') {
-    return new DatabaseContentRepository();
+    const hasDatabaseUrl = Boolean(process.env.DATABASE_URL || process.env.SUPABASE_DB_URL);
+    if (!hasDatabaseUrl) {
+      console.warn(
+        '[content] CONTENT_SOURCE=database but DATABASE_URL/SUPABASE_DB_URL is missing. Falling back to JSON.',
+      );
+      return jsonRepo;
+    }
+    return new SafeFallbackRepository(new DatabaseContentRepository(), jsonRepo);
   }
   if (source === 'mongodb' || source === 'mongo') {
-    return new MongoContentRepository();
+    if (!process.env.MONGODB_URI) {
+      console.warn('[content] CONTENT_SOURCE=mongodb but MONGODB_URI is missing. Falling back to JSON.');
+      return jsonRepo;
+    }
+    return new SafeFallbackRepository(new MongoContentRepository(), jsonRepo);
   }
-  return new JsonContentRepository();
+  return jsonRepo;
 }
 
 export const contentRepository: ContentRepository = createContentRepository();
