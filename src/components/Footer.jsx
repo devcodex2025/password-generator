@@ -13,7 +13,7 @@ function t(key, language) {
 
 const footerLabels = {
   guides: {
-    ua: 'Гайди', en: 'Guides', es: 'Guias', fr: 'Guides', de: 'Leitfaeden', it: 'Guide', pt: 'Guias', ru: 'Gajdy', zh: '指南', ja: 'ガイド', pl: 'Poradniki',
+    ua: 'Гайди', en: 'Guides', es: 'Guias', fr: 'Guides', de: 'Leitfaeden', it: 'Guide', pt: 'Guias', ru: 'Гайды', zh: '指南', ja: 'ガイド', pl: 'Poradniki',
   },
   nist: {
     ua: 'NIST', en: 'NIST', es: 'NIST', fr: 'NIST', de: 'NIST', it: 'NIST', pt: 'NIST', ru: 'NIST', zh: 'NIST', ja: 'NIST', pl: 'NIST',
@@ -29,13 +29,13 @@ const footerLabels = {
     de: 'Nach Passwortleck',
     it: 'Dopo una violazione',
     pt: 'Apos vazamento',
-    ru: 'Posle utechki parolja',
+    ru: 'После утечки пароля',
     zh: '密码泄露后',
     ja: '漏えい後',
     pl: 'Po wycieku hasla',
   },
   sitemap: {
-    ua: 'Карта сайту', en: 'Sitemap', es: 'Mapa del sitio', fr: 'Plan du site', de: 'Sitemap', it: 'Mappa del sito', pt: 'Mapa do site', ru: 'Karta sajta', zh: '站点地图', ja: 'サイトマップ', pl: 'Mapa strony',
+    ua: 'Карта сайту', en: 'Sitemap', es: 'Mapa del sitio', fr: 'Plan du site', de: 'Sitemap', it: 'Mappa del sito', pt: 'Mapa do site', ru: 'Карта сайта', zh: '站点地图', ja: 'サイトマップ', pl: 'Mapa strony',
   },
   github: {
     ua: 'GitHub', en: 'GitHub', es: 'GitHub', fr: 'GitHub', de: 'GitHub', it: 'GitHub', pt: 'GitHub', ru: 'GitHub', zh: 'GitHub', ja: 'GitHub', pl: 'GitHub',
