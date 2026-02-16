@@ -8,6 +8,8 @@ const nextConfig = {
       './node_modules/bson/**/*',
       './node_modules/mongodb-connection-string-url/**/*',
       './node_modules/whatwg-url/**/*',
+      './node_modules/webidl-conversions/**/*',
+      './node_modules/tr46/**/*',
       './node_modules/socks/**/*',
       './node_modules/pg/**/*',
     ],
