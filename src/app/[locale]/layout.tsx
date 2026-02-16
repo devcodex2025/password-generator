@@ -199,7 +199,7 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={htmlLang}>
+    <html lang={htmlLang} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -238,7 +238,10 @@ export default async function LocaleLayout({
           </>
         ) : null}
       </head>
-      <body className={`w-full ${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}>
+      <body
+        suppressHydrationWarning
+        className={`w-full ${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}
+      >
         <Script
           id="faq-schema"
           type="application/ld+json"
