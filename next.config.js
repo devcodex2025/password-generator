@@ -2,6 +2,16 @@
 const nextConfig = {
   reactStrictMode: true,
   serverExternalPackages: ['mongodb', 'pg'],
+  outputFileTracingIncludes: {
+    '/*': [
+      './node_modules/mongodb/**/*',
+      './node_modules/bson/**/*',
+      './node_modules/mongodb-connection-string-url/**/*',
+      './node_modules/whatwg-url/**/*',
+      './node_modules/socks/**/*',
+      './node_modules/pg/**/*',
+    ],
+  },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
