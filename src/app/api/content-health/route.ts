@@ -125,7 +125,17 @@ async function checkMongo() {
 
   const nodeRequire = eval('require') as NodeRequire;
   const { MongoClient } = nodeRequire('mongodb') as {
-    MongoClient: new (uri: string, options?: { serverSelectionTimeoutMS?: number }) => {
+    MongoClient: new (
+      uri: string,
+      options?: {
+        serverSelectionTimeoutMS?: number;
+        tls?: boolean;
+        ssl?: boolean;
+        tlsAllowInvalidCertificates?: boolean;
+        tlsAllowInvalidHostnames?: boolean;
+        tlsInsecure?: boolean;
+      },
+    ) => {
       connect: () => Promise<void>;
       close: () => Promise<void>;
       db: (name: string) => {
@@ -137,8 +147,21 @@ async function checkMongo() {
     };
   };
 
+  const parseBool = (value: string | undefined): boolean | undefined => {
+    if (value == null) return undefined;
+    const normalized = value.trim().toLowerCase();
+    if (normalized === 'true' || normalized === '1' || normalized === 'yes') return true;
+    if (normalized === 'false' || normalized === '0' || normalized === 'no') return false;
+    return undefined;
+  };
+
   const client = new MongoClient(mongoUri, {
     serverSelectionTimeoutMS: Number.isFinite(timeout) ? timeout : 3000,
+    tls: parseBool(process.env.MONGODB_TLS),
+    ssl: parseBool(process.env.MONGODB_SSL),
+    tlsAllowInvalidCertificates: parseBool(process.env.MONGODB_TLS_ALLOW_INVALID_CERTIFICATES),
+    tlsAllowInvalidHostnames: parseBool(process.env.MONGODB_TLS_ALLOW_INVALID_HOSTNAMES),
+    tlsInsecure: parseBool(process.env.MONGODB_TLS_INSECURE),
   });
 
   try {
