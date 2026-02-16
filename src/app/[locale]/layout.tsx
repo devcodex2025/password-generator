@@ -138,6 +138,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
+export function generateStaticParams() {
+  return supportedLangs.map((locale) => ({ locale }));
+}
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,

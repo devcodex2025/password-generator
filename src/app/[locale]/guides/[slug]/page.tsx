@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Fragment } from 'react';
 import { notFound } from 'next/navigation';
-import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles';
+import { SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles';
 import { contentRepository } from '@/lib/content-repository';
 import { getGuideCategoryLabel, getGuidesUiLabels } from '@/lib/guides-i18n';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
@@ -10,6 +10,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const hreflangMap: Record<string, string> = { ua: 'uk' };
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 function renderInlineBold(text: string) {
   return text.split(/(\*\*.+?\*\*)/g).map((part, index) => {
@@ -19,15 +21,6 @@ function renderInlineBold(text: string) {
     }
     return <Fragment key={index}>{part}</Fragment>;
   });
-}
-
-export async function generateStaticParams() {
-  return SUPPORTED_CONTENT_LANGUAGES.flatMap((locale) =>
-    ARTICLE_CATALOG.map((article) => ({
-      locale,
-      slug: article.slug,
-    }))
-  );
 }
 
 export async function generateMetadata({

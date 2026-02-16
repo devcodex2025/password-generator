@@ -27,6 +27,15 @@ export interface ContentRepository {
   getGuide(slug: string, locale: string): Promise<GuideArticleDTO | null>;
 }
 
+function localeCandidates(locale: string): string[] {
+  const normalized = (locale || 'en').toLowerCase();
+  const candidates = [normalized];
+  if (normalized === 'ua') candidates.push('uk');
+  if (normalized === 'uk') candidates.push('ua');
+  if (!candidates.includes('en')) candidates.push('en');
+  return candidates;
+}
+
 function countWords(value: string): number {
   const tokens = value.match(/[\p{L}\p{N}]+/gu);
   return tokens ? tokens.length : 0;
@@ -117,10 +126,10 @@ class JsonContentRepository implements ContentRepository {
 }
 
 class DatabaseContentRepository implements ContentRepository {
-  async listGuides(locale: string): Promise<GuideArticleDTO[]> {
+  private async queryList(locale: string) {
     const pool = getPostgresPool();
 
-    const rows = await pool.query<{
+    return pool.query<{
       slug: string;
       category: string;
       reading_minutes: number;
@@ -171,33 +180,12 @@ class DatabaseContentRepository implements ContentRepository {
       `,
       [locale],
     );
-
-    return rows.rows.map((row) => ({
-      slug: row.slug,
-      locale,
-      image: `/images/guides/${row.slug}.webp`,
-      category: row.category,
-      readingMinutes:
-        estimateReadingMinutes({
-          title: row.title,
-          excerpt: row.excerpt,
-          sections: row.sections_json || [],
-        }) || row.reading_minutes,
-      updatedAt: row.updated_at.slice(0, 10),
-      author: row.author,
-      title: row.title,
-      excerpt: row.excerpt,
-      seoTitle: row.seo_title,
-      seoDescription: row.seo_description,
-      keywords: row.keywords || [],
-      sections: row.sections_json || [],
-    }));
   }
 
-  async getGuide(slug: string, locale: string): Promise<GuideArticleDTO | null> {
+  private async queryOne(slug: string, locale: string) {
     const pool = getPostgresPool();
 
-    const result = await pool.query<{
+    return pool.query<{
       slug: string;
       category: string;
       reading_minutes: number;
@@ -248,6 +236,51 @@ class DatabaseContentRepository implements ContentRepository {
       `,
       [slug, locale],
     );
+  }
+
+  async listGuides(locale: string): Promise<GuideArticleDTO[]> {
+    let rows = { rows: [] as Awaited<ReturnType<DatabaseContentRepository['queryList']>>['rows'] };
+    let effectiveLocale = locale;
+    for (const candidate of localeCandidates(locale)) {
+      rows = await this.queryList(candidate);
+      if (rows.rows.length > 0) {
+        effectiveLocale = candidate;
+        break;
+      }
+    }
+
+    return rows.rows.map((row) => ({
+      slug: row.slug,
+      locale: effectiveLocale,
+      image: `/images/guides/${row.slug}.webp`,
+      category: row.category,
+      readingMinutes:
+        estimateReadingMinutes({
+          title: row.title,
+          excerpt: row.excerpt,
+          sections: row.sections_json || [],
+        }) || row.reading_minutes,
+      updatedAt: row.updated_at.slice(0, 10),
+      author: row.author,
+      title: row.title,
+      excerpt: row.excerpt,
+      seoTitle: row.seo_title,
+      seoDescription: row.seo_description,
+      keywords: row.keywords || [],
+      sections: row.sections_json || [],
+    }));
+  }
+
+  async getGuide(slug: string, locale: string): Promise<GuideArticleDTO | null> {
+    let result = { rows: [] as Awaited<ReturnType<DatabaseContentRepository['queryOne']>>['rows'] };
+    let effectiveLocale = locale;
+    for (const candidate of localeCandidates(locale)) {
+      result = await this.queryOne(slug, candidate);
+      if (result.rows.length > 0) {
+        effectiveLocale = candidate;
+        break;
+      }
+    }
 
     const row = result.rows[0];
     if (!row) {
@@ -256,7 +289,7 @@ class DatabaseContentRepository implements ContentRepository {
 
     return {
       slug: row.slug,
-      locale,
+      locale: effectiveLocale,
       image: `/images/guides/${row.slug}.webp`,
       category: row.category,
       readingMinutes:
@@ -302,17 +335,25 @@ class MongoContentRepository implements ContentRepository {
 
   async listGuides(locale: string): Promise<GuideArticleDTO[]> {
     const db = await getMongoDb();
-    const docs = await db
-      .collection<MongoGuideDocument>(this.collectionName)
-      .find({ locale })
-      .sort({ updatedAt: -1 })
-      .toArray();
+    let docs: MongoGuideDocument[] = [];
+    let effectiveLocale = locale;
+    for (const candidate of localeCandidates(locale)) {
+      docs = await db
+        .collection<MongoGuideDocument>(this.collectionName)
+        .find({ locale: candidate })
+        .sort({ updatedAt: -1 })
+        .toArray();
+      if (docs.length > 0) {
+        effectiveLocale = candidate;
+        break;
+      }
+    }
 
     return docs.map((doc) => {
       const sections = doc.sections || [];
       return {
         slug: doc.slug,
-        locale: doc.locale,
+        locale: effectiveLocale,
         image: doc.image || `/images/guides/${doc.slug}.webp`,
         category: doc.category || 'security-basics',
         readingMinutes:
@@ -336,7 +377,15 @@ class MongoContentRepository implements ContentRepository {
 
   async getGuide(slug: string, locale: string): Promise<GuideArticleDTO | null> {
     const db = await getMongoDb();
-    const doc = await db.collection<MongoGuideDocument>(this.collectionName).findOne({ slug, locale });
+    let doc: MongoGuideDocument | null = null;
+    let effectiveLocale = locale;
+    for (const candidate of localeCandidates(locale)) {
+      doc = await db.collection<MongoGuideDocument>(this.collectionName).findOne({ slug, locale: candidate });
+      if (doc) {
+        effectiveLocale = candidate;
+        break;
+      }
+    }
     if (!doc) {
       return null;
     }
@@ -344,7 +393,7 @@ class MongoContentRepository implements ContentRepository {
     const sections = doc.sections || [];
     return {
       slug: doc.slug,
-      locale: doc.locale,
+      locale: effectiveLocale,
       image: doc.image || `/images/guides/${doc.slug}.webp`,
       category: doc.category || 'security-basics',
       readingMinutes:
@@ -392,7 +441,13 @@ class SafeFallbackRepository implements ContentRepository {
 }
 
 function createContentRepository(): ContentRepository {
-  const source = process.env.CONTENT_SOURCE?.toLowerCase() || 'json';
+  const explicitSource = process.env.CONTENT_SOURCE?.toLowerCase();
+  const autoDetectedSource = process.env.MONGODB_URI
+    ? 'mongodb'
+    : process.env.DATABASE_URL || process.env.SUPABASE_DB_URL
+      ? 'database'
+      : 'json';
+  const source = explicitSource || autoDetectedSource;
   const jsonRepo = new JsonContentRepository();
 
   if (source === 'database') {
