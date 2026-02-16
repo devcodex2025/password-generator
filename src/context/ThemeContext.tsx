@@ -32,21 +32,9 @@ export const CustomThemeProvider = ({
   children: React.ReactNode;
   initialDarkMode?: boolean;
 }) => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return initialDarkMode;
-
-    const saved = window.localStorage.getItem('darkMode');
-    if (saved !== null) {
-      return JSON.parse(saved);
-    }
-
-    if (typeof document !== 'undefined') {
-      return document.documentElement.classList.contains('dark');
-    }
-
-    return window.matchMedia?.('(prefers-color-scheme: dark)').matches || false;
-  });
-  const [isInitialized, setIsInitialized] = useState(() => typeof window !== 'undefined');
+  // Keep first client render equal to server render to avoid hydration mismatch.
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(initialDarkMode);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   const toggleMode = () => {
     setIsDarkMode((prev: boolean) => !prev);
@@ -54,6 +42,13 @@ export const CustomThemeProvider = ({
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+
+    const saved = window.localStorage.getItem('darkMode');
+    if (saved !== null) {
+      setIsDarkMode(JSON.parse(saved));
+    } else {
+      setIsDarkMode(window.matchMedia?.('(prefers-color-scheme: dark)').matches || false);
+    }
 
     setIsInitialized(true);
 

@@ -1,6 +1,6 @@
-'use client';
+﻿'use client';
 
-import { Suspense, use } from 'react';
+import { Suspense, use, useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/components/i18n';
 import PasswordGenerator from '@/components/PasswordGenerator/PasswordGenerator';
@@ -17,40 +17,32 @@ import { useRouter } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 import ShareBlock from '@/components/ShareBlock';
 
-// Клонуємо i18n для ізоляції мови в межах запиту
-// import { cloneDeep } from 'lodash';
-
 interface PageProps {
   params: Promise<{ locale: string }>;
 }
+
 export default function Page({ params }: PageProps) {
   const router = useRouter();
   const { locale } = use(params);
   const { isDarkMode } = useTheme();
   const supportedLanguages = getAvailableLanguages();
+  const effectiveLocale = supportedLanguages.includes(locale) ? locale : 'en';
 
-  // Синхронізація i18n із локаллю до рендерингу
-  if (supportedLanguages.includes(locale) && i18n.language !== locale) {
-    i18n.changeLanguage(locale);
-  } else if (!supportedLanguages.includes(locale) && i18n.language !== 'en') {
-    i18n.changeLanguage('en');
-  }
+  useEffect(() => {
+    if (i18n.language !== effectiveLocale) {
+      void i18n.changeLanguage(effectiveLocale);
+    }
+  }, [effectiveLocale]);
 
-  // Define onLanguageChange to handle language changes from Header
   const onLanguageChange = (newLanguage: string) => {
-    i18n.changeLanguage(newLanguage);
+    void i18n.changeLanguage(newLanguage);
     router.push(`/${newLanguage}`);
   };
-
-
 
   return (
     <I18nextProvider i18n={i18n}>
       <div className={`container ${locale} mx-auto px-3`}>
-        <Header
-          onLanguageChange={onLanguageChange}
-          currentLanguage={locale}
-        />
+        <Header onLanguageChange={onLanguageChange} currentLanguage={locale} />
         <main className="w-full">
           <Analytics />
           <PasswordGenerator language={locale} />
