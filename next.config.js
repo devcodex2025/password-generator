@@ -10,6 +10,7 @@ const nextConfig = {
       './node_modules/whatwg-url/**/*',
       './node_modules/webidl-conversions/**/*',
       './node_modules/tr46/**/*',
+      './node_modules/punycode/**/*',
       './node_modules/socks/**/*',
       './node_modules/pg/**/*',
     ],
