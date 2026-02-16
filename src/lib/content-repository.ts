@@ -28,12 +28,18 @@ export interface ContentRepository {
 }
 
 function localeCandidates(locale: string): string[] {
-  const normalized = (locale || 'en').toLowerCase();
+  const normalized = (locale || 'en').trim().toLowerCase();
+  const base = normalized.split(/[-_]/)[0];
   const candidates = [normalized];
-  if (normalized === 'ua') candidates.push('uk');
-  if (normalized === 'uk') candidates.push('ua');
+  if (base && !candidates.includes(base)) candidates.push(base);
+  if (base === 'ua') candidates.push('uk');
+  if (base === 'uk') candidates.push('ua');
   if (!candidates.includes('en')) candidates.push('en');
-  return candidates;
+  return Array.from(new Set(candidates));
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function countWords(value: string): number {
@@ -333,18 +339,24 @@ type MongoGuideDocument = {
 class MongoContentRepository implements ContentRepository {
   private collectionName = process.env.MONGODB_COLLECTION || 'content_guides';
 
+  private localeQueryVariants(locale: string): Record<string, unknown>[] {
+    return localeCandidates(locale).map((candidate) => ({
+      locale: { $regex: `^${escapeRegExp(candidate)}(?:[-_].+)?$`, $options: 'i' },
+    }));
+  }
+
   async listGuides(locale: string): Promise<GuideArticleDTO[]> {
     const db = await getMongoDb();
     let docs: MongoGuideDocument[] = [];
     let effectiveLocale = locale;
-    for (const candidate of localeCandidates(locale)) {
+    for (const query of this.localeQueryVariants(locale)) {
       docs = await db
         .collection<MongoGuideDocument>(this.collectionName)
-        .find({ locale: candidate })
+        .find(query)
         .sort({ updatedAt: -1 })
         .toArray();
       if (docs.length > 0) {
-        effectiveLocale = candidate;
+        effectiveLocale = String(docs[0].locale || locale).toLowerCase();
         break;
       }
     }
@@ -379,10 +391,10 @@ class MongoContentRepository implements ContentRepository {
     const db = await getMongoDb();
     let doc: MongoGuideDocument | null = null;
     let effectiveLocale = locale;
-    for (const candidate of localeCandidates(locale)) {
-      doc = await db.collection<MongoGuideDocument>(this.collectionName).findOne({ slug, locale: candidate });
+    for (const query of this.localeQueryVariants(locale)) {
+      doc = await db.collection<MongoGuideDocument>(this.collectionName).findOne({ slug, ...query });
       if (doc) {
-        effectiveLocale = candidate;
+        effectiveLocale = String(doc.locale || locale).toLowerCase();
         break;
       }
     }

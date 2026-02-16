@@ -7,6 +7,7 @@ import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 const baseUrl = 'https://www.generatepasswordto.me';
+export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 

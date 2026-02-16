@@ -6,8 +6,8 @@ type MongoCursor<T> = {
 };
 
 type MongoCollection<T> = {
-  find: (query: Partial<T>) => MongoCursor<T>;
-  findOne: (query: Partial<T>) => Promise<T | null>;
+  find: (query: Record<string, unknown>) => MongoCursor<T>;
+  findOne: (query: Record<string, unknown>) => Promise<T | null>;
 };
 
 type MongoDb = {

@@ -10,6 +10,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const hreflangMap: Record<string, string> = { ua: 'uk' };
+export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
