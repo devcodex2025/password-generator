@@ -87,7 +87,11 @@
 }
 
 .dark .footer-accent-scope a {
-  color: #05a9ff !important;
+  color: #9bdfff !important;
+}
+
+.dark .footer-accent-scope a:hover {
+  color: #d7f2ff !important;
 }
 
 .dark [class*="border-[#E5F6FF]"] {

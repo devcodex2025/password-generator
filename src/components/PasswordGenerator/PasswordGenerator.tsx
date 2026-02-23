@@ -60,12 +60,15 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const [selectedStandard, setSelectedStandard] = useState<string>('nist');
   const maxQuantity = 100;
   const rewardQueue = useRef<string[]>([]);
-  const { reward } = useReward('centerReward', 'confetti', {
-    elementCount: 100,
-    spread: 70,
-    lifetime: 200,
-    startVelocity: 35,
-  });
+  const rewardAnchorRef = useRef<HTMLDivElement | null>(null);
+  const rewardConfig = {
+    elementCount: 180,
+    elementSize: 5,
+    spread: 175,
+    lifetime: 300,
+    startVelocity: 40,
+  };
+  const { reward } = useReward('rewardSingle', 'confetti', rewardConfig);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const ANIMATION_DURATION = 250;
 
@@ -297,11 +300,12 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         className={`w-full lg:w-9/12 xl:w-9/12 2xl:w-9/12 flex flex-col ${isDarkMode ? 'bg-[#1c1c1c]' : 'bg-white'} drop-shadow-lg rounded-[48px] shadow p-[16px] md:p-[40px] relative`}
       >
         <div
-          id="centerReward"
+          id="rewardSingle"
+          ref={rewardAnchorRef}
           style={{
             position: 'fixed',
             left: '50%',
-            top: '50%',
+            top: '35%',
             transform: 'translate(-50%, -50%)',
             pointerEvents: 'none',
             zIndex: 9999,
@@ -385,7 +389,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         {passwords.length >= 2 && (
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-2">
             <Button
-              className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'} ${isDarkMode ? 'text-[#e0e0e0]' : 'text-white'} font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
+              className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} ${isDarkMode ? 'text-[#16394a]' : 'text-white'} font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto transition-all duration-200 hover:opacity-90`}
               onClick={handleCopyAllClick}
               disabled={isAnimating}
               style={isAnimating ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
@@ -394,7 +398,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
               {t('copy_all')}
             </Button>
             <Button
-              className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'} ${isDarkMode ? 'text-[#e0e0e0]' : 'text-white'} font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto`}
+              className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} ${isDarkMode ? 'text-[#16394a]' : 'text-white'} font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto transition-all duration-200 hover:opacity-90`}
               onClick={handleDownloadAllClick}
               disabled={isAnimating}
               style={isAnimating ? { opacity: 0.5, cursor: 'not-allowed' } : {}}

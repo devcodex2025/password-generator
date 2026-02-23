@@ -62,7 +62,7 @@ export default function PasswordRow({
             {t('generate')}
           </GenerateButton>
           <button
-            className="bg-[#E5F6FF] dark:bg-[#2A4E63] dark:text-white dark:border dark:border-[#374151] text-[#2A4E63] font-semibold text-[16px] md:text-[18px] flex lg:hidden lg:text-[24px] rounded-[60px] px-[8px] md:px-[10px] py-[10px] md:py-[12px] lg:my-0 mx-2 whitespace-nowrap justify-center py-0 items-center px-2 h-full"
+            className="bg-[#E5F6FF] dark:bg-[#2A4E63] dark:text-white dark:border dark:border-[#374151] text-[#2A4E63] font-semibold text-[16px] md:text-[18px] flex lg:hidden lg:text-[24px] rounded-[60px] px-[8px] md:px-[10px] py-[10px] md:py-[12px] lg:my-0 mx-2 whitespace-nowrap justify-center py-0 items-center px-2 h-full transition-all duration-200 hover:bg-[#d7eefb] dark:hover:bg-[#38beff]"
             onClick={() => onGenerate(index)}
             style={{ cursor: 'pointer' }}
           >
@@ -110,7 +110,7 @@ export default function PasswordRow({
       </div>
       <CopyButton
         disabled={!password || isAnimating}
-        className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#2A4E63]'} w-full -bottom-12 h-14 lg:w-[20%] ${isDarkMode ? 'text-[#000000]' : 'text-white'} font-semibold text-[16px] md:text-[20px] rounded-[60px] py-[12px]`}
+        className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} w-full -bottom-12 h-14 lg:w-[20%] ${isDarkMode ? 'text-[#000000]' : 'text-white'} font-semibold text-[16px] md:text-[20px] rounded-[60px] py-[12px]`}
         style={password ? copyDisabledStyle : { cursor: 'not-allowed', opacity: 0.5 }}
         onClick={handleCopy}
       >

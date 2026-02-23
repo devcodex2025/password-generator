@@ -1,15 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import { contentRepository } from '@/lib/content-repository';
+import { getCachedGuides } from '@/lib/cached-content';
 import { getGuideCategoryLabel, getGuidesUiLabels } from '@/lib/guides-i18n';
+import { formatGuideDate, getGuidesUiCopy } from '@/lib/guides-ui';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import GuideReadButton from '@/components/GuideReadButton';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 export const runtime = 'nodejs';
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -27,7 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function GuidesIndexPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const labels = getGuidesUiLabels(locale);
-  const guides = await contentRepository.listGuides(locale);
+  const uiCopy = getGuidesUiCopy(locale);
+  const guides = await getCachedGuides(locale);
 
   return (
     <LocalizedPageShell locale={locale}>
@@ -41,38 +43,48 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
         <h1 className="mt-4 text-3xl md:text-4xl font-bold text-[#071016] dark:text-[#e0e0e0]">{labels.guidesTitle}</h1>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
-          {guides.map((guide) => {
+          {guides.map((guide, index) => {
             return (
               <article
                 key={guide.slug}
-                className="rounded-24 border border-[#E5F6FF] dark:border-[#374151] bg-white dark:bg-[#1c1c1c] p-5"
+                className="group overflow-hidden rounded-24 border border-[#E5F6FF] dark:border-[#374151] bg-white dark:bg-[#171717] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_-20px_rgba(42,78,99,0.65)] hover:border-[#c7eefe] dark:hover:border-[#4b5563]"
               >
                 <Link href={`/${locale}/guides/${guide.slug}`} className="block">
-                  <div className="relative w-full overflow-hidden rounded-16 aspect-[40/21] bg-[#E5F6FF] dark:bg-[#111827]">
+                  <div className="relative w-full overflow-hidden aspect-[16/7] bg-[#E5F6FF] dark:bg-[#111827]">
                     <Image
                       src={guide.image}
                       alt={guide.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
+                      priority={index < 2}
+                      fetchPriority={index < 2 ? 'high' : 'auto'}
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
                 </Link>
-                <div className="guide-category-label mt-4 text-xs uppercase tracking-wide text-[#2A4E63] dark:text-[#9ca3af]">
-                  {getGuideCategoryLabel(locale, guide.category)}
+                <div className="p-4">
+                  <div className="guide-category-label mt-3 text-xs uppercase tracking-wide text-[#2A4E63] dark:text-[#9ca3af]">
+                    {getGuideCategoryLabel(locale, guide.category)}
+                  </div>
+                  <h2 className="mt-1.5 text-lg font-semibold text-[#071016] dark:text-[#e0e0e0]">
+                    <Link
+                      href={`/${locale}/guides/${guide.slug}`}
+                      className="rounded-sm !text-[#071016] dark:!text-[#e0e0e0] transition-all duration-200 hover:!text-[#2A4E63] dark:hover:!text-[#9bdfff] hover:underline underline-offset-4 decoration-2"
+                    >
+                      {guide.title}
+                    </Link>
+                  </h2>
+                  <p className="mt-2 text-sm text-[#374151] dark:text-[#c7c7c7] line-clamp-2">{guide.excerpt}</p>
+                  <div className="mt-3 flex items-center justify-between text-xs text-[#2A4E63] dark:text-[#9ca3af]">
+                    <span>{uiCopy.minRead(guide.readingMinutes)}</span>
+                    <span>{uiCopy.updatedLabel}: {formatGuideDate(locale, guide.updatedAt)}</span>
+                  </div>
+                  <GuideReadButton
+                    href={`/${locale}/guides/${guide.slug}`}
+                    label={labels.readGuide}
+                    loadingLabel={uiCopy.loadingLabel}
+                  />
                 </div>
-                <h2 className="mt-2 text-xl font-semibold text-[#071016] dark:text-[#e0e0e0]">{guide.title}</h2>
-                <p className="mt-2 text-sm text-[#374151] dark:text-[#c7c7c7]">{guide.excerpt}</p>
-                <div className="mt-4 flex items-center justify-between text-xs text-[#2A4E63] dark:text-[#9ca3af]">
-                  <span>{guide.readingMinutes} min read</span>
-                  <span>Updated: {guide.updatedAt}</span>
-                </div>
-                <Link
-                  href={`/${locale}/guides/${guide.slug}`}
-                  className="mt-4 inline-block rounded-24 bg-[#2A4E63] text-white hover:text-white dark:bg-[#05a9ff] dark:text-[#071016] dark:hover:text-[#071016] px-4 py-2 text-sm font-semibold [&::after]:content-none hover:underline underline-offset-4"
-                >
-                  {labels.readGuide}
-                </Link>
               </article>
             );
           })}
@@ -81,3 +93,4 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
     </LocalizedPageShell>
   );
 }
+

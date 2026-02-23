@@ -4,7 +4,7 @@ import '@/styles/index.css';
 import seoData from '@/components/SeoData';
 import Script from 'next/script';
 import lang from '@/components/lang.json';
-import { cookies } from 'next/headers';
+import NavigationProgress from '@/components/NavigationProgress';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
 
 const arsenal = Arsenal({ 
@@ -156,9 +156,6 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const htmlLang = hreflangMap[locale] || locale;
-  const cookieStore = await cookies();
-  const savedTheme = cookieStore.get('theme')?.value;
-  const initialDarkMode = savedTheme === 'dark';
 
   // Generate FAQ Schema data
   const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
@@ -218,8 +215,6 @@ export default async function LocaleLayout({
           }}
         />
         <link rel="preload" as="image" href="/images/logo.svg" type="image/svg+xml" />
-        <link rel="preload" as="image" href="/images/welcome-img.svg" type="image/svg+xml" />
-        <link rel="preload" as="image" href="/images/vector-bg.svg" type="image/svg+xml" />
         {process.env.NEXT_PUBLIC_GA_ID ? (
           <>
             <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}></script>
@@ -248,7 +243,8 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }}
           strategy="beforeInteractive"
         />
-        <CustomThemeProvider initialDarkMode={initialDarkMode}>
+        <CustomThemeProvider>
+          <NavigationProgress />
           {children}
         </CustomThemeProvider>
       </body>

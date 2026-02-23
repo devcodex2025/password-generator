@@ -27,7 +27,7 @@ const PcShareBtn: React.FC<PcShareBtnProps> = ({ password = '', isDarkMode }) =>
         onClick={() => setShowShareMenu((prev) => !prev)}
         src="/images/share-paper-plane.svg"
         alt="share password"
-        className={`hidden lg:flex h-[15px] md:h-[20px]  ml-2${isDarkMode ? ' invert brightness-0' : ''}`}
+        className={`hidden lg:flex h-[15px] md:h-[20px] ml-2 transition-all duration-200 hover:scale-110 hover:opacity-80${isDarkMode ? ' invert brightness-0' : ''}`}
         style={{ cursor: 'pointer' }}
         width={20}
         height={20}

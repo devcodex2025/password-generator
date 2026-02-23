@@ -95,92 +95,6 @@ const languageIconStyles = `
     100% { transform: rotate(360deg) scale(1); }
   }
   
-  a {
-    transition: all 0.3s ease;
-    position: relative;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: #2A4E63;
-    transform: translateY(-2px);
-  }
-  
-  a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #2A4E63;
-    transition: width 0.3s ease;
-  }
-  
-  a:hover::after {
-    width: 100%;
-  }
-
-  .logo-link::after,
-  .logo-link:hover::after {
-    width: 0 !important;
-    display: none !important;
-  }
-
-  .logo-link:hover {
-    color: inherit !important;
-    transform: none !important;
-  }
-  
-  .nav-link {
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-  }
-  
-  .nav-link:hover {
-    color: #2A4E63;
-    transform: scale(1.05);
-  }
-  
-  .nav-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(42, 78, 99, 0.1);
-    border-radius: 4px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-  
-  .nav-link:hover::before {
-    transform: scaleX(1);
-  }
-  
-  .external-link {
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  
-  .external-link:hover {
-    color: #05a9ff;
-    transform: translateY(-1px);
-    text-shadow: 0 2px 4px rgba(5, 169, 255, 0.3);
-  }
-  
-  .external-link::after {
-    content: ' ↗';
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .external-link:hover::after {
-    opacity: 1;
-  }
 `;
 
 interface HeaderProps {
@@ -190,6 +104,7 @@ interface HeaderProps {
 
 const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
   const pathname = usePathname();
+  const isHomePage = /^\/[^/]+\/?$/.test(pathname || '');
   const availableLanguages = getAvailableLanguages();
   const [language, setLanguage] = useState<string>(() => {
     const pathSegments = typeof window !== 'undefined' ? window.location.pathname.split('/') : [''];
@@ -328,7 +243,19 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
     >
       <List sx={{ px: 2 }}>
         {/* Language Selector */}
-        <ListItem>
+        <ListItem
+          sx={
+            isHomePage
+              ? undefined
+              : {
+                  borderRadius: '10px',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    backgroundColor: isDarkMode ? 'rgba(17, 24, 39, 0.95)' : 'rgba(229, 246, 255, 0.7)',
+                  },
+                }
+          }
+        >
           <InputLabel id="language-select-label" sx={{ width: '100%' }}>
             {getLanguageSelectionText(language)}
           </InputLabel>
@@ -357,7 +284,19 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
         </ListItem>
 
         {/* Theme Toggle */}
-        <ListItem>
+        <ListItem
+          sx={
+            isHomePage
+              ? undefined
+              : {
+                  borderRadius: '10px',
+                  transition: 'all 0.2s ease',
+                  '&:hover': {
+                    backgroundColor: isDarkMode ? 'rgba(17, 24, 39, 0.95)' : 'rgba(229, 246, 255, 0.7)',
+                  },
+                }
+          }
+        >
           <Box
             display="flex"
             alignItems="center"
@@ -377,9 +316,10 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               onClick={toggleMode}
               color="inherit"
               sx={{
-                color: isDarkMode ? '#e0e0e0' : '#071016',
+                color: isDarkMode ? '#9ca3af' : '#071016',
                 '&:hover': {
-                  color: '#2A4E63',
+                  color: isDarkMode ? '#9bdfff' : '#2A4E63',
+                  backgroundColor: isDarkMode ? 'rgba(155, 223, 255, 0.12)' : 'rgba(42, 78, 99, 0.08)',
                   transform: 'scale(1.05)',
                 },
               }}
@@ -391,8 +331,6 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
       </List>
     </Box>
   );
-
-  const isHomePage = /^\/[^/]+\/?$/.test(pathname || '');
 
   return (
     <header className="py-4 lg:py-5 px-2 flex justify-between items-center w-full">
@@ -410,7 +348,11 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             />
           </div>
         ) : (
-          <Link href={`/${language}`} aria-label="Go to homepage" className="logo-link inline-flex">
+          <Link
+            href={`/${language}`}
+            aria-label="Go to homepage"
+            className="logo-link inline-flex transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+          >
             <Image
               src="/images/logo.svg"
               alt="Generate Password To Me - Secure Password Generator Logo"
@@ -428,10 +370,18 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           <IconButton
             onClick={toggleMode} // Use toggleMode
             color="inherit"
-            className="transition-all duration-300 hover:scale-105"
+            className={
+              isHomePage
+                ? 'transition-all duration-300 hover:scale-105'
+                : 'rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#E5F6FF] dark:hover:bg-[#111827]'
+            }
             sx={{
-              color: isDarkMode ? '#e0e0e0' : '#071016',
-              '&:hover': { color: '#2A4E63', transform: 'scale(1.05)' },
+              color: isDarkMode ? '#9ca3af' : '#071016',
+              '&:hover': {
+                color: isDarkMode ? '#9bdfff' : '#2A4E63',
+                backgroundColor: isDarkMode ? 'rgba(155, 223, 255, 0.12)' : 'rgba(42, 78, 99, 0.08)',
+                transform: 'scale(1.05)',
+              },
             }}
           >
             {isDarkMode ? <Brightness7 /> : <Brightness4 />}
@@ -445,7 +395,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           handleLanguageChange({ target: { value: e.target.value } } as SelectChangeEvent)
         }
         id="eng"
-        className={`language-select py-3 lg:flex hidden px-4 justify-center border-2 border-[#2A4E63] rounded-[60px] bg-transparent w-auto ${isAnimating ? 'language-change-animation' : ''}`}
+        className={`language-select py-3 lg:flex hidden px-4 justify-center border-2 border-[#2A4E63] rounded-[60px] bg-transparent w-auto ${isAnimating ? 'language-change-animation' : ''} ${isHomePage ? '' : 'hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:border-[#1a3a4a]'}`}
       >
         {languages.map((lang) => (
           <option key={lang.value} value={lang.value}>
@@ -460,7 +410,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               src="/images/hamburger.png"
               alt="Navigation menu toggle"
               onClick={toggleDrawer(anchor, true)}
-              className={`cursor-pointer${isDarkMode ? ' hamburger-dark' : ''}`}
+              className={`cursor-pointer transition-all duration-200 ${isHomePage ? '' : 'hover:scale-110'}${isDarkMode ? ' hamburger-dark' : ''}`}
               loading="eager"
               decoding="async"
               width={24}

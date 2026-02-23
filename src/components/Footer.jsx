@@ -46,6 +46,10 @@ const Footer = ({ language }) => {
   const currentYear = new Date().getFullYear();
   const { isDarkMode } = useContext(ThemeContext);
   const locale = language || 'en';
+  const linkClass =
+    'relative inline-flex items-center rounded-md px-1.5 py-1 !text-[#3a6077] dark:!text-[#9bdfff] transition-all duration-200 hover:-translate-y-0.5 hover:!text-[#2A4E63] dark:hover:!text-[#d7f2ff] hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:underline underline-offset-4 decoration-2';
+  const externalLinkClass =
+    'text-sm relative inline-flex items-center rounded-md px-2 py-1 !text-[#3a6077] dark:!text-[#9bdfff] transition-all duration-200 hover:-translate-y-0.5 hover:!text-[#2A4E63] dark:hover:!text-[#d7f2ff] hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:underline underline-offset-4 decoration-2';
   const label = (key) => footerLabels[key]?.[locale] || footerLabels[key]?.en || key;
 
   const firstRowLinks = [
@@ -60,7 +64,8 @@ const Footer = ({ language }) => {
 
   return (
     <>
-      <footer className="footer-accent-scope w-full py-6 px-2 border-t border-[#E5F6FF] dark:border-[#374151]">
+      <footer className="footer-accent-scope w-full py-6 px-2 dark:px-0 border-t border-[#E5F6FF] dark:border-transparent bg-transparent">
+        <div className="mb-5 h-px w-full bg-[#dff2fb] dark:hidden" />
         <div className="flex flex-col gap-6">
           <div className="flex items-center justify-between gap-4">
             <Image
@@ -74,7 +79,7 @@ const Footer = ({ language }) => {
             <ul className="hidden md:flex items-center justify-end gap-6 text-base text-right">
               {firstRowLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="hover:text-[#05a9ff] transition-colors">
+                  <Link href={item.href} className={linkClass}>
                     {item.label}
                   </Link>
                 </li>
@@ -86,7 +91,7 @@ const Footer = ({ language }) => {
             <ul className="grid grid-cols-2 gap-3 text-base text-center md:hidden">
               {firstRowLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="hover:text-[#05a9ff] transition-colors">
+                  <Link href={item.href} className={linkClass}>
                     {item.label}
                   </Link>
                 </li>
@@ -98,7 +103,7 @@ const Footer = ({ language }) => {
                   href={githubLink.href}
                   target={githubLink.external ? '_blank' : undefined}
                   rel={githubLink.external ? 'noopener noreferrer' : undefined}
-                  className="text-sm hover:text-[#05a9ff] transition-colors"
+                  className={externalLinkClass}
                 >
                   {githubLink.label}
                 </a>
@@ -106,7 +111,7 @@ const Footer = ({ language }) => {
                   href={sitemapLink.href}
                   target={sitemapLink.external ? '_blank' : undefined}
                   rel={sitemapLink.external ? 'noopener noreferrer' : undefined}
-                  className="text-sm hover:text-[#05a9ff] transition-colors"
+                  className={externalLinkClass}
                 >
                   {sitemapLink.label}
                 </a>
