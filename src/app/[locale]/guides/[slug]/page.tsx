@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Fragment } from 'react';
 import { notFound } from 'next/navigation';
 import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles';
-import { getCachedGuide } from '@/lib/cached-content';
+import { getCachedGuide, getCachedGuides } from '@/lib/cached-content';
 import { getGuideCategoryLabel, getGuidesUiLabels } from '@/lib/guides-i18n';
 import { formatGuideDate, getGuidesUiCopy } from '@/lib/guides-ui';
+import { createGuideLinkTargets, createInterlinkState, renderGuideTextWithLinks } from '@/lib/guides-interlinking';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -18,16 +18,6 @@ export function generateStaticParams() {
   return SUPPORTED_CONTENT_LANGUAGES.flatMap((locale) =>
     ARTICLE_CATALOG.map((article) => ({ locale, slug: article.slug })),
   );
-}
-
-function renderInlineBold(text: string) {
-  return text.split(/(\*\*.+?\*\*)/g).map((part, index) => {
-    const isBold = part.startsWith('**') && part.endsWith('**') && part.length > 4;
-    if (isBold) {
-      return <strong key={index}>{part.slice(2, -2)}</strong>;
-    }
-    return <Fragment key={index}>{part}</Fragment>;
-  });
 }
 
 export async function generateMetadata({
@@ -80,10 +70,14 @@ export default async function GuideArticlePage({
   const labels = getGuidesUiLabels(locale);
   const uiCopy = getGuidesUiCopy(locale);
   const guide = await getCachedGuide(slug, locale);
+  const allGuides = await getCachedGuides(locale);
 
   if (!guide) {
     notFound();
   }
+
+  const linkTargets = createGuideLinkTargets(locale, guide.slug, allGuides);
+  const interlinkState = createInterlinkState(7);
 
   return (
     <LocalizedPageShell locale={locale}>
@@ -111,7 +105,9 @@ export default async function GuideArticlePage({
               className="object-cover"
             />
           </div>
-          <p className="mt-3 text-[#374151] dark:text-[#c7c7c7]">{renderInlineBold(guide.excerpt)}</p>
+          <p className="mt-3 text-[#374151] dark:text-[#c7c7c7]">
+            {renderGuideTextWithLinks(guide.excerpt, linkTargets, interlinkState, 'excerpt')}
+          </p>
 
           <div className="mt-5 flex flex-wrap gap-3 text-xs text-[#2A4E63] dark:text-[#9ca3af]">
             <span>{uiCopy.minRead(guide.readingMinutes)}</span>
@@ -126,20 +122,23 @@ export default async function GuideArticlePage({
                 <div className="mt-3 space-y-3">
                   {section.paragraphs.map((paragraph, pIndex) => (
                     <p key={pIndex} className="text-[#374151] dark:text-[#c7c7c7] leading-7">
-                      {renderInlineBold(paragraph)}
+                      {renderGuideTextWithLinks(paragraph, linkTargets, interlinkState, `paragraph-${index}-${pIndex}`)}
                     </p>
                   ))}
                 </div>
                 {section.bullets && section.bullets.length > 0 ? (
                   <ul className="mt-4 list-disc pl-5 space-y-2 text-[#374151] dark:text-[#c7c7c7]">
                     {section.bullets.map((bullet, bIndex) => (
-                      <li key={bIndex}>{renderInlineBold(bullet)}</li>
+                      <li key={bIndex}>
+                        {renderGuideTextWithLinks(bullet, linkTargets, interlinkState, `bullet-${index}-${bIndex}`)}
+                      </li>
                     ))}
                   </ul>
                 ) : null}
               </section>
             ))}
           </div>
+
         </article>
       </section>
     </LocalizedPageShell>
