@@ -159,10 +159,10 @@ export default function ContactCaptcha({ locale, email, emailLabel }: ContactCap
 
   return (
     <div>
-      <p className="text-sm sm:text-base text-[#0F172A] dark:text-[#CBD5E1] leading-6">{copy.prompt}</p>
+      <p className="text-sm sm:text-base text-[#2A4E63] dark:text-[#9bdfff] leading-6">{copy.prompt}</p>
       <form onSubmit={handleSubmit} className="mt-4 grid gap-3 sm:flex sm:items-end">
         <div className="min-w-0 flex-1">
-          <label className="block text-sm font-medium text-[#0F172A] dark:text-[#E2E8F0]">
+          <label className="block text-sm font-medium text-[#071016] dark:text-[#e0e0e0]">
             {question}
           </label>
           <input
@@ -171,13 +171,13 @@ export default function ContactCaptcha({ locale, email, emailLabel }: ContactCap
             value={answer}
             onChange={(event) => setAnswer(event.target.value)}
             placeholder={copy.placeholder}
-            className="mt-2 w-full rounded-xl border border-[#CBD5E1] bg-[#F8FDFF] px-3 py-2 text-sm text-[#111827] outline-none transition focus:border-[#2563EB] focus:ring-2 focus:ring-[#BFDBFE] dark:border-[#4B5563] dark:bg-[#111827] dark:text-[#F9FAFB]"
+            className="mt-2 w-full rounded-xl border border-[#E5F6FF] bg-white px-3 py-2 text-sm text-[#071016] outline-none transition focus:border-[#2A4E63] focus:ring-2 focus:ring-[#E5F6FF] dark:border-[#374151] dark:bg-[#111827] dark:text-[#F9FAFB]"
           />
         </div>
         <button
           type="submit"
           disabled={solved}
-          className="inline-flex items-center justify-center rounded-xl bg-[#2563EB] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1D4ED8] disabled:cursor-not-allowed disabled:bg-[#94A3B8]"
+          className="inline-flex items-center justify-center rounded-xl bg-[#2A4E63] px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#1f3b4c] disabled:cursor-not-allowed disabled:bg-[#9CA3AF] dark:bg-[#05a9ff] dark:text-[#16394a] dark:hover:bg-[#38beff]"
         >
           {copy.submit}
         </button>
@@ -188,11 +188,11 @@ export default function ContactCaptcha({ locale, email, emailLabel }: ContactCap
       ) : null}
 
       {solved ? (
-        <div className="mt-5 rounded-16 bg-[#EFF6FF] dark:bg-[#0F172A] border border-[#93C5FD] p-4">
-          <p className="text-sm font-semibold text-[#1D4ED8] dark:text-[#93C5FD]">{copy.success}</p>
-          <p className="mt-3 text-sm text-[#334155] dark:text-[#cbd5e1]">
-            <span className="font-semibold text-[#0F172A] dark:text-[#E2E8F0]">{emailLabel}: </span>
-            <a href={`mailto:${email}`} className="underline underline-offset-4 text-[#2563EB] dark:text-[#60A5FA]">
+        <div className="mt-5 rounded-16 bg-[#E5F6FF] dark:bg-[#111827] border border-[#E5F6FF] dark:border-[#374151] p-4">
+          <p className="text-sm font-semibold text-[#2A4E63] dark:text-[#05a9ff]">{copy.success}</p>
+          <p className="mt-3 text-sm text-[#071016] dark:text-[#c7c7cc]">
+            <span className="font-semibold text-[#071016] dark:text-[#e0e0e0]">{emailLabel}: </span>
+            <a href={`mailto:${email}`} className="underline underline-offset-4 text-[#2A4E63] dark:text-[#60A5FA]">
               {email}
             </a>
           </p>
