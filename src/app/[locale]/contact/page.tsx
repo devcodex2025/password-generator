@@ -39,10 +39,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             { label: copy.contact },
           ]}
         />
-        <article className="mt-4 rounded-24 border border-[#E5F6FF] dark:border-[#374151] bg-white dark:bg-[#171717] p-6 md:p-8">
+        <article className="mt-4 rounded-24 border border-[#E5F6FF] dark:border-[#1f2937] bg-white dark:bg-[#0f172a] p-6 md:p-8">
           <h1 className="text-3xl md:text-4xl font-bold text-[#071016] dark:text-[#e0e0e0]">{copy.contactTitle}</h1>
           <p className="mt-4 text-[#374151] dark:text-[#c7c7c7] leading-7">{copy.contactIntro}</p>
-          <div className="mt-6 rounded-16 bg-[#F8FDFF] dark:bg-[#111827] border border-[#E5F6FF] dark:border-[#374151] p-4">
+          <div className="mt-6 rounded-16 bg-[#F8FDFF] dark:bg-[#111827] border border-[#E5F6FF] dark:border-[#1f2937] p-4">
             <ContactCaptcha locale={locale} email={contactEmail} emailLabel={copy.contactEmailLabel} />
           </div>
           <p className="mt-2 text-sm text-[#4b5563] dark:text-[#9ca3af]">{copy.contactResponseLabel}</p>

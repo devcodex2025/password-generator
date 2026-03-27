@@ -111,7 +111,7 @@ const Footer = ({ language }) => {
                 </li>
               ))}
             </ul>
-            <ul className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-center">
+            <ul className="mt-4 flex flex-wrap justify-end gap-3 text-sm text-right">
               {legalLinks.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>

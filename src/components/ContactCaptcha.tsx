@@ -159,10 +159,10 @@ export default function ContactCaptcha({ locale, email, emailLabel }: ContactCap
 
   return (
     <div>
-      <p className="text-sm sm:text-base text-[#2A4E63] dark:text-[#9bdfff] leading-6">{copy.prompt}</p>
+      <p className="text-sm sm:text-base text-[#071016] dark:text-white leading-6">{copy.prompt}</p>
       <form onSubmit={handleSubmit} className="mt-4 grid gap-3 sm:flex sm:items-end">
         <div className="min-w-0 flex-1">
-          <label className="block text-sm font-medium text-[#071016] dark:text-[#e0e0e0]">
+          <label className="block text-sm font-medium text-[#071016] dark:text-white">
             {question}
           </label>
           <input
@@ -171,7 +171,7 @@ export default function ContactCaptcha({ locale, email, emailLabel }: ContactCap
             value={answer}
             onChange={(event) => setAnswer(event.target.value)}
             placeholder={copy.placeholder}
-            className="mt-2 w-full rounded-xl border border-[#E5F6FF] bg-white px-3 py-2 text-sm text-[#071016] outline-none transition focus:border-[#2A4E63] focus:ring-2 focus:ring-[#E5F6FF] dark:border-[#374151] dark:bg-[#111827] dark:text-[#F9FAFB]"
+            className="mt-2 w-full rounded-xl border border-[#E5F6FF] bg-white px-3 py-2 text-sm text-[#071016] outline-none transition focus:border-[#2A4E63] focus:ring-2 focus:ring-[#E5F6FF] dark:border-[#1F2937] dark:bg-[#0b1220] dark:text-[#F9FAFB]"
           />
         </div>
         <button
@@ -188,10 +188,10 @@ export default function ContactCaptcha({ locale, email, emailLabel }: ContactCap
       ) : null}
 
       {solved ? (
-        <div className="mt-5 rounded-16 bg-[#E5F6FF] dark:bg-[#111827] border border-[#E5F6FF] dark:border-[#374151] p-4">
+        <div className="mt-5 rounded-16 bg-[#E5F6FF] dark:bg-[#0b1220] border border-[#E5F6FF] dark:border-[#1F2937] p-4">
           <p className="text-sm font-semibold text-[#2A4E63] dark:text-[#05a9ff]">{copy.success}</p>
-          <p className="mt-3 text-sm text-[#071016] dark:text-[#c7c7cc]">
-            <span className="font-semibold text-[#071016] dark:text-[#e0e0e0]">{emailLabel}: </span>
+          <p className="mt-3 text-sm text-[#071016] dark:text-white">
+            <span className="font-semibold text-[#071016] dark:text-white">{emailLabel}: </span>
             <a href={`mailto:${email}`} className="underline underline-offset-4 text-[#2A4E63] dark:text-[#60A5FA]">
               {email}
             </a>
