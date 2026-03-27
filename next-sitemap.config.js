@@ -22,6 +22,7 @@ const guideSlugs = [
   'team-password-policy-template',
   'secure-password-generator-guide',
 ];
+const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact'];
 
 module.exports = {
   siteUrl,
@@ -66,7 +67,16 @@ module.exports = {
       }))
     );
 
-    return [...localePages, ...guideIndexPages, ...guideArticlePages];
+    const staticPages = availableLanguages.flatMap((langCode) =>
+      staticPageSlugs.map((slug) => ({
+        loc: `/${langCode}/${slug}`,
+        changefreq: 'monthly',
+        priority: 0.6,
+        lastmod: new Date().toISOString(),
+      }))
+    );
+
+    return [...localePages, ...guideIndexPages, ...guideArticlePages, ...staticPages];
   },
   transform: async (config, path) => {
     const localePathMatch = path.match(/^\/([a-z]{2})$/i);

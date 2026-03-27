@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useContext } from 'react';
 import Image from 'next/image';
@@ -40,6 +40,15 @@ const footerLabels = {
   github: {
     ua: 'GitHub', en: 'GitHub', es: 'GitHub', fr: 'GitHub', de: 'GitHub', it: 'GitHub', pt: 'GitHub', ru: 'GitHub', zh: 'GitHub', ja: 'GitHub', pl: 'GitHub',
   },
+  privacyPolicy: {
+    ua: 'Політика конфіденційності', en: 'Privacy Policy', es: 'Política de Privacidad', fr: 'Politique de Confidentialité', de: 'Datenschutz', it: 'Privacy Policy', pt: 'Política de Privacidade', ru: 'Политика конфиденциальности', zh: '隐私政策', ja: 'プライバシーポリシー', pl: 'Polityka Prywatności',
+  },
+  termsOfService: {
+    ua: 'Умови використання', en: 'Terms of Service', es: 'Términos del Servicio', fr: 'Conditions d’Utilisation', de: 'Nutzungsbedingungen', it: 'Termini di Servizio', pt: 'Termos de Serviço', ru: 'Условия использования', zh: '服务条款', ja: '利用規約', pl: 'Warunki Korzystania',
+  },
+  contact: {
+    ua: 'Контакти', en: 'Contact', es: 'Contacto', fr: 'Contact', de: 'Kontakt', it: 'Contatti', pt: 'Contato', ru: 'Контакты', zh: '联系我们', ja: 'お問い合わせ', pl: 'Kontakt',
+  },
 };
 
 const Footer = ({ language }) => {
@@ -61,6 +70,11 @@ const Footer = ({ language }) => {
 
   const sitemapLink = { label: label('sitemap'), href: '/sitemap.xml', external: true };
   const githubLink = { label: label('github'), href: 'https://github.com/devcodex2025/password-generator', external: true };
+  const legalLinks = [
+    { label: label('privacyPolicy'), href: `/${locale}/privacy-policy` },
+    { label: label('termsOfService'), href: `/${locale}/terms-of-service` },
+    { label: label('contact'), href: `/${locale}/contact` },
+  ];
 
   return (
     <>
@@ -90,6 +104,15 @@ const Footer = ({ language }) => {
           <div className="w-full">
             <ul className="grid grid-cols-2 gap-3 text-base text-center md:hidden">
               {firstRowLinks.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className={linkClass}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-center">
+              {legalLinks.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>
                     {item.label}
