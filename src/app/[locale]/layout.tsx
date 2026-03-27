@@ -58,23 +58,61 @@ const ogLocaleMap: Record<string, string> = {
   ja: 'ja_JP',
   pl: 'pl_PL',
 };
+const BRAND = 'generatepasswordto.me';
+const META_TITLE_MAX = 60;
+const META_DESCRIPTION_MAX = 155;
+const TITLE_SUFFIX = ` | ${BRAND}`;
+const TITLE_BASE_MAX = Math.max(1, META_TITLE_MAX - TITLE_SUFFIX.length);
+const DEFAULT_META_TITLE_BASE = 'Password generator';
+const DEFAULT_META_DESCRIPTION = 'Generate strong, secure passwords quickly with generatepasswordto.me.';
+
+const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const stripBrandSuffix = (value: string) => {
+  const suffixPattern = new RegExp(`\\s*\\|\\s*${escapeRegExp(BRAND)}\\s*$`, 'i');
+  return (value || '').replace(suffixPattern, '').trim();
+};
+
+const truncateTitleBase = (value: string, max: number) => {
+  const trimmed = (value || '').trim();
+  if (!trimmed) return '';
+  if (trimmed.length <= max) return trimmed;
+  const truncated = trimmed.slice(0, max);
+  const boundary = truncated.lastIndexOf(' ');
+  const result = boundary > 0 ? truncated.slice(0, boundary) : truncated;
+  return result.trim();
+};
+
+const buildMetaTitle = (rawTitle?: string) => {
+  const baseValue = stripBrandSuffix(rawTitle || '');
+  const truncated = truncateTitleBase(baseValue || DEFAULT_META_TITLE_BASE, TITLE_BASE_MAX);
+  const finalBase = truncated || DEFAULT_META_TITLE_BASE;
+  return `${finalBase}${TITLE_SUFFIX}`;
+};
+
+const buildMetaDescription = (rawDescription?: string) => {
+  const source = (rawDescription || DEFAULT_META_DESCRIPTION).trim();
+  if (!source) return DEFAULT_META_DESCRIPTION;
+  if (source.length <= META_DESCRIPTION_MAX) return source;
+  const truncated = source.slice(0, META_DESCRIPTION_MAX);
+  const boundary = truncated.lastIndexOf(' ');
+  const clipped = boundary > 0 ? truncated.slice(0, boundary) : truncated;
+  return clipped.trim();
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const canonical = `${baseUrl}/${locale}`.replace(/\/$/, '');
 
   const seoInfo = seoData.find((data) => data.language === locale) || seoData.find((data) => data.language === 'en');
-  const title = seoInfo?.title || 'Generate Strong Passwords | generatepasswordto.me';
-  const description = seoInfo?.description || 'Create strong, secure passwords instantly. NIST 800-63B and PCI DSS aligned. Free online password generator tool.';
+  const metaTitle = buildMetaTitle(seoInfo?.title);
+  const metaDescription = buildMetaDescription(seoInfo?.description);
   const keywords = seoInfo?.keywords || ['password generator', 'strong password', 'secure password', 'random password', 'password strength'];
 
   return {
     metadataBase: new URL(baseUrl),
-    title: {
-      template: '%s | generatepasswordto.me',
-      default: title
-    },
-    description: description,
+    title: metaTitle,
+    description: metaDescription,
     keywords,
     other: {
       'google-adsense-account': 'ca-pub-5995594246081561',
@@ -100,8 +138,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       },
     },
     openGraph: {
-      title: title,
-      description: description,
+      title: metaTitle,
+      description: metaDescription,
       url: canonical,
       siteName: 'generatepasswordto.me',
       type: 'website',
@@ -117,8 +155,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     twitter: {
       card: 'summary_large_image',
-      title: title,
-      description: description,
+      title: metaTitle,
+      description: metaDescription,
       images: ['/images/generate-password-preview.png'],
     },
     robots: {
