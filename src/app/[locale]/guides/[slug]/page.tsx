@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -5,9 +7,21 @@ import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles
 import { getCachedGuide, getCachedGuides } from '@/lib/cached-content';
 import { getGuideCategoryLabel, getGuidesUiLabels } from '@/lib/guides-i18n';
 import { formatGuideDate, getGuidesUiCopy } from '@/lib/guides-ui';
-import { createGuideLinkTargets, createInterlinkState, renderGuideTextWithLinks } from '@/lib/guides-interlinking';
+import {
+  createGuideLinkTargets,
+  createInterlinkState,
+  renderGuideTextWithLinks,
+} from '@/lib/guides-interlinking';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import {
+  GuideInterlinkEntry,
+  GuideInterlinkPlacement,
+  getGuideInterlinkEntries,
+  resolveGuideInterlinkHref,
+} from '@/lib/guides-interlink-plan';
+import { getLocalizedInterlinkAnchor } from '@/lib/interlinking-anchors';
+import { getPlacementLabel } from '@/lib/interlinking-placements';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const hreflangMap: Record<string, string> = { ua: 'uk' };
@@ -61,6 +75,40 @@ export async function generateMetadata({
   };
 }
 
+function GuideInterlinkBlock({
+  entries,
+  locale,
+  placement,
+}: {
+  entries: GuideInterlinkEntry[];
+  locale: string;
+  placement: GuideInterlinkPlacement;
+}) {
+  if (!entries.length) {
+    return null;
+  }
+
+  return (
+    <div className="mt-5 rounded-24 border border-[#D1E9FF] dark:border-[#1f334a] bg-[#F0F8FF] dark:bg-[#0A1A2B] p-4 shadow-sm">
+      <p className="text-xs uppercase tracking-wide text-[#2A4E63] dark:text-[#9bdfff]">
+        {getPlacementLabel(locale, placement)}
+      </p>
+      <div className="mt-2 space-y-2 text-sm text-[#071016] dark:text-[#d6e8ff]">
+        {entries.map((entry) => (
+          <p key={`${entry.anchorKey}-${entry.kind}-${entry.kind === 'guide' ? entry.target : ''}`}>
+            <Link
+              href={resolveGuideInterlinkHref(locale, entry)}
+              className="font-semibold underline underline-offset-4 decoration-2 decoration-sky-500/70 dark:decoration-sky-300/80 transition-colors hover:text-[#1f3b4c] dark:hover:text-white"
+            >
+              {getLocalizedInterlinkAnchor(locale, entry.anchorKey)}
+            </Link>
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default async function GuideArticlePage({
   params,
 }: {
@@ -78,6 +126,10 @@ export default async function GuideArticlePage({
 
   const linkTargets = createGuideLinkTargets(locale, guide.slug, allGuides);
   const interlinkState = createInterlinkState(7);
+  const interlinkEntries = getGuideInterlinkEntries(guide.slug);
+  const introEntries = interlinkEntries.filter((entry) => entry.placement === 'intro');
+  const bodyEntries = interlinkEntries.filter((entry) => entry.placement === 'body');
+  const conclusionEntries = interlinkEntries.filter((entry) => entry.placement === 'conclusion');
 
   return (
     <LocalizedPageShell locale={locale}>
@@ -109,6 +161,8 @@ export default async function GuideArticlePage({
             {renderGuideTextWithLinks(guide.excerpt, linkTargets, interlinkState, 'excerpt')}
           </p>
 
+          <GuideInterlinkBlock entries={introEntries} locale={locale} placement="intro" />
+
           <div className="mt-5 flex flex-wrap gap-3 text-xs text-[#2A4E63] dark:text-[#9ca3af]">
             <span>{uiCopy.minRead(guide.readingMinutes)}</span>
             <span>{uiCopy.updatedLabel}: {formatGuideDate(locale, guide.updatedAt)}</span>
@@ -117,26 +171,30 @@ export default async function GuideArticlePage({
 
           <div className="mt-8 space-y-8">
             {guide.sections.map((section, index) => (
-              <section key={`${section.heading}-${index}`}>
-                <h2 className="text-2xl font-semibold text-[#071016] dark:text-[#e0e0e0]">{section.heading}</h2>
-                <div className="mt-3 space-y-3">
-                  {section.paragraphs.map((paragraph, pIndex) => (
-                    <p key={pIndex} className="text-[#374151] dark:text-[#c7c7c7] leading-7">
-                      {renderGuideTextWithLinks(paragraph, linkTargets, interlinkState, `paragraph-${index}-${pIndex}`)}
-                    </p>
-                  ))}
-                </div>
-                {section.bullets && section.bullets.length > 0 ? (
-                  <ul className="mt-4 list-disc pl-5 space-y-2 text-[#374151] dark:text-[#c7c7c7]">
-                    {section.bullets.map((bullet, bIndex) => (
-                      <li key={bIndex}>
-                        {renderGuideTextWithLinks(bullet, linkTargets, interlinkState, `bullet-${index}-${bIndex}`)}
-                      </li>
+              <Fragment key={`${section.heading}-${index}`}>
+                <section>
+                  <h2 className="text-2xl font-semibold text-[#071016] dark:text-[#e0e0e0]">{section.heading}</h2>
+                  <div className="mt-3 space-y-3">
+                    {section.paragraphs.map((paragraph, pIndex) => (
+                      <p key={pIndex} className="text-[#374151] dark:text-[#c7c7c7] leading-7">
+                        {renderGuideTextWithLinks(paragraph, linkTargets, interlinkState, `paragraph-${index}-${pIndex}`)}
+                      </p>
                     ))}
-                  </ul>
-                ) : null}
-              </section>
+                  </div>
+                  {section.bullets && section.bullets.length > 0 ? (
+                    <ul className="mt-4 list-disc pl-5 space-y-2 text-[#374151] dark:text-[#c7c7c7]">
+                      {section.bullets.map((bullet, bIndex) => (
+                        <li key={bIndex}>
+                          {renderGuideTextWithLinks(bullet, linkTargets, interlinkState, `bullet-${index}-${bIndex}`)}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </section>
+                {index === 0 && <GuideInterlinkBlock entries={bodyEntries} locale={locale} placement="body" />}
+              </Fragment>
             ))}
+            <GuideInterlinkBlock entries={conclusionEntries} locale={locale} placement="conclusion" />
           </div>
 
         </article>

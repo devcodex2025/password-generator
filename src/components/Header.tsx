@@ -105,7 +105,7 @@ interface HeaderProps {
 
 const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
   const pathname = usePathname();
-  const isHomePage = /^\/[^/]+\/?$/.test(pathname || '');
+  const isHomePage = pathname === '/' || /^\/[^/]+\/?$/.test(pathname || '');
   const availableLanguages = getAvailableLanguages();
   const [language, setLanguage] = useState<string>(() => {
     const pathSegments = typeof window !== 'undefined' ? window.location.pathname.split('/') : [''];
@@ -117,14 +117,14 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
     return availableLanguages.includes(currentLanguage) ? currentLanguage : 'en';
   });
 
-  const languagePrefix = language === 'en' ? '' : `/${language}`;
+  const localePrefix = `/${language}`;
+  const homeHref = language === 'en' ? '/' : localePrefix;
   const navItemDefinitions: Array<{ labelKey: LinkLabelKey; href: string }> = [
-    { labelKey: 'generator', href: `${languagePrefix}` },
-    { labelKey: 'guides', href: `${languagePrefix}/guides` },
-    { labelKey: 'contact', href: `${languagePrefix}/contact` },
-    { labelKey: 'privacyPolicy', href: `${languagePrefix}/privacy-policy` },
-    { labelKey: 'termsOfService', href: `${languagePrefix}/terms-of-service` },
-    { labelKey: 'sitemap', href: '/sitemap.xml' },
+    { labelKey: 'generator', href: homeHref },
+    { labelKey: 'guides', href: `${localePrefix}/guides` },
+    { labelKey: 'contact', href: `${localePrefix}/contact` },
+    { labelKey: 'privacyPolicy', href: `${localePrefix}/privacy-policy` },
+    { labelKey: 'termsOfService', href: `${localePrefix}/terms-of-service` },
   ];
   const navItems = navItemDefinitions.map((item) => ({
     ...item,
@@ -148,7 +148,12 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
 
   // Get available languages
 
-  const languages = getLanguagesWithFlags();
+  const languages = (() => {
+    const all = getLanguagesWithFlags();
+    const english = all.find((langItem) => langItem.value === 'en');
+    if (!english) return all;
+    return [english, ...all.filter((langItem) => langItem.value !== 'en')];
+  })();
 
   const [isAnimating] = useState(false);
 
@@ -364,7 +369,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           </div>
         ) : (
           <Link
-            href={`/${language}`}
+            href={homeHref}
             aria-label="Go to homepage"
             className="logo-link inline-flex transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
           >
