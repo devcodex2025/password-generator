@@ -1206,6 +1206,45 @@
     "ja": "ガイド",
     "pl": "Przewodnik"
   },
+  "footer_quick_links": {
+    "ua": "Швидкі посилання",
+    "en": "Quick links",
+    "es": "Enlaces rápidos",
+    "fr": "Liens rapides",
+    "de": "Schnellzugriffe",
+    "it": "Collegamenti rapidi",
+    "pt": "Links rápidos",
+    "ru": "Быстрые ссылки",
+    "zh": "快速链接",
+    "ja": "クイックリンク",
+    "pl": "Szybkie linki"
+  },
+  "footer_guide_articles": {
+    "ua": "Гайдові статті",
+    "en": "Guide articles",
+    "es": "Artículos de guía",
+    "fr": "Articles de guide",
+    "de": "Leitfaden-Artikel",
+    "it": "Articoli guida",
+    "pt": "Artigos de guia",
+    "ru": "Статьи-гиды",
+    "zh": "指南文章",
+    "ja": "ガイド記事",
+    "pl": "Artykuły poradnikowe"
+  },
+  "footer_legal": {
+    "ua": "Юридичне",
+    "en": "Legal",
+    "es": "Legal",
+    "fr": "Juridique",
+    "de": "Rechtliches",
+    "it": "Legale",
+    "pt": "Legal",
+    "ru": "Юридическое",
+    "zh": "法律",
+    "ja": "リーガル",
+    "pl": "Prawne"
+  },
   "footer_copyright": {
     "ua": "Авторське право",
     "en": "Copyright",

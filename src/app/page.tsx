@@ -1,17 +1,24 @@
+import LocalePage from './[locale]/page';
 
+const baseUrl = 'https://www.generatepasswordto.me';
+const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
+const hreflangMap: Record<string, string> = { ua: 'uk' };
 
-import { permanentRedirect } from 'next/navigation';
-import { headers } from 'next/headers';
-import { getAvailableLanguages } from '@/utils/languageUtils';
+export const metadata = {
+  metadataBase: new URL(baseUrl),
+  title: 'Password generator | generatepasswordto.me',
+  description: 'Generate strong, secure passwords quickly with generatepasswordto.me.',
+  alternates: {
+    canonical: baseUrl,
+    languages: {
+      ...Object.fromEntries(
+        supportedLangs.map((lang) => [hreflangMap[lang] || lang, lang === 'en' ? baseUrl : `${baseUrl}/${lang}`])
+      ),
+      'x-default': baseUrl,
+    },
+  },
+};
 
-export default async function RootPage() {
-  const headersList = await headers();
-  const browserLanguage = headersList.get('accept-language')?.split(',')[0].split('-')[0];
-  const supportedLanguages = getAvailableLanguages();
-  const mappedLanguage = browserLanguage === 'uk' ? 'ua' : browserLanguage;
-    const defaultLanguage = (typeof mappedLanguage === 'string' && supportedLanguages.includes(mappedLanguage))
-    ? mappedLanguage
-    : 'en';
-
-  permanentRedirect(`/${defaultLanguage}`);
+export default function RootPage() {
+  return <LocalePage params={Promise.resolve({ locale: 'en' })} />;
 }

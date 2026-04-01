@@ -1,6 +1,7 @@
 ﻿'use client'
 import { useMemo, useState } from 'react'
 import Image from 'next/image'
+import ShareIcon from '@mui/icons-material/Share'
 import seoData from './SeoData'
 
 interface ShareBlockProps {
@@ -264,7 +265,10 @@ export default function ShareBlock({
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <div className="min-w-0">
-          <h4 className="text-[#071016] dark:text-[#e0e0e0] font-semibold">{t.share}</h4>
+          <div className="flex items-center gap-2">
+            <ShareIcon className="text-[#3a6077] dark:text-[#9bdfff]" fontSize="small" />
+            <h4 className="text-[#071016] dark:text-[#e0e0e0] font-semibold">{t.share}</h4>
+          </div>
           <span className="text-sm text-gray-500 dark:text-gray-300">{t.help}</span>
         </div>
         <svg

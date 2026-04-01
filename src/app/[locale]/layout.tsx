@@ -102,7 +102,7 @@ const buildMetaDescription = (rawDescription?: string) => {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${baseUrl}/${locale}`.replace(/\/$/, '');
+  const canonical = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`.replace(/\/$/, '');
 
   const seoInfo = seoData.find((data) => data.language === locale) || seoData.find((data) => data.language === 'en');
   const metaTitle = buildMetaTitle(seoInfo?.title);
@@ -132,9 +132,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       canonical,
       languages: {
         ...Object.fromEntries(
-          supportedLangs.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}`])
+          supportedLangs.map((lang) => [hreflangMap[lang] || lang, lang === 'en' ? baseUrl : `${baseUrl}/${lang}`])
         ),
-        'x-default': `${baseUrl}/en`,
+        'x-default': baseUrl,
       },
     },
     openGraph: {
@@ -234,44 +234,48 @@ export default async function LocaleLayout({
   };
 
   return (
-    <html lang={htmlLang} suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function () {
-                try {
-                  var saved = localStorage.getItem('darkMode');
-                  var isDark = saved !== null
-                    ? JSON.parse(saved)
-                    : window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  document.cookie = 'theme=' + (isDark ? 'dark' : 'light') + '; path=/; max-age=31536000; samesite=lax';
-                  document.documentElement.classList.toggle('dark', !!isDark);
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-        <link rel="preload" as="image" href="/images/logo.svg" type="image/svg+xml" />
-        {process.env.NEXT_PUBLIC_GA_ID ? (
-          <>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}></script>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);} 
-                  gtag('js', new Date());
-                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-                    anonymize_ip: true,
-                  });
-                `,
-              }}
-            />
-          </>
-        ) : null}
-      </head>
-      <body
+    <>
+      <Script
+        id="theme-init"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function () {
+              try {
+                var saved = localStorage.getItem('darkMode');
+                var isDark = saved !== null
+                  ? JSON.parse(saved)
+                  : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.cookie = 'theme=' + (isDark ? 'dark' : 'light') + '; path=/; max-age=31536000; samesite=lax';
+                document.documentElement.classList.toggle('dark', !!isDark);
+              } catch (e) {}
+            })();
+          `,
+        }}
+      />
+      {process.env.NEXT_PUBLIC_GA_ID ? (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script
+            id="gtag-config"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} 
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                  anonymize_ip: true,
+                });
+              `,
+            }}
+          />
+        </>
+      ) : null}
+      <div
         suppressHydrationWarning
         className={`w-full ${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}
       >
@@ -285,8 +289,8 @@ export default async function LocaleLayout({
           <NavigationProgress />
           {children}
         </CustomThemeProvider>
-      </body>
-    </html>
+      </div>
+    </>
   );
 }
 

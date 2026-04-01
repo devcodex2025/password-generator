@@ -36,7 +36,8 @@ export default function Page({ params }: PageProps) {
 
   const onLanguageChange = (newLanguage: string) => {
     void i18n.changeLanguage(newLanguage);
-    router.push(`/${newLanguage}`);
+    const target = newLanguage === 'en' ? '/' : `/${newLanguage}`;
+    router.push(target);
   };
 
   return (

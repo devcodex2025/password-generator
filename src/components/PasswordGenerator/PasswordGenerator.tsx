@@ -325,7 +325,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
             />
           </div>
           <p className="pt-[10px] relative">
-            <AnimatedPassword length={7} />
+            <AnimatedPassword length={5} />
           </p>
         </div>
         <div
@@ -342,7 +342,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
             />
           </div>
           <p className="pt-[10px] relative">
-            <AnimatedPassword length={7} />
+            <AnimatedPassword length={5} />
           </p>
         </div>
         {passwords.length > 0 && (

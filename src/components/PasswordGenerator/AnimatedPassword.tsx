@@ -7,7 +7,7 @@ interface AnimatedPasswordProps {
   length?: number;
 }
 
-export default function AnimatedPassword({ length = 7 }: AnimatedPasswordProps) {
+export default function AnimatedPassword({ length = 5 }: AnimatedPasswordProps) {
   const [currentChars, setCurrentChars] = useState<string[]>(Array(length).fill('*'));
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isComplete, setIsComplete] = useState<boolean>(false);

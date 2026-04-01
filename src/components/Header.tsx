@@ -21,6 +21,7 @@ import { ThemeContext } from '@/context/ThemeContext'; // Updated path
 import { getLanguagesWithFlags, getLanguageSelectionText, getThemeText } from '../utils/languageUtils';
 import { SelectChangeEvent } from '@mui/material/Select';
 import { getAvailableLanguages } from '../utils/languageUtils'; // Ensure this utility function is defined
+import { getLinkLabel, type LinkLabelKey } from '@/utils/linkTranslations';
 
 
 // CSS styles for animation
@@ -113,27 +114,28 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
       return languageFromURL;
     }
 
-    const browserLanguage = typeof navigator !== 'undefined' ? navigator.language : 'en';
-    const languageCode = browserLanguage.split(/[-_]/)[0];
-    const mappedLanguageCode = languageCode === 'uk' ? 'ua' : languageCode;
-
-    return availableLanguages.includes(mappedLanguageCode) ? mappedLanguageCode : 'en';
+    return availableLanguages.includes(currentLanguage) ? currentLanguage : 'en';
   });
 
-  // Перевіряємо, чи маршрут є кореневим (/), і перенаправляємо
-  useEffect(() => {
-    const pathSegments = typeof window !== 'undefined' ? window.location.pathname.split('/') : [''];
-    const isRootPath = pathSegments[1] === '' || pathSegments[1] === undefined;
+  const languagePrefix = language === 'en' ? '' : `/${language}`;
+  const navItemDefinitions: Array<{ labelKey: LinkLabelKey; href: string }> = [
+    { labelKey: 'generator', href: `${languagePrefix}` },
+    { labelKey: 'guides', href: `${languagePrefix}/guides` },
+    { labelKey: 'contact', href: `${languagePrefix}/contact` },
+    { labelKey: 'privacyPolicy', href: `${languagePrefix}/privacy-policy` },
+    { labelKey: 'termsOfService', href: `${languagePrefix}/terms-of-service` },
+    { labelKey: 'sitemap', href: '/sitemap.xml' },
+  ];
+  const navItems = navItemDefinitions.map((item) => ({
+    ...item,
+    label: getLinkLabel(item.labelKey, language),
+  }));
 
-    if (isRootPath) {
-      const browserLanguage = typeof navigator !== 'undefined' ? navigator.language.split(/[-_]/)[0] : 'en';
-      const mappedLanguageCode = browserLanguage === 'uk' ? 'ua' : browserLanguage;
-      const defaultLanguage = availableLanguages.includes(mappedLanguageCode) ? mappedLanguageCode : 'en';
-      onLanguageChange(defaultLanguage); // Викликаємо onLanguageChange для перенаправлення
-    } else if (currentLanguage !== language) {
-      setLanguage(currentLanguage); // Синхронізуємо з пропсом
+  useEffect(() => {
+    if (currentLanguage !== language) {
+      setLanguage(currentLanguage);
     }
-  }, [currentLanguage, onLanguageChange, language, availableLanguages]);
+  }, [currentLanguage, language]);
 
   const handleLanguageChange = (event: SelectChangeEvent) => {
     const lang = event.target.value;
@@ -242,6 +244,19 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
       role="presentation"
     >
       <List sx={{ px: 2 }}>
+        <ListItem>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, width: '100%' }}>
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </Box>
+        </ListItem>
         {/* Language Selector */}
         <ListItem
           sx={
@@ -365,7 +380,17 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           </Link>
         )}
       </div>
-      <ul className="lg:flex justify-end w-[55%] items-center hidden text-decoration-none gap-5 text-[#071016] text-xl font-medium">
+      <ul className="lg:flex justify-end w-[55%] items-center hidden gap-5 text-[#071016] text-sm font-medium">
+        {navItems.map((item) => (
+          <li key={item.href}>
+            <Link
+              href={item.href}
+              className="transition-all duration-200 text-slate-700 hover:text-sky-600 dark:text-slate-200 dark:hover:text-sky-400"
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
         <li>
           <IconButton
             onClick={toggleMode} // Use toggleMode
