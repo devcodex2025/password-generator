@@ -193,7 +193,6 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const htmlLang = hreflangMap[locale] || locale;
 
   // Generate FAQ Schema data
   const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
