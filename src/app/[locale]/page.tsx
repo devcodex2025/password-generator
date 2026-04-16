@@ -7,6 +7,8 @@ import PasswordGenerator from '@/components/PasswordGenerator/PasswordGenerator'
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SeoAccordion from '@/components/SeoAccordion';
+import PasswordBreachCheck from '@/components/PasswordBreachCheck';
+import WhyChooseUs from '@/components/WhyChooseUs';
 import AdBanner from '@/components/Advertising/Adbanner';
 import AdBannerSecond from '@/components/Advertising/AdbannerSecond';
 import CookieConsent from '@/components/CookieConsent/CookieConsent';
@@ -53,6 +55,8 @@ export default function Page({ params }: PageProps) {
         <main className="w-full">
           <Analytics />
           <PasswordGenerator language={locale} />
+          <WhyChooseUs language={locale} />
+          <PasswordBreachCheck language={locale} />
           <Suspense fallback={null}>
             <AdBanner language={locale} isDarkMode={isDarkMode} />
           </Suspense>
