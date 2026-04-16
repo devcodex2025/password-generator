@@ -5,6 +5,10 @@ import { MongoClient } from 'mongodb';
 
 function readPayload(filePath) {
   const absolute = path.resolve(process.cwd(), filePath);
+  const projectRoot = path.resolve(process.cwd());
+  if (!absolute.startsWith(projectRoot + path.sep) && absolute !== projectRoot) {
+    throw new Error(`File path must be inside the project directory: ${filePath}`);
+  }
   const raw = fs.readFileSync(absolute, 'utf8');
   const parsed = JSON.parse(raw);
 

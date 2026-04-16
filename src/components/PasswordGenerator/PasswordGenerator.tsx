@@ -27,6 +27,12 @@ const characterSets: Record<string, string> = {
   '#$%': '!@#$%^&*()',
 };
 
+function secureRandomIndex(max: number): number {
+  const array = new Uint32Array(1);
+  crypto.getRandomValues(array);
+  return array[0] % max;
+}
+
 const passwordStandards: Record<string, { minLength: number; requiredSets: string[]; description: string }> = {
   nist: {
     minLength: 8,
@@ -113,13 +119,13 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         }
 
         for (let i = 0; i < effectiveLength; i++) {
-          password += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
+          password += allCharacters.charAt(secureRandomIndex(allCharacters.length));
         }
       } else {
         standardConfig.requiredSets.forEach((set) => {
           const chars = characterSets[set];
           if (chars) {
-            password += chars.charAt(Math.floor(Math.random() * chars.length));
+            password += chars.charAt(secureRandomIndex(chars.length));
           }
         });
 
@@ -129,14 +135,17 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         });
 
         for (let i = password.length; i < effectiveLength; i++) {
-          password += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
+          password += allCharacters.charAt(secureRandomIndex(allCharacters.length));
         }
       }
 
-      password = password
-        .split('')
-        .sort(() => Math.random() - 0.5)
-        .join('');
+      // Fisher-Yates shuffle using cryptographically secure random
+      const arr = password.split('');
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = secureRandomIndex(i + 1);
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      password = arr.join('');
       const updatedPasswords = [...passwords];
       updatedPasswords[index] = password;
       setPasswords(updatedPasswords);
@@ -163,7 +172,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
 
         let password = '';
         for (let j = 0; j < passwordLength; j++) {
-          password += characters.charAt(Math.floor(Math.random() * characters.length));
+          password += characters.charAt(secureRandomIndex(characters.length));
         }
         generatedPasswords.push(password);
       }

@@ -257,7 +257,16 @@ function detectJsonFallback(guide: Awaited<ReturnType<typeof contentRepository.g
   return hasShell;
 }
 
-export async function GET() {
+export async function GET(request: Request) {
+  const token = process.env.CONTENT_HEALTH_TOKEN;
+  if (token) {
+    const url = new URL(request.url);
+    const provided = url.searchParams.get('token') ?? request.headers.get('x-health-token');
+    if (provided !== token) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+  }
+
   try {
     const source = resolveSource();
     const probeLocale = process.env.CONTENT_HEALTH_PROBE_LOCALE || 'ua';
