@@ -66,6 +66,48 @@ const TITLE_BASE_MAX = Math.max(1, META_TITLE_MAX - TITLE_SUFFIX.length);
 const DEFAULT_META_TITLE_BASE = 'Password generator';
 const DEFAULT_META_DESCRIPTION = 'Generate strong, secure passwords quickly with generatepasswordto.me.';
 
+const htmlLangMap: Record<string, string> = {
+  en: 'en',
+  ua: 'uk',
+  es: 'es',
+  fr: 'fr',
+  de: 'de',
+  it: 'it',
+  pt: 'pt',
+  ru: 'ru',
+  zh: 'zh',
+  ja: 'ja',
+  pl: 'pl',
+};
+
+const localizedMetaTitles: Record<string, string> = {
+  en: 'Secure Password Generator – Create Strong Passwords Online',
+  ua: 'Генератор паролів онлайн – Створіть надійний пароль',
+  es: 'Generador de contraseñas seguras – Crea contraseñas fuertes',
+  fr: 'Générateur de mots de passe sécurisés en ligne',
+  de: 'Sicherer Passwort-Generator – Starke Passwörter erstellen',
+  it: 'Generatore di password sicure – Crea password forti',
+  pt: 'Gerador de senhas seguras – Crie senhas fortes online',
+  ru: 'Генератор паролей онлайн – Создайте надёжный пароль',
+  zh: '安全密码生成器 – 在线创建强密码',
+  ja: '安全なパスワード生成 – 強力なパスワードを作成',
+  pl: 'Generator haseł online – Twórz silne hasła',
+};
+
+const localizedMetaDescriptions: Record<string, string> = {
+  en: 'Free online password generator. Create strong, random passwords that meet NIST 800-63B standards. No data stored – generated locally in your browser.',
+  ua: 'Безкоштовний онлайн-генератор паролів. Створюйте надійні випадкові паролі за стандартами NIST 800-63B. Без зберігання даних – генерація локально у браузері.',
+  es: 'Generador de contraseñas online gratuito. Crea contraseñas seguras y aleatorias según NIST 800-63B. Sin almacenamiento – generado en tu navegador.',
+  fr: 'Générateur de mots de passe gratuit en ligne. Créez des mots de passe forts et aléatoires conformes NIST 800-63B. Généré dans votre navigateur.',
+  de: 'Kostenloser Online-Passwort-Generator. Erstellen Sie starke, zufällige Passwörter nach NIST 800-63B. Keine Datenspeicherung – lokal im Browser generiert.',
+  it: 'Generatore di password online gratuito. Crea password forti e casuali conformi NIST 800-63B. Nessun dato archiviato – generato nel tuo browser.',
+  pt: 'Gerador de senhas online gratuito. Crie senhas fortes e aleatórias conforme NIST 800-63B. Sem armazenamento – gerado localmente no navegador.',
+  ru: 'Бесплатный онлайн-генератор паролей. Создавайте надёжные пароли по стандартам NIST 800-63B. Без хранения – генерация локально.',
+  zh: '免费在线密码生成器。创建符合 NIST 800-63B 标准的强随机密码。无数据存储 – 在浏览器中本地生成。',
+  ja: '無料オンラインパスワード生成。NIST 800-63B準拠の強力なランダムパスワード。データ保存なし – ブラウザでローカル生成。',
+  pl: 'Darmowy generator haseł online. Tworzenie silnych, losowych haseł zgodnych z NIST 800-63B. Bez przechowywania – generowane lokalnie w przeglądarce.',
+};
+
 const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const stripBrandSuffix = (value: string) => {
@@ -104,9 +146,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const canonical = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`.replace(/\/$/, '');
 
+  const metaTitle = localizedMetaTitles[locale]
+    ? buildMetaTitle(localizedMetaTitles[locale])
+    : buildMetaTitle(localizedMetaTitles.en);
+  const metaDescription = localizedMetaDescriptions[locale]
+    ? buildMetaDescription(localizedMetaDescriptions[locale])
+    : buildMetaDescription(localizedMetaDescriptions.en);
   const seoInfo = seoData.find((data) => data.language === locale) || seoData.find((data) => data.language === 'en');
-  const metaTitle = buildMetaTitle(seoInfo?.title);
-  const metaDescription = buildMetaDescription(seoInfo?.description);
   const keywords = seoInfo?.keywords || ['password generator', 'strong password', 'secure password', 'random password', 'password strength'];
 
   return {
@@ -232,8 +278,94 @@ export default async function LocaleLayout({
     })),
   };
 
+  const canonical = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`;
+
+  const websiteJson = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Generate Password To Me',
+    url: baseUrl,
+    description: localizedMetaDescriptions[locale] || localizedMetaDescriptions.en,
+    inLanguage: htmlLangMap[locale] || 'en',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${baseUrl}/{search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  const organizationJson = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Generate Password To Me',
+    url: baseUrl,
+    logo: `${baseUrl}/images/generate-password-preview.png`,
+    sameAs: [
+      'https://github.com/devcodex2025/password-generator',
+    ],
+  };
+
+  const howToJson = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: t('howtouse_title') || 'How to generate a secure password',
+    description: t('howtouse_intro') || 'Generate strong passwords using our free online tool.',
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: t('howtouse_step1') ? t('howtouse_step1').replace(/<[^>]*>/g, '').slice(0, 100) : 'Choose password length',
+        text: t('howtouse_step1') ? t('howtouse_step1').replace(/<[^>]*>/g, '') : 'Select the desired password length between 4 and 100 characters.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: t('howtouse_step2') ? t('howtouse_step2').replace(/<[^>]*>/g, '').slice(0, 100) : 'Select character types',
+        text: t('howtouse_step2') ? t('howtouse_step2').replace(/<[^>]*>/g, '') : 'Choose which character types to include: uppercase, lowercase, numbers, symbols.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: t('howtouse_step3') ? t('howtouse_step3').replace(/<[^>]*>/g, '').slice(0, 100) : 'Generate and copy',
+        text: t('howtouse_step3') ? t('howtouse_step3').replace(/<[^>]*>/g, '') : 'Click Generate to create your password, then copy it to your clipboard.',
+      },
+    ],
+  };
+
+  const breadcrumbJson = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: baseUrl,
+      },
+      ...(locale !== 'en'
+        ? [
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: locale.toUpperCase(),
+              item: canonical,
+            },
+          ]
+        : []),
+    ],
+  };
+
+  const htmlLang = htmlLangMap[locale] || 'en';
+
   return (
     <>
+      <Script
+        id="locale-lang-init"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `document.documentElement.lang="${htmlLang}";`,
+        }}
+      />
       <Script
         id="theme-init"
         strategy="beforeInteractive"
@@ -282,6 +414,30 @@ export default async function LocaleLayout({
           id="faq-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }}
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJson) }}
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJson) }}
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="howto-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJson) }}
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="breadcrumb-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJson) }}
           strategy="beforeInteractive"
         />
         <CustomThemeProvider>

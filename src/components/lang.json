@@ -1,4 +1,17 @@
 {
+  "seotext_img_alt": {
+    "ua": "Генератор надійних паролів онлайн — безпечне створення паролів",
+    "en": "Secure online password generator — create strong passwords",
+    "es": "Generador de contraseñas seguras en línea",
+    "fr": "Générateur de mots de passe sécurisés en ligne",
+    "de": "Sicherer Online-Passwort-Generator",
+    "it": "Generatore di password sicure online",
+    "pt": "Gerador de senhas seguras online",
+    "ru": "Онлайн-генератор надёжных паролей",
+    "zh": "安全在线密码生成器",
+    "ja": "安全なオンラインパスワード生成ツール",
+    "pl": "Bezpieczny generator haseł online"
+  },
   "footer_opensource": {
     "ua": "Відкритий код та безпека",
     "en": "Open Source & Secure",
