@@ -37,6 +37,7 @@ module.exports = {
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/api/', '/_next/', '/server-sitemap.xml'],
       },
     ],
     additionalSitemaps: [

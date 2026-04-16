@@ -24,7 +24,7 @@ const SeoAccordion = ({ language }) => {
               <div className="space-y-4">
                 <Image 
                   src="/images/welcome-img.svg" 
-                  alt="Welcome to Password Generator" 
+                  alt={t("seotext_img_alt", language) || "Welcome to Password Generator"} 
                   className="w-full h-auto rounded-lg shadow-lg"
                   width={600}
                   height={400}

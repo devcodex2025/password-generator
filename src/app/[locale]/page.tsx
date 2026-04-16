@@ -28,6 +28,12 @@ export default function Page({ params }: PageProps) {
   const supportedLanguages = getAvailableLanguages();
   const effectiveLocale = supportedLanguages.includes(locale) ? locale : 'en';
 
+  // Set language synchronously so the first render already uses the correct locale.
+  // All i18n resources are bundled from lang.json, so changeLanguage resolves instantly.
+  if (i18n.language !== effectiveLocale) {
+    void i18n.changeLanguage(effectiveLocale);
+  }
+
   useEffect(() => {
     if (i18n.language !== effectiveLocale) {
       void i18n.changeLanguage(effectiveLocale);

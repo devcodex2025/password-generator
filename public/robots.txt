@@ -1,6 +1,9 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /server-sitemap.xml
 
 # Host
 Host: https://www.generatepasswordto.me

@@ -20,7 +20,7 @@ function SeoText(props) {
           </h2>
           <Image 
             src="/images/welcome-img.svg" 
-            alt="Welcome to secure password generation" 
+            alt={t("seotext_img_alt", language) || "Welcome to secure password generation"} 
             className="sepia-60 w-full hover:sepia-0 transition-all duration-300 rounded-lg"
             loading="lazy"
             decoding="async"
