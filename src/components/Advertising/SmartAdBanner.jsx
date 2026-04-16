@@ -125,7 +125,7 @@ const SmartAdBanner = ({
       }}
     >
       <AdSense.Google
-        client="ca-pub-5995594246081561"
+        client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-5995594246081561"}
         slot={adSlot}
         format="auto"
         responsive="true"

@@ -25,6 +25,10 @@ async function main() {
   }
 
   const absoluteSchemaPath = path.resolve(process.cwd(), schemaPath);
+  const projectRoot = path.resolve(process.cwd());
+  if (!absoluteSchemaPath.startsWith(projectRoot + path.sep) && absoluteSchemaPath !== projectRoot) {
+    throw new Error(`Schema path must be inside the project directory: ${schemaPath}`);
+  }
   const schemaSql = fs.readFileSync(absoluteSchemaPath, 'utf8');
 
   if (!schemaSql.trim()) {

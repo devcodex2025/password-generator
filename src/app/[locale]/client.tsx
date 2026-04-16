@@ -9,12 +9,14 @@ const GeneratePassword = dynamic(() => import("@/components/PasswordGenerator/Pa
 import TagManager from "react-gtm-module";
 
 const TagManagerArgs = {
-  gtmId: 'GTM-KR2SHTKB'
+  gtmId: process.env.NEXT_PUBLIC_GTM_ID || ''
 };
 
 export function ClientOnly(language: string) {
   useEffect(() => {
-  TagManager.initialize(TagManagerArgs);
+  if (TagManagerArgs.gtmId) {
+    TagManager.initialize(TagManagerArgs);
+  }
 }, []);
   return (
     <CustomThemeProvider>

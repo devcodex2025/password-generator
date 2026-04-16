@@ -115,7 +115,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: metaDescription,
     keywords,
     other: {
-      'google-adsense-account': 'ca-pub-5995594246081561',
+      'google-adsense-account': process.env.NEXT_PUBLIC_ADSENSE_CLIENT || 'ca-pub-5995594246081561',
     },
     manifest: '/manifest.json',
     icons: {
