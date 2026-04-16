@@ -4,23 +4,40 @@ import type { Metadata } from 'next';
 import { getCachedGuides } from '@/lib/cached-content';
 import { getGuideCategoryLabel, getGuidesUiLabels } from '@/lib/guides-i18n';
 import { formatGuideDate, getGuidesUiCopy } from '@/lib/guides-ui';
+import { SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import GuideReadButton from '@/components/GuideReadButton';
 
 const baseUrl = 'https://www.generatepasswordto.me';
+const hreflangMap: Record<string, string> = { ua: 'uk' };
 export const runtime = 'nodejs';
 export const revalidate = 3600;
+
+const guidesMetaI18n: Record<string, { title: string; description: string }> = {
+  en: {
+    title: 'Password Security Guides — Expert Articles & Best Practices',
+    description: 'In-depth guides about password security, compliance standards (NIST, PCI DSS), breach recovery, 2FA setup, and account protection best practices.',
+  },
+  ua: {
+    title: 'Гайди з безпеки паролів — експертні статті та найкращі практики',
+    description: 'Детальні гайди з безпеки паролів, стандартів відповідності (NIST, PCI DSS), відновлення після витоків, налаштування 2FA та захисту акаунтів.',
+  },
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const canonical = `${baseUrl}/${locale}/guides`;
+  const meta = guidesMetaI18n[locale] || guidesMetaI18n.en;
 
   return {
-    title: 'Password Security Guides',
-    description: 'In-depth guides about password security, compliance, and account protection best practices.',
+    title: meta.title,
+    description: meta.description,
     alternates: {
       canonical,
+      languages: Object.fromEntries(
+        SUPPORTED_CONTENT_LANGUAGES.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}/guides`])
+      ),
     },
   };
 }
