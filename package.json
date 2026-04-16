@@ -55,7 +55,7 @@
     "start": "next start",
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "node -e \"console.log('sitemap and robots are handled by the Next.js metadata routes')\"",
     "db:apply-schema": "node scripts/apply-content-schema.mjs",
     "db:seed-content": "node scripts/seed-content.mjs",
     "db:seed-content:mongo": "node scripts/seed-content-mongo.mjs",

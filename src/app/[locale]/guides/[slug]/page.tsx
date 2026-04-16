@@ -22,9 +22,10 @@ import {
 } from '@/lib/guides-interlink-plan';
 import { getLocalizedInterlinkAnchor } from '@/lib/interlinking-anchors';
 import { getPlacementLabel } from '@/lib/interlinking-placements';
+import JsonLd from '@/components/JsonLd';
+import { BASE_URL, buildLocaleAlternates, getLocaleHomePath, normalizeLocale } from '@/lib/site-config';
+import { buildGuideArticleSchema } from '@/lib/seo';
 
-const baseUrl = 'https://www.generatepasswordto.me';
-const hreflangMap: Record<string, string> = { ua: 'uk' };
 export const runtime = 'nodejs';
 export const revalidate = 3600;
 
@@ -46,7 +47,8 @@ export async function generateMetadata({
     return {};
   }
 
-  const canonical = `${baseUrl}/${locale}/guides/${slug}`;
+  const normalizedLocale = normalizeLocale(locale);
+  const canonical = `${BASE_URL}/${normalizedLocale}/guides/${slug}`;
 
   return {
     title: guide.seoTitle,
@@ -54,9 +56,7 @@ export async function generateMetadata({
     keywords: guide.keywords,
     alternates: {
       canonical,
-      languages: Object.fromEntries(
-        SUPPORTED_CONTENT_LANGUAGES.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}/guides/${slug}`])
-      ),
+      languages: buildLocaleAlternates(`${normalizedLocale}/guides/${slug}`),
     },
     openGraph: {
       title: guide.seoTitle,
@@ -130,13 +130,29 @@ export default async function GuideArticlePage({
   const introEntries = interlinkEntries.filter((entry) => entry.placement === 'intro');
   const bodyEntries = interlinkEntries.filter((entry) => entry.placement === 'body');
   const conclusionEntries = interlinkEntries.filter((entry) => entry.placement === 'conclusion');
+  const articleSections = guide.sections.map((section, index) => ({
+    id: `section-${index + 1}`,
+    heading: section.heading,
+  }));
+  const normalizedLocale = normalizeLocale(locale);
+  const canonical = `${BASE_URL}/${normalizedLocale}/guides/${slug}`;
+  const articleSchema = buildGuideArticleSchema({
+    locale: normalizedLocale,
+    title: guide.seoTitle,
+    description: guide.seoDescription,
+    url: canonical,
+    image: guide.image.startsWith('http') ? guide.image : `${BASE_URL}${guide.image}`,
+    dateModified: guide.updatedAt,
+    author: guide.author,
+  });
 
   return (
     <LocalizedPageShell locale={locale}>
+      <JsonLd id={`guide-schema-${slug}`} data={articleSchema} />
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
           items={[
-            { label: labels.home, href: `/${locale}` },
+            { label: labels.home, href: getLocaleHomePath(locale) },
             { label: labels.guides, href: `/${locale}/guides` },
             { label: guide.title },
           ]}
@@ -149,7 +165,7 @@ export default async function GuideArticlePage({
           <div className="mt-5 relative w-full overflow-hidden rounded-16 aspect-[40/21] bg-[#E5F6FF] dark:bg-[#111827]">
             <Image
               src={guide.image}
-              alt={guide.title}
+              alt={uiCopy.imageAlt(guide.title)}
               fill
               sizes="(max-width: 1024px) 100vw, 896px"
               priority
@@ -157,9 +173,34 @@ export default async function GuideArticlePage({
               className="object-cover"
             />
           </div>
-          <p className="mt-3 text-[#374151] dark:text-[#c7c7c7]">
-            {renderGuideTextWithLinks(guide.excerpt, linkTargets, interlinkState, 'excerpt')}
-          </p>
+          <div className="mt-5 grid grid-cols-1 lg:grid-cols-[1.4fr_0.6fr] gap-5">
+            <div>
+              <div className="rounded-24 border border-[#D9ECFF] dark:border-[#243447] bg-[#F8FCFF] dark:bg-[#10161d] p-4 md:p-5">
+                <p className="text-xs uppercase tracking-wide text-[#2A4E63] dark:text-[#9bdfff]">
+                  {uiCopy.articleSummaryLabel}
+                </p>
+                <p className="mt-2 text-[#374151] dark:text-[#c7c7c7] leading-7">
+                  {renderGuideTextWithLinks(guide.excerpt, linkTargets, interlinkState, 'excerpt')}
+                </p>
+              </div>
+            </div>
+            <aside className="rounded-24 border border-[#D9ECFF] dark:border-[#243447] bg-[#F8FCFF] dark:bg-[#10161d] p-4 md:p-5 h-fit">
+              <p className="text-xs uppercase tracking-wide text-[#2A4E63] dark:text-[#9bdfff]">
+                {uiCopy.contentsLabel}
+              </p>
+              <nav className="mt-3 space-y-2">
+                {articleSections.map((section) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className="block text-sm leading-6 text-[#2A4E63] dark:text-[#d7e4ef] underline-offset-4 hover:underline"
+                  >
+                    {section.heading}
+                  </a>
+                ))}
+              </nav>
+            </aside>
+          </div>
 
           <GuideInterlinkBlock entries={introEntries} locale={locale} placement="intro" />
 
@@ -172,7 +213,7 @@ export default async function GuideArticlePage({
           <div className="mt-8 space-y-8">
             {guide.sections.map((section, index) => (
               <Fragment key={`${section.heading}-${index}`}>
-                <section>
+                <section id={`section-${index + 1}`}>
                   <h2 className="text-2xl font-semibold text-[#071016] dark:text-[#e0e0e0]">{section.heading}</h2>
                   <div className="mt-3 space-y-3">
                     {section.paragraphs.map((paragraph, pIndex) => (
@@ -195,6 +236,25 @@ export default async function GuideArticlePage({
               </Fragment>
             ))}
             <GuideInterlinkBlock entries={conclusionEntries} locale={locale} placement="conclusion" />
+            <div className="rounded-24 border border-[#D9ECFF] dark:border-[#243447] bg-[#F8FCFF] dark:bg-[#10161d] p-5 md:p-6">
+              <p className="text-xs uppercase tracking-wide text-[#2A4E63] dark:text-[#9bdfff]">
+                {uiCopy.nextStepsLabel}
+              </p>
+              <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                <Link
+                  href={`/${locale}/guides`}
+                  className="inline-flex items-center justify-center rounded-24 bg-[#2A4E63] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1f3b4c]"
+                >
+                  {uiCopy.backToGuidesLabel}
+                </Link>
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center justify-center rounded-24 border border-[#2A4E63] dark:border-[#9bdfff] px-4 py-2 text-sm font-semibold text-[#2A4E63] dark:text-[#9bdfff] transition hover:bg-[#E5F6FF] dark:hover:bg-[#0A1A2B]"
+                >
+                  {uiCopy.contactLabel}
+                </Link>
+              </div>
+            </div>
           </div>
 
         </article>
