@@ -3,12 +3,9 @@ import { CustomThemeProvider } from '@/context/ThemeContext';
 import '@/styles/index.css';
 import seoData from '@/components/SeoData';
 import Script from 'next/script';
+import lang from '@/components/lang.json';
 import NavigationProgress from '@/components/NavigationProgress';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
-import JsonLd from '@/components/JsonLd';
-import HtmlLangSync from '@/components/HtmlLangSync';
-import { BASE_URL, BRAND_NAME, SUPPORTED_LOCALES, buildLocaleAlternates, getLocaleBaseUrl, normalizeLocale } from '@/lib/site-config';
-import { buildOrganizationSchema, buildWebsiteSchema } from '@/lib/seo';
 
 const arsenal = Arsenal({ 
   subsets: ['cyrillic', 'latin'], 
@@ -45,7 +42,23 @@ const notoSansSC = Noto_Sans_SC({
   display: 'swap',
 });
 
-const BRAND = BRAND_NAME;
+const baseUrl = 'https://www.generatepasswordto.me';
+const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
+const hreflangMap: Record<string, string> = { ua: 'uk' };
+const ogLocaleMap: Record<string, string> = {
+  en: 'en_US',
+  ua: 'uk_UA',
+  es: 'es_ES',
+  fr: 'fr_FR',
+  de: 'de_DE',
+  it: 'it_IT',
+  pt: 'pt_PT',
+  ru: 'ru_RU',
+  zh: 'zh_CN',
+  ja: 'ja_JP',
+  pl: 'pl_PL',
+};
+const BRAND = 'generatepasswordto.me';
 const META_TITLE_MAX = 60;
 const META_DESCRIPTION_MAX = 155;
 const TITLE_SUFFIX = ` | ${BRAND}`;
@@ -89,16 +102,15 @@ const buildMetaDescription = (rawDescription?: string) => {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const normalizedLocale = normalizeLocale(locale);
-  const canonical = getLocaleBaseUrl(normalizedLocale).replace(/\/$/, '');
+  const canonical = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`.replace(/\/$/, '');
 
-  const seoInfo = seoData.find((data) => data.language === normalizedLocale) || seoData.find((data) => data.language === 'en');
+  const seoInfo = seoData.find((data) => data.language === locale) || seoData.find((data) => data.language === 'en');
   const metaTitle = buildMetaTitle(seoInfo?.title);
   const metaDescription = buildMetaDescription(seoInfo?.description);
   const keywords = seoInfo?.keywords || ['password generator', 'strong password', 'secure password', 'random password', 'password strength'];
 
   return {
-    metadataBase: new URL(BASE_URL),
+    metadataBase: new URL(baseUrl),
     title: metaTitle,
     description: metaDescription,
     keywords,
@@ -118,7 +130,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     alternates: {
       canonical,
-      languages: buildLocaleAlternates(),
+      languages: {
+        ...Object.fromEntries(
+          supportedLangs.map((lang) => [hreflangMap[lang] || lang, lang === 'en' ? baseUrl : `${baseUrl}/${lang}`])
+        ),
+        'x-default': baseUrl,
+      },
     },
     openGraph: {
       title: metaTitle,
@@ -134,6 +151,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           alt: 'Generate Password To Me Preview',
         },
       ],
+      locale: ogLocaleMap[locale] || 'en_US',
     },
     twitter: {
       card: 'summary_large_image',
@@ -159,7 +177,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export function generateStaticParams() {
-  return SUPPORTED_LOCALES.map((locale) => ({ locale }));
+  return supportedLangs.map((locale) => ({ locale }));
 }
 
 export const viewport: Viewport = {
@@ -175,7 +193,44 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const normalizedLocale = normalizeLocale(locale);
+
+  // Generate FAQ Schema data
+  const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+  
+  const t = (key: string): string => {
+    // @ts-expect-error - dynamic access to lang object
+    const langEntry = lang[key];
+    if (!langEntry || typeof langEntry !== 'object') return '';
+    const raw = langEntry[locale];
+    return stripHtml(raw || '');
+  };
+
+  const qa = [
+    {
+      q: t('howtouse_title') || 'How to use the password generator?',
+      a: [t('howtouse_intro'), t('howtouse_step1'), t('howtouse_step2'), t('howtouse_step3')]
+        .filter(Boolean)
+        .join(' '),
+    },
+    {
+      q: t('seotext_why_title') || 'Why use this password generator?',
+      a: [t('seotext_why1'), t('seotext_why2')].filter(Boolean).join(' '),
+    },
+    {
+      q: t('security_standards_title') || 'Security standards compliance',
+      a: [t('nist_compliance_desc'), t('pci_dss_compliance_desc')].filter(Boolean).join(' '),
+    },
+  ].filter(item => item.q && item.a);
+
+  const faqJson = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: qa.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
 
   return (
     <>
@@ -223,9 +278,12 @@ export default async function LocaleLayout({
         suppressHydrationWarning
         className={`w-full ${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}
       >
-        <HtmlLangSync locale={normalizedLocale} />
-        <JsonLd id="organization-schema" data={buildOrganizationSchema()} />
-        <JsonLd id="website-schema" data={buildWebsiteSchema(normalizedLocale)} />
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }}
+          strategy="beforeInteractive"
+        />
         <CustomThemeProvider>
           <NavigationProgress />
           {children}

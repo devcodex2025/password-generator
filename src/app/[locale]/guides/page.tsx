@@ -7,20 +7,22 @@ import { formatGuideDate, getGuidesUiCopy } from '@/lib/guides-ui';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import GuideReadButton from '@/components/GuideReadButton';
-import { buildGuideCollectionMetadata, getLocaleLabel } from '@/lib/seo';
-import { getLocaleHomePath } from '@/lib/site-config';
 
+const baseUrl = 'https://www.generatepasswordto.me';
 export const runtime = 'nodejs';
 export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const localeLabel = getLocaleLabel(locale);
-  return buildGuideCollectionMetadata(
-    locale,
-    `Password security guides in ${localeLabel} | generatepasswordto.me`,
-    'Explore practical guides about strong passwords, password policies, incident response, and modern authentication hygiene.',
-  );
+  const canonical = `${baseUrl}/${locale}/guides`;
+
+  return {
+    title: 'Password Security Guides',
+    description: 'In-depth guides about password security, compliance, and account protection best practices.',
+    alternates: {
+      canonical,
+    },
+  };
 }
 
 export default async function GuidesIndexPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -34,19 +36,11 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
       <section className="max-w-6xl mx-auto px-4 py-10">
         <Breadcrumbs
           items={[
-            { label: labels.home, href: getLocaleHomePath(locale) },
+            { label: labels.home, href: `/${locale}` },
             { label: labels.guides },
           ]}
         />
         <h1 className="mt-4 text-3xl md:text-4xl font-bold text-[#071016] dark:text-[#e0e0e0]">{labels.guidesTitle}</h1>
-        <p className="mt-4 max-w-3xl text-[16px] md:text-[18px] leading-7 text-[#425466] dark:text-[#c7c7c7]">
-          {uiCopy.guidesIntro}
-        </p>
-        <div className="mt-5 rounded-24 border border-[#D9ECFF] dark:border-[#243447] bg-[#F8FCFF] dark:bg-[#10161d] p-4 md:p-5">
-          <p className="text-sm md:text-base leading-6 text-[#2A4E63] dark:text-[#d7e4ef]">
-            {uiCopy.guidesHelper}
-          </p>
-        </div>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5">
           {guides.map((guide, index) => {
@@ -59,7 +53,7 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
                   <div className="relative w-full overflow-hidden aspect-[16/7] bg-[#E5F6FF] dark:bg-[#111827]">
                     <Image
                       src={guide.image}
-                      alt={uiCopy.imageAlt(guide.title)}
+                      alt={guide.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       priority={index < 2}
