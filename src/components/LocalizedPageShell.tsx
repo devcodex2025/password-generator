@@ -27,6 +27,11 @@ export default function LocalizedPageShell({ locale, children }: LocalizedPageSh
       return;
     }
 
+    if (segments.length === 1 && nextLocale === 'en') {
+      router.push('/');
+      return;
+    }
+
     segments[0] = nextLocale;
     router.push(`/${segments.join('/')}`);
   };
@@ -39,4 +44,3 @@ export default function LocalizedPageShell({ locale, children }: LocalizedPageSh
     </div>
   );
 }
-

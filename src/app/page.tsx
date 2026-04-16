@@ -1,21 +1,13 @@
 import LocalePage from './[locale]/page';
-
-const baseUrl = 'https://www.generatepasswordto.me';
-const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
-const hreflangMap: Record<string, string> = { ua: 'uk' };
+import { BASE_URL, buildLocaleAlternates } from '@/lib/site-config';
 
 export const metadata = {
-  metadataBase: new URL(baseUrl),
+  metadataBase: new URL(BASE_URL),
   title: 'Password generator | generatepasswordto.me',
-  description: 'Generate strong, secure passwords quickly with generatepasswordto.me.',
+  description: 'Generate strong passwords locally, review password strength instantly, and follow modern security guidance in every supported language.',
   alternates: {
-    canonical: baseUrl,
-    languages: {
-      ...Object.fromEntries(
-        supportedLangs.map((lang) => [hreflangMap[lang] || lang, lang === 'en' ? baseUrl : `${baseUrl}/${lang}`])
-      ),
-      'x-default': baseUrl,
-    },
+    canonical: BASE_URL,
+    languages: buildLocaleAlternates(),
   },
 };
 
