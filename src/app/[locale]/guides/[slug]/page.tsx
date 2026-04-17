@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -131,8 +132,76 @@ export default async function GuideArticlePage({
   const bodyEntries = interlinkEntries.filter((entry) => entry.placement === 'body');
   const conclusionEntries = interlinkEntries.filter((entry) => entry.placement === 'conclusion');
 
+  const articleCanonical = `${baseUrl}/${locale}/guides/${slug}`;
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.seoTitle || guide.title,
+    description: guide.seoDescription || guide.excerpt,
+    image: guide.image.startsWith('http') ? guide.image : `${baseUrl}${guide.image}`,
+    author: {
+      '@type': 'Organization',
+      name: 'Generate Password To Me',
+      url: baseUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Generate Password To Me',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/images/generate-password-preview.png`,
+      },
+    },
+    datePublished: guide.updatedAt,
+    dateModified: guide.updatedAt,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': articleCanonical,
+    },
+    keywords: guide.keywords?.join(', ') || '',
+    inLanguage: hreflangMap[locale] || locale,
+  };
+
+  const guideBreadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: labels.home,
+        item: `${baseUrl}/${locale}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: labels.guides,
+        item: `${baseUrl}/${locale}/guides`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: guide.title,
+        item: articleCanonical,
+      },
+    ],
+  };
+
   return (
     <LocalizedPageShell locale={locale}>
+      <Script
+        id={`article-schema-${slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        strategy="beforeInteractive"
+      />
+      <Script
+        id={`guide-breadcrumb-schema-${slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(guideBreadcrumbJsonLd) }}
+        strategy="beforeInteractive"
+      />
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
           items={[
@@ -149,7 +218,7 @@ export default async function GuideArticlePage({
           <div className="mt-5 relative w-full overflow-hidden rounded-16 aspect-[40/21] bg-[#E5F6FF] dark:bg-[#111827]">
             <Image
               src={guide.image}
-              alt={guide.title}
+              alt={`${guide.title} — ${getGuideCategoryLabel(locale, guide.category)}`}
               fill
               sizes="(max-width: 1024px) 100vw, 896px"
               priority

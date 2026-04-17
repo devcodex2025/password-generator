@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import SeoAccordion from '@/components/SeoAccordion';
 import PasswordBreachCheck from '@/components/PasswordBreachCheck';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import GuideLinksSection from '@/components/GuideLinksSection';
 import AdBanner from '@/components/Advertising/Adbanner';
 import AdBannerSecond from '@/components/Advertising/AdbannerSecond';
 import CookieConsent from '@/components/CookieConsent/CookieConsent';
@@ -57,6 +58,7 @@ export default function Page({ params }: PageProps) {
           <PasswordGenerator language={locale} />
           <WhyChooseUs language={locale} />
           <PasswordBreachCheck language={locale} />
+          <GuideLinksSection language={locale} />
           <Suspense fallback={null}>
             <AdBanner language={locale} isDarkMode={isDarkMode} />
           </Suspense>

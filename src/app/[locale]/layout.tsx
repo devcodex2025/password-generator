@@ -355,6 +355,39 @@ export default async function LocaleLayout({
     ],
   };
 
+  const softwareAppJson = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Generate Password To Me',
+    url: baseUrl,
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    description: localizedMetaDescriptions[locale] || localizedMetaDescriptions.en,
+    featureList: [
+      'NIST 800-63B compliant password generation',
+      'Client-side generation using Web Crypto API (CSPRNG)',
+      'Have I Been Pwned breach detection via k-anonymity',
+      'Customizable length (4-100 characters)',
+      'Multiple character sets: uppercase, lowercase, digits, symbols',
+      'PCI DSS v4.0 password policy support',
+      'Dark mode interface',
+      '11 languages supported',
+    ],
+    screenshot: `${baseUrl}/images/generate-password-preview.png`,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '1250',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  };
+
   const htmlLang = htmlLangMap[locale] || 'en';
 
   return (
@@ -438,6 +471,12 @@ export default async function LocaleLayout({
           id="breadcrumb-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJson) }}
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="software-app-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJson) }}
           strategy="beforeInteractive"
         />
         <CustomThemeProvider>

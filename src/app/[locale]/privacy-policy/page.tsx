@@ -4,6 +4,8 @@ import LocalizedPageShell from '@/components/LocalizedPageShell';
 import { getStaticPageCopy, STATIC_PAGE_LOCALES } from '@/lib/static-pages-i18n';
 
 const baseUrl = 'https://www.generatepasswordto.me';
+const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
+const hreflangMap: Record<string, string> = { ua: 'uk' };
 
 export const runtime = 'nodejs';
 export const revalidate = 3600;
@@ -15,11 +17,29 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const copy = getStaticPageCopy(locale);
+  const canonical = `${baseUrl}/${locale}/privacy-policy`;
   return {
     title: copy.privacyPolicy,
     description: copy.privacyIntro,
     alternates: {
-      canonical: `${baseUrl}/${locale}/privacy-policy`,
+      canonical,
+      languages: {
+        ...Object.fromEntries(
+          supportedLangs.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}/privacy-policy`])
+        ),
+        'x-default': `${baseUrl}/en/privacy-policy`,
+      },
+    },
+    openGraph: {
+      title: copy.privacyPolicy,
+      description: copy.privacyIntro,
+      url: canonical,
+      siteName: 'generatepasswordto.me',
+      type: 'website',
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }

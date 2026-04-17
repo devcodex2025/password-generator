@@ -35,9 +35,31 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: meta.description,
     alternates: {
       canonical,
-      languages: Object.fromEntries(
-        SUPPORTED_CONTENT_LANGUAGES.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}/guides`])
-      ),
+      languages: {
+        ...Object.fromEntries(
+          SUPPORTED_CONTENT_LANGUAGES.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}/guides`])
+        ),
+        'x-default': `${baseUrl}/en/guides`,
+      },
+    },
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: canonical,
+      siteName: 'generatepasswordto.me',
+      type: 'website',
+      images: [
+        {
+          url: '/images/generate-password-preview.png',
+          width: 1200,
+          height: 630,
+          alt: 'Password Security Guides',
+        },
+      ],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
@@ -70,7 +92,7 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
                   <div className="relative w-full overflow-hidden aspect-[16/7] bg-[#E5F6FF] dark:bg-[#111827]">
                     <Image
                       src={guide.image}
-                      alt={guide.title}
+                      alt={`${guide.title} — ${getGuideCategoryLabel(locale, guide.category)}`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       priority={index < 2}

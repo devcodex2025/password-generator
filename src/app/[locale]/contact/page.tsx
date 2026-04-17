@@ -6,6 +6,8 @@ import { getStaticPageCopy, STATIC_PAGE_LOCALES } from '@/lib/static-pages-i18n'
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const contactEmail = 'support@generatepasswordto.me';
+const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
+const hreflangMap: Record<string, string> = { ua: 'uk' };
 
 export const runtime = 'nodejs';
 export const revalidate = 3600;
@@ -17,11 +19,29 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const copy = getStaticPageCopy(locale);
+  const canonical = `${baseUrl}/${locale}/contact`;
   return {
     title: copy.contact,
     description: copy.contactIntro,
     alternates: {
-      canonical: `${baseUrl}/${locale}/contact`,
+      canonical,
+      languages: {
+        ...Object.fromEntries(
+          supportedLangs.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}/contact`])
+        ),
+        'x-default': `${baseUrl}/en/contact`,
+      },
+    },
+    openGraph: {
+      title: copy.contact,
+      description: copy.contactIntro,
+      url: canonical,
+      siteName: 'generatepasswordto.me',
+      type: 'website',
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }

@@ -302,9 +302,9 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       >
         {t('main_title')}
       </h1>
-      <h2 className="hero-subtitle text-center text-[20px] md:text-[22px] mx-2 mb-3 font-normal">
+      <p className="hero-subtitle text-center text-[20px] md:text-[22px] mx-2 mb-3 font-normal">
         {t('main_subtitle')}
-      </h2>
+      </p>
       <div
         className={`w-full lg:w-9/12 xl:w-9/12 2xl:w-9/12 flex flex-col ${isDarkMode ? 'bg-[#1c1c1c]' : 'bg-white'} drop-shadow-lg rounded-[48px] shadow p-[16px] md:p-[40px] relative`}
       >
