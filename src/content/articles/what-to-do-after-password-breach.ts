@@ -174,3 +174,147 @@ export const ua: LocalizedArticleContent = {
     },
   ],
 };
+
+export const es: LocalizedArticleContent = {
+  title: 'Qué hacer tras una filtración de contraseñas: guía paso a paso',
+  excerpt: 'Una guía de respuesta a incidentes para cuando tus contraseñas se ven comprometidas. Priorización, recuperación de cuentas, prevención y pasos legales.',
+  seoTitle: 'Qué hacer tras una filtración de contraseñas — Guía de respuesta 2026 | generatepasswordto.me',
+  seoDescription: 'Guía paso a paso para responder a una filtración de contraseñas. Cubre verificación, priorización de cuentas, recuperación, prevención futura y pasos legales.',
+  keywords: ['filtración de contraseñas qué hacer', 'respuesta a violación de contraseñas', 'contraseña comprometida', 'recuperación cuenta hackeada', 'guía respuesta incidente contraseñas', 'verificar filtración datos'],
+  sections: [
+    { heading: 'Cómo verificar que tus contraseñas fueron filtradas', paragraphs: ['Visita haveibeenpwned.com e introduce tu email. Troy Hunt mantiene más de 13 mil millones de cuentas filtradas. El sitio te dice qué servicios fueron comprometidos y qué datos se expusieron.', 'Señales de alerta incluyen: emails de restablecimiento no solicitados, inicios de sesión desde ubicaciones desconocidas, y transacciones no reconocidas.', 'Si usas un gestor de contraseñas como 1Password con Watchtower o Bitwarden con informes de filtración, activa la función de monitoreo.'] },
+    { heading: 'Priorización: qué cuentas asegurar primero', paragraphs: ['Email principal primero — es la llave maestra para restablecer otras cuentas. Cambia la contraseña inmediatamente y habilita MFA con TOTP o llave de hardware.', 'Cuentas financieras segundo — banca, inversiones, crypto, PayPal. Revisa transacciones recientes.', 'Luego cuentas profesionales y redes sociales. Cualquier cuenta donde reutilizaste la contraseña filtrada debe ser cambiada.'] },
+    { heading: 'Recuperación de cuentas paso a paso', paragraphs: ['Para cada cuenta comprometida: restablece con contraseña única de 16+ caracteres generada por un gestor, habilita MFA (FIDO2 > TOTP > SMS), revoca todas las sesiones activas, y revisa los registros de actividad.', 'Si el atacante cambió tu email de recuperación, usa los procedimientos de recuperación del servicio con verificación de identidad.', 'Revisa aplicaciones de terceros y permisos OAuth conectados a la cuenta comprometida. Revoca acceso sospechoso.'] },
+    { heading: 'Crear una base de seguridad más fuerte', paragraphs: ['Adopta un gestor de contraseñas si aún no usas uno. 1Password, Bitwarden o KeePass generan y almacenan contraseñas únicas para cada servicio.', 'Habilita MFA en todas las cuentas que lo soporten. Prioriza llaves FIDO2 (YubiKey) sobre TOTP (Authy) sobre SMS.', 'Nunca reutilices contraseñas. Cada cuenta debe tener una contraseña única generada aleatoriamente.'] },
+    { heading: 'Prevención a largo plazo', paragraphs: ['Configura alertas en Have I Been Pwned para tu email. Audita tu bóveda de contraseñas trimestralmente. Revisa regularmente los permisos OAuth.', 'Mantén todo el software actualizado. Aprende a reconocer ataques de phishing. Congela el crédito si se expusieron datos financieros.'], bullets: ['Suscribirse a alertas de HIBP', 'Auditar la bóveda trimestralmente', 'Revisar permisos OAuth regularmente', 'Actualizar todo el software', 'Aprender a detectar phishing', 'Congelar crédito si es necesario'] },
+    { heading: 'Denuncia y pasos legales', paragraphs: ['En la UE, reporta a tu autoridad de protección de datos bajo GDPR. Tienes derecho a ser informado sobre filtraciones y solicitar la eliminación de tus datos.', 'En EE.UU., reporta robo de identidad en identitytheft.gov para un plan de recuperación personalizado.', 'Documenta todo: guarda correos de filtración, capturas de actividad no autorizada, y registra todas tus acciones de respuesta.'] },
+  ],
+};
+
+export const fr: LocalizedArticleContent = {
+  title: 'Que faire après une fuite de mots de passe : guide étape par étape',
+  excerpt: 'Guide de réponse aux incidents lorsque vos mots de passe sont compromis. Priorisation, récupération de comptes, prévention et démarches légales.',
+  seoTitle: 'Que faire après une fuite de mots de passe — Guide de réponse 2026 | generatepasswordto.me',
+  seoDescription: 'Guide étape par étape pour répondre à une fuite de mots de passe. Vérification, priorisation, récupération, prévention et démarches légales.',
+  keywords: ['fuite mots de passe que faire', 'réponse violation mots de passe', 'mot de passe compromis', 'récupération compte piraté', 'guide réponse incident', 'vérifier fuite données'],
+  sections: [
+    { heading: 'Comment vérifier si vos mots de passe ont été divulgués', paragraphs: ['Visitez haveibeenpwned.com et entrez votre email. Troy Hunt maintient plus de 13 milliards de comptes compromis.', 'Les signaux d\'alarme incluent : emails de réinitialisation non sollicités, connexions depuis des emplacements inconnus, transactions non reconnues.', 'Si vous utilisez un gestionnaire comme 1Password avec Watchtower ou Bitwarden, activez la surveillance.'] },
+    { heading: 'Priorisation : quels comptes sécuriser en premier', paragraphs: ['Email principal d\'abord — c\'est la clé maîtresse. Changez le mot de passe et activez le MFA immédiatement.', 'Comptes financiers ensuite — banque, investissements, crypto, PayPal.', 'Puis comptes professionnels et réseaux sociaux. Tout compte où vous avez réutilisé le mot de passe compromis doit être changé.'] },
+    { heading: 'Récupération de comptes étape par étape', paragraphs: ['Pour chaque compte : réinitialisez avec un mot de passe unique de 16+ caractères, activez le MFA, révoquez les sessions actives, vérifiez les journaux d\'activité.', 'Si l\'attaquant a changé votre email de récupération, utilisez les procédures de vérification d\'identité du service.', 'Vérifiez les applications tierces et les permissions OAuth connectées au compte compromis.'] },
+    { heading: 'Créer une base de sécurité plus solide', paragraphs: ['Adoptez un gestionnaire de mots de passe. 1Password, Bitwarden ou KeePass génèrent et stockent des mots de passe uniques.', 'Activez le MFA partout. Priorisez les clés FIDO2 (YubiKey) sur TOTP (Authy) sur SMS.', 'Ne réutilisez jamais de mots de passe.'] },
+    { heading: 'Prévention à long terme', paragraphs: ['Configurez des alertes HIBP. Auditez votre coffre-fort trimestriellement. Vérifiez régulièrement les permissions OAuth.', 'Maintenez tous les logiciels à jour. Apprenez à reconnaître le phishing.'], bullets: ['S\'abonner aux alertes HIBP', 'Auditer le coffre-fort trimestriellement', 'Vérifier les permissions OAuth', 'Mettre à jour tous les logiciels', 'Apprendre à détecter le phishing', 'Geler le crédit si nécessaire'] },
+    { heading: 'Signalement et démarches légales', paragraphs: ['En France, signalez à la CNIL sous le RGPD. Vous avez droit à l\'information et à la suppression de vos données.', 'Aux États-Unis, signalez sur identitytheft.gov pour un plan personnalisé.', 'Documentez tout : conservez les emails de notification, captures d\'écran d\'activité non autorisée.'] },
+  ],
+};
+
+export const de: LocalizedArticleContent = {
+  title: 'Was tun nach einem Passwort-Leak: Schritt-für-Schritt-Anleitung',
+  excerpt: 'Incident-Response-Leitfaden wenn Ihre Passwörter kompromittiert wurden. Priorisierung, Kontowiederherstellung, Prävention und rechtliche Schritte.',
+  seoTitle: 'Was tun nach Passwort-Leak — Reaktionsleitfaden 2026 | generatepasswordto.me',
+  seoDescription: 'Schritt-für-Schritt-Anleitung nach einem Passwort-Leak. Verifizierung, Priorisierung, Wiederherstellung, Prävention und rechtliche Schritte.',
+  keywords: ['Passwort-Leak was tun', 'Passwort-Verletzung Reaktion', 'Passwort kompromittiert', 'gehacktes Konto wiederherstellen', 'Incident-Response Passwörter', 'Datenleck überprüfen'],
+  sections: [
+    { heading: 'So überprüfen Sie, ob Ihre Passwörter geleakt wurden', paragraphs: ['Besuchen Sie haveibeenpwned.com und geben Sie Ihre E-Mail ein. Troy Hunt pflegt über 13 Milliarden geleakte Konten.', 'Warnsignale: unaufgeforderte Reset-E-Mails, Anmeldungen von unbekannten Standorten, nicht erkannte Transaktionen.', 'Wenn Sie einen Passwort-Manager wie 1Password mit Watchtower oder Bitwarden nutzen, aktivieren Sie die Überwachungsfunktion.'] },
+    { heading: 'Priorisierung: Welche Konten zuerst sichern', paragraphs: ['Haupt-E-Mail zuerst — sie ist der Generalschlüssel. Passwort sofort ändern und MFA aktivieren.', 'Finanzkonten als zweites — Bank, Investitionen, Crypto, PayPal.', 'Dann berufliche Konten und soziale Medien. Jedes Konto mit wiederverwendetem Passwort muss geändert werden.'] },
+    { heading: 'Schritt-für-Schritt Kontowiederherstellung', paragraphs: ['Für jedes Konto: Zurücksetzen mit einzigartigem 16+ Zeichen Passwort, MFA aktivieren, aktive Sitzungen widerrufen, Aktivitätsprotokolle prüfen.', 'Wenn der Angreifer Ihre Wiederherstellungs-E-Mail geändert hat, nutzen Sie die Identitätsverifizierung des Dienstes.', 'Überprüfen Sie verbundene Drittanbieter-Apps und OAuth-Berechtigungen.'] },
+    { heading: 'Eine stärkere Sicherheitsbasis schaffen', paragraphs: ['Nutzen Sie einen Passwort-Manager: 1Password, Bitwarden oder KeePass.', 'Aktivieren Sie MFA überall. Priorität: FIDO2-Schlüssel (YubiKey) vor TOTP (Authy) vor SMS.', 'Verwenden Sie nie Passwörter wieder.'] },
+    { heading: 'Langfristige Prävention', paragraphs: ['Richten Sie HIBP-Benachrichtigungen ein. Prüfen Sie Ihren Tresor vierteljährlich. Überprüfen Sie OAuth-Berechtigungen regelmäßig.', 'Halten Sie Software aktuell. Lernen Sie Phishing zu erkennen.'], bullets: ['HIBP-Benachrichtigungen einrichten', 'Tresor vierteljährlich prüfen', 'OAuth-Berechtigungen überprüfen', 'Software aktuell halten', 'Phishing erkennen lernen', 'Kredit einfrieren bei Bedarf'] },
+    { heading: 'Meldung und rechtliche Schritte', paragraphs: ['In der EU melden Sie unter DSGVO bei Ihrer Datenschutzbehörde. Sie haben Recht auf Information und Datenlöschung.', 'In den USA: identitytheft.gov für einen personalisierten Wiederherstellungsplan.', 'Dokumentieren Sie alles: Benachrichtigungen, Screenshots, Zeitstempel Ihrer Maßnahmen.'] },
+  ],
+};
+
+export const it: LocalizedArticleContent = {
+  title: 'Cosa fare dopo una violazione delle password: guida passo-passo',
+  excerpt: 'Guida di risposta agli incidenti quando le tue password vengono compromesse. Prioritizzazione, recupero account, prevenzione e passi legali.',
+  seoTitle: 'Cosa fare dopo una violazione password — Guida di risposta 2026 | generatepasswordto.me',
+  seoDescription: 'Guida passo-passo per rispondere a una violazione delle password. Verifica, prioritizzazione, recupero, prevenzione e passi legali.',
+  keywords: ['violazione password cosa fare', 'risposta violazione password', 'password compromessa', 'recupero account hackerato', 'guida risposta incidente', 'verificare violazione dati'],
+  sections: [
+    { heading: 'Come verificare se le tue password sono state violate', paragraphs: ['Visita haveibeenpwned.com e inserisci la tua email. Troy Hunt mantiene oltre 13 miliardi di account compromessi.', 'Segnali di allarme: email di reset non richieste, accessi da località sconosciute, transazioni non riconosciute.', 'Se usi un gestore come 1Password con Watchtower o Bitwarden, attiva il monitoraggio.'] },
+    { heading: 'Prioritizzazione: quali account proteggere prima', paragraphs: ['Email principale prima — è la chiave maestra. Cambia la password e attiva MFA immediatamente.', 'Account finanziari secondo — banca, investimenti, crypto, PayPal.', 'Poi account professionali e social media. Ogni account con password riutilizzata deve essere cambiato.'] },
+    { heading: 'Recupero account passo-passo', paragraphs: ['Per ogni account: reimposta con password unica di 16+ caratteri, attiva MFA, revoca sessioni attive, controlla i log di attività.', 'Se l\'attaccante ha cambiato la tua email di recupero, usa la verifica di identità del servizio.', 'Controlla le app di terze parti e i permessi OAuth collegati.'] },
+    { heading: 'Creare una base di sicurezza più forte', paragraphs: ['Adotta un gestore di password: 1Password, Bitwarden o KeePass.', 'Attiva MFA ovunque. Priorità: chiavi FIDO2 (YubiKey) su TOTP (Authy) su SMS.', 'Non riutilizzare mai le password.'] },
+    { heading: 'Prevenzione a lungo termine', paragraphs: ['Configura avvisi HIBP. Verifica il vault trimestralmente. Controlla regolarmente i permessi OAuth.', 'Mantieni il software aggiornato. Impara a riconoscere il phishing.'], bullets: ['Iscriversi agli avvisi HIBP', 'Verificare il vault trimestralmente', 'Controllare i permessi OAuth', 'Aggiornare il software', 'Riconoscere il phishing', 'Congelare il credito se necessario'] },
+    { heading: 'Segnalazione e passi legali', paragraphs: ['Nell\'UE, segnala al Garante Privacy sotto il GDPR. Hai diritto a essere informato e a richiedere la cancellazione dei dati.', 'Negli USA: identitytheft.gov per un piano personalizzato.', 'Documenta tutto: conserva email di notifica, screenshot di attività non autorizzata.'] },
+  ],
+};
+
+export const pt: LocalizedArticleContent = {
+  title: 'O que fazer após um vazamento de senhas: guia passo a passo',
+  excerpt: 'Guia de resposta a incidentes quando suas senhas são comprometidas. Priorização, recuperação de contas, prevenção e passos legais.',
+  seoTitle: 'O que fazer após vazamento de senhas — Guia de resposta 2026 | generatepasswordto.me',
+  seoDescription: 'Guia passo a passo para responder a um vazamento de senhas. Verificação, priorização, recuperação, prevenção e passos legais.',
+  keywords: ['vazamento senhas o que fazer', 'resposta violação senhas', 'senha comprometida', 'recuperação conta hackeada', 'guia resposta incidente', 'verificar vazamento dados'],
+  sections: [
+    { heading: 'Como verificar se suas senhas vazaram', paragraphs: ['Visite haveibeenpwned.com e insira seu email. Troy Hunt mantém mais de 13 bilhões de contas comprometidas.', 'Sinais de alerta: emails de reset não solicitados, logins de locais desconhecidos, transações não reconhecidas.', 'Se usa um gerenciador como 1Password com Watchtower ou Bitwarden, ative o monitoramento.'] },
+    { heading: 'Priorização: quais contas proteger primeiro', paragraphs: ['Email principal primeiro — é a chave mestra. Mude a senha e ative MFA imediatamente.', 'Contas financeiras em segundo — banco, investimentos, crypto, PayPal.', 'Depois contas profissionais e redes sociais. Toda conta com senha reutilizada deve ser alterada.'] },
+    { heading: 'Recuperação de contas passo a passo', paragraphs: ['Para cada conta: redefina com senha única de 16+ caracteres, ative MFA, revogue sessões ativas, verifique logs de atividade.', 'Se o atacante mudou seu email de recuperação, use a verificação de identidade do serviço.', 'Verifique apps de terceiros e permissões OAuth conectadas.'] },
+    { heading: 'Criar uma base de segurança mais forte', paragraphs: ['Adote um gerenciador de senhas: 1Password, Bitwarden ou KeePass.', 'Ative MFA em todos os lugares. Prioridade: chaves FIDO2 (YubiKey) sobre TOTP (Authy) sobre SMS.', 'Nunca reutilize senhas.'] },
+    { heading: 'Prevenção a longo prazo', paragraphs: ['Configure alertas HIBP. Audite seu cofre trimestralmente. Revise permissões OAuth regularmente.', 'Mantenha o software atualizado. Aprenda a reconhecer phishing.'], bullets: ['Assinar alertas HIBP', 'Auditar cofre trimestralmente', 'Revisar permissões OAuth', 'Manter software atualizado', 'Reconhecer phishing', 'Congelar crédito se necessário'] },
+    { heading: 'Denúncia e passos legais', paragraphs: ['Na UE, reporte à autoridade de proteção de dados sob GDPR. Você tem direito à informação e exclusão de dados.', 'Nos EUA: identitytheft.gov para um plano personalizado.', 'Documente tudo: guarde emails de notificação, capturas de atividade não autorizada.'] },
+  ],
+};
+
+export const ru: LocalizedArticleContent = {
+  title: 'Что делать после утечки паролей: пошаговое руководство',
+  excerpt: 'Руководство по реагированию на инциденты при компрометации паролей. Приоритизация, восстановление аккаунтов, предотвращение и юридические шаги.',
+  seoTitle: 'Что делать после утечки паролей — Руководство по реагированию 2026 | generatepasswordto.me',
+  seoDescription: 'Пошаговое руководство по реагированию на утечку паролей. Проверка, приоритизация, восстановление, предотвращение и юридические шаги.',
+  keywords: ['утечка паролей что делать', 'реагирование на взлом паролей', 'пароль скомпрометирован', 'восстановление взломанного аккаунта', 'руководство реагирование на инцидент', 'проверить утечку данных'],
+  sections: [
+    { heading: 'Как проверить, были ли ваши пароли скомпрометированы', paragraphs: ['Посетите haveibeenpwned.com и введите email. Трой Хант поддерживает базу из более чем 13 миллиардов скомпрометированных аккаунтов.', 'Тревожные сигналы: незапрошенные письма о сбросе пароля, входы из неизвестных мест, непризнанные транзакции.', 'Если вы используете менеджер паролей с мониторингом (1Password Watchtower, Bitwarden), включите отслеживание.'] },
+    { heading: 'Приоритизация: какие аккаунты защитить первыми', paragraphs: ['Основная почта первой — это мастер-ключ. Немедленно смените пароль и включите MFA.', 'Финансовые аккаунты вторыми — банк, инвестиции, крипто, PayPal.', 'Затем рабочие аккаунты и соцсети. Любой аккаунт с повторно использованным паролем нужно изменить.'] },
+    { heading: 'Пошаговое восстановление аккаунтов', paragraphs: ['Для каждого аккаунта: сбросьте с уникальным паролем 16+ символов, включите MFA, отзовите все активные сессии, проверьте журналы активности.', 'Если злоумышленник изменил email восстановления, используйте процедуру верификации личности сервиса.', 'Проверьте подключённые приложения и OAuth-разрешения.'] },
+    { heading: 'Создание более прочной базы безопасности', paragraphs: ['Начните использовать менеджер паролей: 1Password, Bitwarden или KeePass.', 'Включите MFA везде. Приоритет: FIDO2-ключи (YubiKey) → TOTP (Authy) → SMS.', 'Никогда не используйте пароли повторно.'] },
+    { heading: 'Долгосрочная профилактика', paragraphs: ['Настройте оповещения HIBP. Проводите аудит хранилища ежеквартально. Регулярно проверяйте OAuth-разрешения.', 'Обновляйте программное обеспечение. Научитесь распознавать фишинг.'], bullets: ['Подписаться на уведомления HIBP', 'Аудит хранилища ежеквартально', 'Проверять OAuth-разрешения', 'Обновлять ПО', 'Распознавать фишинг', 'Заморозить кредит при необходимости'] },
+    { heading: 'Заявления и юридические шаги', paragraphs: ['В ЕС — сообщите в орган по защите данных по GDPR. Вы имеете право на информирование и удаление данных.', 'В США: identitytheft.gov для персонализированного плана восстановления.', 'Документируйте всё: сохраняйте уведомления, скриншоты несанкционированной активности.'] },
+  ],
+};
+
+export const zh: LocalizedArticleContent = {
+  title: '密码泄露后该怎么办：分步指南',
+  excerpt: '密码被泄露时的事件响应指南。账户优先级、恢复步骤、预防措施和法律步骤。',
+  seoTitle: '密码泄露后该怎么办 — 2026年响应指南 | generatepasswordto.me',
+  seoDescription: '密码泄露后的分步响应指南。涵盖验证、账户优先级、恢复、预防和法律步骤。',
+  keywords: ['密码泄露怎么办', '密码泄露响应', '密码被盗', '被黑账户恢复', '事件响应指南', '检查数据泄露'],
+  sections: [
+    { heading: '如何验证密码是否已泄露', paragraphs: ['访问haveibeenpwned.com输入邮箱。Troy Hunt维护着超过130亿个泄露账户的数据库。', '警告信号：未请求的重置邮件、来自未知位置的登录、未识别的交易。', '如果使用1Password的Watchtower或Bitwarden的泄露报告，请启用监控功能。'] },
+    { heading: '优先级：先保护哪些账户', paragraphs: ['首先是主邮箱——它是万能钥匙。立即更改密码并启用MFA。', '其次是金融账户——银行、投资、加密货币、PayPal。', '然后是工作账户和社交媒体。任何重复使用泄露密码的账户都必须更改。'] },
+    { heading: '分步账户恢复', paragraphs: ['对每个账户：使用16+字符的唯一密码重置，启用MFA，撤销所有活跃会话，检查活动日志。', '如果攻击者更改了恢复邮箱，请使用服务的身份验证程序。', '检查连接的第三方应用和OAuth权限。'] },
+    { heading: '建立更强的安全基础', paragraphs: ['采用密码管理器：1Password、Bitwarden或KeePass。', '在所有地方启用MFA。优先级：FIDO2密钥（YubiKey）> TOTP（Authy）> SMS。', '永远不要重复使用密码。'] },
+    { heading: '长期预防', paragraphs: ['设置HIBP警报。每季度审计密码库。定期检查OAuth权限。', '保持软件更新。学会识别网络钓鱼。'], bullets: ['订阅HIBP警报', '每季度审计密码库', '检查OAuth权限', '更新所有软件', '学会识别钓鱼', '必要时冻结信用'] },
+    { heading: '举报和法律步骤', paragraphs: ['在欧盟，根据GDPR向数据保护机构举报。您有权被告知和删除数据。', '在美国：访问identitytheft.gov获取个性化恢复计划。', '记录一切：保存泄露通知邮件、未授权活动截图。'] },
+  ],
+};
+
+export const ja: LocalizedArticleContent = {
+  title: 'パスワード漏洩後にすべきこと：ステップバイステップガイド',
+  excerpt: 'パスワードが侵害された場合のインシデント対応ガイド。優先順位付け、アカウント復旧、予防、法的手順を解説。',
+  seoTitle: 'パスワード漏洩後の対処法 — 2026年対応ガイド | generatepasswordto.me',
+  seoDescription: 'パスワード漏洩への段階的対応ガイド。検証、優先順位付け、復旧、予防、法的手順を網羅。',
+  keywords: ['パスワード漏洩対処法', 'パスワード侵害対応', 'パスワード流出', 'ハッキングされたアカウント復旧', 'インシデント対応ガイド', 'データ漏洩確認'],
+  sections: [
+    { heading: 'パスワードが漏洩したか確認する方法', paragraphs: ['haveibeenpwned.comでメールアドレスを入力。Troy Huntが130億以上の漏洩アカウントを管理しています。', '警告サイン：未承認のリセットメール、不明な場所からのログイン、不明な取引。', '1PasswordのWatchtowerやBitwardenの漏洩レポートを使用している場合は監視を有効にしてください。'] },
+    { heading: '優先順位：どのアカウントを最初に保護するか', paragraphs: ['メインメールが最優先——マスターキーです。パスワードを即座に変更しMFAを有効に。', '金融アカウントが次——銀行、投資、暗号資産、PayPal。', '次に仕事用アカウントとSNS。漏洩パスワードを再利用しているアカウントは全て変更が必要。'] },
+    { heading: 'ステップバイステップアカウント復旧', paragraphs: ['各アカウント：16+文字のユニークなパスワードでリセット、MFA有効化、全アクティブセッション無効化、アクティビティログ確認。', '攻撃者が復旧メールを変更した場合、サービスの本人確認手続きを使用。', '接続されたサードパーティアプリとOAuth権限を確認。'] },
+    { heading: 'より強固なセキュリティ基盤の構築', paragraphs: ['パスワードマネージャーを導入：1Password、Bitwarden、またはKeePass。', 'すべてでMFAを有効化。優先度：FIDO2キー（YubiKey）> TOTP（Authy）> SMS。', 'パスワードの再利用は絶対禁止。'] },
+    { heading: '長期的な予防', paragraphs: ['HIBP通知を設定。四半期ごとにボールトを監査。OAuth権限を定期確認。', 'ソフトウェアを最新に保つ。フィッシングの見分け方を学ぶ。'], bullets: ['HIBP通知に登録', '四半期ボールト監査', 'OAuth権限の確認', 'ソフトウェア更新', 'フィッシング検知を学ぶ', '必要に応じて信用凍結'] },
+    { heading: '報告と法的手順', paragraphs: ['EUではGDPRに基づきデータ保護当局に報告。情報を受ける権利とデータ削除を要求する権利があります。', '米国：identitytheft.govで個別復旧プランを取得。', 'すべてを記録：漏洩通知メール、不正アクティビティのスクリーンショット。'] },
+  ],
+};
+
+export const pl: LocalizedArticleContent = {
+  title: 'Co robić po wycieku haseł: przewodnik krok po kroku',
+  excerpt: 'Przewodnik reagowania na incydenty gdy hasła zostały skompromitowane. Priorytetyzacja, odzyskiwanie kont, zapobieganie i kroki prawne.',
+  seoTitle: 'Co robić po wycieku haseł — Przewodnik reagowania 2026 | generatepasswordto.me',
+  seoDescription: 'Przewodnik krok po kroku reagowania na wyciek haseł. Weryfikacja, priorytetyzacja, odzyskiwanie, zapobieganie i kroki prawne.',
+  keywords: ['wyciek haseł co robić', 'reakcja na naruszenie haseł', 'hasło skompromitowane', 'odzyskiwanie zhakowanego konta', 'przewodnik reagowania na incydent', 'sprawdzić wyciek danych'],
+  sections: [
+    { heading: 'Jak sprawdzić czy hasła wyciekły', paragraphs: ['Odwiedź haveibeenpwned.com i wpisz email. Troy Hunt utrzymuje bazę ponad 13 miliardów skompromitowanych kont.', 'Sygnały ostrzegawcze: niechciane emaile resetujące, logowania z nieznanych lokalizacji, nierozpoznane transakcje.', 'Jeśli używasz menedżera jak 1Password z Watchtower lub Bitwarden, włącz monitoring.'] },
+    { heading: 'Priorytetyzacja: które konta zabezpieczyć najpierw', paragraphs: ['Główny email najpierw — to klucz główny. Natychmiast zmień hasło i włącz MFA.', 'Konta finansowe drugie — bank, inwestycje, krypto, PayPal.', 'Potem konta zawodowe i media społecznościowe. Każde konto z powtórzonym hasłem musi być zmienione.'] },
+    { heading: 'Odzyskiwanie kont krok po kroku', paragraphs: ['Dla każdego konta: zresetuj z unikalnym hasłem 16+ znaków, włącz MFA, unieważnij sesje, sprawdź logi aktywności.', 'Jeśli atakujący zmienił email odzyskiwania, użyj procedury weryfikacji tożsamości.', 'Sprawdź połączone aplikacje i uprawnienia OAuth.'] },
+    { heading: 'Budowanie silniejszej bazy bezpieczeństwa', paragraphs: ['Zaadoptuj menedżera haseł: 1Password, Bitwarden lub KeePass.', 'Włącz MFA wszędzie. Priorytet: klucze FIDO2 (YubiKey) > TOTP (Authy) > SMS.', 'Nigdy nie używaj haseł ponownie.'] },
+    { heading: 'Długoterminowe zapobieganie', paragraphs: ['Ustaw alerty HIBP. Audytuj sejf kwartalnie. Regularnie sprawdzaj uprawnienia OAuth.', 'Aktualizuj oprogramowanie. Naucz się rozpoznawać phishing.'], bullets: ['Subskrybować alerty HIBP', 'Audyt sejfu kwartalnie', 'Sprawdzać uprawnienia OAuth', 'Aktualizować oprogramowanie', 'Rozpoznawać phishing', 'Zamrozić kredyt w razie potrzeby'] },
+    { heading: 'Zgłaszanie i kroki prawne', paragraphs: ['W UE zgłoś do organu ochrony danych pod RODO. Masz prawo do informacji i usunięcia danych.', 'W USA: identitytheft.gov dla spersonalizowanego planu.', 'Dokumentuj wszystko: zachowaj emaile powiadomień, zrzuty ekranu nieautoryzowanej aktywności.'] },
+  ],
+};
