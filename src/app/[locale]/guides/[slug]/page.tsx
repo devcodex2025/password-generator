@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
-import Script from 'next/script';
+
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -190,17 +190,15 @@ export default async function GuideArticlePage({
 
   return (
     <LocalizedPageShell locale={locale}>
-      <Script
+      <script
         id={`article-schema-${slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-        strategy="beforeInteractive"
       />
-      <Script
+      <script
         id={`guide-breadcrumb-schema-${slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(guideBreadcrumbJsonLd) }}
-        strategy="beforeInteractive"
       />
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
