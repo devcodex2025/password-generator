@@ -211,3 +211,165 @@ export const ua: LocalizedArticleContent = {
     },
   ],
 };
+
+export const es: LocalizedArticleContent = {
+  title: 'Plantilla de política de contraseñas para equipos: marco listo para usar',
+  excerpt: 'Una plantilla de política de contraseñas lista para copiar basada en NIST 800-63B y PCI DSS v4.0. Cubre gestores de contraseñas, MFA, rotación, respuesta a incidentes y capacitación.',
+  seoTitle: 'Plantilla de política de contraseñas para equipos — Marco NIST/PCI DSS | generatepasswordto.me',
+  seoDescription: 'Plantilla de política de contraseñas descargable para equipos. Basada en NIST 800-63B y PCI DSS v4.0 con secciones sobre gestores, MFA, rotación e incidentes.',
+  keywords: ['plantilla política contraseñas', 'política contraseñas equipo', 'plantilla seguridad contraseñas', 'política contraseñas NIST', 'plantilla contraseñas PCI DSS', 'política seguridad corporativa'],
+  sections: [
+    { heading: 'Por qué tu equipo necesita una política de contraseñas formal', paragraphs: ['El costo promedio de una brecha por credenciales comprometidas es de $4.88 millones (IBM 2024). Una política formal reduce este riesgo con expectativas claras.', 'Esta plantilla se basa en NIST 800-63B y PCI DSS v4.0.', 'Está diseñada para equipos de 5 a 500 personas con acceso a datos de clientes, financieros o propiedad intelectual.'] },
+    { heading: 'Sección 1: Requisitos de contraseñas', paragraphs: ['Contraseñas de al menos 16 caracteres generadas por el generador del gestor. No se permiten contraseñas creadas por humanos para cuentas laborales.', 'Los sistemas deben aceptar hasta 64 caracteres y todos los caracteres Unicode. Las contraseñas se verifican contra la base HIBP.', 'La contraseña maestra debe ser una frase de al menos 6 palabras aleatorias.'] },
+    { heading: 'Sección 2: Requisitos del gestor de contraseñas', paragraphs: ['Todos deben usar el gestor aprobado con cifrado AES-256 o XChaCha20 y arquitectura zero-knowledge.', 'Opciones recomendadas: 1Password Business, Bitwarden Teams, Dashlane Business.', 'Cada miembro genera contraseñas únicas de mínimo 16 caracteres. La reutilización está prohibida.'] },
+    { heading: 'Sección 3: Política MFA', paragraphs: ['MFA obligatorio para todas las cuentas laborales sin excepciones. Debe habilitarse dentro de 24 horas de creación.', 'Métodos aprobados por prioridad: FIDO2/WebAuthn (YubiKey, Titan); TOTP (Google Authenticator, Authy); Push del gestor; SMS (solo si no hay alternativa).', 'Empleados con acceso a producción deben usar llaves de hardware. La organización proporciona dos llaves por empleado.'] },
+    { heading: 'Sección 4: Rotación y ciclo de vida', paragraphs: ['Cuentas estándar: NO se rotan por calendario (NIST 800-63B). Solo se cambian ante evidencia de compromiso.', 'Cuentas administrativas: rotación cada 180 días y ante sospecha de compromiso. Mínimo 24 caracteres.', 'Cuentas de servicio y API: rotación cada 90 días vía gestión de secretos (HashiCorp Vault, AWS Secrets Manager).', 'Al salir un empleado: todas las credenciales rotadas o revocadas en 4 horas.'] },
+    { heading: 'Sección 5: Respuesta a incidentes', paragraphs: ['Inmediato (30 min): deshabilitar cuenta, rotar credenciales, revisar logs.', 'Corto plazo (24h): determinar alcance, revisar actividad 30 días, rotar cuentas con contraseña reutilizada, notificar.', 'Post-incidente (7 días): análisis de causa raíz, actualizar política, capacitación dirigida, documentar.'] },
+    { heading: 'Sección 6: Capacitación y cumplimiento', paragraphs: ['Capacitación en la primera semana y anualmente. Cubre: uso del gestor, creación de frases, detección de phishing, manejo de MFA, reporte de incidentes.', 'Auditorías trimestrales del panel de salud del gestor. Métricas: unicidad, longitud, filtraciones, adopción MFA.', 'Violaciones: primera — capacitación adicional; segunda — amonestación formal; tercera — acceso restringido.'], bullets: ['Capacitación en primera semana + actualización anual', 'Auditorías trimestrales de salud', 'Métricas: unicidad, longitud, filtraciones, MFA', 'Disciplina progresiva', 'Acción inmediata por violaciones intencionales', 'Documentar toda capacitación'] },
+    { heading: 'Implementación de esta plantilla', paragraphs: ['Obtener apoyo ejecutivo presentando el costo de brechas ($4.88M) vs suscripción al gestor.', 'Elegir y desplegar el gestor antes de anunciar la política. Preconfigurar bóvedas, importar credenciales.', 'Anunciar con período de gracia (30 días). Sesiones de ayuda con soporte IT.', 'Revisar y actualizar anualmente.'] },
+  ],
+};
+
+export const fr: LocalizedArticleContent = {
+  title: 'Modèle de politique de mots de passe d\'équipe : cadre prêt à l\'emploi',
+  excerpt: 'Un modèle de politique de mots de passe basé sur NIST 800-63B et PCI DSS v4.0. Couvre gestionnaires, MFA, rotation, réponse aux incidents et formation.',
+  seoTitle: 'Modèle politique mots de passe équipe — Cadre NIST/PCI DSS | generatepasswordto.me',
+  seoDescription: 'Modèle téléchargeable de politique mots de passe. Basé sur NIST 800-63B et PCI DSS v4.0 avec sections gestionnaires, MFA, rotation et incidents.',
+  keywords: ['modèle politique mots de passe', 'politique mots de passe équipe', 'modèle sécurité mots de passe', 'politique NIST mots de passe', 'modèle PCI DSS', 'politique sécurité entreprise'],
+  sections: [
+    { heading: 'Pourquoi votre équipe a besoin d\'une politique formelle', paragraphs: ['Le coût moyen d\'une brèche par identifiants compromis est de 4,88 M$ (IBM 2024).', 'Ce modèle est basé sur NIST 800-63B et PCI DSS v4.0.', 'Conçu pour des équipes de 5 à 500 personnes.'] },
+    { heading: 'Section 1 : Exigences de mots de passe', paragraphs: ['Minimum 16 caractères générés par le gestionnaire. Pas de mots de passe créés manuellement.', 'Les systèmes doivent accepter jusqu\'à 64 caractères. Vérification contre HIBP.', 'Le mot de passe maître doit être une phrase de 6+ mots aléatoires.'] },
+    { heading: 'Section 2 : Gestionnaire de mots de passe', paragraphs: ['Tous doivent utiliser le gestionnaire approuvé avec chiffrement AES-256 ou XChaCha20.', 'Options : 1Password Business, Bitwarden Teams, Dashlane Business.', 'Mots de passe uniques de 16+ caractères. La réutilisation est interdite.'] },
+    { heading: 'Section 3 : Politique MFA', paragraphs: ['MFA obligatoire sans exception. Activation sous 24h.', 'Par priorité : FIDO2/WebAuthn ; TOTP ; Push ; SMS (dernier recours).', 'Clés matérielles obligatoires pour l\'accès production. Deux clés par employé qualifié.'] },
+    { heading: 'Section 4 : Rotation et cycle de vie', paragraphs: ['Comptes standards : PAS de rotation calendaire (NIST). Changement uniquement sur preuve de compromission.', 'Comptes admin : rotation tous les 180 jours. Minimum 24 caractères.', 'Comptes de service : rotation tous les 90 jours via gestion de secrets.', 'Départ employé : rotation de toutes les informations d\'identification sous 4 heures.'] },
+    { heading: 'Section 5 : Réponse aux incidents', paragraphs: ['Immédiat (30 min) : désactiver, rotation, vérifier les logs.', 'Court terme (24h) : déterminer la portée, examiner 30 jours d\'activité.', 'Post-incident (7 jours) : analyse des causes, mise à jour politique.'] },
+    { heading: 'Section 6 : Formation et conformité', paragraphs: ['Formation première semaine + annuellement.', 'Audits trimestriels. Métriques : unicité, longueur, fuites, adoption MFA.', 'Violations : avertissement, réprimande, restriction d\'accès.'], bullets: ['Formation première semaine + annuelle', 'Audits trimestriels', 'Métriques suivies', 'Discipline progressive', 'Action immédiate si intentionnel', 'Documentation complète'] },
+    { heading: 'Mise en œuvre', paragraphs: ['Obtenir l\'appui de la direction.', 'Déployer le gestionnaire avant d\'annoncer la politique.', 'Annoncer avec période de grâce de 30 jours.', 'Réviser annuellement.'] },
+  ],
+};
+
+export const de: LocalizedArticleContent = {
+  title: 'Team-Passwortrichtlinie: einsatzbereites Framework',
+  excerpt: 'Eine kopierfähige Passwortrichtlinie basierend auf NIST 800-63B und PCI DSS v4.0. Umfasst Passwort-Manager, MFA, Rotation, Incident Response und Schulung.',
+  seoTitle: 'Team-Passwortrichtlinie — NIST/PCI DSS Framework | generatepasswordto.me',
+  seoDescription: 'Herunterladbare Passwortrichtlinie für Teams. Basierend auf NIST 800-63B und PCI DSS v4.0.',
+  keywords: ['Passwortrichtlinie Vorlage', 'Team Passwortrichtlinie', 'Passwort-Sicherheitsvorlage', 'NIST Passwortrichtlinie', 'PCI DSS Vorlage', 'Unternehmenssicherheitsrichtlinie'],
+  sections: [
+    { heading: 'Warum Ihr Team eine formale Richtlinie braucht', paragraphs: ['Durchschnittliche Kosten eines Credential-Breaches: $4,88 Mio. (IBM 2024).', 'Diese Vorlage basiert auf NIST 800-63B und PCI DSS v4.0.', 'Für Teams von 5-500 Personen.'] },
+    { heading: 'Abschnitt 1: Passwortanforderungen', paragraphs: ['Mindestens 16 Zeichen, vom Manager generiert. Keine manuell erstellten Passwörter.', 'Systeme müssen bis 64 Zeichen akzeptieren. HIBP-Prüfung.', 'Master-Passwort: Passphrase mit 6+ zufälligen Wörtern.'] },
+    { heading: 'Abschnitt 2: Passwort-Manager', paragraphs: ['Alle nutzen den genehmigten Manager mit AES-256 oder XChaCha20.', '1Password Business, Bitwarden Teams, Dashlane Business.', 'Einzigartige 16+ Zeichen Passwörter. Wiederverwendung verboten.'] },
+    { heading: 'Abschnitt 3: MFA-Richtlinie', paragraphs: ['MFA für alle Konten ohne Ausnahme. Innerhalb 24h aktivieren.', 'Priorität: FIDO2/WebAuthn; TOTP; Push; SMS (Notfall).', 'Hardware-Schlüssel für Produktionszugang. Zwei Schlüssel pro Mitarbeiter.'] },
+    { heading: 'Abschnitt 4: Rotation und Lebenszyklus', paragraphs: ['Standardkonten: KEINE kalendarische Rotation (NIST).', 'Admin-Konten: alle 180 Tage. Minimum 24 Zeichen.', 'Service-Konten: alle 90 Tage über Secrets-Management.', 'Mitarbeiteraustritt: alle Credentials innerhalb 4 Stunden rotieren.'] },
+    { heading: 'Abschnitt 5: Incident Response', paragraphs: ['Sofort (30 Min): Konto deaktivieren, rotieren, Logs prüfen.', 'Kurzfristig (24h): Umfang bestimmen, 30 Tage Aktivität prüfen.', 'Nach Incident (7 Tage): Ursachenanalyse, Richtlinie aktualisieren.'] },
+    { heading: 'Abschnitt 6: Schulung und Compliance', paragraphs: ['Schulung in der ersten Woche + jährlich.', 'Vierteljährliche Audits.', 'Verstöße: Warnung, Abmahnung, Zugangsbeschränkung.'], bullets: ['Schulung erste Woche + jährlich', 'Vierteljährliche Audits', 'Metriken verfolgen', 'Progressive Disziplin', 'Sofortige Maßnahmen bei vorsätzlichen Verstößen', 'Vollständige Dokumentation'] },
+    { heading: 'Implementierung', paragraphs: ['Führungsunterstützung gewinnen.', 'Manager vor Richtlinienankündigung einrichten.', '30-Tage-Übergangsfrist.', 'Jährliche Überprüfung.'] },
+  ],
+};
+
+export const it: LocalizedArticleContent = {
+  title: 'Template di politica password per team: framework pronto all\'uso',
+  excerpt: 'Un template di politica password basato su NIST 800-63B e PCI DSS v4.0. Copre gestori, MFA, rotazione, risposta agli incidenti e formazione.',
+  seoTitle: 'Template politica password team — Framework NIST/PCI DSS | generatepasswordto.me',
+  seoDescription: 'Template scaricabile di politica password per team basato su NIST 800-63B e PCI DSS v4.0.',
+  keywords: ['template politica password', 'politica password team', 'template sicurezza password', 'politica NIST password', 'template PCI DSS', 'politica sicurezza aziendale'],
+  sections: [
+    { heading: 'Perché il tuo team ha bisogno di una politica formale', paragraphs: ['Costo medio di una violazione per credenziali compromesse: $4,88M (IBM 2024).', 'Questo template è basato su NIST 800-63B e PCI DSS v4.0.', 'Per team da 5 a 500 persone.'] },
+    { heading: 'Sezione 1: Requisiti password', paragraphs: ['Minimo 16 caratteri generati dal gestore. Niente password create manualmente.', 'I sistemi devono accettare fino a 64 caratteri. Verifica HIBP.', 'Password master: frase di 6+ parole casuali.'] },
+    { heading: 'Sezione 2: Gestore di password', paragraphs: ['Tutti devono usare il gestore approvato con crittografia AES-256 o XChaCha20.', '1Password Business, Bitwarden Teams, Dashlane Business.', 'Password uniche di 16+ caratteri. Riutilizzo vietato.'] },
+    { heading: 'Sezione 3: Politica MFA', paragraphs: ['MFA obbligatorio senza eccezioni. Attivazione entro 24h.', 'Priorità: FIDO2/WebAuthn; TOTP; Push; SMS (ultima risorsa).', 'Chiavi hardware per accesso produzione. Due chiavi per dipendente.'] },
+    { heading: 'Sezione 4: Rotazione e ciclo di vita', paragraphs: ['Account standard: NESSUNA rotazione calendario (NIST).', 'Account admin: ogni 180 giorni. Minimo 24 caratteri.', 'Account servizio: ogni 90 giorni tramite gestione segreti.', 'Uscita dipendente: rotazione entro 4 ore.'] },
+    { heading: 'Sezione 5: Risposta agli incidenti', paragraphs: ['Immediato (30 min): disabilitare, ruotare, verificare log.', 'Breve termine (24h): determinare portata, esaminare 30 giorni.', 'Post-incidente (7 giorni): analisi cause, aggiornare politica.'] },
+    { heading: 'Sezione 6: Formazione e conformità', paragraphs: ['Formazione prima settimana + annualmente.', 'Audit trimestrali.', 'Violazioni: avvertimento, richiamo formale, accesso limitato.'], bullets: ['Formazione prima settimana + annuale', 'Audit trimestrali', 'Metriche monitorate', 'Disciplina progressiva', 'Azione immediata per violazioni intenzionali', 'Documentazione completa'] },
+    { heading: 'Implementazione', paragraphs: ['Ottenere supporto dirigenziale.', 'Distribuire il gestore prima dell\'annuncio.', 'Periodo di grazia 30 giorni.', 'Revisione annuale.'] },
+  ],
+};
+
+export const pt: LocalizedArticleContent = {
+  title: 'Template de política de senhas para equipes: framework pronto para uso',
+  excerpt: 'Template de política de senhas baseado em NIST 800-63B e PCI DSS v4.0. Cobre gerenciadores, MFA, rotação, resposta a incidentes e treinamento.',
+  seoTitle: 'Template política de senhas para equipes — Framework NIST/PCI DSS | generatepasswordto.me',
+  seoDescription: 'Template de política de senhas para equipes baseado em NIST 800-63B e PCI DSS v4.0.',
+  keywords: ['template política senhas', 'política senhas equipe', 'template segurança senhas', 'política NIST senhas', 'template PCI DSS', 'política segurança corporativa'],
+  sections: [
+    { heading: 'Por que sua equipe precisa de uma política formal', paragraphs: ['Custo médio de vazamento por credenciais: $4,88M (IBM 2024).', 'Este template é baseado em NIST 800-63B e PCI DSS v4.0.', 'Para equipes de 5 a 500 pessoas.'] },
+    { heading: 'Seção 1: Requisitos de senhas', paragraphs: ['Mínimo 16 caracteres gerados pelo gerenciador. Sem senhas criadas manualmente.', 'Sistemas devem aceitar até 64 caracteres. Verificação HIBP.', 'Senha mestra: frase de 6+ palavras aleatórias.'] },
+    { heading: 'Seção 2: Gerenciador de senhas', paragraphs: ['Todos devem usar o gerenciador aprovado com criptografia AES-256 ou XChaCha20.', '1Password Business, Bitwarden Teams, Dashlane Business.', 'Senhas únicas de 16+ caracteres. Reutilização proibida.'] },
+    { heading: 'Seção 3: Política MFA', paragraphs: ['MFA obrigatório sem exceções. Ativação em 24h.', 'Prioridade: FIDO2/WebAuthn; TOTP; Push; SMS (último recurso).', 'Chaves de hardware para acesso à produção. Duas chaves por funcionário.'] },
+    { heading: 'Seção 4: Rotação e ciclo de vida', paragraphs: ['Contas padrão: SEM rotação por calendário (NIST).', 'Contas admin: a cada 180 dias. Mínimo 24 caracteres.', 'Contas de serviço: a cada 90 dias via gestão de segredos.', 'Saída de funcionário: rotação em 4 horas.'] },
+    { heading: 'Seção 5: Resposta a incidentes', paragraphs: ['Imediato (30 min): desabilitar, rotacionar, verificar logs.', 'Curto prazo (24h): determinar escopo.', 'Pós-incidente (7 dias): análise de causa raiz, atualizar política.'] },
+    { heading: 'Seção 6: Treinamento e conformidade', paragraphs: ['Treinamento na primeira semana + anualmente.', 'Auditorias trimestrais.', 'Violações: advertência, repreensão formal, acesso restrito.'], bullets: ['Treinamento primeira semana + anual', 'Auditorias trimestrais', 'Métricas monitoradas', 'Disciplina progressiva', 'Ação imediata para violações intencionais', 'Documentação completa'] },
+    { heading: 'Implementação', paragraphs: ['Obter apoio executivo.', 'Implantar gerenciador antes do anúncio.', 'Período de graça de 30 dias.', 'Revisão anual.'] },
+  ],
+};
+
+export const ru: LocalizedArticleContent = {
+  title: 'Шаблон политики паролей для команд: готовый фреймворк',
+  excerpt: 'Готовый шаблон политики паролей на основе NIST 800-63B и PCI DSS v4.0. Менеджеры паролей, MFA, ротация, реагирование на инциденты и обучение.',
+  seoTitle: 'Шаблон политики паролей для команд — Фреймворк NIST/PCI DSS | generatepasswordto.me',
+  seoDescription: 'Шаблон политики паролей для команд на основе NIST 800-63B и PCI DSS v4.0.',
+  keywords: ['шаблон политики паролей', 'политика паролей команды', 'шаблон безопасности паролей', 'политика NIST пароли', 'шаблон PCI DSS', 'корпоративная политика безопасности'],
+  sections: [
+    { heading: 'Зачем команде формальная политика', paragraphs: ['Средняя стоимость утечки через учётные данные: $4,88M (IBM 2024).', 'Этот шаблон основан на NIST 800-63B и PCI DSS v4.0.', 'Для команд от 5 до 500 человек.'] },
+    { heading: 'Раздел 1: Требования к паролям', paragraphs: ['Минимум 16 символов от генератора менеджера. Никаких паролей, созданных вручную.', 'Системы должны принимать до 64 символов. Проверка HIBP.', 'Мастер-пароль: фраза из 6+ случайных слов.'] },
+    { heading: 'Раздел 2: Менеджер паролей', paragraphs: ['Все используют утверждённый менеджер с AES-256 или XChaCha20.', '1Password Business, Bitwarden Teams, Dashlane Business.', 'Уникальные пароли 16+ символов. Повторное использование запрещено.'] },
+    { heading: 'Раздел 3: Политика MFA', paragraphs: ['MFA обязательна без исключений. Активация в течение 24 часов.', 'Приоритет: FIDO2/WebAuthn; TOTP; Push; SMS (крайний случай).', 'Аппаратные ключи для доступа к продакшну. Два ключа на сотрудника.'] },
+    { heading: 'Раздел 4: Ротация и жизненный цикл', paragraphs: ['Стандартные аккаунты: БЕЗ календарной ротации (NIST).', 'Админ-аккаунты: каждые 180 дней. Минимум 24 символа.', 'Сервисные аккаунты: каждые 90 дней через управление секретами.', 'Увольнение: ротация всех учётных данных за 4 часа.'] },
+    { heading: 'Раздел 5: Реагирование на инциденты', paragraphs: ['Немедленно (30 мин): отключить, ротировать, проверить логи.', 'Краткосрочно (24ч): определить масштаб.', 'После инцидента (7 дней): анализ причин, обновление политики.'] },
+    { heading: 'Раздел 6: Обучение и соответствие', paragraphs: ['Обучение в первую неделю + ежегодно.', 'Квартальные аудиты.', 'Нарушения: предупреждение, выговор, ограничение доступа.'], bullets: ['Обучение в первую неделю + ежегодно', 'Квартальные аудиты', 'Отслеживание метрик', 'Прогрессивная дисциплина', 'Немедленные меры за умышленные нарушения', 'Полная документация'] },
+    { heading: 'Внедрение', paragraphs: ['Получить поддержку руководства.', 'Развернуть менеджер до объявления политики.', 'Льготный период 30 дней.', 'Ежегодный пересмотр.'] },
+  ],
+};
+
+export const zh: LocalizedArticleContent = {
+  title: '团队密码策略模板：即用型框架',
+  excerpt: '基于NIST 800-63B和PCI DSS v4.0的密码策略模板。涵盖密码管理器、MFA、轮换、事件响应和培训。',
+  seoTitle: '团队密码策略模板 — NIST/PCI DSS框架 | generatepasswordto.me',
+  seoDescription: '基于NIST 800-63B和PCI DSS v4.0的团队密码策略模板。',
+  keywords: ['密码策略模板', '团队密码策略', '密码安全模板', 'NIST密码策略', 'PCI DSS模板', '企业安全策略'],
+  sections: [
+    { heading: '为什么团队需要正式的密码策略', paragraphs: ['凭证泄露的平均成本：$488万（IBM 2024）。', '本模板基于NIST 800-63B和PCI DSS v4.0。', '适用于5-500人的团队。'] },
+    { heading: '第1节：密码要求', paragraphs: ['最少16字符，由管理器生成。不允许手动创建密码。', '系统必须接受最多64字符。HIBP验证。', '主密码：6+随机词组成的短语。'] },
+    { heading: '第2节：密码管理器', paragraphs: ['所有人使用批准的管理器，AES-256或XChaCha20加密。', '1Password Business、Bitwarden Teams、Dashlane Business。', '唯一16+字符密码。禁止重复使用。'] },
+    { heading: '第3节：MFA策略', paragraphs: ['MFA无例外强制。24小时内启用。', '优先级：FIDO2/WebAuthn；TOTP；Push；SMS（最后手段）。', '生产访问必须使用硬件密钥。每位员工两把密钥。'] },
+    { heading: '第4节：轮换和生命周期', paragraphs: ['标准账户：不按日历轮换（NIST）。', '管理员账户：每180天。最少24字符。', '服务账户：每90天通过密钥管理。', '员工离职：4小时内轮换所有凭证。'] },
+    { heading: '第5节：事件响应', paragraphs: ['立即（30分钟）：禁用、轮换、检查日志。', '短期（24小时）：确定范围。', '事后（7天）：根因分析，更新策略。'] },
+    { heading: '第6节：培训和合规', paragraphs: ['入职第一周+年度培训。', '季度审计。', '违规：警告、正式处分、限制访问。'], bullets: ['入职培训+年度更新', '季度审计', '跟踪指标', '渐进纪律', '故意违规立即行动', '完整文档'] },
+    { heading: '实施', paragraphs: ['获得管理层支持。', '在宣布策略前部署管理器。', '30天过渡期。', '年度审查。'] },
+  ],
+};
+
+export const ja: LocalizedArticleContent = {
+  title: 'チームパスワードポリシーテンプレート：すぐに使えるフレームワーク',
+  excerpt: 'NIST 800-63BとPCI DSS v4.0に基づくパスワードポリシーテンプレート。パスワードマネージャー、MFA、ローテーション、インシデント対応、トレーニングを網羅。',
+  seoTitle: 'チームパスワードポリシーテンプレート — NIST/PCI DSSフレームワーク | generatepasswordto.me',
+  seoDescription: 'NIST 800-63BとPCI DSS v4.0に基づくチームパスワードポリシーテンプレート。',
+  keywords: ['パスワードポリシーテンプレート', 'チームパスワードポリシー', 'パスワードセキュリティテンプレート', 'NISTパスワードポリシー', 'PCI DSSテンプレート', '企業セキュリティポリシー'],
+  sections: [
+    { heading: 'なぜチームに正式なポリシーが必要か', paragraphs: ['資格情報侵害の平均コスト：$488万（IBM 2024）。', 'このテンプレートはNIST 800-63BとPCI DSS v4.0に基づいています。', '5〜500人のチーム向け。'] },
+    { heading: 'セクション1：パスワード要件', paragraphs: ['最低16文字、マネージャーで生成。手動作成不可。', 'システムは64文字まで受け入れ。HIBP検証。', 'マスターパスワード：6+ランダム語のパスフレーズ。'] },
+    { heading: 'セクション2：パスワードマネージャー', paragraphs: ['全員が承認されたマネージャーをAES-256またはXChaCha20で使用。', '1Password Business、Bitwarden Teams、Dashlane Business。', 'ユニーク16+文字パスワード。再利用禁止。'] },
+    { heading: 'セクション3：MFAポリシー', paragraphs: ['MFA例外なし必須。24時間以内に有効化。', '優先度：FIDO2/WebAuthn；TOTP；Push；SMS（最終手段）。', '本番アクセスにはハードウェアキー必須。従業員1人2本。'] },
+    { heading: 'セクション4：ローテーションとライフサイクル', paragraphs: ['標準アカウント：カレンダーローテーションなし（NIST）。', '管理者アカウント：180日ごと。最低24文字。', 'サービスアカウント：90日ごとシークレット管理経由。', '退職：4時間以内に全資格情報をローテーション。'] },
+    { heading: 'セクション5：インシデント対応', paragraphs: ['即時（30分）：無効化、ローテーション、ログ確認。', '短期（24時間）：範囲特定。', '事後（7日）：根本原因分析、ポリシー更新。'] },
+    { heading: 'セクション6：トレーニングとコンプライアンス', paragraphs: ['初週+年次トレーニング。', '四半期監査。', '違反：警告、正式譴責、アクセス制限。'], bullets: ['初週トレーニング+年次更新', '四半期監査', 'メトリクス追跡', '段階的処分', '意図的違反は即時対応', '完全な文書化'] },
+    { heading: '実装', paragraphs: ['経営陣の支持を得る。', 'ポリシー発表前にマネージャーを導入。', '30日猶予期間。', '年次見直し。'] },
+  ],
+};
+
+export const pl: LocalizedArticleContent = {
+  title: 'Szablon polityki haseł dla zespołów: gotowy framework',
+  excerpt: 'Szablon polityki haseł oparty na NIST 800-63B i PCI DSS v4.0. Menedżery haseł, MFA, rotacja, reagowanie na incydenty i szkolenia.',
+  seoTitle: 'Szablon polityki haseł dla zespołów — Framework NIST/PCI DSS | generatepasswordto.me',
+  seoDescription: 'Szablon polityki haseł dla zespołów oparty na NIST 800-63B i PCI DSS v4.0.',
+  keywords: ['szablon polityki haseł', 'polityka haseł zespołu', 'szablon bezpieczeństwa haseł', 'polityka NIST hasła', 'szablon PCI DSS', 'korporacyjna polityka bezpieczeństwa'],
+  sections: [
+    { heading: 'Dlaczego zespół potrzebuje formalnej polityki', paragraphs: ['Średni koszt wycieku danych uwierzytelniających: $4,88M (IBM 2024).', 'Ten szablon oparty jest na NIST 800-63B i PCI DSS v4.0.', 'Dla zespołów 5-500 osób.'] },
+    { heading: 'Sekcja 1: Wymagania haseł', paragraphs: ['Minimum 16 znaków generowanych przez menedżera. Bez ręcznego tworzenia.', 'Systemy muszą akceptować do 64 znaków. Weryfikacja HIBP.', 'Hasło główne: fraza z 6+ losowych słów.'] },
+    { heading: 'Sekcja 2: Menedżer haseł', paragraphs: ['Wszyscy używają zatwierdzonego menedżera z AES-256 lub XChaCha20.', '1Password Business, Bitwarden Teams, Dashlane Business.', 'Unikalne hasła 16+ znaków. Ponowne użycie zabronione.'] },
+    { heading: 'Sekcja 3: Polityka MFA', paragraphs: ['MFA obowiązkowe bez wyjątków. Aktywacja w 24h.', 'Priorytet: FIDO2/WebAuthn; TOTP; Push; SMS (ostateczność).', 'Klucze sprzętowe dla dostępu do produkcji. Dwa klucze na pracownika.'] },
+    { heading: 'Sekcja 4: Rotacja i cykl życia', paragraphs: ['Konta standardowe: BEZ rotacji kalendarzowej (NIST).', 'Konta admin: co 180 dni. Minimum 24 znaki.', 'Konta serwisowe: co 90 dni przez zarządzanie sekretami.', 'Odejście pracownika: rotacja w 4 godziny.'] },
+    { heading: 'Sekcja 5: Reagowanie na incydenty', paragraphs: ['Natychmiast (30 min): wyłączyć, rotować, sprawdzić logi.', 'Krótkoterminowo (24h): określić zakres.', 'Po incydencie (7 dni): analiza przyczyn, aktualizacja polityki.'] },
+    { heading: 'Sekcja 6: Szkolenia i zgodność', paragraphs: ['Szkolenie w pierwszym tygodniu + rocznie.', 'Kwartalne audyty.', 'Naruszenia: ostrzeżenie, formalna nagana, ograniczony dostęp.'], bullets: ['Szkolenie pierwszy tydzień + roczne', 'Kwartalne audyty', 'Śledzenie metryk', 'Progresywna dyscyplina', 'Natychmiastowe działanie za celowe naruszenia', 'Pełna dokumentacja'] },
+    { heading: 'Wdrożenie', paragraphs: ['Uzyskać wsparcie kierownictwa.', 'Wdrożyć menedżera przed ogłoszeniem polityki.', 'Okres przejściowy 30 dni.', 'Roczny przegląd.'] },
+  ],
+};
