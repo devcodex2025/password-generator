@@ -215,3 +215,54 @@ export async function POST(request: Request) {
     );
   }
 }
+
+/**
+ * GET /api/sync-content?locale=ja&slug=how-to-create-strong-passwords
+ *
+ * Diagnostic endpoint: returns the raw content from the bundled
+ * ARTICLE_CATALOG without writing anything. Useful for checking
+ * whether CJK content survives the Vercel build/minification step.
+ */
+export async function GET(request: Request) {
+  // ── Auth (same policy as POST & content-health) ──────────────────
+  const token = process.env.CONTENT_HEALTH_TOKEN;
+  if (token) {
+    const url = new URL(request.url);
+    const provided =
+      url.searchParams.get('token') ??
+      request.headers.get('authorization')?.replace(/^Bearer\s+/i, '') ??
+      request.headers.get('x-health-token');
+    if (provided !== token) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+  }
+
+  const url = new URL(request.url);
+  const locale = (url.searchParams.get('locale') || 'ja') as ContentLanguage;
+  const slug = url.searchParams.get('slug') || 'how-to-create-strong-passwords';
+
+  const article = ARTICLE_CATALOG.find((a) => a.slug === slug);
+  if (!article) {
+    return NextResponse.json({ error: `Article "${slug}" not found` }, { status: 404 });
+  }
+
+  const content = article.content[locale];
+  if (!content) {
+    return NextResponse.json(
+      { error: `No content for locale "${locale}" in article "${slug}"` },
+      { status: 404 },
+    );
+  }
+
+  return NextResponse.json({
+    diagnostic: true,
+    slug,
+    locale,
+    title: content.title,
+    seoTitle: content.seoTitle,
+    excerpt: content.excerpt,
+    firstSectionHeading: content.sections[0]?.heading ?? null,
+    titleLength: content.title.length,
+    titleCodePoints: [...content.title].map((ch) => ch.codePointAt(0)?.toString(16)).join(' '),
+  });
+}
