@@ -55,23 +55,44 @@ export async function generateMetadata({
     keywords: guide.keywords,
     alternates: {
       canonical,
-      languages: Object.fromEntries(
-        SUPPORTED_CONTENT_LANGUAGES.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}/guides/${slug}`])
-      ),
+      languages: {
+        ...Object.fromEntries(
+          SUPPORTED_CONTENT_LANGUAGES.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}/guides/${slug}`])
+        ),
+        'x-default': `${baseUrl}/en/guides/${slug}`,
+      },
     },
     openGraph: {
       title: guide.seoTitle,
       description: guide.seoDescription,
       url: canonical,
+      siteName: 'generatepasswordto.me',
       type: 'article',
       images: [
         {
-          url: guide.image,
+          url: guide.image.startsWith('http') ? guide.image : `${baseUrl}${guide.image}`,
           width: 1200,
           height: 630,
           alt: guide.title,
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: guide.seoTitle,
+      description: guide.seoDescription,
+      images: [guide.image.startsWith('http') ? guide.image : `${baseUrl}${guide.image}`],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }
