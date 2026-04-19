@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import {
   ARTICLE_CATALOG,
   SUPPORTED_CONTENT_LANGUAGES,
@@ -171,6 +172,16 @@ export async function POST(request: Request) {
 
     await client.close();
 
+    // ── Bust ISR cache so pages serve fresh content immediately ────
+    if (!dryRun && (upserted > 0 || modified > 0)) {
+      for (const locale of locales) {
+        revalidatePath(`/${locale}/guides`, 'page');
+        for (const article of articles) {
+          revalidatePath(`/${locale}/guides/${article.slug}`, 'page');
+        }
+      }
+    }
+
     return NextResponse.json(
       {
         ok: true,
@@ -178,6 +189,7 @@ export async function POST(request: Request) {
         timestamp: new Date().toISOString(),
         source: 'ARTICLE_CATALOG (TypeScript)',
         target: `mongodb://${dbName}.${collectionName}`,
+        cacheRevalidated: !dryRun && (upserted > 0 || modified > 0),
         summary: {
           totalArticles: articles.length,
           totalLocales: locales.length,
