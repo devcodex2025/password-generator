@@ -23,6 +23,42 @@ const guidesMetaI18n: Record<string, { title: string; description: string }> = {
     title: 'Гайди з безпеки паролів — експертні статті та найкращі практики',
     description: 'Детальні гайди з безпеки паролів, стандартів відповідності (NIST, PCI DSS), відновлення після витоків, налаштування 2FA та захисту акаунтів.',
   },
+  es: {
+    title: 'Guías de seguridad de contraseñas — Artículos y buenas prácticas',
+    description: 'Guías detalladas sobre seguridad de contraseñas, estándares de cumplimiento (NIST, PCI DSS), recuperación tras brechas, configuración de 2FA y protección de cuentas.',
+  },
+  fr: {
+    title: 'Guides de sécurité des mots de passe — Articles experts et bonnes pratiques',
+    description: 'Guides approfondis sur la sécurité des mots de passe, les normes de conformité (NIST, PCI DSS), la récupération après violation, la configuration 2FA et la protection des comptes.',
+  },
+  de: {
+    title: 'Passwortsicherheits-Ratgeber — Fachartikel und Best Practices',
+    description: 'Ausführliche Ratgeber zu Passwortsicherheit, Compliance-Standards (NIST, PCI DSS), Wiederherstellung nach Datenlecks, 2FA-Einrichtung und Kontoschutz.',
+  },
+  it: {
+    title: 'Guide alla sicurezza delle password — Articoli e best practice',
+    description: 'Guide approfondite sulla sicurezza delle password, standard di conformità (NIST, PCI DSS), recupero dopo violazioni, configurazione 2FA e protezione degli account.',
+  },
+  pt: {
+    title: 'Guias de segurança de senhas — Artigos e boas práticas',
+    description: 'Guias detalhados sobre segurança de senhas, padrões de conformidade (NIST, PCI DSS), recuperação após violações, configuração de 2FA e proteção de contas.',
+  },
+  ru: {
+    title: 'Руководства по безопасности паролей — экспертные статьи и лучшие практики',
+    description: 'Подробные руководства по безопасности паролей, стандартам соответствия (NIST, PCI DSS), восстановлению после утечек, настройке 2FA и защите аккаунтов.',
+  },
+  zh: {
+    title: '密码安全指南 — 专家文章与最佳实践',
+    description: '深入了解密码安全、合规标准（NIST、PCI DSS）、泄露恢复、2FA设置及账户保护的最佳实践指南。',
+  },
+  ja: {
+    title: 'パスワードセキュリティガイド — 専門記事とベストプラクティス',
+    description: 'パスワードセキュリティ、コンプライアンス基準（NIST、PCI DSS）、漏洩後の復旧、2FA設定、アカウント保護に関する詳細ガイド。',
+  },
+  pl: {
+    title: 'Przewodniki bezpieczeństwa haseł — artykuły eksperckie i najlepsze praktyki',
+    description: 'Szczegółowe przewodniki dotyczące bezpieczeństwa haseł, standardów zgodności (NIST, PCI DSS), odzyskiwania po wycieku danych, konfiguracji 2FA i ochrony kont.',
+  },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -50,16 +86,29 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       type: 'website',
       images: [
         {
-          url: '/images/generate-password-preview.png',
+          url: `${baseUrl}/images/generate-password-preview.png`,
           width: 1200,
           height: 630,
           alt: 'Password Security Guides',
         },
       ],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: meta.title,
+      description: meta.description,
+      images: [`${baseUrl}/images/generate-password-preview.png`],
+    },
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }
