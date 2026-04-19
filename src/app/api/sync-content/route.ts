@@ -224,6 +224,19 @@ export async function POST(request: Request) {
  * whether CJK content survives the Vercel build/minification step.
  */
 export async function GET(request: Request) {
+  // ── Auth (same policy as POST & content-health) ──────────────────
+  const token = process.env.CONTENT_HEALTH_TOKEN;
+  if (token) {
+    const url = new URL(request.url);
+    const provided =
+      url.searchParams.get('token') ??
+      request.headers.get('authorization')?.replace(/^Bearer\s+/i, '') ??
+      request.headers.get('x-health-token');
+    if (provided !== token) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+  }
+
   const url = new URL(request.url);
   const locale = (url.searchParams.get('locale') || 'ja') as ContentLanguage;
   const slug = url.searchParams.get('slug') || 'how-to-create-strong-passwords';
