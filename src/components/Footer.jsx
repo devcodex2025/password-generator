@@ -120,7 +120,7 @@ const Footer = ({ language }) => {
               width={180}
               height={58}
               className="w-[180px] h-auto"
-              priority
+              loading="lazy"
             />
           </div>
           <div className="text-center md:text-center">

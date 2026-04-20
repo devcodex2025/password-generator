@@ -24,6 +24,22 @@ const guideSlugs = [
 ];
 const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact'];
 
+/* Map locale codes to hreflang values (ua → uk for Ukrainian) */
+const hreflangMap = { ua: 'uk' };
+const toHreflang = (code) => hreflangMap[code] || code;
+
+/**
+ * Build xhtml:link alternateRefs for a given path suffix.
+ * e.g. suffix = '/guides' → alternates for /en/guides, /ua/guides, …
+ */
+function buildAlternateRefs(pathSuffix) {
+  return availableLanguages.map((langCode) => ({
+    href: `${siteUrl}/${langCode}${pathSuffix}`,
+    hreflang: toHreflang(langCode),
+    hrefIsAbsolute: true,
+  }));
+}
+
 module.exports = {
   siteUrl,
   generateRobotsTxt: true,
@@ -50,6 +66,7 @@ module.exports = {
         changefreq: 'weekly',
         priority: 0.9,
         lastmod: new Date().toISOString(),
+        alternateRefs: buildAlternateRefs(''),
     }));
 
     const guideIndexPages = availableLanguages.map((langCode) => ({
@@ -57,6 +74,7 @@ module.exports = {
       changefreq: 'weekly',
       priority: 0.8,
       lastmod: new Date().toISOString(),
+      alternateRefs: buildAlternateRefs('/guides'),
     }));
 
     const guideArticlePages = availableLanguages.flatMap((langCode) =>
@@ -65,6 +83,7 @@ module.exports = {
         changefreq: 'monthly',
         priority: 0.7,
         lastmod: new Date().toISOString(),
+        alternateRefs: buildAlternateRefs(`/guides/${slug}`),
       }))
     );
 
@@ -74,6 +93,7 @@ module.exports = {
         changefreq: 'monthly',
         priority: 0.6,
         lastmod: new Date().toISOString(),
+        alternateRefs: buildAlternateRefs(`/${slug}`),
       }))
     );
 

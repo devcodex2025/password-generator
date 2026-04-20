@@ -26,7 +26,6 @@ function SeoText(props) {
             decoding="async"
             width={500}
             height={300}
-            priority
           />
           <div className="space-y-4 flex-grow">
             <p className="text-[18px] text-[#071016] leading-relaxed" dangerouslySetInnerHTML={{ __html: t("seotext_intro1", language) }} />
