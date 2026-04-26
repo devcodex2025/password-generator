@@ -1,6 +1,7 @@
 'use client';
 
 import { getAffiliateStrings } from './affiliate-i18n';
+import { cn } from '@/lib/utils';
 
 interface NordPassAffiliatePromoProps {
   locale: string;
@@ -71,7 +72,7 @@ export default function NordPassAffiliatePromo({ locale, className = '' }: NordP
 
   return (
     <section
-      className={`mt-10 rounded-3xl border border-[#E5F6FF] dark:border-[#374151] bg-gradient-to-br from-white via-[#f7fbff] to-[#eef7ff] dark:from-[#171717] dark:via-[#1a1f2e] dark:to-[#171717] p-6 md:p-8 shadow-sm ${className}`}
+      className={cn('mt-10 rounded-3xl border border-[#E5F6FF] dark:border-[#374151] bg-gradient-to-br from-white via-[#f7fbff] to-[#eef7ff] dark:from-[#171717] dark:via-[#1a1f2e] dark:to-[#171717] p-6 md:p-8 shadow-sm', className)}
       aria-label="NordPass affiliate recommendation"
     >
       {/* Heading */}
