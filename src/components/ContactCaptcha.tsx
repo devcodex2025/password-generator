@@ -177,7 +177,7 @@ export default function ContactCaptcha({ locale, email, emailLabel }: ContactCap
         <button
           type="submit"
           disabled={solved}
-          className="inline-flex items-center justify-center rounded-xl bg-[#2A4E63] px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#1f3b4c] disabled:cursor-not-allowed disabled:bg-[#9CA3AF] dark:bg-[#05a9ff] dark:text-[#16394a] dark:hover:bg-[#38beff]"
+          className="inline-flex items-center justify-center rounded-xl bg-[#2A4E63] px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#1f3b4c] disabled:cursor-not-allowed disabled:bg-[#9CA3AF] dark:bg-[#05a9ff] dark:text-[#0a1e2a] dark:hover:bg-[#38beff]"
         >
           {copy.submit}
         </button>

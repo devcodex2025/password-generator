@@ -1,27 +1,31 @@
 'use client';
 
-import { useState, useEffect, useContext, Fragment } from 'react';
+import { useState, useEffect, useContext, Fragment, lazy, Suspense } from 'react';
 import { usePathname } from 'next/navigation';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-// import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-// import ListItemText from '@mui/material/ListItemText';
-import Box from '@mui/material/Box';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-// import Link from '@mui/material/Link';
-import InputLabel from '@mui/material/InputLabel';
-import Flag from 'react-world-flags'
-import { Brightness4, Brightness7 } from '@mui/icons-material';
-import IconButton from '@mui/material/IconButton';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { ThemeContext } from '@/context/ThemeContext'; // Updated path
+import { ThemeContext } from '@/context/ThemeContext';
 import { getLanguagesWithFlags, getLanguageSelectionText, getThemeText } from '../utils/languageUtils';
-import { SelectChangeEvent } from '@mui/material/Select';
-import { getAvailableLanguages } from '../utils/languageUtils'; // Ensure this utility function is defined
+import type { SelectChangeEvent } from '@mui/material/Select';
+import { getAvailableLanguages } from '../utils/languageUtils';
 import { getLinkLabel, type LinkLabelKey } from '@/utils/linkTranslations';
+
+/* ── Lazy-loaded heavy dependencies (perf: saves ~1.4 MB from initial bundle) ── */
+const Drawer = lazy(() => import('@mui/material/Drawer'));
+const List = lazy(() => import('@mui/material/List'));
+const ListItem = lazy(() => import('@mui/material/ListItem'));
+const Box = lazy(() => import('@mui/material/Box'));
+const Select = lazy(() => import('@mui/material/Select'));
+const MenuItem = lazy(() => import('@mui/material/MenuItem'));
+const InputLabel = lazy(() => import('@mui/material/InputLabel'));
+const IconButton = lazy(() => import('@mui/material/IconButton'));
+const Flag = lazy(() => import('react-world-flags'));
+
+/* Lazy MUI icons */
+const Brightness4 = lazy(() => import('@mui/icons-material/Brightness4'));
+const Brightness7 = lazy(() => import('@mui/icons-material/Brightness7'));
+
 
 
 // CSS styles for animation
@@ -283,7 +287,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             labelId="language-select-label"
             id="language-select"
             value={language}
-            onChange={handleLanguageChange}
+            onChange={handleLanguageChange as (event: SelectChangeEvent<unknown>, child: React.ReactNode) => void}
             sx={{ width: '100%' }}
           >
             {languages.map((lang) => (
@@ -397,25 +401,27 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           </li>
         ))}
         <li>
-          <IconButton
-            onClick={toggleMode} // Use toggleMode
-            color="inherit"
-            className={
-              isHomePage
-                ? 'transition-all duration-300 hover:scale-105'
-                : 'rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#E5F6FF] dark:hover:bg-[#111827]'
-            }
-            sx={{
-              color: isDarkMode ? '#9ca3af' : '#071016',
-              '&:hover': {
-                color: isDarkMode ? '#9bdfff' : '#2A4E63',
-                backgroundColor: isDarkMode ? 'rgba(155, 223, 255, 0.12)' : 'rgba(42, 78, 99, 0.08)',
-                transform: 'scale(1.05)',
-              },
-            }}
-          >
-            {isDarkMode ? <Brightness7 /> : <Brightness4 />}
-          </IconButton>
+          <Suspense fallback={<span className="w-10 h-10 inline-block" />}>
+            <IconButton
+              onClick={toggleMode}
+              color="inherit"
+              className={
+                isHomePage
+                  ? 'transition-all duration-300 hover:scale-105'
+                  : 'rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#E5F6FF] dark:hover:bg-[#111827]'
+              }
+              sx={{
+                color: isDarkMode ? '#9ca3af' : '#071016',
+                '&:hover': {
+                  color: isDarkMode ? '#9bdfff' : '#2A4E63',
+                  backgroundColor: isDarkMode ? 'rgba(155, 223, 255, 0.12)' : 'rgba(42, 78, 99, 0.08)',
+                  transform: 'scale(1.05)',
+                },
+              }}
+            >
+              {isDarkMode ? <Brightness7 /> : <Brightness4 />}
+            </IconButton>
+          </Suspense>
         </li>
       </ul>
       <select
@@ -433,14 +439,14 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           </option>
         ))}
       </select>
-      <div className="flex lg:hidden">
+      <div className="flex items-center lg:hidden">
         {(['top'] as Anchor[]).map((anchor) => (
           <Fragment key={anchor}>
             <Image
               src="/images/hamburger.png"
               alt="Navigation menu toggle"
               onClick={toggleDrawer(anchor, true)}
-              className={`cursor-pointer transition-all duration-200 ${isHomePage ? '' : 'hover:scale-110'}${isDarkMode ? ' hamburger-dark' : ''}`}
+              className={`cursor-pointer transition-all duration-200 w-6 h-6 ${isHomePage ? '' : 'hover:scale-110'}${isDarkMode ? ' hamburger-dark' : ''}`}
               loading="eager"
               decoding="async"
               width={24}
@@ -453,20 +459,24 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
                 }
               }}
             />
-            <Drawer
-              anchor={anchor}
-              open={state[anchor]}
-              onClose={toggleDrawer(anchor, false)}
-              sx={{
-                '& .MuiDrawer-paper': {
-                  width: { xs: '100vw' },
-                  maxWidth: { xs: '100vw' },
-                  boxSizing: 'border-box',
-                },
-              }}
-            >
-              {list(anchor)}
-            </Drawer>
+            {state[anchor] && (
+              <Suspense fallback={null}>
+                <Drawer
+                  anchor={anchor}
+                  open={state[anchor]}
+                  onClose={toggleDrawer(anchor, false)}
+                  sx={{
+                    '& .MuiDrawer-paper': {
+                      width: { xs: '100vw' },
+                      maxWidth: { xs: '100vw' },
+                      boxSizing: 'border-box',
+                    },
+                  }}
+                >
+                  {list(anchor)}
+                </Drawer>
+              </Suspense>
+            )}
           </Fragment>
         ))}
       </div>

@@ -47,7 +47,9 @@ export default function PasswordRow({
       <div
         className={`py-1 lg:px-4 w-full lg:w-[80%] flex items-center border-2 h-14 border-solid rounded-[120px] text-[#071016] text-[12px] md:text-[20px] border-[#E5F6FF] dark:border-transparent bg-white dark:bg-[#000000]`}
       >
+        <label htmlFor={`password-output-${index}`} className="sr-only">Generated password</label>
         <input
+          id={`password-output-${index}`}
           type="text"
           value={password || ''}
           className="rounded-[40px] ml-[16px] border-none outline-none h-full w-[80%] lg:w-[80%] md:py-5 flex-grow text-base lg:text-lg bg-transparent dark:text-white"
@@ -77,7 +79,7 @@ export default function PasswordRow({
           <Image
             onClick={() => onGenerate(index)}
             src="/images/share-paper-plane.svg"
-            alt="share password"
+            alt="Regenerate password"
             className={`${isDarkMode ? 'invert brightness-0' : ''} flex mr-2 h-[15px] md:h-[20px] md:hidden`}
             style={{ cursor: 'pointer' }}
             loading="lazy"

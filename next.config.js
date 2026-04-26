@@ -37,7 +37,7 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   experimental: {
-    optimizePackageImports: ['@mui/material', '@mui/icons-material', 'lodash'],
+    optimizePackageImports: ['@mui/material', '@mui/icons-material', 'lodash', 'react-world-flags', 'framer-motion'],
   },
   async redirects() {
     return [
