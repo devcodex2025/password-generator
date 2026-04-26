@@ -26,7 +26,7 @@ const GenerateButton: React.FC<GenerateButtonProps> = ({ onClick, onLongPress, c
 
   return (
     <button
-      className={`bg-[#E5F6FF] dark:!bg-[#05a9ff] text-[#2A4E63] dark:text-[#16394a] dark:border dark:border-[#374151] dark:hover:bg-[#38beff] font-semibold rounded-[60px] px-[16px] py-[12px] cursor-pointer transition-all duration-200 hover:bg-[#d7eefb] ${className}`}
+      className={`bg-[#E5F6FF] dark:!bg-[#05a9ff] text-[#2A4E63] dark:text-[#0a1e2a] dark:border dark:border-[#374151] dark:hover:bg-[#38beff] font-semibold rounded-[60px] px-[16px] py-[12px] cursor-pointer transition-all duration-200 hover:bg-[#d7eefb] ${className}`}
       onClick={onClick}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}

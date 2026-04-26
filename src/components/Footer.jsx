@@ -124,7 +124,7 @@ const Footer = ({ language }) => {
             />
           </div>
           <div className="text-center md:text-center">
-            {t('footer_copyright', language)} © <span className="text-[#05a9ff] dark:!text-[#696969] font-bold">GeneratePasswordTo.Me</span> {currentYear}
+            {t('footer_copyright', language)} © <span className="text-[#05a9ff] dark:!text-[#93c5fd] font-bold">GeneratePasswordTo.Me</span> {currentYear}
           </div>
           <div className="flex items-center gap-4">
             <Link href={githubLink.href} target="_blank" rel="noopener noreferrer" className={externalLinkClass}>

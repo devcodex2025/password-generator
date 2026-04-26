@@ -1,24 +1,26 @@
 ﻿'use client';
 
-import { Suspense, use, useEffect } from 'react';
+import { use, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/components/i18n';
 import PasswordGenerator from '@/components/PasswordGenerator/PasswordGenerator';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import SeoAccordion from '@/components/SeoAccordion';
-import PasswordBreachCheck from '@/components/PasswordBreachCheck';
-import WhyChooseUs from '@/components/WhyChooseUs';
-import GuideLinksSection from '@/components/GuideLinksSection';
-import AdBanner from '@/components/Advertising/Adbanner';
-import AdBannerSecond from '@/components/Advertising/AdbannerSecond';
-import CookieConsent from '@/components/CookieConsent/CookieConsent';
 import { Analytics } from '@vercel/analytics/react';
 import { useTheme } from '../../context/ThemeContext';
-
 import { useRouter } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
-import ShareBlock from '@/components/ShareBlock';
+
+/* ── Below-fold components: lazy-loaded to reduce initial JS bundle ── */
+const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs'), { ssr: false });
+const PasswordBreachCheck = dynamic(() => import('@/components/PasswordBreachCheck'), { ssr: false });
+const GuideLinksSection = dynamic(() => import('@/components/GuideLinksSection'), { ssr: false });
+const SeoAccordion = dynamic(() => import('@/components/SeoAccordion'), { ssr: false });
+const ShareBlock = dynamic(() => import('@/components/ShareBlock'), { ssr: false });
+const AdBanner = dynamic(() => import('@/components/Advertising/Adbanner'), { ssr: false });
+const AdBannerSecond = dynamic(() => import('@/components/Advertising/AdbannerSecond'), { ssr: false });
+const CookieConsent = dynamic(() => import('@/components/CookieConsent/CookieConsent'), { ssr: false });
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -59,21 +61,15 @@ export default function Page({ params }: PageProps) {
           <WhyChooseUs language={locale} />
           <PasswordBreachCheck language={locale} />
           <GuideLinksSection language={locale} />
-          <Suspense fallback={null}>
-            <AdBanner language={locale} isDarkMode={isDarkMode} />
-          </Suspense>
+          <AdBanner language={locale} isDarkMode={isDarkMode} />
           <SeoAccordion language={locale} />
           <div className="max-w-6xl mx-auto px-4">
             <ShareBlock language={locale} className="mt-6" />
           </div>
-          <Suspense fallback={null}>
-            <AdBannerSecond language={locale} isDarkMode={isDarkMode} />
-          </Suspense>
+          <AdBannerSecond language={locale} isDarkMode={isDarkMode} />
         </main>
         <Footer language={locale} />
-        <Suspense fallback={null}>
-          <CookieConsent language={locale} />
-        </Suspense>
+        <CookieConsent language={locale} />
       </div>
     </I18nextProvider>
   );
