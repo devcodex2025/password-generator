@@ -8,6 +8,7 @@ import { SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import GuideReadButton from '@/components/GuideReadButton';
+import NordPassAffiliatePromo from '@/components/affiliate/NordPassAffiliatePromo';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const hreflangMap: Record<string, string> = { ua: 'uk' };
@@ -177,6 +178,9 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
             );
           })}
         </div>
+
+        {/* Affiliate recommendation */}
+        <NordPassAffiliatePromo locale={locale} className="mt-8" />
       </section>
     </LocalizedPageShell>
   );
