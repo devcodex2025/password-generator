@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useContext, Fragment, lazy, Suspense } from 'react';
+import { useState, useEffect, useContext, useRef, Fragment, lazy, Suspense } from 'react';
 import { usePathname } from 'next/navigation';
 
 import Image from 'next/image';
@@ -221,6 +221,10 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
     right: false,
   });
 
+  /* Track whether the drawer has ever been opened so we can lazy-mount it
+     on first open but keep it in the DOM afterward for MUI's closing animation */
+  const hasOpenedDrawer = useRef(false);
+
   useEffect(() => {
     const isAnyDrawerOpen = Object.values(state).some((open) => open);
     if (isAnyDrawerOpen) {
@@ -244,6 +248,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
         ) {
           return;
         }
+        if (open) hasOpenedDrawer.current = true;
         setState({ ...state, [anchor]: open });
       };
 
@@ -459,7 +464,8 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
                 }
               }}
             />
-            {state[anchor] && (
+            {/* Lazy-mount on first open; keep mounted so MUI animates close */}
+            {(state[anchor] || hasOpenedDrawer.current) && (
               <Suspense fallback={null}>
                 <Drawer
                   anchor={anchor}
