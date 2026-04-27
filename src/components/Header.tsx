@@ -347,7 +347,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               sx={{
                 color: isDarkMode ? '#9ca3af' : '#071016',
                 '&:hover': {
-                  color: isDarkMode ? '#9bdfff' : '#2A4E63',
+                  color: isDarkMode ? '#d7f2ff' : '#2A4E63',
                   backgroundColor: isDarkMode ? 'rgba(155, 223, 255, 0.12)' : 'rgba(42, 78, 99, 0.08)',
                   transform: 'scale(1.05)',
                 },
@@ -418,7 +418,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               sx={{
                 color: isDarkMode ? '#9ca3af' : '#071016',
                 '&:hover': {
-                  color: isDarkMode ? '#9bdfff' : '#2A4E63',
+                  color: isDarkMode ? '#d7f2ff' : '#2A4E63',
                   backgroundColor: isDarkMode ? 'rgba(155, 223, 255, 0.12)' : 'rgba(42, 78, 99, 0.08)',
                   transform: 'scale(1.05)',
                 },

@@ -266,6 +266,18 @@ export default async function LocaleLayout({
       q: t('security_standards_title') || 'Security standards compliance',
       a: [t('nist_compliance_desc'), t('pci_dss_compliance_desc')].filter(Boolean).join(' '),
     },
+    {
+      q: 'Does Generate Password To Me store generated passwords?',
+      a: 'No. Password generation runs in your browser, and generated passwords are not stored on our servers. The tool is designed around client-side generation and privacy-first use.',
+    },
+    {
+      q: 'Which security sources guide the recommendations?',
+      a: 'The guidance is reviewed against NIST SP 800-63B password recommendations, PCI DSS v4.0 password requirements, and Have I Been Pwned k-anonymity breach-checking practices where breach checks are used.',
+    },
+    {
+      q: 'When was this FAQ reviewed?',
+      a: 'This FAQ was reviewed in April 2026. We update security guidance when major password standards, browser APIs, or breach-checking practices change.',
+    },
   ].filter(item => item.q && item.a);
 
   const faqJson = {

@@ -1,5 +1,6 @@
 'use client';
 
+import { Crown, UsersRound } from 'lucide-react';
 import { getAffiliateStrings } from './affiliate-i18n';
 import { cn } from '@/lib/utils';
 
@@ -7,9 +8,9 @@ interface NordPassAffiliatePromoProps {
   locale: string;
   /** Optional extra Tailwind classes on the outer wrapper */
   className?: string;
-  /** Override affiliate personal URL (useful when passed from server components) */
+  /** Override affiliate premium URL (useful when passed from server components) */
   affiliateUrl?: string;
-  /** Override affiliate business URL (useful when passed from server components) */
+  /** Override affiliate family URL (useful when passed from server components) */
   affiliateB2bUrl?: string;
 }
 
@@ -23,17 +24,17 @@ function resolveEnv(value: string | undefined, fallback: string): string {
   return fallback;
 }
 
-function personalUrl(override?: string): string {
+function premiumUrl(override?: string): string {
   const base = override
     ? resolveEnv(override, 'https://nordpass.com')
     : resolveEnv(process.env.NEXT_PUBLIC_NORDPASS_AFFILIATE_URL, 'https://nordpass.com');
   return `${base}${base.includes('?') ? '&' : '?'}${UTM}`;
 }
 
-function businessUrl(override?: string): string {
+function familyUrl(override?: string): string {
   const base = override
-    ? resolveEnv(override, 'https://nordpass.com/business')
-    : resolveEnv(process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL, 'https://nordpass.com/business');
+    ? resolveEnv(override, 'https://nordpass.com/family')
+    : resolveEnv(process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL, 'https://nordpass.com/family');
   return `${base}${base.includes('?') ? '&' : '?'}${UTM}`;
 }
 
@@ -102,7 +103,7 @@ export default function NordPassAffiliatePromo({ locale, className = '', affilia
       </div>
 
       {/* Comparison table */}
-      <div className="mt-6 overflow-x-auto -mx-2 px-2">
+      <div className="nordpass-table-scroll mt-6 overflow-x-auto -mx-2 px-2 pb-3 md:pb-0">
         <table className="w-full min-w-[480px] text-sm border-collapse">
           <thead>
             <tr className="border-b-2 border-[#E5F6FF] dark:border-[#374151]">
@@ -147,28 +148,24 @@ export default function NordPassAffiliatePromo({ locale, className = '', affilia
       {/* CTA buttons */}
       <div className="mt-6 flex flex-col sm:flex-row gap-3">
         <a
-          href={personalUrl(affiliateUrl)}
+          href={premiumUrl(affiliateUrl)}
           target="_blank"
           rel="sponsored noopener"
-          onClick={() => trackClick('personal')}
+          onClick={() => trackClick('premium')}
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#05a9ff] hover:bg-[#38beff] text-white font-semibold py-3 px-6 transition-all duration-200 shadow-md hover:shadow-lg"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-          </svg>
-          {t.ctaPersonal}
+          <Crown className="w-5 h-5" aria-hidden="true" />
+          {t.ctaPremium}
         </a>
         <a
-          href={businessUrl(affiliateB2bUrl)}
+          href={familyUrl(affiliateB2bUrl)}
           target="_blank"
           rel="sponsored noopener"
-          onClick={() => trackClick('business')}
+          onClick={() => trackClick('family')}
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#05a9ff] text-[#05a9ff] hover:bg-[#05a9ff] hover:text-white font-semibold py-3 px-6 transition-all duration-200"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-          {t.ctaBusiness}
+          <UsersRound className="w-5 h-5" aria-hidden="true" />
+          {t.ctaFamily}
         </a>
       </div>
 

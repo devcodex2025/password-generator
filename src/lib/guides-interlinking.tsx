@@ -88,7 +88,7 @@ function renderLinkedSegments(
       <Link
         key={`${keyPrefix}-${localIndex}`}
         href={match.target.href}
-        className="!text-[#2A4E63] dark:!text-[#9bdfff] hover:!text-[#1f3b4c] dark:hover:!text-[#d7f2ff] underline underline-offset-4 decoration-2 transition-colors"
+        className="!text-[#2A4E63] dark:!text-[#d7f2ff] hover:!text-[#1f3b4c] dark:hover:!text-white underline underline-offset-4 decoration-2 transition-colors"
       >
         {match.match}
       </Link>,
