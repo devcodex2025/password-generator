@@ -22,7 +22,7 @@ const guideSlugs = [
   'team-password-policy-template',
   'secure-password-generator-guide',
 ];
-const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact'];
+const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'best-password-managers-2026'];
 
 /* Map locale codes to hreflang values (ua → uk for Ukrainian) */
 const hreflangMap = { ua: 'uk' };

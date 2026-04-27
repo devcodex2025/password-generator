@@ -21,6 +21,7 @@ const ShareBlock = dynamic(() => import('@/components/ShareBlock'), { ssr: false
 const AdBanner = dynamic(() => import('@/components/Advertising/Adbanner'), { ssr: false });
 const AdBannerSecond = dynamic(() => import('@/components/Advertising/AdbannerSecond'), { ssr: false });
 const CookieConsent = dynamic(() => import('@/components/CookieConsent/CookieConsent'), { ssr: false });
+const NordPassAffiliatePromo = dynamic(() => import('@/components/affiliate/NordPassAffiliatePromo'), { ssr: false });
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -65,6 +66,9 @@ export default function Page({ params }: PageProps) {
           <SeoAccordion language={locale} />
           <div className="max-w-6xl mx-auto px-4">
             <ShareBlock language={locale} className="mt-6" />
+          </div>
+          <div className="max-w-6xl mx-auto px-4">
+            <NordPassAffiliatePromo locale={locale} />
           </div>
           <AdBannerSecond language={locale} isDarkMode={isDarkMode} />
         </main>

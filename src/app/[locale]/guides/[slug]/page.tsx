@@ -15,6 +15,7 @@ import {
 } from '@/lib/guides-interlinking';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import NordPassAffiliatePromo from '@/components/affiliate/NordPassAffiliatePromo';
 import {
   GuideInterlinkEntry,
   GuideInterlinkPlacement,
@@ -279,6 +280,9 @@ export default async function GuideArticlePage({
           </div>
 
         </article>
+
+        {/* Affiliate recommendation */}
+        <NordPassAffiliatePromo locale={locale} className="mt-8" />
       </section>
     </LocalizedPageShell>
   );
