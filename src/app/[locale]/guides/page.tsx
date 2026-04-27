@@ -180,7 +180,12 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
         </div>
 
         {/* Affiliate recommendation */}
-        <NordPassAffiliatePromo locale={locale} className="mt-8" />
+        <NordPassAffiliatePromo
+          locale={locale}
+          className="mt-8"
+          affiliateUrl={process.env.NEXT_PUBLIC_NORDPASS_AFFILIATE_URL}
+          affiliateB2bUrl={process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL}
+        />
       </section>
     </LocalizedPageShell>
   );

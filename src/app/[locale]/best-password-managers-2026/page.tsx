@@ -231,7 +231,12 @@ export default async function BestPasswordManagersPage({
         </section>
 
         {/* Affiliate promo block with comparison table + CTAs */}
-        <NordPassAffiliatePromo locale={locale} className="mt-8" />
+        <NordPassAffiliatePromo
+          locale={locale}
+          className="mt-8"
+          affiliateUrl={process.env.NEXT_PUBLIC_NORDPASS_AFFILIATE_URL}
+          affiliateB2bUrl={process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL}
+        />
 
         {/* Section: Verdict */}
         <section className="mt-10">
