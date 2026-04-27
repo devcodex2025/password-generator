@@ -9,16 +9,34 @@ function t(key, language) {
   return lang[key] && lang[key][language] ? lang[key][language] : key;
 }
 
+const trustFaq = [
+  {
+    question: 'Does Generate Password To Me store generated passwords?',
+    answer:
+      'No. Password generation runs in your browser, and generated passwords are not stored on our servers. The tool is designed around client-side generation and privacy-first use.',
+  },
+  {
+    question: 'Which security sources guide the recommendations?',
+    answer:
+      'The guidance is reviewed against NIST SP 800-63B password recommendations, PCI DSS v4.0 password requirements, and Have I Been Pwned k-anonymity breach-checking practices where breach checks are used.',
+  },
+  {
+    question: 'How do you keep the FAQ trustworthy?',
+    answer:
+      'We keep answers short, separate general security education from guarantees, cite primary sources, and review the FAQ when major password standards, browser APIs, or breach-checking practices change.',
+  },
+];
+
 const SeoAccordion = ({ language }) => {
   return (
     <div className="w-full max-w-6xl mx-auto my-8 px-4 lg:px-8">
-      <Accordion type="single" collapsible className="rounded-2xl border border-[#E5F6FF] dark:border-[#374151] bg-white dark:bg-[#1c1c1c] shadow p-6 lg:p-8">
+      <Accordion type="single" collapsible className="flex flex-col gap-3 rounded-2xl border border-[#E5F6FF] dark:border-[#374151] bg-white dark:bg-[#1c1c1c] shadow p-4 lg:p-6">
         {/* SEO Welcome Section */}
         <AccordionItem value="item-1">
-          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
+          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold">
             {t("seotext_title", language)}
           </AccordionTrigger>
-          <AccordionContent forceMount={true}>
+          <AccordionContent>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mt-4">
               {/* Left Column - Introduction */}
               <div className="space-y-4">
@@ -63,10 +81,10 @@ const SeoAccordion = ({ language }) => {
 
         {/* SEO List Section */}
         <AccordionItem value="item-2">
-          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
+          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold">
             {t("seolist_title", language)}
           </AccordionTrigger>
-          <AccordionContent forceMount={true}>
+          <AccordionContent>
             <div className="text-[18px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed mb-8">
               <p className="mb-6" dangerouslySetInnerHTML={{ __html: t('seolist_intro1', language) }} />
               <p className="mb-6" dangerouslySetInnerHTML={{ __html: t('seolist_intro2', language) }} />
@@ -134,10 +152,10 @@ const SeoAccordion = ({ language }) => {
 
         {/* How To Use Section */}
         <AccordionItem value="item-3">
-          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
+          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold">
             {t('howtouse_title', language)}
           </AccordionTrigger>
-          <AccordionContent forceMount={true}>
+          <AccordionContent>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end mt-4">
               {/* Left Column - Basic Steps */}
               <div className="space-y-6 h-full flex flex-col">
@@ -198,10 +216,10 @@ const SeoAccordion = ({ language }) => {
 
         {/* About Us Section */}
         <AccordionItem value="item-4">
-          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
+          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold">
             {t('aboutus_title', language)}
           </AccordionTrigger>
-          <AccordionContent forceMount={true}>
+          <AccordionContent>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end mt-4">
               {/* Left Column - Who We Are */}
               <div className="space-y-6 h-full flex flex-col">
@@ -246,10 +264,10 @@ const SeoAccordion = ({ language }) => {
 
         {/* Security Standards Compliance Section */}
         <AccordionItem value="item-5">
-          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold hover:text-[#111827] transition-all duration-200">
+          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold">
             {t('security_standards_title', language)}
           </AccordionTrigger>
-          <AccordionContent forceMount={true}>
+          <AccordionContent>
             <div className="space-y-8">
               {/* Introduction */}
               <div className="text-[18px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed">
@@ -279,6 +297,58 @@ const SeoAccordion = ({ language }) => {
                 </h3>
                 <div className="text-[16px] text-[#071016] dark:text-[#e0e0e0] leading-relaxed" dangerouslySetInnerHTML={{ __html: t('security_features_list', language) }} />
               </div>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+
+        {/* FAQ Trust Section */}
+        <AccordionItem value="item-6">
+          <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold">
+            FAQ: security, privacy, and trust
+          </AccordionTrigger>
+          <AccordionContent>
+            <div className="mt-4 grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-6">
+              <div className="space-y-4">
+                {trustFaq.map((item) => (
+                  <div key={item.question} className="rounded-xl border border-[#D1E9FF] dark:border-[#374151] bg-[#F8FDFF] dark:bg-[#23272f] p-4">
+                    <h3 className="text-lg font-semibold text-[#071016] dark:text-[#f8fafc]">
+                      {item.question}
+                    </h3>
+                    <p className="mt-2 text-[16px] leading-relaxed text-[#374151] dark:text-[#dbeafe]">
+                      {item.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <aside className="rounded-xl border border-[#D1E9FF] dark:border-[#374151] bg-white dark:bg-[#111827] p-4">
+                <h3 className="text-lg font-semibold text-[#071016] dark:text-[#f8fafc]">
+                  E-E-A-T notes
+                </h3>
+                <dl className="mt-3 space-y-3 text-sm leading-relaxed text-[#374151] dark:text-[#dbeafe]">
+                  <div>
+                    <dt className="font-semibold text-[#071016] dark:text-white">Reviewed</dt>
+                    <dd>April 2026</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-[#071016] dark:text-white">Method</dt>
+                    <dd>Client-side password generation guidance, standards review, and privacy checks.</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-[#071016] dark:text-white">Sources</dt>
+                    <dd className="mt-1 flex flex-wrap gap-2">
+                      <a className="rounded-md text-[#2A4E63] dark:text-[#d7f2ff] underline underline-offset-4 hover:text-[#1f3b4c] dark:hover:text-white" href="https://pages.nist.gov/800-63-4/sp800-63b.html" target="_blank" rel="noopener noreferrer">
+                        NIST SP 800-63B
+                      </a>
+                      <a className="rounded-md text-[#2A4E63] dark:text-[#d7f2ff] underline underline-offset-4 hover:text-[#1f3b4c] dark:hover:text-white" href="https://www.pcisecuritystandards.org/document_library/" target="_blank" rel="noopener noreferrer">
+                        PCI DSS
+                      </a>
+                      <a className="rounded-md text-[#2A4E63] dark:text-[#d7f2ff] underline underline-offset-4 hover:text-[#1f3b4c] dark:hover:text-white" href="https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange" target="_blank" rel="noopener noreferrer">
+                        HIBP k-anonymity
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
+              </aside>
             </div>
           </AccordionContent>
         </AccordionItem>

@@ -3,6 +3,42 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (max-width: 767px) {
+  .nordpass-table-scroll {
+    scrollbar-color: #05a9ff #e8f6ff;
+    scrollbar-width: thin;
+    scroll-padding-inline: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dark .nordpass-table-scroll {
+    scrollbar-color: #38beff #111827;
+  }
+
+  .nordpass-table-scroll::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .nordpass-table-scroll::-webkit-scrollbar-track {
+    background: #e8f6ff;
+    border-radius: 999px;
+  }
+
+  .dark .nordpass-table-scroll::-webkit-scrollbar-track {
+    background: #111827;
+  }
+
+  .nordpass-table-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #05a9ff, #38beff);
+    border: 2px solid #e8f6ff;
+    border-radius: 999px;
+  }
+
+  .dark .nordpass-table-scroll::-webkit-scrollbar-thumb {
+    border-color: #111827;
+  }
+}
+
 * {
   font-family: var(--font-varela-round), sans-serif;
   font-weight: normal;

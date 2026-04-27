@@ -67,7 +67,7 @@ export default function NavigationProgress() {
     <div aria-hidden="true" className="fixed inset-0 z-[9999] grid place-items-center bg-black/20 backdrop-blur-[1px]">
       <div className="flex items-center gap-3 rounded-full bg-white/90 dark:bg-[#1c1c1c]/90 px-4 py-2 shadow-lg">
         <span className="inline-block h-5 w-5 rounded-full border-[3px] border-[#2A4E63] border-r-transparent animate-spin" />
-        <span className="text-sm font-medium !text-[#2A4E63] dark:!text-[#9bdfff]">{loadingText}</span>
+        <span className="text-sm font-medium !text-[#2A4E63] dark:!text-[#d7f2ff]">{loadingText}</span>
       </div>
     </div>
   );

@@ -106,7 +106,7 @@ function GuideInterlinkBlock({
 
   return (
     <div className="mt-5 rounded-24 border border-[#D1E9FF] dark:border-[#1f334a] bg-[#F0F8FF] dark:bg-[#0A1A2B] p-4 shadow-sm">
-      <p className="text-xs uppercase tracking-wide text-[#2A4E63] dark:text-[#9bdfff]">
+      <p className="text-xs uppercase tracking-wide text-[#2A4E63] dark:text-[#d7f2ff]">
         {getPlacementLabel(locale, placement)}
       </p>
       <div className="mt-2 space-y-2 text-sm text-[#071016] dark:text-[#d6e8ff]">

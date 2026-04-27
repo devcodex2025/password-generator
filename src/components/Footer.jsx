@@ -22,7 +22,7 @@ const Footer = ({ language }) => {
   const linkClass =
     'relative inline-flex items-center rounded-md px-1.5 py-1 text-[#3a6077] dark:text-[#05a9ff] transition-all duration-200 hover:-translate-y-0.5 hover:text-[#2A4E63] dark:hover:text-[#d7f2ff] hover:underline underline-offset-4 decoration-2';
   const externalLinkClass =
-    'text-sm relative inline-flex items-center rounded-md px-2 py-1 !text-[#3a6077] dark:!text-[#9bdfff] transition-all duration-200 hover:-translate-y-0.5 hover:!text-[#2A4E63] dark:hover:!text-[#d7f2ff] hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:underline underline-offset-4 decoration-2';
+    'text-sm relative inline-flex items-center rounded-md px-2 py-1 !text-[#3a6077] dark:!text-[#d7f2ff] transition-all duration-200 hover:-translate-y-0.5 hover:!text-[#2A4E63] dark:hover:!text-white hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:underline underline-offset-4 decoration-2';
   const linkLabel = (key) => getLinkLabel(key, locale);
   const headingLabel = (key) => t(key, locale);
 
@@ -34,23 +34,21 @@ const Footer = ({ language }) => {
     { label: linkLabel('contact'), href: `/${locale}/contact` },
   ];
 
-  const quickLinks = [
-    { label: linkLabel('guides'), href: `/${locale}/guides` },
-    { label: linkLabel('nist'), href: `/${locale}/guides/nist-800-63b-password-rules` },
-  ];
-
-  const guideSlugs = [
+  const homepageGuideSlugs = new Set([
     'how-to-create-strong-passwords',
-    'password-manager-vs-manual-storage',
-    'passphrase-vs-password-entropy',
-    'nist-800-63b-password-rules',
-    'pci-dss-password-requirements',
     'what-to-do-after-password-breach',
     'two-factor-authentication-basics',
+    'nist-800-63b-password-rules',
+    'password-manager-vs-manual-storage',
     'common-password-mistakes',
+  ]);
+
+  const guideSlugs = [
+    'passphrase-vs-password-entropy',
+    'pci-dss-password-requirements',
     'team-password-policy-template',
     'secure-password-generator-guide',
-  ];
+  ].filter((slug) => !homepageGuideSlugs.has(slug));
 
   const guideArticleLinks = guideSlugs.map((slug) => ({
     href: `/${locale}/guides/${slug}`,
@@ -61,35 +59,11 @@ const Footer = ({ language }) => {
     <>
       <footer className="footer-accent-scope w-full py-6 px-2 dark:px-0 border-t border-[#E5F6FF] dark:border-transparent bg-transparent">
         <div className="mb-5 h-px w-full bg-[#dff2fb] dark:hidden" />
-        <div className="mt-8 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-start justify-items-stretch gap-6 text-left">
-          <div className="w-full min-w-0 self-stretch">
-            <h3 className="text-base font-semibold text-slate-900 dark:text-white">{headingLabel('footer_quick_links')}</h3>
-            <ul className="mt-3 w-full space-y-3 text-sm text-slate-600 dark:text-slate-200">
-              {quickLinks.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className={linkClass}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mt-8 w-full grid grid-cols-1 md:grid-cols-2 items-start justify-items-stretch gap-6 text-left">
           <div className="w-full min-w-0 self-stretch">
             <h3 className="text-base font-semibold text-slate-900 dark:text-white">{headingLabel('footer_guide_articles')}</h3>
             <ul className="mt-3 w-full space-y-2 text-sm text-slate-600 dark:text-slate-200">
               {guideArticleLinks.slice(0, 4).map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className={linkClass}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="w-full min-w-0 self-stretch">
-            <h3 className="sr-only">{headingLabel('footer_guide_articles')}</h3>
-            <ul className="mt-8 w-full space-y-2 text-sm text-slate-600 dark:text-slate-200">
-              {guideArticleLinks.slice(4, 8).map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={linkClass}>
                     {item.label}

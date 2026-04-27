@@ -24,7 +24,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   };
 
   return (
-    <nav aria-label="Breadcrumb" className="text-sm !text-[#3a6077] dark:!text-[#9bdfff]">
+    <nav aria-label="Breadcrumb" className="text-sm !text-[#3a6077] dark:!text-[#d7f2ff]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -38,7 +38,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
               {item.href && !isLast ? (
                 <Link
                   href={item.href}
-                  className="relative inline-flex items-center rounded-md px-1.5 py-1 !text-[#3a6077] dark:!text-[#9bdfff] transition-all duration-200 hover:-translate-y-0.5 hover:!text-[#2A4E63] dark:hover:!text-[#d7f2ff] hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:underline underline-offset-4 decoration-2"
+                  className="relative inline-flex items-center rounded-md px-1.5 py-1 !text-[#3a6077] dark:!text-[#d7f2ff] transition-all duration-200 hover:-translate-y-0.5 hover:!text-[#2A4E63] dark:hover:!text-white hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:underline underline-offset-4 decoration-2"
                 >
                   {item.label}
                 </Link>

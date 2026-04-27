@@ -158,7 +158,7 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
                   <h2 className="mt-1.5 text-lg font-semibold text-[#071016] dark:text-[#e0e0e0]">
                     <Link
                       href={`/${locale}/guides/${guide.slug}`}
-                      className="rounded-sm !text-[#071016] dark:!text-[#e0e0e0] transition-all duration-200 hover:!text-[#2A4E63] dark:hover:!text-[#9bdfff] hover:underline underline-offset-4 decoration-2"
+                      className="rounded-sm !text-[#071016] dark:!text-[#e0e0e0] transition-all duration-200 hover:!text-[#2A4E63] dark:hover:!text-[#d7f2ff] hover:underline underline-offset-4 decoration-2"
                     >
                       {guide.title}
                     </Link>
