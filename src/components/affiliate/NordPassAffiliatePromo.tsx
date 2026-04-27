@@ -7,19 +7,33 @@ interface NordPassAffiliatePromoProps {
   locale: string;
   /** Optional extra Tailwind classes on the outer wrapper */
   className?: string;
+  /** Override affiliate personal URL (useful when passed from server components) */
+  affiliateUrl?: string;
+  /** Override affiliate business URL (useful when passed from server components) */
+  affiliateB2bUrl?: string;
 }
 
 /* ── Affiliate URL helpers ── */
 
 const UTM = 'utm_source=generatepasswordto.me&utm_medium=affiliate&utm_campaign=2026';
 
-function personalUrl(): string {
-  const base = process.env.NEXT_PUBLIC_NORDPASS_AFFILIATE_URL || 'https://nordpass.com';
+/** Resolve an env-var value; ignore values that are not real URLs. */
+function resolveEnv(value: string | undefined, fallback: string): string {
+  if (value && value.startsWith('http')) return value;
+  return fallback;
+}
+
+function personalUrl(override?: string): string {
+  const base = override
+    ? resolveEnv(override, 'https://nordpass.com')
+    : resolveEnv(process.env.NEXT_PUBLIC_NORDPASS_AFFILIATE_URL, 'https://nordpass.com');
   return `${base}${base.includes('?') ? '&' : '?'}${UTM}`;
 }
 
-function businessUrl(): string {
-  const base = process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL || 'https://nordpass.com/business';
+function businessUrl(override?: string): string {
+  const base = override
+    ? resolveEnv(override, 'https://nordpass.com/business')
+    : resolveEnv(process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL, 'https://nordpass.com/business');
   return `${base}${base.includes('?') ? '&' : '?'}${UTM}`;
 }
 
@@ -66,7 +80,7 @@ function getRows(t: ReturnType<typeof getAffiliateStrings>): ComparisonRow[] {
 
 /* ── Component ── */
 
-export default function NordPassAffiliatePromo({ locale, className = '' }: NordPassAffiliatePromoProps) {
+export default function NordPassAffiliatePromo({ locale, className = '', affiliateUrl, affiliateB2bUrl }: NordPassAffiliatePromoProps) {
   const t = getAffiliateStrings(locale);
   const rows = getRows(t);
 
@@ -92,16 +106,16 @@ export default function NordPassAffiliatePromo({ locale, className = '' }: NordP
         <table className="w-full min-w-[480px] text-sm border-collapse">
           <thead>
             <tr className="border-b-2 border-[#E5F6FF] dark:border-[#374151]">
-              <th className="py-3 px-3 text-left font-semibold text-[#2A4E63] dark:text-[#9bdfff]">
+              <th className="py-3 px-3 text-left font-semibold text-slate-600 dark:text-sky-200">
                 {t.tableFeature}
               </th>
-              <th className="py-3 px-3 text-center font-semibold text-[#071016] dark:text-[#e0e0e0] bg-[#E5F6FF]/50 dark:bg-[#1f334a]/50 rounded-t-lg">
+              <th className="py-3 px-3 text-center font-semibold text-slate-900 dark:text-white bg-[#E5F6FF]/50 dark:bg-[#1f334a]/50 rounded-t-lg">
                 {t.tableNordPass}
               </th>
-              <th className="py-3 px-3 text-center font-semibold text-[#2A4E63] dark:text-[#9ca3af]">
+              <th className="py-3 px-3 text-center font-semibold text-slate-600 dark:text-slate-300">
                 {t.table1Password}
               </th>
-              <th className="py-3 px-3 text-center font-semibold text-[#2A4E63] dark:text-[#9ca3af]">
+              <th className="py-3 px-3 text-center font-semibold text-slate-600 dark:text-slate-300">
                 {t.tableBitwarden}
               </th>
             </tr>
@@ -133,7 +147,7 @@ export default function NordPassAffiliatePromo({ locale, className = '' }: NordP
       {/* CTA buttons */}
       <div className="mt-6 flex flex-col sm:flex-row gap-3">
         <a
-          href={personalUrl()}
+          href={personalUrl(affiliateUrl)}
           target="_blank"
           rel="sponsored noopener"
           onClick={() => trackClick('personal')}
@@ -145,7 +159,7 @@ export default function NordPassAffiliatePromo({ locale, className = '' }: NordP
           {t.ctaPersonal}
         </a>
         <a
-          href={businessUrl()}
+          href={businessUrl(affiliateB2bUrl)}
           target="_blank"
           rel="sponsored noopener"
           onClick={() => trackClick('business')}
