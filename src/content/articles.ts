@@ -8,6 +8,7 @@ import * as twoFactorAuthenticationBasics from './articles/two-factor-authentica
 import * as commonPasswordMistakes from './articles/common-password-mistakes';
 import * as teamPasswordPolicyTemplate from './articles/team-password-policy-template';
 import * as securePasswordGeneratorGuide from './articles/secure-password-generator-guide';
+import * as vpnSecurityPrivacyGuide from './articles/vpn-security-privacy-guide';
 
 export const SUPPORTED_CONTENT_LANGUAGES = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'] as const;
 
@@ -236,6 +237,26 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: securePasswordGeneratorGuide.zh,
       ja: securePasswordGeneratorGuide.ja,
       pl: securePasswordGeneratorGuide.pl,
+    },
+  },
+  {
+    slug: 'vpn-security-privacy-guide',
+    category: 'security-basics',
+    readingMinutes: 16,
+    updatedAt: '2026-04-29',
+    author: 'GeneratePasswordTo Editorial Team',
+    content: {
+      en: vpnSecurityPrivacyGuide.en,
+      ua: vpnSecurityPrivacyGuide.ua,
+      es: vpnSecurityPrivacyGuide.es,
+      fr: vpnSecurityPrivacyGuide.fr,
+      de: vpnSecurityPrivacyGuide.de,
+      it: vpnSecurityPrivacyGuide.it,
+      pt: vpnSecurityPrivacyGuide.pt,
+      ru: vpnSecurityPrivacyGuide.ru,
+      zh: vpnSecurityPrivacyGuide.zh,
+      ja: vpnSecurityPrivacyGuide.ja,
+      pl: vpnSecurityPrivacyGuide.pl,
     },
   },
 ];
