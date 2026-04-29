@@ -126,6 +126,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
   const navItemDefinitions: Array<{ labelKey: LinkLabelKey; href: string }> = [
     { labelKey: 'generator', href: homeHref },
     { labelKey: 'guides', href: `${localePrefix}/guides` },
+    { labelKey: 'vpn', href: `${localePrefix}/guides/vpn-security-privacy-guide` },
     { labelKey: 'contact', href: `${localePrefix}/contact` },
     { labelKey: 'privacyPolicy', href: `${localePrefix}/privacy-policy` },
     { labelKey: 'termsOfService', href: `${localePrefix}/terms-of-service` },

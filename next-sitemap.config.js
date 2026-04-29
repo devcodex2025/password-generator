@@ -21,6 +21,7 @@ const guideSlugs = [
   'common-password-mistakes',
   'team-password-policy-template',
   'secure-password-generator-guide',
+  'vpn-security-privacy-guide',
 ];
 const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'best-password-managers-2026'];
 
