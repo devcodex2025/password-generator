@@ -16,6 +16,7 @@ import {
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import NordPassAffiliatePromo from '@/components/affiliate/NordPassAffiliatePromo';
+import NordVpnAffiliatePromo from '@/components/affiliate/NordVpnAffiliatePromo';
 import {
   GuideInterlinkEntry,
   GuideInterlinkPlacement,
@@ -255,7 +256,9 @@ export default async function GuideArticlePage({
             {guide.sections.map((section, index) => (
               <Fragment key={`${section.heading}-${index}`}>
                 <section>
-                  <h2 className="text-2xl font-semibold text-[#071016] dark:text-[#e0e0e0]">{section.heading}</h2>
+                  <h2 className="text-2xl font-semibold text-[#071016] dark:text-[#e0e0e0]">
+                    {renderGuideTextWithLinks(section.heading, linkTargets, interlinkState, `heading-${index}`)}
+                  </h2>
                   <div className="mt-3 space-y-3">
                     {section.paragraphs.map((paragraph, pIndex) => (
                       <p key={pIndex} className="text-[#374151] dark:text-[#c7c7c7] leading-7">
@@ -282,12 +285,20 @@ export default async function GuideArticlePage({
         </article>
 
         {/* Affiliate recommendation */}
-        <NordPassAffiliatePromo
-          locale={locale}
-          className="mt-8"
-          affiliateUrl={process.env.NEXT_PUBLIC_NORDPASS_AFFILIATE_URL}
-          affiliateB2bUrl={process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL}
-        />
+        {slug === 'vpn-security-privacy-guide' ? (
+          <NordVpnAffiliatePromo
+            locale={locale}
+            className="mt-8"
+            affiliateUrl={process.env.NEXT_PUBLIC_NORDVPN_AFFILIATE_URL}
+          />
+        ) : (
+          <NordPassAffiliatePromo
+            locale={locale}
+            className="mt-8"
+            affiliateUrl={process.env.NEXT_PUBLIC_NORDPASS_AFFILIATE_URL}
+            affiliateB2bUrl={process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL}
+          />
+        )}
       </section>
     </LocalizedPageShell>
   );

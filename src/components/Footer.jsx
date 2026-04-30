@@ -48,6 +48,7 @@ const Footer = ({ language }) => {
     'pci-dss-password-requirements',
     'team-password-policy-template',
     'secure-password-generator-guide',
+    'vpn-security-privacy-guide',
   ].filter((slug) => !homepageGuideSlugs.has(slug));
 
   const guideArticleLinks = guideSlugs.map((slug) => ({

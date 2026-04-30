@@ -1,6 +1,7 @@
 export type LinkLabelKey =
   | 'generator'
   | 'guides'
+  | 'vpn'
   | 'nist'
   | 'pci'
   | 'afterBreach'
@@ -36,6 +37,19 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: '指南',
     ja: 'ガイド',
     pl: 'Poradniki',
+  },
+  vpn: {
+    ua: 'VPN',
+    en: 'VPN',
+    es: 'VPN',
+    fr: 'VPN',
+    de: 'VPN',
+    it: 'VPN',
+    pt: 'VPN',
+    ru: 'VPN',
+    zh: 'VPN',
+    ja: 'VPN',
+    pl: 'VPN',
   },
   nist: {
     ua: 'NIST',
