@@ -1,15 +1,27 @@
-# Generate Password To Me
+# Generate Password To Me - Secure Password Generator with HIBP Breach Check
 
-A modern multilingual password generator for creating strong passwords, checking password strength, and verifying whether a password has appeared in known breach corpora.
+A privacy-first password generator, breach checker, and password security tool built with Next.js. It creates strong passwords locally in the browser, estimates password strength with `zxcvbn`, and checks known breach exposure through the Have I Been Pwned Pwned Passwords API without sending the full password.
+
+[![Live Demo](https://img.shields.io/badge/demo-generatepasswordto.me-05a9ff?style=for-the-badge)](https://www.generatepasswordto.me)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-ready-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Security](https://img.shields.io/badge/npm%20audit-0%20vulnerabilities-22c55e?style=for-the-badge)](https://docs.npmjs.com/cli/commands/npm-audit)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
 
 [![Core Stack](https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,materialui,nodejs&theme=light)](https://skillicons.dev)
 [![Data and Deploy](https://skillicons.dev/icons?i=mongodb,postgres,vercel,npm,git,github&theme=light)](https://skillicons.dev)
 
-![Generate Password Application / Generate Password to me](public/images/generate_password_app.png)
-
 ## Demo
 
 ![Generate Password To Me demo](public/demo.gif)
+
+![Generate Password Application / Generate Password to me](public/images/generate_password_app.png)
+
+## Why This Project?
+
+- **Private by design** - generated passwords stay in the browser and are not stored on a server.
+- **Developer-readable security** - the HIBP k-anonymity flow is documented with a compact TypeScript example.
+- **SEO-ready and multilingual** - the app ships with localized routes, metadata, structured data, guides, and hreflang support.
 
 ## Features
 
