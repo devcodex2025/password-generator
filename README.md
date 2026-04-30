@@ -2,7 +2,8 @@
 
 A modern multilingual password generator for creating strong passwords, checking password strength, and verifying whether a password has appeared in known breach corpora.
 
-[![Tech Stack](https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,materialui,nodejs,npm,mongodb,postgres,vercel&theme=light)](https://skillicons.dev)
+[![Core Stack](https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,materialui,nodejs&theme=light)](https://skillicons.dev)
+[![Data and Deploy](https://skillicons.dev/icons?i=mongodb,postgres,vercel,npm,git,github&theme=light)](https://skillicons.dev)
 
 ![Generate Password Application / Generate Password to me](public/images/generate_password_app.png)
 
@@ -62,6 +63,8 @@ http://localhost:3000
 
 ## Technologies
 
+[![Frontend](https://skillicons.dev/icons?i=nextjs,react,ts,js,tailwind,materialui&theme=light)](https://skillicons.dev)
+
 - **Framework**: Next.js 16 App Router
 - **UI**: React 19, Material UI, Radix UI, NextUI, React Bootstrap
 - **Language**: TypeScript and JavaScript
@@ -73,6 +76,16 @@ http://localhost:3000
 - **Analytics**: Google Tag Manager, Vercel Analytics
 - **Build/deploy**: Next.js, next-sitemap, Vercel
 - **README icons**: [Skill Icons by tandpfun](https://github.com/tandpfun/skill-icons)
+
+### Tooling and Infrastructure
+
+[![Tooling and Infrastructure](https://skillicons.dev/icons?i=nodejs,npm,git,github,vercel,mongodb,postgres&theme=light)](https://skillicons.dev)
+
+- **Runtime**: Node.js 22.x
+- **Package manager**: npm 10+
+- **Version control**: Git and GitHub
+- **Hosting target**: Vercel
+- **Datastores**: MongoDB and PostgreSQL
 
 ## Project Structure
 
@@ -134,6 +147,56 @@ How it works:
 7. If a suffix matches, the UI shows how many times the password appeared in known breach data.
 
 Official HIBP wording: password checks can be integrated "without sending the full password to our service." See the [Pwned Passwords API getting started guide](https://support.haveibeenpwned.com/hc/en-au/articles/15316377846671-I-wish-to-use-the-Pwned-Passwords-API-How-can-I-get-started).
+
+### Breach Check Code Example
+
+This simplified TypeScript example shows the same k-anonymity flow used by the app:
+
+```ts
+async function sha1(text: string): Promise<string> {
+  const encoded = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest('SHA-1', encoded);
+
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, '0'))
+    .join('')
+    .toUpperCase();
+}
+
+async function checkPasswordBreach(password: string) {
+  const hash = await sha1(password);
+  const prefix = hash.slice(0, 5);
+  const suffix = hash.slice(5);
+
+  const response = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`, {
+    headers: {
+      'Add-Padding': 'true',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`HIBP request failed with status ${response.status}`);
+  }
+
+  const rows = (await response.text()).split('\n');
+
+  for (const row of rows) {
+    const [returnedSuffix, count] = row.trim().split(':');
+
+    if (returnedSuffix?.toUpperCase() === suffix) {
+      return {
+        breached: true,
+        count: Number.parseInt(count, 10),
+      };
+    }
+  }
+
+  return {
+    breached: false,
+    count: 0,
+  };
+}
+```
 
 ## Security Notes
 
