@@ -14,7 +14,7 @@ interface NordVpnAffiliatePromoProps {
 
 const UTM = 'utm_source=generatepasswordto.me&utm_medium=affiliate&utm_campaign=vpn2026';
 
-const FALLBACK_URL = 'https://go.nordpass.io/aff_c?offer_id=488&aff_id=146616&url_id=9356';
+const FALLBACK_URL = 'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=902';
 
 function resolveEnv(value: string | undefined, fallback: string): string {
   if (value && value.startsWith('http')) return value;

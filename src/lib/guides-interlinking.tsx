@@ -133,7 +133,7 @@ export function renderGuideTextWithLinks(
   state: InterlinkState,
   keyPrefix: string,
 ): ReactNode[] {
-  const parts = text.split(/(\*\*.+?\*\*)/g);
+  const parts = text.split(/(\*\*.+?\*\*|\[.+?\]\(.+?\))/g);
 
   return parts.flatMap((part, index) => {
     const isBold = part.startsWith('**') && part.endsWith('**') && part.length > 4;
@@ -144,6 +144,25 @@ export function renderGuideTextWithLinks(
           {renderLinkedSegments(inner, targets, state, `${keyPrefix}-b-${index}`)}
         </strong>
       );
+    }
+
+    const isLink = part.startsWith('[') && part.includes('](') && part.endsWith(')');
+    if (isLink) {
+      const match = part.match(/\[(.+?)\]\((.+?)\)/);
+      if (match) {
+        const [, linkText, href] = match;
+        return (
+          <a
+            key={`${keyPrefix}-link-${index}`}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#2A4E63] dark:text-[#d7f2ff] hover:text-[#1f3b4c] dark:hover:text-white underline underline-offset-4 decoration-2 transition-colors font-semibold"
+          >
+            {linkText}
+          </a>
+        );
+      }
     }
 
     return renderLinkedSegments(part, targets, state, `${keyPrefix}-p-${index}`);

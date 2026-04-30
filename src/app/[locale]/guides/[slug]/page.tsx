@@ -256,7 +256,9 @@ export default async function GuideArticlePage({
             {guide.sections.map((section, index) => (
               <Fragment key={`${section.heading}-${index}`}>
                 <section>
-                  <h2 className="text-2xl font-semibold text-[#071016] dark:text-[#e0e0e0]">{section.heading}</h2>
+                  <h2 className="text-2xl font-semibold text-[#071016] dark:text-[#e0e0e0]">
+                    {renderGuideTextWithLinks(section.heading, linkTargets, interlinkState, `heading-${index}`)}
+                  </h2>
                   <div className="mt-3 space-y-3">
                     {section.paragraphs.map((paragraph, pIndex) => (
                       <p key={pIndex} className="text-[#374151] dark:text-[#c7c7c7] leading-7">
