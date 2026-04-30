@@ -17,6 +17,12 @@ A privacy-first password generator, breach checker, and password security tool b
 
 ![Generate Password Application / Generate Password to me](public/images/generate_password_app.png)
 
+## Design
+
+[Open the PasswordGenerate design in Figma](https://www.figma.com/design/W6v02rZH7WvjzufLwf0e9i/PasswordGenerate?node-id=0-1&p=f&t=C5W1HR5ar0i38ejx-0)
+
+![PasswordGenerate Figma design reference](public/images/figma-design-preview.png)
+
 ## Why This Project?
 
 - **Private by design** - generated passwords stay in the browser and are not stored on a server.
@@ -164,9 +170,11 @@ src/
 
 ### 2. Review strength
 
-- Each generated password is analyzed with `zxcvbn`.
-- The UI shows a strength level and estimated crack time.
-- Strength feedback is color-coded for quick scanning.
+- Each generated password is analyzed with [`zxcvbn`](https://github.com/dropbox/zxcvbn), a password-strength estimator designed to model realistic guessing attacks instead of relying only on simple character rules.
+- We use `zxcvbn` because length, uppercase letters, numbers, and symbols are not enough to describe real password strength. A password like `Password123!` matches common patterns even though it contains multiple character types.
+- `zxcvbn` looks for dictionary words, names, dates, keyboard patterns, repeated sequences, l33t substitutions, and other predictable structures.
+- The library estimates how many guesses an attacker may need, then converts that into crack-time feedback and a compact score.
+- The UI shows a strength level, estimated crack time, and color-coded feedback so users can compare generated passwords quickly.
 
 ### 3. Check for known breaches
 
