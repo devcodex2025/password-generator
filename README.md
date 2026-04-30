@@ -51,17 +51,17 @@ Generate Password To Me currently supports 11 interface languages:
 
 | Flag | Code | Language |
 | --- | --- | --- |
-| 🇺🇸 | `en` | English |
-| 🇺🇦 | `ua` | Українська |
-| 🇪🇸 | `es` | Español |
-| 🇫🇷 | `fr` | Français |
-| 🇩🇪 | `de` | Deutsch |
-| 🇮🇹 | `it` | Italiano |
-| 🇵🇹 | `pt` | Português |
-| 🇷🇺 | `ru` | Русский |
-| 🇨🇳 | `zh` | 中文 |
-| 🇯🇵 | `ja` | 日本語 |
-| 🇵🇱 | `pl` | Polski |
+| 🇺🇸 | `en` | [English](https://www.generatepasswordto.me/) |
+| 🇺🇦 | `ua` | [Українська](https://www.generatepasswordto.me/ua) |
+| 🇪🇸 | `es` | [Español](https://www.generatepasswordto.me/es) |
+| 🇫🇷 | `fr` | [Français](https://www.generatepasswordto.me/fr) |
+| 🇩🇪 | `de` | [Deutsch](https://www.generatepasswordto.me/de) |
+| 🇮🇹 | `it` | [Italiano](https://www.generatepasswordto.me/it) |
+| 🇵🇹 | `pt` | [Português](https://www.generatepasswordto.me/pt) |
+| 🇷🇺 | `ru` | [Русский](https://www.generatepasswordto.me/ru) |
+| 🇨🇳 | `zh` | [中文](https://www.generatepasswordto.me/zh) |
+| 🇯🇵 | `ja` | [日本語](https://www.generatepasswordto.me/ja) |
+| 🇵🇱 | `pl` | [Polski](https://www.generatepasswordto.me/pl) |
 
 ## Translations
 
