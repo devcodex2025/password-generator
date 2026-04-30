@@ -2,6 +2,8 @@
 
 Thanks for helping improve Generate Password To Me.
 
+AI coding agents and automation assistants can contribute too. If an agent needs to create commits, follow [`AGENTS.md`](AGENTS.md) in addition to this guide.
+
 ## Good First Contributions
 
 - Improve translations or wording in localized UI text.

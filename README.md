@@ -39,6 +39,36 @@ A privacy-first password generator, breach checker, and password security tool b
 - **Analytics and ads** - Google Tag Manager, Vercel Analytics, and AdSense integration.
 - **SEO** - localized metadata, structured data, hreflang tags, and guide content.
 
+## Languages
+
+Generate Password To Me currently supports 11 interface languages:
+
+| Flag | Code | Language |
+| --- | --- | --- |
+| 🇺🇸 | `en` | English |
+| 🇺🇦 | `ua` | Українська |
+| 🇪🇸 | `es` | Español |
+| 🇫🇷 | `fr` | Français |
+| 🇩🇪 | `de` | Deutsch |
+| 🇮🇹 | `it` | Italiano |
+| 🇵🇹 | `pt` | Português |
+| 🇷🇺 | `ru` | Русский |
+| 🇨🇳 | `zh` | 中文 |
+| 🇯🇵 | `ja` | 日本語 |
+| 🇵🇱 | `pl` | Polski |
+
+## Translations
+
+Translations are stored in `src/components/lang.json`. The app builds i18next resources from that file automatically, and the language selector reads available language codes from the same translation keys.
+
+To add a new language:
+
+1. Add the new language code to every translation entry in `src/components/lang.json`.
+2. Add the language name and flag mapping in `src/utils/languageUtils.js`.
+3. Add localized route metadata in `src/app/[locale]/layout.tsx` if the new locale needs custom SEO title, description, or Open Graph text.
+4. Add translated guide/static-page content where relevant.
+5. Run `npm run build` to verify localized routes and generated metadata.
+
 ## Quick Start
 
 ### Requirements
@@ -274,6 +304,8 @@ GA4 setup: set `NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX` in `.env.local` or in Vercel Pro
 
 ## Contributing
 
+Human contributors and AI coding agents are welcome. Agent-specific workflow rules live in [`AGENTS.md`](AGENTS.md).
+
 1. Fork the repository.
 2. Create a feature branch: `git checkout -b feature/amazing-feature`.
 3. Commit your changes: `git commit -m "Add amazing feature"`.
@@ -283,6 +315,12 @@ GA4 setup: set `NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX` in `.env.local` or in Vercel Pro
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Donations
+
+If this project helps you build safer password workflows, you can support ongoing maintenance through [GitHub Sponsors](https://github.com/sponsors/devcodex2025).
+
+Support helps with dependency maintenance, security reviews, translations, documentation, and keeping the public demo available.
 
 ## Support
 
