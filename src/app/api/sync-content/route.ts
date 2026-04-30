@@ -180,7 +180,7 @@ export async function POST(request: Request) {
           revalidatePath(`/${locale}/guides/${article.slug}`, 'page');
         }
       }
-      revalidateTag('guides');
+      revalidateTag('guides', 'max');
     }
 
     return NextResponse.json(
