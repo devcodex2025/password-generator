@@ -13,7 +13,7 @@ A privacy-first password generator, breach checker, and password security tool b
 
 ## Demo
 
-![Generate Password To Me demo showing password generation, strength meter, and breach check](public/demo_preview.gif)
+![Generate Password To Me demo showing password generation, strength meter, and breach check](public/demo_preview_without_ads.gif)
 
 ## Design
 
