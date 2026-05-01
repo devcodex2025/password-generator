@@ -306,7 +306,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         {t('main_subtitle')}
       </p>
       <div
-        className={`w-full lg:w-9/12 xl:w-9/12 2xl:w-9/12 flex flex-col ${isDarkMode ? 'bg-[#1c1c1c]' : 'bg-white'} drop-shadow-lg rounded-[48px] shadow p-[16px] md:p-[40px] relative`}
+        className={`relative flex w-full min-w-0 max-w-full flex-col overflow-visible rounded-[48px] shadow drop-shadow-lg p-[16px] md:p-[40px] lg:w-9/12 xl:w-9/12 2xl:w-9/12 ${isDarkMode ? 'bg-[#1c1c1c]' : 'bg-white'}`}
       >
         <div
           id="rewardSingle"

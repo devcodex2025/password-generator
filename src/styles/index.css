@@ -247,8 +247,9 @@
   .container {
     width: 100% !important;
     max-width: 100% !important;
-    overflow-x: hidden !important;
-  } 
+    /* overflow-x visible: decorative pills beside the generator card use negative inset and must not be clipped */
+    overflow-x: visible !important;
+  }
 }
 
 /* Обмеження максимальної ширини контейнера для ПК */

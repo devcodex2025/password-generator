@@ -25,8 +25,20 @@ import {
 } from '@/lib/guides-interlink-plan';
 import { getLocalizedInterlinkAnchor } from '@/lib/interlinking-anchors';
 import { getPlacementLabel } from '@/lib/interlinking-placements';
+import VpnGuideVisualBlocks, {
+  type VpnGuideVisualBlockId,
+} from '@/components/guides/VpnGuideVisualBlocks';
 
 const baseUrl = 'https://www.generatepasswordto.me';
+
+const VPN_GUIDE_VISUAL_BY_SECTION: Partial<Record<number, VpnGuideVisualBlockId>> = {
+  0: 'stats',
+  1: 'tunnel',
+  2: 'scenarios',
+  3: 'defense',
+  4: 'checklist',
+  6: 'myths',
+};
 const hreflangMap: Record<string, string> = { ua: 'uk' };
 export const runtime = 'nodejs';
 export const revalidate = 3600;
@@ -274,6 +286,9 @@ export default async function GuideArticlePage({
                         </li>
                       ))}
                     </ul>
+                  ) : null}
+                  {slug === 'vpn-security-privacy-guide' && VPN_GUIDE_VISUAL_BY_SECTION[index] ? (
+                    <VpnGuideVisualBlocks locale={locale} block={VPN_GUIDE_VISUAL_BY_SECTION[index]!} />
                   ) : null}
                 </section>
                 {index === 0 && <GuideInterlinkBlock entries={bodyEntries} locale={locale} placement="body" />}

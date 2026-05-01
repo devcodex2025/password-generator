@@ -43,61 +43,56 @@ export default function PasswordRow({
     onGenerate(index);
   };
   return (
-    <div className="flex relative items-center flex-row lg:flex-row gap-2 h-auto w-full my-5 lg:my-1 flex-wrap lg:flex-nowrap">
+    <div className="relative my-5 flex h-auto w-full flex-row flex-wrap items-center gap-2 lg:my-1 lg:flex-nowrap">
       <div
-        className={`py-1 lg:px-4 w-full lg:w-[80%] flex items-center border-2 h-14 border-solid rounded-[120px] text-[#071016] text-[12px] md:text-[20px] border-[#E5F6FF] dark:border-transparent bg-white dark:bg-[#000000]`}
+        className={`flex h-14 w-full min-w-0 items-stretch border-2 border-solid border-[#E5F6FF] py-0 text-[12px] text-[#071016] dark:border-transparent dark:bg-[#000000] lg:w-[80%] lg:items-center lg:rounded-[120px] lg:px-4 md:text-[20px] rounded-[120px] bg-white lg:py-1`}
       >
         <label htmlFor={`password-output-${index}`} className="sr-only">Generated password</label>
         <input
           id={`password-output-${index}`}
           type="text"
           value={password || ''}
-          className="rounded-[40px] ml-[16px] border-none outline-none h-full w-[80%] lg:w-[80%] md:py-5 flex-grow text-base lg:text-lg bg-transparent dark:text-white"
+          className="ml-3 min-w-0 flex-1 self-center rounded-[40px] border-none bg-transparent py-2 pr-2 text-base outline-none dark:text-white md:ml-4 md:text-lg lg:h-full lg:py-1"
           readOnly
         />
-        <div className="hidden md:flex items-center lg:justify-end justify-center flex-nowrap w-full lg:max-w-[300px] max-w-[150px] h-full bg-[#000] dark:bg-transparent lg:bg-transparent rounded-[40px]">
+        {/* Tablet / small laptop: black pill — nudge up slightly between md and lg */}
+        <div className="hidden min-h-0 shrink-0 items-center justify-end gap-1.5 self-center pr-1.5 md:max-lg:-translate-y-1 md:flex md:rounded-l-none md:rounded-r-[36px] md:bg-black lg:max-w-[300px] lg:translate-y-0 lg:gap-2 lg:rounded-[40px] lg:bg-transparent lg:pr-2 dark:md:bg-[#0f172a]">
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
-            className="hidden lg:flex text-[18px] lg:text-[20px] w-full my-2 lg:w-auto lg:px-6 lg:py-2 mx-2 whitespace-nowrap justify-center"
+            className="hidden lg:inline-flex lg:px-6 lg:py-2 lg:text-[20px]"
           >
             {t('generate')}
           </GenerateButton>
-          <button
-            className="bg-[#E5F6FF] dark:bg-[#2A4E63] dark:text-white dark:border dark:border-[#374151] text-[#2A4E63] font-semibold text-[16px] md:text-[18px] flex lg:hidden lg:text-[24px] rounded-[60px] px-[8px] md:px-[10px] py-[10px] md:py-[12px] lg:my-0 mx-2 whitespace-nowrap justify-center py-0 items-center px-2 h-full transition-all duration-200 hover:bg-[#d7eefb] dark:hover:bg-[#38beff]"
+          <GenerateButton
             onClick={() => onGenerate(index)}
-            style={{ cursor: 'pointer' }}
+            onLongPress={handleLongPress}
+            className="inline-flex shrink-0 items-center justify-center px-3 py-2 text-[14px] font-semibold leading-none lg:hidden md:px-3.5 md:text-[15px]"
           >
             {t('generate_short')}
-          </button>
-          {/* PC Share Button */}
-          <PcShareBtn
-            password={password}
-            isDarkMode={isDarkMode}
-          />
-          {/* Hide for tablet and below */}
+          </GenerateButton>
+          <div className="hidden shrink-0 lg:block">
+            <PcShareBtn password={password} isDarkMode={isDarkMode} />
+          </div>
           <Image
             onClick={() => onGenerate(index)}
             src="/images/share-paper-plane.svg"
             alt="Regenerate password"
-            className={`${isDarkMode ? 'invert brightness-0' : ''} flex mr-2 h-[15px] md:h-[20px] md:hidden`}
-            style={{ cursor: 'pointer' }}
+            className={`${isDarkMode ? 'invert brightness-0' : ''} mr-1 flex h-[15px] shrink-0 cursor-pointer md:hidden`}
             loading="lazy"
             decoding="async"
             width={20}
             height={20}
           />
-          {/* Only for tablet */}
           <Image
             onClick={() => onGenerate(index)}
             src="/images/refreash.png"
             alt="refresh password"
-            className={`${isDarkMode ? 'invert brightness-0' : ''} flex md:mr-[20px] md:h-[20px] lg:hidden w-[20px] h-[16px]`}
-            style={{ cursor: 'pointer' }}
+            className={`${isDarkMode ? 'invert brightness-0' : ''} mr-1.5 hidden h-[18px] w-[18px] shrink-0 cursor-pointer object-contain md:mr-2 md:flex lg:hidden`}
             loading="lazy"
             decoding="async"
-            width={20}
-            height={16}
+            width={18}
+            height={18}
           />
         </div>
       </div>

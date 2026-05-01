@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 import { CustomThemeProvider } from '@/context/ThemeContext';
 import '@/styles/index.css';
-import seoData from '@/components/SeoData';
 import Script from 'next/script';
-import lang from '@/components/lang.json';
 import NavigationProgress from '@/components/NavigationProgress';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
+import { buildHomeMetadata, SUPPORTED_LANGS, HTML_LANG_MAP } from '@/lib/home-metadata';
+import HomeStructuredData from '@/components/seo/HomeStructuredData';
 
 const arsenal = Arsenal({ 
   subsets: ['cyrillic', 'latin'], 
@@ -42,188 +42,13 @@ const notoSansSC = Noto_Sans_SC({
   display: 'swap',
 });
 
-const baseUrl = 'https://www.generatepasswordto.me';
-const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
-const hreflangMap: Record<string, string> = { ua: 'uk' };
-const ogLocaleMap: Record<string, string> = {
-  en: 'en_US',
-  ua: 'uk_UA',
-  es: 'es_ES',
-  fr: 'fr_FR',
-  de: 'de_DE',
-  it: 'it_IT',
-  pt: 'pt_PT',
-  ru: 'ru_RU',
-  zh: 'zh_CN',
-  ja: 'ja_JP',
-  pl: 'pl_PL',
-};
-const BRAND = 'generatepasswordto.me';
-const META_TITLE_MAX = 60;
-const META_DESCRIPTION_MAX = 155;
-const TITLE_SUFFIX = ` | ${BRAND}`;
-const TITLE_BASE_MAX = Math.max(1, META_TITLE_MAX - TITLE_SUFFIX.length);
-const DEFAULT_META_TITLE_BASE = 'Password generator';
-const DEFAULT_META_DESCRIPTION = 'Generate strong, secure passwords quickly with generatepasswordto.me.';
-
-const htmlLangMap: Record<string, string> = {
-  en: 'en',
-  ua: 'uk',
-  es: 'es',
-  fr: 'fr',
-  de: 'de',
-  it: 'it',
-  pt: 'pt',
-  ru: 'ru',
-  zh: 'zh',
-  ja: 'ja',
-  pl: 'pl',
-};
-
-const localizedMetaTitles: Record<string, string> = {
-  en: 'Secure Password Generator – Create Strong Passwords Online',
-  ua: 'Генератор паролів онлайн – Створіть надійний пароль',
-  es: 'Generador de contraseñas seguras – Crea contraseñas fuertes',
-  fr: 'Générateur de mots de passe sécurisés en ligne',
-  de: 'Sicherer Passwort-Generator – Starke Passwörter erstellen',
-  it: 'Generatore di password sicure – Crea password forti',
-  pt: 'Gerador de senhas seguras – Crie senhas fortes online',
-  ru: 'Генератор паролей онлайн – Создайте надёжный пароль',
-  zh: '安全密码生成器 – 在线创建强密码',
-  ja: '安全なパスワード生成 – 強力なパスワードを作成',
-  pl: 'Generator haseł online – Twórz silne hasła',
-};
-
-const localizedMetaDescriptions: Record<string, string> = {
-  en: 'Free online password generator. Create strong, random passwords that meet NIST 800-63B standards. No data stored – generated locally in your browser.',
-  ua: 'Безкоштовний онлайн-генератор паролів. Створюйте надійні випадкові паролі за стандартами NIST 800-63B. Без зберігання даних – генерація локально у браузері.',
-  es: 'Generador de contraseñas online gratuito. Crea contraseñas seguras y aleatorias según NIST 800-63B. Sin almacenamiento – generado en tu navegador.',
-  fr: 'Générateur de mots de passe gratuit en ligne. Créez des mots de passe forts et aléatoires conformes NIST 800-63B. Généré dans votre navigateur.',
-  de: 'Kostenloser Online-Passwort-Generator. Erstellen Sie starke, zufällige Passwörter nach NIST 800-63B. Keine Datenspeicherung – lokal im Browser generiert.',
-  it: 'Generatore di password online gratuito. Crea password forti e casuali conformi NIST 800-63B. Nessun dato archiviato – generato nel tuo browser.',
-  pt: 'Gerador de senhas online gratuito. Crie senhas fortes e aleatórias conforme NIST 800-63B. Sem armazenamento – gerado localmente no navegador.',
-  ru: 'Бесплатный онлайн-генератор паролей. Создавайте надёжные пароли по стандартам NIST 800-63B. Без хранения – генерация локально.',
-  zh: '免费在线密码生成器。创建符合 NIST 800-63B 标准的强随机密码。无数据存储 – 在浏览器中本地生成。',
-  ja: '無料オンラインパスワード生成。NIST 800-63B準拠の強力なランダムパスワード。データ保存なし – ブラウザでローカル生成。',
-  pl: 'Darmowy generator haseł online. Tworzenie silnych, losowych haseł zgodnych z NIST 800-63B. Bez przechowywania – generowane lokalnie w przeglądarce.',
-};
-
-const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-const stripBrandSuffix = (value: string) => {
-  const suffixPattern = new RegExp(`\\s*\\|\\s*${escapeRegExp(BRAND)}\\s*$`, 'i');
-  return (value || '').replace(suffixPattern, '').trim();
-};
-
-const truncateTitleBase = (value: string, max: number) => {
-  const trimmed = (value || '').trim();
-  if (!trimmed) return '';
-  if (trimmed.length <= max) return trimmed;
-  const truncated = trimmed.slice(0, max);
-  const boundary = truncated.lastIndexOf(' ');
-  const result = boundary > 0 ? truncated.slice(0, boundary) : truncated;
-  return result.trim();
-};
-
-const buildMetaTitle = (rawTitle?: string) => {
-  const baseValue = stripBrandSuffix(rawTitle || '');
-  const truncated = truncateTitleBase(baseValue || DEFAULT_META_TITLE_BASE, TITLE_BASE_MAX);
-  const finalBase = truncated || DEFAULT_META_TITLE_BASE;
-  return `${finalBase}${TITLE_SUFFIX}`;
-};
-
-const buildMetaDescription = (rawDescription?: string) => {
-  const source = (rawDescription || DEFAULT_META_DESCRIPTION).trim();
-  if (!source) return DEFAULT_META_DESCRIPTION;
-  if (source.length <= META_DESCRIPTION_MAX) return source;
-  const truncated = source.slice(0, META_DESCRIPTION_MAX);
-  const boundary = truncated.lastIndexOf(' ');
-  const clipped = boundary > 0 ? truncated.slice(0, boundary) : truncated;
-  return clipped.trim();
-};
-
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`.replace(/\/$/, '');
-
-  const metaTitle = localizedMetaTitles[locale]
-    ? buildMetaTitle(localizedMetaTitles[locale])
-    : buildMetaTitle(localizedMetaTitles.en);
-  const metaDescription = localizedMetaDescriptions[locale]
-    ? buildMetaDescription(localizedMetaDescriptions[locale])
-    : buildMetaDescription(localizedMetaDescriptions.en);
-  const seoInfo = seoData.find((data) => data.language === locale) || seoData.find((data) => data.language === 'en');
-  const keywords = seoInfo?.keywords || ['password generator', 'strong password', 'secure password', 'random password', 'password strength'];
-
-  return {
-    metadataBase: new URL(baseUrl),
-    title: metaTitle,
-    description: metaDescription,
-    keywords,
-    other: {
-      'google-adsense-account': process.env.NEXT_PUBLIC_ADSENSE_CLIENT || 'ca-pub-5995594246081561',
-    },
-    manifest: '/manifest.json',
-    icons: {
-      icon: [
-        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-        { url: '/favicon.ico', sizes: 'any' },
-      ],
-      apple: [
-        { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-      ],
-    },
-    alternates: {
-      canonical,
-      languages: {
-        ...Object.fromEntries(
-          supportedLangs.map((lang) => [hreflangMap[lang] || lang, lang === 'en' ? baseUrl : `${baseUrl}/${lang}`])
-        ),
-        'x-default': baseUrl,
-      },
-    },
-    openGraph: {
-      title: metaTitle,
-      description: metaDescription,
-      url: canonical,
-      siteName: 'generatepasswordto.me',
-      type: 'website',
-      images: [
-        {
-          url: '/images/generate-password-preview.png',
-          width: 1200,
-          height: 630,
-          alt: 'Generate Password To Me Preview',
-        },
-      ],
-      locale: ogLocaleMap[locale] || 'en_US',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: metaTitle,
-      description: metaDescription,
-      images: ['/images/generate-password-preview.png'],
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-    verification: {
-      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-    },
-  };
+  return buildHomeMetadata(locale);
 }
 
 export function generateStaticParams() {
-  return supportedLangs.map((locale) => ({ locale }));
+  return SUPPORTED_LANGS.map((locale) => ({ locale }));
 }
 
 export const viewport: Viewport = {
@@ -240,167 +65,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  // Generate FAQ Schema data
-  const stripHtml = (s: string) => s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
-  
-  const t = (key: string): string => {
-    // @ts-expect-error - dynamic access to lang object
-    const langEntry = lang[key];
-    if (!langEntry || typeof langEntry !== 'object') return '';
-    const raw = langEntry[locale];
-    return stripHtml(raw || '');
-  };
-
-  const qa = [
-    {
-      q: t('howtouse_title') || 'How to use the password generator?',
-      a: [t('howtouse_intro'), t('howtouse_step1'), t('howtouse_step2'), t('howtouse_step3')]
-        .filter(Boolean)
-        .join(' '),
-    },
-    {
-      q: t('seotext_why_title') || 'Why use this password generator?',
-      a: [t('seotext_why1'), t('seotext_why2')].filter(Boolean).join(' '),
-    },
-    {
-      q: t('security_standards_title') || 'Security standards compliance',
-      a: [t('nist_compliance_desc'), t('pci_dss_compliance_desc')].filter(Boolean).join(' '),
-    },
-    {
-      q: 'Does Generate Password To Me store generated passwords?',
-      a: 'No. Password generation runs in your browser, and generated passwords are not stored on our servers. The tool is designed around client-side generation and privacy-first use.',
-    },
-    {
-      q: 'Which security sources guide the recommendations?',
-      a: 'The guidance is reviewed against NIST SP 800-63B password recommendations, PCI DSS v4.0 password requirements, and Have I Been Pwned k-anonymity breach-checking practices where breach checks are used.',
-    },
-    {
-      q: 'When was this FAQ reviewed?',
-      a: 'This FAQ was reviewed in April 2026. We update security guidance when major password standards, browser APIs, or breach-checking practices change.',
-    },
-  ].filter(item => item.q && item.a);
-
-  const faqJson = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: qa.map(({ q, a }) => ({
-      '@type': 'Question',
-      name: q,
-      acceptedAnswer: { '@type': 'Answer', text: a },
-    })),
-  };
-
-  const canonical = locale === 'en' ? baseUrl : `${baseUrl}/${locale}`;
-
-  const websiteJson = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Generate Password To Me',
-    url: baseUrl,
-    description: localizedMetaDescriptions[locale] || localizedMetaDescriptions.en,
-    inLanguage: htmlLangMap[locale] || 'en',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${baseUrl}/{search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
-  };
-
-  const organizationJson = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Generate Password To Me',
-    url: baseUrl,
-    logo: `${baseUrl}/images/generate-password-preview.png`,
-    sameAs: [
-      'https://github.com/devcodex2025/password-generator',
-    ],
-  };
-
-  const howToJson = {
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: t('howtouse_title') || 'How to generate a secure password',
-    description: t('howtouse_intro') || 'Generate strong passwords using our free online tool.',
-    step: [
-      {
-        '@type': 'HowToStep',
-        position: 1,
-        name: t('howtouse_step1') ? t('howtouse_step1').replace(/<[^>]*>/g, '').slice(0, 100) : 'Choose password length',
-        text: t('howtouse_step1') ? t('howtouse_step1').replace(/<[^>]*>/g, '') : 'Select the desired password length between 4 and 100 characters.',
-      },
-      {
-        '@type': 'HowToStep',
-        position: 2,
-        name: t('howtouse_step2') ? t('howtouse_step2').replace(/<[^>]*>/g, '').slice(0, 100) : 'Select character types',
-        text: t('howtouse_step2') ? t('howtouse_step2').replace(/<[^>]*>/g, '') : 'Choose which character types to include: uppercase, lowercase, numbers, symbols.',
-      },
-      {
-        '@type': 'HowToStep',
-        position: 3,
-        name: t('howtouse_step3') ? t('howtouse_step3').replace(/<[^>]*>/g, '').slice(0, 100) : 'Generate and copy',
-        text: t('howtouse_step3') ? t('howtouse_step3').replace(/<[^>]*>/g, '') : 'Click Generate to create your password, then copy it to your clipboard.',
-      },
-    ],
-  };
-
-  const breadcrumbJson = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: baseUrl,
-      },
-      ...(locale !== 'en'
-        ? [
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: locale.toUpperCase(),
-              item: canonical,
-            },
-          ]
-        : []),
-    ],
-  };
-
-  const softwareAppJson = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'Generate Password To Me',
-    url: baseUrl,
-    applicationCategory: 'UtilitiesApplication',
-    operatingSystem: 'Any',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-    description: localizedMetaDescriptions[locale] || localizedMetaDescriptions.en,
-    featureList: [
-      'NIST 800-63B compliant password generation',
-      'Client-side generation using Web Crypto API (CSPRNG)',
-      'Have I Been Pwned breach detection via k-anonymity',
-      'Customizable length (4-100 characters)',
-      'Multiple character sets: uppercase, lowercase, digits, symbols',
-      'PCI DSS v4.0 password policy support',
-      'Dark mode interface',
-      '11 languages supported',
-    ],
-    screenshot: `${baseUrl}/images/generate-password-preview.png`,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      ratingCount: '1250',
-      bestRating: '5',
-      worstRating: '1',
-    },
-  };
-
-  const htmlLang = htmlLangMap[locale] || 'en';
+  const htmlLang = HTML_LANG_MAP[locale] || 'en';
 
   return (
     <>
@@ -455,42 +120,7 @@ export default async function LocaleLayout({
         suppressHydrationWarning
         className={`w-full ${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}
       >
-        <Script
-          id="faq-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }}
-          strategy="beforeInteractive"
-        />
-        <Script
-          id="website-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJson) }}
-          strategy="beforeInteractive"
-        />
-        <Script
-          id="organization-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJson) }}
-          strategy="beforeInteractive"
-        />
-        <Script
-          id="howto-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJson) }}
-          strategy="beforeInteractive"
-        />
-        <Script
-          id="breadcrumb-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJson) }}
-          strategy="beforeInteractive"
-        />
-        <Script
-          id="software-app-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJson) }}
-          strategy="beforeInteractive"
-        />
+        <HomeStructuredData locale={locale} />
         <CustomThemeProvider>
           <NavigationProgress />
           {children}

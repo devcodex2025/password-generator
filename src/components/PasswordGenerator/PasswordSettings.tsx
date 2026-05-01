@@ -62,7 +62,7 @@ export default function PasswordSettings({
 
         if (selectedCharacterSets.includes(characterSet)) {
             if (selectedCharacterSets.length <= 1) {
-                const snackbarId = Date.now(); // Store the ID for consistent filtering
+                const snackbarId = Date.now();
                 setSnackbars((prev) => [
                     ...prev,
                     { id: snackbarId, message: t('warning_last_checkbox') },
@@ -77,7 +77,6 @@ export default function PasswordSettings({
             newSelectedCharacterSets = [...selectedCharacterSets, characterSet];
         }
 
-
         setSelectedCharacterSets(newSelectedCharacterSets);
 
         const currentStandardConfig = passwordStandards[selectedStandard];
@@ -91,12 +90,12 @@ export default function PasswordSettings({
     };
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 justify-between gap-4 items-center mt-1 lg:mt-3">
-            <div className="flex flex-col gap-3 items-start mt-8 lg:mt-6">
+        <div className="password-settings grid grid-cols-1 gap-4 md:gap-5 lg:grid-cols-2 lg:items-start lg:justify-between mt-1 lg:mt-3">
+            <div className="mt-8 flex min-w-0 max-w-full flex-col gap-3 items-start lg:mt-6">
                 <label htmlFor="password-length" className="hero-muted-label text-[16px] md:text-[22px]">
                     {t('password_length')} {passwordLength}
                 </label>
-                <div className="flex items-center gap-4 w-full">
+                <div className="flex min-w-0 w-full max-w-full items-center gap-2 sm:gap-4">
                     <RemoveCircleOutlineIcon
                         onClick={() => {
                             const newLength = Math.max(
@@ -109,6 +108,7 @@ export default function PasswordSettings({
                             }
                         }}
                         style={{ cursor: 'pointer' }}
+                        className="shrink-0"
                     />
                     <Slider
                         value={passwordLength}
@@ -123,7 +123,7 @@ export default function PasswordSettings({
                         }}
                         aria-label="Password length slider"
                         valueLabelDisplay="auto"
-                        className="h-[15px]"
+                        className="h-[15px] min-w-0 flex-1"
                     />
                     <AddCircleOutlineIcon
                         onClick={() => {
@@ -134,10 +134,11 @@ export default function PasswordSettings({
                             }
                         }}
                         style={{ cursor: 'pointer' }}
+                        className="shrink-0"
                     />
                 </div>
             </div>
-            <div className="flex flex-col gap-3 items-start">
+            <div className="flex min-w-0 w-full max-w-full flex-col gap-3 items-start">
                 <label htmlFor="quantity" className="hero-muted-label text-[16px] md:text-[22px]">
                     {t('quantity')}
                 </label>
@@ -149,15 +150,14 @@ export default function PasswordSettings({
                     max={maxQuantity}
                     value={quantity}
                     onChange={handleQuantityChange}
-                    className={`${isDarkMode ? 'border-none' : ''
-                        } border-2 border-[#E5F6FF] border-solid rounded-[18px] text-[#071016] text-[18px] md:text-[20px] py-3 md:py-5 px-3 outline-none w-full`}
+                    className={`w-full max-w-full min-w-0 rounded-[18px] border-2 border-[#E5F6FF] border-solid py-3 px-3 text-[18px] text-[#071016] outline-none md:py-5 md:text-[20px] ${isDarkMode ? 'border-none' : ''}`}
                 />
             </div>
-            <div className="flex gap-3 flex-wrap items-center mt-9">
-                <label className="hero-muted-label text-[16px] md:text-[22px]">{t('use_characters')}</label>
-                <div className="flex items-start flex-nowrap text-[10px] md:text-[20px]">
+            <div className="password-settings-charsets col-span-1 mt-6 flex w-full min-w-0 max-w-full flex-col gap-3 sm:mt-9 md:col-span-2 lg:col-span-2">
+                <label className="hero-muted-label shrink-0 text-[16px] md:text-[22px]">{t('use_characters')}</label>
+                <div className="flex w-full min-w-0 flex-wrap items-center gap-x-3 gap-y-2 text-[10px] sm:gap-x-4 md:text-[20px]">
                     {Object.keys(characterSets).map((characterSet) => (
-                        <div key={characterSet} className="flex items-center gap-2">
+                        <div key={characterSet} className="flex min-w-0 items-center gap-2">
                             <FormControlLabel
                                 control={
                                     <Checkbox
