@@ -49,9 +49,43 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const copy = getStaticPageCopy(locale);
+  const canonical = `${baseUrl}/${locale}/contact`;
+
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPoint',
+    contactType: 'Customer Service',
+    email: contactEmail,
+    url: canonical,
+    availableLanguage: supportedLangs,
+  };
+
+  const organizationContactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Generate Password To Me',
+    url: baseUrl,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Service',
+      email: contactEmail,
+      url: canonical,
+    },
+    logo: `${baseUrl}/images/generate-password-preview.png`,
+  };
 
   return (
     <LocalizedPageShell locale={locale}>
+      <script
+        id="contact-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+      <script
+        id="organization-contact-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationContactSchema) }}
+      />
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
           items={[

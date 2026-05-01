@@ -119,9 +119,37 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
   const labels = getGuidesUiLabels(locale);
   const uiCopy = getGuidesUiCopy(locale);
   const guides = await getCachedGuides(locale);
+  const canonical = `${baseUrl}/${locale}/guides`;
+  const meta = guidesMetaI18n[locale] || guidesMetaI18n.en;
+
+  const collectionPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: meta.title,
+    description: meta.description,
+    url: canonical,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: guides.length,
+      itemListElement: guides.map((guide, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: guide.title,
+        description: guide.excerpt,
+        url: `${baseUrl}/${locale}/guides/${guide.slug}`,
+        image: guide.image.startsWith('http') ? guide.image : `${baseUrl}${guide.image}`,
+        dateModified: guide.updatedAt,
+      })),
+    },
+  };
 
   return (
     <LocalizedPageShell locale={locale}>
+      <script
+        id="guides-collection-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
+      />
       <section className="max-w-6xl mx-auto px-4 py-10">
         <Breadcrumbs
           items={[

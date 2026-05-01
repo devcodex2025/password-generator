@@ -9,23 +9,22 @@ function t(key, language) {
   return lang[key] && lang[key][language] ? lang[key][language] : key;
 }
 
-const trustFaq = [
-  {
-    question: 'Does Generate Password To Me store generated passwords?',
-    answer:
-      'No. Password generation runs in your browser, and generated passwords are not stored on our servers. The tool is designed around client-side generation and privacy-first use.',
-  },
-  {
-    question: 'Which security sources guide the recommendations?',
-    answer:
-      'The guidance is reviewed against NIST SP 800-63B password recommendations, PCI DSS v4.0 password requirements, and Have I Been Pwned k-anonymity breach-checking practices where breach checks are used.',
-  },
-  {
-    question: 'How do you keep the FAQ trustworthy?',
-    answer:
-      'We keep answers short, separate general security education from guarantees, cite primary sources, and review the FAQ when major password standards, browser APIs, or breach-checking practices change.',
-  },
-];
+function getTrustFaq(language) {
+  return [
+    {
+      question: t('faq_storage_question', language),
+      answer: t('faq_storage_answer', language),
+    },
+    {
+      question: t('faq_sources_question', language),
+      answer: t('faq_sources_answer', language),
+    },
+    {
+      question: t('faq_trustworthy_question', language),
+      answer: t('faq_trustworthy_answer', language),
+    },
+  ];
+}
 
 const SeoAccordion = ({ language }) => {
   return (
@@ -304,12 +303,12 @@ const SeoAccordion = ({ language }) => {
         {/* FAQ Trust Section */}
         <AccordionItem value="item-6">
           <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold">
-            FAQ: security, privacy, and trust
+            {t('faq_accordion_title', language)}
           </AccordionTrigger>
           <AccordionContent>
             <div className="mt-4 grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-6">
               <div className="space-y-4">
-                {trustFaq.map((item) => (
+                {getTrustFaq(language).map((item) => (
                   <div key={item.question} className="rounded-xl border border-[#D1E9FF] dark:border-[#374151] bg-[#F8FDFF] dark:bg-[#23272f] p-4">
                     <h3 className="text-lg font-semibold text-[#071016] dark:text-[#f8fafc]">
                       {item.question}
