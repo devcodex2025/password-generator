@@ -16,6 +16,7 @@ A privacy-first password generator, breach checker, and password security tool b
 ![Generate Password To Me demo showing password generation, strength meter, and breach check](public/demo.gif)
 
 ![Generate Password To Me screenshot showing generator UI, password strength estimate, and breach checker](public/images/generate_password_app.png)
+![Intended alt text is "Generate Password To Me social preview image with app logo, security theme, and password generation concept.](public/images/github-social-preview.png)
 
 ## Design
 
