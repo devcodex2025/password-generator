@@ -9,7 +9,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Analytics } from '@vercel/analytics/react';
 import { useTheme } from '../../context/ThemeContext';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 
 /* ── Below-fold components: lazy-loaded to reduce initial JS bundle ── */
@@ -29,6 +29,7 @@ interface PageProps {
 
 export default function Page({ params }: PageProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const { locale } = use(params);
   const { isDarkMode } = useTheme();
   const supportedLanguages = getAvailableLanguages();
@@ -48,9 +49,32 @@ export default function Page({ params }: PageProps) {
 
   const onLanguageChange = (newLanguage: string) => {
     void i18n.changeLanguage(newLanguage);
+    
+    // Save language preference
+    localStorage.setItem('preferredLanguage', newLanguage);
+    document.cookie = `preferredLanguage=${newLanguage}; path=/; max-age=31536000; samesite=lax`;
+
     const target = newLanguage === 'en' ? '/' : `/${newLanguage}`;
     router.push(target);
   };
+
+  useEffect(() => {
+    // Redirect from root if preferred language is set and different from current
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+
+    if (pathname === '/' || pathname === '/en') {
+      if (savedLanguage && savedLanguage !== 'en' && supportedLanguages.includes(savedLanguage)) {
+        router.push(`/${savedLanguage}`);
+      }
+    } else {
+      // If we are on a localized path, update the preference
+      const currentPathLocale = pathname.split('/')[1];
+      if (supportedLanguages.includes(currentPathLocale) && currentPathLocale !== savedLanguage) {
+        localStorage.setItem('preferredLanguage', currentPathLocale);
+        document.cookie = `preferredLanguage=${currentPathLocale}; path=/; max-age=31536000; samesite=lax`;
+      }
+    }
+  }, [router, supportedLanguages, locale, pathname]);
 
   return (
     <I18nextProvider i18n={i18n}>

@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -21,6 +21,10 @@ export default function LocalizedPageShell({ locale, children }: LocalizedPageSh
       return;
     }
 
+    // Save language preference
+    localStorage.setItem('preferredLanguage', nextLocale);
+    document.cookie = `preferredLanguage=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
+
     const segments = pathname.split('/').filter(Boolean);
     if (segments.length === 0) {
       router.push(`/${nextLocale}`);
@@ -30,6 +34,14 @@ export default function LocalizedPageShell({ locale, children }: LocalizedPageSh
     segments[0] = nextLocale;
     router.push(`/${segments.join('/')}`);
   };
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    if (supportedLanguages.includes(locale) && locale !== savedLanguage) {
+      localStorage.setItem('preferredLanguage', locale);
+      document.cookie = `preferredLanguage=${locale}; path=/; max-age=31536000; samesite=lax`;
+    }
+  }, [locale, supportedLanguages]);
 
   return (
     <div className={`container ${locale} mx-auto px-3`}>

@@ -2,6 +2,7 @@ import '@/styles/index.css';
 import { CustomThemeProvider } from '@/context/ThemeContext';
 import NavigationProgress from '@/components/NavigationProgress';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
+import Script from 'next/script';
 
 const arsenal = Arsenal({
   subsets: ['cyrillic', 'latin'],
@@ -45,6 +46,27 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
+            <head>
+              <Script
+                id="lang-init"
+                strategy="beforeInteractive"
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    (function () {
+                      try {
+                        var path = window.location.pathname;
+                        if (path === '/' || path === '/en') {
+                          var saved = localStorage.getItem('preferredLanguage');
+                          if (saved && saved !== 'en') {
+                            window.location.href = '/' + saved;
+                          }
+                        }
+                      } catch (e) {}
+                    })();
+                  `,
+                }}
+              />
+            </head>
             <body className={`${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}>
               <CustomThemeProvider>
                 <NavigationProgress />
