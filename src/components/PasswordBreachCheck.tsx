@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { parseHibpRange } from '../utils/parseHibpRange.mjs';
 import lang from './lang.json';
 
 function t(key: string, language: string): string {
@@ -49,18 +50,9 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
       }
 
       const text = await response.text();
-      const lines = text.split('\n');
-      let breachCount = 0;
+      const { breached, count } = parseHibpRange(text, suffix);
 
-      for (const line of lines) {
-        const [hashSuffix, count] = line.split(':');
-        if (hashSuffix.trim().toUpperCase() === suffix) {
-          breachCount = parseInt(count.trim(), 10);
-          break;
-        }
-      }
-
-      setResult({ checked: true, breached: breachCount > 0, count: breachCount });
+      setResult({ checked: true, breached, count });
     } catch {
       setError(t('breach_error', language));
     } finally {

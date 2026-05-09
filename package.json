@@ -55,6 +55,7 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
+    "test": "node --test \"src/**/*.test.mjs\"",
     "db:apply-schema": "node scripts/apply-content-schema.mjs",
     "db:seed-content": "node scripts/seed-content.mjs",
     "db:seed-content:mongo": "node scripts/seed-content-mongo.mjs",
