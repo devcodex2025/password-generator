@@ -1,4 +1,4 @@
-type SupportedLang = 'en' | 'ua' | 'es' | 'fr' | 'de' | 'it' | 'pt' | 'ru' | 'zh' | 'ja' | 'pl';
+type SupportedLang = 'en' | 'ua' | 'es' | 'fr' | 'de' | 'it' | 'pt' | 'ru' | 'zh' | 'ja' | 'pl' | 'vi';
 
 interface UnitTranslations {
   century: [singular: string, plural: string];
@@ -134,13 +134,24 @@ const TRANSLATIONS: Record<SupportedLang, UnitTranslations> = {
     instant: 'natychmiast',
     lessThanASecond: 'mniej niż sekunda',
   },
+  vi: {
+    century: ['thế kỷ', 'thế kỷ'],
+    year: ['năm', 'năm'],
+    month: ['tháng', 'tháng'],
+    day: ['ngày', 'ngày'],
+    hour: ['giờ', 'giờ'],
+    minute: ['phút', 'phút'],
+    second: ['giây', 'giây'],
+    instant: 'tức thì',
+    lessThanASecond: 'ít hơn một giây',
+  },
 };
 
 function pickPlural(wordForms: [string, string], count: number, lang: SupportedLang): string {
   if (lang === 'en' || lang === 'es' || lang === 'fr' || lang === 'de' || lang === 'it' || lang === 'pt') {
     return count === 1 ? wordForms[0] : wordForms[1];
   }
-  if (lang === 'zh' || lang === 'ja') {
+  if (lang === 'zh' || lang === 'ja' || lang === 'vi') {
     return wordForms[0];
   }
   // Fallback for languages with complex pluralization: default to plural form
@@ -183,6 +194,8 @@ export function formatCrackTime(enDisplay: string, langCode: string): string {
         return TRANSLATIONS.ja.century[1];
       case 'pl':
         return 'kilka ' + TRANSLATIONS.pl.century[1];
+      case 'vi':
+        return 'nhiều ' + TRANSLATIONS.vi.century[1];
       default:
         return TRANSLATIONS.en.century[1];
     }

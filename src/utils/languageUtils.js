@@ -28,6 +28,7 @@ const countryCodeMap = {
   'zh': '156', // China
   'ja': '392', // Japan
   'pl': '616', // Poland
+  'vi': '704', // Vietnam
 };
 
 // Мапа назв мов
@@ -43,6 +44,7 @@ const languageNamesMap = {
   'zh': '中文',
   'ja': '日本語',
   'pl': 'Polski',
+  'vi': 'Tiếng Việt',
 };
 
 // Функція для отримання об'єкта мов з інформацією про прапорці та назвами
@@ -69,7 +71,8 @@ export const getLanguageSelectionText = (language) => {
     'ru': 'Выберите язык',
     'zh': '选择语言',
     'ja': '言語を選択',
-    'pl': 'Wybierz język'
+    'pl': 'Wybierz język',
+    'vi': 'Chọn ngôn ngữ'
   };
   
   return languageSelectionMap[language] || 'Choose language';
@@ -88,7 +91,8 @@ export const getThemeText = (language) => {
     'ru': 'Тема',
     'zh': '主题',
     'ja': 'テーマ',
-    'pl': 'Motyw'
+    'pl': 'Motyw',
+    'vi': 'Chủ đề'
   };
   
   return themeMap[language] || 'Theme';
