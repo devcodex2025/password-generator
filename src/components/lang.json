@@ -10,7 +10,8 @@
     "ru": "Проверка пароля на утечку",
     "zh": "密码泄露检查",
     "ja": "パスワード漏洩チェック",
-    "pl": "Sprawdzanie wycieku hasła"
+    "pl": "Sprawdzanie wycieku hasła",
+    "vi": "Kiểm tra rò rỉ mật khẩu"
   },
   "breach_description": {
     "ua": "Перевірте, чи був ваш пароль скомпрометований у відомих витоках даних. Ми використовуємо Have I Been Pwned API з k-анонімністю — ваш пароль ніколи не передається на сервер.",
@@ -23,7 +24,8 @@
     "ru": "Проверьте, не был ли ваш пароль скомпрометирован в известных утечках данных. Мы используем Have I Been Pwned API с k-анонимностью — ваш пароль никогда не отправляется на сервер.",
     "zh": "检查您的密码是否在已知数据泄露中被泄露。我们使用 Have I Been Pwned API 的 k-匿名性——您的密码绝不会发送到服务器。",
     "ja": "パスワードが既知のデータ漏洩で侵害されていないか確認します。Have I Been Pwned API の k-匿名性を使用しており、パスワードがサーバーに送信されることはありません。",
-    "pl": "Sprawdź, czy Twoje hasło zostało skompromitowane w znanych wyciekach danych. Używamy API Have I Been Pwned z k-anonimowością — Twoje hasło nigdy nie jest wysyłane na serwer."
+    "pl": "Sprawdź, czy Twoje hasło zostało skompromitowane w znanych wyciekach danych. Używamy API Have I Been Pwned z k-anonimowością — Twoje hasło nigdy nie jest wysyłane na serwer.",
+    "vi": "Kiểm tra xem mật khẩu của bạn có bị lộ trong các vụ rò rỉ dữ liệu đã biết hay không. Chúng tôi sử dụng API Have I Been Pwned với k-anonymity — mật khẩu của bạn không bao giờ được gửi đến máy chủ."
   },
   "breach_placeholder": {
     "ua": "Введіть пароль для перевірки...",
@@ -36,7 +38,8 @@
     "ru": "Введите пароль для проверки...",
     "zh": "输入要检查的密码...",
     "ja": "確認するパスワードを入力...",
-    "pl": "Wpisz hasło do sprawdzenia..."
+    "pl": "Wpisz hasło do sprawdzenia...",
+    "vi": "Nhập mật khẩu cần kiểm tra..."
   },
   "breach_check_btn": {
     "ua": "Перевірити",
@@ -49,7 +52,8 @@
     "ru": "Проверить",
     "zh": "检查",
     "ja": "チェック",
-    "pl": "Sprawdź"
+    "pl": "Sprawdź",
+    "vi": "Kiểm tra"
   },
   "breach_checking": {
     "ua": "Перевіряю...",
@@ -62,7 +66,8 @@
     "ru": "Проверяю...",
     "zh": "检查中...",
     "ja": "確認中...",
-    "pl": "Sprawdzanie..."
+    "pl": "Sprawdzanie...",
+    "vi": "Đang kiểm tra..."
   },
   "breach_found": {
     "ua": "Цей пароль було знайдено у витоках даних!",
@@ -75,7 +80,8 @@
     "ru": "Этот пароль найден в утечках данных!",
     "zh": "此密码已在数据泄露中被发现！",
     "ja": "このパスワードはデータ漏洩で発見されました！",
-    "pl": "To hasło zostało znalezione w wyciekach danych!"
+    "pl": "To hasło zostało znalezione w wyciekach danych!",
+    "vi": "Mật khẩu này đã bị lộ trong các vụ rò rỉ dữ liệu!"
   },
   "breach_found_detail": {
     "ua": "Цей пароль з'являвся у витоках {count} разів. Настійно рекомендуємо використати наш генератор для створення нового надійного пароля.",
@@ -88,7 +94,8 @@
     "ru": "Этот пароль встречался в утечках {count} раз. Настоятельно рекомендуем использовать наш генератор для создания нового надёжного пароля.",
     "zh": "此密码在泄露中出现了 {count} 次。强烈建议使用我们的生成器创建新的强密码。",
     "ja": "このパスワードは漏洩で {count} 回確認されました。新しい強力なパスワードの作成にはジェネレーターのご使用をお勧めします。",
-    "pl": "To hasło pojawiło się w wyciekach {count} razy. Zalecamy użycie naszego generatora do stworzenia nowego silnego hasła."
+    "pl": "To hasło pojawiło się w wyciekach {count} razy. Zalecamy użycie naszego generatora do stworzenia nowego silnego hasła.",
+    "vi": "Mật khẩu này đã xuất hiện trong các vụ rò rỉ {count} lần. Chúng tôi đặc biệt khuyến nghị sử dụng trình tạo của chúng tôi để tạo một mật khẩu mạnh mới."
   },
   "breach_safe": {
     "ua": "Цей пароль не знайдено у відомих витоках",
@@ -101,7 +108,8 @@
     "ru": "Этот пароль не найден в известных утечках",
     "zh": "此密码未在已知泄露中找到",
     "ja": "このパスワードは既知の漏洩では見つかりませんでした",
-    "pl": "To hasło nie zostało znalezione w znanych wyciekach"
+    "pl": "To hasło nie zostało znalezione w znanych wyciekach",
+    "vi": "Không tìm thấy mật khẩu này trong các vụ rò rỉ đã biết"
   },
   "breach_safe_detail": {
     "ua": "Однак це не гарантує повної безпеки. Завжди використовуйте унікальні паролі для кожного акаунта.",
@@ -114,7 +122,8 @@
     "ru": "Однако это не гарантирует полной безопасности. Всегда используйте уникальные пароли для каждого аккаунта.",
     "zh": "但这并不能保证完全安全。请始终为每个账户使用唯一的密码。",
     "ja": "ただし、これは完全な安全を保証するものではありません。各アカウントには必ず固有のパスワードを使用してください。",
-    "pl": "Nie gwarantuje to jednak pełnego bezpieczeństwa. Zawsze używaj unikalnych haseł dla każdego konta."
+    "pl": "Nie gwarantuje to jednak pełnego bezpieczeństwa. Zawsze używaj unikalnych haseł dla każdego konta.",
+    "vi": "Tuy nhiên, điều này không đảm bảo an toàn tuyệt đối. Hãy luôn sử dụng mật khẩu duy nhất cho mỗi tài khoản."
   },
   "breach_error": {
     "ua": "Не вдалося перевірити пароль. Спробуйте пізніше.",
@@ -127,7 +136,8 @@
     "ru": "Не удалось проверить пароль. Попробуйте позже.",
     "zh": "密码检查失败，请稍后重试。",
     "ja": "パスワードの確認に失敗しました。後でもう一度お試しください。",
-    "pl": "Nie udało się sprawdzić hasła. Spróbuj ponownie później."
+    "pl": "Nie udało się sprawdzić hasła. Spróbuj ponownie później.",
+    "vi": "Không thể kiểm tra mật khẩu. Vui lòng thử lại sau."
   },
   "breach_privacy_note": {
     "ua": "Ваш пароль обробляється локально. На сервер передаються лише перші 5 символів SHA-1 хешу (k-анонімність).",
@@ -140,7 +150,8 @@
     "ru": "Ваш пароль обрабатывается локально. На сервер отправляются только первые 5 символов SHA-1 хеша (k-анонимность).",
     "zh": "您的密码在本地处理。仅将 SHA-1 哈希的前 5 个字符发送到服务器（k-匿名性）。",
     "ja": "パスワードはローカルで処理されます。SHA-1ハッシュの最初の5文字のみがサーバーに送信されます（k-匿名性）。",
-    "pl": "Twoje hasło jest przetwarzane lokalnie. Na serwer wysyłane jest tylko 5 pierwszych znaków skrótu SHA-1 (k-anonimowość)."
+    "pl": "Twoje hasło jest przetwarzane lokalnie. Na serwer wysyłane jest tylko 5 pierwszych znaków skrótu SHA-1 (k-anonimowość).",
+    "vi": "Mật khẩu của bạn được xử lý cục bộ. Chỉ 5 ký tự đầu tiên của giá trị băm SHA-1 được gửi đến máy chủ (k-anonymity)."
   },
   "why_choose_title": {
     "ua": "Чому обирають наш генератор",
@@ -153,7 +164,8 @@
     "ru": "Почему выбирают наш генератор",
     "zh": "为什么选择我们的生成器",
     "ja": "当ジェネレーターを選ぶ理由",
-    "pl": "Dlaczego warto wybrać nasz generator"
+    "pl": "Dlaczego warto wybrać nasz generator",
+    "vi": "Tại sao chọn trình tạo của chúng tôi"
   },
   "advantage_1_title": {
     "ua": "100% локальна генерація",
@@ -166,7 +178,8 @@
     "ru": "100% локальная генерация",
     "zh": "100% 本地生成",
     "ja": "100% ローカル生成",
-    "pl": "100% lokalne generowanie"
+    "pl": "100% lokalne generowanie",
+    "vi": "Tạo 100% cục bộ"
   },
   "advantage_1_desc": {
     "ua": "Паролі створюються у вашому браузері. Жодні дані не передаються на зовнішні сервери — повна конфіденційність.",
@@ -179,7 +192,8 @@
     "ru": "Пароли создаются в вашем браузере. Никакие данные не отправляются на внешние серверы — полная конфиденциальность.",
     "zh": "密码在您的浏览器中创建。不会将任何数据发送到外部服务器——完全隐私。",
     "ja": "パスワードはブラウザ内で生成。外部サーバーにデータは送信されません——完全なプライバシー。",
-    "pl": "Hasła są tworzone w Twojej przeglądarce. Żadne dane nie są wysyłane na zewnętrzne serwery — pełna prywatność."
+    "pl": "Hasła są tworzone w Twojej przeglądarce. Żadne dane nie są wysyłane na zewnętrzne serwery — pełna prywatność.",
+    "vi": "Mật khẩu được tạo ngay trong trình duyệt của bạn. Không có dữ liệu nào được gửi đến máy chủ bên ngoài — quyền riêng tư hoàn toàn."
   },
   "advantage_2_title": {
     "ua": "Відкритий код",
@@ -192,7 +206,8 @@
     "ru": "Открытый код",
     "zh": "开源",
     "ja": "オープンソース",
-    "pl": "Otwarte źródło"
+    "pl": "Otwarte źródło",
+    "vi": "Mã nguồn mở"
   },
   "advantage_2_desc": {
     "ua": "Вихідний код доступний на GitHub. Будь-хто може перевірити алгоритм генерації та переконатися у безпеці.",
@@ -205,7 +220,8 @@
     "ru": "Исходный код доступен на GitHub. Любой может проверить алгоритм генерации и убедиться в безопасности.",
     "zh": "源代码在 GitHub 上公开。任何人都可以审计生成算法并验证其安全性。",
     "ja": "ソースコードはGitHubで公開。誰でも生成アルゴリズムを監査しセキュリティを確認できます。",
-    "pl": "Kod źródłowy jest dostępny na GitHub. Każdy może sprawdzić algorytm generowania i zweryfikować bezpieczeństwo."
+    "pl": "Kod źródłowy jest dostępny na GitHub. Każdy może sprawdzić algorytm generowania i zweryfikować bezpieczeństwo.",
+    "vi": "Mã nguồn có sẵn trên GitHub. Bất kỳ ai cũng có thể kiểm tra thuật toán tạo và xác minh tính bảo mật."
   },
   "advantage_3_title": {
     "ua": "Стандарти NIST та PCI DSS",
@@ -218,7 +234,8 @@
     "ru": "Стандарты NIST и PCI DSS",
     "zh": "NIST 和 PCI DSS 标准",
     "ja": "NIST・PCI DSS準拠",
-    "pl": "Standardy NIST i PCI DSS"
+    "pl": "Standardy NIST i PCI DSS",
+    "vi": "Tiêu chuẩn NIST & PCI DSS"
   },
   "advantage_3_desc": {
     "ua": "Паролі генеруються відповідно до сучасних стандартів безпеки NIST 800-63B та PCI DSS з використанням криптографічних алгоритмів.",
@@ -231,7 +248,8 @@
     "ru": "Пароли генерируются по современным стандартам NIST 800-63B и PCI DSS с использованием криптографических алгоритмов.",
     "zh": "密码根据现代 NIST 800-63B 和 PCI DSS 安全标准使用加密算法生成。",
     "ja": "NIST 800-63BおよびPCI DSSセキュリティ基準に準拠し、暗号アルゴリズムを使用して生成。",
-    "pl": "Hasła generowane zgodnie ze standardami NIST 800-63B i PCI DSS z użyciem algorytmów kryptograficznych."
+    "pl": "Hasła generowane zgodnie ze standardami NIST 800-63B i PCI DSS z użyciem algorytmów kryptograficznych.",
+    "vi": "Mật khẩu được tạo theo các tiêu chuẩn bảo mật hiện đại NIST 800-63B và PCI DSS bằng các thuật toán mật mã."
   },
   "advantage_4_title": {
     "ua": "11 мов підтримки",
@@ -244,7 +262,8 @@
     "ru": "Поддержка 11 языков",
     "zh": "支持 11 种语言",
     "ja": "11言語対応",
-    "pl": "11 obsługiwanych języków"
+    "pl": "11 obsługiwanych języków",
+    "vi": "Hỗ trợ 11 ngôn ngữ"
   },
   "advantage_4_desc": {
     "ua": "Повна локалізація інтерфейсу та контенту українською, англійською та ще 9 мовами для зручності користувачів по всьому світу.",
@@ -257,7 +276,8 @@
     "ru": "Полная локализация интерфейса и контента на 11 языках для пользователей по всему миру.",
     "zh": "11种语言的完整界面和内容本地化，服务全球用户。",
     "ja": "11言語の完全なインターフェースとコンテンツの翻訳で世界中のユーザーに対応。",
-    "pl": "Pełna lokalizacja interfejsu i treści w 11 językach dla użytkowników na całym świecie."
+    "pl": "Pełna lokalizacja interfejsu i treści w 11 językach dla użytkowników na całym świecie.",
+    "vi": "Bản địa hóa đầy đủ giao diện và nội dung bằng tiếng Anh, tiếng Ukraina và 9 ngôn ngữ khác cho người dùng trên toàn thế giới."
   },
   "seotext_img_alt": {
     "ua": "Генератор надійних паролів онлайн — безпечне створення паролів",
@@ -270,7 +290,8 @@
     "ru": "Онлайн-генератор надёжных паролей",
     "zh": "安全在线密码生成器",
     "ja": "安全なオンラインパスワード生成ツール",
-    "pl": "Bezpieczny generator haseł online"
+    "pl": "Bezpieczny generator haseł online",
+    "vi": "Trình tạo mật khẩu trực tuyến an toàn — tạo mật khẩu mạnh"
   },
   "footer_opensource": {
     "ua": "Відкритий код та безпека",
@@ -283,7 +304,8 @@
     "ru": "Открытый код и безопасность",
     "zh": "开源且安全",
     "ja": "オープンソースで安全",
-    "pl": "Open Source i bezpieczne"
+    "pl": "Open Source i bezpieczne",
+    "vi": "Mã nguồn mở & An toàn"
   },
   "generated_locally": {
     "ua": "Генерується локально у вашому браузері",
@@ -296,7 +318,8 @@
     "ru": "Генерируется локально в вашем браузере",
     "zh": "在您的浏览器中本地生成",
     "ja": "ブラウザでローカルに生成されます",
-    "pl": "Wygenerowano lokalnie w przeglądarce"
+    "pl": "Wygenerowano lokalnie w przeglądarce",
+    "vi": "Được tạo cục bộ trong trình duyệt của bạn"
   },
   "share_message": {
     "ua": "Ваш пароль згенеровано з допомогою - GeneratePasswordTo.Me\nПароль - ",
@@ -309,7 +332,8 @@
     "ru": "Ваш пароль был сгенерирован с помощью - GeneratePasswordTo.Me\nПароль - ",
     "zh": "您的密码已使用 - GeneratePasswordTo.Me 生成\n密码 - ",
     "ja": "あなたのパスワードは - GeneratePasswordTo.Me を使用して生成されました\nパスワード - ",
-    "pl": "Twoje hasło zostało wygenerowane za pomocą - GeneratePasswordTo.Me\nHasło - "
+    "pl": "Twoje hasło zostało wygenerowane za pomocą - GeneratePasswordTo.Me\nHasło - ",
+    "vi": "Mật khẩu của bạn đã được tạo bằng - GeneratePasswordTo.Me\nPassword - "
   },
   "share-password": {
     "ua": "Поділитись паролем",
@@ -322,7 +346,8 @@
     "ru": "Поделиться паролем",
     "zh": "分享密码",
     "ja": "パスワードを共有する",
-    "pl": "Udostępnij hasło"
+    "pl": "Udostępnij hasło",
+    "vi": "Chia sẻ mật khẩu"
   },
   "main_title": {
     "ua": "Потрібен унікальний, безпечний Пароль?",
@@ -335,7 +360,8 @@
     "ru": "Нужен уникальный, безопасный пароль?",
     "zh": "需要一个独特、安全的密码？",
     "ja": "ユニークで安全なパスワードが必要ですか？",
-    "pl": "Potrzebujesz unikalnego, bezpiecznego hasła?"
+    "pl": "Potrzebujesz unikalnego, bezpiecznego hasła?",
+    "vi": "Bạn cần một mật khẩu duy nhất và an toàn?"
   },
   "main_subtitle": {
     "ua": "За допомогою \"Згенерувати пароль для мене\" ви легко створите надійний пароль.",
@@ -348,7 +374,8 @@
     "ru": "С помощью \"Сгенерировать пароль для меня\" вы легко создадите надежный пароль.",
     "zh": "使用\"为我生成密码\"，您可以轻松创建强密码。",
     "ja": "\"私のためのパスワードを生成\"で、簡単に強力なパスワードを作成できます。",
-    "pl": "Z \"Generuj hasło dla mnie\" możesz łatwo tworzyć silne hasła."
+    "pl": "Z \"Generuj hasło dla mnie\" możesz łatwo tworzyć silne hasła.",
+    "vi": "Với \"Generate Password To Me\", bạn có thể tạo mật khẩu mạnh một cách dễ dàng."
   },
   "generate": {
     "ua": "Генерувати",
@@ -361,7 +388,8 @@
     "ru": "Генерировать",
     "zh": "生成",
     "ja": "生成",
-    "pl": "Generuj"
+    "pl": "Generuj",
+    "vi": "Tạo"
   },
   "generate_short": {
     "ua": "Генерувати",
@@ -374,7 +402,8 @@
     "ru": "Генерировать",
     "zh": "生成",
     "ja": "生成",
-    "pl": "Generuj"
+    "pl": "Generuj",
+    "vi": "Tạo"
   },
   "copy": {
     "ua": "Копіювати",
@@ -387,7 +416,8 @@
     "ru": "Копировать",
     "zh": "复制",
     "ja": "コピー",
-    "pl": "Kopiuj"
+    "pl": "Kopiuj",
+    "vi": "Sao chép"
   },
   "copy_all": {
     "ua": "Копіювати всі",
@@ -400,7 +430,8 @@
     "ru": "Копировать все",
     "zh": "复制全部",
     "ja": "すべてコピー",
-    "pl": "Kopiuj wszystkie"
+    "pl": "Kopiuj wszystkie",
+    "vi": "Sao chép tất cả"
   },
   "download_all": {
     "ua": "Завантажити всі",
@@ -413,7 +444,8 @@
     "ru": "Скачать все",
     "zh": "下载全部",
     "ja": "すべてダウンロード",
-    "pl": "Pobierz wszystkie"
+    "pl": "Pobierz wszystkie",
+    "vi": "Tải xuống tất cả"
   },
   "password_length": {
     "ua": "Довжина пароля:",
@@ -426,7 +458,8 @@
     "ru": "Длина пароля:",
     "zh": "密码长度：",
     "ja": "パスワードの長さ：",
-    "pl": "Długość hasła:"
+    "pl": "Długość hasła:",
+    "vi": "Độ dài mật khẩu:"
   },
   "snackbar_copied": {
     "ua": "Пароль успішно скопійовано",
@@ -439,7 +472,8 @@
     "ru": "Пароль успешно скопирован",
     "zh": "密码复制成功",
     "ja": "パスワードが正常にコピーされました",
-    "pl": "Hasło zostało pomyślnie skopiowane"
+    "pl": "Hasło zostało pomyślnie skopiowane",
+    "vi": "Đã sao chép mật khẩu thành công"
   },
   "copied_short": {
     "ua": "Скопійовано",
@@ -452,7 +486,8 @@
     "ru": "Скопировано",
     "zh": "已复制",
     "ja": "コピーしました",
-    "pl": "Skopiowano"
+    "pl": "Skopiowano",
+    "vi": "Đã sao chép"
   },
   "snackbar_all_copied": {
     "ua": "Усі паролі успішно скопійовано",
@@ -465,7 +500,8 @@
     "ru": "Все пароли успешно скопированы",
     "zh": "所有密码复制成功",
     "ja": "すべてのパスワードが正常にコピーされました",
-    "pl": "Wszystkie hasła zostały pomyślnie skopiowane"
+    "pl": "Wszystkie hasła zostały pomyślnie skopiowane",
+    "vi": "Đã sao chép tất cả mật khẩu thành công"
   },
   "strength": {
     "ua": "Надійність:",
@@ -478,7 +514,8 @@
     "ru": "Надежность:",
     "zh": "强度：",
     "ja": "強度：",
-    "pl": "Siła:"
+    "pl": "Siła:",
+    "vi": "Độ mạnh:"
   },
   "Strong": {
     "ua": "Сильний",
@@ -491,7 +528,8 @@
     "ru": "Сильный",
     "zh": "强",
     "ja": "強い",
-    "pl": "Silny"
+    "pl": "Silny",
+    "vi": "Mạnh"
   },
   "very_weak": {
     "ua": "Дуже слабкий",
@@ -504,7 +542,8 @@
     "ru": "Очень Слабый",
     "zh": "很弱",
     "ja": "非常に弱い",
-    "pl": "Bardzo słaby"
+    "pl": "Bardzo słaby",
+    "vi": "Rất yếu"
   },
   "weak": {
     "ua": "Слабкий",
@@ -517,7 +556,8 @@
     "ru": "Слабый",
     "zh": "弱",
     "ja": "弱い",
-    "pl": "Słaby"
+    "pl": "Słaby",
+    "vi": "Yếu"
   },
   "moderate": {
     "ua": "Середній",
@@ -530,7 +570,8 @@
     "ru": "Средний",
     "zh": "中等",
     "ja": "普通",
-    "pl": "Średni"
+    "pl": "Średni",
+    "vi": "Trung bình"
   },
   "strong": {
     "ua": "Сильний",
@@ -543,7 +584,8 @@
     "ru": "Сильный",
     "zh": "强",
     "ja": "強い",
-    "pl": "Silny"
+    "pl": "Silny",
+    "vi": "Mạnh"
   },
   "time_to_crack": {
     "ua": "На злам може знадобитися:",
@@ -556,7 +598,8 @@
     "ru": "Время на взлом:",
     "zh": "破解时间：",
     "ja": "クラック時間：",
-    "pl": "Czas na złamanie:"
+    "pl": "Czas na złamanie:",
+    "vi": "Thời gian bẻ khóa:"
   },
   "quantity": {
     "ua": "Кількість",
@@ -569,7 +612,8 @@
     "ru": "Количество",
     "zh": "数量",
     "ja": "数量",
-    "pl": "Ilość"
+    "pl": "Ilość",
+    "vi": "Số lượng"
   },
   "ua": "UA",
   "en": "EN",
@@ -582,6 +626,7 @@
   "zh": "ZH",
   "ja": "JA",
   "pl": "PL",
+  "vi": "VI",
   "aboutus_title": {
     "ua": "Про нас:",
     "en": "About Us:",
@@ -593,7 +638,8 @@
     "ru": "О нас:",
     "zh": "关于我们：",
     "ja": "私たちについて：",
-    "pl": "O nas:"
+    "pl": "O nas:",
+    "vi": "Về chúng tôi:"
   },
   "aboutus_who_we_are": {
     "ua": "Хто ми",
@@ -606,7 +652,8 @@
     "ru": "Кто мы",
     "zh": "我们是谁",
     "ja": "私たちについて",
-    "pl": "Kim jesteśmy"
+    "pl": "Kim jesteśmy",
+    "vi": "Chúng tôi là ai"
   },
   "aboutus_intro": {
     "ua": "Ласкаво просимо на нашу платформу, де ми присвячені наданню вам <strong>безпечних рішень</strong> для ваших <strong>цифрових потреб</strong>. Наша місія - допомогти вам легко та з впевненістю орієнтуватися в складному <strong>цифровому світі</strong>.",
@@ -619,7 +666,8 @@
     "ru": "Добро пожаловать на нашу платформу, где мы посвящаем себя предоставлению вам <strong>безопасных решений</strong> для ваших <strong>цифровых потребностей</strong>. Наша миссия - помочь вам легко и уверенно ориентироваться в сложном <strong>цифровом мире</strong>.",
     "zh": "欢迎来到我们的平台，我们致力于为您的<strong>数字需求</strong>提供<strong>安全解决方案</strong>。我们的使命是帮助您轻松自信地驾驭复杂的<strong>数字世界</strong>。",
     "ja": "私たちのプラットフォームへようこそ。ここでは、あなたの<strong>デジタルニーズ</strong>に<strong>安全なソリューション</strong>を提供することに専念しています。私たちの使命は、複雑な<strong>デジタル世界</strong>を簡単かつ自信を持ってナビゲートするお手伝いをすることです。",
-    "pl": "Witamy na naszej platformie, gdzie poświęcamy się dostarczaniu <strong>bezpiecznych rozwiązań</strong> dla Twoich <strong>potrzeb cyfrowych</strong>. Naszą misją jest pomoc w łatwym i pewnym poruszaniu się po złożonym <strong>świecie cyfrowym</strong>."
+    "pl": "Witamy na naszej platformie, gdzie poświęcamy się dostarczaniu <strong>bezpiecznych rozwiązań</strong> dla Twoich <strong>potrzeb cyfrowych</strong>. Naszą misją jest pomoc w łatwym i pewnym poruszaniu się po złożonym <strong>świecie cyfrowym</strong>.",
+    "vi": "Chào mừng bạn đến với nền tảng của chúng tôi, nơi chúng tôi tận tâm cung cấp cho bạn <strong>các giải pháp an toàn</strong> cho <strong>các nhu cầu kỹ thuật số</strong> của bạn. Sứ mệnh của chúng tôi là hỗ trợ bạn điều hướng <strong>bối cảnh kỹ thuật số</strong> phức tạp một cách dễ dàng và tự tin."
   },
   "aboutus_team": {
     "ua": "Ми - команда відданих <strong>професіоналів</strong> з пасією до <strong>технологій</strong> і зобов'язанням до вашої <strong>безпеки</strong>. Ми розуміємо важливість захисту вашої <strong>онлайн-присутності</strong>, і саме тому ми пропонуємо низку <strong>інструментів</strong> та <strong>ресурсів</strong>, щоб вам допомогти досягти цієї мети.",
@@ -632,7 +680,8 @@
     "ru": "Мы - команда преданных <strong>профессионалов</strong> с страстью к <strong>технологиям</strong> и приверженностью к вашей <strong>безопасности</strong>. Мы понимаем важность защиты вашего <strong>онлайн-присутствия</strong>, и именно поэтому мы предлагаем ряд <strong>инструментов</strong> и <strong>ресурсов</strong>, чтобы помочь вам достичь этой цели.",
     "zh": "我们是一支由敬业的<strong>专业人士</strong>组成的团队，对<strong>技术</strong>充满热情，致力于您的<strong>安全</strong>。我们了解保护您<strong>在线存在</strong>的重要性，这就是为什么我们提供一系列<strong>工具</strong>和<strong>资源</strong>来帮助您实现这一目标。",
     "ja": "私たちは、<strong>テクノロジー</strong>への情熱とあなたの<strong>セキュリティ</strong>への取り組みを持つ献身的な<strong>プロフェッショナル</strong>のチームです。あなたの<strong>オンラインプレゼンス</strong>を保護することの重要性を理解しており、そのため、この目標を達成するために役立つ<strong>ツール</strong>と<strong>リソース</strong>の範囲を提供しています。",
-    "pl": "Jesteśmy zespołem oddanych <strong>profesjonalistów</strong> z pasją do <strong>technologii</strong> i zaangażowaniem w Twoje <strong>bezpieczeństwo</strong>. Rozumiemy wagę ochrony Twojej <strong>obecności online</strong>, dlatego oferujemy szereg <strong>narzędzi</strong> i <strong>zasobów</strong>, aby pomóc Ci osiągnąć ten cel."
+    "pl": "Jesteśmy zespołem oddanych <strong>profesjonalistów</strong> z pasją do <strong>technologii</strong> i zaangażowaniem w Twoje <strong>bezpieczeństwo</strong>. Rozumiemy wagę ochrony Twojej <strong>obecności online</strong>, dlatego oferujemy szereg <strong>narzędzi</strong> i <strong>zasobów</strong>, aby pomóc Ci osiągnąć ten cel.",
+    "vi": "Chúng tôi là một đội ngũ <strong>chuyên gia</strong> tận tâm với niềm đam mê <strong>công nghệ</strong> và cam kết về <strong>an ninh</strong> của bạn. Chúng tôi hiểu tầm quan trọng của việc bảo vệ <strong>sự hiện diện trực tuyến</strong> của bạn, và đó là lý do chúng tôi cung cấp một loạt <strong>công cụ</strong> và <strong>tài nguyên</strong> để giúp bạn đạt được mục tiêu đó."
   },
   "aboutus_mission_title": {
     "ua": "Наша місія:",
@@ -645,7 +694,8 @@
     "ru": "Наша миссия:",
     "zh": "我们的使命：",
     "ja": "私たちの使命：",
-    "pl": "Nasza misja:"
+    "pl": "Nasza misja:",
+    "vi": "Sứ mệnh của chúng tôi:"
   },
   "aboutus_mission": {
     "ua": "Надавати безпечні, надійні та зручні інструменти, які захищають вашу цифрову ідентичність та покращують вашу онлайн-безпеку.",
@@ -658,7 +708,8 @@
     "ru": "Предоставлять безопасные, надежные и удобные инструменты, которые защищают вашу цифровую идентичность и повышают вашу онлайн-безопасность.",
     "zh": "提供安全、可靠和用户友好的工具，保护您的数字身份并增强您的在线安全性。",
     "ja": "あなたのデジタルアイデンティティを保護し、オンラインセキュリティを向上させる安全で信頼性が高く、使いやすいツールを提供すること。",
-    "pl": "Dostarczać bezpieczne, niezawodne i przyjazne dla użytkownika narzędzia, które chronią Twoją tożsamość cyfrową i zwiększają Twoje bezpieczeństwo online."
+    "pl": "Dostarczać bezpieczne, niezawodne i przyjazne dla użytkownika narzędzia, które chronią Twoją tożsamość cyfrową i zwiększają Twoje bezpieczeństwo online.",
+    "vi": "Cung cấp các công cụ an toàn, đáng tin cậy và thân thiện với người dùng nhằm bảo vệ danh tính kỹ thuật số của bạn và nâng cao an ninh trực tuyến."
   },
   "aboutus_offer_title": {
     "ua": "Що ми пропонуємо",
@@ -671,7 +722,8 @@
     "ru": "Что мы предлагаем",
     "zh": "我们提供什么",
     "ja": "私たちが提供するもの",
-    "pl": "Co oferujemy"
+    "pl": "Co oferujemy",
+    "vi": "Chúng tôi cung cấp gì"
   },
   "aboutus_offer_1": {
     "ua": "<strong>Генерація надійних паролів</strong>: Наш <strong>генератор паролів</strong> забезпечує захист ваших <strong>онлайн-акаунтів</strong> сильними та <strong>унікальними паролями</strong>.",
@@ -684,7 +736,8 @@
     "ru": "<strong>Генерация надежных паролей</strong>: Наш <strong>генератор паролей</strong> обеспечивает защиту ваших <strong>онлайн-аккаунтов</strong> сильными и <strong>уникальными паролями</strong>. Эти инструменты используют передовые алгоритмы для обеспечения максимальной безопасности.",
     "zh": "<strong>安全密码生成</strong>：我们的<strong>密码生成器</strong>确保您的<strong>在线账户</strong>受到<strong>强密码和唯一密码</strong>的保护。",
     "ja": "<strong>安全なパスワード生成</strong>：私たちの<strong>パスワードジェネレーター</strong>は、あなたの<strong>オンラインアカウント</strong>が<strong>強力でユニークなパスワード</strong>で保護されることを保証します。",
-    "pl": "<strong>Bezpieczne generowanie haseł</strong>: Nasz <strong>generator haseł</strong> zapewnia, że Twoje <strong>konta online</strong> są chronione <strong>silnymi i unikalnymi hasłami</strong>."
+    "pl": "<strong>Bezpieczne generowanie haseł</strong>: Nasz <strong>generator haseł</strong> zapewnia, że Twoje <strong>konta online</strong> są chronione <strong>silnymi i unikalnymi hasłami</strong>.",
+    "vi": "<strong>Tạo mật khẩu an toàn</strong>: <strong>Trình tạo mật khẩu</strong> của chúng tôi đảm bảo các <strong>tài khoản trực tuyến</strong> của bạn được bảo vệ bằng <strong>mật khẩu mạnh và duy nhất</strong>."
   },
   "aboutus_offer_2": {
     "ua": "<strong>Шифрування даних</strong>: Ми надаємо <strong>рішення з шифрування</strong>, щоб зберегти ваші <strong>чутливі дані</strong> від пильних очей.",
@@ -697,7 +750,8 @@
     "ru": "<strong>Шифрование данных</strong>: Мы предоставляем <strong>решения шифрования</strong>, чтобы сохранить ваши <strong>чувствительные данные</strong> от любопытных глаз.",
     "zh": "<strong>数据加密</strong>：我们提供<strong>加密解决方案</strong>，保护您的<strong>敏感数据</strong>免受窥探。",
     "ja": "<strong>データ暗号化</strong>：私たちは<strong>暗号化ソリューション</strong>を提供して、あなたの<strong>機密データ</strong>を詮索好きな目から守ります。",
-    "pl": "<strong>Szyfrowanie danych</strong>: Dostarczamy <strong>rozwiązania szyfrowania</strong>, aby chronić Twoje <strong>wrażliwe dane</strong> przed wścibskimi oczami."
+    "pl": "<strong>Szyfrowanie danych</strong>: Dostarczamy <strong>rozwiązania szyfrowania</strong>, aby chronić Twoje <strong>wrażliwe dane</strong> przed wścibskimi oczami.",
+    "vi": "<strong>Mã hóa dữ liệu</strong>: Chúng tôi cung cấp <strong>các giải pháp mã hóa</strong> để giữ <strong>dữ liệu nhạy cảm</strong> của bạn an toàn khỏi những ánh mắt tò mò."
   },
   "aboutus_offer_3": {
     "ua": "<strong>Ресурси з кібербезпеки</strong>: Будьте в курсі останніх <strong>тенденцій кібербезпеки</strong> та <strong>кращих практик</strong>.",
@@ -710,7 +764,8 @@
     "ru": "<strong>Ресурсы по кибербезопасности</strong>: Будьте в курсе последних <strong>тенденций кибербезопасности</strong> и <strong>лучших практик</strong>.",
     "zh": "<strong>网络安全资源</strong>：了解最新的<strong>网络安全趋势</strong>和<strong>最佳实践</strong>。",
     "ja": "<strong>サイバーセキュリティリソース</strong>：最新の<strong>サイバーセキュリティトレンド</strong>と<strong>ベストプラクティス</strong>について情報を入手し、最新の状態を保ちます。",
-    "pl": "<strong>Zasoby cyberbezpieczeństwa</strong>: Bądź na bieżąco z najnowszymi <strong>trendami cyberbezpieczeństwa</strong> i <strong>najlepszymi praktykami</strong>."
+    "pl": "<strong>Zasoby cyberbezpieczeństwa</strong>: Bądź na bieżąco z najnowszymi <strong>trendami cyberbezpieczeństwa</strong> i <strong>najlepszymi praktykami</strong>.",
+    "vi": "<strong>Tài nguyên an ninh mạng</strong>: Luôn cập nhật thông tin mới nhất về <strong>các xu hướng an ninh mạng</strong> và <strong>các thực hành tốt nhất</strong>."
   },
   "aboutus_why_title": {
     "ua": "Чому обирають нас:",
@@ -723,7 +778,8 @@
     "ru": "Почему выбирают нас:",
     "zh": "为什么选择我们：",
     "ja": "なぜ私たちを選ぶのか：",
-    "pl": "Dlaczego wybrać nas:"
+    "pl": "Dlaczego wybrać nas:",
+    "vi": "Tại sao chọn chúng tôi:"
   },
   "aboutus_why_1": {
     "ua": "В центрі нашої діяльності - ваша <strong>безпека</strong> та <strong>конфіденційність</strong>. Наші <strong>інструменти</strong> розроблені з урахуванням вашого <strong>захисту</strong>.",
@@ -736,7 +792,8 @@
     "ru": "В центре нашей деятельности - ваша <strong>безопасность</strong> и <strong>конфиденциальность</strong>. Наши <strong>инструменты</strong> разработаны с учетом вашей <strong>защиты</strong>.",
     "zh": "我们工作的核心是重视您的<strong>安全</strong>和<strong>隐私</strong>。我们的<strong>工具</strong>是为了您的<strong>保护</strong>而设计的。",
     "ja": "私たちの活動の中心には、あなたの<strong>セキュリティ</strong>と<strong>プライバシー</strong>があります。私たちの<strong>ツール</strong>は、あなたの<strong>保護</strong>を念頭に置いて設計されています。",
-    "pl": "W centrum naszej działalności jest Twoje <strong>bezpieczeństwo</strong> i <strong>prywatność</strong>. Nasze <strong>narzędzia</strong> są zaprojektowane z myślą o Twojej <strong>ochronie</strong>."
+    "pl": "W centrum naszej działalności jest Twoje <strong>bezpieczeństwo</strong> i <strong>prywatność</strong>. Nasze <strong>narzędzia</strong> są zaprojektowane z myślą o Twojej <strong>ochronie</strong>.",
+    "vi": "Cốt lõi của chúng tôi là coi trọng <strong>an ninh</strong> và <strong>quyền riêng tư</strong> của bạn hơn hết thảy. <strong>Công cụ</strong> của chúng tôi được thiết kế với <strong>sự bảo vệ</strong> dành cho bạn."
   },
   "aboutus_why_2": {
     "ua": "Наш <strong>інструмент генерації паролів</strong> створює <strong>унікальні паролі</strong>, які є <strong>криптографічно безпечними</strong>. Кожен згенерований пароль є <strong>випадковим</strong> і відповідає <strong>найкращим практикам безпеки</strong>. Чи потрібен вам <strong>простий пароль</strong> або <strong>складний пароль</strong>, наш генератор адаптується до ваших потреб.",
@@ -749,7 +806,8 @@
     "ru": "Наш <strong>инструмент генерации паролей</strong> создает <strong>уникальные пароли</strong>, которые являются <strong>криптографически безопасными</strong>. Каждый сгенерированный пароль является <strong>случайным</strong> и соответствует <strong>лучшим практикам безопасности</strong>. Нужен ли вам <strong>простой пароль</strong> или <strong>сложный пароль</strong>, наш генератор адаптируется к вашим потребностям.",
     "zh": "我们的<strong>密码生成器工具</strong>创建<strong>唯一密码</strong>，这些密码是<strong>加密安全的</strong>。每个生成的密码都是<strong>随机的</strong>，并遵循<strong>最佳安全实践</strong>。无论您需要<strong>简单密码</strong>还是<strong>复杂密码</strong>，我们的生成器都能适应您的需求。",
     "ja": "私たちの<strong>パスワードジェネレーターツール</strong>は、<strong>暗号的に安全</strong>な<strong>ユニークなパスワード</strong>を作成します。生成される各パスワードは<strong>ランダム</strong>で、<strong>最高のセキュリティプラクティス</strong>に従います。<strong>シンプルなパスワード</strong>でも<strong>複雑なパスワード</strong>でも、私たちのジェネレーターはあなたのニーズに適応します。",
-    "pl": "Nasze <strong>narzędzie do generowania haseł</strong> tworzy <strong>unikalne hasła</strong>, które są <strong>kryptograficznie bezpieczne</strong>. Każde wygenerowane hasło jest <strong>losowe</strong> i zgodne z <strong>najlepszymi praktykami bezpieczeństwa</strong>. Czy potrzebujesz <strong>prostego hasła</strong> czy <strong>złożonego hasła</strong>, nasz generator dostosowuje się do Twoich potrzeb."
+    "pl": "Nasze <strong>narzędzie do generowania haseł</strong> tworzy <strong>unikalne hasła</strong>, które są <strong>kryptograficznie bezpieczne</strong>. Każde wygenerowane hasło jest <strong>losowe</strong> i zgodne z <strong>najlepszymi praktykami bezpieczeństwa</strong>. Czy potrzebujesz <strong>prostego hasła</strong> czy <strong>złożonego hasła</strong>, nasz generator dostosowuje się do Twoich potrzeb.",
+    "vi": "<strong>Công cụ tạo mật khẩu</strong> của chúng tôi tạo ra <strong>mật khẩu duy nhất</strong> có tính <strong>bảo mật mật mã</strong>. Mỗi mật khẩu được tạo đều <strong>ngẫu nhiên</strong> và tuân theo <strong>các thực hành bảo mật tốt nhất</strong>. Dù bạn cần một <strong>mật khẩu đơn giản</strong> hay một <strong>mật khẩu phức tạp</strong>, trình tạo của chúng tôi sẽ thích ứng với nhu cầu của bạn."
   },
   "seotext_title": {
     "ua": "Генератор надійних паролів онлайн",
@@ -762,7 +820,8 @@
     "ru": "Онлайн-генератор надежных паролей",
     "zh": "在线安全密码生成器",
     "ja": "オンライン安全パスワードジェネレーター",
-    "pl": "Online Generator Bezpiecznych Haseł"
+    "pl": "Online Generator Bezpiecznych Haseł",
+    "vi": "Trình tạo mật khẩu an toàn trực tuyến"
   },
   "strong_password_info": {
     "ua": "Створюйте <strong>міцні паролі</strong> для захисту ваших акаунтів від кіберзагроз. Наш генератор використовує передові алгоритми для створення криптографічно безпечних паролів.",
@@ -775,7 +834,8 @@
     "ru": "Создавайте <strong>сильные пароли</strong> для защиты ваших аккаунтов от киберугроз. Наш генератор использует передовые алгоритмы для создания криптографически безопасных паролей.",
     "zh": "创建<strong>强密码</strong>以保护您的账户免受网络威胁。我们的生成器使用先进算法创建加密安全的密码。",
     "ja": "サイバー脅威からアカウントを保護するために<strong>強力なパスワード</strong>を作成します。私たちのジェネレーターは、暗号的に安全なパスワードを作成するために高度なアルゴリズムを使用します。",
-    "pl": "Twórz <strong>silne hasła</strong>, aby chronić swoje konta przed zagrożeniami cybernetycznymi. Nasz generator używa zaawansowanych algorytmów do tworzenia kryptograficznie bezpiecznych haseł."
+    "pl": "Twórz <strong>silne hasła</strong>, aby chronić swoje konta przed zagrożeniami cybernetycznymi. Nasz generator używa zaawansowanych algorytmów do tworzenia kryptograficznie bezpiecznych haseł.",
+    "vi": "Tạo <strong>mật khẩu mạnh</strong> để bảo vệ tài khoản của bạn khỏi các mối đe dọa mạng. Trình tạo của chúng tôi sử dụng các thuật toán tiên tiến để tạo ra mật khẩu có tính bảo mật mật mã."
   },
   "howtouse_title": {
     "ua": "Як використовувати:",
@@ -788,7 +848,8 @@
     "ru": "Как использовать:",
     "zh": "如何使用：",
     "ja": "使用方法：",
-    "pl": "Jak używać:"
+    "pl": "Jak używać:",
+    "vi": "Cách sử dụng:"
   },
   "howtouse_simple_steps": {
     "ua": "Прості кроки",
@@ -801,7 +862,8 @@
     "ru": "Простые шаги",
     "zh": "简单步骤",
     "ja": "簡単な手順",
-    "pl": "Proste kroki"
+    "pl": "Proste kroki",
+    "vi": "Các bước đơn giản"
   },
   "howtouse_intro": {
     "ua": "Використання <strong>генератора паролів</strong> просте. Просто слідуйте цим крокам:",
@@ -814,7 +876,8 @@
     "ru": "Использование <strong>генератора паролей</strong> простое. Просто следуйте этим шагам:",
     "zh": "使用<strong>密码生成器</strong>很简单。只需按照以下步骤操作：",
     "ja": "<strong>パスワードジェネレーター</strong>の使用は簡単です。これらの手順に従ってください：",
-    "pl": "Używanie <strong>generatora haseł</strong> jest proste. Wystarczy wykonać te kroki:"
+    "pl": "Używanie <strong>generatora haseł</strong> jest proste. Wystarczy wykonać te kroki:",
+    "vi": "Sử dụng <strong>trình tạo mật khẩu</strong> rất đơn giản. Bạn chỉ cần làm theo các bước sau:"
   },
   "howtouse_step1": {
     "ua": "Натисніть кнопку \"<strong>Згенерувати пароль</strong>\".",
@@ -827,7 +890,8 @@
     "ru": "Нажмите кнопку \"<strong>Сгенерировать пароль</strong>\".",
     "zh": "点击\"<strong>生成密码</strong>\"按钮。",
     "ja": "\"<strong>パスワードを生成</strong>\"ボタンをクリックします。",
-    "pl": "Kliknij przycisk \"<strong>Generuj hasło</strong>\"."
+    "pl": "Kliknij przycisk \"<strong>Generuj hasło</strong>\".",
+    "vi": "Nhấp vào nút \"<strong>Tạo mật khẩu</strong>\"."
   },
   "howtouse_step2": {
     "ua": "Налаштуйте свій пароль, вибравши бажану <strong>довжину</strong> та включивши <strong>спеціальні символи</strong>, <strong>цифри</strong> та <strong>великі літери</strong>.",
@@ -840,7 +904,8 @@
     "ru": "Настройте свой пароль, выбрав желаемую <strong>длину</strong> и включив <strong>специальные символы</strong>, <strong>цифры</strong> и <strong>заглавные буквы</strong>.",
     "zh": "通过选择所需的<strong>长度</strong>并包含<strong>特殊字符</strong>、<strong>数字</strong>和<strong>大写字母</strong>来自定义您的密码。",
     "ja": "希望する<strong>長さ</strong>を選択し、<strong>特殊文字</strong>、<strong>数字</strong>、<strong>大文字</strong>を含めることでパスワードをカスタマイズします。",
-    "pl": "Dostosuj swoje hasło, wybierając pożądaną <strong>długość</strong> i włączając <strong>znaki specjalne</strong>, <strong>cyfry</strong> i <strong>wielkie litery</strong>."
+    "pl": "Dostosuj swoje hasło, wybierając pożądaną <strong>długość</strong> i włączając <strong>znaki specjalne</strong>, <strong>cyfry</strong> i <strong>wielkie litery</strong>.",
+    "vi": "Tùy chỉnh mật khẩu của bạn bằng cách chọn <strong>độ dài</strong> mong muốn và bao gồm <strong>ký tự đặc biệt</strong>, <strong>số</strong> và <strong>chữ hoa</strong>."
   },
   "howtouse_step3": {
     "ua": "Натисніть \"<strong>Згенерувати</strong>\", і ваш <strong>безпечний пароль</strong> буде створений миттєво.",
@@ -853,7 +918,8 @@
     "ru": "Нажмите \"<strong>Генерировать</strong>\", и ваш <strong>безопасный пароль</strong> будет создан мгновенно.",
     "zh": "点击\"<strong>生成</strong>\"，您的<strong>安全密码</strong>将立即生成。",
     "ja": "\"<strong>生成</strong>\"をクリックすると、<strong>安全なパスワード</strong>が即座に生成されます。",
-    "pl": "Kliknij \"<strong>Generuj</strong>\", a Twoje <strong>bezpieczne hasło</strong> zostanie wygenerowane natychmiast."
+    "pl": "Kliknij \"<strong>Generuj</strong>\", a Twoje <strong>bezpieczne hasło</strong> zostanie wygenerowane natychmiast.",
+    "vi": "Nhấp \"<strong>Tạo</strong>\", và <strong>mật khẩu an toàn</strong> của bạn sẽ được tạo ngay lập tức."
   },
   "howtouse_what_you_get": {
     "ua": "Що ви отримуєте:",
@@ -866,7 +932,8 @@
     "ru": "Что вы получаете:",
     "zh": "您得到什么：",
     "ja": "あなたが得るもの：",
-    "pl": "Co otrzymujesz:"
+    "pl": "Co otrzymujesz:",
+    "vi": "Những gì bạn nhận được:"
   },
   "howtouse_benefit1": {
     "ua": "Міцні, унікальні паролі",
@@ -879,7 +946,8 @@
     "ru": "Сильные, уникальные пароли",
     "zh": "强密码和唯一密码",
     "ja": "強力でユニークなパスワード",
-    "pl": "Silne, unikalne hasła"
+    "pl": "Silne, unikalne hasła",
+    "vi": "Mật khẩu mạnh, duy nhất"
   },
   "howtouse_benefit2": {
     "ua": "Налаштовувана довжина",
@@ -892,7 +960,8 @@
     "ru": "Настраиваемая длина",
     "zh": "可自定义长度",
     "ja": "カスタマイズ可能な長さ",
-    "pl": "Konfigurowalna długość"
+    "pl": "Konfigurowalna długość",
+    "vi": "Độ dài tùy chỉnh"
   },
   "howtouse_benefit3": {
     "ua": "Різні типи символів",
@@ -905,7 +974,8 @@
     "ru": "Различные типы символов",
     "zh": "多种字符类型",
     "ja": "複数の文字タイプ",
-    "pl": "Wiele typów znaków"
+    "pl": "Wiele typów znaków",
+    "vi": "Nhiều loại ký tự"
   },
   "howtouse_benefit4": {
     "ua": "Миттєва генерація",
@@ -918,7 +988,8 @@
     "ru": "Мгновенная генерация",
     "zh": "即时生成",
     "ja": "即座の生成",
-    "pl": "Natychmiastowe generowanie"
+    "pl": "Natychmiastowe generowanie",
+    "vi": "Tạo tức thì"
   },
   "howtouse_benefit5": {
     "ua": "Копіювання в буфер обміну",
@@ -931,7 +1002,8 @@
     "ru": "Копирование в буфер обмена",
     "zh": "复制到剪贴板",
     "ja": "クリップボードにコピー",
-    "pl": "Kopiuj do schowka"
+    "pl": "Kopiuj do schowka",
+    "vi": "Sao chép vào clipboard"
   },
   "howtouse_security_tips": {
     "ua": "Поради щодо безпеки",
@@ -944,7 +1016,8 @@
     "ru": "Советы по безопасности",
     "zh": "安全提示",
     "ja": "セキュリティのヒント",
-    "pl": "Wskazówki bezpieczeństwa"
+    "pl": "Wskazówki bezpieczeństwa",
+    "vi": "Mẹo bảo mật"
   },
   "howtouse_security_tips_title": {
     "ua": "<strong>Поради щодо безпеки</strong>:",
@@ -957,7 +1030,8 @@
     "ru": "<strong>Советы по безопасности</strong>:",
     "zh": "<strong>安全提示</strong>：",
     "ja": "<strong>セキュリティのヒント</strong>：",
-    "pl": "<strong>Wskazówki bezpieczeństwa</strong>:"
+    "pl": "<strong>Wskazówki bezpieczeństwa</strong>:",
+    "vi": "<strong>Mẹo bảo mật</strong>:"
   },
   "howtouse_tip1": {
     "ua": "Ніколи не використовуйте один і той же <strong>пароль</strong> для кількох <strong>акаунтів</strong>.",
@@ -970,7 +1044,8 @@
     "ru": "Никогда не используйте один и тот же <strong>пароль</strong> для нескольких <strong>аккаунтов</strong>.",
     "zh": "永远不要对多个<strong>账户</strong>使用相同的<strong>密码</strong>。",
     "ja": "複数の<strong>アカウント</strong>に同じ<strong>パスワード</strong>を使用しないでください。",
-    "pl": "Nigdy nie używaj tego samego <strong>hasła</strong> dla wielu <strong>kont</strong>."
+    "pl": "Nigdy nie używaj tego samego <strong>hasła</strong> dla wielu <strong>kont</strong>.",
+    "vi": "Không bao giờ dùng cùng một <strong>mật khẩu</strong> cho nhiều <strong>tài khoản</strong>."
   },
   "howtouse_tip2": {
     "ua": "Регулярно змінюйте свої <strong>паролі</strong>.",
@@ -983,7 +1058,8 @@
     "ru": "Регулярно меняйте свои <strong>пароли</strong>.",
     "zh": "定期更改您的<strong>密码</strong>。",
     "ja": "定期的に<strong>パスワード</strong>を変更してください。",
-    "pl": "Regularnie zmieniaj swoje <strong>hasła</strong>."
+    "pl": "Regularnie zmieniaj swoje <strong>hasła</strong>.",
+    "vi": "Thay đổi <strong>mật khẩu</strong> của bạn thường xuyên."
   },
   "howtouse_tip3": {
     "ua": "Зберігайте свої <strong>паролі</strong> в <strong>безпечному</strong> та <strong>зашифрованому менеджері паролів</strong>.",
@@ -996,7 +1072,8 @@
     "ru": "Храните свои <strong>пароли</strong> в <strong>безопасном</strong> и <strong>зашифрованном менеджере паролей</strong>.",
     "zh": "将您的<strong>密码</strong>存储在<strong>安全</strong>和<strong>加密的密码管理器</strong>中。",
     "ja": "<strong>パスワード</strong>を<strong>安全</strong>で<strong>暗号化されたパスワードマネージャー</strong>に保存してください。",
-    "pl": "Przechowuj swoje <strong>hasła</strong> w <strong>bezpiecznym</strong> i <strong>zaszyfrowanym menedżerze haseł</strong>."
+    "pl": "Przechowuj swoje <strong>hasła</strong> w <strong>bezpiecznym</strong> i <strong>zaszyfrowanym menedżerze haseł</strong>.",
+    "vi": "Lưu trữ <strong>mật khẩu</strong> của bạn trong một <strong>trình quản lý mật khẩu</strong> <strong>an toàn và được mã hóa</strong>."
   },
   "howtouse_tip4": {
     "ua": "Уникайте використання легко <strong>вгадуваної інформації</strong>, як ваше ім'я або дата народження.",
@@ -1009,7 +1086,8 @@
     "ru": "Избегайте использования легко <strong>угадываемой информации</strong>, такой как ваше имя или дата рождения.",
     "zh": "避免使用容易<strong>猜测的信息</strong>，如您的姓名或出生日期。",
     "ja": "名前や生年月日など、簡単に<strong>推測できる情報</strong>の使用を避けてください。",
-    "pl": "Unikaj używania łatwo <strong>odgadywalnych informacji</strong>, takich jak Twoje imię lub data urodzenia."
+    "pl": "Unikaj używania łatwo <strong>odgadywalnych informacji</strong>, takich jak Twoje imię lub data urodzenia.",
+    "vi": "Tránh sử dụng <strong>thông tin dễ đoán</strong> như tên hoặc ngày sinh của bạn."
   },
   "welcome_title": {
     "ua": "Ласкаво просимо до \"Згенерувати пароль для мене\"!",
@@ -1022,7 +1100,8 @@
     "ru": "Добро пожаловать в \"Сгенерировать пароль для меня\"!",
     "zh": "欢迎使用\"为我生成密码\"！",
     "ja": "\"私のためのパスワードを生成\"へようこそ！",
-    "pl": "Witamy w \"Generuj Hasło dla Mnie\"!"
+    "pl": "Witamy w \"Generuj Hasło dla Mnie\"!",
+    "vi": "Chào mừng bạn đến với \"Generate Password To Me\"!"
   },
   "seotext_intro1": {
     "ua": "Ми тут, щоб надати вам <strong>безпечний</strong> і <strong>надійний</strong> спосіб створення <strong>надійних паролів</strong>.",
@@ -1035,7 +1114,8 @@
     "ru": "Мы здесь, чтобы предоставить вам <strong>безопасный</strong> и <strong>надежный</strong> способ создания <strong>сильных паролей</strong>.",
     "zh": "我们在这里为您提供一种<strong>安全</strong>且<strong>可靠</strong>的方式来生成<strong>强密码</strong>。",
     "ja": "私たちは、<strong>安全</strong>で<strong>信頼性の高い</strong>方法で<strong>強力なパスワード</strong>を生成するお手伝いをします。",
-    "pl": "Jesteśmy tutaj, aby zapewnić Ci <strong>bezpieczny</strong> i <strong>niezawodny</strong> sposób generowania <strong>silnych haseł</strong>."
+    "pl": "Jesteśmy tutaj, aby zapewnić Ci <strong>bezpieczny</strong> i <strong>niezawodny</strong> sposób generowania <strong>silnych haseł</strong>.",
+    "vi": "Chúng tôi ở đây để cung cấp cho bạn một cách <strong>an toàn</strong> và <strong>đáng tin cậy</strong> để tạo <strong>mật khẩu mạnh</strong>."
   },
   "seotext_intro2": {
     "ua": "Оскільки загрози <strong>кібератак</strong> і <strong>витоку даних</strong> постійно зростають, дуже важливо мати <strong>надійний пароль</strong>, який зможе захистити вашу <strong>конфіденційну інформацію</strong>. Наш <strong>онлайн-генератор паролів</strong> пропонує просте та ефективне рішення.",
@@ -1048,7 +1128,8 @@
     "ru": "С постоянно растущими угрозами <strong>кибератак</strong> и <strong>утечек данных</strong> крайне важно иметь <strong>надежный пароль</strong>, который сможет защитить вашу <strong>конфиденциальную информацию</strong>. Наш <strong>онлайн-генератор паролей</strong> предлагает простое и эффективное решение.",
     "zh": "随着<strong>网络攻击</strong>和<strong>数据泄露</strong>威胁的不断增加，拥有能够保护您<strong>敏感信息</strong>的<strong>强密码</strong>至关重要。我们的<strong>在线密码生成器</strong>提供了简单有效的解决方案。",
     "ja": "<strong>サイバー攻撃</strong>や<strong>データ漏洩</strong>の脅威が増加し続ける中、<strong>機密情報</strong>を保護できる<strong>堅牢なパスワード</strong>を持つことが重要です。私たちの<strong>オンラインパスワードジェネレーター</strong>は、シンプルで効果的なソリューションを提供します。",
-    "pl": "Z rosnącymi zagrożeniami <strong>ataków cybernetycznych</strong> i <strong>wycieków danych</strong>, kluczowe jest posiadanie <strong>silnego hasła</strong>, które może chronić Twoje <strong>wrażliwe informacje</strong>. Nasz <strong>online generator haseł</strong> oferuje proste i skuteczne rozwiązanie."
+    "pl": "Z rosnącymi zagrożeniami <strong>ataków cybernetycznych</strong> i <strong>wycieków danych</strong>, kluczowe jest posiadanie <strong>silnego hasła</strong>, które może chronić Twoje <strong>wrażliwe informacje</strong>. Nasz <strong>online generator haseł</strong> oferuje proste i skuteczne rozwiązanie.",
+    "vi": "Với các mối đe dọa ngày càng tăng từ <strong>tấn công mạng</strong> và <strong>rò rỉ dữ liệu</strong>, việc sở hữu một <strong>mật khẩu vững chắc</strong> để bảo vệ <strong>thông tin nhạy cảm</strong> là điều thiết yếu. <strong>Trình tạo mật khẩu trực tuyến</strong> của chúng tôi mang đến một giải pháp đơn giản và hiệu quả."
   },
   "seotext_why_title": {
     "ua": "Чому варто вибрати наш генератор паролів?",
@@ -1061,7 +1142,8 @@
     "ru": "Почему стоит выбрать наш генератор паролей?",
     "zh": "为什么选择我们的密码生成器？",
     "ja": "なぜ私たちのパスワードジェネレーターを選ぶのか？",
-    "pl": "Dlaczego warto wybrać nasz generator haseł?"
+    "pl": "Dlaczego warto wybrać nasz generator haseł?",
+    "vi": "Tại sao chọn trình tạo mật khẩu của chúng tôi?"
   },
   "seotext_why1": {
     "ua": "Перш за все, ми надаємо пріоритет вашій <strong>безпеці</strong>. Наш <strong>алгоритм</strong> гарантує, що згенеровані паролі є надійними, і їх практично неможливо вгадати. Ми враховуємо різні чинники, такі як <strong>довжина пароля</strong>, <strong>складність</strong> і включення <strong>цифр</strong>, <strong>символів</strong>, а також <strong>великих і малих літер</strong>.",
@@ -1074,7 +1156,8 @@
     "ru": "Прежде всего, мы отдаем приоритет вашей <strong>безопасности</strong>. Наш <strong>алгоритм</strong> гарантирует, что сгенерированные пароли являются высоко <strong>безопасными</strong> и практически невозможными для угадывания. Мы учитываем различные факторы, такие как <strong>длина пароля</strong>, <strong>сложность</strong> и включение <strong>цифр</strong>, <strong>символов</strong>, а также <strong>заглавных и строчных букв</strong>.",
     "zh": "首先，我们优先考虑您的<strong>安全</strong>。我们的<strong>算法</strong>确保生成的密码高度<strong>安全</strong>，几乎不可能被猜测。我们考虑了各种因素，如<strong>密码长度</strong>、<strong>复杂性</strong>以及包含<strong>数字</strong>、<strong>符号</strong>和<strong>大小写字母</strong>。",
     "ja": "何よりもまず、あなたの<strong>セキュリティ</strong>を優先します。私たちの<strong>アルゴリズム</strong>は、生成されたパスワードが高度に<strong>安全</strong>で、実質的に推測不可能であることを保証します。私たちは<strong>パスワードの長さ</strong>、<strong>複雑さ</strong>、<strong>数字</strong>、<strong>記号</strong>、<strong>大文字と小文字</strong>の包含など、さまざまな要因を考慮します。",
-    "pl": "Przede wszystkim priorytetowo traktujemy Twoje <strong>bezpieczeństwo</strong>. Nasz <strong>algorytm</strong> zapewnia, że generowane hasła są wysoce <strong>bezpieczne</strong> i praktycznie niemożliwe do odgadnięcia. Uwzględniamy różne czynniki, takie jak <strong>długość hasła</strong>, <strong>złożoność</strong> i włączenie <strong>cyfr</strong>, <strong>symboli</strong> oraz <strong>wielkich i małych liter</strong>."
+    "pl": "Przede wszystkim priorytetowo traktujemy Twoje <strong>bezpieczeństwo</strong>. Nasz <strong>algorytm</strong> zapewnia, że generowane hasła są wysoce <strong>bezpieczne</strong> i praktycznie niemożliwe do odgadnięcia. Uwzględniamy różne czynniki, takie jak <strong>długość hasła</strong>, <strong>złożoność</strong> i włączenie <strong>cyfr</strong>, <strong>symboli</strong> oraz <strong>wielkich i małych liter</strong>.",
+    "vi": "Trên hết, chúng tôi ưu tiên <strong>an ninh</strong> của bạn. <strong>Thuật toán</strong> của chúng tôi đảm bảo các mật khẩu được tạo có tính <strong>bảo mật</strong> rất cao và gần như không thể đoán. Chúng tôi tính đến nhiều yếu tố như <strong>độ dài mật khẩu</strong>, <strong>độ phức tạp</strong> và việc bao gồm <strong>số</strong>, <strong>ký hiệu</strong>, cũng như <strong>chữ hoa và chữ thường</strong>."
   },
   "seotext_why2": {
     "ua": "Наш <strong>інструмент генерації паролів</strong> створює <strong>унікальні паролі</strong>, які є <strong>криптографічно безпечними</strong>. Кожен згенерований пароль є <strong>випадковим</strong> і відповідає <strong>найкращим практикам безпеки</strong>. Чи потрібен вам <strong>простий пароль</strong> або <strong>складний пароль</strong>, наш генератор адаптується до ваших потреб.",
@@ -1087,7 +1170,8 @@
     "ru": "Наш <strong>инструмент генерации паролей</strong> создает <strong>уникальные пароли</strong>, которые являются <strong>криптографически безопасными</strong>. Каждый сгенерированный пароль является <strong>случайным</strong> и соответствует <strong>лучшим практикам безопасности</strong>. Нужен ли вам <strong>простой пароль</strong> или <strong>сложный пароль</strong>, наш генератор адаптируется к вашим потребностям.",
     "zh": "我们的<strong>密码生成器工具</strong>创建<strong>唯一密码</strong>，这些密码是<strong>加密安全的</strong>。每个生成的密码都是<strong>随机的</strong>，并遵循<strong>最佳安全实践</strong>。无论您需要<strong>简单密码</strong>还是<strong>复杂密码</strong>，我们的生成器都能适应您的需求。",
     "ja": "私たちの<strong>パスワードジェネレーターツール</strong>は、<strong>暗号的に安全</strong>な<strong>ユニークなパスワード</strong>を作成します。生成される各パスワードは<strong>ランダム</strong>で、<strong>最高のセキュリティプラクティス</strong>に従います。<strong>シンプルなパスワード</strong>でも<strong>複雑なパスワード</strong>でも、私たちのジェネレーターはあなたのニーズに適応します。",
-    "pl": "Nasze <strong>narzędzie do generowania haseł</strong> tworzy <strong>unikalne hasła</strong>, które są <strong>kryptograficznie bezpieczne</strong>. Każde wygenerowane hasło jest <strong>losowe</strong> i zgodne z <strong>najlepszymi praktykami bezpieczeństwa</strong>. Czy potrzebujesz <strong>prostego hasła</strong> czy <strong>złożonego hasła</strong>, nasz generator dostosowuje się do Twoich potrzeb."
+    "pl": "Nasze <strong>narzędzie do generowania haseł</strong> tworzy <strong>unikalne hasła</strong>, które są <strong>kryptograficznie bezpieczne</strong>. Każde wygenerowane hasło jest <strong>losowe</strong> i zgodne z <strong>najlepszymi praktykami bezpieczeństwa</strong>. Czy potrzebujesz <strong>prostego hasła</strong> czy <strong>złożonego hasła</strong>, nasz generator dostosowuje się do Twoich potrzeb.",
+    "vi": "<strong>Công cụ tạo mật khẩu</strong> của chúng tôi tạo ra <strong>mật khẩu duy nhất</strong> có tính <strong>bảo mật mật mã</strong>. Mỗi mật khẩu được tạo đều <strong>ngẫu nhiên</strong> và tuân theo <strong>các thực hành bảo mật tốt nhất</strong>. Dù bạn cần một <strong>mật khẩu đơn giản</strong> hay một <strong>mật khẩu phức tạp</strong>, trình tạo của chúng tôi sẽ thích ứng với nhu cầu của bạn."
   },
   "seotext_features_title": {
     "ua": "Ключові особливості:",
@@ -1100,7 +1184,8 @@
     "ru": "Ключевые особенности:",
     "zh": "主要功能：",
     "ja": "主な機能：",
-    "pl": "Kluczowe funkcje:"
+    "pl": "Kluczowe funkcje:",
+    "vi": "Các tính năng chính:"
   },
   "seotext_feature1": {
     "ua": "Передові алгоритми шифрування",
@@ -1113,7 +1198,8 @@
     "ru": "Передовые алгоритмы шифрования",
     "zh": "先进的加密算法",
     "ja": "高度な暗号化アルゴリズム",
-    "pl": "Zaawansowane algorytmy szyfrowania"
+    "pl": "Zaawansowane algorytmy szyfrowania",
+    "vi": "Thuật toán mã hóa tiên tiến"
   },
   "seotext_feature2": {
     "ua": "Налаштовувана довжина пароля",
@@ -1126,7 +1212,8 @@
     "ru": "Настраиваемая длина пароля",
     "zh": "可自定义密码长度",
     "ja": "カスタマイズ可能なパスワード長",
-    "pl": "Konfigurowalna długość hasła"
+    "pl": "Konfigurowalna długość hasła",
+    "vi": "Độ dài mật khẩu tùy chỉnh"
   },
   "seotext_feature3": {
     "ua": "Різні типи символів",
@@ -1139,7 +1226,8 @@
     "ru": "Различные типы символов",
     "zh": "多种字符类型",
     "ja": "複数の文字タイプ",
-    "pl": "Wiele typów znaków"
+    "pl": "Wiele typów znaków",
+    "vi": "Nhiều loại ký tự"
   },
   "seotext_feature4": {
     "ua": "Миттєва генерація",
@@ -1152,7 +1240,8 @@
     "ru": "Мгновенная генерация",
     "zh": "即时生成",
     "ja": "即座の生成",
-    "pl": "Natychmiastowe generowanie"
+    "pl": "Natychmiastowe generowanie",
+    "vi": "Tạo tức thì"
   },
   "seotext_feature5": {
     "ua": "Без зберігання даних",
@@ -1165,7 +1254,8 @@
     "ru": "Без хранения данных",
     "zh": "无数据存储",
     "ja": "データ保存なし",
-    "pl": "Brak przechowywania danych"
+    "pl": "Brak przechowywania danych",
+    "vi": "Không lưu trữ dữ liệu"
   },
   "seolist_title": {
     "ua": "Найкращий Посібник з Створення Сильних та Безпечних Паролів: Поради та Інструменти для Онлайн Безпеки",
@@ -1178,7 +1268,8 @@
     "ru": "Полное руководство по созданию сильных и безопасных паролей: Советы и инструменты для онлайн-безопасности",
     "zh": "创建强密码和安全密码的终极指南：在线安全提示和工具",
     "ja": "強力で安全なパスワード作成の究極ガイド：オンラインセキュリティのヒントとツール",
-    "pl": "Ostateczny przewodnik tworzenia silnych i bezpiecznych haseł: Wskazówki i narzędzia dla bezpieczeństwa online"
+    "pl": "Ostateczny przewodnik tworzenia silnych i bezpiecznych haseł: Wskazówki i narzędzia dla bezpieczeństwa online",
+    "vi": "Hướng dẫn toàn diện về tạo mật khẩu mạnh và an toàn: Mẹo và công cụ cho an toàn trực tuyến"
   },
   "seolist_intro1": {
     "ua": "У сучасному цифровому світі <strong>безпека паролів</strong> важливіша, ніж будь-коли. Оскільки кіберзагрози постійно еволюціонують, наявність <strong>міцних паролів</strong> є вашою першою лінією захисту від несанкціонованого доступу до ваших особистих та професійних облікових записів.",
@@ -1191,7 +1282,8 @@
     "ru": "В современном цифровом мире <strong>безопасность паролей</strong> важнее, чем когда-либо. Поскольку киберугрозы постоянно развиваются, наличие <strong>сильных паролей</strong> является вашей первой линией защиты от несанкционированного доступа к вашим личным и профессиональным аккаунтам.",
     "zh": "在当今的数字世界中，<strong>密码安全</strong>比以往任何时候都更重要。随着网络威胁的不断发展，拥有<strong>强密码</strong>是您抵御对个人和专业账户未授权访问的第一道防线。",
     "ja": "今日のデジタル世界では、<strong>パスワードセキュリティ</strong>がこれまで以上に重要です。サイバー脅威が絶えず進化する中、<strong>強力なパスワード</strong>を持つことは、個人および職業上のアカウントへの不正アクセスに対する最初の防衛線です。",
-    "pl": "W dzisiejszym cyfrowym świecie <strong>bezpieczeństwo haseł</strong> jest ważniejsze niż kiedykolwiek. Ponieważ zagrożenia cybernetyczne stale się ewoluują, posiadanie <strong>silnych haseł</strong> jest Twoją pierwszą linią obrony przed nieautoryzowanym dostępem do Twoich osobistych i zawodowych kont."
+    "pl": "W dzisiejszym cyfrowym świecie <strong>bezpieczeństwo haseł</strong> jest ważniejsze niż kiedykolwiek. Ponieważ zagrożenia cybernetyczne stale się ewoluują, posiadanie <strong>silnych haseł</strong> jest Twoją pierwszą linią obrony przed nieautoryzowanym dostępem do Twoich osobistych i zawodowych kont.",
+    "vi": "Trong thế giới số ngày nay, <strong>bảo mật mật khẩu</strong> quan trọng hơn bao giờ hết. Với các mối đe dọa mạng không ngừng phát triển, sở hữu <strong>mật khẩu mạnh</strong> là tuyến phòng thủ đầu tiên giúp chống truy cập trái phép vào các tài khoản cá nhân và công việc của bạn."
   },
   "seolist_intro2": {
     "ua": "Цей комплексний посібник проведе вас через все, що вам потрібно знати про <strong>генерацію паролів</strong>, <strong>найкращі практики безпеки</strong> та інструменти, доступні для захисту вашої <strong>цифрової ідентичності</strong>.",
@@ -1204,7 +1296,8 @@
     "ru": "Это полное руководство проведет вас через все, что вам нужно знать о <strong>генерации паролей</strong>, <strong>лучших практиках безопасности</strong> и инструментах, доступных для защиты вашей <strong>цифровой идентичности</strong>.",
     "zh": "本综合指南将带您了解有关<strong>密码生成</strong>、<strong>安全最佳实践</strong>以及保护您<strong>数字身份</strong>的可用工具的所有知识。",
     "ja": "この包括的なガイドでは、<strong>パスワード生成</strong>、<strong>セキュリティのベストプラクティス</strong>、そして<strong>デジタルアイデンティティ</strong>を保護するための利用可能なツールについて、知っておくべきすべてをご案内します。",
-    "pl": "Ten kompleksowy przewodnik przeprowadzi Cię przez wszystko, co musisz wiedzieć o <strong>generowaniu haseł</strong>, <strong>najlepszych praktykach bezpieczeństwa</strong> i narzędziach dostępnych do ochrony Twojej <strong>cyfrowej tożsamości</strong>."
+    "pl": "Ten kompleksowy przewodnik przeprowadzi Cię przez wszystko, co musisz wiedzieć o <strong>generowaniu haseł</strong>, <strong>najlepszych praktykach bezpieczeństwa</strong> i narzędziach dostępnych do ochrony Twojej <strong>cyfrowej tożsamości</strong>.",
+    "vi": "Hướng dẫn toàn diện này sẽ giúp bạn nắm được mọi điều cần biết về <strong>tạo mật khẩu</strong>, <strong>các thực hành bảo mật tốt nhất</strong> và các công cụ sẵn có để bảo vệ <strong>danh tính kỹ thuật số</strong> của bạn."
   },
   "seolist_basic_password_security_title": {
     "ua": "Базова безпека паролів",
@@ -1217,7 +1310,8 @@
     "ru": "Базовая безопасность паролей",
     "zh": "基本密码安全",
     "ja": "基本的なパスワードセキュリティ",
-    "pl": "Podstawowe bezpieczeństwo haseł"
+    "pl": "Podstawowe bezpieczeństwo haseł",
+    "vi": "Bảo mật mật khẩu cơ bản"
   },
   "seolist_basic_password_security_1": {
     "ua": "Найбільша загроза для ваших акаунтів — це прості та передбачувані паролі. За даними досліджень, понад 80% зламів пов'язані зі слабкими або повторно використаними паролями. Щоб цього уникнути, створюйте паролі довжиною від 12 символів, що містять великі та малі літери, цифри й спецсимволи.",
@@ -1230,7 +1324,8 @@
     "ru": "Главная угроза для ваших аккаунтов — простые и предсказуемые пароли. Исследования показывают, что более 80% взломов связаны со слабыми или повторно используемыми паролями. Создавайте пароли длиной от 12 символов с буквами, цифрами и спецсимволами.",
     "zh": "对您账户最大的威胁是简单、可预测的密码。研究表明，超过80%的数据泄露涉及弱密码或重复使用的凭据。为确保安全，请创建至少12个字符的密码，包含大小写字母、数字和特殊字符。",
     "ja": "アカウントに対する最大の脅威は、単純で予測可能なパスワードです。調査によると、侵害の80%以上が弱いパスワードや使い回しに関連しています。安全を保つため、大小文字、数字、特殊文字を含む12文字以上のパスワードを作成しましょう。",
-    "pl": "Największym zagrożeniem dla Twoich kont są proste i przewidywalne hasła. Badania pokazują, że ponad 80% naruszeń dotyczy słabych lub wielokrotnie używanych danych logowania. Twórz hasła o długości co najmniej 12 znaków z literami, cyframi i symbolami."
+    "pl": "Największym zagrożeniem dla Twoich kont są proste i przewidywalne hasła. Badania pokazują, że ponad 80% naruszeń dotyczy słabych lub wielokrotnie używanych danych logowania. Twórz hasła o długości co najmniej 12 znaków z literami, cyframi i symbolami.",
+    "vi": "Mối đe dọa lớn nhất đối với tài khoản của bạn là các mật khẩu đơn giản và dễ đoán. Nghiên cứu cho thấy hơn 80% các vụ rò rỉ liên quan đến thông tin đăng nhập yếu hoặc được dùng lại. Để an toàn, hãy tạo mật khẩu dài ít nhất 12 ký tự bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt."
   },
   "seolist_basic_password_security_2": {
     "ua": "Ніколи не використовуйте один пароль для кількох сервісів. Якщо один з них зазнає витоку даних, зловмисники автоматично спробують ті ж дані на інших сайтах — це називається credential stuffing. Окремий унікальний пароль для кожного акаунту обмежує наслідки будь-якого витоку.",
@@ -1243,7 +1338,8 @@
     "ru": "Никогда не используйте один пароль на нескольких сервисах. При утечке данных одного сервиса злоумышленники автоматически пробуют те же учётные данные на других сайтах — это называется credential stuffing. Уникальный пароль для каждого аккаунта ограничивает последствия любой утечки.",
     "zh": "切勿在多个服务中重复使用同一密码。如果某个服务发生数据泄露，攻击者会自动在其他网站尝试相同的凭据——这称为撞库攻击。为每个账户使用唯一密码可以限制任何单次泄露的影响。",
     "ja": "複数のサービスで同じパスワードを使い回さないでください。あるサービスでデータ漏洩が発生すると、攻撃者は同じ認証情報を他のサイトで自動的に試します（クレデンシャルスタッフィング）。各アカウントに固有のパスワードを使うことで被害を限定できます。",
-    "pl": "Nigdy nie używaj tego samego hasła w wielu serwisach. Jeśli jeden z nich dozna wycieku danych, atakujący automatycznie spróbują tych samych danych w innych witrynach — to technika zwana credential stuffing. Unikalne hasło dla każdego konta ogranicza szkody."
+    "pl": "Nigdy nie używaj tego samego hasła w wielu serwisach. Jeśli jeden z nich dozna wycieku danych, atakujący automatycznie spróbują tych samych danych w innych witrynach — to technika zwana credential stuffing. Unikalne hasło dla każdego konta ogranicza szkody.",
+    "vi": "Đừng bao giờ dùng lại một mật khẩu trên nhiều dịch vụ. Nếu một dịch vụ bị rò rỉ dữ liệu, kẻ tấn công sẽ tự động thử cùng thông tin đăng nhập đó trên các trang khác — kỹ thuật này gọi là credential stuffing. Một mật khẩu duy nhất cho mỗi tài khoản sẽ giới hạn thiệt hại từ bất kỳ vụ rò rỉ nào."
   },
   "seolist_basic_password_security_3": {
     "ua": "Обираючи інструмент для генерації паролів, зверніть увагу на використання криптографічного API браузера (Web Crypto API) замість звичайного Math.random(). Останній не забезпечує достатньої випадковості для безпеки. Наш генератор працює повністю у вашому браузері, тому ваші паролі ніколи не покидають ваш пристрій.",
@@ -1256,7 +1352,8 @@
     "ru": "При выборе инструмента для генерации паролей обращайте внимание на использование Web Crypto API браузера вместо обычного Math.random(). Последний не обеспечивает достаточной случайности. Наш генератор работает полностью в вашем браузере, и пароли никогда не покидают ваше устройство.",
     "zh": "选择密码生成工具时，请选择使用浏览器Web Crypto API而非基本Math.random()的工具。后者不能提供足够的随机性来保证安全。我们的生成器完全在您的浏览器中运行，密码永远不会离开您的设备。",
     "ja": "パスワード生成ツールを選ぶ際は、基本的なMath.random()ではなくブラウザのWeb Crypto APIを使用するものを選んでください。前者はセキュリティ目的には十分なランダム性を提供しません。当ジェネレーターはブラウザ内で完全に動作します。",
-    "pl": "Wybierając narzędzie do generowania haseł, szukaj takiego, które korzysta z Web Crypto API przeglądarki zamiast Math.random(). Ten ostatni nie zapewnia wystarczającej losowości. Nasz generator działa całkowicie w Twojej przeglądarce."
+    "pl": "Wybierając narzędzie do generowania haseł, szukaj takiego, które korzysta z Web Crypto API przeglądarki zamiast Math.random(). Ten ostatni nie zapewnia wystarczającej losowości. Nasz generator działa całkowicie w Twojej przeglądarce.",
+    "vi": "Khi chọn công cụ tạo mật khẩu, hãy ưu tiên công cụ dùng Web Crypto API của trình duyệt thay vì Math.random() cơ bản. Cái sau không cung cấp đủ tính ngẫu nhiên cho mục đích bảo mật. Trình tạo của chúng tôi chạy hoàn toàn trong trình duyệt của bạn, nên mật khẩu không bao giờ rời khỏi thiết bị."
   },
   "seolist_advanced_security_title": {
     "ua": "Розширена безпека",
@@ -1269,7 +1366,8 @@
     "ru": "Расширенные меры безопасности",
     "zh": "高级安全措施",
     "ja": "高度なセキュリティ対策",
-    "pl": "Zaawansowane bezpieczeństwo"
+    "pl": "Zaawansowane bezpieczeństwo",
+    "vi": "Bảo mật nâng cao"
   },
   "seolist_advanced_security_1": {
     "ua": "Атаки методом перебору (brute force) перевіряють мільярди комбінацій за секунду. Пароль з 8 малих літер можна зламати за хвилини, але 16-символьний пароль з різними типами символів потребує тисячоліть. Саме довжина та різноманітність символів роблять пароль надійним.",
@@ -1282,7 +1380,8 @@
     "ru": "Атаки перебором проверяют миллиарды комбинаций в секунду. Пароль из 8 строчных букв взламывается за минуты, но 16-символьный с разными типами символов потребует тысячелетий. Именно длина и разнообразие делают пароль надёжным.",
     "zh": "暴力破解攻击每秒测试数十亿个组合。8个小写字母的密码可以在几分钟内被破解，但含混合字符类型的16个字符的密码则需要数千年。密码的长度和字符多样性是安全的关键。",
     "ja": "ブルートフォース攻撃は毎秒数十億の組み合わせをテストします。8文字の小文字パスワードは数分で解読されますが、16文字で混合文字のパスワードは数千年かかります。長さと文字の多様性が安全性の鍵です。",
-    "pl": "Ataki brute-force testują miliardy kombinacji na sekundę. Hasło z 8 małych liter można złamać w minuty, ale 16-znakowe z mieszanymi typami znaków zajęłoby tysiąclecia. To długość i różnorodność znaków czyniją hasło bezpiecznym."
+    "pl": "Ataki brute-force testują miliardy kombinacji na sekundę. Hasło z 8 małych liter można złamać w minuty, ale 16-znakowe z mieszanymi typami znaków zajęłoby tysiąclecia. To długość i różnorodność znaków czyniją hasło bezpiecznym.",
+    "vi": "Tấn công brute-force thử hàng tỷ tổ hợp mỗi giây. Một mật khẩu 8 ký tự chữ thường có thể bị bẻ khóa trong vài phút, nhưng một mật khẩu 16 ký tự với nhiều loại ký tự sẽ mất hàng nghìn năm. Chính độ dài và sự đa dạng ký tự khiến mật khẩu thực sự bền vững."
   },
   "seolist_advanced_security_2": {
     "ua": "Додатково до міцного пароля варто увімкнути двофакторну аутентифікацію (2FA). Навіть якщо хтось дізнається ваш пароль, для входу потрібний додатковий код з телефону або аутентифікатора. Google, Apple та більшість банків підтримують 2FA.",
@@ -1295,7 +1394,8 @@
     "ru": "Помимо надёжного пароля, включите двухфакторную аутентификацию (2FA) везде, где это возможно. Даже если кто-то узнает ваш пароль, ему понадобится второй код с вашего телефона. Google, Apple и большинство банков поддерживают 2FA.",
     "zh": "除了强密码外，请尽可能启用双因素认证（2FA）。即使有人知道了您的密码，他们仍需要手机上的第二个验证码。Google、Apple和大多数银行都支持2FA。",
     "ja": "強力なパスワードに加えて、可能な限り二要素認証（2FA）を有効にしてください。誰かがパスワードを知っても、電話からの2番目のコードが必要です。Google、Apple、ほとんどの銀行が2FAをサポートしています。",
-    "pl": "Oprócz silnego hasła, włącz uwierzytelnianie dwuskładnikowe (2FA) wszędzie, gdzie to możliwe. Nawet jeśli ktoś pozna Twoje hasło, będzie potrzebował drugiego kodu z Twojego telefonu. Google, Apple i większość banków obsługuje 2FA."
+    "pl": "Oprócz silnego hasła, włącz uwierzytelnianie dwuskładnikowe (2FA) wszędzie, gdzie to możliwe. Nawet jeśli ktoś pozna Twoje hasło, będzie potrzebował drugiego kodu z Twojego telefonu. Google, Apple i większość banków obsługuje 2FA.",
+    "vi": "Ngoài một mật khẩu mạnh, hãy bật xác thực hai yếu tố (2FA) ở mọi nơi có thể. Ngay cả khi ai đó biết mật khẩu của bạn, họ vẫn cần mã thứ hai từ điện thoại hoặc ứng dụng xác thực. Google, Apple và hầu hết các ngân hàng đều hỗ trợ 2FA."
   },
   "seolist_advanced_security_3": {
     "ua": "Парольні фрази (passphrase) — це альтернатива складним паролям: 4–6 випадкових слів, які легко запам’ятати, але майже неможливо вгадати. Наприклад: «sofa-giraffe-thunder-maple» містить понад 100 бітів ентропії та набагато зручніша за xK#9mP$2.",
@@ -1308,7 +1408,8 @@
     "ru": "Парольные фразы (passphrase) — альтернатива сложным паролям: 4–6 случайных слов, которые легко запомнить, но почти невозможно угадать. Например, «sofa-giraffe-thunder-maple» содержит более 100 бит энтропии.",
     "zh": "密码短语是复杂密码的替代方案：4–6个随机单词，容易记住但几乎不可能猜到。例如‘sofa-giraffe-thunder-maple’拥有超过100位的熵，比xK#9mP$2方便得多。",
     "ja": "パスフレーズは複雑なパスワードの代替手段です：4–6個のランダムな単語で、記憶しやすく推測がほぼ不可能です。例えば‘sofa-giraffe-thunder-maple’は100ビット以上のエントロピーがあります。",
-    "pl": "Hasła frazowe to alternatywa dla złożonych haseł: 4–6 losowych słów, łatwych do zapamiętania, ale prawie niemożliwych do odgadnięcia. Na przykład ‘sofa-giraffe-thunder-maple’ ma ponad 100 bitów entropii i jest dużo wygodniejsze niż xK#9mP$2."
+    "pl": "Hasła frazowe to alternatywa dla złożonych haseł: 4–6 losowych słów, łatwych do zapamiętania, ale prawie niemożliwych do odgadnięcia. Na przykład ‘sofa-giraffe-thunder-maple’ ma ponad 100 bitów entropii i jest dużo wygodniejsze niż xK#9mP$2.",
+    "vi": "Passphrase là một lựa chọn thay thế cho mật khẩu phức tạp: 4–6 từ ngẫu nhiên dễ nhớ nhưng gần như không thể đoán. Ví dụ, 'sofa-giraffe-thunder-maple' có hơn 100 bit entropy và tiện lợi hơn nhiều so với xK#9mP$2."
   },
   "seolist_best_practices_title": {
     "ua": "Найкращі практики",
@@ -1321,7 +1422,8 @@
     "ru": "Лучшие практики",
     "zh": "最佳实践",
     "ja": "ベストプラクティス",
-    "pl": "Najlepsze praktyki"
+    "pl": "Najlepsze praktyki",
+    "vi": "Các thực hành tốt nhất"
   },
   "seolist_best_practices_1": {
     "ua": "Зберігайте паролі в менеджері паролів (1Password, Bitwarden, KeePass), а не в текстовому файлі чи нотатках телефону. Менеджер шифрує всі ваші паролі та автоматично підставляє їх на потрібних сайтах, що також захищає від фішингу.",
@@ -1334,7 +1436,8 @@
     "ru": "Храните пароли в менеджере паролей (1Password, Bitwarden, KeePass), а не в текстовых файлах. Менеджер шифрует все пароли и автоматически подставляет их на нужных сайтах, что также защищает от фишинга.",
     "zh": "将密码存储在密码管理器（1Password、Bitwarden、KeePass）中，而不是文本文件中。管理器会加密所有密码并自动填充，还能防止网络钓鱼。",
     "ja": "パスワードはテキストファイルではなく、パスワードマネージャー（1Password、Bitwarden、KeePass）に保存しましょう。マネージャーは全パスワードを暗号化し自動入力し、フィッシングからも保護します。",
-    "pl": "Przechowuj hasła w menedżerze haseł (1Password, Bitwarden, KeePass) zamiast w plikach tekstowych. Menedżer szyfruje wszystkie hasła i automatycznie wypełnia je na właściwych stronach, chroniąc także przed phishingiem."
+    "pl": "Przechowuj hasła w menedżerze haseł (1Password, Bitwarden, KeePass) zamiast w plikach tekstowych. Menedżer szyfruje wszystkie hasła i automatycznie wypełnia je na właściwych stronach, chroniąc także przed phishingiem.",
+    "vi": "Lưu trữ mật khẩu trong trình quản lý mật khẩu (1Password, Bitwarden, KeePass) thay vì trong tệp văn bản hay ghi chú điện thoại. Trình quản lý sẽ mã hóa toàn bộ mật khẩu và tự động điền vào đúng trang, đồng thời giúp phòng tránh phishing."
   },
   "seolist_best_practices_2": {
     "ua": "Уникайте особистої інформації у паролях: імен, дат народження, назв домашніх тварин, номерів телефону. Хакери перевіряють ваші соцмережі першими і компонують словники з ваших публічних даних. Найкращий пароль — той, який не має жодного зв'язку з вами.",
@@ -1347,7 +1450,8 @@
     "ru": "Избегайте личной информации в паролях: имён, дат рождения, кличек питомцев, номеров телефона. Хакеры проверяют ваши соцсети в первую очередь и составляют словари из ваших публичных данных. Лучший пароль — тот, который никак не связан с вами.",
     "zh": "避免在密码中使用个人信息：姓名、生日、宠物名、电话号码。黑客会先检查您的社交媒体，并从您的公开数据中构建字典。最好的密码是与您完全无关的密码。",
     "ja": "パスワードに個人情報を使わないでください：名前、誕生日、ペットの名前、電話番号。ハッカーはまずSNSをチェックし、公開データから辞書を作ります。最高のパスワードは、あなたと全く関係のないものです。",
-    "pl": "Unikaj informacji osobistych w hasłach: imion, dat urodzenia, nazw zwierząt, numerów telefonów. Hakerzy sprawdzają Twoje media społecznościowe w pierwszej kolejności. Najlepsze hasło to takie, które nie ma żadnego związku z Tobą."
+    "pl": "Unikaj informacji osobistych w hasłach: imion, dat urodzenia, nazw zwierząt, numerów telefonów. Hakerzy sprawdzają Twoje media społecznościowe w pierwszej kolejności. Najlepsze hasło to takie, które nie ma żadnego związku z Tobą.",
+    "vi": "Tránh dùng thông tin cá nhân trong mật khẩu: tên, ngày sinh, tên thú cưng, số điện thoại. Hacker thường kiểm tra mạng xã hội của bạn trước và xây dựng từ điển từ dữ liệu công khai. Mật khẩu tốt nhất là mật khẩu không liên quan gì đến bạn."
   },
   "seolist_best_practices_3": {
     "ua": "За рекомендаціями NIST 2024 року, змінюйте пароль лише при підозрі на витік, а не кожні 90 днів. Часта примусова зміна призводить до слабких варіацій (наприклад, Password1, Password2). Замість цього перевіряйте свої паролі через сервіси виявлення витоків.",
@@ -1360,7 +1464,8 @@
     "ru": "Согласно рекомендациям NIST 2024, меняйте пароль только при подозрении на утечку, а не каждые 90 дней. Частая принудительная смена приводит к слабым вариациям (Password1, Password2). Лучше отслеживайте пароли через сервисы обнаружения утечек.",
     "zh": "根据NIST 2024指南，仅在怀疑泄露时更改密码，而非每90天。频繁强制轮换会导致弱变体（如Password1、Password2）。请改为通过泄露检测服务监控您的密码。",
     "ja": "NIST 2024ガイドラインによると、パスワードは90日ごとではなく、漏洩の疑いがある場合のみ変更しましょう。頻繁な強制変更は弱いバリエーション（Password1、Password2）を生みます。代わりに漏洩検出サービスで監視しましょう。",
-    "pl": "Zgodnie z wytycznymi NIST 2024, zmieniaj hasła tylko przy podejrzeniu wycieku, a nie co 90 dni. Częsta wymuszona rotacja prowadzi do słabych wariacji (np. Password1, Password2). Zamiast tego monitoruj hasła przez serwisy wykrywania wycieków."
+    "pl": "Zgodnie z wytycznymi NIST 2024, zmieniaj hasła tylko przy podejrzeniu wycieku, a nie co 90 dni. Częsta wymuszona rotacja prowadzi do słabych wariacji (np. Password1, Password2). Zamiast tego monitoruj hasła przez serwisy wykrywania wycieków.",
+    "vi": "Theo hướng dẫn NIST 2024, chỉ đổi mật khẩu khi nghi ngờ bị rò rỉ, chứ không phải 90 ngày một lần. Việc bắt buộc đổi thường xuyên dẫn đến những biến thể yếu (ví dụ: Password1, Password2). Thay vào đó, hãy giám sát mật khẩu qua các dịch vụ phát hiện rò rỉ."
   },
   "seolist_additional_security_tips_title": {
     "ua": "Додаткові поради щодо безпеки",
@@ -1373,7 +1478,8 @@
     "ru": "Дополнительные советы по безопасности",
     "zh": "额外安全提示",
     "ja": "追加のセキュリティヒント",
-    "pl": "Dodatkowe wskazówki bezpieczeństwa"
+    "pl": "Dodatkowe wskazówki bezpieczeństwa",
+    "vi": "Mẹo bảo mật bổ sung"
   },
   "seolist_additional_security_tips_1": {
     "ua": "Перевіряйте, чи не були ваші паролі скомпрометовані у витоках даних. Сервіс Have I Been Pwned зберігає базу з понад 12 мільярдів зламаних паролів. Наш інструмент перевірки витоку використовує k-анонімність, тому ваш пароль ніколи не передається на сервер.",
@@ -1386,7 +1492,8 @@
     "ru": "Проверяйте, не были ли ваши пароли скомпрометированы. Сервис Have I Been Pwned хранит базу из более 12 миллиардов утечших паролей. Наш инструмент использует k-анонимность, поэтому ваш пароль никогда не передаётся на сервер.",
     "zh": "检查您的密码是否在数据泄露中被泄露。Have I Been Pwned维护着超过120亿个泄露密码的数据库。我们的工具使用k-匿名性，因此您的密码永远不会发送到服务器。",
     "ja": "パスワードがデータ漏洩で侵害されていないか確認しましょう。Have I Been Pwnedは120億以上の漏洩パスワードのデータベースを維持しています。当ツールはk-匿名性を使用し、パスワードはサーバーに送信されません。",
-    "pl": "Sprawdź, czy Twoje hasła nie zostały skompromitowane w wyciekach danych. Have I Been Pwned utrzymuje bazę ponad 12 miliardów wyciekłych haseł. Nasze narzędzie używa k-anonimowości, więc Twoje hasło nigdy nie jest wysyłane na serwer."
+    "pl": "Sprawdź, czy Twoje hasła nie zostały skompromitowane w wyciekach danych. Have I Been Pwned utrzymuje bazę ponad 12 miliardów wyciekłych haseł. Nasze narzędzie używa k-anonimowości, więc Twoje hasło nigdy nie jest wysyłane na serwer.",
+    "vi": "Kiểm tra xem mật khẩu của bạn có bị lộ trong các vụ rò rỉ dữ liệu hay không. Have I Been Pwned duy trì cơ sở dữ liệu hơn 12 tỷ mật khẩu bị rò rỉ. Công cụ kiểm tra rò rỉ của chúng tôi sử dụng k-anonymity, nên mật khẩu của bạn không bao giờ được gửi đến bất kỳ máy chủ nào."
   },
   "seolist_additional_security_tips_2": {
     "ua": "Для різних акаунтів потрібні різні рівні захисту. Для банку, електронної пошти та криптогаманців використовуйте максимально складні паролі (20+ символів) з 2FA. Для менш важливих сервісів достатньо 14 символів, але кожен пароль має бути унікальним.",
@@ -1399,7 +1506,8 @@
     "ru": "Разные аккаунты требуют разного уровня защиты. Для банка, почты и криптокошельков используйте максимально сложные пароли (20+ символов) с 2FA. Для менее важных сервисов достаточно 14, но каждый пароль должен быть уникальным.",
     "zh": "不同账户需要不同的保护级别。对于银行、邮箱和加密钱包，使用最复杂的密码（20+字符）加上2FA。对于不太重要的服务，14个字符就够了，但每个密码必须是唯一的。",
     "ja": "アカウントによって必要な保護レベルが異なります。銀行、メール、暗号資産には最大限複雑なパスワード（20文字以上）を2FAと併用。重要度の低いサービスには14文字で十分ですが、各パスワードは固有であるべきです。",
-    "pl": "Różne konta wymagają różnych poziomów ochrony. Dla banku, emaila i portfeli krypto używaj maksymalnie złożonych haseł (20+ znaków) z 2FA. Dla mniej ważnych serwisów wystarczy 14 znaków, ale każde hasło musi być unikalne."
+    "pl": "Różne konta wymagają różnych poziomów ochrony. Dla banku, emaila i portfeli krypto używaj maksymalnie złożonych haseł (20+ znaków) z 2FA. Dla mniej ważnych serwisów wystarczy 14 znaków, ale każde hasło musi być unikalne.",
+    "vi": "Các tài khoản khác nhau yêu cầu mức độ bảo vệ khác nhau. Đối với ngân hàng, email và ví tiền mã hóa, hãy dùng mật khẩu phức tạp tối đa (20+ ký tự) kèm 2FA. Đối với các dịch vụ ít quan trọng hơn, 14 ký tự là đủ, nhưng mỗi mật khẩu vẫn phải là duy nhất."
   },
   "seolist_advanced_security_measures_title": {
     "ua": "Розширені заходи безпеки",
@@ -1412,7 +1520,8 @@
     "ru": "Расширенные меры безопасности",
     "zh": "高级安全措施",
     "ja": "高度なセキュリティ対策",
-    "pl": "Zaawansowane bezpieczeństwo"
+    "pl": "Zaawansowane bezpieczeństwo",
+    "vi": "Các biện pháp bảo mật nâng cao"
   },
   "seolist_advanced_security_measures_1": {
     "ua": "При вході на сайти звертайте увагу на URL у адресному рядку — фішингові сайти копіюють дизайн, але не можуть підробити доменне ім’я. Менеджери паролів автоматично перевіряють домен перед автозаповненням — ще одна причина їх використовувати.",
@@ -1425,7 +1534,8 @@
     "ru": "При входе на сайты проверяйте URL в адресной строке — фишинговые сайты копируют дизайн, но не могут подделать домен. Менеджеры паролей автоматически проверяют домен перед автозаполнением.",
     "zh": "登录网站时，检查地址栏中的URL——钓鱼网站可以复制设计但无法伪造域名。密码管理器在自动填充前会自动验证域名。",
     "ja": "サイトにログインする際、アドレスバーのURLを確認してください——フィッシングサイトはデザインをコピーできますがドメイン名は偽造できません。パスワードマネージャーは自動入力前にドメインを自動検証します。",
-    "pl": "Logując się na stronach, sprawdź URL w pasku adresu — strony phishingowe kopiują wygląd, ale nie mogą podrobić domeny. Menedżery haseł automatycznie weryfikują domenę przed autowypełnianiem."
+    "pl": "Logując się na stronach, sprawdź URL w pasku adresu — strony phishingowe kopiują wygląd, ale nie mogą podrobić domeny. Menedżery haseł automatycznie weryfikują domenę przed autowypełnianiem.",
+    "vi": "Khi đăng nhập vào các trang, hãy kiểm tra URL trên thanh địa chỉ — các trang phishing có thể sao chép thiết kế nhưng không thể giả mạo tên miền. Trình quản lý mật khẩu tự động xác minh tên miền trước khi điền, đó là một lý do nữa để sử dụng chúng."
   },
   "seolist_advanced_security_measures_2": {
     "ua": "Регулярно перевіряйте налаштування безпеки своїх акаунтів: відкликайте доступ додатків, якими не користуєтесь, перевіряйте активні сесії та резервні коди 2FA. Майже всі популярні сервіси мають сторінку «Безпека», яку варто переглядати хоча б раз на квартал.",
@@ -1438,7 +1548,8 @@
     "ru": "Регулярно проверяйте настройки безопасности аккаунтов: отзывайте доступ неиспользуемых приложений, проверяйте активные сессии и резервные коды 2FA. Почти все популярные сервисы имеют страницу Безопасность, которую стоит проверять раз в квартал.",
     "zh": "定期检查账户的安全设置：撤销未使用应用的访问权限，检查活动会话和2FA备份代码。几乎所有流行服务都有安全页面，值得至少每季度检查一次。",
     "ja": "アカウントのセキュリティ設定を定期的に確認しましょう：未使用アプリのアクセスを取り消し、アクティブセッションと2FAバックアップコードを確認。ほぼ全ての人気サービスにはセキュリティページがあり、少なくとも四半期に一度確認する価値があります。",
-    "pl": "Regularnie sprawdzaj ustawienia bezpieczeństwa swoich kont: odwołuj dostęp nieużywanych aplikacji, sprawdzaj aktywne sesje i kody zapasowe 2FA. Prawie wszystkie popularne serwisy mają stronę Bezpieczeństwo, którą warto sprawdzać co najmniej raz na kwartał."
+    "pl": "Regularnie sprawdzaj ustawienia bezpieczeństwa swoich kont: odwołuj dostęp nieużywanych aplikacji, sprawdzaj aktywne sesje i kody zapasowe 2FA. Prawie wszystkie popularne serwisy mają stronę Bezpieczeństwo, którą warto sprawdzać co najmniej raz na kwartał.",
+    "vi": "Thường xuyên xem lại cài đặt bảo mật của tài khoản: thu hồi quyền truy cập của các ứng dụng không dùng, kiểm tra các phiên đang hoạt động và xác minh các mã dự phòng 2FA. Hầu hết các dịch vụ phổ biến đều có trang Bảo mật đáng để xem ít nhất một lần mỗi quý."
   },
   "menu_aboutus": {
     "ua": "Про нас",
@@ -1451,7 +1562,8 @@
     "ru": "О нас",
     "zh": "关于我们",
     "ja": "私たちについて",
-    "pl": "O nas"
+    "pl": "O nas",
+    "vi": "Về chúng tôi"
   },
   "menu_howtouse": {
     "ua": "Як використовувати",
@@ -1464,7 +1576,8 @@
     "ru": "Как использовать",
     "zh": "如何使用",
     "ja": "使い方",
-    "pl": "Jak używać"
+    "pl": "Jak używać",
+    "vi": "Cách sử dụng"
   },
   "menu_guide": {
     "ua": "Посібник",
@@ -1477,7 +1590,8 @@
     "ru": "Руководство",
     "zh": "指南",
     "ja": "ガイド",
-    "pl": "Przewodnik"
+    "pl": "Przewodnik",
+    "vi": "Hướng dẫn"
   },
   "footer_quick_links": {
     "ua": "Швидкі посилання",
@@ -1490,7 +1604,8 @@
     "ru": "Быстрые ссылки",
     "zh": "快速链接",
     "ja": "クイックリンク",
-    "pl": "Szybkie linki"
+    "pl": "Szybkie linki",
+    "vi": "Liên kết nhanh"
   },
   "footer_guide_articles": {
     "ua": "Гайдові статті",
@@ -1503,7 +1618,8 @@
     "ru": "Статьи-гиды",
     "zh": "指南文章",
     "ja": "ガイド記事",
-    "pl": "Artykuły poradnikowe"
+    "pl": "Artykuły poradnikowe",
+    "vi": "Bài viết hướng dẫn"
   },
   "footer_legal": {
     "ua": "Юридичне",
@@ -1516,7 +1632,8 @@
     "ru": "Юридическое",
     "zh": "法律",
     "ja": "リーガル",
-    "pl": "Prawne"
+    "pl": "Prawne",
+    "vi": "Pháp lý"
   },
   "footer_copyright": {
     "ua": "Авторське право",
@@ -1529,7 +1646,8 @@
     "ru": "Авторское право",
     "zh": "版权",
     "ja": "著作権",
-    "pl": "Prawa autorskie"
+    "pl": "Prawa autorskie",
+    "vi": "Bản quyền"
   },
   "footer_working_with": {
     "ua": "Працює на серверах",
@@ -1542,7 +1660,8 @@
     "ru": "Работает на серверах",
     "zh": "运行在服务器上",
     "ja": "サーバーで動作",
-    "pl": "Działa na serwerach"
+    "pl": "Działa na serwerach",
+    "vi": "Làm việc với"
   },
   "use_characters": {
     "ua": "Використати символи:",
@@ -1555,7 +1674,8 @@
     "ru": "Использовать символы:",
     "zh": "使用字符：",
     "ja": "文字を使用：",
-    "pl": "Użyj znaków:"
+    "pl": "Użyj znaków:",
+    "vi": "Sử dụng ký tự:"
   },
   "time_years": {
     "ua": "років",
@@ -1568,7 +1688,8 @@
     "ru": "лет",
     "zh": "年",
     "ja": "年",
-    "pl": "lat"
+    "pl": "lat",
+    "vi": "năm"
   },
   "time_year": {
     "ua": "рік",
@@ -1581,7 +1702,8 @@
     "ru": "год",
     "zh": "年",
     "ja": "年",
-    "pl": "rok"
+    "pl": "rok",
+    "vi": "năm"
   },
   "time_months": {
     "ua": "місяці",
@@ -1594,7 +1716,8 @@
     "ru": "месяцев",
     "zh": "个月",
     "ja": "ヶ月",
-    "pl": "miesięcy"
+    "pl": "miesięcy",
+    "vi": "tháng"
   },
   "time_month": {
     "ua": "місяць",
@@ -1607,7 +1730,8 @@
     "ru": "месяц",
     "zh": "个月",
     "ja": "ヶ月",
-    "pl": "miesiąc"
+    "pl": "miesiąc",
+    "vi": "tháng"
   },
   "time_days": {
     "ua": "днів",
@@ -1620,7 +1744,8 @@
     "ru": "дней",
     "zh": "天",
     "ja": "日",
-    "pl": "dni"
+    "pl": "dni",
+    "vi": "ngày"
   },
   "time_day": {
     "ua": "день",
@@ -1633,7 +1758,8 @@
     "ru": "день",
     "zh": "天",
     "ja": "日",
-    "pl": "dzień"
+    "pl": "dzień",
+    "vi": "ngày"
   },
   "time_hours": {
     "ua": "годин",
@@ -1646,7 +1772,8 @@
     "ru": "часов",
     "zh": "小时",
     "ja": "時間",
-    "pl": "godzin"
+    "pl": "godzin",
+    "vi": "giờ"
   },
   "time_hour": {
     "ua": "година",
@@ -1659,7 +1786,8 @@
     "ru": "час",
     "zh": "小时",
     "ja": "時間",
-    "pl": "godzina"
+    "pl": "godzina",
+    "vi": "giờ"
   },
   "time_minutes": {
     "ua": "хвилин",
@@ -1672,7 +1800,8 @@
     "ru": "минут",
     "zh": "分钟",
     "ja": "分",
-    "pl": "minut"
+    "pl": "minut",
+    "vi": "phút"
   },
   "time_minute": {
     "ua": "хвилина",
@@ -1685,7 +1814,8 @@
     "ru": "минута",
     "zh": "分钟",
     "ja": "分",
-    "pl": "minuta"
+    "pl": "minuta",
+    "vi": "phút"
   },
   "time_seconds": {
     "ua": "секунд",
@@ -1698,7 +1828,8 @@
     "ru": "секунд",
     "zh": "秒",
     "ja": "秒",
-    "pl": "sekund"
+    "pl": "sekund",
+    "vi": "giây"
   },
   "time_second": {
     "ua": "секунда",
@@ -1711,7 +1842,8 @@
     "ru": "секунда",
     "zh": "秒",
     "ja": "秒",
-    "pl": "sekunda"
+    "pl": "sekunda",
+    "vi": "giây"
   },
   "time_century": {
     "ua": "століття",
@@ -1723,7 +1855,8 @@
     "pt": "século",
     "ru": "век",
     "zh": "世纪",
-    "ja": "世紀"
+    "ja": "世紀",
+    "vi": "thế kỷ"
   },
   "time_centuries": {
     "ua": "століття",
@@ -1735,7 +1868,8 @@
     "pt": "séculos",
     "ru": "веков",
     "zh": "世纪",
-    "ja": "世紀"
+    "ja": "世紀",
+    "vi": "thế kỷ"
   },
   "time_less_than_a": {
     "ua": "менше ніж",
@@ -1747,7 +1881,8 @@
     "pt": "menos de um",
     "ru": "меньше чем",
     "zh": "不到",
-    "ja": "未満"
+    "ja": "未満",
+    "vi": "ít hơn một"
   },
   "cookie_consent_title": {
     "en": "We value your privacy",
@@ -1760,7 +1895,8 @@
     "ru": "Мы ценим вашу конфиденциальность",
     "zh": "我们重视您的隐私",
     "ja": "私たちはあなたのプライバシーを大切にしています",
-    "pl": "Szanujemy Twoją prywatność"
+    "pl": "Szanujemy Twoją prywatność",
+    "vi": "Chúng tôi tôn trọng quyền riêng tư của bạn"
   },
   "cookie_consent_description": {
     "en": "We use cookies to enhance your experience, analyze site usage, and assist in our marketing efforts. You can manage your preferences. For more info, see our Privacy Policy.",
@@ -1773,7 +1909,8 @@
     "ru": "Мы используем файлы cookie для улучшения вашего опыта, анализа использования сайта и помощи в наших маркетинговых усилиях. Вы можете управлять своими настройками. Для получения дополнительной информации см. нашу Политику конфиденциальности.",
     "zh": "我们使用cookie来改善您的体验、分析网站使用情况并协助我们的营销工作。您可以管理您的偏好设置。更多信息，请参阅我们的隐私政策。",
     "ja": "私たちは、あなたの体験を向上させ、サイトの使用状況を分析し、マーケティング活動を支援するためにクッキーを使用しています。設定を管理できます。詳細については、プライバシーポリシーをご覧ください。",
-    "pl": "Używamy plików cookie, aby poprawić Twoje doświadczenie, analizować wykorzystanie strony i wspierać nasze działania marketingowe. Możesz zarządzać swoimi preferencjami. Więcej informacji znajdziesz w naszej Polityce prywatności."
+    "pl": "Używamy plików cookie, aby poprawić Twoje doświadczenie, analizować wykorzystanie strony i wspierać nasze działania marketingowe. Możesz zarządzać swoimi preferencjami. Więcej informacji znajdziesz w naszej Polityce prywatności.",
+    "vi": "Chúng tôi sử dụng cookie để nâng cao trải nghiệm, phân tích việc sử dụng trang và hỗ trợ các nỗ lực tiếp thị. Bạn có thể quản lý tùy chọn của mình. Để biết thêm, xem Chính sách bảo mật của chúng tôi."
   },
   "cookie_consent_accept_all": {
     "en": "Accept all",
@@ -1786,7 +1923,8 @@
     "ru": "Принять все",
     "zh": "接受全部",
     "ja": "すべて受け入れる",
-    "pl": "Akceptuj wszystko"
+    "pl": "Akceptuj wszystko",
+    "vi": "Chấp nhận tất cả"
   },
   "cookie_consent_accept_necessary": {
     "en": "Reject all except necessary",
@@ -1799,7 +1937,8 @@
     "ru": "Отклонить все, кроме необходимых",
     "zh": "拒绝除必要之外的所有",
     "ja": "必要なもの以外を拒否",
-    "pl": "Odrzuć wszystko poza niezbędnymi"
+    "pl": "Odrzuć wszystko poza niezbędnymi",
+    "vi": "Từ chối tất cả trừ cookie cần thiết"
   },
   "cookie_consent_customize": {
     "en": "Customize",
@@ -1812,7 +1951,8 @@
     "ru": "Настроить",
     "zh": "自定义",
     "ja": "カスタマイズ",
-    "pl": "Dostosuj"
+    "pl": "Dostosuj",
+    "vi": "Tùy chỉnh"
   },
   "cookie_consent_save": {
     "en": "Save preferences",
@@ -1825,7 +1965,8 @@
     "ru": "Сохранить настройки",
     "zh": "保存偏好设置",
     "ja": "設定を保存",
-    "pl": "Zapisz preferencje"
+    "pl": "Zapisz preferencje",
+    "vi": "Lưu tùy chọn"
   },
   "cookie_consent_close": {
     "en": "Close modal",
@@ -1838,7 +1979,8 @@
     "ru": "Закрыть",
     "zh": "关闭",
     "ja": "閉じる",
-    "pl": "Zamknij"
+    "pl": "Zamknij",
+    "vi": "Đóng cửa sổ"
   },
   "cookie_preferences_title": {
     "en": "Cookie preferences",
@@ -1851,7 +1993,8 @@
     "ru": "Настройки cookie",
     "zh": "Cookie偏好设置",
     "ja": "Cookie設定",
-    "pl": "Preferencje plików cookie"
+    "pl": "Preferencje plików cookie",
+    "vi": "Tùy chọn cookie"
   },
   "cookie_section_usage_title": {
     "en": "Cookie usage",
@@ -1864,7 +2007,8 @@
     "ru": "Использование cookie",
     "zh": "Cookie使用",
     "ja": "Cookieの使用",
-    "pl": "Użycie plików cookie"
+    "pl": "Użycie plików cookie",
+    "vi": "Sử dụng cookie"
   },
   "cookie_section_usage_desc": {
     "en": "We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want.",
@@ -1877,7 +2021,8 @@
     "ru": "Мы используем файлы cookie для обеспечения основных функций веб-сайта и улучшения вашего онлайн-опыта. Вы можете выбрать для каждой категории согласиться или отказаться в любое время.",
     "zh": "我们使用cookie来确保网站的基本功能并改善您的在线体验。您可以随时为每个类别选择加入或退出。",
     "ja": "私たちは、ウェブサイトの基本機能を確保し、オンライン体験を向上させるためにクッキーを使用しています。いつでも各カテゴリについて参加または退出を選択できます。",
-    "pl": "Używamy plików cookie, aby zapewnić podstawowe funkcje strony i poprawić Twoje doświadczenie online. Możesz wybrać, czy chcesz zaakceptować/odrzucić pliki cookie w każdej kategorii w dowolnym momencie."
+    "pl": "Używamy plików cookie, aby zapewnić podstawowe funkcje strony i poprawić Twoje doświadczenie online. Możesz wybrać, czy chcesz zaakceptować/odrzucić pliki cookie w każdej kategorii w dowolnym momencie.",
+    "vi": "Chúng tôi sử dụng cookie để đảm bảo các chức năng cơ bản của trang web và nâng cao trải nghiệm trực tuyến của bạn. Bạn có thể chọn bật/tắt cho mỗi loại bất cứ khi nào bạn muốn."
   },
   "cookie_section_necessary_title": {
     "en": "Strictly necessary cookies",
@@ -1890,7 +2035,8 @@
     "ru": "Строго необходимые cookie",
     "zh": "严格必要的cookie",
     "ja": "厳密に必要なCookie",
-    "pl": "Ściśle niezbędne pliki cookie"
+    "pl": "Ściśle niezbędne pliki cookie",
+    "vi": "Cookie thiết yếu"
   },
   "cookie_section_necessary_desc": {
     "en": "These cookies are essential for the website to function properly. They cannot be switched off.",
@@ -1903,7 +2049,8 @@
     "ru": "Эти файлы cookie необходимы для правильной работы веб-сайта. Их нельзя отключить.",
     "zh": "这些cookie对于网站正常运行至关重要。它们无法关闭。",
     "ja": "これらのCookieは、ウェブサイトが正常に機能するために不可欠です。無効にすることはできません。",
-    "pl": "Te pliki cookie są niezbędne do prawidłowego funkcjonowania strony internetowej. Nie można ich wyłączyć."
+    "pl": "Te pliki cookie są niezbędne do prawidłowego funkcjonowania strony internetowej. Nie można ich wyłączyć.",
+    "vi": "Các cookie này cần thiết để trang web hoạt động bình thường. Chúng không thể tắt được."
   },
   "cookie_section_analytics_title": {
     "en": "Analytics cookies",
@@ -1916,7 +2063,8 @@
     "ru": "Аналитические cookie",
     "zh": "分析cookie",
     "ja": "分析Cookie",
-    "pl": "Pliki cookie analityczne"
+    "pl": "Pliki cookie analityczne",
+    "vi": "Cookie phân tích"
   },
   "cookie_section_analytics_desc": {
     "en": "These cookies help us understand how visitors interact with our website, discover errors, and provide better overall analytics.",
@@ -1929,7 +2077,8 @@
     "ru": "Эти файлы cookie помогают нам понять, как посетители взаимодействуют с нашим веб-сайтом, обнаруживать ошибки и предоставлять лучшую общую аналитику.",
     "zh": "这些cookie帮助我们了解访问者如何与我们的网站互动，发现错误并提供更好的整体分析。",
     "ja": "これらのCookieは、訪問者が私たちのウェブサイトとどのように相互作用するかを理解し、エラーを発見し、より良い全体的な分析を提供するのに役立ちます。",
-    "pl": "Te pliki cookie pomagają nam zrozumieć, jak odwiedzający wchodzą w interakcję z naszą stroną internetową, odkrywać błędy i zapewniać lepsze ogólne analizy."
+    "pl": "Te pliki cookie pomagają nam zrozumieć, jak odwiedzający wchodzą w interakcję z naszą stroną internetową, odkrywać błędy i zapewniać lepsze ogólne analizy.",
+    "vi": "Các cookie này giúp chúng tôi hiểu cách khách truy cập tương tác với trang web, phát hiện lỗi và cung cấp phân tích tổng thể tốt hơn."
   },
   "cookie_section_marketing_title": {
     "en": "Marketing cookies",
@@ -1942,7 +2091,8 @@
     "ru": "Маркетинговые cookie",
     "zh": "营销cookie",
     "ja": "マーケティングCookie",
-    "pl": "Pliki cookie marketingowe"
+    "pl": "Pliki cookie marketingowe",
+    "vi": "Cookie tiếp thị"
   },
   "cookie_section_marketing_desc": {
     "en": "These cookies are used to deliver personalized advertisements and track advertising campaign performance.",
@@ -1955,7 +2105,8 @@
     "ru": "Эти файлы cookie используются для доставки персонализированной рекламы и отслеживания эффективности рекламных кампаний.",
     "zh": "这些cookie用于投放个性化广告和跟踪广告活动效果。",
     "ja": "これらのCookieは、パーソナライズされた広告を配信し、広告キャンペーンのパフォーマンスを追跡するために使用されます。",
-    "pl": "Te pliki cookie są używane do dostarczania spersonalizowanych reklam i śledzenia wydajności kampanii reklamowych."
+    "pl": "Te pliki cookie są używane do dostarczania spersonalizowanych reklam i śledzenia wydajności kampanii reklamowych.",
+    "vi": "Các cookie này được sử dụng để hiển thị quảng cáo cá nhân hóa và theo dõi hiệu quả chiến dịch quảng cáo."
   },
   "howtouse_protect": {
     "ua": "Захистіть свої акаунти, використовуючи <strong>унікальні паролі</strong> для кожного сервісу та <strong>двофакторну аутентифікацію</strong>, де це можливо.",
@@ -1968,7 +2119,8 @@
     "ru": "Защитите свои аккаунты, используя <strong>уникальные пароли</strong> для каждого сервиса и <strong>двухфакторную аутентификацию</strong>, где это возможно.",
     "zh": "通过为每个服务使用<strong>唯一密码</strong>并在可能的情况下启用<strong>双重身份验证</strong>来保护您的账户。",
     "ja": "各サービスごとに<strong>ユニークなパスワード</strong>を使用し、可能であれば<strong>二要素認証</strong>を利用してアカウントを保護しましょう。",
-    "pl": "Chroń swoje konta, używając <strong>unikalnych haseł</strong> dla każdej usługi i <strong>uwierzytelniania dwuskładnikowego</strong>, gdzie to możliwe."
+    "pl": "Chroń swoje konta, używając <strong>unikalnych haseł</strong> dla każdej usługi i <strong>uwierzytelniania dwuskładnikowego</strong>, gdzie to możliwe.",
+    "vi": "Bảo vệ tài khoản của bạn bằng <strong>mật khẩu duy nhất</strong> cho mỗi dịch vụ và <strong>xác thực hai yếu tố</strong> khi có thể."
   },
   "howtouse_best_practices": {
     "ua": "Найкращі практики",
@@ -1981,7 +2133,8 @@
     "ru": "Лучшие практики",
     "zh": "最佳实践",
     "ja": "ベストプラクティス",
-    "pl": "Najlepsze praktyki"
+    "pl": "Najlepsze praktyki",
+    "vi": "Các thực hành tốt nhất"
   },
   "howtouse_best1": {
     "ua": "Використовуйте <strong>фрази-паролі</strong> для кращої запам'ятовуваності.",
@@ -1994,7 +2147,8 @@
     "ru": "Используйте <strong>фразы-пароли</strong> для лучшей запоминаемости.",
     "zh": "使用<strong>密码短语</strong>以便更好地记忆。",
     "ja": "より覚えやすくするために<strong>パスフレーズ</strong>を使いましょう。",
-    "pl": "Używaj <strong>frazy hasłowe</strong> dla lepszej zapamiętywalności."
+    "pl": "Używaj <strong>frazy hasłowe</strong> dla lepszej zapamiętywalności.",
+    "vi": "Dùng <strong>passphrase</strong> để dễ ghi nhớ hơn."
   },
   "howtouse_best2": {
     "ua": "Не використовуйте <strong>особисту інформацію</strong> у паролях.",
@@ -2007,7 +2161,8 @@
     "ru": "Не используйте <strong>личную информацию</strong> в паролях.",
     "zh": "不要在密码中使用<strong>个人信息</strong>。",
     "ja": "パスワードに<strong>個人情報</strong>を使用しないでください。",
-    "pl": "Nie używaj <strong>informacji osobistych</strong> w hasłach."
+    "pl": "Nie używaj <strong>informacji osobistych</strong> w hasłach.",
+    "vi": "Không dùng <strong>thông tin cá nhân</strong> trong mật khẩu."
   },
   "howtouse_best3": {
     "ua": "Регулярно <strong>оновлюйте свої паролі</strong>.",
@@ -2020,7 +2175,8 @@
     "ru": "<strong>Регулярно обновляйте свои пароли</strong>.",
     "zh": "定期<strong>更新您的密码</strong>。",
     "ja": "定期的に<strong>パスワードを更新</strong>してください。",
-    "pl": "Regularnie <strong>aktualizuj swoje hasła</strong>."
+    "pl": "Regularnie <strong>aktualizuj swoje hasła</strong>.",
+    "vi": "Thường xuyên <strong>cập nhật mật khẩu</strong>."
   },
   "howtouse_best4": {
     "ua": "Використовуйте <strong>менеджер паролів</strong> для зберігання паролів.",
@@ -2033,7 +2189,8 @@
     "ru": "Используйте <strong>менеджер паролей</strong> для хранения паролей.",
     "zh": "使用<strong>密码管理器</strong>来存储您的密码。",
     "ja": "<strong>パスワードマネージャー</strong>を使ってパスワードを保存しましょう。",
-    "pl": "Używaj <strong>menedżera haseł</strong> do przechowywania haseł."
+    "pl": "Używaj <strong>menedżera haseł</strong> do przechowywania haseł.",
+    "vi": "Dùng <strong>trình quản lý mật khẩu</strong> để lưu mật khẩu của bạn."
   },
   "security_standards_title": {
     "ua": "Відповідність стандартам безпеки",
@@ -2046,7 +2203,8 @@
     "ru": "Соответствие стандартам безопасности",
     "zh": "安全标准合规性",
     "ja": "セキュリティ標準への準拠",
-    "pl": "Zgodność ze standardami bezpieczeństwa"
+    "pl": "Zgodność ze standardami bezpieczeństwa",
+    "vi": "Tuân thủ các tiêu chuẩn bảo mật"
   },
   "security_standards_intro": {
     "ua": "Наш генератор паролів відповідає найвищим міжнародним стандартам безпеки, забезпечуючи максимальний захист ваших облікових даних.",
@@ -2059,7 +2217,8 @@
     "ru": "Наш генератор паролей соответствует высочайшим международным стандартам безопасности, обеспечивая максимальную защиту ваших учетных данных.",
     "zh": "我们的密码生成器符合最高国际安全标准，确保您的凭据得到最大保护。",
     "ja": "当社のパスワードジェネレーターは、最高の国際セキュリティ標準に準拠し、お客様の認証情報に最大限の保護を提供します。",
-    "pl": "Nasz generator haseł jest zgodny z najwyższymi międzynarodowymi standardami bezpieczeństwa, zapewniając maksymalną ochronę Twoich danych logowania."
+    "pl": "Nasz generator haseł jest zgodny z najwyższymi międzynarodowymi standardami bezpieczeństwa, zapewniając maksymalną ochronę Twoich danych logowania.",
+    "vi": "Trình tạo mật khẩu của chúng tôi tuân thủ các tiêu chuẩn bảo mật quốc tế cao nhất, đảm bảo bảo vệ tối đa cho thông tin đăng nhập của bạn."
   },
   "nist_compliance_title": {
     "ua": "Відповідність стандарту NIST",
@@ -2072,7 +2231,8 @@
     "ru": "Соответствие стандарту NIST",
     "zh": "NIST合规性",
     "ja": "NIST準拠",
-    "pl": "Zgodność z NIST"
+    "pl": "Zgodność z NIST",
+    "vi": "Tuân thủ NIST"
   },
   "nist_compliance_desc": {
     "ua": "Наш генератор відповідає <strong>NIST Special Publication 800-63B</strong>, який є золотим стандартом для аутентифікації цифрових ідентифікаторів. Це означає, що наші паролі генеруються з використанням криптографічно безпечних алгоритмів та відповідають найвищим вимогам безпеки.",
@@ -2085,7 +2245,8 @@
     "ru": "Наш генератор соответствует <strong>NIST Special Publication 800-63B</strong>, который является золотым стандартом для аутентификации цифровых идентификаторов. Это означает, что наши пароли генерируются с использованием криптографически безопасных алгоритмов и соответствуют высочайшим требованиям безопасности.",
     "zh": "我们的生成器符合<strong>NIST特别出版物800-63B</strong>，这是数字身份认证的黄金标准。这意味着我们的密码使用加密安全算法生成，并满足最高安全要求。",
     "ja": "当社のジェネレーターは、デジタルアイデンティティ認証のゴールドスタンダードである<strong>NIST特別出版物800-63B</strong>に準拠しています。これは、当社のパスワードが暗号的に安全なアルゴリズムを使用して生成され、最高のセキュリティ要件を満たしていることを意味します。",
-    "pl": "Nasz generator jest zgodny z <strong>NIST Special Publication 800-63B</strong>, który jest złotym standardem dla uwierzytelniania tożsamości cyfrowej. Oznacza to, że nasze hasła są generowane przy użyciu kryptograficznie bezpiecznych algorytmów i spełniają najwyższe wymagania bezpieczeństwa."
+    "pl": "Nasz generator jest zgodny z <strong>NIST Special Publication 800-63B</strong>, który jest złotym standardem dla uwierzytelniania tożsamości cyfrowej. Oznacza to, że nasze hasła są generowane przy użyciu kryptograficznie bezpiecznych algorytmów i spełniają najwyższe wymagania bezpieczeństwa.",
+    "vi": "Trình tạo của chúng tôi tuân thủ <strong>NIST Special Publication 800-63B</strong>, tiêu chuẩn vàng cho xác thực danh tính kỹ thuật số. Điều này có nghĩa là mật khẩu được tạo bằng các thuật toán mật mã an toàn và đáp ứng các yêu cầu bảo mật cao nhất."
   },
   "pci_dss_compliance_title": {
     "ua": "Відповідність стандарту PCI DSS",
@@ -2098,7 +2259,8 @@
     "ru": "Соответствие стандарту PCI DSS",
     "zh": "PCI DSS合规性",
     "ja": "PCI DSS準拠",
-    "pl": "Zgodność z PCI DSS"
+    "pl": "Zgodność z PCI DSS",
+    "vi": "Tuân thủ PCI DSS"
   },
   "pci_dss_compliance_desc": {
     "ua": "Наш сервіс відповідає <strong>Payment Card Industry Data Security Standard (PCI DSS)</strong>, що гарантує найвищий рівень безпеки для фінансових транзакцій та захисту конфіденційних даних. Цей стандарт використовується банками та фінансовими установами по всьому світу.",
@@ -2111,7 +2273,8 @@
     "ru": "Наш сервис соответствует <strong>Стандарту безопасности данных индустрии платежных карт (PCI DSS)</strong>, обеспечивая высочайший уровень безопасности для финансовых транзакций и защиты конфиденциальных данных. Этот стандарт используется банками и финансовыми учреждениями по всему миру.",
     "zh": "我们的服务符合<strong>支付卡行业数据安全标准(PCI DSS)</strong>，确保金融交易和敏感数据保护的最高安全级别。全球银行和金融机构都使用这一标准。",
     "ja": "当社のサービスは、金融取引と機密データの保護に最高レベルのセキュリティを確保する<strong>Payment Card Industry Data Security Standard (PCI DSS)</strong>に準拠しています。この標準は世界中の銀行や金融機関で使用されています。",
-    "pl": "Nasza usługa jest zgodna ze <strong>Standardem Bezpieczeństwa Danych Branży Kart Płatniczych (PCI DSS)</strong>, zapewniając najwyższy poziom bezpieczeństwa dla transakcji finansowych i ochrony wrażliwych danych. Ten standard jest używany przez banki i instytucje finansowe na całym świecie."
+    "pl": "Nasza usługa jest zgodna ze <strong>Standardem Bezpieczeństwa Danych Branży Kart Płatniczych (PCI DSS)</strong>, zapewniając najwyższy poziom bezpieczeństwa dla transakcji finansowych i ochrony wrażliwych danych. Ten standard jest używany przez banki i instytucje finansowe na całym świecie.",
+    "vi": "Dịch vụ của chúng tôi tuân thủ <strong>Tiêu chuẩn Bảo mật Dữ liệu Ngành Thẻ Thanh toán (PCI DSS)</strong>, đảm bảo mức bảo mật cao nhất cho các giao dịch tài chính và bảo vệ dữ liệu nhạy cảm. Tiêu chuẩn này được các ngân hàng và tổ chức tài chính trên toàn thế giới sử dụng."
   },
   "security_features_title": {
     "ua": "Ключові особливості безпеки",
@@ -2124,7 +2287,8 @@
     "ru": "Ключевые функции безопасности",
     "zh": "关键安全功能",
     "ja": "主要なセキュリティ機能",
-    "pl": "Kluczowe funkcje bezpieczeństwa"
+    "pl": "Kluczowe funkcje bezpieczeństwa",
+    "vi": "Các tính năng bảo mật chính"
   },
   "security_features_list": {
     "ua": "<ul><li><strong>Криптографічно безпечні алгоритми</strong> для генерації паролів</li><li><strong>Відсутність зберігання</strong> - паролі не зберігаються на сервері</li><li><strong>HTTPS шифрування</strong> для захисту передачі даних</li><li><strong>Регулярні аудити безпеки</strong> та оновлення</li><li><strong>Відповідність GDPR</strong> та іншим стандартам приватності</li></ul>",
@@ -2137,7 +2301,8 @@
     "ru": "<ul><li><strong>Криптографически безопасные алгоритмы</strong> для генерации паролей</li><li><strong>Отсутствие хранения</strong> - пароли не хранятся на сервере</li><li><strong>HTTPS шифрование</strong> для защиты передачи данных</li><li><strong>Регулярные аудиты безопасности</strong> и обновления</li><li><strong>Соответствие GDPR</strong> и другим стандартам конфиденциальности</li></ul>",
     "zh": "<ul><li><strong>加密安全算法</strong>用于密码生成</li><li><strong>无存储</strong> - 密码不存储在服务器上</li><li><strong>HTTPS加密</strong>保护数据传输</li><li><strong>定期安全审计</strong>和更新</li><li><strong>GDPR合规</strong>和其他隐私标准</li></ul>",
     "ja": "<ul><li><strong>暗号的に安全なアルゴリズム</strong>によるパスワード生成</li><li><strong>保存なし</strong> - パスワードはサーバーに保存されません</li><li><strong>HTTPS暗号化</strong>によるデータ送信保護</li><li><strong>定期的なセキュリティ監査</strong>と更新</li><li><strong>GDPR準拠</strong>およびその他のプライバシー標準</li></ul>",
-    "pl": "<ul><li><strong>Kryptograficznie bezpieczne algorytmy</strong> do generowania haseł</li><li><strong>Brak przechowywania</strong> - hasła nie są przechowywane na serwerze</li><li><strong>Szyfrowanie HTTPS</strong> dla ochrony transmisji danych</li><li><strong>Regularne audyty bezpieczeństwa</strong> i aktualizacje</li><li><strong>Zgodność z RODO</strong> i inne standardy prywatności</li></ul>"
+    "pl": "<ul><li><strong>Kryptograficznie bezpieczne algorytmy</strong> do generowania haseł</li><li><strong>Brak przechowywania</strong> - hasła nie są przechowywane na serwerze</li><li><strong>Szyfrowanie HTTPS</strong> dla ochrony transmisji danych</li><li><strong>Regularne audyty bezpieczeństwa</strong> i aktualizacje</li><li><strong>Zgodność z RODO</strong> i inne standardy prywatności</li></ul>",
+    "vi": "<ul><li><strong>Thuật toán mật mã an toàn</strong> để tạo mật khẩu</li><li><strong>Không lưu trữ</strong> - mật khẩu không được lưu trên máy chủ</li><li><strong>Mã hóa HTTPS</strong> để bảo vệ việc truyền dữ liệu</li><li><strong>Kiểm tra bảo mật thường xuyên</strong> và cập nhật</li><li>Tuân thủ <strong>GDPR</strong> và các tiêu chuẩn quyền riêng tư khác</li></ul>"
   },
   "password_standards_title": {
     "ua": "Відповідність стандарту",
@@ -2150,7 +2315,8 @@
     "ru": "Соответствие стандарту",
     "zh": "标准合规性",
     "ja": "標準準拠",
-    "pl": "Zgodność ze standardami"
+    "pl": "Zgodność ze standardami",
+    "vi": "Tuân thủ tiêu chuẩn"
   },
   "standard_basic": {
     "ua": "Базовий стандарт",
@@ -2163,7 +2329,8 @@
     "ru": "Базовый стандарт",
     "zh": "基本标准",
     "ja": "基本標準",
-    "pl": "Standard podstawowy"
+    "pl": "Standard podstawowy",
+    "vi": "Tiêu chuẩn cơ bản"
   },
   "standard_nist": {
     "ua": "NIST 800-63B",
@@ -2176,7 +2343,8 @@
     "ru": "NIST 800-63B",
     "zh": "NIST 800-63B",
     "ja": "NIST 800-63B",
-    "pl": "NIST 800-63B"
+    "pl": "NIST 800-63B",
+    "vi": "NIST 800-63B"
   },
   "standard_pci": {
     "ua": "PCI DSS",
@@ -2189,7 +2357,8 @@
     "ru": "PCI DSS",
     "zh": "PCI DSS",
     "ja": "PCI DSS",
-    "pl": "PCI DSS"
+    "pl": "PCI DSS",
+    "vi": "PCI DSS"
   },
   "standard_basic_desc": {
     "ua": "Мінімум 8 символів, будь-які символи",
@@ -2202,7 +2371,8 @@
     "ru": "Минимум 8 символов, любые символы",
     "zh": "最少8个字符，任意字符",
     "ja": "最小8文字、任意の文字",
-    "pl": "Minimum 8 znaków, dowolne znaki"
+    "pl": "Minimum 8 znaków, dowolne znaki",
+    "vi": "Tối thiểu 8 ký tự, ký tự bất kỳ"
   },
   "standard_nist_desc": {
     "ua": "Мінімум 8 символів, 1 велика + 1 мала літера + 1 цифра + 1 символ",
@@ -2215,7 +2385,8 @@
     "ru": "Минимум 8 символов, 1 заглавная + 1 строчная + 1 цифра + 1 символ",
     "zh": "最少8个字符，1个大写+1个小写+1个数字+1个符号",
     "ja": "最小8文字、1大文字+1小文字+1数字+1記号",
-    "pl": "Minimum 8 znaków, 1 wielka + 1 mała + 1 cyfra + 1 symbol"
+    "pl": "Minimum 8 znaków, 1 wielka + 1 mała + 1 cyfra + 1 symbol",
+    "vi": "Tối thiểu 8 ký tự, 1 chữ hoa + 1 chữ thường + 1 chữ số + 1 ký hiệu"
   },
   "standard_pci_desc": {
     "ua": "Мінімум 12 символів, 1 велика + 1 мала літера + 1 цифра + 1 символ",
@@ -2228,7 +2399,8 @@
     "ru": "Минимум 12 символов, 1 заглавная + 1 строчная + 1 цифра + 1 символ",
     "zh": "最少12个字符，1个大写+1个小写+1个数字+1个符号",
     "ja": "最小12文字、1大文字+1小文字+1数字+1記号",
-    "pl": "Minimum 12 znaków, 1 wielka + 1 mała + 1 cyfra + 1 symbol"
+    "pl": "Minimum 12 znaków, 1 wielka + 1 mała + 1 cyfra + 1 symbol",
+    "vi": "Tối thiểu 12 ký tự, 1 chữ hoa + 1 chữ thường + 1 chữ số + 1 ký hiệu"
   },
   "standard_custom": {
     "ua": "Кастомний",
@@ -2241,7 +2413,8 @@
     "ru": "Пользовательский",
     "zh": "自定义",
     "ja": "カスタム",
-    "pl": "Niestandardowy"
+    "pl": "Niestandardowy",
+    "vi": "Tùy chỉnh"
   },
   "standard_custom_desc": {
     "ua": "Мінімум 4 символи, власні налаштування символів",
@@ -2254,7 +2427,8 @@
     "ru": "Минимум 4 символа, пользовательские настройки символов",
     "zh": "最少4个字符，自定义字符设置",
     "ja": "最小4文字、カスタム文字設定",
-    "pl": "Minimum 4 znaki, niestandardowe ustawienia znaków"
+    "pl": "Minimum 4 znaki, niestandardowe ustawienia znaków",
+    "vi": "Tối thiểu 4 ký tự, cài đặt ký tự tùy chỉnh"
   },
   "warning_no_characters": {
     "ua": "Попередження: Не вибрано жодного набору символів. Виберіть хоча б один набір для генерації пароля.",
@@ -2267,7 +2441,8 @@
     "ru": "Предупреждение: Не выбран ни один набор символов. Выберите хотя бы один набор символов для генерации пароля.",
     "zh": "警告：未选择任何字符集。请至少选择一个字符集来生成密码。",
     "ja": "警告：文字セットが選択されていません。パスワードを生成するには、少なくとも1つの文字セットを選択してください。",
-    "pl": "Ostrzeżenie: Nie wybrano żadnego zestawu znaków. Wybierz co najmniej jeden zestaw znaków, aby wygenerować hasło."
+    "pl": "Ostrzeżenie: Nie wybrano żadnego zestawu znaków. Wybierz co najmniej jeden zestaw znaków, aby wygenerować hasło.",
+    "vi": "Cảnh báo: Chưa chọn bộ ký tự nào. Vui lòng chọn ít nhất một bộ ký tự để tạo mật khẩu."
   },
   "warning_last_checkbox": {
     "ua": "Попередження: Не можна зняти останню галочку. Залиште хоча б один набір символів для генерації пароля.",
@@ -2280,7 +2455,8 @@
     "ru": "Предупреждение: Нельзя снять последнюю галочку. Оставьте хотя бы один набор символов для генерации пароля.",
     "zh": "警告：无法取消选中最后一个复选框。请至少保留一个字符集用于密码生成。",
     "ja": "警告：最後のチェックボックスを外すことはできません。パスワード生成のために少なくとも1つの文字セットを残してください。",
-    "pl": "Ostrzeżenie: Nie można odznaczyć ostatniego pola wyboru. Zachowaj co najmniej jeden zestaw znaków do generowania hasła."
+    "pl": "Ostrzeżenie: Nie można odznaczyć ostatniego pola wyboru. Zachowaj co najmniej jeden zestaw znaków do generowania hasła.",
+    "vi": "Cảnh báo: Không thể bỏ chọn ô cuối cùng. Vui lòng giữ lại ít nhất một bộ ký tự để tạo mật khẩu."
   },
   "guide_links_title": {
     "ua": "Гайди з безпеки паролів",
@@ -2293,7 +2469,8 @@
     "ru": "Руководства по безопасности паролей",
     "zh": "密码安全指南",
     "ja": "パスワードセキュリティガイド",
-    "pl": "Przewodniki bezpieczeństwa haseł"
+    "pl": "Przewodniki bezpieczeństwa haseł",
+    "vi": "Hướng dẫn bảo mật mật khẩu"
   },
   "guide_links_subtitle": {
     "ua": "Експертні статті про NIST, PCI DSS, менеджери паролів, 2FA та відновлення після витоків даних.",
@@ -2306,7 +2483,8 @@
     "ru": "Экспертные статьи о NIST, PCI DSS, менеджерах паролей, 2FA и восстановлении после утечек.",
     "zh": "关于NIST、PCI DSS、密码管理器、2FA和数据泄露恢复的专家文章。",
     "ja": "NIST、PCI DSS、パスワードマネージャー、2FA、侵害復旧に関する専門記事。",
-    "pl": "Artykuły eksperckie o NIST, PCI DSS, menedżerach haseł, 2FA i odzyskiwaniu po wyciekach."
+    "pl": "Artykuły eksperckie o NIST, PCI DSS, menedżerach haseł, 2FA i odzyskiwaniu po wyciekach.",
+    "vi": "Bài viết chuyên sâu về NIST, PCI DSS, trình quản lý mật khẩu, 2FA và các thực hành tốt nhất để khôi phục sau rò rỉ."
   },
   "guide_link_1_title": {
     "ua": "Як створити надійний пароль",
@@ -2319,7 +2497,8 @@
     "ru": "Как создать надёжный пароль",
     "zh": "如何创建强密码",
     "ja": "強力なパスワードの作り方",
-    "pl": "Jak stworzyć silne hasło"
+    "pl": "Jak stworzyć silne hasło",
+    "vi": "Cách tạo một mật khẩu mạnh"
   },
   "guide_link_1_desc": {
     "ua": "Ентропія, NIST 800-63B, парольні фрази та MFA — повний гід.",
@@ -2332,7 +2511,8 @@
     "ru": "Энтропия, NIST 800-63B, парольные фразы и MFA — полное руководство.",
     "zh": "熵、NIST 800-63B、密码短语和MFA——完整指南。",
     "ja": "エントロピー、NIST 800-63B、パスフレーズ、MFA——完全ガイド。",
-    "pl": "Entropia, NIST 800-63B, hasła-frazy i MFA — kompletny przewodnik."
+    "pl": "Entropia, NIST 800-63B, hasła-frazy i MFA — kompletny przewodnik.",
+    "vi": "Entropy, NIST 800-63B, passphrase và MFA — hướng dẫn đầy đủ."
   },
   "guide_link_2_title": {
     "ua": "Що робити після витоку паролів",
@@ -2345,7 +2525,8 @@
     "ru": "Что делать после утечки паролей",
     "zh": "密码泄露后该怎么办",
     "ja": "パスワード漏洩後にすべきこと",
-    "pl": "Co zrobić po wycieku haseł"
+    "pl": "Co zrobić po wycieku haseł",
+    "vi": "Việc cần làm sau khi mật khẩu bị rò rỉ"
   },
   "guide_link_2_desc": {
     "ua": "Перевірка через Have I Been Pwned, відновлення акаунтів, захист фінансів.",
@@ -2358,7 +2539,8 @@
     "ru": "Проверка через Have I Been Pwned, восстановление аккаунтов, защита финансов.",
     "zh": "通过Have I Been Pwned检查、账户恢复、财务保护。",
     "ja": "Have I Been Pwnedでの確認、アカウント復旧、金融保護。",
-    "pl": "Sprawdzenie przez Have I Been Pwned, odzyskiwanie kont, ochrona finansów."
+    "pl": "Sprawdzenie przez Have I Been Pwned, odzyskiwanie kont, ochrona finansów.",
+    "vi": "Kiểm tra qua Have I Been Pwned, khôi phục tài khoản, bảo vệ tài chính."
   },
   "guide_link_3_title": {
     "ua": "Основи двофакторної аутентифікації",
@@ -2371,7 +2553,8 @@
     "ru": "Основы двухфакторной аутентификации",
     "zh": "双因素认证基础",
     "ja": "二要素認証の基本",
-    "pl": "Podstawy uwierzytelniania dwuskładnikowego"
+    "pl": "Podstawy uwierzytelniania dwuskładnikowego",
+    "vi": "Cơ bản về xác thực hai yếu tố"
   },
   "guide_link_3_desc": {
     "ua": "TOTP, FIDO2/WebAuthn, апаратні ключі та ризики SMS-верифікації.",
@@ -2384,7 +2567,8 @@
     "ru": "TOTP, FIDO2/WebAuthn, аппаратные ключи и риски SMS-верификации.",
     "zh": "TOTP、FIDO2/WebAuthn、硬件密钥和短信验证风险。",
     "ja": "TOTP、FIDO2/WebAuthn、ハードウェアキー、SMS認証のリスク。",
-    "pl": "TOTP, FIDO2/WebAuthn, klucze sprzętowe i ryzyko weryfikacji SMS."
+    "pl": "TOTP, FIDO2/WebAuthn, klucze sprzętowe i ryzyko weryfikacji SMS.",
+    "vi": "TOTP, FIDO2/WebAuthn, khóa phần cứng và rủi ro xác minh qua SMS."
   },
   "guide_link_4_title": {
     "ua": "Правила NIST 800-63B для паролів",
@@ -2397,7 +2581,8 @@
     "ru": "Правила NIST 800-63B для паролей",
     "zh": "NIST 800-63B密码规则",
     "ja": "NIST 800-63Bパスワードルール",
-    "pl": "Zasady NIST 800-63B dotyczące haseł"
+    "pl": "Zasady NIST 800-63B dotyczące haseł",
+    "vi": "Quy tắc mật khẩu NIST 800-63B"
   },
   "guide_link_4_desc": {
     "ua": "Ключові зміни стандарту: мінімальна довжина, заборонені паролі, хешування.",
@@ -2410,7 +2595,8 @@
     "ru": "Ключевые изменения: минимальная длина, запрещённые пароли, требования хеширования.",
     "zh": "关键标准变更：最小长度、禁用密码、哈希要求。",
     "ja": "主要な変更点：最小長、禁止パスワード、ハッシュ要件。",
-    "pl": "Kluczowe zmiany: minimalna długość, zabronione hasła, wymagania hashowania."
+    "pl": "Kluczowe zmiany: minimalna długość, zabronione hasła, wymagania hashowania.",
+    "vi": "Những thay đổi chính trong tiêu chuẩn: độ dài tối thiểu, mật khẩu bị cấm, yêu cầu băm."
   },
   "guide_link_5_title": {
     "ua": "Менеджер паролів vs ручне зберігання",
@@ -2423,7 +2609,8 @@
     "ru": "Менеджер паролей vs ручное хранение",
     "zh": "密码管理器 vs 手动存储",
     "ja": "パスワードマネージャー vs 手動保存",
-    "pl": "Menedżer haseł vs ręczne przechowywanie"
+    "pl": "Menedżer haseł vs ręczne przechowywanie",
+    "vi": "Trình quản lý mật khẩu so với lưu trữ thủ công"
   },
   "guide_link_5_desc": {
     "ua": "Порівняння 1Password, Bitwarden, KeePass, Dashlane, NordPass та Proton Pass.",
@@ -2436,7 +2623,8 @@
     "ru": "Сравнение 1Password, Bitwarden, KeePass, Dashlane, NordPass и Proton Pass.",
     "zh": "比较1Password、Bitwarden、KeePass、Dashlane、NordPass和Proton Pass。",
     "ja": "1Password、Bitwarden、KeePass、Dashlane、NordPass、Proton Passの比較。",
-    "pl": "Porównanie 1Password, Bitwarden, KeePass, Dashlane, NordPass i Proton Pass."
+    "pl": "Porównanie 1Password, Bitwarden, KeePass, Dashlane, NordPass i Proton Pass.",
+    "vi": "So sánh 1Password, Bitwarden, KeePass, Dashlane, NordPass và Proton Pass."
   },
   "guide_link_6_title": {
     "ua": "Типові помилки при створенні паролів",
@@ -2449,7 +2637,8 @@
     "ru": "Типичные ошибки при создании паролей",
     "zh": "常见密码错误",
     "ja": "よくあるパスワードの間違い",
-    "pl": "Typowe błędy w hasłach"
+    "pl": "Typowe błędy w hasłach",
+    "vi": "Các lỗi thường gặp về mật khẩu"
   },
   "guide_link_6_desc": {
     "ua": "Короткі паролі, повторне використання, шаблони та відсутність MFA.",
@@ -2462,7 +2651,8 @@
     "ru": "Короткие пароли, повторное использование, предсказуемые шаблоны и отсутствие MFA.",
     "zh": "短密码、重复使用、可预测模式和缺少MFA。",
     "ja": "短いパスワード、再利用、予測可能なパターン、MFAの欠如。",
-    "pl": "Krótkie hasła, ponowne użycie, przewidywalne wzorce i brak MFA."
+    "pl": "Krótkie hasła, ponowne użycie, przewidywalne wzorce i brak MFA.",
+    "vi": "Mật khẩu ngắn, dùng lại, mẫu dễ đoán và thiếu MFA."
   },
   "guide_links_view_all": {
     "ua": "Переглянути всі гайди",
@@ -2475,7 +2665,8 @@
     "ru": "Смотреть все руководства",
     "zh": "查看所有指南",
     "ja": "すべてのガイドを見る",
-    "pl": "Zobacz wszystkie przewodniki"
+    "pl": "Zobacz wszystkie przewodniki",
+    "vi": "Xem tất cả hướng dẫn"
   },
   "faq_storage_question": {
     "ua": "Чи зберігає Generate Password To Me генеровані паролі?",
@@ -2488,7 +2679,8 @@
     "ru": "Хранит ли Generate Password To Me сгенерированные пароли?",
     "zh": "Generate Password To Me 是否存储生成的密码？",
     "ja": "Generate Password To Meは生成されたパスワードを保存していますか？",
-    "pl": "Czy Generate Password To Me przechowuje wygenerowane hasła?"
+    "pl": "Czy Generate Password To Me przechowuje wygenerowane hasła?",
+    "vi": "Generate Password To Me có lưu trữ mật khẩu được tạo không?"
   },
   "faq_storage_answer": {
     "ua": "Ні. Генерування паролів працює у вашому браузері, і генеровані паролі не зберігаються на наших серверах. Інструмент розроблений з орієнтацією на локальну генерацію та безпеку вашої приватності.",
@@ -2501,7 +2693,8 @@
     "ru": "Нет. Генерирование пароля происходит в вашем браузере, а сгенерированные пароли не хранятся на наших серверах. Инструмент разработан с учётом генерации на стороне клиента и защиты приватности.",
     "zh": "不。密码生成在您的浏览器中运行，生成的密码不存储在我们的服务器上。该工具围绕客户端生成和隐私优先使用而设计。",
     "ja": "いいえ。パスワードの生成はブラウザで実行され、生成されたパスワードはサーバーに保存されません。このツールはクライアント側での生成とプライバシー最優先の使用を念頭に設計されています。",
-    "pl": "Nie. Generowanie haseł odbywa się w Twojej przeglądarce, a wygenerowane hasła nie są przechowywane na naszych serwerach. Narzędzie zostało zaprojektowane z myślą o generowaniu po stronie klienta i ochronie prywatności."
+    "pl": "Nie. Generowanie haseł odbywa się w Twojej przeglądarce, a wygenerowane hasła nie są przechowywane na naszych serwerach. Narzędzie zostało zaprojektowane z myślą o generowaniu po stronie klienta i ochronie prywatności.",
+    "vi": "Không. Việc tạo mật khẩu chạy trong trình duyệt của bạn, và mật khẩu được tạo không được lưu trên máy chủ của chúng tôi. Công cụ được thiết kế xoay quanh việc tạo phía máy khách và ưu tiên quyền riêng tư."
   },
   "faq_sources_question": {
     "ua": "Які джерела безпеки керують рекомендаціями?",
@@ -2514,7 +2707,8 @@
     "ru": "Какие источники безопасности руководят рекомендациями?",
     "zh": "哪些安全来源指导建议？",
     "ja": "どのセキュリティソースが推奨を指導していますか？",
-    "pl": "Jakie źródła bezpieczeństwa kierują rekomendacjami?"
+    "pl": "Jakie źródła bezpieczeństwa kierują rekomendacjami?",
+    "vi": "Những nguồn bảo mật nào định hướng các khuyến nghị?"
   },
   "faq_sources_answer": {
     "ua": "Рекомендації перевіряються за стандартом NIST SP 800-63B для паролів, вимогами PCI DSS v4.0 для паролів та практиками k-анонімності Have I Been Pwned для перевірки витоків.",
@@ -2527,7 +2721,8 @@
     "ru": "Рекомендации проверяются по стандартам NIST SP 800-63B для паролей, требованиям PCI DSS v4.0 для паролей и практикам k-анонимности Have I Been Pwned для проверки утечек.",
     "zh": "指导方针根据 NIST SP 800-63B 密码建议、PCI DSS v4.0 密码要求和 Have I Been Pwned k-匿名泄露检查实践进行审查。",
     "ja": "ガイダンスはNIST SP 800-63B パスワード推奨、PCI DSS v4.0 パスワード要件、およびHave I Been Pwned k-匿名性侵害チェック実践に基づいて確認されます。",
-    "pl": "Wytyczne są sprawdzane pod względem rekomendacji haseł NIST SP 800-63B, wymagań haseł PCI DSS v4.0 i praktyk k-anonimowości Have I Been Pwned."
+    "pl": "Wytyczne są sprawdzane pod względem rekomendacji haseł NIST SP 800-63B, wymagań haseł PCI DSS v4.0 i praktyk k-anonimowości Have I Been Pwned.",
+    "vi": "Các hướng dẫn được rà soát theo các khuyến nghị mật khẩu của NIST SP 800-63B, các yêu cầu mật khẩu của PCI DSS v4.0 và các thực hành kiểm tra rò rỉ bằng k-anonymity của Have I Been Pwned khi sử dụng tính năng kiểm tra rò rỉ."
   },
   "faq_review_question": {
     "ua": "Коли цей FAQ був останній раз перевірений?",
@@ -2540,7 +2735,8 @@
     "ru": "Когда этот FAQ был последний раз проверен?",
     "zh": "此常见问题解答何时被审查？",
     "ja": "このFAQはいつ確認されましたか？",
-    "pl": "Kiedy tego FAQ ostatnio przejrzano?"
+    "pl": "Kiedy tego FAQ ostatnio przejrzano?",
+    "vi": "Câu hỏi thường gặp này được rà soát khi nào?"
   },
   "faq_review_answer": {
     "ua": "Цей FAQ був перевірений у квітні 2026. Ми оновлюємо рекомендації з безпеки, коли змінюються основні стандарти паролів, API браузерів або практики перевірки витоків.",
@@ -2553,7 +2749,8 @@
     "ru": "Этот FAQ был проверен в апреле 2026. Мы обновляем рекомендации по безопасности при изменении основных стандартов паролей, API браузеров или практик проверки утечек.",
     "zh": "此常见问题解答在2026年4月被审查。当主要密码标准、浏览器API或泄露检查实践发生变化时，我们会更新安全指导。",
     "ja": "このFAQは2026年4月に確認されました。主要なパスワード標準、ブラウザAPI、または侵害チェック実践が変わると、セキュリティ指導を更新します。",
-    "pl": "Ten FAQ został przejrzany w kwietnia 2026. Aktualizujemy wytyczne dotyczące bezpieczeństwa, gdy zmienią się główne standardy haseł, interfejsy API przeglądarki lub praktyki sprawdzania wycieków."
+    "pl": "Ten FAQ został przejrzany w kwietnia 2026. Aktualizujemy wytyczne dotyczące bezpieczeństwa, gdy zmienią się główne standardy haseł, interfejsy API przeglądarki lub praktyki sprawdzania wycieków.",
+    "vi": "Câu hỏi thường gặp này được rà soát vào tháng 4 năm 2026. Chúng tôi cập nhật hướng dẫn bảo mật khi các tiêu chuẩn mật khẩu lớn, API trình duyệt hoặc thực hành kiểm tra rò rỉ có thay đổi."
   },
   "faq_trustworthy_question": {
     "ua": "Як ви забезпечуєте надійність FAQ?",
@@ -2566,7 +2763,8 @@
     "ru": "Как вы обеспечиваете надежность FAQ?",
     "zh": "你如何保持常见问题解答的可信度？",
     "ja": "FAQの信頼性をどのように保ちますか？",
-    "pl": "Jak utrzymujesz FAQ wiarygodnym?"
+    "pl": "Jak utrzymujesz FAQ wiarygodnym?",
+    "vi": "Bằng cách nào chúng tôi giữ cho FAQ luôn đáng tin cậy?"
   },
   "faq_trustworthy_answer": {
     "ua": "Ми тримаємо відповіді короткими, розділяємо загальну освіту з безпеки від гарантій, посилаємося на первинні джерела та перевіряємо FAQ, коли змінюються основні стандарти паролів, API браузерів або практики перевірки витоків.",
@@ -2579,7 +2777,8 @@
     "ru": "Мы держим ответы короткими, отделяем общее образование в области безопасности от гарантий, ссылаемся на первоисточники и пересматриваем FAQ.",
     "zh": "我们保持答案简短，将一般安全教育与保证分开，引用主要来源，并在主要密码标准、浏览器API或违规检查实践改变时审查FAQ。",
     "ja": "回答を短く保ち、一般的なセキュリティ教育を保証から分離し、主要なソースを引用し、主要なパスワード標準、ブラウザAPI、または侵害チェック実践が変わるとFAQを確認します。",
-    "pl": "Trzymamy odpowiedzi krótkie, rozdzielamy ogólną edukację bezpieczeństwa od gwarancji, cytujemy źródła pierwotne i przeglądamy FAQ."
+    "pl": "Trzymamy odpowiedzi krótkie, rozdzielamy ogólną edukację bezpieczeństwa od gwarancji, cytujemy źródła pierwotne i przeglądamy FAQ.",
+    "vi": "Chúng tôi giữ câu trả lời ngắn gọn, tách biệt giáo dục an ninh chung khỏi các đảm bảo, dẫn nguồn chính và rà soát FAQ khi các tiêu chuẩn mật khẩu lớn, API trình duyệt hoặc thực hành kiểm tra rò rỉ có thay đổi."
   },
   "faq_accordion_title": {
     "ua": "FAQ: безпека, приватність та довіра",
@@ -2592,6 +2791,7 @@
     "ru": "FAQ: безопасность, конфиденциальность и доверие",
     "zh": "常见问题解答：安全、隐私和信任",
     "ja": "FAQ：セキュリティ、プライバシー、信頼",
-    "pl": "FAQ: bezpieczeństwo, prywatność i zaufanie"
+    "pl": "FAQ: bezpieczeństwo, prywatność i zaufanie",
+    "vi": "Câu hỏi thường gặp: bảo mật, quyền riêng tư và sự tin tưởng"
   }
 }
