@@ -48,7 +48,7 @@ module.exports = {
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,
-  exclude: ['/server-sitemap.xml'],
+  exclude: ['/server-sitemap.xml', '**/opengraph-image', '**/opengraph-image/**'],
   robotsTxtOptions: {
     policies: [
       {
@@ -101,6 +101,10 @@ module.exports = {
     return [...localePages, ...guideIndexPages, ...guideArticlePages, ...staticPages];
   },
   transform: async (config, path) => {
+    // Never list generated OG-image routes as pages — they are PNG endpoints,
+    // not indexable HTML. Keeps crawl budget on real pages only.
+    if (/\/opengraph-image(\/|$)/.test(path)) return null;
+
     const localePathMatch = path.match(/^\/([a-z]{2})$/i);
     const locale = localePathMatch ? localePathMatch[1] : null;
 
