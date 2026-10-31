@@ -52,14 +52,14 @@ function loadServiceAccount(path) {
   return sa;
 }
 
-async function getAccessToken(sa) {
+async function getAccessToken(sa, scope) {
   const now = Math.floor(Date.now() / 1000);
   const tokenUri = sa.token_uri || 'https://oauth2.googleapis.com/token';
   const header = b64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
   const claims = b64url(
     JSON.stringify({
       iss: sa.client_email,
-      scope: 'https://www.googleapis.com/auth/webmasters.readonly',
+      scope,
       aud: tokenUri,
       iat: now,
       exp: now + 3600,
@@ -95,7 +95,7 @@ async function api(token, method, url, body) {
     signal: AbortSignal.timeout(30000),
   });
   const text = await res.text();
-  if (!res.ok) throw new Error(`HTTP ${res.status} ${text.slice(0, 300)}`);
+  if (!res.ok) throw new Error(`HTTP ${res.status} ${text.slice(0, 800)}`);
   return text ? JSON.parse(text) : {};
 }
 
@@ -135,8 +135,14 @@ async function buildReport(token) {
       errors: s.errors ?? 0,
       warnings: s.warnings ?? 0,
     }));
+
+    if (args.includes('--submit') && property.sitemaps[0]?.path) {
+      const feed = encodeURIComponent(property.sitemaps[0].path);
+      await api(token, 'PUT', `https://searchconsole.googleapis.com/webmasters/v3/sites/${enc}/sitemaps/${feed}`);
+      property.sitemapSubmitted = property.sitemaps[0].path;
+    }
   } catch (e) {
-    property.sitemapsError = String(e.message).slice(0, 200);
+    property.sitemapsError = String(e.message).slice(0, 800);
   }
 
   const query = async (dimensions, rowLimit = 10) => {
@@ -209,9 +215,11 @@ function printReport(r) {
       console.log(`  ${s.path}`);
       console.log(`   submitted: ${s.lastSubmitted || '-'} | downloaded: ${s.lastDownloaded || '-'} | pending: ${s.pending} | errors: ${s.errors} | warnings: ${s.warnings}`);
     });
+    if (p.sitemapSubmitted) console.log(`  resubmitted via API: ${p.sitemapSubmitted}`);
   } else {
     console.log('sitemaps: none or not readable', p.sitemapsError || '');
   }
+  if (p.sitemapsError) console.log('sitemaps error:', p.sitemapsError);
   if (p.totals) {
     console.log(`\ntotals: clicks ${p.totals.clicks} | impressions ${p.totals.impressions} | ctr ${(p.totals.ctr * 100).toFixed(2)}% | avg pos ${p.totals.position}`);
   }
@@ -239,7 +247,11 @@ function printReport(r) {
 
 async function main() {
   const sa = loadServiceAccount(CRED_PATH);
-  const token = await getAccessToken(sa);
+  // Read-only by default; sitemap submission needs the read-write webmasters scope.
+  const scope = args.includes('--submit')
+    ? 'https://www.googleapis.com/auth/webmasters'
+    : 'https://www.googleapis.com/auth/webmasters.readonly';
+  const token = await getAccessToken(sa, scope);
   const report = await buildReport(token);
   if (AS_JSON) console.log(JSON.stringify(report, null, 2));
   else printReport(report);
