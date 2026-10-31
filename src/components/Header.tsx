@@ -22,9 +22,10 @@ const InputLabel = lazy(() => import('@mui/material/InputLabel'));
 const IconButton = lazy(() => import('@mui/material/IconButton'));
 const Flag = lazy(() => import('react-world-flags'));
 
-/* Lazy MUI icons */
-const Brightness4 = lazy(() => import('@mui/icons-material/Brightness4'));
-const Brightness7 = lazy(() => import('@mui/icons-material/Brightness7'));
+/* Theme icons are tiny — importing them directly avoids an empty Suspense
+   fallback that left a blank control in the header on first paint. */
+import Brightness4 from '@mui/icons-material/Brightness4';
+import Brightness7 from '@mui/icons-material/Brightness7';
 
 
 
@@ -126,6 +127,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
   const navItemDefinitions: Array<{ labelKey: LinkLabelKey; href: string }> = [
     { labelKey: 'generator', href: homeHref },
     { labelKey: 'guides', href: `${localePrefix}/guides` },
+    { labelKey: 'bestManagers', href: `${localePrefix}/best-password-managers-2026` },
     { labelKey: 'vpn', href: `${localePrefix}/guides/vpn-security-privacy-guide` },
     { labelKey: 'contact', href: `${localePrefix}/contact` },
     { labelKey: 'privacyPolicy', href: `${localePrefix}/privacy-policy` },
@@ -345,6 +347,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             <IconButton
               onClick={toggleMode}
               color="inherit"
+              aria-label={isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
               sx={{
                 color: isDarkMode ? '#9ca3af' : '#071016',
                 '&:hover': {
@@ -368,13 +371,13 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
         {isHomePage ? (
           <div className="inline-flex">
             <Image
-              src="/images/logo.svg"
+              src={isDarkMode ? '/images/logo-dark.svg' : '/images/logo.svg'}
               alt="Generate Password To Me - Secure Password Generator Logo"
-              className="w-[50%] h-6 mr-1 logo"
+              className="w-auto mr-2 logo"
               priority
               decoding="async"
-              width={24}
-              height={24}
+              width={405}
+              height={92}
             />
           </div>
         ) : (
@@ -384,18 +387,18 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             className="logo-link inline-flex transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
           >
             <Image
-              src="/images/logo.svg"
+              src={isDarkMode ? '/images/logo-dark.svg' : '/images/logo.svg'}
               alt="Generate Password To Me - Secure Password Generator Logo"
-              className="w-[50%] h-6 mr-1 logo"
+              className="w-auto mr-2 logo"
               priority
               decoding="async"
-              width={24}
-              height={24}
+              width={405}
+              height={92}
             />
           </Link>
         )}
       </div>
-      <ul className="lg:flex justify-end w-[55%] items-center hidden gap-5 text-[#071016] text-sm font-medium">
+      <ul className="lg:flex flex-1 justify-end items-center hidden gap-3 xl:gap-5 whitespace-nowrap text-[#071016] text-sm font-medium">
         {navItems.map((item) => (
           <li key={item.href}>
             <Link
@@ -411,6 +414,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             <IconButton
               onClick={toggleMode}
               color="inherit"
+              aria-label={isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
               className={
                 isHomePage
                   ? 'transition-all duration-300 hover:scale-105'
@@ -430,6 +434,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           </Suspense>
         </li>
       </ul>
+      <label htmlFor="eng" className="sr-only">Language</label>
       <select
         name="Language"
         value={language}

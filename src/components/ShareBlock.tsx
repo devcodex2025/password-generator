@@ -286,7 +286,7 @@ export default function ShareBlock({
         <div className="overflow-hidden">
           <div className="mb-4 flex items-start gap-3 rounded-24 border border-[#E5F6FF] dark:border-[#2f343d] bg-[#F8FBFF] dark:bg-[#111418] p-3">
             <div className="shrink-0 w-10 h-10 rounded-lg bg-white dark:bg-[#1a1f24] flex items-center justify-center border border-[#E5F6FF] dark:border-[#2f343d]">
-              <Image src="/images/logo.svg" alt="Logo" width={20} height={20} />
+              <Image src="/images/logo.svg" alt="Generate Password To Me" width={88} height={20} />
             </div>
             <div className="min-w-0">
               <div className="text-sm font-semibold text-[#071016] dark:text-[#e0e0e0] truncate">{preview.title}</div>

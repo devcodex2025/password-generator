@@ -31,7 +31,6 @@ export async function generateMetadata({
       'NordPass review',
       'NordPass vs 1Password',
       'password manager comparison',
-      'NordPass affiliate',
     ],
     alternates: {
       canonical,
@@ -110,7 +109,9 @@ export default async function BestPasswordManagersPage({
   const t = getAffiliateStrings(locale);
   const canonical = `${baseUrl}/${locale}/best-password-managers-2026`;
 
-  /* ── JSON-LD: Product + Review ── */
+  /* ── JSON-LD: Product ──
+     No aggregateRating / review on purpose: self-serving review markup is
+     ineligible for rich results and risks a structured-data manual action. */
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -122,33 +123,10 @@ export default async function BestPasswordManagersPage({
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: '0',
-      highPrice: '35.88',
+      highPrice: '47.88',
       priceCurrency: 'USD',
       offerCount: 3,
       availability: 'https://schema.org/InStock',
-    },
-    review: {
-      '@type': 'Review',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '4.7',
-        bestRating: '5',
-        worstRating: '1',
-      },
-      author: {
-        '@type': 'Organization',
-        name: 'Generate Password To Me',
-        url: baseUrl,
-      },
-      reviewBody: t.sectionVerdictText,
-      datePublished: '2026-04-16',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.7',
-      reviewCount: '3200',
-      bestRating: '5',
-      worstRating: '1',
     },
   };
 
@@ -172,7 +150,9 @@ export default async function BestPasswordManagersPage({
   };
 
   return (
-    <LocalizedPageShell locale={locale}>
+    <>
+      {/* JSON-LD outside the client shell: a <script> inside a client boundary
+          is never executed and triggers a hydration mismatch. */}
       <script
         id="product-review-schema"
         type="application/ld+json"
@@ -183,6 +163,7 @@ export default async function BestPasswordManagersPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      <LocalizedPageShell locale={locale}>
 
       <article className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
@@ -234,8 +215,7 @@ export default async function BestPasswordManagersPage({
         <NordPassAffiliatePromo
           locale={locale}
           className="mt-8"
-          affiliateUrl={process.env.NEXT_PUBLIC_NORDPASS_AFFILIATE_URL}
-          affiliateB2bUrl={process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL}
+          placement="comparison-page"
         />
 
         {/* Section: Verdict */}
@@ -248,6 +228,7 @@ export default async function BestPasswordManagersPage({
           </p>
         </section>
       </article>
-    </LocalizedPageShell>
+      </LocalizedPageShell>
+    </>
   );
 }

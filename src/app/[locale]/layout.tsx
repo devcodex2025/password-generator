@@ -6,6 +6,7 @@ import NavigationProgress from '@/components/NavigationProgress';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
 import { buildHomeMetadata, SUPPORTED_LANGS, HTML_LANG_MAP } from '@/lib/home-metadata';
 import HomeStructuredData from '@/components/seo/HomeStructuredData';
+import HtmlLangSync from '@/components/HtmlLangSync';
 
 const arsenal = Arsenal({ 
   subsets: ['cyrillic', 'latin'], 
@@ -69,13 +70,7 @@ export default async function LocaleLayout({
 
   return (
     <>
-      <Script
-        id="locale-lang-init"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang="${htmlLang}";`,
-        }}
-      />
+      <HtmlLangSync locale={htmlLang} />
       <Script
         id="theme-init"
         strategy="beforeInteractive"

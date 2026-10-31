@@ -71,6 +71,11 @@ const Footer = ({ language }) => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href={`/${locale}/best-password-managers-2026`} className={linkClass}>
+                  {linkLabel('bestManagers')}
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="w-full min-w-0 self-stretch">
@@ -90,7 +95,7 @@ const Footer = ({ language }) => {
         <div className="mt-10 flex flex-col items-center justify-between gap-4 text-sm text-[#b2b2b2] md:flex-row md:items-end md:text-left">
           <div className="flex items-center justify-center md:justify-start">
             <Image
-              src={isDarkMode ? '/images/logo.svg' : '/images/logo.svg'}
+              src={isDarkMode ? '/images/logo-dark.svg' : '/images/logo.svg'}
               alt="Generate Password To Me - Secure Password Generator Logo"
               width={180}
               height={58}

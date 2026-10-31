@@ -65,11 +65,6 @@ export function buildHomeJsonLdScripts(locale: string): JsonLdScript[] {
     url: BASE_URL,
     description: metaDesc,
     inLanguage: HTML_LANG_MAP[locale] || 'en',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${BASE_URL}/{search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
   };
 
   const organizationJson = {
@@ -163,13 +158,10 @@ export function buildHomeJsonLdScripts(locale: string): JsonLdScript[] {
       '11 languages supported',
     ],
     screenshot: `${BASE_URL}/images/generate-password-preview.png`,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      ratingCount: '1250',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    isAccessibleForFree: true,
+    inLanguage: HTML_LANG_MAP[locale] || 'en',
+    // No aggregateRating: the site has no verified third-party ratings, and
+    // self-serving review markup is ineligible and can trigger a manual action.
   };
 
   return [

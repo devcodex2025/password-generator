@@ -1,0 +1,23 @@
+# Generate Password To Me
+
+> Free, privacy-first online password generator. Passwords are generated locally in the browser with the Web Crypto API (CSPRNG); nothing is stored or transmitted. Recommendations follow NIST SP 800-63B and PCI DSS v4.0. Breach checks use Have I Been Pwned k-anonymity. Available in 11 languages.
+
+Generator (key URLs)
+
+- [Password generator](https://www.generatepasswordto.me) (canonical entry point, English)
+- Language versions: /ua /es /fr /de /it /pt /ru /zh /ja /pl — e.g. [Ukrainian](https://www.generatepasswordto.me/ua)
+- [Best Password Managers 2026](https://www.generatepasswordto.me/en/best-password-managers-2026) (NordPass review and comparison)
+- [Guides index](https://www.generatepasswordto.me/en/guides) (~22 practical security guides per language)
+
+Core facts
+
+- Password generation runs client-side in the browser; no server storage of generated passwords.
+- Configurable length 4–100 characters; uppercase, lowercase, digits, symbols.
+- Security guidance reviewed against NIST SP 800-63B password rules and PCI DSS v4.0 password requirements.
+- Breach-checking uses Have I Been Pwned k-anonymity API practices.
+
+Optional
+
+- robots.txt: https://www.generatepasswordto.me/robots.txt
+- sitemap: https://www.generatepasswordto.me/sitemap.xml
+- Commercial disclosure: affiliate links to NordPass/NordVPN may appear in guide articles and the comparison page; they do not affect password generation or storage.

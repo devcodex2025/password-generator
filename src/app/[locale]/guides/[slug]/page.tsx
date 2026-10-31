@@ -17,6 +17,7 @@ import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import NordPassAffiliatePromo from '@/components/affiliate/NordPassAffiliatePromo';
 import NordVpnAffiliatePromo from '@/components/affiliate/NordVpnAffiliatePromo';
+import AffiliateBanner from '@/components/affiliate/AffiliateBanner';
 import {
   GuideInterlinkEntry,
   GuideInterlinkPlacement,
@@ -40,6 +41,19 @@ const VPN_GUIDE_VISUAL_BY_SECTION: Partial<Record<number, VpnGuideVisualBlockId>
   6: 'myths',
 };
 const hreflangMap: Record<string, string> = { ua: 'uk' };
+
+/**
+ * Guides where the NordVPN offer is shown instead of (or before) NordPass.
+ * VPN converts on "breach / privacy / 2FA" intent articles, where the reader
+ * is already shopping for a security product.
+ */
+const VPN_OFFER_GUIDES = new Set<string>([
+  'vpn-security-privacy-guide',
+  'what-to-do-after-password-breach',
+  'two-factor-authentication-basics',
+  'password-manager-vs-manual-storage',
+  'secure-password-generator-guide',
+]);
 export const runtime = 'nodejs';
 export const revalidate = 3600;
 
@@ -118,7 +132,7 @@ function GuideInterlinkBlock({
   }
 
   return (
-    <div className="mt-5 rounded-24 border border-[#D1E9FF] dark:border-[#1f334a] bg-[#F0F8FF] dark:bg-[#0A1A2B] p-4 shadow-sm">
+    <div className="mt-5 rounded-24 border border-[#D1E9FF] dark:border-[#374151] bg-[#F0F8FF] dark:bg-[#0A1A2B] p-4 shadow-sm">
       <p className="text-xs uppercase tracking-wide text-[#2A4E63] dark:text-[#d7f2ff]">
         {getPlacementLabel(locale, placement)}
       </p>
@@ -217,7 +231,10 @@ export default async function GuideArticlePage({
   };
 
   return (
-    <LocalizedPageShell locale={locale}>
+    <>
+      {/* JSON-LD stays outside the client shell so React does not re-render it
+          on the client (a <script> inside a client boundary triggers a
+          hydration mismatch and is never executed). */}
       <script
         id={`article-schema-${slug}`}
         type="application/ld+json"
@@ -228,6 +245,7 @@ export default async function GuideArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(guideBreadcrumbJsonLd) }}
       />
+      <LocalizedPageShell locale={locale}>
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
           items={[
@@ -299,22 +317,32 @@ export default async function GuideArticlePage({
 
         </article>
 
+        {/* Affiliate banner (official NordVPN creative, 728x90) */}
+        {VPN_OFFER_GUIDES.has(slug) ? (
+          <AffiliateBanner
+            placement="guide-mid"
+            locale={locale}
+            product="nordvpn"
+            className="mx-auto mt-8 block max-w-3xl"
+          />
+        ) : null}
+
         {/* Affiliate recommendation */}
-        {slug === 'vpn-security-privacy-guide' ? (
+        {VPN_OFFER_GUIDES.has(slug) ? (
           <NordVpnAffiliatePromo
             locale={locale}
             className="mt-8"
-            affiliateUrl={process.env.NEXT_PUBLIC_NORDVPN_AFFILIATE_URL}
+            placement={`guide-${slug}`}
           />
         ) : (
           <NordPassAffiliatePromo
             locale={locale}
             className="mt-8"
-            affiliateUrl={process.env.NEXT_PUBLIC_NORDPASS_AFFILIATE_URL}
-            affiliateB2bUrl={process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL}
+            placement={`guide-${slug}`}
           />
         )}
       </section>
-    </LocalizedPageShell>
+      </LocalizedPageShell>
+    </>
   );
 }

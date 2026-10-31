@@ -23,6 +23,12 @@ function getTrustFaq(language) {
       question: t('faq_trustworthy_question', language),
       answer: t('faq_trustworthy_answer', language),
     },
+    // Kept visible so the FAQPage JSON-LD only ever lists questions the
+    // user can actually see on the page (Google content-parity rule).
+    {
+      question: t('faq_review_question', language),
+      answer: t('faq_review_answer', language),
+    },
   ];
 }
 

@@ -43,23 +43,25 @@ export const HTML_LANG_MAP: Record<string, string> = {
   pl: 'pl',
 };
 
+// Keyword-first titles kept <= TITLE_BASE_MAX (35) so the brand suffix never
+// truncates the phrase mid-word in SERPs.
 const localizedMetaTitles: Record<string, string> = {
-  en: 'Secure Password Generator – Create Strong Passwords Online',
-  ua: 'Генератор паролів онлайн – Створіть надійний пароль',
-  es: 'Generador de contraseñas seguras – Crea contraseñas fuertes',
-  fr: 'Générateur de mots de passe sécurisés en ligne',
-  de: 'Sicherer Passwort-Generator – Starke Passwörter erstellen',
-  it: 'Generatore di password sicure – Crea password forti',
-  pt: 'Gerador de senhas seguras – Crie senhas fortes online',
-  ru: 'Генератор паролей онлайн – Создайте надёжный пароль',
+  en: 'Free Secure Password Generator',
+  ua: 'Генератор паролів онлайн',
+  es: 'Generador de contraseñas seguras',
+  fr: 'Générateur de mots de passe',
+  de: 'Sicherer Passwort-Generator',
+  it: 'Generatore di password sicure',
+  pt: 'Gerador de senhas seguras',
+  ru: 'Генератор паролей онлайн',
   zh: '安全密码生成器 – 在线创建强密码',
-  ja: '安全なパスワード生成 – 強力なパスワードを作成',
-  pl: 'Generator haseł online – Twórz silne hasła',
+  ja: '安全なパスワード生成 – 無料オンライン',
+  pl: 'Generator haseł online',
 };
 
 const localizedMetaDescriptions: Record<string, string> = {
   en: 'Free online password generator. Create strong, random passwords that meet NIST 800-63B standards. No data stored – generated locally in your browser.',
-  ua: 'Безкоштовний онлайн-генератор паролів. Створюйте надійні випадкові паролі за стандартами NIST 800-63B. Без зберігання даних – генерація локально у браузері.',
+  ua: 'Безкоштовний онлайн-генератор паролів. Створюйте надійні випадкові паролі за NIST 800-63B. Без зберігання даних – генерація локально у браузері.',
   es: 'Generador de contraseñas online gratuito. Crea contraseñas seguras y aleatorias según NIST 800-63B. Sin almacenamiento – generado en tu navegador.',
   fr: 'Générateur de mots de passe gratuit en ligne. Créez des mots de passe forts et aléatoires conformes NIST 800-63B. Généré dans votre navigateur.',
   de: 'Kostenloser Online-Passwort-Generator. Erstellen Sie starke, zufällige Passwörter nach NIST 800-63B. Keine Datenspeicherung – lokal im Browser generiert.',

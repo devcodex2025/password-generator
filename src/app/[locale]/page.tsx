@@ -21,7 +21,9 @@ const ShareBlock = dynamic(() => import('@/components/ShareBlock'), { ssr: false
 const AdBanner = dynamic(() => import('@/components/Advertising/Adbanner'), { ssr: false });
 const AdBannerSecond = dynamic(() => import('@/components/Advertising/AdbannerSecond'), { ssr: false });
 const CookieConsent = dynamic(() => import('@/components/CookieConsent/CookieConsent'), { ssr: false });
-const NordPassAffiliatePromo = dynamic(() => import('@/components/affiliate/NordPassAffiliatePromo'), { ssr: false });
+const NordPassAffiliatePromo = dynamic(() => import('@/components/affiliate/NordPassAffiliatePromo'));
+const OfferStrip = dynamic(() => import('@/components/affiliate/OfferStrip'), { ssr: false });
+const AffiliateBanner = dynamic(() => import('@/components/affiliate/AffiliateBanner'), { ssr: false });
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -59,22 +61,21 @@ export default function Page({ params }: PageProps) {
   };
 
   useEffect(() => {
-    // Redirect from root if preferred language is set and different from current
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-
+    // Only remember an explicit locale choice. Never redirect an explicit URL:
+    // bouncing /en (or any hreflang target) to a stored preference creates a
+    // soft-redirect that contradicts hreflang and hurts indexing.
     if (pathname === '/' || pathname === '/en') {
-      if (savedLanguage && savedLanguage !== 'en' && supportedLanguages.includes(savedLanguage)) {
-        router.push(`/${savedLanguage}`);
-      }
-    } else {
-      // If we are on a localized path, update the preference
-      const currentPathLocale = pathname.split('/')[1];
-      if (supportedLanguages.includes(currentPathLocale) && currentPathLocale !== savedLanguage) {
-        localStorage.setItem('preferredLanguage', currentPathLocale);
-        document.cookie = `preferredLanguage=${currentPathLocale}; path=/; max-age=31536000; samesite=lax`;
-      }
+      return;
     }
-  }, [router, supportedLanguages, locale, pathname]);
+
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    const currentPathLocale = pathname.split('/')[1];
+    const languages = getAvailableLanguages();
+    if (languages.includes(currentPathLocale) && currentPathLocale !== savedLanguage) {
+      localStorage.setItem('preferredLanguage', currentPathLocale);
+      document.cookie = `preferredLanguage=${currentPathLocale}; path=/; max-age=31536000; samesite=lax`;
+    }
+  }, [pathname]);
 
   return (
     <I18nextProvider i18n={i18n}>
@@ -83,16 +84,22 @@ export default function Page({ params }: PageProps) {
         <main className="w-full">
           <Analytics />
           <PasswordGenerator language={locale} />
+          <AffiliateBanner
+            placement="home-under-tool"
+            locale={locale}
+            className="mx-auto mt-4 max-w-3xl px-4"
+            fallback={<OfferStrip locale={locale} />}
+          />
           <WhyChooseUs language={locale} />
           <PasswordBreachCheck language={locale} />
           <GuideLinksSection language={locale} />
+          <div className="max-w-6xl mx-auto px-4">
+            <NordPassAffiliatePromo locale={locale} placement="home" />
+          </div>
           <AdBanner language={locale} isDarkMode={isDarkMode} />
           <SeoAccordion language={locale} />
           <div className="max-w-6xl mx-auto px-4">
             <ShareBlock language={locale} className="mt-6" />
-          </div>
-          <div className="max-w-6xl mx-auto px-4">
-            <NordPassAffiliatePromo locale={locale} />
           </div>
           <AdBannerSecond language={locale} isDarkMode={isDarkMode} />
         </main>

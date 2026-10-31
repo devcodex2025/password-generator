@@ -425,9 +425,15 @@ header {
 }
 
 .logo {
-  height: 60px;
+  height: 40px;
   width: auto;
+  max-width: 100%;
+}
 
+@media (min-width: 640px) {
+  .logo {
+    height: 48px;
+  }
 }
 
 
