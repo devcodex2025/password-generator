@@ -49,13 +49,13 @@ export default function GuideLinksSection({ language }: GuideLinksSectionProps) 
               href={`/${locale}/guides/${guide.slug}`}
               className={`group block rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5 ${
                 isDarkMode
-                  ? 'bg-[#2a2a2a] hover:bg-[#333] border border-[#374151] hover:border-[#05a9ff]'
+                  ? 'bg-[#2a2a2a] hover:bg-[#333] border border-[#374151] hover:border-[#38beff]'
                   : 'bg-[#F8FDFF] hover:bg-[#E5F6FF] border border-[#E5F6FF] hover:border-[#2A4E63]'
               }`}
             >
               <h3 className={`text-[15px] font-semibold mb-1 transition-colors ${
                 isDarkMode
-                  ? 'text-[#05a9ff] group-hover:text-[#38beff]'
+                  ? 'text-[#38beff] group-hover:text-[#d7f2ff]'
                   : 'text-[#2A4E63] group-hover:text-[#1f3b4c]'
               }`}>
                 {t(guide.titleKey, language)}

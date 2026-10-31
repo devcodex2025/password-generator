@@ -20,7 +20,7 @@ const Footer = ({ language }) => {
   const { isDarkMode } = useContext(ThemeContext);
   const locale = language || 'en';
   const linkClass =
-    'relative inline-flex items-center rounded-md px-1.5 py-1 text-[#3a6077] dark:text-[#05a9ff] transition-all duration-200 hover:-translate-y-0.5 hover:text-[#2A4E63] dark:hover:text-[#d7f2ff] hover:underline underline-offset-4 decoration-2';
+    'relative inline-flex items-center rounded-md px-1.5 py-1 text-[#3a6077] dark:text-[#38beff] transition-all duration-200 hover:-translate-y-0.5 hover:text-[#2A4E63] dark:hover:text-[#d7f2ff] hover:underline underline-offset-4 decoration-2';
   const externalLinkClass =
     'text-sm relative inline-flex items-center rounded-md px-2 py-1 !text-[#3a6077] dark:!text-[#d7f2ff] transition-all duration-200 hover:-translate-y-0.5 hover:!text-[#2A4E63] dark:hover:!text-white hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:underline underline-offset-4 decoration-2';
   const linkLabel = (key) => getLinkLabel(key, locale);

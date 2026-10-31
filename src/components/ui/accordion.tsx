@@ -13,7 +13,7 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      "overflow-hidden rounded-2xl border border-slate-200 bg-white/80 shadow-sm transition-colors duration-300 dark:border-slate-700 dark:bg-slate-900/35",
+      "overflow-hidden rounded-2xl border border-slate-200 bg-white/80 shadow-sm transition-colors duration-300 dark:border-[#374151] dark:bg-[#262626]",
       className
     )}
     {...props}
@@ -30,15 +30,15 @@ const AccordionTrigger = React.forwardRef<
       ref={ref}
       className={cn(
         "group flex flex-1 items-center justify-between gap-4 px-4 py-4 text-left text-sm font-semibold transition-all duration-300 ease-out",
-        "hover:bg-sky-50/80 hover:text-slate-950 dark:hover:bg-slate-800/70 dark:hover:text-white",
+        "hover:bg-sky-50/80 hover:text-slate-950 dark:hover:bg-[#2f2f2f] dark:hover:text-white",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-inset",
-        "data-[state=open]:bg-sky-50 data-[state=open]:text-slate-950 dark:data-[state=open]:bg-slate-800 dark:data-[state=open]:text-white [&[data-state=open]>svg]:rotate-180",
+        "data-[state=open]:bg-sky-50 data-[state=open]:text-slate-950 dark:data-[state=open]:bg-[#2A4E63] dark:data-[state=open]:text-white [&[data-state=open]>svg]:rotate-180",
         className
       )}
       {...props}
     >
       {children}
-      <ChevronDown className="h-5 w-5 shrink-0 text-slate-500 transition-transform duration-300 ease-out group-hover:text-slate-700 dark:text-slate-300 dark:group-hover:text-white" />
+      <ChevronDown className="h-5 w-5 shrink-0 text-slate-500 transition-transform duration-300 ease-out group-hover:text-slate-700 dark:text-[#9ca3af] dark:group-hover:text-white dark:group-data-[state=open]:text-[#d7f2ff]" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))

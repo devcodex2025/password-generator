@@ -56,7 +56,7 @@ export default function PasswordRow({
           readOnly
         />
         {/* Tablet / small laptop: black pill — nudge up slightly between md and lg */}
-        <div className="hidden min-h-0 shrink-0 items-center justify-end gap-1.5 self-center pr-1.5 md:max-lg:-translate-y-1 md:flex md:rounded-l-none md:rounded-r-[36px] md:bg-black lg:max-w-[300px] lg:translate-y-0 lg:gap-2 lg:rounded-[40px] lg:bg-transparent lg:pr-2 dark:md:bg-[#0f172a]">
+        <div className="hidden min-h-0 shrink-0 items-center justify-end gap-1.5 self-center pr-1.5 md:max-lg:-translate-y-1 md:flex md:rounded-l-none md:rounded-r-[36px] md:bg-black lg:max-w-[300px] lg:translate-y-0 lg:gap-2 lg:rounded-[40px] lg:bg-transparent lg:pr-2">
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
