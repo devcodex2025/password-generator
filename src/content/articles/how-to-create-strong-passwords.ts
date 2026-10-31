@@ -303,6 +303,33 @@ export const es: LocalizedArticleContent = {
       ],
     },
     {
+      heading: 'Longitud de la contraseña: 8 vs 12 vs 16 vs 20 caracteres',
+      paragraphs: [
+        'La longitud es el factor más eficaz para reforzar una contraseña. Con un conjunto de 94 caracteres (letras, dígitos y símbolos), cada carácter adicional añade unos 6,5 bits de entropía, de modo que el espacio de búsqueda se duplica aproximadamente cada 1,1 caracteres.',
+        'Esto es lo que significa en la práctica para una contraseña generada al azar (los valores suponen un generador criptográficamente seguro y ningún patrón reutilizado):',
+      ],
+      bullets: [
+        '8 caracteres — ~52 bits — la fuerza bruta tarda de minutos a horas en una granja de GPU; aceptable solo para cuentas de bajo valor',
+        '12 caracteres — ~79 bits — el mínimo práctico para correo, trabajo y compras',
+        '16 caracteres — ~105 bits — valor recomendado para contraseñas creadas por un gestor',
+        '20 caracteres — ~131 bits — adecuado para contraseñas maestras, carteras cripto y acceso de administrador',
+      ],
+    },
+    {
+      heading: 'Qué hace fuerte a una contraseña (y qué no)',
+      paragraphs: [
+        'Cuatro propiedades determinan la fuerza real: longitud, aleatoriedad verdadera, unicidad por cuenta y ausencia de la contraseña en filtraciones públicas. Las reglas de complejidad que sacrifican longitud por símbolos no compensan: "P@ssw0rd!" sigue entre las primeras conjeturas de cualquier herramienta de cracking.',
+        'Una contraseña que ha aparecido en cualquier filtración debe considerarse comprometida, incluso si el servicio nunca te avisó. Comprobarla contra una base de filtraciones lleva un segundo y aporta más que añadir otro símbolo.',
+      ],
+      bullets: [
+        'Fuerte: 16 caracteres aleatorios de un CSPRNG, guardados en un gestor de contraseñas',
+        'Fuerte: una frase de 5–6 palabras con separador aleatorio y una palabra en mayúscula',
+        'Débil: datos personales, patrones de teclado (qwerty, 1qaz2wsx) o palabras del diccionario',
+        'Débil: sustituciones tipo leet (a→@, e→3, o→0): todas las herramientas las incluyen',
+        'Débil: la misma contraseña reutilizada en varias cuentas, sin importar su longitud',
+      ],
+    },
+    {
       heading: 'NIST 800-63B: lo que realmente recomiendan los expertos',
       paragraphs: [
         'El Instituto Nacional de Estándares y Tecnología (NIST) actualizó sus Directrices de Identidad Digital (SP 800-63B) para reflejar la investigación moderna sobre seguridad de contraseñas. Estas directrices se han convertido en el estándar de oro para organizaciones en todo el mundo.',
@@ -405,6 +432,33 @@ export const fr: LocalizedArticleContent = {
         '60 bits : standard pour la plupart des comptes personnels (réseaux sociaux, achats)',
         '80 bits : recommandé pour le courriel, la banque et le stockage cloud',
         '100+ bits : idéal pour les portefeuilles crypto et les mots de passe maîtres',
+      ],
+    },
+    {
+      heading: 'Longueur du mot de passe : 8 vs 12 vs 16 vs 20 caractères',
+      paragraphs: [
+        'La longueur est le levier le plus efficace pour renforcer un mot de passe. Avec un jeu de 94 caractères (lettres, chiffres, symboles), chaque caractère supplémentaire apporte environ 6,5 bits d\'entropie : l\'espace de recherche double tous les 1,1 caractère environ.',
+        'Voici ce que cela signifie en pratique pour un mot de passe généré aléatoirement (les valeurs supposent un générateur cryptographiquement sûr et aucun motif réutilisé) :',
+      ],
+      bullets: [
+        '8 caractères — ~52 bits — la force brute prend de quelques minutes à quelques heures sur une ferme de GPU ; acceptable uniquement pour des comptes sans enjeu',
+        '12 caractères — ~79 bits — le minimum pratique pour le courriel, le travail et les achats',
+        '16 caractères — ~105 bits — valeur recommandée pour les mots de passe générés par un gestionnaire',
+        '20 caractères — ~131 bits — adapté aux mots de passe maîtres, portefeuilles crypto et accès administrateur',
+      ],
+    },
+    {
+      heading: 'Ce qui rend un mot de passe fort (et ce qui ne le rend pas)',
+      paragraphs: [
+        'Quatre propriétés déterminent la solidité réelle : la longueur, l\'aléatoire véritable, l\'unicité par compte et l\'absence du mot de passe dans les fuites publiques. Les règles de complexité qui sacrifient la longueur au profit des symboles ne compensent pas : « P@ssw0rd! » reste parmi les premières hypothèses de tout outil de cassage.',
+        'Un mot de passe apparu dans une fuite doit être considéré comme compromis, même si le service ne vous a jamais prévenu. Le vérifier dans une base de fuites prend une seconde et apporte plus que l\'ajout d\'un symbole.',
+      ],
+      bullets: [
+        'Fort : 16 caractères aléatoires issus d\'un CSPRNG, stockés dans un gestionnaire de mots de passe',
+        'Fort : une phrase de 5–6 mots avec un séparateur aléatoire et un mot capitalisé',
+        'Faible : données personnelles, motifs de clavier (qwerty, 1qaz2wsx) ou mots du dictionnaire',
+        'Faible : substitutions leet (a→@, e→3, o→0) — tous les outils les incluent',
+        'Faible : le même mot de passe réutilisé sur plusieurs comptes, quelle que soit sa longueur',
       ],
     },
     {
@@ -513,6 +567,33 @@ export const de: LocalizedArticleContent = {
       ],
     },
     {
+      heading: 'Passwortlänge: 8 vs. 12 vs. 16 vs. 20 Zeichen',
+      paragraphs: [
+        'Die Länge ist der wirksamste Hebel für die Passwortstärke. Bei einem Zeichenvorrat von 94 Zeichen (Buchstaben, Ziffern, Sonderzeichen) bringt jedes zusätzliche Zeichen etwa 6,5 Bit Entropie — der Suchraum verdoppelt sich also ungefähr alle 1,1 Zeichen.',
+        'Was das für ein zufällig erzeugtes Passwort praktisch bedeutet (die Werte setzen einen kryptografisch sicheren Generator und keine wiederverwendeten Muster voraus):',
+      ],
+      bullets: [
+        '8 Zeichen — ~52 Bit — Brute-Force dauert auf einer GPU-Farm Minuten bis Stunden; nur für Konten mit geringem Wert akzeptabel',
+        '12 Zeichen — ~79 Bit — das praktische Minimum für E-Mail, Arbeit und Einkäufe',
+        '16 Zeichen — ~105 Bit — empfohlener Standard für Passwörter aus einem Passwortmanager',
+        '20 Zeichen — ~131 Bit — geeignet für Master-Passwörter, Krypto-Wallets und Admin-Zugänge',
+      ],
+    },
+    {
+      heading: 'Was ein Passwort stark macht (und was nicht)',
+      paragraphs: [
+        'Vier Eigenschaften bestimmen die tatsächliche Stärke: Länge, echte Zufälligkeit, Einmaligkeit pro Konto und die Abwesenheit des Passworts in öffentlichen Leaks. Komplexitätsregeln, die Länge zugunsten von Sonderzeichen opfern, gleichen das nicht aus — "P@ssw0rd!" gehört weiterhin zu den ersten Vermutungen jedes Knacktools.',
+        'Ein Passwort, das in einem Leak aufgetaucht ist, muss als kompromittiert gelten — auch wenn der Dienst Sie nie informiert hat. Die Prüfung gegen eine Leak-Datenbank dauert eine Sekunde und bringt mehr als ein weiteres Sonderzeichen.',
+      ],
+      bullets: [
+        'Stark: 16 zufällige Zeichen aus einem CSPRNG, im Passwortmanager gespeichert',
+        'Stark: eine Passphrase aus 5–6 Wörtern mit zufälligem Trenner und einem großgeschriebenen Wort',
+        'Schwach: persönliche Daten, Tastaturmuster (qwerty, 1qaz2wsx) oder Wörterbuchwörter',
+        'Schwach: Leet-Ersetzungen (a→@, e→3, o→0) — jedes Knacktool enthält sie',
+        'Schwach: dasselbe Passwort auf mehreren Konten, unabhängig von der Länge',
+      ],
+    },
+    {
       heading: 'NIST 800-63B: Was die Experten wirklich empfehlen',
       paragraphs: [
         'Das National Institute of Standards and Technology (NIST) hat seine Digital Identity Guidelines (SP 800-63B) aktualisiert, um die moderne Forschung zur Passwortsicherheit widerzuspiegeln. Diese Richtlinien sind zum Goldstandard für Organisationen weltweit geworden.',
@@ -615,6 +696,33 @@ export const it: LocalizedArticleContent = {
         '60 bit: standard per la maggior parte degli account personali (social media, shopping)',
         '80 bit: raccomandato per email, banking e archiviazione cloud',
         '100+ bit: ideale per wallet di criptovalute e password master',
+      ],
+    },
+    {
+      heading: 'Lunghezza della password: 8 vs 12 vs 16 vs 20 caratteri',
+      paragraphs: [
+        'La lunghezza è la leva più efficace per rafforzare una password. Con un insieme di 94 caratteri (lettere, cifre, simboli), ogni carattere aggiuntivo apporta circa 6,5 bit di entropia: lo spazio di ricerca raddoppia ogni 1,1 caratteri circa.',
+        'Ecco cosa significa in pratica per una password generata casualmente (i valori presuppongono un generatore crittograficamente sicuro e nessun pattern riutilizzato):',
+      ],
+      bullets: [
+        '8 caratteri — ~52 bit — la forza bruta richiede da minuti a ore su una farm di GPU; accettabile solo per account di scarso valore',
+        '12 caratteri — ~79 bit — il minimo pratico per email, lavoro e acquisti',
+        '16 caratteri — ~105 bit — valore consigliato per password generate da un gestore',
+        '20 caratteri — ~131 bit — adatta a password master, wallet crypto e accesso amministratore',
+      ],
+    },
+    {
+      heading: 'Cosa rende forte una password (e cosa no)',
+      paragraphs: [
+        'Quattro proprietà determinano la forza reale: lunghezza, casualità autentica, unicità per account e assenza della password nelle violazioni pubbliche. Le regole di complessità che sacrificano la lunghezza per i simboli non compensano: "P@ssw0rd!" resta tra le prime ipotesi di ogni tool di cracking.',
+        'Una password comparsa in una violazione va considerata compromessa, anche se il servizio non ti ha mai avvisato. Verificarla su una base di violazioni richiede un secondo e vale più di un simbolo in più.',
+      ],
+      bullets: [
+        'Forte: 16 caratteri casuali da un CSPRNG, salvati in un gestore di password',
+        'Forte: una passphrase di 5–6 parole con separatore casuale e una parola maiuscola',
+        'Debole: dati personali, pattern di tastiera (qwerty, 1qaz2wsx) o parole da dizionario',
+        'Debole: sostituzioni leet (a→@, e→3, o→0) — ogni tool di cracking le include',
+        'Debole: la stessa password riutilizzata su più account, indipendentemente dalla lunghezza',
       ],
     },
     {
@@ -723,6 +831,33 @@ export const pt: LocalizedArticleContent = {
       ],
     },
     {
+      heading: 'Comprimento da senha: 8 vs 12 vs 16 vs 20 caracteres',
+      paragraphs: [
+        'O comprimento é a alavanca mais eficaz para reforçar uma senha. Com um conjunto de 94 caracteres (letras, dígitos e símbolos), cada caractere adicional acrescenta cerca de 6,5 bits de entropia, pelo que o espaço de pesquisa duplica aproximadamente a cada 1,1 caracteres.',
+        'Eis o que isso significa na prática para uma senha gerada aleatoriamente (os valores pressupõem um gerador criptograficamente seguro e nenhum padrão reutilizado):',
+      ],
+      bullets: [
+        '8 caracteres — ~52 bits — a força bruta leva de minutos a horas numa farm de GPU; aceitável apenas para contas de baixo valor',
+        '12 caracteres — ~79 bits — o mínimo prático para email, trabalho e compras',
+        '16 caracteres — ~105 bits — valor recomendado para senhas criadas por um gestor',
+        '20 caracteres — ~131 bits — adequado para senhas mestras, carteiras cripto e acesso de administrador',
+      ],
+    },
+    {
+      heading: 'O que torna uma senha forte (e o que não torna)',
+      paragraphs: [
+        'Quatro propriedades determinam a força real: comprimento, aleatoriedade verdadeira, unicidade por conta e ausência da senha em fugas públicas. As regras de complexidade que sacrificam comprimento por símbolos não compensam: "P@ssw0rd!" continua entre as primeiras tentativas de qualquer ferramenta de cracking.',
+        'Uma senha que apareceu em qualquer fuga deve ser tratada como comprometida, mesmo que o serviço nunca o tenha avisado. Verificá-la numa base de fugas leva um segundo e vale mais do que acrescentar outro símbolo.',
+      ],
+      bullets: [
+        'Forte: 16 caracteres aleatórios de um CSPRNG, guardados num gestor de senhas',
+        'Forte: uma frase-passe de 5–6 palavras com separador aleatório e uma palavra em maiúscula',
+        'Fraca: dados pessoais, padrões de teclado (qwerty, 1qaz2wsx) ou palavras do dicionário',
+        'Fraca: substituições leet (a→@, e→3, o→0) — todas as ferramentas as incluem',
+        'Fraca: a mesma senha reutilizada em várias contas, independentemente do comprimento',
+      ],
+    },
+    {
       heading: 'NIST 800-63B: o que os especialistas realmente recomendam',
       paragraphs: [
         'O National Institute of Standards and Technology (NIST) atualizou suas Digital Identity Guidelines (SP 800-63B) para refletir a pesquisa moderna sobre segurança de senhas. Essas diretrizes se tornaram o padrão ouro para organizações em todo o mundo.',
@@ -825,6 +960,33 @@ export const ru: LocalizedArticleContent = {
         '60 бит: стандарт для большинства личных аккаунтов (соцсети, покупки)',
         '80 бит: рекомендовано для почты, банкинга и облачного хранилища',
         '100+ бит: идеально для криптокошельков и мастер-паролей',
+      ],
+    },
+    {
+      heading: 'Длина пароля: 8 vs 12 vs 16 vs 20 символов',
+      paragraphs: [
+        'Длина — самый эффективный рычаг для усиления пароля. При наборе из 94 символов (буквы, цифры, символы) каждый дополнительный символ добавляет около 6,5 бит энтропии, то есть пространство перебора удваивается примерно каждые 1,1 символа.',
+        'Вот что это значит на практике для случайно сгенерированного пароля (значения предполагают криптографически стойкий генератор и отсутствие шаблонов):',
+      ],
+      bullets: [
+        '8 символов — ~52 бита — перебор на GPU-ферме занимает от минут до часов; допустимо только для малозначимых аккаунтов',
+        '12 символов — ~79 бит — практический минимум для почты, работы и покупок',
+        '16 символов — ~105 бит — рекомендуемый стандарт для паролей из менеджера паролей',
+        '20 символов — ~131 бит — подходит для мастер-пароля, криптокошельков и админ-доступа',
+      ],
+    },
+    {
+      heading: 'Что делает пароль надёжным (а что — нет)',
+      paragraphs: [
+        'Реальную стойкость определяют четыре свойства: длина, настоящая случайность, уникальность для каждого аккаунта и отсутствие пароля в публичных утечках. Правила сложности, которые жертвуют длиной ради символов, этого не компенсируют — "P@ssw0rd!" по-прежнему среди первых догадок любого инструмента взлома.',
+        'Пароль, появившийся в любой утечке, следует считать скомпрометированным, даже если сервис вас не уведомлял. Проверка по базе утечек занимает секунду и полезнее, чем ещё один символ.',
+      ],
+      bullets: [
+        'Надёжный: 16 случайных символов от криптографически стойкого генератора, сохранённые в менеджере паролей',
+        'Надёжный: парольная фраза из 5–6 слов со случайным разделителем и одним заглавным словом',
+        'Слабый: персональные данные, клавиатурные шаблоны (qwerty, 1qaz2wsx) или словарные слова',
+        'Слабый: замены вида a→@, e→3, o→0 — они есть в каждом инструменте взлома',
+        'Слабый: один и тот же пароль на разных аккаунтах, независимо от длины',
       ],
     },
     {
@@ -933,6 +1095,33 @@ export const zh: LocalizedArticleContent = {
       ],
     },
     {
+      heading: '密码长度：8、12、16、20 个字符对比',
+      paragraphs: [
+        '长度是提升密码强度最有效的手段。在 94 个字符的字符集（大小写字母、数字和符号）下，每增加一个字符大约增加 6.5 位熵，搜索空间约每 1.1 个字符翻一倍。',
+        '以下是对随机生成密码的实际意义（数值假设使用密码学安全的生成器且没有重复模式）：',
+      ],
+      bullets: [
+        '8 个字符 — 约 52 位 — 在 GPU 集群上暴力破解只需几分钟到几小时；仅适用于低价值账户',
+        '12 个字符 — 约 79 位 — 邮箱、工作与购物账户的实用最低标准',
+        '16 个字符 — 约 105 位 — 密码管理器生成密码的推荐默认值',
+        '20 个字符 — 约 131 位 — 适合主密码、加密钱包和管理员访问',
+      ],
+    },
+    {
+      heading: '什么让密码变强（什么不会）',
+      paragraphs: [
+        '真正决定强度的是四个特性：长度、真正的随机性、每个账户唯一，以及密码未出现在公开泄露数据中。为符号牺牲长度的复杂度规则并不能弥补——"P@ssw0rd!" 依然排在所有破解工具的前几个猜测里。',
+        '任何出现在泄露事件中的密码都应视为已泄露，即使服务方从未通知你。用泄露数据库检查只需一秒，比再多加一个符号更有价值。',
+      ],
+      bullets: [
+        '强：由 CSPRNG 生成的 16 位随机字符，保存在密码管理器中',
+        '强：5–6 个随机单词组成、带随机分隔符且其中一个单词大写的口令短语',
+        '弱：个人资料、键盘模式（qwerty、1qaz2wsx）或词典单词',
+        '弱：leet 替换（a→@、e→3、o→0）——所有破解工具都包含这些规则',
+        '弱：在多个账户重复使用同一个密码，无论其长度',
+      ],
+    },
+    {
       heading: 'NIST 800-63B：专家的真实建议',
       paragraphs: [
         '美国国家标准与技术研究院(NIST)更新了其数字身份指南(SP 800-63B)，以反映现代密码安全研究。这些指南已成为全球组织的黄金标准。',
@@ -1038,6 +1227,33 @@ export const ja: LocalizedArticleContent = {
       ],
     },
     {
+      heading: 'パスワードの長さ：8・12・16・20文字の比較',
+      paragraphs: [
+        '長さはパスワード強度を高める最も効果的な要素です。94文字の文字セット（英字・数字・記号）では、1文字増えるごとに約6.5ビットのエントロピーが加わり、探索空間はおよそ1.1文字ごとに倍になります。',
+        'ランダムに生成されたパスワードでの実際の意味は次のとおりです（値は暗号学的に安全な生成器とパターンの再利用がないことを前提とします）。',
+      ],
+      bullets: [
+        '8文字 — 約52ビット — GPUファームでの総当たりは数分〜数時間。価値の低いアカウントのみ許容',
+        '12文字 — 約79ビット — メール・仕事・ショッピングの実用的な最低ライン',
+        '16文字 — 約105ビット — パスワードマネージャー生成パスワードの推奨値',
+        '20文字 — 約131ビット — マスターパスワード、暗号資産ウォレット、管理者アクセスに適する',
+      ],
+    },
+    {
+      heading: 'パスワードを強くするもの（しないもの）',
+      paragraphs: [
+        '実際の強度を決めるのは4つの性質です。長さ、真のランダム性、アカウントごとの一意性、そして公開漏洩データに含まれていないこと。記号のために長さを犠牲にする複雑性ルールは補いになりません。「P@ssw0rd!」は今でもあらゆる解析ツールの最初の候補に入ります。',
+        '漏洩に一度でも現れたパスワードは、サービスから通知がなくても侵害済みと考えるべきです。漏洩データベースでの確認は1秒で済み、記号を1つ増やすより価値があります。',
+      ],
+      bullets: [
+        '強い：CSPRNG で生成した16文字のランダム文字列をパスワードマネージャーに保存',
+        '強い：ランダムな区切り文字と1つの大文字単語を使った5〜6語のパスフレーズ',
+        '弱い：個人情報、キーボードパターン（qwerty、1qaz2wsx）、辞書単語',
+        '弱い：leet 置換（a→@、e→3、o→0）。あらゆる解析ツールに含まれる',
+        '弱い：長さに関係なく複数アカウントで同じパスワードを再利用',
+      ],
+    },
+    {
       heading: 'NIST 800-63B：専門家が本当に推奨すること',
       paragraphs: [
         '米国国立標準技術研究所（NIST）は、パスワードセキュリティに関する最新の研究を反映するためにデジタルアイデンティティガイドライン（SP 800-63B）を更新しました。これらのガイドラインは世界中の組織のゴールドスタンダードとなっています。',
@@ -1140,6 +1356,33 @@ export const pl: LocalizedArticleContent = {
         '60 bitów: standard dla większości kont osobistych (media społecznościowe, zakupy)',
         '80 bitów: zalecane dla e-maila, bankowości i przechowywania w chmurze',
         '100+ bitów: idealne dla portfeli kryptowalut i haseł głównych',
+      ],
+    },
+    {
+      heading: 'Długość hasła: 8 vs 12 vs 16 vs 20 znaków',
+      paragraphs: [
+        'Długość to najskuteczniejsza dźwignia wzmacniania hasła. Przy zestawie 94 znaków (litery, cyfry, symbole) każdy dodatkowy znak dodaje około 6,5 bitu entropii, czyli przestrzeń poszukiwań podwaja się mniej więcej co 1,1 znaku.',
+        'Co to oznacza w praktyce dla losowo wygenerowanego hasła (wartości zakładają kryptograficznie bezpieczny generator i brak powtarzanych wzorców):',
+      ],
+      bullets: [
+        '8 znaków — ~52 bity — łamanie siłowe na farmie GPU zajmuje od minut do godzin; dopuszczalne tylko dla kont o niskiej wartości',
+        '12 znaków — ~79 bitów — praktyczne minimum dla poczty, pracy i zakupów',
+        '16 znaków — ~105 bitów — zalecana wartość dla haseł z menedżera haseł',
+        '20 znaków — ~131 bitów — odpowiednie dla hasła głównego, portfeli krypto i dostępu administratora',
+      ],
+    },
+    {
+      heading: 'Co czyni hasło silnym (a co nie)',
+      paragraphs: [
+        'O rzeczywistej sile decydują cztery właściwości: długość, prawdziwa losowość, unikalność dla każdego konta oraz brak hasła w publicznych wyciekach. Reguły złożoności, które poświęcają długość na rzecz symboli, tego nie wyrównują — "P@ssw0rd!" nadal jest wśród pierwszych zgadywanych przez każde narzędzie do łamania.',
+        'Hasło, które pojawiło się w jakimkolwiek wycieku, należy uznać za przejęte, nawet jeśli usługa nigdy o tym nie powiadomiła. Sprawdzenie w bazie wycieków zajmuje sekundę i daje więcej niż dodatkowy symbol.',
+      ],
+      bullets: [
+        'Silne: 16 losowych znaków z CSPRNG, przechowywane w menedżerze haseł',
+        'Silne: fraza hasłowa z 5–6 słów z losowym separatorem i jednym słowem wielką literą',
+        'Słabe: dane osobowe, wzorce klawiatury (qwerty, 1qaz2wsx) lub słowa słownikowe',
+        'Słabe: podstawienia leet (a→@, e→3, o→0) — każde narzędzie je zawiera',
+        'Słabe: to samo hasło używane na wielu kontach, niezależnie od długości',
       ],
     },
     {
