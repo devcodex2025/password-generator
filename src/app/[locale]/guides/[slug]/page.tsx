@@ -63,6 +63,9 @@ export function generateStaticParams() {
   );
 }
 
+// Unknown guide slugs must 404 and must not be rendered on demand.
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {

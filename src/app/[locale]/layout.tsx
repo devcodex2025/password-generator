@@ -52,6 +52,10 @@ export function generateStaticParams() {
   return SUPPORTED_LANGS.map((locale) => ({ locale }));
 }
 
+// Unknown values in the [locale] segment must 404 instead of rendering a page
+// (prevents soft-404 garbage URLs such as /{search_term_string} or /$ from being indexed).
+export const dynamicParams = false;
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
