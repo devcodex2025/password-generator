@@ -96,7 +96,8 @@ export default function PasswordSettings({
                     {t('password_length')} {passwordLength}
                 </label>
                 <div className="flex min-w-0 w-full max-w-full items-center gap-2 sm:gap-4">
-                    <RemoveCircleOutlineIcon
+                      <RemoveCircleOutlineIcon
+                        aria-hidden={false}
                         onClick={() => {
                             const newLength = Math.max(
                                 selectedStandard === 'custom' ? 4 : passwordStandards[selectedStandard].minLength,
@@ -135,6 +136,7 @@ export default function PasswordSettings({
                         className="h-[15px] min-w-0 flex-1"
                     />
                     <AddCircleOutlineIcon
+                        aria-hidden={false}
                         onClick={() => {
                             const newLength = Math.min(100, passwordLength + 1);
                             setPasswordLength(newLength);

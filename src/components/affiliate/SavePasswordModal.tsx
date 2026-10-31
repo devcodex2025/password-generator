@@ -218,7 +218,7 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
           data-placement="save-modal"
           className={cn(
             'mt-5 flex w-full items-center justify-center rounded-full bg-[#05a9ff] px-6 py-3.5',
-            'text-[16px] font-semibold text-white shadow-md transition hover:bg-[#38beff]'
+            'text-[16px] font-semibold !text-[#0a1e2a] shadow-md transition hover:bg-[#38beff]'
           )}
         >
           {c.cta}

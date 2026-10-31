@@ -71,7 +71,7 @@ export default function GuideLinksSection({ language }: GuideLinksSectionProps) 
             href={`/${locale}/guides`}
             className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-[15px] transition-all duration-200 ${
               isDarkMode
-                ? 'bg-[#05a9ff] text-[#0a1929] hover:bg-[#38beff]'
+                ? 'bg-[#05a9ff] !text-[#0a1929] hover:bg-[#38beff]'
                 : 'bg-[#2A4E63] text-white hover:bg-[#1f3b4c]'
             }`}
           >

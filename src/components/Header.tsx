@@ -457,11 +457,11 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               src="/images/hamburger.png"
               alt="Navigation menu toggle"
               onClick={toggleDrawer(anchor, true)}
-              className={`cursor-pointer transition-all duration-200 w-6 h-6 ${isHomePage ? '' : 'hover:scale-110'}${isDarkMode ? ' hamburger-dark' : ''}`}
+              className={`cursor-pointer transition-all duration-200 w-6 h-auto ${isHomePage ? '' : 'hover:scale-110'}${isDarkMode ? ' hamburger-dark' : ''}`}
               loading="eager"
               decoding="async"
               width={24}
-              height={24}
+              height={18}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {

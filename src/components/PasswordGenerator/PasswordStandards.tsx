@@ -61,7 +61,7 @@ export default function PasswordStandards({
               key={standard}
               className={`px-3 sm:px-4 py-2 rounded-lg font-bold text-[14px] sm:text-[16px] md:text-[18px] transition-all border-2 focus:outline-none w-full sm:w-auto ${
                 selectedStandard === standard
-                  ? 'border-[#2A4E63] bg-[#e5f6ff] dark:bg-[#05a9ff] text-[#2A4E63] dark:text-[#e0e0e0]'
+                  ? 'border-[#2A4E63] bg-[#e5f6ff] dark:bg-[#05a9ff] text-[#2A4E63] dark:text-[#0a1e2a]'
                   : 'border-gray-200 dark:border-gray-600 bg-white dark:bg-[#374151] text-[#2A4E63] dark:text-[#e0e0e0]'
               }`}
               onClick={() => handleStandardChange(standard)}

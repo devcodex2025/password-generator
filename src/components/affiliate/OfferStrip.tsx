@@ -50,7 +50,7 @@ export default function OfferStrip({ locale, className = '' }: OfferStripProps) 
           <ShieldCheck className="h-5 w-5 shrink-0 text-[#05a9ff]" aria-hidden="true" />
           <span className="truncate text-[14px] text-[#374151] dark:text-[#c7c7c7]">{copy.text}</span>
         </span>
-        <span className="flex shrink-0 items-center gap-1 rounded-full bg-[#05a9ff] px-3 py-1.5 text-[13px] font-semibold text-white">
+        <span className="flex shrink-0 items-center gap-1 rounded-full bg-[#05a9ff] px-3 py-1.5 text-[13px] font-semibold !text-[#0a1e2a]">
           {copy.cta}
           <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
         </span>

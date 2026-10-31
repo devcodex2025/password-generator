@@ -129,7 +129,7 @@ export default function NordVpnAffiliatePromo({ locale, className = '', placemen
           target="_blank"
           rel="sponsored noopener"
           onClick={() => trackClick('get_nordvpn')}
-          className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#05a9ff] hover:bg-[#38beff] text-white font-semibold py-3 px-6 transition-all duration-200 shadow-md hover:shadow-lg"
+          className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#05a9ff] hover:bg-[#38beff] !text-[#0a1e2a] font-semibold py-3 px-6 transition-all duration-200 shadow-md hover:shadow-lg"
         >
           <Shield className="w-5 h-5" aria-hidden="true" />
           {t.ctaGetNordVpn}
@@ -139,7 +139,7 @@ export default function NordVpnAffiliatePromo({ locale, className = '', placemen
           target="_blank"
           rel="sponsored noopener"
           onClick={() => trackClick('learn_more_nordvpn')}
-          className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#05a9ff] text-[#05a9ff] hover:bg-[#05a9ff] hover:text-white font-semibold py-3 px-6 transition-all duration-200"
+          className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#05a9ff] !text-[#38beff] hover:bg-[#05a9ff] hover:!text-[#0a1e2a] font-semibold py-3 px-6 transition-all duration-200"
         >
           <ExternalLink className="w-5 h-5" aria-hidden="true" />
           {t.ctaLearnMore}
