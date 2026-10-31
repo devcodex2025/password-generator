@@ -103,6 +103,30 @@ export default async function LocaleLayout({
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);} 
                 gtag('js', new Date());
+                gtag('consent', 'default', {
+                  ad_storage: 'denied',
+                  ad_user_data: 'denied',
+                  ad_personalization: 'denied',
+                  analytics_storage: 'denied',
+                  wait_for_update: 500,
+                });
+                try {
+                  var cc = document.cookie.match(/(?:^|;\\s*)cc_cookie=([^;]+)/);
+                  if (cc) {
+                    var stored = JSON.parse(decodeURIComponent(cc[1]));
+                    var cats = stored.categories || [];
+                    var analytics = cats.indexOf('analytics') !== -1;
+                    var marketing = cats.indexOf('marketing') !== -1;
+                    if (analytics || marketing) {
+                      gtag('consent', 'update', {
+                        analytics_storage: analytics ? 'granted' : 'denied',
+                        ad_storage: marketing ? 'granted' : 'denied',
+                        ad_user_data: marketing ? 'granted' : 'denied',
+                        ad_personalization: marketing ? 'granted' : 'denied',
+                      });
+                    }
+                  }
+                } catch (e) {}
                 gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
                   anonymize_ip: true,
                 });

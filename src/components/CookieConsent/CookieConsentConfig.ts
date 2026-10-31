@@ -1,5 +1,26 @@
 import type { CookieConsentConfig } from 'vanilla-cookieconsent';
 
+type ConsentCookie = { categories?: string[] };
+
+/**
+ * Google Consent Mode v2 — mirror the CMP categories into gtag consent signals.
+ * Default state (denied) is set inline in the layout before gtag('config').
+ */
+function syncConsentSignals(cookie: ConsentCookie | undefined) {
+  const categories = cookie && Array.isArray(cookie.categories) ? cookie.categories : [];
+  const analytics = categories.includes('analytics');
+  const marketing = categories.includes('marketing');
+
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('consent', 'update', {
+      analytics_storage: analytics ? 'granted' : 'denied',
+      ad_storage: marketing ? 'granted' : 'denied',
+      ad_user_data: marketing ? 'granted' : 'denied',
+      ad_personalization: marketing ? 'granted' : 'denied',
+    });
+  }
+}
+
 const pluginConfig: CookieConsentConfig = {
   guiOptions: {
     consentModal: {
@@ -17,15 +38,15 @@ const pluginConfig: CookieConsentConfig = {
   },
 // @ts-ignore
   onFirstConsent: function ({ cookie }) {
-    // console.log('onFirstAction fired');
+    syncConsentSignals(cookie);
   },
 // @ts-ignore
   onConsent: function ({ cookie }) {
-    // console.log('onConsent fired ...');
+    syncConsentSignals(cookie);
   },
 // @ts-ignore
   onChange: function ({ changedCategories, cookie }) {
-    // console.log('onChange fired ...');
+    syncConsentSignals(cookie);
   },
 
   categories: {
