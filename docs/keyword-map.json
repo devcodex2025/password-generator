@@ -1,0 +1,844 @@
+{
+  "generatedAt": "2026-10-31T20:22:06.435Z",
+  "source": "google-autocomplete",
+  "locales": {
+    "en": {
+      "locale": "en",
+      "totalUnique": 60,
+      "clusters": {
+        "core": {
+          "count": 16,
+          "target": "/en",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "password generator",
+            "password generator free",
+            "password generator lastpass",
+            "strong password generator",
+            "strong password generator google",
+            "strong password generator free",
+            "strong password generator google free",
+            "strong password generator canada"
+          ]
+        },
+        "length": {
+          "count": 13,
+          "target": "/en/guides/how-to-create-strong-passwords",
+          "status": "gap-section",
+          "note": "FAQ + presets 8/12/16/20 + guide H2",
+          "keywords": [
+            "password generator 12 characters",
+            "password generator 15 characters",
+            "password generator 8 characters",
+            "password generator 16 characters",
+            "password generator 20 characters",
+            "password generator 14 characters",
+            "strong password generator 12 characters",
+            "random password generator 12 characters"
+          ]
+        },
+        "passphrase": {
+          "count": 12,
+          "target": "/en/guides/passphrase-vs-password-entropy",
+          "status": "gap-feature",
+          "note": "add words-mode generator + landing section",
+          "keywords": [
+            "password generator words",
+            "strong password generator words",
+            "strong password generator easy to remember",
+            "random password generator words",
+            "passphrase generator",
+            "passphrase generator free",
+            "passphrase generator words",
+            "passphrase generator 3 words"
+          ]
+        },
+        "manager": {
+          "count": 10,
+          "target": "/en/best-password-managers-2026",
+          "status": "partial",
+          "note": "platform sections (Android/iPhone/Chrome)",
+          "keywords": [
+            "password manager",
+            "password manager google",
+            "password manager chrome",
+            "password manager android",
+            "password manager google chrome",
+            "password manager app",
+            "password manager iphone",
+            "password manager google account"
+          ]
+        },
+        "howto": {
+          "count": 8,
+          "target": "/en/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "align FAQ wording with query",
+          "keywords": [
+            "how to create a strong password",
+            "how to create a strong password that i can remember",
+            "how to create a strong password example",
+            "how to create a strong password with google password manager",
+            "how to create a strong password you can remember",
+            "how to create a strong password and remember it",
+            "how to create a strong password for sars",
+            "how to create a strong password for gmail"
+          ]
+        },
+        "other": {
+          "count": 1,
+          "target": "/en",
+          "status": "review",
+          "note": "manual review",
+          "keywords": [
+            "random password"
+          ]
+        }
+      }
+    },
+    "ua": {
+      "locale": "ua",
+      "totalUnique": 43,
+      "clusters": {
+        "manager": {
+          "count": 10,
+          "target": "/ua/best-password-managers-2026",
+          "status": "partial",
+          "note": "platform sections (Android/iPhone/Chrome)",
+          "keywords": [
+            "менеджер паролів",
+            "менеджер паролів google",
+            "менеджер паролів на телефоні",
+            "менеджер паролів андроїд",
+            "менеджер паролів гугл на телефоні",
+            "менеджер паролів хром",
+            "менеджер паролів айфон",
+            "менеджер паролів це"
+          ]
+        },
+        "core": {
+          "count": 9,
+          "target": "/ua",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "генератор паролів",
+            "генератор паролів онлайн",
+            "генератор паролів гугл",
+            "генератор паролів eset",
+            "генератор паролів україна",
+            "генератор паролів скачати",
+            "генератор паролів 1password",
+            "генератор паролів це"
+          ]
+        },
+        "strength": {
+          "count": 9,
+          "target": "/ua/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "add \"what makes a password strong\" section + examples",
+          "keywords": [
+            "надійний пароль",
+            "надійний пароль приклад",
+            "надійний пароль для приват24",
+            "надійний пароль для облікового запису",
+            "надійний пароль це",
+            "надійний пароль для айклауда",
+            "надійний пароль повинен бути",
+            "надійний пароль гугл"
+          ]
+        },
+        "howto": {
+          "count": 8,
+          "target": "/ua/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "align FAQ wording with query",
+          "keywords": [
+            "як створити пароль",
+            "як створити пароль до електронної пошти",
+            "як створити пароль для облікового запису",
+            "як створити пароль для логіна",
+            "як створити пароль для ощад 24",
+            "як створити пароль смарт id приват24",
+            "як створити пароль на ноутбуці",
+            "як створити пароль в ощадбанк"
+          ]
+        },
+        "passphrase": {
+          "count": 4,
+          "target": "/ua/guides/passphrase-vs-password-entropy",
+          "status": "gap-feature",
+          "note": "add words-mode generator + landing section",
+          "keywords": [
+            "генератор паролів словами",
+            "парольна фраза",
+            "парольна фраза гугл",
+            "парольна фраза це"
+          ]
+        },
+        "length": {
+          "count": 3,
+          "target": "/ua/guides/how-to-create-strong-passwords",
+          "status": "gap-section",
+          "note": "FAQ + presets 8/12/16/20 + guide H2",
+          "keywords": [
+            "генератор паролів 12 символів",
+            "як створити пароль з 8 символів",
+            "як створити пароль з 6 символів"
+          ]
+        }
+      }
+    },
+    "ru": {
+      "locale": "ru",
+      "totalUnique": 50,
+      "clusters": {
+        "manager": {
+          "count": 10,
+          "target": "/ru/best-password-managers-2026",
+          "status": "partial",
+          "note": "platform sections (Android/iPhone/Chrome)",
+          "keywords": [
+            "менеджер паролей",
+            "менеджер паролей гугл",
+            "менеджер паролей на телефоне",
+            "менеджер паролей гугл на телефоне",
+            "менеджер паролей андроид",
+            "менеджер паролей хром",
+            "менеджер паролей роблокс",
+            "менеджер паролей яндекс"
+          ]
+        },
+        "howto": {
+          "count": 10,
+          "target": "/ru/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "align FAQ wording with query",
+          "keywords": [
+            "как создать пароль",
+            "как создать пароль пример",
+            "как создать пароль в роблоксе",
+            "как создать пароль для ржд",
+            "как создать пароль на госуслугах",
+            "как создать пароль на сайте ржд",
+            "как создать пароль к сертификату эп",
+            "как создать пароль на госуслугах для ребенка"
+          ]
+        },
+        "passphrase": {
+          "count": 10,
+          "target": "/ru/guides/passphrase-vs-password-entropy",
+          "status": "gap-feature",
+          "note": "add words-mode generator + landing section",
+          "keywords": [
+            "парольная фраза",
+            "парольная фраза это",
+            "парольная фраза vipnet",
+            "парольная фраза пример",
+            "парольная фраза генератор",
+            "парольная фраза ledger",
+            "парольная фраза опера",
+            "парольная фраза леджер"
+          ]
+        },
+        "core": {
+          "count": 8,
+          "target": "/ru",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "генератор паролей",
+            "генератор паролей онлайн",
+            "генератор паролей гугл",
+            "генератор паролей касперский",
+            "генератор паролей eset",
+            "генератор паролей яндекс",
+            "генератор паролей для ржд",
+            "надежный пароль генератор"
+          ]
+        },
+        "strength": {
+          "count": 7,
+          "target": "/ru/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "add \"what makes a password strong\" section + examples",
+          "keywords": [
+            "надежный пароль",
+            "надежный пароль пример",
+            "надежный пароль для макса",
+            "надежный пароль для айклауда пример",
+            "надежный пароль сайт",
+            "надежный пароль для айклауда",
+            "надежный пароль проверка"
+          ]
+        },
+        "length": {
+          "count": 5,
+          "target": "/ru/guides/how-to-create-strong-passwords",
+          "status": "gap-section",
+          "note": "FAQ + presets 8/12/16/20 + guide H2",
+          "keywords": [
+            "генератор паролей 8 символов",
+            "генератор паролей 12 символов",
+            "генератор паролей 16 символов",
+            "надежный пароль из 8 символов",
+            "надежный пароль из 8 символов пример"
+          ]
+        }
+      }
+    },
+    "pl": {
+      "locale": "pl",
+      "totalUnique": 40,
+      "clusters": {
+        "other": {
+          "count": 10,
+          "target": "/pl",
+          "status": "review",
+          "note": "manual review",
+          "keywords": [
+            "menedżer haseł",
+            "menedżer haseł google",
+            "menedżer haseł w telefonie",
+            "menedżer haseł google na telefonie",
+            "menedżer haseł android",
+            "menedżer haseł google gdzie znaleźć",
+            "menedżer haseł chrome",
+            "menedżer haseł google android"
+          ]
+        },
+        "howto": {
+          "count": 10,
+          "target": "/pl/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "align FAQ wording with query",
+          "keywords": [
+            "jak utworzyć hasło",
+            "jak stworzyć hasło w wikipedii",
+            "jak utworzyć hasło do logowania",
+            "jak utworzyć hasło do pliku zip",
+            "jak utworzyć hasło do folderu",
+            "jak utworzyć hasło do pliku pdf",
+            "jak utworzyć hasło do profilu zaufanego",
+            "jak utworzyć hasło na laptopie"
+          ]
+        },
+        "core": {
+          "count": 9,
+          "target": "/pl",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "generator haseł",
+            "generator haseł online",
+            "generator haseł google",
+            "generator haseł kalambury",
+            "generator haseł losowych",
+            "generator haseł jednorazowych",
+            "generator haseł norton",
+            "silne hasło generator"
+          ]
+        },
+        "strength": {
+          "count": 7,
+          "target": "/pl/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "add \"what makes a password strong\" section + examples",
+          "keywords": [
+            "silne hasło przykłady",
+            "silne hasło",
+            "silne hasło sprawdzanie",
+            "silne hasło powinno zawierać",
+            "silne hasło test",
+            "silne hasło google",
+            "silne hasło ile znaków"
+          ]
+        },
+        "passphrase": {
+          "count": 4,
+          "target": "/pl/guides/passphrase-vs-password-entropy",
+          "status": "gap-feature",
+          "note": "add words-mode generator + landing section",
+          "keywords": [
+            "generator haseł łatwych do zapamiętania",
+            "generator haseł słownikowych",
+            "generator haseł z wyrazów",
+            "silne hasło łatwe do zapamiętania"
+          ]
+        }
+      }
+    },
+    "de": {
+      "locale": "de",
+      "totalUnique": 37,
+      "clusters": {
+        "strength": {
+          "count": 16,
+          "target": "/de/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "add \"what makes a password strong\" section + examples",
+          "keywords": [
+            "sicheres passwort generieren",
+            "sicheres passwort",
+            "sicheres passwort erstellen",
+            "sicheres passwort generieren kostenlos",
+            "sicheres passwort beispiel",
+            "sicheres passwort vorschlagen",
+            "sicheres passwort generieren google",
+            "sicheres passwort testen"
+          ]
+        },
+        "core": {
+          "count": 11,
+          "target": "/de",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "passwort generator",
+            "passwort generator heise",
+            "passwort generator wörter",
+            "passwort generator online",
+            "passwort generator datenschutz",
+            "passwort generator eu",
+            "passwort generator google",
+            "passwort generator bitwarden"
+          ]
+        },
+        "other": {
+          "count": 9,
+          "target": "/de",
+          "status": "review",
+          "note": "manual review",
+          "keywords": [
+            "passwort manager",
+            "passwort manager google",
+            "passwort manager öffnen",
+            "passwort manager android",
+            "passwort manager chrome",
+            "passwort manager kostenlos",
+            "passwort manager iphone",
+            "passwort manager app"
+          ]
+        },
+        "check": {
+          "count": 1,
+          "target": "/de/guides/how-to-create-strong-passwords",
+          "status": "partial",
+          "note": "strength-test wording; consider dedicated checker section",
+          "keywords": [
+            "passwort manager test"
+          ]
+        }
+      }
+    },
+    "es": {
+      "locale": "es",
+      "totalUnique": 40,
+      "clusters": {
+        "core": {
+          "count": 12,
+          "target": "/es",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "generador de contraseñas",
+            "generador de contraseñas seguras",
+            "generador de contraseñas seguras google",
+            "generador de contraseñas google",
+            "generador de contraseñas aleatorias",
+            "generador de contraseñas online",
+            "generador de contraseñas avast",
+            "generador de contraseñas - lastpass"
+          ]
+        },
+        "manager": {
+          "count": 10,
+          "target": "/es/best-password-managers-2026",
+          "status": "partial",
+          "note": "platform sections (Android/iPhone/Chrome)",
+          "keywords": [
+            "gestor de contraseñas",
+            "gestor de contraseñas de google",
+            "gestor de contraseñas guardadas",
+            "gestor de contraseñas guardadas en google",
+            "gestor de contraseñas chrome",
+            "gestor de contraseñas android",
+            "gestor de contraseñas de google android",
+            "gestor de contraseñas gratuito"
+          ]
+        },
+        "howto": {
+          "count": 10,
+          "target": "/es/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "align FAQ wording with query",
+          "keywords": [
+            "como crear una contraseña segura",
+            "cómo crear una contraseña segura con letras números y símbolos combinados",
+            "cómo crear una contraseña segura de google",
+            "como crear una contraseña segura ejemplos",
+            "como crear una contraseña segura para wifi",
+            "como crear una contraseña segura y fácil de recordar",
+            "como crear una contraseña segura para instagram",
+            "como crear una contraseña segura para icloud"
+          ]
+        },
+        "strength": {
+          "count": 7,
+          "target": "/es/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "add \"what makes a password strong\" section + examples",
+          "keywords": [
+            "contraseña segura",
+            "contraseña segura google",
+            "contraseña segura ejemplo",
+            "contraseña segura aleatoria",
+            "contraseña segura comprobar",
+            "contraseña segura facil de recordar",
+            "contraseña segura avast"
+          ]
+        },
+        "length": {
+          "count": 1,
+          "target": "/es/guides/how-to-create-strong-passwords",
+          "status": "gap-section",
+          "note": "FAQ + presets 8/12/16/20 + guide H2",
+          "keywords": [
+            "contraseña segura 8 caracteres"
+          ]
+        }
+      }
+    },
+    "fr": {
+      "locale": "fr",
+      "totalUnique": 39,
+      "clusters": {
+        "core": {
+          "count": 11,
+          "target": "/fr",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "générateur de mot de passe",
+            "générateur de mot de passe gratuit",
+            "générateur de mot de passe google",
+            "générateur de mot de passe sécurisé",
+            "générateur de mot de passe en ligne",
+            "générateur de mot de passe sécurisé gratuit",
+            "générateur de mot de passe aléatoire",
+            "générateur de mot de passe xyz"
+          ]
+        },
+        "strength": {
+          "count": 10,
+          "target": "/fr/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "add \"what makes a password strong\" section + examples",
+          "keywords": [
+            "mot de passe sécurisé",
+            "mot de passe sécurisé google",
+            "mot de passe sécurisé exemple",
+            "mot de passe sécurisé aléatoire",
+            "mot de passe sécurisé 20 caractères",
+            "mot de passe sécurisé envoi",
+            "mot de passe sécurisé 12 caractères",
+            "mot de passe sécurisé samsung"
+          ]
+        },
+        "manager": {
+          "count": 10,
+          "target": "/fr/best-password-managers-2026",
+          "status": "partial",
+          "note": "platform sections (Android/iPhone/Chrome)",
+          "keywords": [
+            "gestionnaire de mots de passe google",
+            "gestionnaire de mots de passe",
+            "gestionnaire de mots de passe gratuit",
+            "gestionnaire de mots de passe android",
+            "gestionnaire de mots de passe google chrome",
+            "gestionnaire de mots de passe google avis",
+            "gestionnaire de mots de passe apple",
+            "gestionnaire de mots de passe de google sur votre appareil"
+          ]
+        },
+        "howto": {
+          "count": 8,
+          "target": "/fr/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "align FAQ wording with query",
+          "keywords": [
+            "comment créer un mot de passe sécurisé",
+            "comment créer un mot de passe sécurisé sur google",
+            "comment créer un mot de passe sécurisé avec des lettres des chiffres et des symboles",
+            "comment mettre un mot de passe sécurisé",
+            "comment créer un mot de passe fort",
+            "comment créer un mot de passe fort et sécuritaire",
+            "comment generer un mot de passe fort",
+            "comment créer un mot de passe de sécurité"
+          ]
+        }
+      }
+    },
+    "it": {
+      "locale": "it",
+      "totalUnique": 32,
+      "clusters": {
+        "core": {
+          "count": 11,
+          "target": "/it",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "generatore di password",
+            "generatore di password gratis",
+            "generatore di password casuali",
+            "generatore di password sicure",
+            "generatore di password online",
+            "generatore di password google",
+            "generatore di password - lastpass",
+            "generatore di password casuale roboform"
+          ]
+        },
+        "manager": {
+          "count": 10,
+          "target": "/it/best-password-managers-2026",
+          "status": "partial",
+          "note": "platform sections (Android/iPhone/Chrome)",
+          "keywords": [
+            "gestore di password",
+            "gestore di password google",
+            "gestore di password cosa fa",
+            "gestore di password gratuito",
+            "gestore di password open source",
+            "gestore di password sicuro",
+            "gestore di password e cassaforte digitale nordpass",
+            "gestore di password apple"
+          ]
+        },
+        "strength": {
+          "count": 9,
+          "target": "/it/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "add \"what makes a password strong\" section + examples",
+          "keywords": [
+            "password sicura",
+            "password sicura libero",
+            "password sicura esempio",
+            "password sicura libero dimenticata",
+            "password sicura libero mail",
+            "password sicura quanti caratteri",
+            "password sicura virgilio",
+            "password sicura google"
+          ]
+        },
+        "howto": {
+          "count": 2,
+          "target": "/it/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "align FAQ wording with query",
+          "keywords": [
+            "come creare una password sicura e facile da ricordare",
+            "come creare una password sicura"
+          ]
+        }
+      }
+    },
+    "pt": {
+      "locale": "pt",
+      "totalUnique": 40,
+      "clusters": {
+        "core": {
+          "count": 10,
+          "target": "/pt",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "gerador de senhas",
+            "gerador de senhas google",
+            "gerador de senhas fortes",
+            "gerador de senhas - lastpass",
+            "gerador de senhas avast",
+            "gerador de senhas aleatórias",
+            "gerador de senhas 4devs",
+            "gerador de senhas online"
+          ]
+        },
+        "manager": {
+          "count": 10,
+          "target": "/pt/best-password-managers-2026",
+          "status": "partial",
+          "note": "platform sections (Android/iPhone/Chrome)",
+          "keywords": [
+            "gerenciador de senhas",
+            "gerenciador de senhas google",
+            "gerenciador de senhas salvas",
+            "gerenciador de senhas facebook",
+            "gerenciador de senhas google chrome",
+            "gerenciador de senhas roblox",
+            "gerenciador de senhas no celular",
+            "gerenciador de senhas google no celular"
+          ]
+        },
+        "howto": {
+          "count": 10,
+          "target": "/pt/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "align FAQ wording with query",
+          "keywords": [
+            "como criar uma senha segura",
+            "como criar uma senha segura e forte",
+            "como criar uma senha segura na internet",
+            "como criar uma senha de segurança",
+            "como criar uma senha mais segura",
+            "como criar uma senha forte e segura para redes sociais",
+            "como criar senha de segurança bradesco",
+            "como criar uma pasta segura com senha"
+          ]
+        },
+        "strength": {
+          "count": 9,
+          "target": "/pt/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "add \"what makes a password strong\" section + examples",
+          "keywords": [
+            "senha segurança social",
+            "senha segurança social direta",
+            "senha segura",
+            "senha segura cofre de senha",
+            "senha segura pam",
+            "senha segurança",
+            "senha segura empresa",
+            "senha segura login"
+          ]
+        },
+        "length": {
+          "count": 1,
+          "target": "/pt/guides/how-to-create-strong-passwords",
+          "status": "gap-section",
+          "note": "FAQ + presets 8/12/16/20 + guide H2",
+          "keywords": [
+            "senha segura 8 caracteres"
+          ]
+        }
+      }
+    },
+    "ja": {
+      "locale": "ja",
+      "totalUnique": 31,
+      "clusters": {
+        "core": {
+          "count": 11,
+          "target": "/ja",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "パスワード 生成",
+            "パスワード 生成 ランダム",
+            "パスワード 生成 google 確認",
+            "パスワード 生成 方法",
+            "パスワード 生成 4 桁",
+            "パスワード 生成 google",
+            "パスワード 生成 おすすめ",
+            "パスワード 生成 ラッコ"
+          ]
+        },
+        "manager": {
+          "count": 10,
+          "target": "/ja/best-password-managers-2026",
+          "status": "partial",
+          "note": "platform sections (Android/iPhone/Chrome)",
+          "keywords": [
+            "パスワード 管理",
+            "パスワード 管理 アプリ",
+            "パスワード 管理 ノート",
+            "パスワード 管理 iphone",
+            "パスワード 管理方法",
+            "パスワード 管理 google",
+            "パスワード 管理 おすすめ",
+            "パスワード 管理 どうしてる"
+          ]
+        },
+        "strength": {
+          "count": 7,
+          "target": "/ja/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "add \"what makes a password strong\" section + examples",
+          "keywords": [
+            "強力なパスワード",
+            "強力なパスワードを使用しますか",
+            "強力なパスワード 確認 方法",
+            "強力なパスワード オフ",
+            "強力なパスワードとは",
+            "強力なパスワード 自動生成",
+            "強力なパスワード iphone"
+          ]
+        },
+        "howto": {
+          "count": 3,
+          "target": "/ja/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "align FAQ wording with query",
+          "keywords": [
+            "強力なパスワード 作り方",
+            "強力なパスワード 作り方 iphone",
+            "安全なパスワード 作り方"
+          ]
+        }
+      }
+    },
+    "zh": {
+      "locale": "zh",
+      "totalUnique": 25,
+      "clusters": {
+        "manager": {
+          "count": 10,
+          "target": "/zh/best-password-managers-2026",
+          "status": "partial",
+          "note": "platform sections (Android/iPhone/Chrome)",
+          "keywords": [
+            "密码管理器",
+            "密码管理器推荐",
+            "密码管理器生成",
+            "密码管理器开源",
+            "密码管理器安全吗",
+            "密码管理器产生",
+            "密码管理器ptt",
+            "密码管理器 github"
+          ]
+        },
+        "strength": {
+          "count": 8,
+          "target": "/zh/guides/how-to-create-strong-passwords",
+          "status": "exists",
+          "note": "add \"what makes a password strong\" section + examples",
+          "keywords": [
+            "强密码生成",
+            "强密码",
+            "强密码在线生成",
+            "强密码随机生成",
+            "强密码规则",
+            "强密码检查器",
+            "强密码产生",
+            "强密码 英文"
+          ]
+        },
+        "core": {
+          "count": 7,
+          "target": "/zh",
+          "status": "exists",
+          "note": "home title/H1/meta",
+          "keywords": [
+            "密码生成器",
+            "密码生成器 1password",
+            "密码生成器chrome",
+            "密码生成器批量",
+            "密码生成器github",
+            "密码生成器、",
+            "强密码生成器"
+          ]
+        }
+      }
+    }
+  }
+}
