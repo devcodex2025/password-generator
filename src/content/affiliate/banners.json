@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "updatedAt": "2026-10-31",
+  "_comment": "Official Nord creatives. Source: https://nordvpn.com/affiliate-assets/ and https://nordpass.com/affiliate-assets/ (Google Drive folders, Generic/728x90). Files live in public/affiliate/. Tracking URLs never go here — they come from links.json.",
+  "placements": {
+    "home-under-tool": {
+      "byLocale": {
+        "en": { "src": "/affiliate/nordpass-en-728x90.png", "width": 728, "height": 90, "alt": "NordPass password manager", "product": "nordpass" },
+        "de": { "src": "/affiliate/nordpass-de-728x90.png", "width": 728, "height": 90, "alt": "NordPass Passwort-Manager", "product": "nordpass" },
+        "es": { "src": "/affiliate/nordpass-es-728x90.png", "width": 728, "height": 90, "alt": "Gestor de contraseñas NordPass", "product": "nordpass" },
+        "fr": { "src": "/affiliate/nordpass-fr-728x90.png", "width": 728, "height": 90, "alt": "Gestionnaire de mots de passe NordPass", "product": "nordpass" },
+        "it": { "src": "/affiliate/nordpass-it-728x90.png", "width": 728, "height": 90, "alt": "Gestore di password NordPass", "product": "nordpass" }
+      }
+    },
+    "guide-mid": {
+      "byLocale": {
+        "en": { "src": "/affiliate/nordvpn-en-728x90.jpg", "width": 728, "height": 90, "alt": "NordVPN", "product": "nordvpn" },
+        "de": { "src": "/affiliate/nordvpn-de-728x90.jpg", "width": 728, "height": 90, "alt": "NordVPN", "product": "nordvpn" },
+        "es": { "src": "/affiliate/nordvpn-es-728x90.jpg", "width": 728, "height": 90, "alt": "NordVPN", "product": "nordvpn" },
+        "fr": { "src": "/affiliate/nordvpn-fr-728x90.jpg", "width": 728, "height": 90, "alt": "NordVPN", "product": "nordvpn" },
+        "it": { "src": "/affiliate/nordvpn-it-728x90.jpg", "width": 728, "height": 90, "alt": "NordVPN", "product": "nordvpn" },
+        "pt": { "src": "/affiliate/nordvpn-pt-728x90.jpg", "width": 728, "height": 90, "alt": "NordVPN", "product": "nordvpn" },
+        "ja": { "src": "/affiliate/nordvpn-ja-728x90.jpg", "width": 728, "height": 90, "alt": "NordVPN", "product": "nordvpn" }
+      }
+    },
+    "comparison-top": {
+      "byLocale": {}
+    }
+  }
+}

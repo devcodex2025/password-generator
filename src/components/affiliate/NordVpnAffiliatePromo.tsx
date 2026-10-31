@@ -3,32 +3,19 @@
 import { Shield, ExternalLink } from 'lucide-react';
 import { getVpnAffiliateStrings } from './vpn-affiliate-i18n';
 import { cn } from '@/lib/utils';
+import { resolveAffiliateUrl } from '@/content/affiliate/links';
+import { useGeoCountry } from './useGeoCountry';
 
 interface NordVpnAffiliatePromoProps {
   locale: string;
   className?: string;
-  affiliateUrl?: string;
+  /** Where this block is rendered вЂ” used for analytics and sub-id attribution */
+  placement?: string;
 }
 
-/* ── Affiliate URL helpers ── */
+/* в”Ђв”Ђ Affiliate link (resolved from the central registry) в”Ђв”Ђ */
 
-const UTM = 'utm_source=generatepasswordto.me&utm_medium=affiliate&utm_campaign=vpn2026';
-
-const FALLBACK_URL = 'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=902';
-
-function resolveEnv(value: string | undefined, fallback: string): string {
-  if (value && value.startsWith('http')) return value;
-  return fallback;
-}
-
-function nordVpnUrl(override?: string): string {
-  const base = override
-    ? resolveEnv(override, FALLBACK_URL)
-    : resolveEnv(process.env.NEXT_PUBLIC_NORDVPN_AFFILIATE_URL, FALLBACK_URL);
-  return `${base}${base.includes('?') ? '&' : '?'}${UTM}`;
-}
-
-/* ── Analytics helper ── */
+/* в”Ђв”Ђ Analytics helper в”Ђв”Ђ */
 
 function trackClick(label: string) {
   try {
@@ -46,7 +33,7 @@ function trackClick(label: string) {
   }
 }
 
-/* ── Comparison data ── */
+/* в”Ђв”Ђ Comparison data в”Ђв”Ђ */
 
 interface ComparisonRow {
   featureKey: keyof ReturnType<typeof getVpnAffiliateStrings>;
@@ -62,16 +49,18 @@ function getRows(t: ReturnType<typeof getVpnAffiliateStrings>): ComparisonRow[] 
     { featureKey: 'featureProtocol', nordvpn: 'NordLynx', expressvpn: 'Lightway', surfshark: 'WireGuard' },
     { featureKey: 'featureNoLogs', nordvpn: t.yes, expressvpn: t.yes, surfshark: t.yes },
     { featureKey: 'featureKillSwitch', nordvpn: t.yes, expressvpn: t.yes, surfshark: t.yes },
-    { featureKey: 'featureDevices', nordvpn: '10', expressvpn: '8', surfshark: '∞' },
+    { featureKey: 'featureDevices', nordvpn: '10', expressvpn: '8', surfshark: 'в€ћ' },
     { featureKey: 'featureSplitTunnel', nordvpn: t.yes, expressvpn: t.yes, surfshark: t.yes },
   ];
 }
 
-/* ── Component ── */
+/* в”Ђв”Ђ Component в”Ђв”Ђ */
 
-export default function NordVpnAffiliatePromo({ locale, className = '', affiliateUrl }: NordVpnAffiliatePromoProps) {
+export default function NordVpnAffiliatePromo({ locale, className = '', placement = 'vpn-inline' }: NordVpnAffiliatePromoProps) {
   const t = getVpnAffiliateStrings(locale);
   const rows = getRows(t);
+  const geo = useGeoCountry();
+  const vpn = resolveAffiliateUrl('nordvpn', { locale, placement, geo });
 
   return (
     <section
@@ -136,7 +125,7 @@ export default function NordVpnAffiliatePromo({ locale, className = '', affiliat
       {/* CTA buttons */}
       <div className="mt-6 flex flex-col sm:flex-row gap-3">
         <a
-          href={nordVpnUrl(affiliateUrl)}
+          href={vpn.href}
           target="_blank"
           rel="sponsored noopener"
           onClick={() => trackClick('get_nordvpn')}
@@ -146,7 +135,7 @@ export default function NordVpnAffiliatePromo({ locale, className = '', affiliat
           {t.ctaGetNordVpn}
         </a>
         <a
-          href={nordVpnUrl(affiliateUrl)}
+          href={vpn.href}
           target="_blank"
           rel="sponsored noopener"
           onClick={() => trackClick('learn_more_nordvpn')}
@@ -164,3 +153,4 @@ export default function NordVpnAffiliatePromo({ locale, className = '', affiliat
     </section>
   );
 }
+

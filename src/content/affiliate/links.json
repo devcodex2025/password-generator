@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "updatedAt": "2026-10-31",
+  "_comment": "Tracking links for the Nord affiliate network (HasOffers). Source: Affiliate_Offer / Affiliate_OfferUrl via scripts/nord-affiliate-sync.mjs. A locale entry without url_id means 'offer default landing' — Nord picks the geo/language itself, which is the correct choice where no localised landing exists.",
+  "_payouts": {
+    "nordvpn": "40%",
+    "nordpass": "30%",
+    "nordpassFamily": "30%",
+    "nordlocker": "40%",
+    "nordpassBusiness": "25%",
+    "nordprotect": "40%"
+  },
+  "products": {
+    "nordpass": {
+      "env": "NEXT_PUBLIC_NORDPASS_AFFILIATE_URL",
+      "internal": "/best-password-managers-2026",
+      "fallback": null,
+      "byLocale": {
+        "en": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616&url_id=9356",
+        "de": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616&url_id=10303",
+        "fr": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616&url_id=10228",
+        "es": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616&url_id=17691",
+        "it": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616&url_id=11309",
+        "pt": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616&url_id=25248",
+        "ru": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616",
+        "pl": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616",
+        "ja": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616",
+        "zh": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616",
+        "ua": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616"
+      },
+      "byGeo": {}
+    },
+    "nordpassFamily": {
+      "env": "NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL",
+      "internal": "/best-password-managers-2026",
+      "fallback": null,
+      "byLocale": {
+        "en": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616&url_id=24599",
+        "it": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616&url_id=24656",
+        "es": "https://go.nordvpn.net/aff_c?offer_id=488&aff_id=146616&url_id=24657"
+      },
+      "byGeo": {}
+    },
+    "nordvpn": {
+      "env": "NEXT_PUBLIC_NORDVPN_AFFILIATE_URL",
+      "internal": "/guides/vpn-security-privacy-guide",
+      "fallback": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=29486",
+      "byLocale": {
+        "en": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=29486",
+        "de": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=4",
+        "fr": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=8",
+        "es": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=40",
+        "it": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=26185",
+        "pl": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=34136",
+        "pt": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=30",
+        "ru": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616&url_id=6",
+        "ja": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616",
+        "zh": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616",
+        "ua": "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616"
+      },
+      "byGeo": {
+        "CN": "https://go.nordvpn.net/aff_c?offer_id=153&aff_id=146616&url_id=2777",
+        "KR": "https://go.nordvpn.net/aff_c?offer_id=476&aff_id=146616",
+        "SA": "https://go.nordvpn.net/aff_c?offer_id=226&aff_id=146616"
+      }
+    },
+    "nordlocker": {
+      "env": "NEXT_PUBLIC_NORDLOCKER_AFFILIATE_URL",
+      "internal": "/best-password-managers-2026",
+      "fallback": null,
+      "byLocale": {
+        "en": "https://go.nordvpn.net/aff_c?offer_id=489&aff_id=146616&url_id=14794"
+      },
+      "byGeo": {}
+    },
+    "nordpassBusiness": {
+      "env": "NEXT_PUBLIC_NORDPASS_BUSINESS_AFFILIATE_URL",
+      "internal": "/best-password-managers-2026",
+      "fallback": null,
+      "byLocale": {
+        "en": "https://go.nordvpn.net/aff_c?offer_id=754&aff_id=146616"
+      },
+      "byGeo": {}
+    }
+  }
+}

@@ -107,6 +107,15 @@ export default function PasswordSettings({
                                 setSelectedStandard('custom');
                             }
                         }}
+                        role="button"
+                        tabIndex={0}
+                        aria-label="Decrease password length"
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                e.currentTarget.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+                            }
+                        }}
                         style={{ cursor: 'pointer' }}
                         className="shrink-0"
                     />
@@ -131,6 +140,15 @@ export default function PasswordSettings({
                             setPasswordLength(newLength);
                             if (selectedStandard !== 'custom' && newLength < passwordStandards[selectedStandard].minLength) {
                                 setSelectedStandard('custom');
+                            }
+                        }}
+                        role="button"
+                        tabIndex={0}
+                        aria-label="Increase password length"
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                e.currentTarget.dispatchEvent(new MouseEvent('click', { bubbles: true }));
                             }
                         }}
                         style={{ cursor: 'pointer' }}

@@ -3,55 +3,36 @@
 import { Crown, UsersRound } from 'lucide-react';
 import { getAffiliateStrings } from './affiliate-i18n';
 import { cn } from '@/lib/utils';
+import { resolveAffiliateUrl } from '@/content/affiliate/links';
+import { useGeoCountry } from './useGeoCountry';
 
 interface NordPassAffiliatePromoProps {
   locale: string;
   /** Optional extra Tailwind classes on the outer wrapper */
   className?: string;
-  /** Override affiliate premium URL (useful when passed from server components) */
-  affiliateUrl?: string;
-  /** Override affiliate family URL (useful when passed from server components) */
-  affiliateB2bUrl?: string;
-}
-
-/* ── Affiliate URL helpers ── */
-
-const UTM = 'utm_source=generatepasswordto.me&utm_medium=affiliate&utm_campaign=2026';
-
-/** Resolve an env-var value; ignore values that are not real URLs. */
-function resolveEnv(value: string | undefined, fallback: string): string {
-  if (value && value.startsWith('http')) return value;
-  return fallback;
-}
-
-function premiumUrl(override?: string): string {
-  const base = override
-    ? resolveEnv(override, 'https://nordpass.com')
-    : resolveEnv(process.env.NEXT_PUBLIC_NORDPASS_AFFILIATE_URL, 'https://nordpass.com');
-  return `${base}${base.includes('?') ? '&' : '?'}${UTM}`;
-}
-
-function familyUrl(override?: string): string {
-  const base = override
-    ? resolveEnv(override, 'https://nordpass.com/family')
-    : resolveEnv(process.env.NEXT_PUBLIC_NORDPASS_B2B_AFFILIATE_URL, 'https://nordpass.com/family');
-  return `${base}${base.includes('?') ? '&' : '?'}${UTM}`;
+  /** Where this block is rendered — used for analytics and sub-id attribution */
+  placement?: string;
 }
 
 /* ── Analytics helper ── */
 
-function trackClick(label: string) {
+function trackClick(label: string, locale: string, placement: string) {
   try {
     // Google Analytics (gtag)
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
       window.gtag('event', 'nordpass_affiliate_click', {
         event_category: 'affiliate',
-        event_label: label,
+        event_label: `${placement}:${label}`,
+        placement,
+        locale,
+        offer: 'nordpass',
+        value: 7.74,
+        currency: 'USD',
       });
     }
     // Vercel Analytics custom event
     if (typeof window !== 'undefined' && typeof window.va === 'function') {
-      window.va('event', { name: 'nordpass_affiliate_click', data: { label } });
+      window.va('event', { name: 'nordpass_affiliate_click', data: { label, placement, locale } });
     }
   } catch {
     /* analytics should never break the UI */
@@ -71,8 +52,8 @@ function getRows(t: ReturnType<typeof getAffiliateStrings>): ComparisonRow[] {
   return [
     { featureKey: 'featurePrice', nordpass: '$1.49/mo', onepassword: '$2.99/mo', bitwarden: '$0' },
     { featureKey: 'featureDevices', nordpass: t.unlimited, onepassword: t.unlimited, bitwarden: t.unlimited },
-    { featureKey: 'featurePasskeys', nordpass: t.yes, onepassword: t.yes, bitwarden: t.no },
-    { featureKey: 'featureBreachScan', nordpass: t.yes, onepassword: t.yes, bitwarden: t.no },
+    { featureKey: 'featurePasskeys', nordpass: t.yes, onepassword: t.yes, bitwarden: t.yes },
+    { featureKey: 'featureBreachScan', nordpass: t.yes, onepassword: t.yes, bitwarden: t.yes },
     { featureKey: 'feature2fa', nordpass: t.yes, onepassword: t.yes, bitwarden: t.yes },
     { featureKey: 'featureSharing', nordpass: t.yes, onepassword: t.yes, bitwarden: t.limited },
     { featureKey: 'featureAutoFill', nordpass: t.yes, onepassword: t.yes, bitwarden: t.yes },
@@ -81,9 +62,12 @@ function getRows(t: ReturnType<typeof getAffiliateStrings>): ComparisonRow[] {
 
 /* ── Component ── */
 
-export default function NordPassAffiliatePromo({ locale, className = '', affiliateUrl, affiliateB2bUrl }: NordPassAffiliatePromoProps) {
+export default function NordPassAffiliatePromo({ locale, className = '', placement = 'inline' }: NordPassAffiliatePromoProps) {
   const t = getAffiliateStrings(locale);
   const rows = getRows(t);
+  const geo = useGeoCountry();
+  const premium = resolveAffiliateUrl('nordpass', { locale, placement, geo });
+  const family = resolveAffiliateUrl('nordpassFamily', { locale, placement: `${placement}-family`, geo });
 
   return (
     <section
@@ -148,20 +132,24 @@ export default function NordPassAffiliatePromo({ locale, className = '', affilia
       {/* CTA buttons */}
       <div className="mt-6 flex flex-col sm:flex-row gap-3">
         <a
-          href={premiumUrl(affiliateUrl)}
+          href={premium.href}
           target="_blank"
           rel="sponsored noopener"
-          onClick={() => trackClick('premium')}
+          onClick={() => trackClick('premium', locale, placement)}
+          data-affiliate="nordpass"
+          data-placement={placement}
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#05a9ff] hover:bg-[#38beff] text-white font-semibold py-3 px-6 transition-all duration-200 shadow-md hover:shadow-lg"
         >
           <Crown className="w-5 h-5" aria-hidden="true" />
           {t.ctaPremium}
         </a>
         <a
-          href={familyUrl(affiliateB2bUrl)}
+          href={family.href}
           target="_blank"
           rel="sponsored noopener"
-          onClick={() => trackClick('family')}
+          onClick={() => trackClick('family', locale, placement)}
+          data-affiliate="nordpass"
+          data-placement={placement}
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#05a9ff] text-[#05a9ff] hover:bg-[#05a9ff] hover:text-white font-semibold py-3 px-6 transition-all duration-200"
         >
           <UsersRound className="w-5 h-5" aria-hidden="true" />

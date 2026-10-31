@@ -34,3 +34,9 @@ yarn-error.log*
 
 .next
 next-env.d.testdist
+
+# Nord affiliate sync artifacts (may contain offer ids, never secrets)
+.nord-offers.json
+
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo

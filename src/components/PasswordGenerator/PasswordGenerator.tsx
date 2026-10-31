@@ -19,6 +19,7 @@ import Image from 'next/image';
 import AnimatedPassword from './AnimatedPassword';
 import { SnackbarMessage } from '@/app/types/SnackBar';
 import i18n from '@/components/i18n';
+import SavePasswordModal, { shouldShowSavePrompt } from '@/components/affiliate/SavePasswordModal';
 
 const characterSets: Record<string, string> = {
   'A-Z': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -59,6 +60,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const { t } = useTranslation();
   const { isDarkMode } = useContext(ThemeContext);
   const [snackbars, setSnackbars] = useState<SnackbarMessage[]>([]);
+  const [saveModalOpen, setSaveModalOpen] = useState(false);
   const [passwordLength, setPasswordLength] = useState<number>(12);
   const [selectedCharacterSets, setSelectedCharacterSets] = useState<string[]>(['A-Z', 'a-z', '0-9', '#$%']);
   const [quantity, setQuantity] = useState<number>(1);
@@ -199,6 +201,11 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       }, 500);
       runReward('confetti');
       ga('password_copied', { index });
+
+      // Highest-intent moment: offer to store the password (max 2 times per visitor)
+      if (shouldShowSavePrompt()) {
+        window.setTimeout(() => setSaveModalOpen(true), 400);
+      }
     }
   };
 
@@ -321,7 +328,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           }}
         />
         <div
-          className={`${isDarkMode ? 'bg-[rgb(22_20_20)] border-[#1d2e48]' : 'bg-white border-[#E5F6FF]'} floating-pill absolute hidden drop-shadow-lg top-[-5px] left-[-140px] z-[999] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex items-center gap-2 overflow-hidden `}
+          className={`${isDarkMode ? 'bg-[rgb(22_20_20)] border-[#1d2e48]' : 'bg-white border-[#E5F6FF]'} floating-pill absolute hidden drop-shadow-lg top-[-5px] left-[-140px] z-[999] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] hidden items-center gap-2 overflow-hidden pointer-events-none `}
         >
           <div className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'} mr-3 ml-2 my-1 p-[12px] rounded-full`}>
             <Image
@@ -338,7 +345,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           </p>
         </div>
         <div
-          className={`${isDarkMode ? 'bg-[rgb(22_20_20)] border-[#1d2e48]' : 'bg-white border-[#E5F6FF]'} floating-pill absolute hidden justify-start drop-shadow-lg top-[150px] right-[-120px] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] lg:flex lg:items-center gap-2 overflow-hidden`}
+          className={`${isDarkMode ? 'bg-[rgb(22_20_20)] border-[#1d2e48]' : 'bg-white border-[#E5F6FF]'} floating-pill absolute hidden justify-start drop-shadow-lg top-[150px] right-[-120px] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] hidden items-center gap-2 overflow-hidden pointer-events-none`}
         >
           <div className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'} mr-3 ml-2 my-1 p-[12px] rounded-full`}>
             <Image
@@ -354,7 +361,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
             <AnimatedPassword length={5} />
           </p>
         </div>
-        {passwords.length > 0 && (
+        {passwords.length > 0 ? (
           <PasswordRow
             password={passwords[0]}
             index={0}
@@ -363,6 +370,13 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
             isAnimating={isAnimating}
             isDarkMode={isDarkMode}
           />
+        ) : (
+          /* Layout placeholder: keeps the hero height stable before the first
+             password is generated on the client (avoids a visible content shift). */
+          <div className="my-5 flex h-auto w-full animate-pulse flex-row flex-wrap items-center gap-2 lg:my-1 lg:flex-nowrap">
+            <div className={`h-14 w-full rounded-[120px] border-2 border-solid border-[#E5F6FF] dark:border-transparent dark:bg-[#000000] lg:w-[80%] ${isDarkMode ? 'bg-[#101010]' : 'bg-white'}`} />
+            <div className={`h-14 w-full rounded-[60px] lg:w-[20%] ${isDarkMode ? 'bg-[#1f2937]' : 'bg-[#c9dfeb]'}`} />
+          </div>
         )}
         <PasswordStrength analysis={passwordStrengthAnalysis} />
         <PasswordSettings
@@ -431,6 +445,11 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
             sx={{ bgcolor: '#2A4E63' }}
           />
         ))}
+        <SavePasswordModal
+          locale={language}
+          open={saveModalOpen}
+          onClose={() => setSaveModalOpen(false)}
+        />
       </div>
     </div>
   );
