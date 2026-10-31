@@ -39,6 +39,33 @@ export const en: LocalizedArticleContent = {
       ],
     },
     {
+      heading: 'Password length: 8 vs 12 vs 16 vs 20 characters',
+      paragraphs: [
+        'Length is the single most effective lever on password strength. With a 94-character pool (letters, digits, symbols), each additional character adds about 6.5 bits of entropy, so the search space doubles roughly every 1.1 characters.',
+        'Here is what that means in practice for a randomly generated password (entropy values assume a cryptographically secure generator and no reused patterns):',
+      ],
+      bullets: [
+        '8 characters — ~52 bits — brute force takes minutes to hours on a GPU rig; acceptable only for low-value accounts',
+        '12 characters — ~79 bits — the practical minimum for email, work and shopping accounts',
+        '16 characters — ~105 bits — the recommended default for password-manager-generated passwords',
+        '20 characters — ~131 bits — suitable for master passwords, crypto wallets and admin access',
+      ],
+    },
+    {
+      heading: 'What makes a password strong (and what does not)',
+      paragraphs: [
+        'Four properties drive real strength: length, true randomness, uniqueness per account, and the absence of the password in public breach data. Complexity rules that sacrifice length for symbols do not compensate — "P@ssw0rd!" is still among the first guesses in every cracking tool.',
+        'A password that has appeared in any breach should be treated as compromised, even if the service never notified you. Checking a password against a breach corpus takes a second and is more valuable than adding one more symbol.',
+      ],
+      bullets: [
+        'Strong: a 16-character random string from a CSPRNG, stored in a password manager',
+        'Strong: a 5–6 word passphrase with a random separator and one capitalized word',
+        'Weak: personal data, keyboard patterns (qwerty, 1qaz2wsx) or dictionary words',
+        'Weak: leet substitutions (a→@, e→3, o→0) — every cracking tool includes them',
+        'Weak: the same password reused across accounts, regardless of its length',
+      ],
+    },
+    {
       heading: 'NIST 800-63B: What the Experts Actually Recommend',
       paragraphs: [
         'The National Institute of Standards and Technology (NIST) updated its Digital Identity Guidelines (SP 800-63B) to reflect modern research on password security. These guidelines have become the gold standard for organizations worldwide.',
@@ -141,6 +168,33 @@ export const ua: LocalizedArticleContent = {
         '60 бітів: стандарт для більшості персональних акаунтів (соцмережі, магазини)',
         '80 бітів: рекомендовано для пошти, банкінгу та хмарного сховища',
         '100+ бітів: ідеально для криптогаманців та мастер-паролів',
+      ],
+    },
+    {
+      heading: 'Довжина пароля: 8 vs 12 vs 16 vs 20 символів',
+      paragraphs: [
+        'Довжина — найефективніший важіль впливу на надійність пароля. За набору з 94 символів (літери, цифри, символи) кожен додатковий символ додає близько 6,5 біта ентропії, тобто простір перебору подвоюється приблизно кожні 1,1 символу.',
+        'Що це означає на практиці для випадково згенерованого пароля (значення ентропії припускають криптографічно стійкий генератор і відсутність шаблонів):',
+      ],
+      bullets: [
+        '8 символів — ~52 біти — перебір на GPU-фермі займає від хвилин до годин; прийнятно лише для маловажливих акаунтів',
+        '12 символів — ~79 бітів — практичний мінімум для пошти, роботи й покупок',
+        '16 символів — ~105 бітів — рекомендований стандарт для паролів із менеджера паролів',
+        '20 символів — ~131 біт — для мастер-пароля, криптогаманців і адмін-доступу',
+      ],
+    },
+    {
+      heading: 'Що робить пароль сильним (а що — ні)',
+      paragraphs: [
+        'Реальну стійкість визначають чотири властивості: довжина, справжня випадковість, унікальність для кожного акаунта та відсутність пароля в публічних базах витоків. Правила складності, які жертвують довжиною заради символів, цього не компенсують — "P@ssw0rd!" усе одно серед перших здогадок будь-якого інструмента злому.',
+        'Пароль, який з\'явився в будь-якому витоку, слід вважати скомпрометованим, навіть якщо сервіс вам не повідомляв. Перевірка пароля за базою витоків займає секунду і дає більше користі, ніж ще один символ у паролі.',
+      ],
+      bullets: [
+        'Сильний: 16 випадкових символів від криптографічно стійкого генератора, збережені в менеджері паролів',
+        'Сильний: парольна фраза з 5–6 слів із випадковим роздільником та однією великою літерою',
+        'Слабкий: персональні дані, клавіатурні шаблони (qwerty, 1qaz2wsx) або словникові слова',
+        'Слабкий: заміни на кшталт a→@, e→3, o→0 — вони є в кожному інструменті злому',
+        'Слабкий: той самий пароль на різних акаунтах, незалежно від його довжини',
       ],
     },
     {

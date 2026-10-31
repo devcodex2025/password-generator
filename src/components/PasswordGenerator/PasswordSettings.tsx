@@ -157,6 +157,28 @@ export default function PasswordSettings({
                         className="shrink-0"
                     />
                 </div>
+                <div className="flex flex-wrap items-center gap-2">
+                    {[8, 12, 16, 20].map((preset) => (
+                        <button
+                            key={preset}
+                            type="button"
+                            onClick={() => {
+                                setPasswordLength(preset);
+                                if (selectedStandard !== 'custom' && preset < passwordStandards[selectedStandard].minLength) {
+                                    setSelectedStandard('custom');
+                                }
+                            }}
+                            aria-label={`Set password length to ${preset}`}
+                            className={`rounded-lg border-2 px-2.5 py-1 text-[13px] font-semibold transition-colors ${
+                                passwordLength === preset
+                                    ? 'border-[#2A4E63] bg-[#e5f6ff] text-[#2A4E63] dark:border-[#05a9ff] dark:bg-[#05a9ff] dark:text-[#0a1e2a]'
+                                    : 'border-gray-200 bg-white text-[#2A4E63] hover:border-[#2A4E63] dark:border-gray-600 dark:bg-[#374151] dark:text-[#e0e0e0]'
+                            }`}
+                        >
+                            {preset}
+                        </button>
+                    ))}
+                </div>
             </div>
             <div className="flex min-w-0 w-full max-w-full flex-col gap-3 items-start">
                 <label htmlFor="quantity" className="hero-muted-label text-[16px] md:text-[22px]">

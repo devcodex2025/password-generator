@@ -42,8 +42,8 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
   {
     slug: 'how-to-create-strong-passwords',
     category: 'security-basics',
-    readingMinutes: 12,
-    updatedAt: '2026-04-15',
+    readingMinutes: 14,
+    updatedAt: '2026-10-31',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: howToCreateStrongPasswords.en,

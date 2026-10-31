@@ -100,3 +100,29 @@ articles. Item 7 is affiliate content: needs a visible disclosure and must not c
 - Week 3: item 4 + item 5 (article).
 - Week 4: item 6; item 7 only after affiliate disclosure review.
 - Then GSC-driven iteration instead of new content.
+
+## Execution order (status as of 2026-10-31)
+
+Done:
+- [x] Keyword research (437 queries, 11 locales) and per-locale keyword map.
+- [x] Technical base: sitemap cleaned to 205 URLs, IndexNow submitted, GSC service-account
+  integration, soft-404 fix (`dynamicParams = false`).
+- [x] Item 1 — "Password length: 8 vs 12 vs 16 vs 20 characters" section in
+  `how-to-create-strong-passwords` for **en** and **ua**, plus numeric length presets
+  (8/12/16/20) in the generator UI (locale-independent).
+- [x] Item 3 — "What makes a password strong (and what does not)" section for **en** and **ua**.
+- [x] Guide `updatedAt` bumped to 2026-10-31.
+
+Next:
+- [ ] Extend items 1 + 3 to the remaining 9 locales (adapt, not machine-translate).
+- [ ] Home FAQ entries for the length cluster — blocked on `lang.json` keys for all 11 locales
+  (avoid a partial-locale render).
+- [ ] Item 2 — passphrase ("words") generator: EFF wordlist, 4–6 words, separators,
+  entropy display, plus landing copy and guide CTA.
+- [ ] Item 4 — platform sections on `best-password-managers-2026`
+  (Android / iPhone / Chrome / desktop / team).
+- [ ] GSC checkpoint after 2–3 weeks (`npm run gsc`): indexed-page count, impressions,
+  queries at position 5–20.
+- [ ] Items 5–6 (new original articles) — only after the GSC checkpoint confirms demand.
+- [ ] Item 7 (NordPass vs 1Password vs Bitwarden) — after affiliate disclosure review.
+
