@@ -341,13 +341,13 @@ const SeoAccordion = ({ language }) => {
                   <div>
                     <dt className="font-semibold text-[#071016] dark:text-white">Sources</dt>
                     <dd className="mt-1 flex flex-wrap gap-2">
-                      <a className="rounded-md text-[#2A4E63] dark:text-[#d7f2ff] underline underline-offset-4 hover:text-[#1f3b4c] dark:hover:text-white" href="https://pages.nist.gov/800-63-4/sp800-63b.html" target="_blank" rel="noopener noreferrer">
+                      <a className="rounded-md text-[#2A4E63] dark:text-[#38beff] underline underline-offset-4 hover:text-[#1f3b4c] dark:hover:text-[#d7f2ff]" href="https://pages.nist.gov/800-63-4/sp800-63b.html" target="_blank" rel="noopener noreferrer">
                         NIST SP 800-63B
                       </a>
-                      <a className="rounded-md text-[#2A4E63] dark:text-[#d7f2ff] underline underline-offset-4 hover:text-[#1f3b4c] dark:hover:text-white" href="https://www.pcisecuritystandards.org/document_library/" target="_blank" rel="noopener noreferrer">
+                      <a className="rounded-md text-[#2A4E63] dark:text-[#38beff] underline underline-offset-4 hover:text-[#1f3b4c] dark:hover:text-[#d7f2ff]" href="https://www.pcisecuritystandards.org/document_library/" target="_blank" rel="noopener noreferrer">
                         PCI DSS
                       </a>
-                      <a className="rounded-md text-[#2A4E63] dark:text-[#d7f2ff] underline underline-offset-4 hover:text-[#1f3b4c] dark:hover:text-white" href="https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange" target="_blank" rel="noopener noreferrer">
+                      <a className="rounded-md text-[#2A4E63] dark:text-[#38beff] underline underline-offset-4 hover:text-[#1f3b4c] dark:hover:text-[#d7f2ff]" href="https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange" target="_blank" rel="noopener noreferrer">
                         HIBP k-anonymity
                       </a>
                     </dd>

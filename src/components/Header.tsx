@@ -267,7 +267,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400"
+                className="block rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#38beff]"
               >
                 {item.label}
               </Link>
@@ -403,7 +403,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           <li key={item.href}>
             <Link
               href={item.href}
-              className="transition-all duration-200 text-slate-700 hover:text-sky-600 dark:text-slate-200 dark:hover:text-sky-400"
+              className="transition-all duration-200 text-slate-700 hover:text-sky-600 dark:text-slate-200 dark:hover:text-[#38beff]"
             >
               {item.label}
             </Link>

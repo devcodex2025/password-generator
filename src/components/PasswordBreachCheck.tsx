@@ -319,7 +319,7 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
                 rel="noopener noreferrer"
                 className={`inline-flex items-center rounded-lg border px-3 py-1.5 text-[13px] font-medium transition-colors ${
                   isDarkMode
-                    ? 'border-[#374151] text-[#05a9ff] hover:bg-[#071724] hover:border-[#05a9ff]'
+                    ? 'border-[#374151] !text-[#38beff] hover:bg-[#0f1b24] hover:!border-[#38beff]'
                     : 'border-[#D1E9FF] text-[#2A4E63] hover:bg-[#F0F8FF]'
                 }`}
               >

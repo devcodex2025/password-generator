@@ -319,7 +319,7 @@ export default function ShareBlock({
           </div>
 
           <div className="mt-3">
-            <a href={share.email} className="text-sm text-[#2A4E63] hover:underline" onClick={() => onShareClick('email')}>
+            <a href={share.email} className="text-sm text-[#2A4E63] dark:text-[#38beff] hover:underline" onClick={() => onShareClick('email')}>
               {t.email}
             </a>
           </div>

@@ -192,7 +192,7 @@ export default function ContactCaptcha({ locale, email, emailLabel }: ContactCap
           <p className="text-sm font-semibold text-[#2A4E63] dark:text-[#05a9ff]">{copy.success}</p>
           <p className="mt-3 text-sm text-[#071016] dark:text-white">
             <span className="font-semibold text-[#071016] dark:text-white">{emailLabel}: </span>
-            <a href={`mailto:${email}`} className="underline underline-offset-4 text-[#2A4E63] dark:text-[#60A5FA]">
+            <a href={`mailto:${email}`} className="underline underline-offset-4 text-[#2A4E63] dark:text-[#38beff]">
               {email}
             </a>
           </p>
