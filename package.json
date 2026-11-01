@@ -8,8 +8,6 @@
     "@mui/icons-material": "^5.18.0",
     "@mui/material": "^5.14.17",
     "@mui/material-nextjs": "^5.18.0",
-    "@nextui-org/react": "^2.2.8",
-    "@nextui-org/select": "^2.1.19",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-progress": "^1.1.7",
     "@testing-library/jest-dom": "^6.1.5",
@@ -101,6 +99,7 @@
     "npm": ">=10.0.0"
   },
   "overrides": {
-    "postcss": "$postcss"
+    "postcss": "$postcss",
+    "minimatch": "^11.0.3"
   }
 }
