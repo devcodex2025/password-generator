@@ -100,7 +100,38 @@ module.exports = {
       }))
     );
 
-    return [...localePages, ...guideIndexPages, ...guideArticlePages, ...staticPages];
+    // Link-worthy data page (published in EN and UA only).
+    const dataPages = ['en', 'ua'].map((langCode) => ({
+      loc: `/${langCode}/password-statistics-2026`,
+      changefreq: 'monthly',
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+      alternateRefs: [
+        { href: `${siteUrl}/en/password-statistics-2026`, hreflang: 'en', hrefIsAbsolute: true },
+        { href: `${siteUrl}/ua/password-statistics-2026`, hreflang: 'uk', hrefIsAbsolute: true },
+      ],
+    }));
+
+    // Root URL (English home, served via middleware rewrite) — no page.tsx generates it anymore.
+    const rootPage = {
+      loc: '/',
+      changefreq: 'weekly',
+      priority: 1.0,
+      lastmod: new Date().toISOString(),
+      alternateRefs: [
+        { href: siteUrl, hreflang: 'en', hrefIsAbsolute: true },
+        ...availableLanguages
+          .filter((langCode) => langCode !== 'en')
+          .map((langCode) => ({
+            href: `${siteUrl}/${langCode}`,
+            hreflang: toHreflang(langCode),
+            hrefIsAbsolute: true,
+          })),
+        { href: siteUrl, hreflang: 'x-default', hrefIsAbsolute: true },
+      ],
+    };
+
+    return [rootPage, ...localePages, ...guideIndexPages, ...guideArticlePages, ...staticPages, ...dataPages];
   },
   transform: async (config, path) => {
     // Never list generated OG-image routes as pages — they are PNG endpoints,
