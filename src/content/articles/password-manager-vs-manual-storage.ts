@@ -846,3 +846,93 @@ export const pl: LocalizedArticleContent = {
     },
   ],
 };
+
+export const vi: LocalizedArticleContent = {
+  title: 'Trình quản lý mật khẩu và lưu trữ thủ công: so sánh 2026',
+  excerpt:
+    'So sánh những trình quản lý mật khẩu hàng đầu 2026 với cách lưu trữ thủ công. Xem cách nào bảo vệ tài khoản tốt hơn, kèm ưu nhược điểm và mẹo chuyển đổi.',
+  seoTitle: 'Trình quản lý mật khẩu hay lưu thủ công: chọn cách mạnh nhất',
+  seoDescription:
+    'So sánh trình quản lý mật khẩu với lưu trữ thủ công năm 2026: tính năng, bảo mật, giá và cách chuyển đổi để tạo mật khẩu mạnh hơn.',
+  keywords: [
+    'trình quản lý mật khẩu là gì',
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh nhất',
+    'mật khẩu mạnh dễ nhớ',
+    'cụm mật khẩu passphrase là gì',
+  ],
+  sections: [
+    {
+      heading: 'Vì sao bạn cần chiến lược quản lý mật khẩu',
+      paragraphs: [
+        'Năm 2026, mỗi người trung bình quản lý hơn 100 tài khoản trực tuyến. Từ ngân hàng, email đến dịch vụ xem phim và giao đồ ăn, mỗi tài khoản lý tưởng nhất cần một mật khẩu phức tạp riêng. Không có chiến lược rõ ràng, phần lớn người dùng rơi vào thói quen nguy hiểm: dùng lại một mật khẩu, tạo biến thể đơn giản hoặc viết ra giấy nhớ.',
+        'Nghiên cứu của NordPass năm 2025 cho thấy "123456" vẫn là mật khẩu phổ biến nhất toàn cầu, xuất hiện trong hơn 4,5 triệu bộ thông tin bị rò rỉ. Đứng thứ hai là "password". Những thông tin yếu này bị bot tự động thử trong vài phút sau mỗi vụ rò rỉ dữ liệu.',
+        'Câu hỏi không phải có cần quản lý mật khẩu hay không, mà là quản lý thế nào. Hướng dẫn này so sánh trình quản lý mật khẩu chuyên dụng với cách thủ công để bạn quyết định dựa trên nhu cầu bảo mật, mức thoải mái kỹ thuật và ngân sách.',
+      ],
+    },
+    {
+      heading: 'Bảy trình quản lý mật khẩu hàng đầu 2026',
+      paragraphs: [
+        '1Password là chuẩn mực cho cá nhân và gia đình. Sản phẩm có giao diện chỉn chu trên mọi nền tảng, giám sát rò rỉ Watchtower, Travel Mode để qua biên giới mà không mang dữ liệu nhạy cảm và tính năng chia sẻ mạnh. Giá từ 2,99 USD/tháng cho cá nhân. 1Password đã qua nhiều đợt kiểm tra bảo mật độc lập và dùng Secret Key riêng bên cạnh mật khẩu chính để tăng bảo vệ.',
+        'Bitwarden là lựa chọn mã nguồn mở tốt nhất và phù hợp người tiết kiệm. Gói miễn phí có mật khẩu không giới hạn trên không giới hạn thiết bị — hiếm có năm 2026. Gói trả phí (10 USD/năm) thêm TOTP, truy cập khẩn cấp và báo cáo sức khỏe kho. Toàn bộ mã công khai trên GitHub; nền tảng đã đạt SOC 2 Type II và kiểm thử xâm nhập bên thứ ba.',
+        'KeePass là lựa chọn ưu tiên cho người muốn kiểm soát ngoại tuyến hoàn toàn. Là giải pháp chỉ chạy cục bộ, cơ sở dữ liệu mã hóa không bao giờ chạm máy chủ đám mây. Sản phẩm hỗ trợ plugin tích hợp trình duyệt và đồng bộ qua kho đám mây của bạn (Dropbox, OneDrive, Syncthing). Đánh đổi là giao diện kém chỉn chu hơn và phải tự cấu hình đồng bộ.',
+        'Dashlane chuyển sang hướng ưu tiên web và phát hiện lừa đảo trực tuyến tốt nhờ VPN tích hợp cùng giám sát dark web. Sản phẩm tự đổi mật khẩu trên trang hỗ trợ và có bảng điều khiển bảo mật toàn diện. Giá cao hơn, 4,99 USD/tháng, nhưng gồm quyền dùng VPN.',
+        'NordPass do đội ngũ NordVPN phát triển, dùng mã hóa XChaCha20 thay vì AES-256 phổ biến hơn. Sản phẩm có giao diện gọn, mở khóa sinh trắc học và quét rò rỉ dữ liệu. Gói miễn phí cho mật khẩu không giới hạn trên một thiết bị tại một thời điểm.',
+        'Proton Pass là đối thủ lớn mới nhất, đến từ nhà sản xuất ProtonMail. Sản phẩm nhấn mạnh mã hóa đầu cuối với kiến trúc zero-knowledge và có trình tạo bí danh email tích hợp (hide-my-email). Gói miễn phí hào phóng và tích hợp tự nhiên với hệ sinh thái Proton.',
+        'Apple Keychain và Google Password Manager là lựa chọn tích hợp sẵn, hoạt động tốt trong hệ sinh thái của mình. Miễn phí và mượt, nhưng chỉ giới hạn trên nền tảng Apple hoặc Google, ít tính năng nâng cao và thiếu linh hoạt đa nền tảng của trình quản lý chuyên dụng.',
+      ],
+    },
+    {
+      heading: 'Lưu trữ thủ công: rủi ro và thực tế',
+      paragraphs: [
+        'Viết mật khẩu vào sổ giấy thực ra an toàn hơn nhiều người tưởng — không thể bị hack từ xa. Nhưng cách này thất bại khi mở rộng: bạn không thể tạo mật khẩu thật ngẫu nhiên bằng tay, tìm qua các trang rất chậm, và sổ có thể mất, bị trộm hoặc bị lửa, nước phá hủy. Nó còn khuyến khích dùng lại mật khẩu vì tạo và ghi chép thủ công rất mệt.',
+        'Bảng tính và tệp văn bản (kể cả có mật khẩu) cho phép tìm kiếm nhưng tạo rủi ro lớn. Tệp không mã hóa trên máy tính thì mọi mã độc đều đọc được. Bảng tính mã hóa cũng thường dùng mã hóa yếu hơn trình quản lý chuyên dụng và thiếu tự động điền, giám sát rò rỉ, chia sẻ an toàn.',
+        'Lưu mật khẩu sẵn trong trình duyệt (Chrome, Firefox, Safari) tốt hơn cách thủ công. Trình duyệt hiện đại mã hóa mật khẩu đã lưu và có thể tạo mật khẩu ngẫu nhiên. Tuy nhiên, chúng dễ bị lộ nếu ai đó chiếm phiên thiết bị, không hỗ trợ đa trình duyệt và thường thiếu tính năng nâng cao (ghi chú an toàn, lưu tài liệu, truy cập khẩn cấp).',
+        'Cách "cung điện ký ức" hay công thức cá nhân áp cho từng trang nghe thông minh nhưng thất bại trên thực tế. Khi kẻ tấn công thấy hai hoặc ba mật khẩu của bạn từ các vụ rò rỉ khác nhau, quy luật lộ ra và mọi tài khoản bị xâm phạm cùng lúc.',
+      ],
+    },
+    {
+      heading: 'So sánh bảo mật: điều gì thực sự bảo vệ bạn',
+      paragraphs: [
+        'Trình quản lý mật khẩu chuyên dụng dùng mã hóa AES-256 hoặc XChaCha20 với kiến trúc zero-knowledge — công ty không đọc được mật khẩu kể cả khi bị pháp luật buộc. Họ dẫn xuất khóa mã hóa từ mật khẩu chính bằng hàm chậm (PBKDF2 với 600.000+ vòng, hoặc tốt hơn là Argon2id), khiến tấn công vét cạn bất khả thi về tính toán.',
+        'Năm 2023, LastPass bị rò rỉ lớn khi kho mã hóa bị đánh cắp. Không mật khẩu nào bị giải mã (với điều kiện người dùng có mật khẩu chính mạnh), nhưng sự cố cho thấy tầm quan trọng của việc chọn trình quản lý có dẫn xuất khóa mạnh và giữ mật khẩu chính thật sự mạnh (15+ ký tự hoặc cụm 5+ từ).',
+        'Cách thủ công không có mã hóa mặc định, không giám sát rò rỉ, không tự tạo mật khẩu và không chống nhìn trộm hay trộm vật lý. Lợi thế duy nhất — lưu ngoại tuyến không bị tấn công từ xa — bị vô hiệu bởi việc gần như không thể duy trì thủ công mật khẩu phức tạp riêng cho 100+ tài khoản.',
+      ],
+      bullets: [
+        'Mã hóa AES-256 / XChaCha20: chỉ trình quản lý mật khẩu',
+        'Kiến trúc zero-knowledge: chỉ trình quản lý mật khẩu',
+        'Giám sát rò rỉ: chỉ trình quản lý mật khẩu',
+        'Chống hack từ xa: chỉ sổ giấy',
+        'Đồng bộ đa thiết bị: trình quản lý và tệp đồng bộ đám mây',
+        'Tự động điền (chống lừa đảo): chỉ trình quản lý mật khẩu',
+      ],
+    },
+    {
+      heading: 'Hướng dẫn chuyển sang trình quản lý mật khẩu',
+      paragraphs: [
+        'Bước 1: chọn trình quản lý và tạo tài khoản. Đặt mật khẩu chính mạnh bằng phương pháp cụm mật khẩu (5+ từ ngẫu nhiên). Bật xác thực hai yếu tố cho chính tài khoản trình quản lý — đây là tài khoản quan trọng nhất.',
+        'Bước 2: cài tiện ích trình duyệt và ứng dụng di động. Hầu hết trình quản lý cho nhập một chạm từ trình duyệt (Chrome, Firefox, Safari) và từ trình quản lý khác, lấy mật khẩu đã lưu làm điểm khởi đầu.',
+        'Bước 3: ưu tiên đổi mật khẩu cho tài khoản nhạy cảm nhất trước: email, ngân hàng, lưu trữ đám mây và mạng xã hội. Dùng trình tạo mật khẩu để tạo mật khẩu ngẫu nhiên 20+ ký tự. Đây cũng là lúc bật MFA cho các tài khoản này.',
+        'Bước 4: trong vài tuần tiếp theo, cập nhật mật khẩu còn lại khi bạn đăng nhập từng trang. Trình quản lý sẽ gắn cờ mật khẩu yếu, dùng lại hoặc bị rò rỉ. Đặt mục tiêu xóa hết mật khẩu dùng lại trong 30 ngày.',
+        'Bước 5: thiết lập truy cập khẩn cấp. Hầu hết trình quản lý cho chỉ định người liên hệ tin cậy có thể yêu cầu truy cập kho sau một thời gian chờ, tránh bị khóa vĩnh viễn nếu có chuyện xảy ra.',
+      ],
+    },
+    {
+      heading: 'Tổng quan giá',
+      paragraphs: [
+        'Bitwarden Free cho mật khẩu không giới hạn trên không giới hạn thiết bị — lựa chọn miễn phí tốt nhất. Bitwarden Premium 10 USD/năm thêm TOTP, truy cập khẩn cấp và báo cáo sức khỏe kho. 1Password 2,99 USD/tháng mang trải nghiệm chỉn chu nhất với Watchtower và Travel Mode. Dashlane 4,99 USD/tháng gồm VPN. NordPass Premium 1,99 USD/tháng. Proton Pass Plus 3,99 USD/tháng có bí danh email.',
+        'Với gia đình, 1Password Families (4,99 USD/tháng cho 5 người) và Bitwarden Families (3,33 USD/tháng cho 6 người) mang giá trị tốt nhất. Cả hai đều có kho chia sẻ và kho riêng cho từng thành viên.',
+        'Lựa chọn tích hợp sẵn miễn phí (Apple Keychain, Google Password Manager, Firefox Lockwise) khóa bạn vào một hệ sinh thái. Nếu dùng cả iOS và Windows, hoặc Android và macOS, bạn cần trình quản lý chuyên dụng đa nền tảng.',
+      ],
+    },
+    {
+      heading: 'Khuyến nghị của chúng tôi',
+      paragraphs: [
+        'Với hầu hết người dùng, Bitwarden cân bằng tốt nhất giữa bảo mật, tính năng và giá. Mã nguồn mở tạo niềm tin, gói miễn phí thật sự hữu ích, còn gói trả phí 10 USD/năm là lựa chọn rẻ nhất có tính năng nâng cao. Nếu thích giao diện chỉn chu hơn và sẵn lòng trả thêm, 1Password rất tốt.',
+        'Nếu cần lưu hoàn toàn ngoại tuyến và kiểm soát tối đa, KeePass với mật khẩu chính mạnh và đồng bộ đám mây mã hóa (qua Syncthing hoặc tương tự) bảo mật mà không tin bên thứ ba. Cách này cần cấu hình kỹ thuật hơn nhưng cho bạn toàn quyền với dữ liệu.',
+        'Dù chọn gì, mọi trình quản lý mật khẩu đều tốt hơn hẳn lưu trữ thủ công. Cải thiện bảo mật lớn nhất với hầu hết mọi người là dùng trình quản lý mật khẩu và xóa bỏ việc dùng lại mật khẩu trên mọi tài khoản.',
+      ],
+    },
+  ],
+};

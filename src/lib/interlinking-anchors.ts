@@ -11,6 +11,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '密码生成器',
     ja: 'パスワードジェネレーター',
     pl: 'generator haseł',
+    vi: 'trình tạo mật khẩu',
   },
   'visit-guide-hub': {
     en: 'browse the full guide collection',
@@ -24,6 +25,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '浏览完整的指南合集',
     ja: '全ガイドコレクションを見る',
     pl: 'przejrzyj pełną kolekcję poradników',
+    vi: 'xem toàn bộ bộ sưu tập hướng dẫn',
   },
   'generator-mixes-randomness': {
     en: 'how the generator mixes randomness',
@@ -37,6 +39,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '生成器如何混合随机性',
     ja: 'ジェネレーターがランダム性をミックスする方法',
     pl: 'jak generator miesza losowość',
+    vi: 'cách trình tạo trộn tính ngẫu nhiên',
   },
   'avoid-common-password-mistakes': {
     en: 'avoid the most common password mistakes',
@@ -50,6 +53,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '避免最常见的密码失误',
     ja: '最も一般的なパスワードミスを避ける',
     pl: 'unikaj najczęstszych błędów haseł',
+    vi: 'tránh những lỗi mật khẩu phổ biến nhất',
   },
   'passphrases-beat-short-passwords': {
     en: 'why passphrases beat short passwords',
@@ -63,6 +67,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '为什么口令短语胜过短密码',
     ja: 'なぜパスフレーズは短いパスワードより優れているのか',
     pl: 'dlaczego frazy są lepsze od krótkich haseł',
+    vi: 'vì sao cụm mật khẩu tốt hơn mật khẩu ngắn',
   },
   'align-with-modern-nist-standards': {
     en: 'align with modern NIST standards',
@@ -76,6 +81,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '与现代 NIST 标准保持一致',
     ja: '最新のNIST基準に合わせる',
     pl: 'zgodnie z nowoczesnymi standardami NIST',
+    vi: 'tuân theo tiêu chuẩn NIST hiện đại',
   },
   'strong-password-method': {
     en: 'step-by-step strong-password method',
@@ -89,6 +95,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '强密码的分步方法',
     ja: '堅牢なパスワードのステップバイステップ方式',
     pl: 'metoda krok po kroku na silne hasło',
+    vi: 'phương pháp tạo mật khẩu mạnh từng bước',
   },
   'combine-with-mfa': {
     en: 'combine with two-factor authentication',
@@ -102,6 +109,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '与双重身份验证结合',
     ja: '二要素認証と組み合わせる',
     pl: 'połącz z uwierzytelnianiem dwuskładnikowym',
+    vi: 'kết hợp với xác thực hai yếu tố',
   },
   'how-to-use-passphrases': {
     en: 'how to use passphrases effectively',
@@ -115,6 +123,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '如何有效使用口令短语',
     ja: 'パスフレーズを効果的に使う方法',
     pl: 'jak skutecznie korzystać z fraz',
+    vi: 'cách dùng cụm mật khẩu hiệu quả',
   },
   'store-long-secrets-in-manager': {
     en: 'store long secrets in a manager',
@@ -128,6 +137,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '在管理器中保存长密钥',
     ja: '長いシークレットをマネージャに保存する',
     pl: 'przechowuj długie sekrety w menedżerze',
+    vi: 'lưu chuỗi bí mật dài trong trình quản lý',
   },
   'generate-high-entropy-passphrases': {
     en: 'generate high-entropy passphrases',
@@ -141,6 +151,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '生成高熵口令',
     ja: '高エントロピーのパスフレーズを生成する',
     pl: 'generuj frazy o wysokiej entropii',
+    vi: 'tạo cụm mật khẩu entropy cao',
   },
   'what-makes-a-strong-password': {
     en: 'what makes a strong password',
@@ -154,6 +165,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '是什么造就强密码',
     ja: '強いパスワードを作る要素',
     pl: 'co sprawia, że hasło jest silne',
+    vi: 'điều gì tạo nên mật khẩu mạnh',
   },
   'apply-entropy-principles': {
     en: 'apply entropy principles to generation',
@@ -167,6 +179,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '将熵原则应用于生成',
     ja: '生成にエントロピーの原則を適用する',
     pl: 'zastosuj zasady entropii przy tworzeniu',
+    vi: 'áp dụng nguyên tắc entropy khi tạo mật khẩu',
   },
   'avoid-mistakes-while-generating': {
     en: 'avoid those mistakes while generating',
@@ -180,6 +193,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '生成时避免这些错误',
     ja: '生成中にこれらのミスを避ける',
     pl: 'unikaj tych błędów podczas generowania',
+    vi: 'tránh các lỗi đó khi tạo mật khẩu',
   },
   'standardize-storage-policies': {
     en: 'standardize storage policies',
@@ -193,6 +207,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '标准化存储策略',
     ja: '保存ポリシーを標準化する',
     pl: 'standaryzuj zasady przechowywania',
+    vi: 'chuẩn hóa chính sách lưu trữ',
   },
   'generate-before-saving': {
     en: 'generate before saving to a vault',
@@ -206,6 +221,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '在保存到保险库前先生成',
     ja: '保管庫に保存する前に生成する',
     pl: 'generuj zanim zapiszesz do sejfu',
+    vi: 'tạo mật khẩu trước khi lưu vào kho',
   },
   'manage-entropy-rich-passphrases': {
     en: 'manage entropy-rich passphrases',
@@ -219,6 +235,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '管理高熵口令',
     ja: '高エントロピーのパスフレーズを管理する',
     pl: 'zarządzaj frazami o dużej entropii',
+    vi: 'quản lý cụm mật khẩu giàu entropy',
   },
   'organize-generator-for-teams': {
     en: 'organize generator usage for teams',
@@ -232,6 +249,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '为团队组织生成器使用',
     ja: 'チーム向けにジェネレーターの使用を整備する',
     pl: 'zorganizuj użycie generatora dla zespołów',
+    vi: 'tổ chức cách dùng trình tạo cho nhóm',
   },
   'add-mfa-rules': {
     en: 'add MFA rules to your policy',
@@ -245,6 +263,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '将 MFA 规则加入策略',
     ja: 'ポリシーにMFAルールを追加する',
     pl: 'dodaj zasady MFA do swojej polityki',
+    vi: 'thêm quy định MFA vào chính sách',
   },
   'compare-pci-with-nist': {
     en: 'compare PCI with NIST',
@@ -258,6 +277,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '比较 PCI 与 NIST',
     ja: 'PCI と NIST を比較する',
     pl: 'porównaj PCI z NIST',
+    vi: 'so sánh PCI với NIST',
   },
   'build-pci-policies': {
     en: 'build policies that meet PCI',
@@ -271,6 +291,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '制定符合 PCI 的策略',
     ja: 'PCI に準拠したポリシーを構築する',
     pl: 'stwórz polityki zgodne z PCI',
+    vi: 'xây dựng chính sách đáp ứng PCI',
   },
   'restore-pci-compliance': {
     en: 'restore PCI compliance',
@@ -284,6 +305,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '恢复 PCI 合规',
     ja: 'PCI準拠を回復する',
     pl: 'przywróć zgodność z PCI',
+    vi: 'khôi phục tuân thủ PCI',
   },
   'align-response-with-nist': {
     en: 'align your response with NIST',
@@ -297,6 +319,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '使响应符合 NIST',
     ja: 'NIST に沿った対応に整える',
     pl: 'dopasuj reakcję do NIST',
+    vi: 'điều chỉnh quy trình ứng phó theo NIST',
   },
   'restore-controls-after-incident': {
     en: 'restore controls after an incident',
@@ -310,6 +333,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '在事件后恢复控制',
     ja: 'インシデント後に制御を回復する',
     pl: 'przywróć kontrole po incydencie',
+    vi: 'khôi phục kiểm soát sau sự cố',
   },
   'reconfigure-mfa-after-breach': {
     en: 'reconfigure MFA after a breach',
@@ -323,6 +347,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '在泄露后重新配置 MFA',
     ja: '侵害後にMFAを再設定する',
     pl: 'konfiguruj MFA po wycieku',
+    vi: 'cấu hình lại MFA sau rò rỉ dữ liệu',
   },
   'mfa-helps-breach-recovery': {
     en: 'MFA plays into breach recovery',
@@ -336,6 +361,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: 'MFA 有助于事件恢复',
     ja: 'MFA は侵害後の復旧に役立つ',
     pl: 'MFA pomaga w odzyskaniu po incydencie',
+    vi: 'MFA hỗ trợ khắc phục sau rò rỉ',
   },
   'pair-mfa-with-better-passwords': {
     en: 'pair MFA with better password habits',
@@ -349,6 +375,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '将 MFA 与更好的密码习惯配合',
     ja: 'MFA をより良いパスワード習慣と組み合わせる',
     pl: 'połącz MFA z lepszymi nawykami haseł',
+    vi: 'kết hợp MFA với thói quen mật khẩu tốt hơn',
   },
   'include-mfa-in-policy': {
     en: 'include MFA in your policy',
@@ -362,6 +389,7 @@ const INTERLINK_ANCHOR_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '将 MFA 纳入策略',
     ja: 'ポリシーにMFAを含める',
     pl: 'uwzględnij MFA w swojej polityce',
+    vi: 'đưa MFA vào chính sách',
   },
 };
 

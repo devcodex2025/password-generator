@@ -322,3 +322,94 @@ export const pl: LocalizedArticleContent = {
     { heading: 'Częste błędy 2FA', paragraphs: ['Ten sam telefon do SMS 2FA i odzyskiwania konta.', 'Brak kodów odzyskiwania.', 'Zrzuty ekranu QR kodów TOTP.', 'Zatwierdzanie niespodziewanych powiadomień push (MFA fatigue / push bombing).'], bullets: ['Nie używać tego samego telefonu do SMS i odzyskiwania', 'Zawsze generować i przechowywać kody odzyskiwania', 'Nigdy nie robić zrzutów QR TOTP', 'Nigdy nie zatwierdzać niespodziewanych MFA push', 'Rejestrować minimum dwa klucze sprzętowe', 'Używać TOTP lub kluczy zamiast SMS', 'Testować metody odzyskiwania z wyprzedzeniem'] },
   ],
 };
+
+export const vi: LocalizedArticleContent = {
+  title: 'Kiến thức cơ bản về xác thực hai yếu tố: hướng dẫn 2026',
+  excerpt:
+    'Hướng dẫn rõ ràng về các phương thức 2FA, thứ tự thiết lập và lỗi cần tránh. Gồm TOTP, khóa phần cứng, rủi ro SMS và cách bảo vệ tài khoản ngoài mật khẩu.',
+  seoTitle: 'Xác thực hai yếu tố: bảo vệ mật khẩu và tài khoản 2026',
+  seoDescription:
+    'Hướng dẫn 2FA đầy đủ: ứng dụng TOTP, khóa phần cứng, rủi ro SMS, thứ tự thiết lập, mã dự phòng và cách tạo mật khẩu mạnh.',
+  keywords: [
+    'trình quản lý mật khẩu là gì',
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh nhất',
+    'mật khẩu mạnh dễ nhớ',
+    'cụm mật khẩu passphrase là gì',
+  ],
+  sections: [
+    {
+      heading: 'Vì sao chỉ mật khẩu là chưa đủ',
+      paragraphs: [
+        'Kể cả mật khẩu hoàn toàn riêng biệt và entropy cao vẫn có thể bị xâm phạm qua lừa đảo trực tuyến, keylogger, tấn công xen giữa hoặc rò rỉ phía máy chủ. Nghiên cứu bảo mật của Google năm 2019 cho thấy thêm số điện thoại khôi phục (yếu tố thứ hai cơ bản) chặn 100% tấn công bot tự động, 99% lừa đảo hàng loạt và 66% tấn công có chủ đích. Khóa phần cứng chặn 100% cả ba loại.',
+        'Xác thực hai yếu tố (2FA), còn gọi là xác thực đa yếu tố (MFA), yêu cầu chứng minh danh tính bằng hai loại bằng chứng khác nhau: thứ bạn biết (mật khẩu), thứ bạn có (điện thoại, khóa phần cứng, thẻ thông minh) hoặc thứ bạn là (vân tay, khuôn mặt, mống mắt). Dùng hai yếu tố khác nhóm bảo đảm xâm phạm một yếu tố là chưa đủ.',
+        'Ba phương thức 2FA chính cho người dùng năm 2026: mật khẩu dùng một lần theo thời gian (TOTP) qua ứng dụng xác thực, khóa bảo mật phần cứng FIDO2/WebAuthn, và mã qua SMS hoặc cuộc gọi thoại. Mỗi cách có đặc tính bảo mật, mức tiện lợi và trường hợp dùng phù hợp riêng.',
+      ],
+    },
+    {
+      heading: 'Ứng dụng TOTP: chuẩn thực tế',
+      paragraphs: [
+        'Ứng dụng TOTP tạo mã 6 chữ số mới mỗi 30 giây dựa trên khóa bí mật chung thiết lập khi đăng ký. Mã được tính cục bộ trên thiết bị — không cần internet để tạo. Ứng dụng phổ biến: Google Authenticator, Microsoft Authenticator, Authy và Aegis (Android mã nguồn mở).',
+        'Khi thiết lập TOTP, dịch vụ hiển thị mã QR chứa khóa bí mật. Ứng dụng quét mã và lưu khóa. Từ đó, ứng dụng tạo mã khớp với máy chủ. Vì khóa chỉ chia sẻ lúc thiết lập và không truyền lại, TOTP chống bị chặn trên mạng.',
+        'Lưu ý bảo mật: khóa bí mật nằm trên thiết bị, nên thiết bị bị trộm hoặc xâm phạm có thể lộ mọi khóa TOTP. Authy có sao lưu đám mây mã hóa, giúp khôi phục nhưng phụ thuộc đám mây. Google Authenticator có sao lưu tài khoản Google tùy chọn. Aegis cho xuất cục bộ mã hóa. Chọn theo mức ưu tiên tiện lợi hay độc lập đám mây.',
+        'Hạn chế của TOTP: cửa sổ 30 giây khiến mã có thể bị lừa đảo thời gian thực (kẻ tấn công chuyển tiếp đăng nhập và lấy cả mật khẩu lẫn mã TOTP). TOTP cũng không xác minh danh tính trang bạn đăng nhập — bạn có thể nhập mã trên trang giả giống hệt. Đây là lúc khóa phần cứng bảo vệ tốt hơn.',
+      ],
+    },
+    {
+      heading: 'Khóa bảo mật phần cứng: bảo vệ tối đa',
+      paragraphs: [
+        'Khóa phần cứng FIDO2/WebAuthn (YubiKey, Google Titan, SoloKeys) mang lại 2FA mạnh nhất cho người dùng. Khi đăng ký, khóa tạo cặp khóa mật mã riêng. Khi đăng nhập, khóa ký thử thách từ máy chủ có chứa tên miền trang. Ràng buộc tên miền khiến khóa miễn nhiễm lừa đảo trực tuyến — kể cả khi bấm link giả, khóa không xác thực vì tên miền không khớp.',
+        'YubiKey 5 hỗ trợ USB-A, USB-C, NFC và Lightning, gần như mọi thiết bị. Google Titan có USB-A/USB-C và Bluetooth. SoloKeys cung cấp khóa FIDO2 mã nguồn mở. Giá 25-75 USD mỗi khóa.',
+        'Để bảo vệ đầy đủ, mua ít nhất hai khóa: đăng ký cả hai với mọi dịch vụ, dùng một khóa hằng ngày và cất khóa kia an toàn làm dự phòng. Nếu mất khóa chính, khóa dự phòng vẫn xác thực được; không có khóa dự phòng có thể bị khóa khỏi mọi tài khoản.',
+        'Việc dùng khóa phần cứng đang mở rộng nhanh. Google, Microsoft, Apple, GitHub, Cloudflare, Facebook, Twitter, Coinbase, Binance và phần lớn dịch vụ lớn đã hỗ trợ FIDO2. Hệ thống passkey của Apple, dựa trên cùng chuẩn FIDO2, mang bảo mật cấp khóa phần cứng tới thiết bị người dùng qua sinh trắc học tích hợp.',
+      ],
+    },
+    {
+      heading: 'SMS và gọi thoại: điểm yếu đã biết',
+      paragraphs: [
+        '2FA qua SMS gửi mã một lần tới số điện thoại. Dù tốt hơn không có 2FA, SMS có lỗ hổng đã được ghi nhận. Đổi SIM — kẻ tấn công thuyết phục nhà mạng chuyển số sang SIM của chúng — là mối đe dọa nghiêm trọng nhất. Năm 2024, FBI báo cáo thiệt hại hơn 68 triệu USD từ tấn công đổi SIM.',
+        'Lỗ hổng giao thức SS7 cho phép kẻ tấn công có kỹ thuật chặn SMS mà không cần chạm vào điện thoại. Dù cần quyền truy cập cấp nhà mạng, các cuộc tấn công này đã được ghi nhận nhắm vào cá nhân giá trị cao.',
+        'Mã SMS còn được gửi dạng văn bản thường và có thể hiện trên màn hình khóa, dễ bị nhìn trộm. Một số mã độc đọc được SMS đến. Và mã SMS, như TOTP, dễ bị lừa đảo thời gian thực lấy mã khi bạn nhập.',
+        'Dù có điểm yếu, 2FA qua SMS vẫn tốt hơn hẳn không có 2FA. Nếu dịch vụ chỉ hỗ trợ SMS, hãy bật. Phần lớn vụ chiếm tài khoản nhắm vào tài khoản không có yếu tố thứ hai. Hãy nâng lên TOTP hoặc khóa phần cứng khi có, nhưng đừng để tài khoản không được bảo vệ chỉ vì lựa chọn duy nhất là SMS.',
+      ],
+    },
+    {
+      heading: 'Thứ tự thiết lập: tài khoản nào trước',
+      paragraphs: [
+        'Ưu tiên 1 — Email: email là điểm khôi phục cho gần như mọi tài khoản khác. Email bị chiếm nghĩa là kẻ tấn công đặt lại được mật khẩu ở mọi nơi. Bật MFA ngay cho mọi tài khoản email bằng phương thức mạnh nhất.',
+        'Ưu tiên 2 — Tài khoản tài chính: ngân hàng, nền tảng đầu tư, sàn tiền mã hóa và dịch vụ thanh toán (PayPal, Stripe). Những tài khoản này tiếp cận trực tiếp tiền của bạn. Dùng khóa phần cứng khi được hỗ trợ.',
+        'Ưu tiên 3 — Lưu trữ đám mây và tài khoản công việc: Google Workspace, Microsoft 365, Dropbox, iCloud. Chúng chứa nhiều năm dữ liệu cá nhân và nghề nghiệp. Lộ lưu trữ đám mây thường đủ thông tin để đánh cắp danh tính toàn diện.',
+        'Ưu tiên 4 — Mạng xã hội: Facebook, Instagram, Twitter/X, LinkedIn. Những tài khoản này bị dùng cho tấn công kỹ thuật xã hội nhắm vào người liên hệ và có thể gây thiệt hại danh tiếng. Chúng còn là nhà cung cấp đăng nhập OAuth cho nhiều dịch vụ khác.',
+        'Ưu tiên 5 — Mua sắm và giải trí: Amazon, Netflix, Spotify. Ít ưu tiên hơn, nhưng tài khoản mua sắm lưu phương thức thanh toán có thể bị dùng mua hàng gian lận. Bật MFA cho mọi tài khoản có lưu thông tin thanh toán.',
+      ],
+    },
+    {
+      heading: 'Mã dự phòng và kế hoạch khôi phục',
+      paragraphs: [
+        'Khi bật 2FA, hầu hết dịch vụ cung cấp bộ mã dự phòng dùng một lần (thường 8-10 mã). Đây là cách truy cập khẩn cấp nếu mất thiết bị 2FA. Hãy bảo vệ chúng như mật khẩu chính — chúng thực chất là đường vòng qua yếu tố thứ hai.',
+        'Lưu mã dự phòng trong trình quản lý mật khẩu dưới dạng ghi chú an toàn gắn với tài khoản. Nếu trình quản lý cũng được bảo vệ bằng MFA, hãy có đường khôi phục độc lập (mã dự phòng viết trên giấy cất trong két, hoặc khóa phần cứng dự phòng đăng ký với trình quản lý).',
+        'Lập thứ bậc khôi phục: tài khoản quan trọng nhất cần ít nhất hai cách khôi phục độc lập. Ví dụ: khóa phần cứng chính + khóa dự phòng + mã dự phòng trong két chống cháy. Với tài khoản ít quan trọng hơn: ứng dụng TOTP + mã dự phòng trong trình quản lý thường đủ.',
+        'Nếu dùng Authy có sao lưu đám mây, mất điện thoại bớt thảm khốc — cài Authy trên máy mới và khôi phục khóa TOTP. Tuy nhiên, cách này thêm phụ thuộc đám mây mà người khắt khe về bảo mật có thể muốn tránh. Đánh đổi giữa tiện khôi phục và giảm bề mặt tấn công là quyết định cá nhân.',
+      ],
+    },
+    {
+      heading: 'Lỗi 2FA phổ biến cần tránh',
+      paragraphs: [
+        'Dùng cùng số điện thoại cho cả 2FA và khôi phục tài khoản. Nếu kẻ tấn công đổi SIM, chúng có cả mã 2FA lẫn cơ chế khôi phục. Hãy dùng số khác, hoặc tốt hơn là dùng khóa phần cứng và mã dự phòng thay vì SMS.',
+        'Không có mã dự phòng hoặc phương thức xác thực dự phòng. Nếu điện thoại mất, bị trộm hoặc hỏng, bạn cần cách khác truy cập tài khoản. Tạo và lưu mã dự phòng an toàn cho mọi dịch vụ bật 2FA.',
+        'Chụp màn hình mã QR khi thiết lập TOTP. Mã QR chứa khóa bí mật tạo mã OTP. Ảnh chụp trong thư viện có thể bị ứng dụng có quyền ảnh truy cập hoặc đồng bộ lên đám mây. Nếu cần lưu khóa, dùng ghi chú an toàn của trình quản lý mật khẩu hoặc tính năng xuất mã hóa của ứng dụng xác thực.',
+        'Phê duyệt thông báo đẩy bất ngờ. Một số triển khai MFA dùng thông báo đẩy (chạm để duyệt). Kẻ tấn công gửi đăng nhập lặp lại, hy vọng bạn duyệt vì mệt mỏi hoặc bối rối — gọi là mệt mỏi MFA hay push bombing. Không bao giờ duyệt thông báo bạn không khởi tạo. Triển khai hiện đại yêu cầu nhập số hiển thị trên màn hình đăng nhập để chặn tấn công này.',
+      ],
+      bullets: [
+        'Không dùng cùng số điện thoại cho SMS 2FA và khôi phục tài khoản',
+        'Luôn tạo và lưu mã dự phòng',
+        'Không chụp màn hình mã QR TOTP',
+        'Không duyệt thông báo đẩy MFA bất ngờ',
+        'Đăng ký ít nhất hai khóa phần cứng cho mỗi tài khoản',
+        'Dùng TOTP hoặc khóa phần cứng thay vì SMS khi có thể',
+        'Kiểm tra cách khôi phục trước khi cần đến',
+      ],
+    },
+  ],
+};

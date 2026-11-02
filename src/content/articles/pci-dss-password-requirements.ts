@@ -325,3 +325,90 @@ export const pl: LocalizedArticleContent = {
     { heading: 'Częste błędy zgodności', paragraphs: ['Współdzielone konta naruszają Wymaganie 8.2.1 (unikalny ID dla użytkownika).', 'Zakodowane hasła naruszają Wymaganie 8.6.2.', 'Domyślne hasła dostawców muszą być zmienione przed produkcją (Wymaganie 2.1.1).', 'Niewystarczające logowanie to kolejny częsty błąd.'] },
   ],
 };
+
+export const vi: LocalizedArticleContent = {
+  title: 'Yêu cầu mật khẩu PCI DSS cho nhóm năm 2026',
+  excerpt:
+    'PCI DSS v4.0 yêu cầu gì với kiểm soát mật khẩu và cách căn chỉnh quy trình nhóm mà không hại trải nghiệm. Gồm xác thực, chính sách và cách triển khai thực tế.',
+  seoTitle: 'Yêu cầu mật khẩu PCI DSS 2026: tạo mật khẩu mạnh cho nhóm',
+  seoDescription:
+    'Hướng dẫn PCI DSS v4.0 về mật khẩu: độ dài tối thiểu, MFA bắt buộc, kiểm soát tài khoản dịch vụ, đổi mật khẩu định kỳ và cách tạo mật khẩu mạnh cho nhóm.',
+  keywords: [
+    'trình quản lý mật khẩu là gì',
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh nhất',
+    'mật khẩu mạnh 8 ký tự',
+    'cụm mật khẩu passphrase là gì',
+  ],
+  sections: [
+    {
+      heading: 'Hiểu PCI DSS và vì sao quan trọng',
+      paragraphs: [
+        'Payment Card Industry Data Security Standard (PCI DSS) là bộ yêu cầu bảo mật nhằm bảo vệ dữ liệu chủ thẻ. Mọi tổ chức xử lý, lưu hoặc truyền thông tin thẻ tín dụng đều phải tuân thủ. Phiên bản 4.0 phát hành tháng 3 năm 2022, hạn tuân thủ bắt buộc 31 tháng 3 năm 2025 (một số yêu cầu mở rộng tới tháng 3 năm 2026), đưa ra thay đổi lớn về xác thực.',
+        'Không tuân thủ có thể bị phạt 5.000-100.000 USD mỗi tháng, tăng phí giao dịch, mất quyền xử lý thanh toán thẻ và chịu trách nhiệm thiệt hại do gian lận. Ngoài hình phạt, rò rỉ dữ liệu chủ thẻ phá hủy niềm tin khách hàng và có thể dẫn tới kiện tập thể.',
+        'PCI DSS v4.0 gần với thực hành bảo mật hiện đại hơn, gồm khuyến nghị NIST 800-63B. Tiêu chuẩn thừa nhận quy tắc mật khẩu cũ cứng nhắc thường giảm bảo mật vì khuyến khích hành vi dễ đoán. Bản cập nhật linh hoạt hơn trong cách đáp ứng nhưng nâng chuẩn xác thực tổng thể.',
+      ],
+    },
+    {
+      heading: 'Độ dài và độ phức tạp trong PCI DSS v4.0',
+      paragraphs: [
+        'Yêu cầu 8.3.6 quy định mật khẩu ít nhất 12 ký tự (tăng từ mức tối thiểu 7 trước đây). Nếu hệ thống không hỗ trợ 12 ký tự, mức tối thiểu tuyệt đối vẫn là 8, nhưng ngoại lệ phải được ghi lại và giải trình. Tổ chức nên lên kế hoạch hỗ trợ 12+ ký tự trên mọi hệ thống.',
+        'Về độ phức tạp, Yêu cầu 8.3.6 buộc mật khẩu chứa cả chữ số và chữ cái. Dù nhẹ hơn nhiều chính sách cũ yêu cầu hoa, thường, số, ký hiệu, đây là mức nền ngăn dùng PIN toàn số hoặc từ toàn chữ làm mật khẩu hệ thống.',
+        'Quan trọng: PCI DSS v4.0 đưa ra "cách tiếp cận tùy chỉnh" (Yêu cầu 8.3.6.a), cho phép dùng cơ chế xác thực thay thế (như cụm mật khẩu hoặc độ dài tối thiểu dài hơn không bắt phức tạp) nếu chứng minh được bảo mật tương đương hoặc cao hơn qua phân tích rủi ro có hồ sơ.',
+      ],
+    },
+    {
+      heading: 'Yêu cầu xác thực đa yếu tố',
+      paragraphs: [
+        'Yêu cầu 8.4.2 buộc MFA cho mọi truy cập vào môi trường dữ liệu chủ thẻ (CDE), không chỉ truy cập từ xa như trước. Mọi người truy cập hệ thống lưu, xử lý hoặc truyền dữ liệu chủ thẻ phải xác thực bằng ít nhất hai trong ba yếu tố: kiến thức (mật khẩu), sở hữu (token, thẻ thông minh) hoặc sinh trắc học.',
+        'Yêu cầu 8.4.3 mở rộng MFA cho mọi truy cập mạng từ xa từ ngoài mạng của tổ chức. Điều này áp dụng cho VPN, phiên desktop từ xa và mọi truy cập quản trị từ vị trí bên ngoài. MFA phải được triển khai ở cấp mạng hoặc hệ thống, không chỉ cấp ứng dụng.',
+        'Với triển khai MFA, PCI DSS yêu cầu các yếu tố độc lập — xâm phạm một yếu tố không ảnh hưởng tính toàn vẹn của yếu tố khác. Tiêu chuẩn cũng yêu cầu MFA không thể bị bỏ qua bởi bất kỳ ai, kể cả quản trị viên. Chống phát lại là bắt buộc: mỗi lần xác thực phải tạo token duy nhất, giới hạn thời gian.',
+      ],
+    },
+    {
+      heading: 'Chính sách đổi và xoay vòng mật khẩu',
+      paragraphs: [
+        'Yêu cầu 8.3.9 buộc đổi mật khẩu người dùng ít nhất 90 ngày một lần. Điều này khác NIST 800-63B, vốn khuyến nghị không xoay vòng định kỳ. Tuy nhiên, PCI DSS v4.0 có cách tiếp cận tùy chỉnh: tổ chức có thể bỏ xoay vòng nếu triển khai phân tích liên tục, thời gian thực tình trạng bảo mật từng tài khoản qua giám sát tự động dấu hiệu xâm phạm.',
+        'Khi đổi, mật khẩu mới không được trùng bất kỳ mật khẩu nào trong bốn lần gần nhất (Yêu cầu 8.3.7). Điều này chặn kiểu đối phó đơn giản nhưng chưa xử lý hết thay đổi tăng dần. Tổ chức nên kiểm tra thêm độ tương đồng với mật khẩu cũ.',
+        'Với tài khoản dịch vụ và mật khẩu ứng dụng, Yêu cầu 8.6.3 đưa kiểm soát mới: đổi định kỳ ít nhất 12 tháng và khi nghi bị xâm phạm. Mật khẩu tài khoản dịch vụ tương tác phải được quản lý nghiêm ngặt như mật khẩu người dùng. Mật khẩu gắn cứng trong script và ứng dụng bị cấm rõ ràng.',
+      ],
+    },
+    {
+      heading: 'Khóa tài khoản và quản lý phiên',
+      paragraphs: [
+        'Yêu cầu 8.3.4 buộc tạm khóa tài khoản sau không quá 10 lần đăng nhập sai. Thời gian khóa ít nhất 30 phút hoặc đến khi quản trị viên mở lại. Điều này chống tấn công vét cạn trực tuyến mà vẫn giữ khả năng sử dụng.',
+        'Hết hạn phiên không hoạt động (Yêu cầu 8.2.8) buộc tự động kết thúc phiên sau 15 phút không tương tác, ngăn truy cập trái phép khi người dùng rời máy. Với hệ thống cần tương tác liên tục (như bảng giám sát), có thể chấp nhận kiểm soát thay thế như khóa màn hình kèm xác thực lại.',
+        'PCI DSS v4.0 cũng yêu cầu mã hóa mọi thông tin xác thực khi truyền (Yêu cầu 8.3.2) và khi lưu (Yêu cầu 8.3.1). Không bao giờ lưu mật khẩu dạng mã hóa đảo ngược hoặc văn bản thường. Tiêu chuẩn yêu cầu rõ băm một chiều với salt riêng cho từng thông tin.',
+      ],
+    },
+    {
+      heading: 'Triển khai thực tế cho nhóm',
+      paragraphs: [
+        'Triển khai trình quản lý mật khẩu cho cả nhóm là cách hiệu quả nhất đáp ứng PCI DSS mà vẫn giữ năng suất. 1Password Business, Bitwarden Organizations hoặc Dashlane Business cung cấp áp chính sách tập trung, kho chia sẻ cho thông tin nhóm, tạo mật khẩu tự động đúng độ dài và phức tạp, cùng nhật ký kiểm tra cho hồ sơ tuân thủ.',
+        'Với tài khoản dịch vụ và thông tin ứng dụng, dùng giải pháp quản lý bí mật như HashiCorp Vault, AWS Secrets Manager hoặc Azure Key Vault. Các công cụ này xoay vòng tự động, ghi log truy cập và mã hóa khi lưu — đáp ứng Yêu cầu 8.6.2, 8.6.3 và 8.3.1 trong một giải pháp.',
+        'Ghi chính sách mật khẩu bằng văn bản, gồm: độ dài tối thiểu (12+ ký tự), yêu cầu phức tạp, tần suất đổi (90 ngày cho người dùng, 12 tháng cho tài khoản dịch vụ), phạm vi MFA, ngưỡng khóa và thời gian hết hạn phiên. Hồ sơ này bắt buộc cho đánh giá tuân thủ PCI DSS.',
+        'Đào tạo nhóm hằng năm về thực hành bảo mật mật khẩu. Yêu cầu 12.6 buộc đào tạo nhận thức bảo mật gồm tạo mật khẩu an toàn, nhận diện lừa đảo và xử lý đúng thông tin xác thực. Theo dõi hoàn thành và lưu hồ sơ để kiểm tra.',
+      ],
+      bullets: [
+        'Triển khai trình quản lý mật khẩu nhóm (1Password Business, Bitwarden Org)',
+        'Dùng quản lý bí mật cho tài khoản dịch vụ (Vault, AWS Secrets Manager)',
+        'Ghi đầy đủ chính sách mật khẩu bằng văn bản',
+        'Đào tạo nhận thức bảo mật hằng năm và lưu hồ sơ',
+        'Triển khai MFA tại mọi điểm truy cập CDE',
+        'Tự động khóa sau 10 lần đăng nhập thất bại',
+        'Cấu hình hết hạn phiên sau 15 phút không hoạt động',
+        'Rà soát chính sách mật khẩu mỗi quý',
+      ],
+    },
+    {
+      heading: 'Lỗi tuân thủ phổ biến',
+      paragraphs: [
+        'Tài khoản dùng chung là lỗi kiểm toán thường gặp. Yêu cầu 8.2.1 buộc mọi người có ID riêng trước khi truy cập thành phần hệ thống. Tài khoản admin dùng chung, mật khẩu root dùng chung và đăng nhập nhóm chung phải bị loại bỏ. Mỗi người cần thông tin riêng, truy vết được.',
+        'Mật khẩu gắn cứng trong mã hoặc tệp cấu hình vi phạm Yêu cầu 8.6.2. Quét mã nguồn tìm thông tin nhúng và chuyển sang biến môi trường hoặc trình quản lý bí mật. Nơi giấu phổ biến: chuỗi kết nối cơ sở dữ liệu, tệp tích hợp API, script triển khai và tệp Docker compose.',
+        'Mật khẩu mặc định của nhà cung cấp phải đổi trước khi hệ thống vào vận hành (Yêu cầu 2.1.1), gồm thiết bị mạng, phần mềm cài đặt, máy chủ cơ sở dữ liệu và thiết bị IoT. Lập danh sách mọi thông tin mặc định và xác minh đã đổi khi thiết lập.',
+        'Ghi log chưa đủ là lỗi phổ biến khác. PCI DSS yêu cầu ghi mọi sự kiện xác thực (đăng nhập thành công, thất bại, đổi mật khẩu, khóa tài khoản) kèm thời gian và nhận dạng người dùng. Log phải được xem hằng ngày và lưu ít nhất một năm, với ba tháng gần nhất sẵn sàng phân tích.',
+      ],
+    },
+  ],
+};

@@ -78,6 +78,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: passwordManagerVsManualStorage.zh,
       ja: passwordManagerVsManualStorage.ja,
       pl: passwordManagerVsManualStorage.pl,
+      vi: passwordManagerVsManualStorage.vi,
     },
   },
   {
@@ -98,6 +99,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: passphraseVsPasswordEntropy.zh,
       ja: passphraseVsPasswordEntropy.ja,
       pl: passphraseVsPasswordEntropy.pl,
+      vi: passphraseVsPasswordEntropy.vi,
     },
   },
   {
@@ -118,6 +120,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: nist80063bPasswordRules.zh,
       ja: nist80063bPasswordRules.ja,
       pl: nist80063bPasswordRules.pl,
+      vi: nist80063bPasswordRules.vi,
     },
   },
   {
@@ -138,6 +141,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: pciDssPasswordRequirements.zh,
       ja: pciDssPasswordRequirements.ja,
       pl: pciDssPasswordRequirements.pl,
+      vi: pciDssPasswordRequirements.vi,
     },
   },
   {
@@ -158,6 +162,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: whatToDoAfterPasswordBreach.zh,
       ja: whatToDoAfterPasswordBreach.ja,
       pl: whatToDoAfterPasswordBreach.pl,
+      vi: whatToDoAfterPasswordBreach.vi,
     },
   },
   {
@@ -178,6 +183,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: twoFactorAuthenticationBasics.zh,
       ja: twoFactorAuthenticationBasics.ja,
       pl: twoFactorAuthenticationBasics.pl,
+      vi: twoFactorAuthenticationBasics.vi,
     },
   },
   {
@@ -198,6 +204,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: commonPasswordMistakes.zh,
       ja: commonPasswordMistakes.ja,
       pl: commonPasswordMistakes.pl,
+      vi: commonPasswordMistakes.vi,
     },
   },
   {
@@ -218,6 +225,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: teamPasswordPolicyTemplate.zh,
       ja: teamPasswordPolicyTemplate.ja,
       pl: teamPasswordPolicyTemplate.pl,
+      vi: teamPasswordPolicyTemplate.vi,
     },
   },
   {
@@ -238,6 +246,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: securePasswordGeneratorGuide.zh,
       ja: securePasswordGeneratorGuide.ja,
       pl: securePasswordGeneratorGuide.pl,
+      vi: securePasswordGeneratorGuide.vi,
     },
   },
   {
@@ -258,6 +267,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: vpnSecurityPrivacyGuide.zh,
       ja: vpnSecurityPrivacyGuide.ja,
       pl: vpnSecurityPrivacyGuide.pl,
+      vi: vpnSecurityPrivacyGuide.vi,
     },
   },
 ];

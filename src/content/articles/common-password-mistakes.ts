@@ -139,7 +139,7 @@ export const ua: LocalizedArticleContent = {
         '8 символів: зламуються за години (bcrypt) або секунди (MD5/SHA-1)',
         '12 символів (шаблонні): можуть впасти за дні під словниковою атакою',
         '12 символів (випадкові): надійні проти більшості атак',
-        '16+ символів (випадкові): фактично незламні',
+        '16+ символів (випадкові): практично незламні',
         '5+ слів парольна фраза: надійна та запам\'ятовувана альтернатива',
       ],
     },
@@ -357,5 +357,109 @@ export const pl: LocalizedArticleContent = {
     { heading: 'Błąd #5: Niebezpieczne przechowywanie', paragraphs: ['Karteczki na monitorze, niezaszyfrowane pliki, email do siebie — wszystko wysokie ryzyko.', 'Badanie Ponemon 2024: 59% pracowników przyznało się do pisania haseł na papierze.', 'Rozwiązanie: menedżer z szyfrowaniem end-to-end.'] },
     { heading: 'Błąd #6: Ignorowanie MFA', paragraphs: ['Microsoft 2023: 99,9% skompromitowanych kont nie miało MFA.', 'Nowoczesne implementacje są wygodne: biometria, klucze sprzętowe, aplikacje TOTP.', 'Rozwiązanie: włącz MFA wszędzie.'] },
     { heading: 'Twoja lista kontrolna bezpieczeństwa', paragraphs: ['Użyj tej listy do audytu dzisiaj.'], bullets: ['Zainstaluj menedżera haseł', 'Utwórz frazę główną z 5+ słów', 'Importuj hasła z przeglądarki', 'Włącz MFA na emailu', 'Włącz MFA na kontach finansowych', 'Zamień powtarzające się hasła', 'Zamień hasła poniżej 12 znaków', 'Sprawdź haveibeenpwned.com', 'Włącz MFA w mediach społecznościowych i chmurze', 'Zaplanuj kwartalny przegląd'] },
+  ],
+};
+
+export const vi: LocalizedArticleContent = {
+  title: 'Những lỗi mật khẩu phổ biến và cách khắc phục',
+  excerpt:
+    'Xem lại những thói quen mật khẩu rủi ro nhất ảnh hưởng tới hàng triệu người, cùng cách thay thế từng bước bằng quy trình an toàn dễ duy trì.',
+  seoTitle: 'Lỗi mật khẩu phổ biến: cách tạo mật khẩu mạnh hơn',
+  seoDescription:
+    'Những lỗi mật khẩu nguy hiểm nhất 2026 và cách khắc phục: rủi ro dùng lại, mẫu dễ đoán, cùng cách tạo mật khẩu mạnh bằng trình quản lý mật khẩu.',
+  keywords: [
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh nhất',
+    'mật khẩu mạnh dễ nhớ',
+    'mật khẩu mạnh 8 ký tự',
+    'trình quản lý mật khẩu là gì',
+  ],
+  sections: [
+    {
+      heading: 'Vấn đề mật khẩu qua những con số',
+      paragraphs: [
+        'Sau nhiều thập kỷ tuyên truyền, mật khẩu phổ biến nhất năm 2025 vẫn dễ đoán. Phân tích dữ liệu rò rỉ của NordPass cho thấy "123456" đứng đầu năm thứ năm liên tiếp với hơn 4,5 triệu tài khoản. "password", "qwerty123" và "111111" lấp đầy nhóm đầu; cả bốn bị bẻ khóa trong chưa đầy một giây.',
+        'Đáng lo hơn là quy mô dùng lại. Nghiên cứu SpyCloud 2024 cho thấy 64% người có thông tin trong một vụ rò rỉ đã dùng lại mật khẩu ở ít nhất một tài khoản khác. Trong nhóm xuất hiện ở nhiều vụ, 72% vẫn dùng mật khẩu giống hoặc gần giống sau nhiều năm, kể cả sau khi được thông báo.',
+        'Thiệt hại tài chính lớn: báo cáo IBM 2024 ghi nhận chi phí trung bình 4,88 triệu USD mỗi vụ, với thông tin đăng nhập bị xâm phạm là vector ban đầu phổ biến nhất (16%). Gian lận chiếm tài khoản khiến người tiêu dùng mất 12,5 tỷ USD năm 2023, theo Javelin Strategy.',
+      ],
+    },
+    {
+      heading: 'Lỗi #1: Mật khẩu quá ngắn',
+      paragraphs: [
+        'Nhiều người và tổ chức vẫn chấp nhận mật khẩu 8 ký tự; năm 2026 mức đó nguy hiểm. Dàn GPU 8× NVIDIA RTX 4090 thử hết mọi mật khẩu 8 ký tự từ bộ 95 ký tự ASCII trong khoảng 7 giờ với hash bcrypt work factor 5. Với MD5 hoặc SHA-1, chỉ còn vài giây.',
+        'Mật khẩu 12 ký tự cũng có thể chưa đủ tùy thuật toán băm. Hash yếu vẫn được bảo vệ ở 12 ký tự, nhưng khuôn mẫu từ + số + ký hiệu làm không gian tìm kiếm co mạnh.',
+        'Cách sửa: dùng trình quản lý mật khẩu tạo mật khẩu ngẫu nhiên 16+ ký tự cho mọi tài khoản. Với mật khẩu phải nhớ, dùng cụm 5+ từ ngẫu nhiên (khoảng 65 bit entropy). Độ dài là vũ khí mạnh nhất: mỗi ký tự làm thời gian bẻ khóa tăng theo cấp số nhân.',
+      ],
+      bullets: [
+        '8 ký tự: bẻ trong vài giờ (bcrypt) hoặc vài giây (MD5/SHA-1)',
+        '12 ký tự (theo khuôn mẫu): có thể gục sau vài ngày trước tấn công từ điển + quy tắc',
+        '12 ký tự (ngẫu nhiên): mạnh trước hầu hết cuộc tấn công',
+        '16+ ký tự (ngẫu nhiên): gần như không thể bẻ với công nghệ hiện nay',
+        'Cụm mật khẩu 5+ từ: lựa chọn mạnh và dễ nhớ',
+      ],
+    },
+    {
+      heading: 'Lỗi #2: Dùng lại mật khẩu giữa các tài khoản',
+      paragraphs: [
+        'Dùng lại mật khẩu là thói quen nguy hiểm nhất vì biến một vụ rò rỉ thành chuỗi tài khoản bị xâm phạm. Khi mật khẩu lộ, kẻ tấn công tự động thử nó trên hàng trăm dịch vụ phổ biến — email, ngân hàng, mạng xã hội, lưu trữ đám mây, mua sắm. Kỹ thuật nhồi thông tin đăng nhập này hoàn toàn tự động và bắt đầu trong vài giờ.',
+        'Quy mô rất lớn: Akamai báo cáo hơn 193 tỷ cuộc tấn công năm 2020. Dù tỷ lệ thành công dưới 1%, đó vẫn là hàng trăm triệu vụ chiếm tài khoản. Mật khẩu "không quan trọng" ở diễn đàn có thể mở tài khoản ngân hàng nếu dùng chung.',
+        'Cách sửa duy nhất đáng tin: mật khẩu riêng cho từng tài khoản. Trình quản lý mật khẩu tạo và lưu mật khẩu ngẫu nhiên riêng, tự động điền, còn bạn chỉ nhớ một mật khẩu chính mạnh. Gói miễn phí của Bitwarden cho mật khẩu và thiết bị không giới hạn.',
+      ],
+    },
+    {
+      heading: 'Lỗi #3: Khuôn mẫu và thay thế dễ đoán',
+      paragraphs: [
+        'Người bị buộc tạo mật khẩu "phức tạp" thường theo khuôn mẫu: viết hoa chữ đầu, thêm số ở cuối, gắn ký hiệu. "Password1!" thỏa mọi yêu cầu nhưng nằm trong nhóm đầu mọi công cụ thử. Carnegie Mellon phát hiện 89% viết hoa ký tự đầu khi bị yêu cầu, và 78% gắn số ở cuối.',
+        'Thay thế leet (@ cho a, 3 cho e, 0 cho o, $ cho s) gần như không tăng bảo mật: mọi công cụ bẻ khóa đều có các phép biến đổi này. "P@$$w0rd" khó bẻ ngang "Password".',
+        'Khuôn mẫu bàn phím (qwerty, zxcvbn, 1qaz2wsx, qazwsx) trông ngẫu nhiên nhưng bị kiểm tra sớm. Mẫu hình chữ L, Z hay dấu cộng cũng có trong từ điển tấn công.',
+        'Cách sửa: đừng tạo mật khẩu từ khuôn mẫu con người. Hãy để trình tạo ngẫu nhiên bằng mật mã làm việc đó. Nếu cần mật khẩu dễ nhớ, dùng cụm Diceware 5+ từ thật ngẫu nhiên. Sáng tạo của con người dễ đoán; ngẫu nhiên thì không.',
+      ],
+    },
+    {
+      heading: 'Lỗi #4: Đưa thông tin cá nhân vào mật khẩu',
+      paragraphs: [
+        'Tên người yêu, con, thú cưng, ngày sinh, kỷ niệm, số điện thoại, địa chỉ và đội thể thao là nguyên liệu của phần lớn mật khẩu tự tạo. Kẻ tấn công chỉ cần 30 phút xem mạng xã hội để dựng từ điển nhắm mục tiêu.',
+        'Kiểu tấn công từ điển "kỹ thuật xã hội" này rất hiệu quả với mục tiêu giá trị cao. Tấn công tự động cũng có sẵn tên, ngày tháng và đội phổ biến. "Messi2026!" hay "Jessica0903" bị bẻ dễ dàng.',
+        'Thông tin tưởng như khó tìm cũng rủi ro: tên thời con gái của mẹ, con phố tuổi thơ, chiếc xe đầu tiên — đều là đáp án câu hỏi bảo mật, có thể lộ qua hồ sơ công khai, trang gia phả hay mạng xã hội. Đừng dùng thứ người quen có thể tra ra.',
+      ],
+    },
+    {
+      heading: 'Lỗi #5: Lưu trữ mật khẩu không an toàn',
+      paragraphs: [
+        'Dán giấy nhớ lên màn hình, lưu tệp văn bản không mã hóa, tự gửi email hoặc dùng trình quản lý của trình duyệt mà không đặt mật khẩu thiết bị — đều rủi ro cao.',
+        'Nghiên cứu Ponemon 2024 cho thấy 59% nhân viên thừa nhận viết mật khẩu ra giấy, 42% chia sẻ qua email hoặc tin nhắn. Trong doanh nghiệp, những thói quen này có thể dẫn tới truy cập trái phép và vi phạm tuân thủ.',
+        'Cách sửa: dùng trình quản lý mật khẩu có mã hóa đầu cuối. Cá nhân có Bitwarden (miễn phí, mã nguồn mở) hoặc 1Password (2,99 USD/tháng), tự động điền trên mọi thiết bị. Nhóm có kho chia sẻ, kiểm soát truy cập và nhật ký. Nếu phải viết ra giấy, cất trong két khóa — không dán lên màn hình.',
+      ],
+    },
+    {
+      heading: 'Lỗi #6: Bỏ qua xác thực đa yếu tố',
+      paragraphs: [
+        'Lỗi phổ biến nhất không phải lỗi mật khẩu: đó là không bật xác thực đa yếu tố. Microsoft báo cáo năm 2023 rằng 99,9% tài khoản bị xâm phạm không bật MFA. Chỉ việc này bảo vệ hơn mọi cải thiện mật khẩu.',
+        'Nhiều người bỏ qua MFA vì thấy bất tiện, nhưng triển khai hiện đại đã khắc phục: sinh trắc học tức thì, khóa phần cứng một lần chạm, TOTP vài giây. Năm giây mỗi lần đăng nhập không đáng kể so với hàng giờ khắc phục khi bị chiếm tài khoản.',
+        'Cách sửa: bật MFA mọi nơi có thể, bắt đầu từ email, ngân hàng, lưu trữ đám mây. Dùng TOTP (Google Authenticator, Authy) hoặc khóa phần cứng (YubiKey) thay vì SMS. Tạo và lưu mã dự phòng an toàn.',
+      ],
+    },
+    {
+      heading: 'Danh sách kiểm tra bảo mật mật khẩu',
+      paragraphs: [
+        'Dùng danh sách này để kiểm tra và cải thiện bảo mật mật khẩu ngay hôm nay. Mỗi bước tạo khác biệt đo được; bắt đầu từ việc tác động lớn nhất. Toàn bộ mất khoảng hai giờ và giảm mạnh nguy cơ bị chiếm tài khoản.',
+      ],
+      bullets: [
+        'Cài trình quản lý mật khẩu (Bitwarden, 1Password hoặc KeePass)',
+        'Tạo mật khẩu chính mạnh bằng cụm 5+ từ',
+        'Nhập mật khẩu hiện có từ trình duyệt',
+        'Bật MFA cho email ngay',
+        'Bật MFA cho ngân hàng và tài chính',
+        'Chạy báo cáo sức khỏe kho để tìm mật khẩu dùng lại',
+        'Thay mật khẩu dùng lại bằng mật khẩu ngẫu nhiên 16+ ký tự riêng',
+        'Thay mọi mật khẩu ngắn hơn 12 ký tự',
+        'Kiểm tra haveibeenpwned.com cho email của bạn',
+        'Đổi mật khẩu cho tài khoản xuất hiện trong rò rỉ',
+        'Bật MFA cho mạng xã hội, lưu trữ đám mây, mua sắm',
+        'Thiết lập và lưu mã dự phòng an toàn',
+        'Kiểm tra sức khỏe kho mật khẩu mỗi quý',
+      ],
+    },
   ],
 };

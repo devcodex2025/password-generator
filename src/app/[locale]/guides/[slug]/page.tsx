@@ -82,7 +82,9 @@ export async function generateMetadata({
   // translation. The catalog says what is bundled; `guide.locale` stays `en`
   // when a database-backed deployment has no stored `vi` row and falls back.
   const catalogEntry = ARTICLE_CATALOG.find((article) => article.slug === slug);
-  const hasVi = Boolean(catalogEntry?.content.vi) && guide.locale === 'vi';
+  const catalogHasVi = Boolean(catalogEntry?.content.vi);
+  const servedLocale = guide.locale.toLowerCase().split(/[-_]/)[0];
+  const hasVi = catalogHasVi && servedLocale === 'vi';
   const isFallbackLocale = locale === 'vi' && !hasVi;
   const canonical = isFallbackLocale
     ? `${baseUrl}/en/guides/${slug}`
@@ -96,7 +98,7 @@ export async function generateMetadata({
       canonical,
       languages: {
         ...Object.fromEntries(
-          SUPPORTED_CONTENT_LANGUAGES.filter((lang) => lang !== 'vi' || hasVi).map((lang) => [
+          SUPPORTED_CONTENT_LANGUAGES.filter((lang) => lang !== 'vi' || catalogHasVi).map((lang) => [
             hreflangMap[lang] || lang,
             `${baseUrl}/${lang}/guides/${slug}`,
           ])

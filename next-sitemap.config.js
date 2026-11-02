@@ -32,7 +32,19 @@ const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'best-
  * /vi/guides/<slug> is excluded from the sitemap until its slug is listed here,
  * because untranslated bodies fall back to English and are noindexed.
  */
-const viTranslatedGuideSlugs = ['how-to-create-strong-passwords'];
+const viTranslatedGuideSlugs = [
+  'how-to-create-strong-passwords',
+  'common-password-mistakes',
+  'nist-800-63b-password-rules',
+  'passphrase-vs-password-entropy',
+  'what-to-do-after-password-breach',
+  'password-manager-vs-manual-storage',
+  'two-factor-authentication-basics',
+  'secure-password-generator-guide',
+  'pci-dss-password-requirements',
+  'team-password-policy-template',
+  'vpn-security-privacy-guide',
+];
 
 /* Map locale codes to hreflang values (ua → uk for Ukrainian) */
 const hreflangMap = { ua: 'uk' };
@@ -76,7 +88,7 @@ module.exports = {
     // `vi` has routes and translated home/legal pages. Vietnamese guide articles
     // are listed only for slugs that have a translated `vi` export.
     const allLanguages = [...availableLanguages, 'vi'];
-    const viStaticSlugs = ['privacy-policy', 'terms-of-service', 'contact'];
+    const viStaticSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'best-password-managers-2026'];
 
     const localePages = allLanguages.map((langCode) => ({
         loc: `/${langCode}`,
@@ -93,6 +105,18 @@ module.exports = {
       lastmod: new Date().toISOString(),
       alternateRefs: buildAlternateRefs('/guides'),
     }));
+
+    const viGuideIndexPage = {
+      loc: '/vi/guides',
+      changefreq: 'weekly',
+      priority: 0.8,
+      lastmod: new Date().toISOString(),
+      alternateRefs: [
+        ...buildAlternateRefs('/guides'),
+        { href: `${siteUrl}/vi/guides`, hreflang: 'vi', hrefIsAbsolute: true },
+        { href: `${siteUrl}/en/guides`, hreflang: 'x-default', hrefIsAbsolute: true },
+      ],
+    };
 
     const guideArticlePages = availableLanguages.flatMap((langCode) =>
       guideSlugs.map((slug) => ({
@@ -119,7 +143,11 @@ module.exports = {
       changefreq: 'monthly',
       priority: 0.6,
       lastmod: new Date().toISOString(),
-      alternateRefs: buildAlternateRefs(`/${slug}`),
+      alternateRefs: [
+        ...buildAlternateRefs(`/${slug}`),
+        { href: `${siteUrl}/vi/${slug}`, hreflang: 'vi', hrefIsAbsolute: true },
+        { href: `${siteUrl}/en/${slug}`, hreflang: 'x-default', hrefIsAbsolute: true },
+      ],
     }));
 
     const viGuideArticlePages = viTranslatedGuideSlugs.map((slug) => ({
@@ -134,8 +162,8 @@ module.exports = {
       ],
     }));
 
-    // Link-worthy data page (published in EN and UA only).
-    const dataPages = ['en', 'ua'].map((langCode) => ({
+    // Link-worthy data page (published in EN, UA and VI).
+    const dataPages = ['en', 'ua', 'vi'].map((langCode) => ({
       loc: `/${langCode}/password-statistics-2026`,
       changefreq: 'monthly',
       priority: 0.7,
@@ -143,6 +171,8 @@ module.exports = {
       alternateRefs: [
         { href: `${siteUrl}/en/password-statistics-2026`, hreflang: 'en', hrefIsAbsolute: true },
         { href: `${siteUrl}/ua/password-statistics-2026`, hreflang: 'uk', hrefIsAbsolute: true },
+        { href: `${siteUrl}/vi/password-statistics-2026`, hreflang: 'vi', hrefIsAbsolute: true },
+        { href: `${siteUrl}/en/password-statistics-2026`, hreflang: 'x-default', hrefIsAbsolute: true },
       ],
     }));
 
@@ -165,14 +195,12 @@ module.exports = {
       ],
     };
 
-    return [rootPage, ...localePages, ...guideIndexPages, ...guideArticlePages, ...staticPages, ...viStaticPages, ...viGuideArticlePages, ...dataPages];
+    return [rootPage, ...localePages, ...guideIndexPages, viGuideIndexPage, ...guideArticlePages, ...staticPages, ...viStaticPages, ...viGuideArticlePages, ...dataPages];
   },
   transform: async (config, path) => {
     // Never list generated OG-image routes as pages — they are PNG endpoints,
     // not indexable HTML. Keeps crawl budget on real pages only.
     if (/\/opengraph-image(\/|$)/.test(path)) return null;
-    // Vietnamese guide index stays noindex until every P0 guide is translated.
-    if (path === '/vi/guides') return null;
     // Only translated Vietnamese guide articles belong in the sitemap.
     const viGuideMatch = path.match(/^\/vi\/guides\/([^/]+)$/);
     if (viGuideMatch && !viTranslatedGuideSlugs.includes(viGuideMatch[1])) return null;

@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { getCachedGuides } from '@/lib/cached-content';
 import { getGuideCategoryLabel, getGuidesUiLabels } from '@/lib/guides-i18n';
 import { formatGuideDate, getGuidesUiCopy } from '@/lib/guides-ui';
-import { SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles';
+import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import GuideReadButton from '@/components/GuideReadButton';
@@ -60,11 +60,17 @@ const guidesMetaI18n: Record<string, { title: string; description: string }> = {
     title: 'Przewodniki bezpieczeństwa haseł — artykuły eksperckie i najlepsze praktyki',
     description: 'Szczegółowe przewodniki dotyczące bezpieczeństwa haseł, standardów zgodności (NIST, PCI DSS), odzyskiwania po wycieku danych, konfiguracji 2FA i ochrony kont.',
   },
+  vi: {
+    title: 'Hướng dẫn bảo mật mật khẩu — bài viết chuyên sâu và thực hành tốt',
+    description: 'Hướng dẫn chuyên sâu về bảo mật mật khẩu, tiêu chuẩn tuân thủ (NIST, PCI DSS), khắc phục sau rò rỉ dữ liệu, thiết lập 2FA và bảo vệ tài khoản.',
+  },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const isFallbackLocale = locale === 'vi';
+  // The VI guide index can be indexed once every catalog guide has a vi body.
+  const hasVi = ARTICLE_CATALOG.every((article) => Boolean(article.content.vi));
+  const isFallbackLocale = locale === 'vi' && !hasVi;
   const canonical = isFallbackLocale ? `${baseUrl}/en/guides` : `${baseUrl}/${locale}/guides`;
   const meta = guidesMetaI18n[locale] || guidesMetaI18n.en;
 
@@ -75,7 +81,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       canonical,
       languages: {
         ...Object.fromEntries(
-          SUPPORTED_CONTENT_LANGUAGES.filter((lang) => lang !== 'vi').map((lang) => [
+          SUPPORTED_CONTENT_LANGUAGES.filter((lang) => lang !== 'vi' || hasVi).map((lang) => [
             hreflangMap[lang] || lang,
             `${baseUrl}/${lang}/guides`,
           ])

@@ -358,3 +358,104 @@ export const pl: LocalizedArticleContent = {
 };
 
 
+
+export const vi: LocalizedArticleContent = {
+  title: 'VPN tăng cường bảo mật trực tuyến của bạn thế nào năm 2026',
+  excerpt:
+    'Nhiều người nghĩ mật khẩu mạnh là đủ. Không có VPN, lưu lượng có thể bị chặn trên Wi-Fi công cộng, ISP ghi lại mọi trang, IP thật lộ vị trí. Hướng dẫn này giải thích cách VPN mã hóa và khi nào cần.',
+  seoTitle: 'VPN và mật khẩu mạnh: hướng dẫn bảo mật trực tuyến 2026',
+  seoDescription:
+    'Tìm hiểu cách VPN bảo vệ dữ liệu trên Wi-Fi công cộng, ẩn IP và bổ trợ mật khẩu mạnh. Hướng dẫn thực tế kèm so sánh nhà cung cấp và mẹo thiết lập.',
+  keywords: [
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh nhất',
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh dễ nhớ',
+    'trình quản lý mật khẩu là gì',
+    'cụm mật khẩu passphrase là gì',
+  ],
+  sections: [
+    {
+      heading: 'Mật khẩu chỉ là một nửa cuộc chiến',
+      paragraphs: [
+        'Bạn có lẽ đã nghe lời khuyên hàng nghìn lần: dùng mật khẩu mạnh, riêng biệt cho mọi tài khoản. Thật lòng mà nói, lời khuyên đó đúng. Mật khẩu ngẫu nhiên 16 ký tự đủ hoa, thường, số, ký hiệu sẽ mất hàng thế kỷ để bẻ với phần cứng hiện nay. Nhưng điều ít ai nói: mật khẩu chỉ bảo vệ ổ khóa trên cửa, không bảo vệ con đường bạn đi tới đó.',
+        'Khi nhập thông tin đăng nhập vào biểu mẫu, dữ liệu đi qua kết nối internet tới máy chủ. Nếu bạn ngồi ở quán cà phê, sân bay hoặc văn phòng dùng Wi-Fi chung, kết nối đó có thể không riêng tư như bạn tưởng. Kẻ tấn công cùng mạng có thể xem lưu lượng, chuyển bạn tới trang đăng nhập giả hoặc lấy cookie phiên để vượt qua mật khẩu hoàn toàn.',
+        'Đây là lúc [VPN](https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146616) — mạng riêng ảo — lấp khoảng trống mà không mật khẩu nào tự che được. Hãy hình dung: mật khẩu khóa két sắt, còn VPN là xe bọc thép chở nó.',
+      ],
+    },
+    {
+      heading: 'VPN thực sự làm gì (không cần marketing)',
+      paragraphs: [
+        'Bỏ qua thuật ngữ "mã hóa cấp quân đội", VPN làm hai việc cụ thể. Thứ nhất, nó tạo đường hầm mã hóa giữa thiết bị và máy chủ VPN. Mọi lưu lượng đi qua đường hầm, nên ai chặn kết nối — hacker trên Wi-Fi công cộng, nhà mạng hay quản trị viên tò mò — chỉ thấy dữ liệu mã hóa vô nghĩa. Họ biết bạn dùng VPN nhưng không biết bạn vào trang nào hay gửi dữ liệu gì.',
+        'Thứ hai, máy chủ VPN đóng vai proxy. Trang web thấy IP của máy chủ VPN, không phải IP của bạn. IP thật — vốn lộ vị trí gần đúng, nhà mạng và có thể dùng để theo dõi bạn — được ẩn. Đây không phải ẩn danh hoàn toàn (nhà cung cấp VPN vẫn thấy lưu lượng nếu họ thật sự không giữ log), nhưng thêm một lớp riêng tư đáng kể.',
+        'Các giao thức VPN hiện đại như WireGuard (NordVPN dùng dưới tên NordLynx) và OpenVPN lo phần mã hóa. WireGuard nhanh và tốn ít tài nguyên hơn giao thức cũ như IPsec hay L2TP, nên phần lớn nhà cung cấp nghiêm túc đã chuyển sang. Mã hóa thường dùng AES-256 hoặc ChaCha20 — đều được coi là không thể bẻ với sức tính hiện nay.',
+        'Một hiểu lầm cần xóa: VPN không làm bạn "vô hình trên internet". Bạn vẫn để lại dấu qua cookie trình duyệt, đăng nhập tài khoản và mẫu hành vi. VPN bảo vệ đường ống — kết nối giữa bạn và internet — khỏi bị nghe lén.',
+      ],
+    },
+    {
+      heading: 'Khi nào thực sự cần VPN',
+      paragraphs: [
+        'Wi-Fi công cộng là trường hợp rõ ràng. Năm 2024, báo cáo Kaspersky phát hiện khoảng 25% điểm Wi-Fi công cộng trên thế giới không có mã hóa. Kể cả điểm có WPA2 cũng có thể bị xâm phạm qua tấn công evil twin, khi kẻ tấn công dựng điểm phát cùng tên với mạng thật. Thiết bị tự kết nối và lưu lượng chảy qua kẻ tấn công. VPN khiến điều này vô hại — dù chặn được gói tin, chúng cũng không giải mã được.',
+        'Nhà mạng theo dõi ít kịch tính hơn nhưng phổ biến hơn. Ở một số nước, ISP được phép hoặc buộc phải ghi lịch sử duyệt web. Tại Mỹ, ISP có thể bán dữ liệu duyệt web tổng hợp cho nhà quảng cáo. Tại Anh, Đạo luật Quyền Điều tra buộc ISP lưu hồ sơ duyệt web 12 tháng. VPN ngăn ISP thấy bạn vào trang cụ thể — họ chỉ thấy bạn kết nối tới máy chủ VPN.',
+        'Làm việc từ xa là trường hợp mạnh khác. Nếu truy cập tài nguyên công ty — email, công cụ nội bộ, dữ liệu khách hàng — từ mạng cá nhân, VPN thêm mã hóa mà Wi-Fi nhà có thể thiếu. Nhiều tổ chức đã bắt buộc VPN cho nhân viên từ xa, nhưng freelancer và chủ doanh nghiệp nhỏ thường bỏ qua.',
+        'Truy cập nội dung giới hạn địa lý là trường hợp phổ biến và chính đáng. Khi đi nước ngoài muốn xem dịch vụ streaming quê nhà, hoặc nhà báo truy cập thông tin bị kiểm duyệt tại nơi đang ở, VPN định tuyến lưu lượng qua máy chủ ở quốc gia phù hợp.',
+        'Một trường hợp VPN KHÔNG giúp nhiều: bảo vệ khỏi email lừa đảo, tải mã độc hoặc tấn công kỹ thuật xã hội. Những mối đe dọa này nhắm trực tiếp vào bạn, không vào kết nối. Bạn vẫn cần thói quen tốt, phần mềm cập nhật và mật khẩu mạnh riêng biệt.',
+      ],
+    },
+    {
+      heading: 'VPN + mật khẩu mạnh: vì sao bảo mật phân lớp quan trọng',
+      paragraphs: [
+        'Chuyên gia bảo mật nói về "phòng thủ chiều sâu" — không biện pháp đơn lẻ nào đủ, nhưng các lớp cộng lại khiến tấn công khó hơn nhiều. Mật khẩu là một lớp. Xác thực hai yếu tố là lớp khác. VPN là lớp nữa.',
+        'Ví dụ thực tế: bạn đăng nhập ứng dụng ngân hàng tại khách sạn. Bạn có mật khẩu mạnh 20 ký tự riêng và bật 2FA. Tốt. Nhưng nếu Wi-Fi khách sạn bị xâm phạm và không có VPN, kẻ tấn công có thể chiếm phiên — không cần mật khẩu, chỉ cần token phiên trình duyệt nhận sau khi xác thực. Với VPN, token đó được mã hóa khi truyền và vô hình với mọi người trên mạng cục bộ.',
+        'Ví dụ khác: rò rỉ DNS. Không có VPN, truy vấn DNS (dịch tên miền như "yourbank.com" thành IP) được gửi tới ISP hoặc máy chủ DNS mạng cục bộ dạng văn bản thường. Kẻ tấn công thấy mọi trang bạn vào, kể cả kết nối HTTPS. Nhà cung cấp VPN tốt chạy máy chủ DNS riêng và mã hóa mọi truy vấn trong đường hầm.',
+        'Kết hợp trình quản lý mật khẩu (tạo và lưu mật khẩu riêng), 2FA (ngăn chiếm tài khoản dù mật khẩu lộ) và VPN (bảo vệ chính kết nối) che ba bề mặt tấn công khác nhau. Bỏ qua một trong ba là để lại khoảng trống cho kẻ tấn công tinh vi.',
+      ],
+    },
+    {
+      heading: 'Cần tìm gì ở nhà cung cấp VPN',
+      paragraphs: [
+        'Không phải VPN nào cũng như nhau, và chọn sai có thể làm riêng tư tệ hơn. Đây là những điều thực sự quan trọng, từ người đã thử hàng chục dịch vụ:',
+        'Chính sách không log có kiểm toán độc lập. Ai cũng có thể nói "chúng tôi không giữ log". Điều quan trọng là công ty kiểm toán uy tín (Deloitte, PwC, Cure53) đã xác minh chưa. NordVPN đã qua nhiều đợt kiểm toán độc lập của Deloitte xác nhận hạ tầng không log. Surfshark và ExpressVPN cũng công bố kết quả kiểm toán. Nếu nhà cung cấp chưa được kiểm toán, hãy hoài nghi tuyên bố không log.',
+        'Thẩm quyền pháp lý quan trọng. Công ty VPN đặt tại quốc gia Five Eyes (Mỹ, Anh, Canada, Úc, New Zealand) chịu thỏa thuận chia sẻ tình báo và yêu cầu dữ liệu của chính phủ. NordVPN hoạt động dưới thẩm quyền Panama, nơi không có luật lưu dữ liệu bắt buộc và nằm ngoài các liên minh giám sát lớn. Đây không phải hoang tưởng mà là cân nhắc thực tế cho người coi trọng riêng tư.',
+        'Kill switch là bắt buộc. Nếu kết nối VPN đột ngột rớt (và việc này xảy ra thường hơn nhà cung cấp thừa nhận), kill switch chặn mọi lưu lượng cho đến khi VPN kết nối lại. Không có nó, IP thật và lưu lượng không mã hóa bị lộ trong lúc chờ — vài giây đến vài phút, đủ để kẻ tấn công lấy dữ liệu hữu ích.',
+        'Tốc độ và mạng máy chủ. VPN luôn thêm độ trễ vì lưu lượng đi vòng qua máy chủ. Nhà cung cấp tốt giảm thiểu bằng giao thức nhanh (WireGuard/NordLynx), mạng máy chủ rộng (NordVPN có 6.400+ máy chủ ở 111 quốc gia) và định tuyến thông minh. Nếu VPN làm chậm kết nối hơn 15-20%, có vấn đề.',
+      ],
+      bullets: [
+        'Chính sách không log đã xác minh bằng kiểm toán độc lập công bố',
+        'Thẩm quyền thân thiện riêng tư (ngoài Five Eyes / Fourteen Eyes)',
+        'Kill switch tự động trên mọi nền tảng',
+        'Hỗ trợ WireGuard hoặc giao thức hiện đại tương đương',
+        'Mạng máy chủ lớn với tốc độ ổn định',
+        'Split tunneling để định tuyến chọn lọc',
+        'Bảo vệ rò rỉ DNS bằng máy chủ DNS riêng',
+      ],
+    },
+    {
+      heading: 'Vì sao chúng tôi khuyến nghị NordVPN',
+      paragraphs: [
+        'Sau khi thử nhiều nhà cung cấp trong năm 2025 và sang 2026, NordVPN luôn đứng đầu theo các tiêu chí thực sự quan trọng với người dùng chú trọng bảo mật. Đây không phải lựa chọn rẻ nhất và không hoàn hảo, nhưng gói tổng thể khó vượt qua.',
+        'NordLynx, giao thức dựa trên WireGuard của họ, cho tốc độ tải trung bình 92% so với mức nền trong thử nghiệm — nhanh hơn rõ rệt OpenVPN và cạnh tranh với các triển khai WireGuard tốt nhất. Độ phủ 111 quốc gia với 6.400+ máy chủ, nên hiếm khi kẹt ở nút quá tải.',
+        'Tuyên bố không log được nhiều đợt kiểm toán Deloitte hậu thuẫn, và việc đăng ký tại Panama nghĩa là họ không buộc phải lưu hay giao dữ liệu người dùng cho chính phủ nào. Tính năng Threat Protection chặn tên miền mã độc và trình theo dõi ở cấp DNS, bổ trợ tốt cho trình chặn quảng cáo trên trình duyệt.',
+        'Với người đã dùng sản phẩm Nord Security (như NordPass để quản lý mật khẩu), tích hợp hệ sinh thái thực sự hữu ích — bạn có trình quản lý mật khẩu và VPN từ cùng một công ty bảo mật đáng tin, đơn giản hóa bộ công cụ.',
+        'Một phê bình thẳng thắn: hỗ trợ khách hàng có thể chậm giờ cao điểm, và ứng dụng đôi khi cần khởi động lại sau cập nhật hệ thống. Không phải điều phá vỡ thỏa thuận, nhưng đáng nêu để minh bạch.',
+      ],
+    },
+    {
+      heading: 'Những lầm tưởng VPN khó chết',
+      paragraphs: [
+        '"VPN làm tôi ẩn danh hoàn toàn." Không. Nó ẩn IP với trang web và mã hóa kết nối, nhưng nhà cung cấp VPN vẫn về lý thuyết thấy lưu lượng (vì vậy kiểm toán không log quan trọng). Dấu vân tay trình duyệt, cookie và đăng nhập tài khoản vẫn nhận ra bạn. VPN là công cụ riêng tư, không phải áo tàng hình.',
+        '"VPN miễn phí tốt ngang." Một số gói miễn phí từ nhà cung cấp uy tín (như Proton VPN Free) thực sự hữu ích nhưng hạn chế. Phần lớn VPN miễn phí kiếm tiền bằng ghi log và bán dữ liệu duyệt web, chèn quảng cáo hoặc tệ hơn. Nghiên cứu của CSIRO năm 2020 phát hiện 38% ứng dụng VPN Android miễn phí chứa mã độc. Quy tắc đơn giản: nếu bạn không trả tiền cho sản phẩm, bạn chính là sản phẩm.',
+        '"Tôi có HTTPS mọi nơi nên không cần VPN." HTTPS mã hóa nội dung trao đổi với một trang cụ thể, nhưng không ẩn trang bạn vào (tên miền hiện trong trường SNI của bắt tay TLS), truy vấn DNS hay địa chỉ IP. VPN che những khoảng trống này.',
+        '"VPN làm internet chậm đến mức không dùng được." Điều này đúng cách đây năm năm với giao thức cũ. VPN WireGuard hiện đại thường chỉ thêm dưới 10% chi phí trên kết nối tốt. Với hầu hết người dùng, khác biệt tốc độ không cảm nhận được khi duyệt web, xem phim hay gọi video.',
+        '"Tôi không có gì phải giấu nên không cần VPN." Riêng tư không phải vì có điều gì phải giấu — mà là kiểm soát dữ liệu của chính mình. Bạn vẫn đóng cửa phòng tắm dù không làm gì sai. Lý lẽ tương tự áp dụng cho lưu lượng internet.',
+      ],
+      bullets: [
+        'VPN cải thiện riêng tư nhưng không bảo đảm ẩn danh hoàn toàn',
+        'Phần lớn VPN miễn phí tệ hơn không dùng — chúng kiếm tiền từ dữ liệu',
+        'HTTPS không thay thế VPN; chúng bảo vệ những thứ khác nhau',
+        'Giao thức hiện đại như WireGuard khiến VPN gần như không giảm tốc',
+        'Riêng tư là quyền, không phải bằng chứng làm sai',
+      ],
+    },
+  ],
+};

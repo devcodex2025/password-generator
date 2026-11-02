@@ -362,3 +362,108 @@ export const pl: LocalizedArticleContent = {
     { heading: 'Przewodnik krok po kroku', paragraphs: ['Krok 1: Wejdź na generatepasswordto.me.', 'Krok 2: 20 znaków, wszystkie klasy.', 'Krok 3: Wygeneruj. Lokalny CSPRNG.', 'Krok 4: Sprawdź siłę (zxcvbn).', 'Krok 5: Weryfikacja HIBP.', 'Krok 6: Skopiuj do menedżera haseł.'], bullets: ['Bez rejestracji', 'Konfigurowalne', 'Wskaźnik siły (zxcvbn)', 'Weryfikacja HIBP', 'Open source', '11 języków'] },
   ],
 };
+
+export const vi: LocalizedArticleContent = {
+  title: 'Trình tạo mật khẩu an toàn: hướng dẫn tạo trực tuyến',
+  excerpt:
+    'Cách cấu hình độ dài, bộ ký tự và tiêu chuẩn để tạo mật khẩu an toàn hơn. Gồm CSPRNG, tạo trong trình duyệt và cách dùng trình tạo không cần đăng ký.',
+  seoTitle: 'Tạo mật khẩu mạnh an toàn: trình tạo không cần đăng ký',
+  seoDescription:
+    'Hướng dẫn tạo mật khẩu mạnh ngẫu nhiên: CSPRNG, tạo trong trình duyệt, thiết lập khuyến nghị và vì sao không đăng ký bảo vệ quyền riêng tư.',
+  keywords: [
+    'trình quản lý mật khẩu là gì',
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh nhất',
+    'mật khẩu mạnh 8 ký tự',
+    'cụm mật khẩu passphrase là gì',
+  ],
+  sections: [
+    {
+      heading: 'Vì sao dùng trình tạo mật khẩu?',
+      paragraphs: [
+        'Con người về cơ bản không thể tạo mật khẩu thật ngẫu nhiên. Nhiều thập kỷ nghiên cứu tâm lý nhận thức xác nhận khi cố tạo chuỗi "ngẫu nhiên", người ta quay về khuôn mẫu: chuỗi chữ quen thuộc, vị trí gần nhau trên bàn phím, liên tưởng cá nhân và thiên lệch văn hóa. Nghiên cứu năm 2019 tại Đại học Cambridge phát hiện mật khẩu "ngẫu nhiên" do người tạo có entropy thấp hơn 30-50% so với mật khẩu thật ngẫu nhiên cùng độ dài.',
+        'Trình tạo mật khẩu giải quyết bằng cách dùng bộ tạo số giả ngẫu nhiên an toàn bằng mật mã (CSPRNG) để chọn từng ký tự độc lập và đồng đều từ bộ ký tự đã định. Kết quả là mật khẩu có entropy tối đa cho độ dài — không khuôn mẫu, không thiên lệch, không điểm yếu.',
+        'Khác biệt bảo mật đo được. Mật khẩu 12 ký tự do người tạo trông ngẫu nhiên (như "kT9mP2xWq5rL") có thể chỉ 40-60 bit entropy hiệu dụng do khuôn mẫu vô thức. Mật khẩu 12 ký tự thật ngẫu nhiên từ bộ ASCII in được có 79 bit. Chênh lệch đó tương đương hàng tỷ năm bẻ khóa thêm.',
+      ],
+    },
+    {
+      heading: 'Cách tạo an toàn bằng mật mã hoạt động',
+      paragraphs: [
+        'Trình tạo mật khẩu trong trình duyệt hiện đại dùng Web Crypto API, cụ thể hàm crypto.getRandomValues(), lấy CSPRNG của hệ điều hành. Trên Linux là /dev/urandom (được gieo bằng nhiễu phần cứng từ ngắt, hoạt động đĩa và mạng). Trên Windows là BCryptGenRandom. Trên macOS là SecRandomCopyBytes.',
+        'Thuộc tính quan trọng của CSPRNG: đầu ra không thể phân biệt về mặt tính toán với ngẫu nhiên thật. Kể cả khi quan sát một triệu kết quả trước, kẻ tấn công không dự đoán được kết quả tiếp theo tốt hơn đoán ngẫu nhiên. Điều này khác căn bản với Math.random() của JavaScript, vốn dùng thuật toán tất định (thường xoshiro256++) KHÔNG phù hợp cho bảo mật.',
+        'Trình tạo của chúng tôi tại generatepasswordto.me chạy hoàn toàn trong trình duyệt. Không mật khẩu nào được gửi tới máy chủ. Việc tạo diễn ra cục bộ qua Web Crypto API. Bạn có thể kiểm chứng bằng cách ngắt internet và thấy trình tạo vẫn hoạt động — hoặc xem mã nguồn mở trên GitHub.',
+      ],
+    },
+    {
+      heading: 'Độ dài và bộ ký tự khuyến nghị',
+      paragraphs: [
+        'Với mật khẩu lưu trong trình quản lý (không gõ tay), dùng độ dài tối đa thực tế. Chúng tôi khuyến nghị 20-24 ký tự làm chuẩn, dùng đủ bốn nhóm: chữ in hoa (A-Z), chữ in thường (a-z), chữ số (0-9) và ký hiệu (!@#$%^&*). Mức này cho khoảng 131-157 bit entropy — vượt xa mọi công nghệ hiện tại hoặc dự đoán được.',
+        'Với mật khẩu thỉnh thoảng phải gõ (Wi-Fi, PIN thiết bị, mã hóa ngoại tuyến), 16 ký tự đủ bốn nhóm cho khoảng 105 bit — quá đủ cho mọi mô hình đe dọa. Nếu hệ thống đích không nhận ký tự đặc biệt (một số hệ thống cũ hạn chế), 20 ký tự chữ và số cho khoảng 119 bit.',
+        'Với cụm mật khẩu, dùng ít nhất 5 từ từ danh sách lớn (7.776+ từ) để có khoảng 65 bit. Với cụm quan trọng (mật khẩu chính, mã hóa toàn ổ), dùng 6-7 từ cho 78-91 bit. Trình tạo hỗ trợ cả chế độ ký tự ngẫu nhiên và cụm mật khẩu.',
+      ],
+      bullets: [
+        'Mật khẩu trong trình quản lý: 20-24 ký tự, đủ mọi nhóm',
+        'Mật khẩu phải gõ: tối thiểu 16 ký tự, đủ mọi nhóm',
+        'Hệ thống cũ (không ký hiệu): 20 ký tự, chữ + số',
+        'Cụm mật khẩu: tối thiểu 5 từ, 6-7 từ cho tài khoản quan trọng',
+        'PIN: 8+ chữ số khi có thể (tránh PIN 4 số)',
+        'Mật khẩu Wi-Fi: 20+ ký tự (WPA3 hỗ trợ tới 63)',
+      ],
+    },
+    {
+      heading: 'Vì sao trình tạo không đăng ký an toàn hơn',
+      paragraphs: [
+        'Nhiều trình tạo mật khẩu yêu cầu tạo tài khoản trước khi dùng. Đây là dấu hiệu đáng ngại. Thứ nhất, chính tài khoản trở thành mục tiêu — nếu dịch vụ bị rò rỉ, kẻ tấn công biết bạn đã tạo mật khẩu nào và có thể biết dùng cho dịch vụ nào. Thứ hai, yêu cầu đăng ký ngụ ý tạo phía máy chủ, nghĩa là mật khẩu đi qua mạng và ít nhất tạm thời nằm trên máy chủ.',
+        'Trình tạo không đăng ký như generatepasswordto.me chạy hoàn toàn phía máy khách. Không tài khoản, không giao tiếp máy chủ, không lưu dữ liệu. Mật khẩu chỉ tồn tại trong bộ nhớ trình duyệt cho đến khi bạn sao chép. Đóng tab là xóa vĩnh viễn. Kiến trúc này loại bỏ cả một nhóm rủi ro.',
+        'Cách kiểm tra trình tạo thật sự chạy phía máy khách: mở công cụ nhà phát triển (F12), vào tab Network, tạo mật khẩu và xem có yêu cầu HTTP nào không. Bạn sẽ thấy không có yêu cầu gửi đi. Nếu trình tạo gọi API trong lúc tạo mật khẩu, mật khẩu có thể bị lộ.',
+        'Lưu ý quyền riêng tư khác: tránh trình tạo hiển thị quảng cáo (mạng quảng cáo theo dõi hành vi và có thể truy cập nội dung trang); ưu tiên mã nguồn mở (kiểm chứng được thuật toán); và bảo đảm trang dùng HTTPS (chống tấn công xen giữa vào chính trang).',
+      ],
+    },
+    {
+      heading: 'Tạo theo tiêu chuẩn: NIST và PCI DSS',
+      paragraphs: [
+        'NIST 800-63B không quy định cách tạo mật khẩu, nhưng nhấn mạnh độ dài, tính ngẫu nhiên và kiểm tra rò rỉ — hoàn toàn khớp với thực hành tốt của trình tạo. Trình tạo sinh mật khẩu ngẫu nhiên 16+ ký tự từ bộ lớn đáp ứng ý định của NIST về mật khẩu ghi nhớ mạnh. Kết hợp kiểm tra rò rỉ HIBP (trình tạo của chúng tôi có sẵn), bạn có mật khẩu vừa mạnh về mật mã vừa được đối chiếu với dữ liệu xâm phạm.',
+        'PCI DSS v4.0 yêu cầu mật khẩu ít nhất 12 ký tự, gồm cả chữ và số. Thiết lập mặc định của trình tạo vượt yêu cầu này. Với tổ chức xử lý dữ liệu thanh toán, tạo mật khẩu bằng công cụ tuân thủ cung cấp hồ sơ chứng minh nỗ lực đáp ứng Yêu cầu 8.3.6.',
+        'Với tổ chức triển khai tạo mật khẩu tự động trong hệ thống (đăng ký, đặt lại, thông tin tạm), dùng hàm CSPRNG phía máy chủ: module secrets của Python, crypto.randomBytes() của Node.js, SecureRandom của Java hoặc RandomNumberGenerator của .NET. Không bao giờ dùng hàm ngẫu nhiên thông thường (random(), Math.random(), rand()) cho bảo mật.',
+      ],
+    },
+    {
+      heading: 'Lỗi thường gặp với trình tạo',
+      paragraphs: [
+        'Tạo mật khẩu rồi sửa lại. Người dùng đôi khi tạo mật khẩu ngẫu nhiên rồi đổi vài ký tự cho "dễ nhớ". Việc này giảm mạnh entropy vì thay đổi theo khuôn mẫu con người. Nếu cần mật khẩu dễ nhớ, hãy dùng chế độ cụm mật khẩu thay vì sửa mật khẩu ký tự ngẫu nhiên.',
+        'Dùng cùng mật khẩu đã tạo cho nhiều tài khoản. Mục đích của trình tạo là tạo mật khẩu riêng không tốn công. Nếu tạo một mật khẩu rồi dùng lại nhiều nơi, bạn đã phá hỏng mục đích. Hãy tạo mật khẩu mới cho từng tài khoản, mỗi lần.',
+        'Lưu mật khẩu đã tạo dạng văn bản thường. Sau khi tạo mật khẩu an toàn, đừng dán vào tệp văn bản, giấy nhớ hay tài liệu không mã hóa. Sao chép thẳng vào trình quản lý mật khẩu. Nếu buộc phải lưu tạm nơi khác, xóa bản tạm ngay sau khi lưu vào trình quản lý.',
+        'Bỏ qua bộ ký tự bị loại trừ khi cần. Một số dịch vụ không nhận ký tự đặc biệt nhất định. Nếu mật khẩu bị từ chối, hãy tạo lại với giới hạn ký tự phù hợp thay vì tự xóa ký tự (gây thiên lệch). Trình tạo của chúng tôi cho tùy chỉnh nhóm ký tự.',
+      ],
+    },
+    {
+      heading: 'Từng bước tạo mật khẩu an toàn đầu tiên',
+      paragraphs: [
+        'Bước 1: mở generatepasswordto.me. Không tạo tài khoản, không đăng ký, không cần thông tin cá nhân. Trình tạo tải hoàn toàn trong trình duyệt.',
+        'Bước 2: cấu hình. Với hầu hết tài khoản, đặt độ dài 20 ký tự và bật đủ nhóm (chữ hoa, chữ thường, chữ số, ký hiệu). Với tài khoản có giới hạn ký tự, điều chỉnh tương ứng.',
+        'Bước 3: bấm tạo. Mật khẩu được sinh bằng CSPRNG tích hợp của trình duyệt. Không dữ liệu nào gửi tới máy chủ.',
+        'Bước 4: tùy chọn, dùng thước đo độ mạnh tích hợp để kiểm tra entropy. Thước đo dùng thư viện zxcvbn, ước tính thời gian bẻ khóa dựa trên khớp khuôn mẫu thay vì đếm ký tự đơn giản.',
+        'Bước 5: dùng tính năng kiểm tra rò rỉ để xác minh mật khẩu chưa xuất hiện trong vụ rò rỉ nào. Chỉ 5 ký tự đầu của hash SHA-1 được gửi tới API Have I Been Pwned — mật khẩu thật không bao giờ được truyền.',
+        'Bước 6: sao chép mật khẩu thẳng vào trình quản lý mật khẩu. Không dán ở nơi khác. Mật khẩu đã được bảo vệ.',
+      ],
+      bullets: [
+        'Không cần đăng ký — tạo hoàn toàn phía máy khách',
+        'Tùy chỉnh độ dài và nhóm ký tự',
+        'Thước đo độ mạnh tích hợp (thư viện zxcvbn)',
+        'Kiểm tra rò rỉ qua Have I Been Pwned (k-anonymity)',
+        'Mã nguồn mở trên GitHub để kiểm chứng',
+        'Hỗ trợ 11 ngôn ngữ, gồm tiếng Việt và tiếng Anh',
+      ],
+    },
+    {
+      heading: 'Chi tiết kỹ thuật cho lập trình viên',
+      paragraphs: [
+        'Với lập trình viên xây tính năng tạo mật khẩu, đây là các yêu cầu chính. Chỉ dùng nguồn CSPRNG: Web Crypto API (trình duyệt), crypto.randomBytes() (Node.js), secrets.token_bytes() (Python), SecureRandom (Java) hoặc RandomNumberGenerator (C#/.NET). Kiểm tra nguồn ngẫu nhiên được hệ điều hành gieo đúng.',
+        'Tạo mật khẩu bằng cách chọn chỉ số vào bộ ký tự đồng đều ngẫu nhiên. Chú ý thiên lệch modulo: nếu CSPRNG tạo giá trị trong khoảng không phải bội số của kích thước bộ ký tự, vài ký tự cuối sẽ ít khả năng hơn. Dùng lấy mẫu loại bỏ: tạo giá trị ngẫu nhiên, nếu rơi vào khoảng thiên lệch thì bỏ và tạo lại.',
+        'Không bao giờ ghi log mật khẩu đã tạo, kể cả tạm thời. Bảo đảm mật khẩu chỉ nằm trong bộ nhớ khi cần và không bị báo lỗi, phân tích hay công cụ gỡ lỗi thu lại. Trong ứng dụng web, cân nhắc FinalizationRegistry của JavaScript hoặc xóa bộ nhớ thủ công để giảm phơi lộ.',
+        'Kiểm tra trình tạo bằng các bài kiểm tra thống kê tính ngẫu nhiên trên đầu ra. Bộ kiểm tra thống kê NIST (SP 800-22) xác minh đầu ra không phân biệt được với ngẫu nhiên thật. Hoặc dùng kiểm tra đơn giản: tần suất ký tự gần đồng đều và ký tự liên tiếp không tương quan.',
+      ],
+    },
+  ],
+};

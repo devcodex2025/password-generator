@@ -318,3 +318,91 @@ export const pl: LocalizedArticleContent = {
     { heading: 'Zgłaszanie i kroki prawne', paragraphs: ['W UE zgłoś do organu ochrony danych pod RODO. Masz prawo do informacji i usunięcia danych.', 'W USA: identitytheft.gov dla spersonalizowanego planu.', 'Dokumentuj wszystko: zachowaj emaile powiadomień, zrzuty ekranu nieautoryzowanej aktywności.'] },
   ],
 };
+
+export const vi: LocalizedArticleContent = {
+  title: 'Cần làm gì sau khi mật khẩu bị rò rỉ: phục hồi từng bước',
+  excerpt:
+    'Thông tin đăng nhập của bạn bị lộ trong một vụ rò rỉ dữ liệu. Đây là kế hoạch ứng phó từng bước: đặt lại mật khẩu, giám sát, bật MFA và bảo vệ lâu dài.',
+  seoTitle: 'Sau rò rỉ mật khẩu: tạo mật khẩu mạnh, bảo vệ tài khoản',
+  seoDescription:
+    'Kế hoạch ứng phó sau rò rỉ mật khẩu: việc cần làm ngay, giám sát đánh cắp danh tính, bật MFA, dùng trình quản lý mật khẩu và tạo mật khẩu mạnh.',
+  keywords: [
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh nhất',
+    'mật khẩu mạnh dễ nhớ',
+    'trình quản lý mật khẩu là gì',
+    'cụm mật khẩu passphrase là gì',
+  ],
+  sections: [
+    {
+      heading: 'Làm sao biết bạn đã bị rò rỉ',
+      paragraphs: [
+        'Rò rỉ dữ liệu xảy ra liên tục — hơn 3.200 vụ được báo cáo công khai đã làm lộ 353 triệu bản ghi chỉ trong năm 2023, theo Identity Theft Resource Center. Nhiều vụ không được báo trong nhiều tháng hoặc nhiều năm. Bạn có thể biết qua email thông báo từ dịch vụ bị ảnh hưởng, tin tức, cảnh báo giám sát dark web hoặc kiểm tra haveibeenpwned.com.',
+        'Have I Been Pwned (HIBP) là dịch vụ miễn phí của nhà nghiên cứu bảo mật Troy Hunt, tổng hợp dữ liệu rò rỉ. Nhập địa chỉ email để xem vụ nào chứa thông tin của bạn. Dịch vụ hiện lập chỉ mục hơn 14 tỷ tài khoản bị xâm phạm trong 800+ vụ. HIBP còn có dịch vụ thông báo khi email xuất hiện trong vụ rò rỉ tương lai.',
+        'Dấu hiệu tài khoản bị xâm phạm: email đặt lại mật khẩu bạn không yêu cầu; thông báo đăng nhập từ vị trí hoặc thiết bị lạ; thay đổi cài đặt bạn không thực hiện; người liên hệ nhận tin nhắn bạn không gửi; giao dịch lạ trên tài khoản tài chính. Nếu thấy bất kỳ dấu hiệu nào, hãy coi tài khoản đã bị xâm phạm ngay — đừng chờ thông báo chính thức.',
+      ],
+    },
+    {
+      heading: 'Hành động ngay: 30 phút đầu',
+      paragraphs: [
+        'Bước 1: đổi ngay mật khẩu tài khoản bị rò rỉ. Dùng trình quản lý tạo mật khẩu ngẫu nhiên 20+ ký tự. Nếu không vào được, hãy đặt lại qua cơ chế khôi phục (email, điện thoại, câu hỏi bảo mật).',
+        'Bước 2: nếu đã dùng lại mật khẩu bị rò rỉ ở tài khoản khác, đổi ngay những mật khẩu đó. Đây là bước quan trọng nhất — tấn công nhồi thông tin đăng nhập bắt đầu trong vài giờ sau khi vụ rò rỉ được biết. Ưu tiên email, ngân hàng và lưu trữ đám mây.',
+        'Bước 3: bật xác thực đa yếu tố (MFA) cho tài khoản bị rò rỉ và mọi tài khoản vừa đổi mật khẩu. Dùng ứng dụng TOTP (Google Authenticator, Authy, Microsoft Authenticator) hoặc khóa bảo mật phần cứng (YubiKey). Tránh MFA qua SMS nếu có thể vì dễ bị đổi SIM.',
+        'Bước 4: kiểm tra hoạt động trái phép trên tài khoản bị rò rỉ. Xem phiên đăng nhập gần đây, ứng dụng đã kết nối, quy tắc chuyển tiếp email và cài đặt khôi phục. Kẻ tấn công thường tạo cơ chế duy trì truy cập — thêm email của chúng làm địa chỉ khôi phục hoặc kết nối ứng dụng OAuth — để sống sót sau khi đổi mật khẩu.',
+      ],
+    },
+    {
+      heading: 'Tài khoản email: mục tiêu ưu tiên',
+      paragraphs: [
+        'Tài khoản email là chìa khóa chính vào đời sống số của bạn. Hầu hết dịch vụ dùng email để đặt lại mật khẩu, nghĩa là kẻ kiểm soát email có thể chiếm gần như mọi tài khoản khác. Nếu thông tin email bị rò rỉ, tài khoản này ưu tiên tuyệt đối.',
+        'Sau khi đổi mật khẩu email và bật MFA, hãy rà soát mọi khía cạnh: quy tắc chuyển tiếp (kẻ tấn công chuyển tới địa chỉ của chúng); ứng dụng kết nối và quyền OAuth; số điện thoại, email khôi phục; bộ lọc tự xóa hoặc lưu trữ email; và thư đã gửi để phát hiện lừa đảo.',
+        'Với Gmail, vào myaccount.google.com/security để xem sự kiện bảo mật, thiết bị đăng nhập và quyền truy cập bên thứ ba. Với tài khoản Microsoft, dùng account.microsoft.com/security. Cả hai đều có nhật ký hoạt động gần đây.',
+      ],
+    },
+    {
+      heading: 'Tài khoản tài chính: bảo vệ tiền của bạn',
+      paragraphs: [
+        'Nếu vụ rò rỉ liên quan dịch vụ tài chính, hoặc bạn dùng lại mật khẩu bị rò rỉ ở tài khoản tài chính, hãy làm thêm ngay. Liên hệ ngân hàng và công ty thẻ để báo nguy cơ bị xâm phạm. Họ có thể gắn cờ tài khoản, phát hành số thẻ mới và tạm khóa khi cần.',
+        'Đặt cảnh báo gian lận hoặc đóng băng tín dụng với Equifax, Experian và TransUnion. Cảnh báo buộc chủ nợ xác minh danh tính kỹ hơn; đóng băng mạnh hơn, chặn mọi tài khoản mới dưới tên bạn cho đến khi bạn gỡ.',
+        'Theo dõi sao kê ngân hàng và thẻ hằng ngày trong ít nhất 30 ngày sau rò rỉ. Bật thông báo giao dịch cho mọi số tiền. Chú ý giao dịch thử nhỏ (1-5 USD) mà kẻ gian dùng để kiểm tra thẻ bị đánh cắp còn hoạt động trước khi mua lớn.',
+        'Tại Ukraine và EU, theo dõi tài khoản qua ứng dụng ngân hàng và liên hệ bộ phận chống gian lận. Ngân hàng Quốc gia Ukraine có đường dây nóng về gian lận tài chính. Nếu phát hiện giao dịch trái phép, hãy báo cả ngân hàng và Cyberpolice (cyberpolice.gov.ua).',
+      ],
+    },
+    {
+      heading: 'Kiểm tra mật khẩu với cơ sở dữ liệu rò rỉ',
+      paragraphs: [
+        'Ngoài việc kiểm tra email, bạn nên xác minh mật khẩu cụ thể đã xuất hiện trong vụ rò rỉ nào chưa. API Have I Been Pwned Passwords cho phép kiểm tra mà không truyền mật khẩu. Nó dùng k-anonymity: chỉ gửi 5 ký tự đầu của hash SHA-1, nhận danh sách hash khớp để so sánh cục bộ.',
+        'Phần lớn trình quản lý mật khẩu tích hợp kiểm tra rò rỉ. Watchtower của 1Password, báo cáo sức khỏe kho của Bitwarden và giám sát dark web của Dashlane đều dùng HIBP hoặc cơ sở dữ liệu tương tự để gắn cờ mật khẩu bị xâm phạm. Hãy chạy kiểm tra toàn kho và đổi mọi mật khẩu xuất hiện trong dữ liệu rò rỉ.',
+        'Trình tạo mật khẩu của chúng tôi có công cụ kiểm tra rò rỉ tích hợp. Nhập mật khẩu để kiểm tra tức thì với cơ sở dữ liệu HIBP. Việc kiểm tra diễn ra hoàn toàn trong trình duyệt — mật khẩu đầy đủ không bao giờ được gửi tới máy chủ. Chỉ 5 ký tự đầu của hash được truyền, bảo vệ quyền riêng tư mà vẫn có dữ liệu rò rỉ thời gian thực.',
+      ],
+    },
+    {
+      heading: 'Chiến lược bảo vệ lâu dài',
+      paragraphs: [
+        'Hãy dùng trình quản lý mật khẩu nếu chưa có. Đây là bước hiệu quả nhất để tránh rò rỉ do dùng lại thông tin. Với trình quản lý, mỗi tài khoản có mật khẩu ngẫu nhiên riêng, nên một dịch vụ bị rò rỉ không lan sang tài khoản khác. Bitwarden (miễn phí, mã nguồn mở) và 1Password (2,99 USD/tháng) là lựa chọn tốt.',
+        'Bật MFA trên mọi tài khoản hỗ trợ, ưu tiên email, ngân hàng, lưu trữ đám mây và mạng xã hội. Khóa bảo mật phần cứng (YubiKey, Titan) bảo vệ tốt nhất và chống lừa đảo trực tuyến. Nếu không có khóa phần cứng, dùng ứng dụng TOTP. Chỉ dùng SMS khi không còn cách nào khác.',
+        'Đăng ký thông báo rò rỉ. HIBP có giám sát email miễn phí tại haveibeenpwned.com/NotifyMe. Google Password Checkup (tích hợp trong Chrome và tài khoản Google) cũng giám sát mật khẩu đã lưu với cơ sở dữ liệu rò rỉ. Bật các tính năng này để biết sớm thay vì vài tháng sau.',
+        'Duy trì vệ sinh bảo mật: rà soát kho mỗi quý để tìm mật khẩu yếu hoặc cũ; kiểm tra ứng dụng kết nối và quyền OAuth; cập nhật phần mềm (nhiều vụ rò rỉ khai thác lỗ hổng đã biết); và cảnh giác lừa đảo trực tuyến — cách phổ biến nhất để lấy thông tin đăng nhập.',
+      ],
+      bullets: [
+        'Dùng trình quản lý mật khẩu với mật khẩu riêng cho từng tài khoản',
+        'Bật MFA trên mọi tài khoản (FIDO2 > TOTP > SMS)',
+        'Đăng ký thông báo rò rỉ của HIBP',
+        'Rà soát kho mật khẩu mỗi quý',
+        'Kiểm tra quyền OAuth và ứng dụng kết nối thường xuyên',
+        'Cập nhật mọi phần mềm',
+        'Học cách nhận diện lừa đảo trực tuyến',
+        'Đóng băng tín dụng nếu dữ liệu tài chính bị lộ',
+      ],
+    },
+    {
+      heading: 'Báo cáo và thủ tục pháp lý',
+      paragraphs: [
+        'Tại Ukraine, báo tội phạm mạng cho Cyberpolice tại cyberpolice.gov.ua hoặc gọi 0-800-505-170. Theo GDPR (áp dụng qua việc luật bảo vệ dữ liệu Ukraine hài hòa với tiêu chuẩn EU), bạn có quyền được thông báo về vụ rò rỉ ảnh hưởng dữ liệu của mình và yêu cầu dịch vụ bị rò rỉ xóa dữ liệu.',
+        'Tại Mỹ, báo đánh cắp danh tính cho FTC tại identitytheft.gov để nhận kế hoạch khôi phục cá nhân hóa. Cũng nên báo cảnh sát địa phương — hồ sơ này có thể cần cho tranh chấp ngân hàng và tín dụng. Nếu hồ sơ y tế bị lộ, khiếu nại với Văn phòng Quyền Dân sự của HHS.',
+        'Ghi lại mọi thứ: lưu email thông báo rò rỉ, chụp màn hình hoạt động trái phép, ghi ngày giờ các hành động ứng phó và giữ bản sao mọi thư từ với dịch vụ bị ảnh hưởng. Hồ sơ này cần thiết cho tranh chấp, bảo hiểm hoặc thủ tục pháp lý sau này.',
+      ],
+    },
+  ],
+};

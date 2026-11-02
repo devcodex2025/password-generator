@@ -10,6 +10,7 @@ const GUIDE_UI_DICTIONARY = {
   zh: { home: '首页', guides: '指南', guidesTitle: '安全指南', readGuide: '阅读指南' },
   ja: { home: 'ホーム', guides: 'ガイド', guidesTitle: 'セキュリティガイド', readGuide: 'ガイドを読む' },
   pl: { home: 'Strona główna', guides: 'Poradniki', guidesTitle: 'Poradniki bezpieczeństwa', readGuide: 'Czytaj poradnik' },
+  vi: { home: 'Trang chủ', guides: 'Hướng dẫn', guidesTitle: 'Hướng dẫn bảo mật', readGuide: 'Đọc hướng dẫn' },
 } as const;
 
 type GuideUiLocale = keyof typeof GUIDE_UI_DICTIONARY;
@@ -85,6 +86,12 @@ const GUIDE_CATEGORY_DICTIONARY = {
     policy: 'Polityki',
     implementation: 'Wdrożenie',
     'incident-response': 'Reagowanie na incydenty',
+  },
+  vi: {
+    'security-basics': 'Kiến thức bảo mật cơ bản',
+    policy: 'Chính sách',
+    implementation: 'Triển khai',
+    'incident-response': 'Xử lý sự cố',
   },
 } as const;
 

@@ -373,3 +373,109 @@ export const pl: LocalizedArticleContent = {
     { heading: 'Wdrożenie', paragraphs: ['Uzyskać wsparcie kierownictwa.', 'Wdrożyć menedżera przed ogłoszeniem polityki.', 'Okres przejściowy 30 dni.', 'Roczny przegląd.'] },
   ],
 };
+
+export const vi: LocalizedArticleContent = {
+  title: 'Mẫu chính sách mật khẩu nhóm: khung sẵn dùng',
+  excerpt:
+    'Dùng khung chính sách toàn diện này để chuẩn hóa bảo mật mật khẩu trong tổ chức. Gồm mẫu sẵn dùng theo NIST 800-63B, PCI DSS v4.0 và đào tạo nhân viên.',
+  seoTitle: 'Mẫu chính sách mật khẩu nhóm 2026: tạo mật khẩu mạnh',
+  seoDescription:
+    'Mẫu chính sách mật khẩu nhóm sẵn dùng theo NIST 800-63B và PCI DSS v4.0: tạo mật khẩu mạnh, lưu trữ, xoay vòng, MFA, ứng phó sự cố và đào tạo nhân viên.',
+  keywords: [
+    'trình quản lý mật khẩu là gì',
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh nhất',
+    'mật khẩu mạnh dễ nhớ',
+    'cụm mật khẩu passphrase là gì',
+  ],
+  sections: [
+    {
+      heading: 'Vì sao nhóm cần chính sách mật khẩu bằng văn bản',
+      paragraphs: [
+        'Chính sách mật khẩu bằng văn bản biến bảo mật từ phỏng đoán cá nhân thành chuẩn mực tổ chức. Không có chính sách, các thành viên dùng cách rất khác nhau: người dùng trình quản lý với mật khẩu ngẫu nhiên 20 ký tự, người dùng lại "CompanyName2026" cho mọi dịch vụ. Chính sách rõ ràng xóa bỏ sự thiếu nhất quán và tạo bảo vệ pháp lý bằng chứng minh nỗ lực hợp lý.',
+        'Các khung quy định gồm PCI DSS, SOC 2, HIPAA, GDPR và ISO 27001 đều yêu cầu chính sách kiểm soát truy cập có hồ sơ. Khi kiểm toán hoặc điều tra rò rỉ, câu hỏi đầu tiên thường là "cho xem chính sách mật khẩu". Không có hoặc có bản lỗi thời có thể dẫn tới không tuân thủ, phạt cao hơn và trách nhiệm lớn hơn.',
+        'Mẫu dưới đây dành cho nhóm 5-500 người. Mẫu bao gồm yêu cầu thiết yếu nhưng vẫn thực tế cho dùng hằng ngày. Hãy điều chỉnh giá trị cụ thể (độ dài tối thiểu, chu kỳ xoay vòng, công cụ) theo mức rủi ro và quy định của tổ chức.',
+      ],
+    },
+    {
+      heading: 'Phần 1: Yêu cầu tạo mật khẩu',
+      paragraphs: [
+        'Độ dài tối thiểu: 14 ký tự cho tài khoản người dùng, 20 ký tự cho tài khoản quản trị và dịch vụ. Không giới hạn độ dài tối đa. Mức này vượt tối thiểu NIST 800-63B (8) và PCI DSS v4.0 (12) để có thêm biên an toàn trước tiến bộ bẻ khóa.',
+        'Cách tiếp cận độ phức tạp: áp dụng hướng NIST ưu tiên độ dài hơn độ phức tạp. Mật khẩu không được chỉ toàn số hoặc chỉ toàn chữ. Ngoài ra không bắt buộc nhóm ký tự cụ thể. Người dùng được khuyến khích nhưng không bị ép dùng nhiều loại ký tự.',
+        'Mật khẩu bị cấm: mọi mật khẩu được kiểm tra với cơ sở dữ liệu Have I Been Pwned khi tạo và đổi. Mật khẩu trùng dữ liệu rò rỉ đã biết bị từ chối kèm giải thích rõ. Ngoài ra, mật khẩu không được chứa tên đăng nhập, email hoặc tên công ty.',
+        'Hỗ trợ cụm mật khẩu: khuyến khích dùng cụm (chuỗi từ ngẫu nhiên) thay mật khẩu ký tự ngẫu nhiên cho thông tin phải ghi nhớ. Cụm phải có ít nhất 5 từ từ danh sách lớn, có dấu phân cách giữa các từ.',
+      ],
+      bullets: [
+        'Tối thiểu 14 ký tự cho tài khoản người dùng',
+        'Tối thiểu 20 ký tự cho tài khoản quản trị và dịch vụ',
+        'Không giới hạn độ dài tối đa',
+        'Không chỉ toàn số hoặc chỉ toàn chữ',
+        'Kiểm tra với cơ sở dữ liệu mật khẩu bị rò rỉ HIBP',
+        'Không chứa tên đăng nhập, email hoặc tên công ty',
+        'Chấp nhận và khuyến khích cụm mật khẩu 5+ từ ngẫu nhiên',
+      ],
+    },
+    {
+      heading: 'Phần 2: Yêu cầu trình quản lý mật khẩu',
+      paragraphs: [
+        'Mọi thành viên phải dùng trình quản lý mật khẩu được tổ chức phê duyệt cho mọi tài khoản công việc. Trình quản lý được duyệt phải: dùng mã hóa AES-256 hoặc XChaCha20; có kiến trúc zero-knowledge; đã qua kiểm tra bảo mật độc lập trong 24 tháng gần nhất; hỗ trợ mọi nền tảng nhóm dùng; và có kiểm soát quản trị để áp chính sách.',
+        'Lựa chọn khuyến nghị: 1Password Business (7,99 USD/người/tháng) có kiểm soát quản trị toàn diện nhất, giám sát rò rỉ Watchtower và travel mode. Bitwarden Teams (4 USD/người/tháng) giá trị tốt với mã nguồn mở minh bạch. Dashlane Business (8 USD/người/tháng) gồm VPN và giám sát dark web.',
+        'Mỗi thành viên phải tạo mật khẩu ngẫu nhiên riêng ít nhất 16 ký tự cho mọi tài khoản. Cấm dùng lại mật khẩu giữa bất kỳ tài khoản nào. Phải dùng trình tạo tích hợp của trình quản lý — mật khẩu do người tạo không được phép cho tài khoản công việc.',
+        'Yêu cầu mật khẩu chính: cụm ít nhất 6 từ ngẫu nhiên hoặc mật khẩu ngẫu nhiên ít nhất 20 ký tự. Mật khẩu chính phải duy nhất (không dùng cho mục đích khác) và không được lưu kỹ thuật số ngoài trí nhớ người dùng. Có thể giữ bản giấy trong két cá nhân có khóa trong thời gian đầu luyện nhớ.',
+      ],
+    },
+    {
+      heading: 'Phần 3: Chính sách xác thực đa yếu tố',
+      paragraphs: [
+        'MFA là bắt buộc cho mọi tài khoản công việc hỗ trợ. Không có ngoại lệ cho bất kỳ ai, kể cả lãnh đạo và nhân viên tạm thời. MFA phải được bật trong 24 giờ sau khi tạo tài khoản. Tài khoản chưa bật MFA sau 48 giờ sẽ bị tạm ngưng cho đến khi cấu hình xong.',
+        'Phương thức MFA được duyệt, theo thứ tự ưu tiên: khóa bảo mật phần cứng FIDO2/WebAuthn (YubiKey 5, Google Titan); ứng dụng TOTP (Google Authenticator, Authy, Microsoft Authenticator); thông báo đẩy từ trình quản lý mật khẩu được duyệt; mã SMS (chỉ khi dịch vụ cụ thể không còn cách nào khác).',
+        'Yêu cầu khóa phần cứng: thành viên truy cập hệ thống sản phẩm, dữ liệu khách hàng hoặc hệ thống tài chính phải dùng khóa phần cứng làm MFA chính. Tổ chức cấp hai khóa cho mỗi nhân viên đủ điều kiện — một dùng hằng ngày, một dự phòng cất an toàn ở nhà. Mất khóa phải báo trong 2 giờ.',
+        'Dự phòng và khôi phục: mọi mã dự phòng MFA phải lưu trong trình quản lý mật khẩu nhóm dưới dạng ghi chú an toàn. Mỗi người phải đăng ký ít nhất hai phương thức MFA hoạt động cho mọi tài khoản quan trọng (ví dụ khóa phần cứng + ứng dụng TOTP). Quy trình khôi phục được ghi lại và kiểm tra hằng năm.',
+      ],
+    },
+    {
+      heading: 'Phần 4: Xoay vòng và vòng đời mật khẩu',
+      paragraphs: [
+        'Tài khoản người dùng thường: KHÔNG xoay vòng theo lịch cố định. Theo hướng dẫn NIST 800-63B, xoay vòng định kỳ bắt buộc phản tác dụng. Chỉ đổi khi: có bằng chứng bị xâm phạm; mật khẩu xuất hiện trong cơ sở dữ liệu rò rỉ mới; vai trò nhân viên thay đổi đáng kể; hoặc nhân viên rời tổ chức.',
+        'Tài khoản quản trị: xoay vòng mỗi 180 ngày và ngay khi nghi bị xâm phạm. Mật khẩu quản trị phải do trình quản lý tạo (tối thiểu 24 ký tự, hoàn toàn ngẫu nhiên) và không bao giờ chia sẻ.',
+        'Tài khoản dịch vụ và khóa API: xoay vòng mỗi 90 ngày. Mọi thông tin tài khoản dịch vụ phải lưu trong hệ thống quản lý bí mật (HashiCorp Vault, AWS Secrets Manager hoặc tương đương) — không bao giờ trong mã nguồn, tệp cấu hình hoặc biến môi trường ở kho chung. Gắn cứng thông tin đăng nhập là lỗi có thể bị sa thải.',
+        'Nhân viên rời tổ chức: mọi mật khẩu và token truy cập liên quan phải được xoay vòng hoặc thu hồi trong 4 giờ sau thông báo nghỉ việc. Nhóm CNTT giữ danh sách kiểm tra mọi hệ thống cần xoay thông tin khi nhân viên rời đi.',
+      ],
+    },
+    {
+      heading: 'Phần 5: Ứng phó sự cố rò rỉ thông tin đăng nhập',
+      paragraphs: [
+        'Khi nghi ngờ hoặc xác nhận thông tin đăng nhập bị xâm phạm, áp dụng quy trình sau. Ngay lập tức (trong 30 phút): vô hiệu hóa tài khoản bị xâm phạm; xoay thông tin bị lộ; kiểm tra log kiểm toán tìm truy cập trái phép; bật giám sát tăng cường trên hệ thống bị ảnh hưởng.',
+        'Ngắn hạn (trong 24 giờ): xác định phạm vi xâm phạm — tài khoản được quyền truy cập dữ liệu gì? Xem mọi hành động của tài khoản trong 30 ngày qua. Nếu mật khẩu bị lộ được dùng lại (vi phạm chính sách), xoay mọi tài khoản dùng mật khẩu đó. Thông báo cho bên liên quan theo quy định.',
+        'Sau sự cố (trong 7 ngày): phân tích nguyên nhân gốc, ghi lại cách xâm phạm xảy ra, kiểm soát nào thất bại và cần cải tiến gì. Cập nhật chính sách mật khẩu nếu sự cố lộ khoảng trống. Đào tạo bảo mật có mục tiêu cho nhân viên bị ảnh hưởng. Ghi hồ sơ sự cố để tuân thủ.',
+        'Thời hạn thông báo rò rỉ: GDPR yêu cầu thông báo trong 72 giờ sau khi phát hiện; PCI DSS yêu cầu báo ngay cho các thương hiệu thanh toán; luật thông báo rò rỉ cấp bang khác nhau. Nhóm pháp lý phải được thông báo trong 2 giờ khi nghi rò rỉ liên quan dữ liệu khách hàng.',
+      ],
+    },
+    {
+      heading: 'Phần 6: Đào tạo và tuân thủ',
+      paragraphs: [
+        'Mọi nhân viên phải hoàn thành đào tạo bảo mật mật khẩu trong tuần đầu và hằng năm sau đó. Nội dung gồm: cách dùng trình quản lý mật khẩu của tổ chức; cách tạo và quản lý cụm mật khẩu; nhận diện lừa đảo nhắm thông tin đăng nhập; xử lý đúng thiết bị MFA và mã dự phòng; và quy trình báo cáo sự cố.',
+        'Tuân thủ được xác minh qua kiểm toán hằng quý bảng sức khỏe của trình quản lý mật khẩu nhóm. Chỉ số theo dõi gồm: tỷ lệ tài khoản dùng mật khẩu riêng; độ dài trung bình; số mật khẩu xuất hiện trong cơ sở dữ liệu rò rỉ; tỷ lệ dùng MFA; và thời gian khắc phục vấn đề bị gắn cờ.',
+        'Vi phạm chính sách được xử lý tăng dần: lần đầu nhận đào tạo thêm và cảnh cáo bằng văn bản; lần hai nhận khiển trách chính thức và buổi vệ sinh mật khẩu có giám sát; lần ba bị hạn chế truy cập hệ thống chờ đánh giá bảo mật. Vi phạm cố ý (chia sẻ thông tin, tắt MFA, gắn cứng bí mật) có thể bị xử lý kỷ luật ngay.',
+      ],
+      bullets: [
+        'Đào tạo bảo mật trong tuần đầu + nhắc lại hằng năm',
+        'Kiểm toán sức khỏe mật khẩu hằng quý qua bảng điều khiển',
+        'Theo dõi: mật khẩu riêng, độ dài, phơi lộ rò rỉ, tỷ lệ MFA',
+        'Kỷ luật tăng dần với vi phạm chính sách',
+        'Xử lý ngay với vi phạm cố ý',
+        'Ghi hồ sơ hoàn thành đào tạo để tuân thủ',
+      ],
+    },
+    {
+      heading: 'Áp dụng mẫu này',
+      paragraphs: [
+        'Để triển khai: trước hết, thuyết phục lãnh đạo bằng cách so chi phí rò rỉ thông tin đăng nhập với chi phí đăng ký trình quản lý mật khẩu. IBM báo cáo chi phí rò rỉ trung bình 4,88 triệu USD — đăng ký trình quản lý chỉ là một phần nhỏ của rủi ro đó.',
+        'Thứ hai, chọn và triển khai trình quản lý mật khẩu trước khi công bố chính sách. Cấu hình sẵn kho nhóm, nhập thông tin chia sẻ hiện có và tạo tài liệu hướng dẫn. Chuyển đổi càng mượt, tỷ lệ áp dụng càng cao.',
+        'Thứ ba, công bố chính sách kèm thời gian ân hạn (thường 30 ngày) để tuân thủ đầy đủ. Trong thời gian này, tổ chức buổi hỗ trợ trực tiếp để thành viên thiết lập trình quản lý, tạo mật khẩu mới và cấu hình MFA với hướng dẫn của CNTT.',
+        'Cuối cùng, xem xét và cập nhật chính sách ít nhất hằng năm. Mối đe dọa thay đổi, công cụ mới xuất hiện và quy định cũng đổi. Mỗi lần rà soát nên gồm bài học từ sự cố năm trước và phản hồi của thành viên về khó khăn thực tế.',
+      ],
+    },
+  ],
+};

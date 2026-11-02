@@ -55,7 +55,7 @@ export const en: LocalizedArticleContent = {
         'Random character passwords achieve higher entropy per character than passphrases achieve per word. A 16-character random password from the full printable ASCII set provides about 105 bits of entropy — you would need 8 Diceware words to match that, resulting in a much longer string to type.',
         'For accounts managed by a password manager (where you never type the password manually), random character passwords are strictly superior. The password manager handles generation, storage, and auto-fill, so memorability is irrelevant. You can use 20, 30, or even 64-character random strings with zero effort.',
         'Random passwords are also more compact, which matters in systems with low maximum password length limits. Some legacy systems cap passwords at 16 or even 8 characters. In those constrained environments, maximizing entropy per character with a random password is essential.',
-        'The key disadvantage of random passwords is that they are essentially impossible to memorize. If you lose access to your password manager, recovery depends entirely on your backup strategy. This makes random passwords inappropriate for your master password or any credential you must enter from memory.',
+        'The key disadvantage of random passwords is that they are impossible to memorize. If you lose access to your password manager, recovery depends entirely on your backup strategy. This makes random passwords inappropriate for your master password or any credential you must enter from memory.',
       ],
     },
     {
@@ -147,7 +147,7 @@ export const ua: LocalizedArticleContent = {
         'Випадкові символьні паролі досягають більшої ентропії на символ, ніж парольні фрази на слово. 16-символьний випадковий пароль з повного набору друкованих ASCII забезпечує близько 105 бітів ентропії — вам знадобиться 8 слів Diceware, щоб зрівнятися з цим, що дасть набагато довший рядок для набору.',
         'Для акаунтів, керованих менеджером паролів (де ви ніколи не набираєте пароль вручну), випадкові символьні паролі є безумовно кращими. Менеджер паролів бере на себе генерацію, зберігання та автозаповнення, тому запам\'ятовуваність не має значення. Ви можете використовувати 20, 30 або навіть 64-символьні випадкові рядки без жодних зусиль.',
         'Випадкові паролі також більш компактні, що важливо в системах з низьким обмеженням максимальної довжини пароля. Деякі застарілі системи обмежують паролі 16 або навіть 8 символами. У цих обмежених середовищах максимізація ентропії на символ за допомогою випадкового пароля є критичною.',
-        'Головний недолік випадкових паролів — їх фактично неможливо запам\'ятати. Якщо ви втратите доступ до менеджера паролів, відновлення повністю залежить від вашої стратегії резервного копіювання. Це робить випадкові паролі непридатними для вашого мастер-пароля або будь-яких облікових даних, які ви повинні вводити з пам\'яті.',
+        'Головний недолік випадкових паролів — їх неможливо запам\'ятати. Якщо ви втратите доступ до менеджера паролів, відновлення повністю залежить від вашої стратегії резервного копіювання. Це робить випадкові паролі непридатними для вашого мастер-пароля або будь-яких облікових даних, які ви повинні вводити з пам\'яті.',
       ],
     },
     {
@@ -299,7 +299,7 @@ export const zh: LocalizedArticleContent = {
     { heading: '随机密码的优势', paragraphs: ['随机字符密码每个字符的熵值更高。16字符随机密码提供约105位——需要8个Diceware词才能匹配。', '对于密码管理器管理的账户，随机密码严格优越，因为记忆性无关紧要。', '随机密码也更紧凑，在有长度限制的系统中很重要。', '主要缺点是基本无法记忆。'] },
     { heading: '何时使用哪种方法', paragraphs: ['使用密码短语：主密码；电脑登录密码；手机PIN；磁盘加密密码；以及任何不能依赖自动填充的凭证。', '使用随机密码：管理器中的所有账户；API密钥和令牌；服务账户；数据库密码。', '为获得最大安全性，两种方法结合使用：强密码短语作为主密码，每个账户使用唯一的随机密码。'] },
     { heading: '加强你的密码短语', paragraphs: ['个人账户至少5个词，高价值目标6-7个词。使用EFF列表或至少7,776条目的等效列表。', '考虑添加一两个修改：将随机一个词大写、在两词之间插入数字或使用不常见的分隔符。', '永远不要自己选词。人类选词严重偏向常见词。始终使用骰子或密码学随机生成器。'], bullets: ['标准账户至少5个词，关键账户6-7个', '使用骰子或CSPRNG——永不手动选择', '添加一个小修改（大写、数字、分隔符）', '使用7,776+条目的词表（EFF Diceware）', '练习输入直到形成肌肉记忆', '在物理安全位置保存书面备份'] },
-    { heading: '总结', paragraphs: ['正确使用时，密码短语和随机密码都能提供出色的安全性。选择取决于场景：密码短语用于人类记忆，随机密码用于机器管理。', '无论哪种方法，最重要的因素是唯一性。在三个网站重复使用的完美密码短语远不如三个普通但唯一的密码安全。'] },
+    { heading: '总结', paragraphs: ['正确使用时，密码短语和随机密码都能提供出色的安全性。选择取决于场景：密码短语用于人类记忆，随机密码用于机器管理。', '无论哪种方法，最重要的因素是唯一性。在三个网站重复使用的再强的密码短语远不如三个普通但唯一的密码安全。'] },
   ],
 };
 
@@ -316,7 +316,7 @@ export const ja: LocalizedArticleContent = {
     { heading: 'ランダムパスワードの利点', paragraphs: ['ランダム文字パスワードは1文字あたりより高いエントロピーを達成します。16文字のランダムパスワードは約105ビット——8個のDiceware語が必要です。', 'パスワードマネージャーで管理するアカウントでは、記憶性が無関係なのでランダムパスワードが厳密に優れています。', 'ランダムパスワードはよりコンパクトで、長さ制限の低いシステムで重要です。', '主な欠点は基本的に暗記不可能なことです。'] },
     { heading: '各アプローチの使い分け', paragraphs: ['パスフレーズを使う場面：マスターパスワード、PCログイン、電話PIN、ディスク暗号化、自動入力に頼れない認証情報。', 'ランダムパスワードを使う場面：マネージャー内のすべてのアカウント、APIキー、サービスアカウント、データベースパスワード。', '最大のセキュリティには両方を組み合わせ：強力なパスフレーズをマスターパスワードに、各アカウントにユニークなランダムパスワードを使用。'] },
     { heading: 'パスフレーズの強化', paragraphs: ['個人アカウントは最低5語、高価値ターゲットは6-7語から始めます。EFFリストまたは7,776以上のエントリを持つ同等のリストを使用。', '1-2の修正を検討：ランダムな1語を大文字に、2語の間に数字を挿入、または珍しい区切り文字を使用。', '自分で単語を選ばないでください。人間の単語選択は一般的な単語に偏ります。常にサイコロまたは暗号学的生成器を使用。'], bullets: ['標準アカウント最低5語、重要なものは6-7語', 'サイコロかCSPRNG使用——手動選択禁止', '小さな修正を追加（大文字化、数字、区切り）', '7,776+エントリのワードリスト使用（EFF Diceware）', '筋肉記憶ができるまで入力練習', '物理的に安全な場所に書面バックアップを保管'] },
-    { heading: 'まとめ', paragraphs: ['正しく使用すれば、パスフレーズもランダムパスワードも優れたセキュリティを提供できます。選択はコンテキスト次第：パスフレーズは人間の記憶用、ランダムパスワードはマシン管理用。', 'どの方法でも最も重要な要素はユニーク性です。3つのサイトで再利用された完璧なパスフレーズは、3つの平凡でもユニークなパスワードよりはるかに安全性が低いです。'] },
+    { heading: 'まとめ', paragraphs: ['正しく使用すれば、パスフレーズもランダムパスワードも優れたセキュリティを提供できます。選択はコンテキスト次第：パスフレーズは人間の記憶用、ランダムパスワードはマシン管理用。', 'どの方法でも最も重要な要素はユニーク性です。3つのサイトで使い回したどんなに強いパスフレーズもは、3つの平凡でもユニークなパスワードよりはるかに安全性が低いです。'] },
   ],
 };
 
@@ -334,5 +334,97 @@ export const pl: LocalizedArticleContent = {
     { heading: 'Kiedy używać którego podejścia', paragraphs: ['Używaj fraz dla: hasła głównego menedżera; logowania do komputera; PIN-ów telefonu; szyfrowania dysku; i każdych poświadczeń, gdzie nie możesz polegać na auto-wypełnianiu.', 'Używaj losowych haseł dla: wszystkich kont w menedżerze; kluczy API; kont serwisowych; haseł baz danych.', 'Dla maksymalnego bezpieczeństwa łącz oba podejścia: silna fraza jako hasło główne i unikalne losowe hasła dla każdego konta.'] },
     { heading: 'Wzmacnianie frazy hasłowej', paragraphs: ['Zacznij od minimum 5 słów dla kont osobistych i 6-7 dla celów o wysokiej wartości. Używaj listy EFF lub równoważnej z co najmniej 7 776 wpisami.', 'Rozważ dodanie jednej lub dwóch modyfikacji: wielka litera losowego słowa, cyfra między słowami lub nietypowy separator.', 'Nigdy nie wybieraj słów samodzielnie. Ludzki wybór jest silnie skrzywiony ku popularnym słowom. Zawsze używaj kostek lub generatora kryptograficznego.'], bullets: ['Minimum 5 słów dla standardowych kont, 6-7 dla krytycznych', 'Używaj kostek lub CSPRNG — nigdy nie wybieraj ręcznie', 'Dodaj małą modyfikację (wielka litera, cyfra, separator)', 'Lista słów z 7 776+ wpisami (EFF Diceware)', 'Ćwicz wpisywanie aż do pamięci mięśniowej', 'Przechowuj pisemną kopię w fizycznie bezpiecznym miejscu'] },
     { heading: 'Podsumowanie', paragraphs: ['Zarówno frazy hasłowe, jak i losowe hasła mogą zapewnić doskonałe bezpieczeństwo przy prawidłowym użyciu. Wybór zależy od kontekstu: frazy dla ludzkiej pamięci, losowe hasła dla zarządzania maszynowego.', 'Niezależnie od metody, najważniejszy czynnik to unikalność. Idealna fraza hasłowa powtórzona na trzech stronach jest znacznie mniej bezpieczna niż trzy przeciętne, ale unikalne hasła.'] },
+  ],
+};
+
+export const vi: LocalizedArticleContent = {
+  title: 'Cụm mật khẩu và mật khẩu: entropy và bảo mật',
+  excerpt:
+    'Hiểu phép toán đằng sau entropy mật khẩu và khi nào cụm mật khẩu vượt trội mật khẩu thường. Gồm cách tính entropy, phương pháp Diceware và khuyến nghị thực tế.',
+  seoTitle: 'Cụm mật khẩu và mật khẩu: entropy, độ mạnh thực sự',
+  seoDescription:
+    'So sánh cụm mật khẩu và mật khẩu: entropy, danh sách từ Diceware, khả năng chống bẻ khóa và khi nào nên dùng cách nào để tạo mật khẩu mạnh.',
+  keywords: [
+    'cụm mật khẩu passphrase là gì',
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh dễ nhớ',
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh nhất',
+    'trình quản lý mật khẩu là gì',
+  ],
+  sections: [
+    {
+      heading: 'Vấn đề entropy: vì sao phần lớn mật khẩu thất bại',
+      paragraphs: [
+        'Mỗi mật khẩu có một thuộc tính đo được gọi là entropy — số bit ngẫu nhiên chứa trong đó. Entropy càng cao thì càng nhiều tổ hợp kẻ tấn công phải thử. Mật khẩu 50 bit entropy có 2^50 (khoảng 1,1 triệu tỷ) khả năng. Với 1 tỷ lần thử mỗi giây, cần khoảng 13 ngày để thử hết. Ở 80 bit, kể cả 1.000 tỷ lần thử mỗi giây cũng mất 38.000 năm.',
+        'Điểm mấu chốt: entropy phụ thuộc cách mật khẩu được tạo, không phải vẻ ngoài. "Tr0ub4dor&3" trông phức tạp nhưng chỉ khoảng 28 bit vì theo khuôn mẫu dễ đoán (từ điển + thay thế phổ biến + ký hiệu). Trong khi "correct horse battery staple" — bốn từ ngẫu nhiên — cho khoảng 44 bit từ danh sách 2.048 từ hoặc 52 bit từ danh sách EFF 7.776 từ.',
+        'Phần lớn chính sách mật khẩu tập trung vào thành phần ký tự (hoa, thường, số, ký hiệu) thay vì entropy thật. Tạo cảm giác an toàn giả: "Summer2026!" thỏa mọi yêu cầu phức tạp nhưng gục trước tấn công từ điển trong vài giây.',
+      ],
+    },
+    {
+      heading: 'Cách tính entropy mật khẩu',
+      paragraphs: [
+        'Với mật khẩu thật ngẫu nhiên, entropy bằng log₂(C^L), trong đó C là kích thước bộ ký tự và L là độ dài. Mật khẩu 12 ký tự từ bộ 95 ký tự (ASCII in được) có log₂(95^12) ≈ 79 bit. Mật khẩu 16 ký tự cùng bộ đạt khoảng 105 bit.',
+        'Với cụm mật khẩu, entropy bằng log₂(W^N), trong đó W là kích thước danh sách từ và N là số từ. Dùng danh sách EFF lớn (7.776 từ): 4 từ cho log₂(7776^4) ≈ 51,7 bit; 5 từ ≈ 64,6 bit; 6 từ ≈ 77,5 bit; 7 từ ≈ 90,5 bit.',
+        'Cách tính giả định kẻ tấn công biết phương pháp. Nếu biết bạn dùng cụm Diceware 4 từ, chúng đối mặt 7.776^4 ≈ 3,7 triệu tỷ tổ hợp. Đây là thước đo bảo mật thận trọng, thực tế — giả định xấu nhất: kẻ tấn công biết phương pháp nhưng không biết từ cụ thể.',
+      ],
+      bullets: [
+        '8 ký tự ngẫu nhiên (a-z): log₂(26^8) ≈ 37,6 bit',
+        '12 ký tự ngẫu nhiên (a-z, A-Z, 0-9, ký hiệu): log₂(95^12) ≈ 78,8 bit',
+        '4 từ Diceware: log₂(7776^4) ≈ 51,7 bit',
+        '6 từ Diceware: log₂(7776^6) ≈ 77,5 bit',
+        '16 ký tự ngẫu nhiên (ASCII đầy đủ): log₂(95^16) ≈ 105 bit',
+        '8 từ Diceware: log₂(7776^8) ≈ 103,4 bit',
+      ],
+    },
+    {
+      heading: 'Lợi thế của cụm mật khẩu',
+      paragraphs: [
+        'Cụm mật khẩu có lợi thế riêng: đánh đổi độ phức tạp từng ký tự lấy độ dài, đạt entropy cao mà vẫn dễ nhớ và dễ gõ. Cụm sáu từ như "monarch-fabric-eleven-radar-canopy-walrus" có khoảng 78 bit entropy — ngang mật khẩu ngẫu nhiên 12 ký tự — nhưng con người dễ nhớ và gõ đúng hơn nhiều.',
+        'Khả năng ghi nhớ không chỉ là tiện lợi mà còn là lợi thế bảo mật. Khi mật khẩu khó nhớ, người dùng ghi lại không an toàn, dùng lại nhiều nơi hoặc tạo khuôn mẫu dễ đoán. Cụm mật khẩu bạn thật sự nhớ được sẽ được dùng đúng, không dùng lại và ít phải đặt lại.',
+        'Cụm mật khẩu cũng khó bị nhìn trộm hơn. Người quan sát có thể nhớ chuỗi "k9$mP#2xLw", nhưng khó giữ trong đầu một chuỗi từ gõ nhanh như "correct horse battery staple".',
+        'Phương pháp Diceware do Arnold Reinhold phát triển năm 1995, dùng xúc xắc thật để chọn từ từ danh sách đánh số. Mỗi lần gieo thật ngẫu nhiên, không cần thuật toán. Năm 2016, EFF cập nhật danh sách chỉ gồm từ tiếng Anh phổ biến, dễ viết, giúp cụm mật khẩu thực tế hơn.',
+      ],
+    },
+    {
+      heading: 'Lợi thế của mật khẩu ngẫu nhiên',
+      paragraphs: [
+        'Mật khẩu ký tự ngẫu nhiên đạt entropy trên mỗi ký tự cao hơn cụm mật khẩu trên mỗi từ. Mật khẩu 16 ký tự ngẫu nhiên từ bộ ASCII in được cho khoảng 105 bit — cần 8 từ Diceware mới ngang, tức chuỗi dài hơn nhiều để gõ.',
+        'Với tài khoản do trình quản lý mật khẩu quản lý (không bao giờ gõ tay), mật khẩu ngẫu nhiên hoàn toàn vượt trội. Trình quản lý lo tạo, lưu và tự động điền, nên khả năng ghi nhớ không còn quan trọng. Bạn có thể dùng chuỗi 20, 30 hay 64 ký tự.',
+        'Mật khẩu ngẫu nhiên cũng gọn hơn, quan trọng với hệ thống giới hạn độ dài thấp. Một số hệ thống cũ chặn ở 16 hoặc thậm chí 8 ký tự. Trong môi trường đó, tối đa entropy trên mỗi ký tự là thiết yếu.',
+        'Nhược điểm chính: gần như không thể ghi nhớ. Nếu mất quyền truy cập trình quản lý, khôi phục phụ thuộc hoàn toàn vào chiến lược sao lưu. Vì vậy mật khẩu ngẫu nhiên không phù hợp cho mật khẩu chính hoặc thông tin phải nhập từ trí nhớ.',
+      ],
+    },
+    {
+      heading: 'Khi nào dùng cách nào',
+      paragraphs: [
+        'Dùng cụm mật khẩu cho: mật khẩu chính của trình quản lý (mật khẩu duy nhất phải nhớ); mật khẩu đăng nhập máy tính (gõ thường xuyên từ trí nhớ); PIN mở khóa điện thoại (dùng số ngẫu nhiên 6-8 chữ số hoặc cụm ngắn); mật khẩu mã hóa toàn ổ đĩa (nhập lúc khởi động, trước khi có trình quản lý); và mọi thông tin không thể dựa vào tự động điền.',
+        'Dùng mật khẩu ký tự ngẫu nhiên cho: mọi tài khoản lưu trong trình quản lý; khóa API và token; tài khoản dịch vụ; mật khẩu cơ sở dữ liệu; và mọi thông tin sẽ được dán hoặc tự động điền thay vì gõ từ trí nhớ.',
+        'Để bảo mật tối đa, kết hợp cả hai: cụm mật khẩu mạnh làm mật khẩu chính (bảo vệ quyền vào trình quản lý) và mật khẩu ngẫu nhiên riêng cho từng tài khoản (do trình quản lý tạo và quản lý). Cách phân lớp này cho bạn khả năng ghi nhớ khi cần và entropy tối đa ở mọi nơi khác.',
+      ],
+    },
+    {
+      heading: 'Tăng cường cụm mật khẩu',
+      paragraphs: [
+        'Bắt đầu với tối thiểu 5 từ cho tài khoản cá nhân và 6-7 từ cho mục tiêu giá trị cao. Dùng danh sách EFF lớn hoặc tương đương có ít nhất 7.776 mục để mỗi từ đóng góp khoảng 12,9 bit entropy.',
+        'Có thể thêm một hai thay đổi: viết hoa một từ ngẫu nhiên, chèn chữ số giữa hai từ hoặc dùng dấu phân cách lạ. Ví dụ "monarch Fabric 11 radar-canopy-walrus" thêm vài bit mà không giảm đáng kể khả năng nhớ. Đừng sửa quá nhiều — sức mạnh đến từ số từ và tính ngẫu nhiên, không phải mẹo khéo léo.',
+        'Tuyệt đối không tự chọn từ. Con người thiên lệch mạnh về từ phổ biến, khái niệm liên quan và lựa chọn văn hóa. Luôn dùng xúc xắc hoặc trình tạo số ngẫu nhiên bằng mật mã. Nếu bạn nghĩ mình đang chọn từ ngẫu nhiên thì gần như chắc chắn là không — nhiều thập kỷ nghiên cứu xác nhận con người tạo ngẫu nhiên rất kém.',
+      ],
+      bullets: [
+        'Tối thiểu 5 từ cho tài khoản thường, 6-7 từ cho tài khoản quan trọng',
+        'Dùng xúc xắc hoặc CSPRNG — không tự chọn từ',
+        'Thêm một thay đổi nhỏ (viết hoa, chữ số, dấu phân cách)',
+        'Dùng danh sách từ 7.776+ mục (EFF Diceware)',
+        'Luyện gõ đến khi tạo phản xạ',
+        'Lưu bản viết tay ở nơi an toàn cho đến khi nhớ',
+      ],
+    },
+    {
+      heading: 'Kết luận',
+      paragraphs: [
+        'Cả cụm mật khẩu và mật khẩu ngẫu nhiên đều bảo mật tốt khi dùng đúng. Lựa chọn phụ thuộc ngữ cảnh: cụm mật khẩu cho trí nhớ con người, mật khẩu ngẫu nhiên cho máy quản lý. Lựa chọn tệ nhất là mật khẩu "thỏa hiệp" không hoàn toàn ngẫu nhiên cũng không phải cụm mật khẩu đúng — kiểu "Monkey123!" mà người dùng tự chọn vì thấy "đủ mạnh".',
+        'Dù dùng cách nào, yếu tố quan trọng nhất là tính duy nhất. Một cụm mật khẩu hoàn hảo dùng lại ở ba trang vẫn kém an toàn hơn ba mật khẩu tầm thường nhưng riêng biệt. Kết hợp trình quản lý mật khẩu và xác thực đa yếu tố, cả hai cách đều bảo vệ tài khoản trước phần lớn tấn công thực tế.',
+      ],
+    },
   ],
 };

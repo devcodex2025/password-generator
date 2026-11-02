@@ -11,6 +11,7 @@ export const PLACEMENT_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '必读内容',
     ja: '押さえておきたい',
     pl: 'Warto przeczytać',
+    vi: 'Cần đọc trước',
   },
   body: {
     en: 'Related guidance',
@@ -24,6 +25,7 @@ export const PLACEMENT_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '相关指南',
     ja: '関連ガイド',
     pl: 'Powiązane wskazówki',
+    vi: 'Hướng dẫn liên quan',
   },
   conclusion: {
     en: 'Next steps',
@@ -37,6 +39,7 @@ export const PLACEMENT_TRANSLATIONS: Record<string, Record<string, string>> = {
     zh: '下一步',
     ja: '次のステップ',
     pl: 'Kolejne kroki',
+    vi: 'Bước tiếp theo',
   },
 };
 

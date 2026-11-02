@@ -99,16 +99,20 @@ For each slug, add `export const vi: LocalizedArticleContent = { … }` to
 
 | Slug | Translated | Reviewed | Indexable | Sitemap | Notes |
 |---|---|---|---|---|---|
-| how-to-create-strong-passwords | ☑ | ☐ | ☑ | ☑ | P0 — VI live, native review pending |
-| common-password-mistakes | ☐ | ☐ | ☐ | ☐ | P0 |
-| nist-800-63b-password-rules | ☐ | ☐ | ☐ | ☐ | P0 |
-| passphrase-vs-password-entropy | ☐ | ☐ | ☐ | ☐ | P1 |
-| what-to-do-after-password-breach | ☐ | ☐ | ☐ | ☐ | P1 |
-| password-manager-vs-manual-storage | ☐ | ☐ | ☐ | ☐ | P1 |
-| two-factor-authentication-basics | ☐ | ☐ | ☐ | ☐ | P2 |
-| secure-password-generator-guide | ☐ | ☐ | ☐ | ☐ | P2 |
-| pci-dss-password-requirements | ☐ | ☐ | ☐ | ☐ | P2 |
-| team-password-policy-template | ☐ | ☐ | ☐ | ☐ | P2 |
-| vpn-security-privacy-guide | ☐ | ☐ | ☐ | ☐ | P3 |
-| guides-i18n labels | ☐ | ☐ | – | – | UI |
-| guides-ui labels | ☐ | ☐ | – | – | UI |
+| how-to-create-strong-passwords | ☑ | ☐ | ☑ | ☑ | P0 |
+| common-password-mistakes | ☑ | ☐ | ☑ | ☑ | P0 |
+| nist-800-63b-password-rules | ☑ | ☐ | ☑ | ☑ | P0 |
+| passphrase-vs-password-entropy | ☑ | ☐ | ☑ | ☑ | P1 |
+| what-to-do-after-password-breach | ☑ | ☐ | ☑ | ☑ | P1 |
+| password-manager-vs-manual-storage | ☑ | ☐ | ☑ | ☑ | P1 |
+| two-factor-authentication-basics | ☑ | ☐ | ☑ | ☑ | P2 |
+| secure-password-generator-guide | ☑ | ☐ | ☑ | ☑ | P2 |
+| pci-dss-password-requirements | ☑ | ☐ | ☑ | ☑ | P2 |
+| team-password-policy-template | ☑ | ☐ | ☑ | ☑ | P2 |
+| vpn-security-privacy-guide | ☑ | ☐ | ☑ | ☑ | P3 |
+| guides-i18n labels | ☑ | ☐ | – | – | UI |
+| guides-ui labels | ☑ | ☐ | – | – | UI |
+| interlinking anchors/placements | ☑ | ☐ | – | – | UI |
+| affiliate promo strings | ☑ | ☐ | – | – | UI |
+| best-password-managers-2026 | ☑ | ☐ | ☑ | ☑ | Page |
+| password-statistics-2026 | ☑ | ☐ | ☑ | ☑ | Page |

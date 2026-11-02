@@ -344,3 +344,99 @@ export const pl: LocalizedArticleContent = {
     { heading: 'Lista kontrolna wdrożenia', paragraphs: ['Usuń wymagania złożoności. Minimalna długość 12, maksymalna co najmniej 64. Wdróż sprawdzanie HIBP.', 'Zaktualizuj przechowywanie do Argon2id, bcrypt lub PBKDF2. Transparentne rehashowanie przy następnym logowaniu.', 'Usuń okresowe zmiany. Wdróż wykrywanie wycieków i ograniczanie prób logowania.', 'Włącz MFA z priorytetem FIDO2/WebAuthn lub TOTP.'], bullets: ['Usunąć wymagania złożoności', 'Długość min 12, max 64+', 'Sprawdzać wobec list wycieków (HIBP)', 'Używać Argon2id / bcrypt / PBKDF2', 'Wyeliminować okresową rotację', 'Ograniczyć próby logowania', 'Wdrożyć MFA (FIDO2 > TOTP > SMS)', 'Jasne komunikaty przy odrzuceniu'] },
   ],
 };
+
+export const vi: LocalizedArticleContent = {
+  title: 'Quy tắc mật khẩu NIST 800-63B: tóm tắt thực hành 2026',
+  excerpt:
+    'Tóm tắt dễ hiểu về hướng dẫn mật khẩu NIST SP 800-63B: điều gì đã thay đổi, vì sao bỏ quy tắc phức tạp và cách triển khai chính sách mật khẩu tuân thủ trong tổ chức.',
+  seoTitle: 'Quy tắc mật khẩu NIST 800-63B: tạo mật khẩu mạnh 2026',
+  seoDescription:
+    'Hướng dẫn NIST 800-63B: cách tạo mật khẩu mạnh, độ dài tối thiểu, danh sách mật khẩu bị cấm, MFA, băm lưu trữ và triển khai cho tổ chức.',
+  keywords: [
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh nhất',
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh 8 ký tự',
+    'mật khẩu mạnh dễ nhớ',
+    'trình quản lý mật khẩu là gì',
+  ],
+  sections: [
+    {
+      heading: 'NIST SP 800-63B là gì?',
+      paragraphs: [
+        'NIST Special Publication 800-63B là một phần của Hướng dẫn Nhận dạng Kỹ thuật số do Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ ban hành. Dù bắt buộc với cơ quan chính phủ Mỹ, tiêu chuẩn NIST đã thành chuẩn mực toàn cầu trên thực tế về bảo mật mật khẩu. Từ ngân hàng tới startup công nghệ, các tổ chức đều tham chiếu NIST 800-63B khi thiết kế hệ thống xác thực.',
+        'Bản sửa đổi mới nhất thay đổi căn bản cách cộng đồng bảo mật nghĩ về mật khẩu. Nó bác bỏ nhiều thập kỷ quan niệm cũ — quy tắc phức tạp bắt buộc, đổi mật khẩu định kỳ và câu hỏi bảo mật — để ưu tiên thực hành dựa trên bằng chứng, cải thiện bảo mật mà không giảm trải nghiệm.',
+        'Hiểu hướng dẫn này quan trọng với cả lập trình viên xây hệ thống xác thực, quản trị viên CNTT quản lý chính sách công ty và người dùng muốn ra quyết định bảo mật đúng. Hướng dẫn này chuyển tài liệu kỹ thuật thành khuyến nghị hành động.',
+      ],
+    },
+    {
+      heading: 'Những thay đổi chính: NIST đã đúng ở đâu',
+      paragraphs: [
+        'Bỏ quy tắc phức tạp bắt buộc. NIST khuyến nghị rõ ràng không bắt buộc chữ in hoa, chữ số hay ký tự đặc biệt. Nghiên cứu cho thấy phức tạp bị ép buộc dẫn tới khuôn mẫu dễ đoán: viết hoa chữ đầu, thêm "1!" ở cuối hoặc dùng thay thế phổ biến. Kẻ tấn công biết rõ các mẫu này và lợi ích bảo mật gần như bằng không. Thay vào đó, NIST tập trung vào độ dài.',
+        'Ngừng bắt đổi mật khẩu định kỳ. Buộc người dùng đổi mỗi 60 hoặc 90 ngày khiến họ thay đổi tối thiểu (Password1 → Password2 → Password3) hoặc chọn mật khẩu đơn giản hơn để nhớ. NIST nay khuyến nghị chỉ đổi khi có bằng chứng bị xâm phạm — thông báo rò rỉ, hoạt động đáng ngờ hoặc phát hiện mã độc.',
+        'Đối chiếu danh sách mật khẩu bị rò rỉ. Khi người dùng tạo hoặc đổi mật khẩu, hệ thống kiểm tra với danh sách mật khẩu đã bị xâm phạm đã biết. API Have I Been Pwned Passwords cung cấp cách miễn phí, bảo vệ quyền riêng tư để kiểm tra hơn 900 triệu mật khẩu bằng k-anonymity. Nếu trùng, hãy từ chối và giải thích lý do.',
+        'Cho phép mật khẩu dài. Hệ thống phải chấp nhận mật khẩu tới ít nhất 64 ký tự, hỗ trợ cụm mật khẩu và thông tin do trình quản lý tạo. Âm thầm cắt ngắn mật khẩu — như một số hệ thống cũ — là lỗ hổng nghiêm trọng mà NIST cấm rõ ràng.',
+      ],
+    },
+    {
+      heading: 'Yêu cầu độ dài tối thiểu',
+      paragraphs: [
+        'NIST đặt mức tối thiểu tuyệt đối 8 ký tự cho mật khẩu do người dùng chọn và 6 ký tự cho PIN tạo ngẫu nhiên. Tuy nhiên, giới nghiên cứu khuyến nghị rộng rãi 12 ký tự là mức tối thiểu thực tế và 15+ là lý tưởng. Lý do đơn giản: công cụ bẻ khóa tăng tốc GPU có thể thử hết mật khẩu 8 ký tự từ bộ 95 ký tự trong vài giờ đến vài ngày, tùy thuật toán băm.',
+        'Với mật khẩu bảo vệ tài sản giá trị cao (email chính, ví tiền mã hóa, quyền root máy chủ), nên dùng 16+ ký tự hoặc cụm mật khẩu 5+ từ. Ở độ dài này, kể cả khi kẻ tấn công có hash, bẻ khóa vét cạn vẫn bất khả thi về mặt tính toán với công nghệ hiện nay.',
+        'Hệ thống không được đặt độ dài tối đa dưới 64 ký tự. Nhiều người dùng trình quản lý tạo mật khẩu 20-40 ký tự, và cụm mật khẩu có dấu phân cách dễ đạt 30+ ký tự. Giới hạn độ dài tùy tiện gây hại bảo mật vì chặn phương pháp tạo mật khẩu ưa thích.',
+      ],
+      bullets: [
+        '8 ký tự: mức tối thiểu tuyệt đối của NIST cho mật khẩu người dùng chọn',
+        '12 ký tự: mức tối thiểu thực tế được khuyến nghị rộng rãi',
+        '15+ ký tự: khuyến nghị cho tài khoản quan trọng',
+        '64 ký tự: độ dài tối đa tối thiểu mà hệ thống phải hỗ trợ',
+        '6 chữ số: mức tối thiểu cho PIN hoặc token tạo ngẫu nhiên',
+      ],
+    },
+    {
+      heading: 'Danh sách mật khẩu bị cấm và kiểm tra từ điển',
+      paragraphs: [
+        'NIST yêu cầu kiểm tra mật khẩu mới với danh sách mật khẩu phổ biến, dễ đoán hoặc đã bị xâm phạm. Danh sách cần gồm: mật khẩu từ các vụ rò rỉ trước (qua Have I Been Pwned hoặc dịch vụ tương tự); từ trong từ điển; ký tự lặp hoặc tuần tự (aaaaaa, 123456, abcdef); từ gắn ngữ cảnh (tên dịch vụ, tên đăng nhập, email).',
+        'Khi từ chối, hệ thống nên giải thích rõ: "Mật khẩu này đã xuất hiện trong một vụ rò rỉ dữ liệu. Vui lòng chọn mật khẩu khác." Thông báo chung chung như "Mật khẩu không đáp ứng yêu cầu" khiến người dùng bối rối và khó chịu.',
+        'API Have I Been Pwned Passwords giúp triển khai dễ dàng. Nó dùng k-anonymity: ứng dụng chỉ gửi 5 ký tự đầu của hash SHA-1, nhận mọi hậu tố khớp và kiểm tra cục bộ. Mật khẩu thật không rời thiết bị người dùng, và nhà vận hành API không biết mật khẩu nào đã được kiểm tra.',
+      ],
+    },
+    {
+      heading: 'Lưu trữ mật khẩu: yêu cầu băm',
+      paragraphs: [
+        'NIST yêu cầu lưu mật khẩu bằng hàm dẫn xuất khóa một chiều, chịu tải bộ nhớ. Thuật toán khuyến nghị là Argon2id (thắng cuộc thi Password Hashing 2015), bcrypt với work factor ít nhất 10, hoặc PBKDF2-HMAC-SHA256 với ít nhất 600.000 vòng lặp (tăng từ 10.000 trước đây).',
+        'Argon2id là lựa chọn ưu tiên cho triển khai mới. Nó chống tấn công bằng GPU (nhờ yêu cầu bộ nhớ) và tấn công kênh bên. Tham số gợi ý: ít nhất 19 MiB bộ nhớ, 2 vòng lặp, 1 mức song song. Hãy chỉnh để mỗi lần băm mất khoảng 0,5-1 giây trên máy chủ của bạn.',
+        'Không bao giờ dùng hàm băm mật mã thông thường (MD5, SHA-1, SHA-256) để lưu mật khẩu. Chúng được thiết kế để nhanh — ngược hẳn với nhu cầu băm mật khẩu. GPU hiện đại tính được hàng tỷ hash SHA-256 mỗi giây nhưng chỉ vài nghìn hash Argon2id.',
+        'Luôn dùng salt ngẫu nhiên riêng cho từng mật khẩu (ít nhất 128 bit) và lưu salt cạnh hash. Điều này chặn tấn công bảng cầu vồng tính trước và bảo đảm mật khẩu giống nhau cho ra hash khác nhau.',
+      ],
+    },
+    {
+      heading: 'Xác thực đa yếu tố',
+      paragraphs: [
+        'NIST khuyến nghị xác thực đa yếu tố cho mọi hệ thống xử lý dữ liệu nhạy cảm. Ba yếu tố là: thứ bạn biết (mật khẩu), thứ bạn có (điện thoại, khóa phần cứng) và thứ bạn là (sinh trắc học). MFA nên kết hợp ít nhất hai yếu tố khác nhau.',
+        'NIST phân loại thiết bị xác thực thành ba mức bảo đảm (AAL1, AAL2, AAL3). AAL1 yêu cầu một yếu tố. AAL2 yêu cầu hai yếu tố khác nhau và phù hợp phần lớn ứng dụng doanh nghiệp. AAL3 yêu cầu thiết bị xác thực phần cứng và dành cho ứng dụng bảo mật cao nhất.',
+        'Mã một lần qua SMS bị xếp vào nhóm "hạn chế" do lỗ hổng đã biết (đổi SIM, chặn SS7). Dù vẫn tốt hơn không có MFA, tổ chức nên ưu tiên ứng dụng TOTP (Google Authenticator, Authy) hoặc khóa phần cứng FIDO2 (YubiKey, Titan) để có bảo đảm cao hơn.',
+        'Khi đã có MFA, NIST cho phép nới một số yêu cầu mật khẩu (như độ dài tối thiểu) vì yếu tố thứ hai tăng bảo vệ. Tuy nhiên, mật khẩu yếu vẫn rủi ro: tấn công lừa đảo có thể lấy cả mật khẩu và mã OTP cùng lúc.',
+      ],
+    },
+    {
+      heading: 'Danh sách kiểm tra triển khai',
+      paragraphs: [
+        'Với lập trình viên và quản trị viên CNTT triển khai chính sách mật khẩu theo NIST, đây là danh sách thực hành. Bắt đầu bằng việc bỏ mọi yêu cầu phức tạp hiện có (chữ hoa, chữ số, ký hiệu bắt buộc). Đặt độ dài tối thiểu 12 và tối đa ít nhất 64. Triển khai kiểm tra mật khẩu bị rò rỉ bằng API Have I Been Pwned Passwords.',
+        'Cập nhật lưu trữ sang Argon2id (ưu tiên), bcrypt (work factor tối thiểu 10) hoặc PBKDF2-HMAC-SHA256 (tối thiểu 600.000 vòng). Nếu chuyển từ hash yếu hơn, hãy băm lại minh bạch khi người dùng đăng nhập lần sau. Bảo đảm salt ngẫu nhiên 128 bit riêng cho từng mật khẩu.',
+        'Bỏ yêu cầu đổi mật khẩu định kỳ. Thay vào đó, triển khai phát hiện rò rỉ: giám sát thông tin đăng nhập bị lộ ảnh hưởng tới người dùng và buộc đổi chỉ khi phát hiện xâm phạm. Thêm giới hạn số lần thử ở điểm đăng nhập (khóa tài khoản sau 10-20 lần thất bại trong thời gian ngắn).',
+        'Bật và khuyến khích MFA, ưu tiên khóa phần cứng FIDO2/WebAuthn hoặc ứng dụng TOTP. Cung cấp hướng dẫn đăng ký và quy trình khôi phục rõ ràng. Lưu mã dự phòng MFA an toàn và nhắc người dùng cất giữ.',
+      ],
+      bullets: [
+        'Bỏ yêu cầu phức tạp (chữ hoa, chữ số, ký hiệu bắt buộc)',
+        'Đặt độ dài tối thiểu 12 ký tự, tối đa 64+',
+        'Kiểm tra mật khẩu với danh sách rò rỉ (API HIBP)',
+        'Dùng Argon2id / bcrypt / PBKDF2 để lưu mật khẩu',
+        'Loại bỏ việc đổi mật khẩu định kỳ',
+        'Giới hạn số lần thử đăng nhập',
+        'Triển khai MFA (FIDO2 > TOTP > SMS)',
+        'Hiển thị thông báo lỗi rõ ràng khi từ chối mật khẩu',
+      ],
+    },
+  ],
+};

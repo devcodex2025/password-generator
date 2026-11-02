@@ -10,6 +10,7 @@ const GUIDE_LOCALE_MAP: Record<string, string> = {
   zh: 'zh-CN',
   ja: 'ja-JP',
   pl: 'pl-PL',
+  vi: 'vi-VN',
 };
 
 type GuideUiCopy = {
@@ -85,6 +86,12 @@ const GUIDE_UI_COPY: Record<string, GuideUiCopy> = {
     updatedLabel: 'Zaktualizowano',
     authorLabel: 'Autor',
     loadingLabel: 'Ładowanie...',
+  },
+  vi: {
+    minRead: (minutes) => `${minutes} phút đọc`,
+    updatedLabel: 'Cập nhật',
+    authorLabel: 'Tác giả',
+    loadingLabel: 'Đang tải...',
   },
 };
 

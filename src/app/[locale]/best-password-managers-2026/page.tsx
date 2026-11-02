@@ -6,7 +6,7 @@ import NordPassAffiliatePromo from '@/components/affiliate/NordPassAffiliateProm
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const hreflangMap: Record<string, string> = { ua: 'uk' };
-const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
+const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl', 'vi'];
 
 export const runtime = 'nodejs';
 
@@ -84,6 +84,7 @@ export async function generateMetadata({
 const breadcrumbHome: Record<string, string> = {
   en: 'Home', ua: 'Головна', es: 'Inicio', fr: 'Accueil', de: 'Startseite',
   it: 'Home', pt: 'Início', ru: 'Главная', zh: '首页', ja: 'ホーム', pl: 'Strona główna',
+  vi: 'Trang chủ',
 };
 
 const breadcrumbPage: Record<string, string> = {
@@ -98,6 +99,7 @@ const breadcrumbPage: Record<string, string> = {
   zh: '2026最佳密码管理器',
   ja: '2026年ベストパスワードマネージャー',
   pl: 'Najlepsze menedżery 2026',
+  vi: 'Trình quản lý mật khẩu tốt nhất 2026',
 };
 
 export default async function BestPasswordManagersPage({
