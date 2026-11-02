@@ -7,6 +7,7 @@ import NavigationProgress from '@/components/NavigationProgress';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
 import { buildHomeMetadata, SUPPORTED_LANGS, HTML_LANG_MAP } from '@/lib/home-metadata';
 import HomeStructuredData from '@/components/seo/HomeStructuredData';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const arsenal = Arsenal({ 
   subsets: ['cyrillic', 'latin'], 
@@ -113,13 +114,18 @@ export default async function LocaleLayout({
         />
         {process.env.NEXT_PUBLIC_GA_ID ? (
           <>
+            {/*
+              GA is third-party and not needed for the first paint. Loading it
+              after window load keeps it out of the LCP critical path; consent
+              mode defaults to denied until the CMP updates it.
+            */}
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
             <Script
               id="gtag-config"
-              strategy="afterInteractive"
+              strategy="lazyOnload"
               dangerouslySetInnerHTML={{
                 __html: `
                   window.dataLayer = window.dataLayer || [];
@@ -166,6 +172,7 @@ export default async function LocaleLayout({
             </CustomThemeProvider>
           </AppRouterCacheProvider>
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );
