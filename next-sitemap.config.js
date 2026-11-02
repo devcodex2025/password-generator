@@ -1,12 +1,13 @@
 const lang = require('./src/components/lang.json');
 
-const getAvailableLanguages = () => {
-  const firstKeyWithLanguages = Object.keys(lang).find(
-    key => typeof lang[key] === 'object' && lang[key] !== null
-  );
-  if (!firstKeyWithLanguages) return [];
-  return Object.keys(lang[firstKeyWithLanguages]);
-};
+/**
+ * Locales that actually have routes and content. lang.json also contains `vi`
+ * (added by a community PR) but the app does not render that locale — listing it
+ * in the sitemap produced 17 URLs that answer 404.
+ */
+const SITEMAP_LANGUAGES = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
+
+const getAvailableLanguages = () => SITEMAP_LANGUAGES;
 
 const siteUrl = 'https://www.generatepasswordto.me';
 const availableLanguages = getAvailableLanguages();

@@ -16,8 +16,6 @@ import { Button, Snackbar } from '@mui/material';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import Image from 'next/image';
-import AnimatedPassword from './AnimatedPassword';
 import { SnackbarMessage } from '@/app/types/SnackBar';
 import i18n from '@/components/i18n';
 import SavePasswordModal, { shouldShowSavePrompt } from '@/components/affiliate/SavePasswordModal';
@@ -360,40 +358,6 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           ref={rewardAnchorRef}
           className="fixed left-1/2 top-[35%] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[9999]"
         />
-        <div
-          className={`${isDarkMode ? 'bg-[rgb(22_20_20)] border-[#1d2e48]' : 'bg-white border-[#E5F6FF]'} floating-pill absolute hidden drop-shadow-lg top-[-5px] left-[-140px] z-[999] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] hidden items-center gap-2 overflow-hidden pointer-events-none `}
-        >
-          <div className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'} mr-3 ml-2 my-1 p-[12px] rounded-full`}>
-            <Image
-              src="/images/password.png"
-              alt="password"
-              width={20}
-              height={20}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <p className="pt-[10px] relative">
-            <AnimatedPassword length={5} />
-          </p>
-        </div>
-        <div
-          className={`${isDarkMode ? 'bg-[rgb(22_20_20)] border-[#1d2e48]' : 'bg-white border-[#E5F6FF]'} floating-pill absolute hidden justify-start drop-shadow-lg top-[150px] right-[-120px] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] hidden items-center gap-2 overflow-hidden pointer-events-none`}
-        >
-          <div className={`${isDarkMode ? 'bg-[#05a9ff]' : 'bg-[#E5F6FF]'} mr-3 ml-2 my-1 p-[12px] rounded-full`}>
-            <Image
-              src="/images/password.png"
-              alt="password"
-              width={20}
-              height={20}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <p className="pt-[10px] relative">
-            <AnimatedPassword length={5} />
-          </p>
-        </div>
         {passwords.length > 0 ? (
           <PasswordRow
             password={passwords[0]}
