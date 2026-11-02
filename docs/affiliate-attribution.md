@@ -74,6 +74,18 @@ Three problems surfaced:
    outbound affiliate link, including plain article links.
 3. **Zero sales.** Expected at this traffic level; nothing to optimise until clicks convert.
 
+## Review date
+
+First meaningful CR comparison: **2026-12-02**, once the fix has 30 days of clicks behind it.
+
+```powershell
+npm run affiliate -- --days=30
+npm run ga4 -- --days=30 --funnel
+```
+
+Compare by `placement` and by `locale`. Ignore any row with fewer than ~50 clicks — at current
+volume the difference between 1 sale and 0 is noise, not a signal.
+
 ## Limitations to keep in mind
 
 - **Approved ≠ sold.** NordPass holds conversions pending for a refund window. Report on
