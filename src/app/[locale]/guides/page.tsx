@@ -64,7 +64,8 @@ const guidesMetaI18n: Record<string, { title: string; description: string }> = {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const canonical = `${baseUrl}/${locale}/guides`;
+  const isFallbackLocale = locale === 'vi';
+  const canonical = isFallbackLocale ? `${baseUrl}/en/guides` : `${baseUrl}/${locale}/guides`;
   const meta = guidesMetaI18n[locale] || guidesMetaI18n.en;
 
   return {
@@ -74,7 +75,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       canonical,
       languages: {
         ...Object.fromEntries(
-          SUPPORTED_CONTENT_LANGUAGES.map((lang) => [hreflangMap[lang] || lang, `${baseUrl}/${lang}/guides`])
+          SUPPORTED_CONTENT_LANGUAGES.filter((lang) => lang !== 'vi').map((lang) => [
+            hreflangMap[lang] || lang,
+            `${baseUrl}/${lang}/guides`,
+          ])
         ),
         'x-default': `${baseUrl}/en/guides`,
       },
@@ -101,10 +105,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       images: [`${baseUrl}/images/generate-password-preview.png`],
     },
     robots: {
-      index: true,
+      index: !isFallbackLocale,
       follow: true,
       googleBot: {
-        index: true,
+        index: !isFallbackLocale,
         follow: true,
         'max-video-preview': -1,
         'max-image-preview': 'large',

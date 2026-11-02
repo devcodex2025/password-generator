@@ -65,7 +65,12 @@ module.exports = {
     ],
   },
   additionalPaths: async (config) => {
-    const localePages = availableLanguages.map((langCode) => ({
+    // `vi` has routes and translated home/legal pages; its guide bodies fall back
+    // to English and are noindexed, so guides are NOT added for vi.
+    const allLanguages = [...availableLanguages, 'vi'];
+    const viStaticSlugs = ['privacy-policy', 'terms-of-service', 'contact'];
+
+    const localePages = allLanguages.map((langCode) => ({
         loc: `/${langCode}`,
         changefreq: 'weekly',
         priority: 0.9,
@@ -101,6 +106,14 @@ module.exports = {
       }))
     );
 
+    const viStaticPages = viStaticSlugs.map((slug) => ({
+      loc: `/vi/${slug}`,
+      changefreq: 'monthly',
+      priority: 0.6,
+      lastmod: new Date().toISOString(),
+      alternateRefs: buildAlternateRefs(`/${slug}`),
+    }));
+
     // Link-worthy data page (published in EN and UA only).
     const dataPages = ['en', 'ua'].map((langCode) => ({
       loc: `/${langCode}/password-statistics-2026`,
@@ -132,12 +145,14 @@ module.exports = {
       ],
     };
 
-    return [rootPage, ...localePages, ...guideIndexPages, ...guideArticlePages, ...staticPages, ...dataPages];
+    return [rootPage, ...localePages, ...guideIndexPages, ...guideArticlePages, ...staticPages, ...viStaticPages, ...dataPages];
   },
   transform: async (config, path) => {
     // Never list generated OG-image routes as pages — they are PNG endpoints,
     // not indexable HTML. Keeps crawl budget on real pages only.
     if (/\/opengraph-image(\/|$)/.test(path)) return null;
+    // Vietnamese guide bodies fall back to English and are noindexed.
+    if (/^\/vi\/guides(\/|$)/.test(path)) return null;
 
     const localePathMatch = path.match(/^\/([a-z]{2})$/i);
     const locale = localePathMatch ? localePathMatch[1] : null;

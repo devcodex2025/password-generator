@@ -10,7 +10,7 @@ import * as teamPasswordPolicyTemplate from './articles/team-password-policy-tem
 import * as securePasswordGeneratorGuide from './articles/secure-password-generator-guide';
 import * as vpnSecurityPrivacyGuide from './articles/vpn-security-privacy-guide';
 
-export const SUPPORTED_CONTENT_LANGUAGES = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'] as const;
+export const SUPPORTED_CONTENT_LANGUAGES = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl', 'vi'] as const;
 
 export type ContentLanguage = (typeof SUPPORTED_CONTENT_LANGUAGES)[number];
 

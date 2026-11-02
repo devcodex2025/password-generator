@@ -3,7 +3,7 @@ import seoData from '@/components/SeoData';
 
 export const BASE_URL = 'https://www.generatepasswordto.me';
 
-export const SUPPORTED_LANGS = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'] as const;
+export const SUPPORTED_LANGS = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl', 'vi'] as const;
 
 export const HREFLANG_MAP: Record<string, string> = { ua: 'uk' };
 
@@ -19,6 +19,7 @@ export const OG_LOCALE_MAP: Record<string, string> = {
   zh: 'zh_CN',
   ja: 'ja_JP',
   pl: 'pl_PL',
+  vi: 'vi_VN',
 };
 
 const BRAND = 'generatepasswordto.me';
@@ -41,36 +42,39 @@ export const HTML_LANG_MAP: Record<string, string> = {
   zh: 'zh',
   ja: 'ja',
   pl: 'pl',
+  vi: 'vi',
 };
 
 // Keyword-first titles kept <= TITLE_BASE_MAX (35) so the brand suffix never
 // truncates the phrase mid-word in SERPs.
 const localizedMetaTitles: Record<string, string> = {
-  en: 'Free Secure Password Generator',
-  ua: 'Генератор паролів онлайн',
+  en: 'Strong Random Password Generator',
+  ua: 'Генератор надійних паролів онлайн',
   es: 'Generador de contraseñas seguras',
-  fr: 'Générateur de mots de passe',
+  fr: 'Générateur de mots de passe forts',
   de: 'Sicherer Passwort-Generator',
   it: 'Generatore di password sicure',
-  pt: 'Gerador de senhas seguras',
-  ru: 'Генератор паролей онлайн',
-  zh: '安全密码生成器 – 在线创建强密码',
-  ja: '安全なパスワード生成 – 無料オンライン',
-  pl: 'Generator haseł online',
+  pt: 'Gerador de senhas fortes',
+  ru: 'Генератор надёжных паролей онлайн',
+  zh: '密码生成器 – 在线生成强密码',
+  ja: 'パスワード自動生成 – 無料オンライン',
+  pl: 'Generator silnych haseł online',
+  vi: 'Trình tạo mật khẩu mạnh',
 };
 
 const localizedMetaDescriptions: Record<string, string> = {
-  en: 'Free online password generator. Create strong, random passwords that meet NIST 800-63B standards. No data stored – generated locally in your browser.',
-  ua: 'Безкоштовний онлайн-генератор паролів. Створюйте надійні випадкові паролі за NIST 800-63B. Без зберігання даних – генерація локально у браузері.',
-  es: 'Generador de contraseñas online gratuito. Crea contraseñas seguras y aleatorias según NIST 800-63B. Sin almacenamiento – generado en tu navegador.',
-  fr: 'Générateur de mots de passe gratuit en ligne. Créez des mots de passe forts et aléatoires conformes NIST 800-63B. Généré dans votre navigateur.',
-  de: 'Kostenloser Online-Passwort-Generator. Erstellen Sie starke, zufällige Passwörter nach NIST 800-63B. Keine Datenspeicherung – lokal im Browser generiert.',
-  it: 'Generatore di password online gratuito. Crea password forti e casuali conformi NIST 800-63B. Nessun dato archiviato – generato nel tuo browser.',
-  pt: 'Gerador de senhas online gratuito. Crie senhas fortes e aleatórias conforme NIST 800-63B. Sem armazenamento – gerado localmente no navegador.',
-  ru: 'Бесплатный онлайн-генератор паролей. Создавайте надёжные пароли по стандартам NIST 800-63B. Без хранения – генерация локально.',
-  zh: '免费在线密码生成器。创建符合 NIST 800-63B 标准的强随机密码。无数据存储 – 在浏览器中本地生成。',
-  ja: '無料オンラインパスワード生成。NIST 800-63B準拠の強力なランダムパスワード。データ保存なし – ブラウザでローカル生成。',
-  pl: 'Darmowy generator haseł online. Tworzenie silnych, losowych haseł zgodnych z NIST 800-63B. Bez przechowywania – generowane lokalnie w przeglądarce.',
+  en: 'Free online password generator: create strong, random passwords or memorable passphrases that meet NIST 800-63B. Generated locally in your browser — nothing is sent to a server.',
+  ua: 'Безкоштовний генератор паролів онлайн: створюйте надійні випадкові паролі або парольні фрази за NIST 800-63B. Генерація локально у браузері — дані не надсилаються.',
+  es: 'Generador de contraseñas online gratis: crea contraseñas aleatorias seguras o frases memorables según NIST 800-63B. Generado en tu navegador, sin enviar datos.',
+  fr: 'Générateur de mots de passe gratuit : créez des mots de passe forts et aléatoires ou des phrases secrètes selon NIST 800-63B. Généré dans votre navigateur.',
+  de: 'Kostenloser Passwort-Generator: starke, zufällige Passwörter oder merkbare Passphrasen nach NIST 800-63B. Lokal im Browser erzeugt – ohne Speicherung.',
+  it: 'Generatore di password gratuito: crea password forti e casuali o passphrase memorabili secondo NIST 800-63B. Generato nel browser, senza salvataggio.',
+  pt: 'Gerador de senhas grátis: crie senhas fortes e aleatórias ou frases memoráveis conforme NIST 800-63B. Gerado no navegador, sem armazenamento.',
+  ru: 'Бесплатный генератор паролей онлайн: создавайте надёжные случайные пароли и парольные фразы по NIST 800-63B. Генерация локально в браузере.',
+  zh: '免费在线密码生成器：创建符合 NIST 800-63B 的强随机密码或易记口令短语。浏览器本地生成，不上传服务器。',
+  ja: '無料のパスワード生成ツール。NIST 800-63B 準拠の強力なランダムパスワードや覚えやすいパスフレーズを作成。ブラウザ内で生成し、送信しません。',
+  pl: 'Darmowy generator haseł online: twórz silne, losowe hasła lub łatwe do zapamiętania frazy zgodnie z NIST 800-63B. Generowane lokalnie w przeglądarce.',
+  vi: 'Trình tạo mật khẩu miễn phí: tạo mật khẩu mạnh, ngẫu nhiên hoặc cụm từ dễ nhớ theo NIST 800-63B. Tạo ngay trong trình duyệt, không gửi lên máy chủ.',
 };
 
 const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

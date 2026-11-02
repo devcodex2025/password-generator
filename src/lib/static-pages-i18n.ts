@@ -1,4 +1,4 @@
-export const STATIC_PAGE_LOCALES = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'] as const;
+export const STATIC_PAGE_LOCALES = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl', 'vi'] as const;
 
 export type StaticPageLocale = (typeof STATIC_PAGE_LOCALES)[number];
 
@@ -47,6 +47,34 @@ const COPY: Record<StaticPageLocale, StaticPageCopy> = {
     contactIntro: 'If you have questions about privacy, terms, security, or content, contact us using the details below.',
     contactEmailLabel: 'Email',
     contactResponseLabel: 'Typical response time: 1-3 business days',
+  },
+  vi: {
+    home: 'Trang chủ',
+    privacyPolicy: 'Chính sách quyền riêng tư',
+    termsOfService: 'Điều khoản sử dụng',
+    contact: 'Liên hệ',
+    privacyTitle: 'Chính sách quyền riêng tư',
+    privacyIntro: 'Chúng tôi tôn trọng quyền riêng tư của bạn và chỉ thu thập dữ liệu kỹ thuật cần thiết để vận hành, bảo vệ và cải thiện trang web: loại trình duyệt, hệ điều hành, cấu hình thiết bị, thời lượng phiên và báo cáo lỗi. Chúng tôi không lưu mật khẩu được tạo và không ghi lại nội dung bạn nhập vào biểu mẫu. Cookie chỉ dùng cho chức năng thiết yếu, duy trì phiên và tùy chọn người dùng. Bạn có thể quản lý hoặc xóa cookie bất cứ lúc nào trong trình duyệt hoặc qua bảng điều khiển cookie của trang.',
+    privacyBullets: [
+      'Chúng tôi không lưu mật khẩu đã tạo trên máy chủ hoặc sau khi phiên duyệt kết thúc.',
+      'Phân tích và cookie chỉ dùng để chẩn đoán, đảm bảo ổn định, tối ưu hiệu năng và cải thiện sản phẩm.',
+      'Chúng tôi không bán, cho thuê hoặc chia sẻ dữ liệu cá nhân với bên thứ ba.',
+      'Các biện pháp bảo mật được rà soát định kỳ để giảm rủi ro và ngăn lạm dụng.',
+      'Bạn luôn kiểm soát cài đặt của mình và có thể điều chỉnh hoặc xóa cookie bất cứ lúc nào.',
+    ],
+    termsTitle: 'Điều khoản sử dụng',
+    termsIntro: 'Các điều khoản này mô tả cách bạn có thể sử dụng trang web. Khi truy cập hoặc sử dụng dịch vụ, bạn đồng ý sử dụng hợp pháp và có trách nhiệm. Trang web được cung cấp "nguyên trạng" mà không có bất kỳ bảo đảm nào, kể cả khả năng thương mại hoặc phù hợp cho mục đích cụ thể. Chúng tôi không chịu trách nhiệm về lựa chọn bảo mật của bạn, gián đoạn từ bên thứ ba hoặc việc sử dụng sai mật khẩu đã tạo. Thông tin và công cụ trên trang chỉ nhằm mục đích hướng dẫn chung.',
+    termsBullets: [
+      'Không sử dụng trang web cho mục đích lạm dụng, bất hợp pháp hoặc tấn công tự động.',
+      'Bạn chịu trách nhiệm lưu trữ mật khẩu an toàn và chọn thực hành bảo mật phù hợp.',
+      'Chúng tôi có thể cập nhật điều khoản để phản ánh cải tiến bảo mật, yêu cầu pháp lý và thay đổi sản phẩm.',
+      'Chúng tôi không bảo đảm truy cập liên tục, độ chính xác của kết quả hoặc phù hợp với mục đích cụ thể.',
+      'Việc sử dụng dịch vụ là do bạn tự chịu rủi ro; chúng tôi không chịu trách nhiệm cho thiệt hại gián tiếp.',
+    ],
+    contactTitle: 'Liên hệ',
+    contactIntro: 'Nếu bạn có câu hỏi về quyền riêng tư, điều khoản, bảo mật hoặc nội dung, hãy liên hệ với chúng tôi theo thông tin bên dưới.',
+    contactEmailLabel: 'Email',
+    contactResponseLabel: 'Thời gian phản hồi thông thường: 1-3 ngày làm việc',
   },
   ua: {
     home: 'Головна',
