@@ -58,16 +58,26 @@ export default function AffiliateBanner({ placement, locale, className = '', pro
       className={`block w-full ${className}`}
       aria-label={entry.alt}
     >
-      <Image
-        src={entry.src}
-        alt={entry.alt}
-        width={entry.width}
-        height={entry.height}
-        sizes="(max-width: 768px) 100vw, 728px"
-        className="h-auto w-full rounded-2xl"
-        loading="lazy"
-        decoding="async"
-      />
+      {/*
+        Fixed-ratio box + fill keeps every 728x90 (and any future) creative in
+        proportion. Using width/height with `h-auto` makes Next warn when the
+        rendered width changes by a pixel while the rounded height still
+        matches the attribute, so the box owns the aspect ratio instead.
+      */}
+      <span
+        className="relative block w-full overflow-hidden rounded-2xl"
+        style={{ aspectRatio: `${entry.width} / ${entry.height}` }}
+      >
+        <Image
+          src={entry.src}
+          alt={entry.alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 728px"
+          className="object-contain"
+          loading="lazy"
+          decoding="async"
+        />
+      </span>
       <span className="mt-1 block text-[10px] italic text-[#6b7280] dark:text-[#9ca3af]">Ad · affiliate link</span>
     </a>
   );

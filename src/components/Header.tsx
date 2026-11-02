@@ -368,9 +368,9 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
     <header className="py-4 lg:py-5 px-2 flex justify-between items-center w-full">
       <div className="flex items-center">
         {isHomePage ? (
-          <div className="inline-flex">
+          <div className="logo-plate inline-flex">
             <Image
-              src={isDarkMode ? '/images/logo-dark.svg' : '/images/logo.svg'}
+              src="/images/logo.svg"
               alt="Generate Password To Me - Secure Password Generator Logo"
               className="w-auto mr-2 logo shrink-0 object-contain"
               priority
@@ -383,10 +383,10 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           <Link
             href={homeHref}
             aria-label="Go to homepage"
-            className="logo-link inline-flex transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+            className="logo-link logo-plate inline-flex transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
           >
             <Image
-              src={isDarkMode ? '/images/logo-dark.svg' : '/images/logo.svg'}
+              src="/images/logo.svg"
               alt="Generate Password To Me - Secure Password Generator Logo"
               className="w-auto mr-2 logo shrink-0 object-contain"
               priority

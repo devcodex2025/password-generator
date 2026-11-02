@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useContext } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageIcon from '@mui/icons-material/Language';
-import { ThemeContext } from '../context/ThemeContext';
 import lang from './lang.json';
 import seoData from './SeoData';
 import { getLinkLabel } from '@/utils/linkTranslations';
@@ -17,7 +16,6 @@ function t(key, language) {
 
 const Footer = ({ language }) => {
   const currentYear = new Date().getFullYear();
-  const { isDarkMode } = useContext(ThemeContext);
   const locale = language || 'en';
   const linkClass =
     'relative inline-flex items-center rounded-md px-1.5 py-1 text-[#3a6077] dark:text-[#38beff] transition-all duration-200 hover:-translate-y-0.5 hover:text-[#2A4E63] dark:hover:text-[#d7f2ff] hover:underline underline-offset-4 decoration-2';
@@ -97,10 +95,10 @@ const Footer = ({ language }) => {
             <Link
               href={locale === 'en' ? '/' : `/${locale}`}
               aria-label="Generate Password To Me - home"
-              className="inline-flex justify-self-center transition-opacity duration-200 hover:opacity-90 md:justify-self-start"
+              className="logo-plate inline-flex justify-self-center transition-opacity duration-200 hover:opacity-90 md:justify-self-start"
             >
               <Image
-                src={isDarkMode ? '/images/logo-dark.svg' : '/images/logo.svg'}
+                src="/images/logo.svg"
                 alt="Generate Password To Me - Secure Password Generator Logo"
                 width={200}
                 height={45}

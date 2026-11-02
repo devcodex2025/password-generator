@@ -1,23 +1,27 @@
 import { buildHomeJsonLdScripts } from '@/lib/home-structured-data';
 
 /**
- * Server-rendered JSON-LD. Plain <script> elements (not next/script) so the
- * data ships inside the static HTML for crawlers and never crosses a client
- * boundary: a <script> inside a client hydration tree triggers a dev-side
- * "script tag" warning and would be treated as user code.
+ * Server-rendered JSON-LD.
+ *
+ * The markup is emitted as one HTML string instead of React-rendered <script>
+ * elements. React 19 warns ("Encountered a script tag while rendering React
+ * component") whenever the locale layout re-renders during client-side
+ * navigation. Inserting the same payload through `dangerouslySetInnerHTML`
+ * keeps the <script type="application/ld+json"> tags in the server HTML for
+ * crawlers, refreshes them on client navigation, and never asks React to
+ * create a script element. JSON-LD is data, not executable code, so the
+ * browser not executing an innerHTML-inserted script is intentional.
+ *
+ * `<` is escaped to prevent a payload string from closing the script tag.
  */
 export default function HomeStructuredData({ locale }: { locale: string }) {
   const scripts = buildHomeJsonLdScripts(locale);
-  return (
-    <>
-      {scripts.map(({ id, payload }) => (
-        <script
-          key={id}
-          id={id}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(payload) }}
-        />
-      ))}
-    </>
-  );
+  const html = scripts
+    .map(({ id, payload }) => {
+      const json = JSON.stringify(payload).replace(/</g, '\\u003c');
+      return `<script id="${id}" type="application/ld+json">${json}</script>`;
+    })
+    .join('');
+
+  return <div hidden aria-hidden="true" dangerouslySetInnerHTML={{ __html: html }} />;
 }
