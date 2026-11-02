@@ -1451,3 +1451,135 @@ export const pl: LocalizedArticleContent = {
     },
   ],
 };
+
+export const vi: LocalizedArticleContent = {
+  title: 'Cách tạo mật khẩu mạnh năm 2026: hướng dẫn đầy đủ',
+  excerpt:
+    'Học cách tạo mật khẩu an toàn bằng kỹ thuật hiện đại mà NIST, OWASP và chuyên gia khuyến nghị. Hướng dẫn tính entropy, dùng trình quản lý mật khẩu, cụm mật khẩu và tránh sai lầm phổ biến.',
+  seoTitle: 'Cách tạo mật khẩu mạnh 2026: hướng dẫn NIST',
+  seoDescription:
+    'Hướng dẫn tạo mật khẩu mạnh 2026: tiêu chuẩn NIST SP 800-63B, cách tính entropy, trình quản lý mật khẩu và mẹo bảo vệ tài khoản.',
+  keywords: [
+    'mật khẩu mạnh ngẫu nhiên',
+    'mật khẩu mạnh là gì',
+    'mật khẩu mạnh dễ nhớ',
+    'mật khẩu mạnh 8 ký tự',
+    'trình quản lý mật khẩu là gì',
+    'cụm mật khẩu passphrase là gì',
+  ],
+  sections: [
+    {
+      heading: 'Vì sao độ mạnh mật khẩu vẫn quan trọng trong năm 2026',
+      paragraphs: [
+        'Dù sinh trắc học và passkey phổ biến, mật khẩu vẫn là cách xác thực chính của phần lớn tài khoản. Báo cáo Vi phạm Dữ liệu Verizon 2025 cho thấy hơn 80% vụ rò rỉ do tấn công mạng liên quan đến thông tin đăng nhập yếu hoặc bị đánh cắp. Mật khẩu thường là rào chắn duy nhất giữa dữ liệu riêng tư và kẻ tấn công.',
+        'Công cụ vét cạn tăng tốc bằng GPU thử hàng tỷ tổ hợp/giây. Mật khẩu 8 ký tự chữ thường bị bẻ khóa trong chưa đầy 5 phút; mật khẩu 16 ký tự đủ loại sẽ mất hàng thế kỷ.',
+        'Tin tốt: tạo mật khẩu mạnh không cần ghi nhớ chuỗi ký tự ngẫu nhiên. Cụm mật khẩu và trình quản lý mật khẩu giúp bảo mật dễ tiếp cận, thực tế. Hướng dẫn này đi qua từng kỹ thuật tiêu chuẩn bảo mật hàng đầu khuyến nghị.',
+      ],
+    },
+    {
+      heading: 'Hiểu về entropy của mật khẩu',
+      paragraphs: [
+        'Entropy đo mức khó đoán của mật khẩu, tính bằng bit: 40 bit tương ứng 2^40 (khoảng 1 nghìn tỷ) tổ hợp. Chuyên gia khuyến nghị tối thiểu 60 bit cho tài khoản thông thường, 80 bit cho ngân hàng hoặc email.',
+        'Công thức: entropy = log2(pool_size^length). Mật khẩu 12 ký tự gồm chữ in hoa (26), chữ in thường (26), chữ số (10), ký hiệu (33), từ nhóm 95 ký tự, cho khoảng 79 bit — đủ chống tấn công ngoại tuyến.',
+        'Entropy chỉ đúng khi mật khẩu thực sự ngẫu nhiên. "Password123!" dùng đủ bốn nhóm ký tự nhưng entropy hiệu dụng gần bằng không vì theo khuôn mẫu dễ đoán. Kẻ tấn công có từ điển hàng triệu khuôn mẫu, thử trước tiên.',
+      ],
+      bullets: [
+        '40 bit: tối thiểu cho tài khoản ít rủi ro (diễn đàn, bản tin)',
+        '60 bit: chuẩn cho hầu hết tài khoản cá nhân',
+        '80 bit: khuyến nghị cho email, ngân hàng, lưu trữ đám mây',
+        '100+ bit: lý tưởng cho ví mã hóa và mật khẩu chính',
+      ],
+    },
+    {
+      heading: 'Độ dài mật khẩu: 8 so với 12, 16 và 20 ký tự',
+      paragraphs: [
+        'Độ dài ảnh hưởng mạnh nhất đến độ mạnh mật khẩu. Với nhóm 94 ký tự, mỗi ký tự thêm khoảng 6,5 bit entropy, nên không gian tìm kiếm tăng gấp đôi sau mỗi 1,1 ký tự.',
+        'Với mật khẩu tạo ngẫu nhiên (trình tạo an toàn bằng mật mã, không lặp khuôn mẫu):',
+      ],
+      bullets: [
+        '8 ký tự — ~52 bit — vét cạn mất vài phút đến vài giờ trên GPU; chỉ hợp tài khoản ít giá trị',
+        '12 ký tự — ~79 bit — tối thiểu thực tế cho email, công việc, mua sắm',
+        '16 ký tự — ~105 bit — mặc định cho mật khẩu do trình quản lý tạo',
+        '20 ký tự — ~131 bit — hợp mật khẩu chính, ví tiền mã hóa, quyền quản trị',
+      ],
+    },
+    {
+      heading: 'Điều gì tạo nên mật khẩu mạnh (và điều gì không)',
+      paragraphs: [
+        'Bốn thuộc tính quyết định độ mạnh: độ dài, tính ngẫu nhiên thật, tính duy nhất cho từng tài khoản và mật khẩu không nằm trong dữ liệu rò rỉ công khai. Quy tắc phức tạp đánh đổi độ dài lấy ký hiệu không bù được — "P@ssw0rd!" vẫn nằm trong những phỏng đoán đầu tiên của mọi công cụ bẻ khóa.',
+        'Mật khẩu từng xuất hiện trong bất kỳ vụ rò rỉ nào nên coi là đã bị xâm phạm, kể cả khi dịch vụ chưa thông báo. Kiểm tra với kho dữ liệu rò rỉ chỉ mất một giây, giá trị hơn thêm một ký hiệu.',
+      ],
+      bullets: [
+        'Mạnh: chuỗi 16 ký tự ngẫu nhiên từ CSPRNG, lưu trong trình quản lý',
+        'Mạnh: cụm 5–6 từ ngẫu nhiên, có dấu phân cách, một từ viết hoa',
+        'Yếu: dữ liệu cá nhân, mẫu bàn phím (qwerty, 1qaz2wsx) hoặc từ điển',
+        'Yếu: thay thế kiểu leet (a→@, e→3, o→0) — công cụ bẻ khóa nào cũng có',
+        'Yếu: dùng lại một mật khẩu cho nhiều tài khoản, bất kể độ dài',
+      ],
+    },
+    {
+      heading: 'NIST 800-63B: chuyên gia thực sự khuyến nghị gì',
+      paragraphs: [
+        'Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ (NIST) cập nhật Hướng dẫn Nhận dạng Kỹ thuật số (SP 800-63B) theo nghiên cứu hiện đại về bảo mật mật khẩu. Đây là chuẩn vàng cho tổ chức toàn cầu.',
+        'Khuyến nghị chính: cho phép mật khẩu tới 64 ký tự; tối thiểu 8 ký tự (khuyến nghị 12 trở lên); KHÔNG áp quy tắc phức tạp tùy ý (như bắt buộc chữ in hoa + chữ số + ký hiệu); KHÔNG bắt đổi mật khẩu định kỳ trừ khi có bằng chứng bị xâm phạm; đối chiếu danh sách mật khẩu đã rò rỉ; và cho phép dán vào ô mật khẩu.',
+        'Lý do: ép buộc phức tạp khiến người dùng tạo khuôn mẫu dễ đoán như "Spring2026!" hay "P@ssw0rd" — thỏa mãn quy tắc nhưng bị bẻ khóa dễ dàng. NIST nhấn mạnh độ dài và tính khó đoán là động lực chính của bảo mật.',
+        'NIST cũng khuyến nghị giới hạn số lần thử đăng nhập, dùng xác thực đa yếu tố (MFA) và băm mật khẩu lưu trữ bằng Argon2id hoặc bcrypt với hệ số công việc phù hợp.',
+      ],
+    },
+    {
+      heading: 'Cách tiếp cận cụm mật khẩu: dễ nhớ và an toàn',
+      paragraphs: [
+        'Cụm mật khẩu là chuỗi từ ngẫu nhiên, như "correct-horse-battery-staple" (ví dụ nổi tiếng của XKCD). Tạo đúng cách bằng danh sách ít nhất 7.776 mục (như EFF Diceware), mỗi từ đóng góp khoảng 12,9 bit entropy.',
+        'Cụm bốn từ cho khoảng 52 bit, sáu từ đạt khoảng 78 bit — tương đương mật khẩu ngẫu nhiên 12 ký tự nhưng dễ gõ, dễ nhớ hơn. Tài khoản quan trọng nên dùng năm hoặc sáu từ.',
+        'Quy tắc: chọn từ thật ngẫu nhiên (xúc xắc hoặc trình tạo bằng mật mã — không tự chọn); tránh câu nói nổi tiếng, lời bài hát, tên sách; thêm dấu phân cách (gạch nối, dấu chấm, khoảng trắng); viết hoa một từ ngẫu nhiên hoặc chèn chữ số để tăng entropy mà vẫn dễ nhớ.',
+      ],
+      bullets: [
+        '4 từ: ~52 bit — hợp tài khoản rủi ro trung bình',
+        '5 từ: ~65 bit — tốt cho hầu hết tài khoản cá nhân',
+        '6 từ: ~78 bit — mạnh cho email, tài khoản tài chính',
+        '7 từ: ~90 bit — xuất sắc cho mật khẩu chính, ví tiền mã hóa',
+      ],
+    },
+    {
+      heading: 'Từng bước: tạo mật khẩu của bạn',
+      paragraphs: [
+        'Với tài khoản hằng ngày, dùng trình quản lý mật khẩu tạo và lưu mật khẩu ngẫu nhiên riêng từ 16 ký tự. Trình quản lý lo phần phức tạp, nên mỗi mật khẩu có thể ngẫu nhiên tối đa mà không cần ghi nhớ.',
+        'Với mật khẩu chính (mật khẩu duy nhất bạn buộc phải nhớ), dùng cụm mật khẩu: gieo xúc xắc hoặc dùng trình tạo bằng mật mã chọn 5-7 từ ngẫu nhiên trong danh sách lớn. Viết ra giấy, cất an toàn đến khi nhớ rồi hủy.',
+        'Với tài khoản không dùng được trình quản lý (như đăng nhập máy tính hoặc PIN điện thoại), tạo cụm mật khẩu dễ gõ nhanh. Luyện gõ vài lần để tạo phản xạ. Cụm như "maple-thunder-giraffe-socket-22" vừa mạnh vừa dễ gõ.',
+        'Không dùng lại mật khẩu giữa các tài khoản. Nếu một dịch vụ bị rò rỉ, kẻ tấn công thử thông tin đăng nhập đó trên hàng trăm trang khác — kỹ thuật nhồi thông tin đăng nhập. Mật khẩu riêng cho từng tài khoản giúp giới hạn thiệt hại.',
+      ],
+    },
+    {
+      heading: 'Những lỗi mật khẩu phổ biến cần tránh',
+      paragraphs: [
+        'Dùng thông tin cá nhân là sai lầm phổ biến và nguy hiểm nhất. Tên người thân, thú cưng, ngày sinh, ngày kỷ niệm, số điện thoại, địa chỉ đều dễ tìm qua mạng xã hội. Kẻ tấn công xây từ điển riêng từ dữ liệu công khai trước khi vét cạn.',
+        'Mẫu bàn phím như "qwerty", "123456", "zxcvbn" hay "1qaz2wsx" trông ngẫu nhiên nhưng là mẫu đầu tiên công cụ bẻ khóa thử. Thay thế đơn giản (@ cho a, 3 cho e, 0 cho o) gần như không tăng bảo mật vì công cụ nào cũng có.',
+        'Tăng dần mật khẩu khi bị buộc đổi (Password1 → Password2 → Password3) không cải thiện bảo mật. Có một phiên bản là đoán được các bản còn lại. Vì vậy NIST khuyến nghị không bắt buộc đổi định kỳ.',
+      ],
+      bullets: [
+        'Không dùng từ điển nguyên gốc',
+        'Tránh thông tin cá nhân (tên, ngày tháng, địa chỉ)',
+        'Không dùng mẫu hoặc chuỗi bàn phím',
+        'Không dùng lại mật khẩu cho nhiều tài khoản',
+        'Tránh thay thế ký tự đơn giản (@ cho a, 3 cho e)',
+        'Không tăng dần mật khẩu (Password1, Password2, v.v.)',
+      ],
+    },
+    {
+      heading: 'Trình quản lý mật khẩu: khoản đầu tư bảo mật tốt nhất',
+      paragraphs: [
+        'Trình quản lý mật khẩu tạo, lưu và tự điền mật khẩu ngẫu nhiên riêng cho từng tài khoản. Lựa chọn hàng đầu gồm 1Password, Bitwarden (mã nguồn mở) và KeePass (ngoại tuyến). Mỗi sản phẩm dùng mã hóa AES-256, với mật khẩu chính làm khóa giải mã.',
+        'Lợi ích chính là loại bỏ việc dùng lại mật khẩu. Mỗi tài khoản có mật khẩu ngẫu nhiên dài 20+ ký tự, còn bạn chỉ cần nhớ một mật khẩu chính mạnh. Hầu hết trình quản lý cảnh báo khi mật khẩu xuất hiện trong dữ liệu rò rỉ.',
+        'Chọn trình quản lý hỗ trợ thiết bị, trình duyệt, có quyền truy cập khẩn cấp cho người liên hệ tin cậy và đã kiểm tra bảo mật độc lập. Bitwarden miễn phí, mã nguồn mở. Với nhóm làm việc, 1Password Business hoặc Bitwarden Organizations có kho lưu chia sẻ.',
+      ],
+    },
+    {
+      heading: 'Ngoài mật khẩu: xác thực đa yếu tố',
+      paragraphs: [
+        'Ngay cả mật khẩu mạnh nhất cũng có thể bị xâm phạm qua lừa đảo trực tuyến, keylogger hoặc rò rỉ phía máy chủ. Xác thực đa yếu tố (MFA) thêm bước xác minh thứ hai — thường là mật khẩu một lần theo thời gian (TOTP) từ ứng dụng như Google Authenticator hoặc Authy, hay khóa bảo mật phần cứng như YubiKey.',
+        'Bật MFA trên mọi tài khoản hỗ trợ, ưu tiên email (trung tâm khôi phục), ngân hàng, lưu trữ đám mây, mạng xã hội. Khóa bảo mật phần cứng (FIDO2/WebAuthn) bảo vệ tốt nhất trước lừa đảo trực tuyến nhờ xác minh đúng tên miền trước khi xác thực.',
+        'Lưu mã dự phòng MFA trong trình quản lý mật khẩu hoặc nơi an toàn riêng. Mất thiết bị MFA mà không có mã dự phòng có thể khóa bạn vĩnh viễn khỏi tài khoản.',
+      ],
+    },
+  ],
+};

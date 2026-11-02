@@ -1,9 +1,9 @@
 const lang = require('./src/components/lang.json');
 
 /**
- * Locales that actually have routes and content. lang.json also contains `vi`
- * (added by a community PR) but the app does not render that locale — listing it
- * in the sitemap produced 17 URLs that answer 404.
+ * Locales that have fully translated routes and content. `vi` is handled
+ * separately below: its home/legal pages are always listed, while guide pages
+ * are listed only for slugs with a Vietnamese translation.
  */
 const SITEMAP_LANGUAGES = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
 
@@ -25,6 +25,14 @@ const guideSlugs = [
   'vpn-security-privacy-guide',
 ];
 const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'best-password-managers-2026'];
+
+/**
+ * Guides that have a Vietnamese `vi` export in src/content/articles/<slug>.ts.
+ * Keep this list in sync when translating a guide. Everything under
+ * /vi/guides/<slug> is excluded from the sitemap until its slug is listed here,
+ * because untranslated bodies fall back to English and are noindexed.
+ */
+const viTranslatedGuideSlugs = ['how-to-create-strong-passwords'];
 
 /* Map locale codes to hreflang values (ua → uk for Ukrainian) */
 const hreflangMap = { ua: 'uk' };
@@ -65,8 +73,8 @@ module.exports = {
     ],
   },
   additionalPaths: async (config) => {
-    // `vi` has routes and translated home/legal pages; its guide bodies fall back
-    // to English and are noindexed, so guides are NOT added for vi.
+    // `vi` has routes and translated home/legal pages. Vietnamese guide articles
+    // are listed only for slugs that have a translated `vi` export.
     const allLanguages = [...availableLanguages, 'vi'];
     const viStaticSlugs = ['privacy-policy', 'terms-of-service', 'contact'];
 
@@ -114,6 +122,18 @@ module.exports = {
       alternateRefs: buildAlternateRefs(`/${slug}`),
     }));
 
+    const viGuideArticlePages = viTranslatedGuideSlugs.map((slug) => ({
+      loc: `/vi/guides/${slug}`,
+      changefreq: 'monthly',
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+      alternateRefs: [
+        ...buildAlternateRefs(`/guides/${slug}`),
+        { href: `${siteUrl}/vi/guides/${slug}`, hreflang: 'vi', hrefIsAbsolute: true },
+        { href: `${siteUrl}/en/guides/${slug}`, hreflang: 'x-default', hrefIsAbsolute: true },
+      ],
+    }));
+
     // Link-worthy data page (published in EN and UA only).
     const dataPages = ['en', 'ua'].map((langCode) => ({
       loc: `/${langCode}/password-statistics-2026`,
@@ -145,14 +165,17 @@ module.exports = {
       ],
     };
 
-    return [rootPage, ...localePages, ...guideIndexPages, ...guideArticlePages, ...staticPages, ...viStaticPages, ...dataPages];
+    return [rootPage, ...localePages, ...guideIndexPages, ...guideArticlePages, ...staticPages, ...viStaticPages, ...viGuideArticlePages, ...dataPages];
   },
   transform: async (config, path) => {
     // Never list generated OG-image routes as pages — they are PNG endpoints,
     // not indexable HTML. Keeps crawl budget on real pages only.
     if (/\/opengraph-image(\/|$)/.test(path)) return null;
-    // Vietnamese guide bodies fall back to English and are noindexed.
-    if (/^\/vi\/guides(\/|$)/.test(path)) return null;
+    // Vietnamese guide index stays noindex until every P0 guide is translated.
+    if (path === '/vi/guides') return null;
+    // Only translated Vietnamese guide articles belong in the sitemap.
+    const viGuideMatch = path.match(/^\/vi\/guides\/([^/]+)$/);
+    if (viGuideMatch && !viTranslatedGuideSlugs.includes(viGuideMatch[1])) return null;
 
     const localePathMatch = path.match(/^\/([a-z]{2})$/i);
     const locale = localePathMatch ? localePathMatch[1] : null;

@@ -57,6 +57,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       zh: howToCreateStrongPasswords.zh,
       ja: howToCreateStrongPasswords.ja,
       pl: howToCreateStrongPasswords.pl,
+      vi: howToCreateStrongPasswords.vi,
     },
   },
   {

@@ -99,7 +99,7 @@ For each slug, add `export const vi: LocalizedArticleContent = { … }` to
 
 | Slug | Translated | Reviewed | Indexable | Sitemap | Notes |
 |---|---|---|---|---|---|
-| how-to-create-strong-passwords | ☐ | ☐ | ☐ | ☐ | P0 |
+| how-to-create-strong-passwords | ☑ | ☐ | ☑ | ☑ | P0 — VI live, native review pending |
 | common-password-mistakes | ☐ | ☐ | ☐ | ☐ | P0 |
 | nist-800-63b-password-rules | ☐ | ☐ | ☐ | ☐ | P0 |
 | passphrase-vs-password-entropy | ☐ | ☐ | ☐ | ☐ | P1 |
