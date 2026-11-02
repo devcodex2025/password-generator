@@ -33,7 +33,7 @@ export const en: LocalizedArticleContent = {
         'Dashlane has pivoted to a web-first approach and offers excellent phishing detection through its built-in VPN and dark web monitoring. It automatically changes passwords on supported sites and provides a comprehensive security dashboard. Pricing is higher at $4.99/month but includes VPN access.',
         'NordPass, built by the team behind NordVPN, uses the XChaCha20 encryption algorithm instead of the more common AES-256. It offers a clean interface, biometric unlock, and data breach scanning. The free tier allows unlimited passwords on one device at a time.',
         'Proton Pass is the newest major contender, from the makers of ProtonMail. It emphasizes end-to-end encryption with zero-knowledge architecture and includes a built-in email alias generator (hide-my-email). The free tier is generous, and it integrates naturally with the Proton ecosystem.',
-        'Apple Keychain and Google Password Manager are built-in options that work seamlessly within their respective ecosystems. They are free and frictionless but limited to Apple or Google platforms, offer fewer advanced features, and lack the cross-platform flexibility of dedicated managers.',
+        'Apple Keychain and Google Password Manager are built-in options that work well within their ecosystems. They are free and frictionless but limited to Apple or Google platforms, offer fewer advanced features, and lack the cross-platform flexibility of dedicated managers.',
       ],
     },
     {
@@ -348,7 +348,7 @@ export const de: LocalizedArticleContent = {
         'Dashlane bietet exzellente Phishing-Erkennung durch sein integriertes VPN und Dark-Web-Monitoring. Es ändert automatisch Passwörter auf unterstützten Seiten. Höherer Preis bei 4,99 $/Monat, beinhaltet aber VPN-Zugang.',
         'NordPass verwendet den XChaCha20-Verschlüsselungsalgorithmus anstelle des gängigeren AES-256. Es bietet eine saubere Oberfläche, biometrische Entsperrung und Datenleck-Scanning.',
         'Proton Pass ist der neueste große Herausforderer von den Machern von ProtonMail. Er betont Ende-zu-Ende-Verschlüsselung mit Zero-Knowledge-Architektur und enthält einen integrierten E-Mail-Alias-Generator.',
-        'Apple Keychain und Google Password Manager sind integrierte Optionen, die nahtlos in ihren jeweiligen Ökosystemen funktionieren. Sie sind kostenlos, aber auf Apple- oder Google-Plattformen beschränkt.',
+        'Apple Keychain und Google Password Manager sind integrierte Optionen, die direkt in ihren jeweiligen Ökosystemen funktionieren. Sie sind kostenlos, aber auf Apple- oder Google-Plattformen beschränkt.',
       ],
     },
     {
@@ -492,7 +492,7 @@ export const pt: LocalizedArticleContent = {
     {
       heading: 'Os 7 melhores gerenciadores de senhas em 2026',
       paragraphs: [
-        '1Password é o padrão ouro para uso pessoal e familiar. Oferece interface polida em todas as plataformas, monitoramento de vazamentos Watchtower, Travel Mode e recursos robustos de compartilhamento. A partir de $2.99/mês.',
+        '1Password é o padrão ouro para uso pessoal e familiar. Oferece interface polida em todas as plataformas, monitoramento de vazamentos Watchtower, Travel Mode e recursos avançados de compartilhamento. A partir de $2.99/mês.',
         'Bitwarden é a melhor opção de código aberto e a principal escolha para usuários preocupados com orçamento. O nível gratuito inclui senhas ilimitadas em dispositivos ilimitados. O premium ($10/ano) adiciona autenticação TOTP, acesso de emergência e relatórios de saúde do cofre.',
         'KeePass continua sendo a opção preferida para quem quer controle offline completo. Seu banco de dados criptografado nunca toca um servidor na nuvem.',
         'Dashlane oferece excelente detecção de phishing através de VPN integrada e monitoramento da dark web. Muda senhas automaticamente em sites compatíveis. Preço mais alto a $4.99/mês, mas inclui acesso VPN.',
@@ -573,7 +573,7 @@ export const ru: LocalizedArticleContent = {
         'Dashlane предлагает отличное обнаружение фишинга через встроенный VPN и мониторинг даркнета. Автоматически меняет пароли на поддерживаемых сайтах. Цена выше — $4.99/месяц, но включает VPN.',
         'NordPass использует алгоритм шифрования XChaCha20 вместо более распространённого AES-256. Предлагает чистый интерфейс, биометрическую разблокировку и сканирование утечек.',
         'Proton Pass — новейший серьёзный конкурент от создателей ProtonMail. Акцент на сквозном шифровании с zero-knowledge архитектурой и встроенным генератором email-псевдонимов.',
-        'Apple Keychain и Google Password Manager — встроенные опции, бесшовно работающие в своих экосистемах. Бесплатны, но ограничены платформами Apple или Google.',
+        'Apple Keychain и Google Password Manager — встроенные опции, работающие в своих экосистемах без сбоев. Бесплатны, но ограничены платформами Apple или Google.',
       ],
     },
     {
@@ -648,7 +648,7 @@ export const zh: LocalizedArticleContent = {
         'Dashlane通过内置VPN和暗网监控提供出色的网络钓鱼检测。在支持的网站上自动更改密码。价格较高为$4.99/月，但包含VPN。',
         'NordPass使用XChaCha20加密算法而非更常见的AES-256。提供简洁界面、生物识别解锁和数据泄露扫描。',
         'Proton Pass是ProtonMail创建者推出的最新主要竞争者。强调端到端加密和零知识架构，包含内置邮件别名生成器。',
-        'Apple Keychain和Google密码管理器是在各自生态系统中无缝运行的内置选项。免费但仅限于Apple或Google平台。',
+        'Apple Keychain和Google密码管理器是在各自生态系统中可以直接使用的内置选项。免费但仅限于Apple或Google平台。',
       ],
     },
     {
@@ -723,7 +723,7 @@ export const ja: LocalizedArticleContent = {
         'Dashlaneは組み込みVPNとダークウェブモニタリングによる優れたフィッシング検出を提供。$4.99/月ですがVPNアクセスを含みます。',
         'NordPassはより一般的なAES-256の代わりにXChaCha20暗号化アルゴリズムを使用。クリーンなインターフェース、生体認証ロック解除、データ漏洩スキャンを提供。',
         'Proton PassはProtonMailの開発者からの最新の主要な競合製品です。ゼロ知識アーキテクチャによるエンドツーエンド暗号化と組み込みのメールエイリアスジェネレーターを備えています。',
-        'Apple KeychainとGoogle Password Managerはそれぞれのエコシステム内でシームレスに動作する組み込みオプションです。無料ですがAppleまたはGoogleプラットフォームに限定されます。',
+        'Apple KeychainとGoogle Password Managerはそれぞれのエコシステム内でそのまま使える組み込みオプションです。無料ですがAppleまたはGoogleプラットフォームに限定されます。',
       ],
     },
     {

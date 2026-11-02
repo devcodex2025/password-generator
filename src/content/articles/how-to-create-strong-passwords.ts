@@ -413,7 +413,7 @@ export const fr: LocalizedArticleContent = {
   ],
   sections: [
     {
-      heading: 'Pourquoi la robustesse des mots de passe reste importante en 2026',
+      heading: 'Pourquoi la force des mots de passe reste importante en 2026',
       paragraphs: [
         'Malgré l\'essor de la biométrie et des passkeys, les mots de passe restent la méthode d\'authentification principale pour la grande majorité des comptes en ligne. Selon le rapport Verizon Data Breach Investigations 2025, plus de 80 % des violations liées au piratage impliquent des identifiants faibles ou volés. Cela signifie que votre mot de passe est souvent la seule barrière entre vos données privées et un attaquant.',
         'Les attaquants modernes utilisent des outils de force brute accélérés par GPU capables de tester des milliards de combinaisons par seconde. Un simple mot de passe de 8 caractères en minuscules peut être craqué en moins de 5 minutes. Cependant, un mot de passe bien construit de 16 caractères avec des types de caractères mixtes prendrait des siècles à casser avec la technologie actuelle.',
@@ -677,7 +677,7 @@ export const it: LocalizedArticleContent = {
   ],
   sections: [
     {
-      heading: 'Perché la robustezza delle password è ancora importante nel 2026',
+      heading: 'Perché la sicurezza delle password è ancora importante nel 2026',
       paragraphs: [
         'Nonostante la diffusione della biometria e delle passkey, le password rimangono il metodo di autenticazione principale per la stragrande maggioranza degli account online. Secondo il rapporto Verizon Data Breach Investigations 2025, oltre l\'80% delle violazioni legate all\'hacking coinvolgono credenziali deboli o rubate. Ciò significa che la vostra password è spesso l\'unica barriera tra i vostri dati privati e un attaccante.',
         'Gli attaccanti moderni utilizzano strumenti di forza bruta accelerati dalla GPU che possono testare miliardi di combinazioni di password al secondo. Una semplice password di 8 caratteri minuscoli può essere decifrata in meno di 5 minuti. Tuttavia, una password ben costruita di 16 caratteri con tipi di caratteri misti richiederebbe secoli per essere violata con la tecnologia attuale.',
