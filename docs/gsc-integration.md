@@ -23,7 +23,7 @@ and need no browser consent.
 
 ```powershell
 # Windows: point the script at the WSL key through the UNC path
-$env:GSC_CREDENTIALS='\\wsl.localhost\Ubuntu\home\karbi\.config\minebench-google-analytics\gsc-service-account.json'
+$env:GSC_CREDENTIALS='C:\path\to\service-account.json'
 
 npm run gsc                    # 28-day report: sitemaps, totals, top queries/pages, URL inspection
 npm run gsc -- --days=7        # shorter window
