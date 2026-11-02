@@ -4,9 +4,9 @@ Status as of 2026-11-01. Everything technical is in place; approval itself is an
 action that only the site owner can perform.
 
 > **2026-11-02 live audit:** see `docs/adsense-audit-2026-11-02.md` (208 URLs crawled).
-> Status: `/about` is now live in 12 locales, and the AdSense tag is implemented but intentionally
-> disabled until approval (`NEXT_PUBLIC_ADSENSE_ENABLED`). Remaining work is content depth on
-> legal/contact pages — see `docs/adsense-fix-plan-2026-11-02.md`.
+> Status: `/about` is live in 12 locales, and the AdSense tag is ready behind
+> `NEXT_PUBLIC_ADSENSE_ENABLED=true` in Vercel plus marketing consent. Remaining work is content
+> depth on legal/contact pages — see `docs/adsense-fix-plan-2026-11-02.md`.
 
 ## Checklist
 
@@ -21,7 +21,7 @@ action that only the site owner can perform.
 | Terms of service | ✅ exists | `/{locale}/terms-of-service` |
 | Contact page | ✅ exists | `/{locale}/contact` |
 | About page | ✅ added 2026-11-02 | `/{locale}/about` |
-| Ad units in code | ⚠️ gated until approval | `AdSenseLoader` loads the tag only when `NEXT_PUBLIC_ADSENSE_ENABLED=true` and the visitor grants marketing consent. Set the flag after approval. |
+| Ad units in code | ⚠️ enabled via env flag | `AdSenseLoader` loads the tag after marketing consent when `NEXT_PUBLIC_ADSENSE_ENABLED=true` is set in Vercel. |
 | No prohibited content | ✅ tool site, no adult/violent/pirated content |
 | Core Web Vitals | ✅ Lighthouse 100/100/100 on the home page |
 | HTTPS + canonical + hreflang | ✅ |

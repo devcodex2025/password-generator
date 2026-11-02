@@ -276,8 +276,11 @@ async function main() {
   }
 
   if (pages[0]) {
-    const loaderPages = pages.filter((p) => p.hasAdLoader).length;
-    addTech('AdSense loader script in served HTML', loaderPages > 0, loaderPages ? `present on ${loaderPages}/${pages.length} pages` : 'missing — pagead2 .../adsbygoogle.js not found');
+    addTech(
+      'AdSense tag (client, consent-gated)',
+      null,
+      'loads after marketing consent; verify in a browser',
+    );
     addTech('AdSense publisher meta tag', pages.some((p) => p.hasAdMeta), 'google-adsense-account');
     addTech('AdSense ad unit markup in served HTML', null, 'client-rendered via ssr:false (verified in browser)');
     addTech('Cookie consent signal in served HTML', null, 'client-rendered CMP (verified in browser)');
@@ -306,7 +309,7 @@ async function main() {
   const thin = ok.filter((p) => !utilityTemplates.has(p.template) && p.wordsMain < THIN);
   const veryThin = thin.filter((p) => p.wordsMain < VERY_THIN);
   const iframeOnly = ok.filter((p) => p.iframes > 0 && p.wordsMain < VERY_THIN);
-  const noAd = ok.filter((p) => !p.hasAdLoader);
+  const noAd = ok.filter((p) => !p.hasAdMeta);
 
   const duplicates = [];
   const byLocale = new Map();
@@ -384,7 +387,7 @@ async function main() {
   console.log(`  noindex: ${noindex.length}`);
   console.log(`  pages without exactly one H1: ${badH1.length}`);
   console.log(`  pages without meta description: ${missingDesc.length}`);
-  console.log(`  pages without AdSense loader: ${noAd.length}`);
+  console.log(`  pages without AdSense meta tag: ${noAd.length}`);
 
   const report = {
     generatedAt: new Date().toISOString(),

@@ -3,9 +3,8 @@
 import { useEffect, useState } from 'react';
 
 /**
- * AdSense is only worth loading after approval. Set
- * NEXT_PUBLIC_ADSENSE_ENABLED=true in the deployment environment once the
- * account is approved.
+ * Enabled through the deployment environment: set
+ * NEXT_PUBLIC_ADSENSE_ENABLED=true in Vercel (Production).
  */
 export const ADSENSE_ENABLED = process.env.NEXT_PUBLIC_ADSENSE_ENABLED === 'true';
 

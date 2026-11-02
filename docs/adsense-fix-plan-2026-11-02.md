@@ -21,8 +21,8 @@ Done when: baseline JSON is committed and the branch builds (`npm run build`).
 
 ## Phase 1 — Blockers (day 1)
 
-> Done 2026-11-02. The tag ships gated behind `NEXT_PUBLIC_ADSENSE_ENABLED` (off until approval)
-> and marketing consent, because the account is not approved yet.
+> Done 2026-11-02. The tag is enabled with `NEXT_PUBLIC_ADSENSE_ENABLED=true` in Vercel and loads
+> only after marketing consent.
 
 ### Step 1.1 — Ship the AdSense loader ✅
 

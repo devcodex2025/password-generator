@@ -4,9 +4,9 @@ import Script from 'next/script';
 import { ADSENSE_ENABLED, useMarketingConsent } from '@/lib/marketing-consent';
 
 /**
- * Loads the AdSense tag only when the feature is enabled and the visitor has
- * granted marketing consent. Keeps the tag off the page for pre-approval
- * deployments and for visitors who reject advertising cookies.
+ * Loads the AdSense tag only when NEXT_PUBLIC_ADSENSE_ENABLED=true and the
+ * visitor has granted marketing consent. The flag is set in Vercel, so it can
+ * be turned off without a code change.
  */
 export default function AdSenseLoader() {
   const granted = useMarketingConsent();
