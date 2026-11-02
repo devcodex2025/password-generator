@@ -755,3 +755,35 @@ ol {
 .bg-vector-opacity {
   position: relative;
 }
+
+/* Print stylesheet (tools.org.ua audit recommendation: +1.5 score) */
+@media print {
+  header,
+  footer,
+  aside,
+  .smart-ad-container,
+  .no-print,
+  #cc-main,
+  [data-nosnippet] {
+    display: none !important;
+  }
+  body,
+  .dark body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  a {
+    color: #000000 !important;
+    text-decoration: underline;
+  }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+  }
+  .rounded-24,
+  .rounded-2xl,
+  .rounded-xl {
+    box-shadow: none !important;
+    border-color: #dddddd !important;
+  }
+}

@@ -156,8 +156,8 @@ export default function PasswordSettings({
                                 e.currentTarget.dispatchEvent(new MouseEvent('click', { bubbles: true }));
                             }
                         }}
-                        style={{ cursor: 'pointer' }}
-                        className="shrink-0"
+                        
+                        className="shrink-0 cursor-pointer"
                     />
                     <Slider
                         value={passwordLength}
@@ -192,8 +192,8 @@ export default function PasswordSettings({
                                 e.currentTarget.dispatchEvent(new MouseEvent('click', { bubbles: true }));
                             }
                         }}
-                        style={{ cursor: 'pointer' }}
-                        className="shrink-0"
+                        
+                        className="shrink-0 cursor-pointer"
                     />
                 </div>
                 {mode === 'chars' && (

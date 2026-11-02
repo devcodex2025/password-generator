@@ -122,7 +122,7 @@ export default function PasswordRow({
           {t('share-password')}
         </ShareButton>
         {showShareMenu && (
-          <div style={{ position: 'absolute', top: '110%', left: 0, zIndex: 10, width: '100%' }}>
+          <div className="absolute top-[110%] left-0 z-10 w-full">
             <SharePassword password={password} isDarkMode={isDarkMode} />
           </div>
         )}

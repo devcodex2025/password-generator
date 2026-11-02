@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { CustomThemeProvider } from '@/context/ThemeContext';
 import '@/styles/index.css';
 import Script from 'next/script';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import NavigationProgress from '@/components/NavigationProgress';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
 import { buildHomeMetadata, SUPPORTED_LANGS, HTML_LANG_MAP } from '@/lib/home-metadata';
@@ -44,7 +45,22 @@ const notoSansSC = Noto_Sans_SC({
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return buildHomeMetadata(locale);
+  const base = buildHomeMetadata(locale);
+  const htmlLang = HTML_LANG_MAP[locale] || 'en';
+  const title = typeof base.title === 'string' ? base.title : '';
+  const description = typeof base.description === 'string' ? base.description : '';
+  const canonical = base.alternates?.canonical ? String(base.alternates.canonical) : '';
+
+  return {
+    ...base,
+    other: {
+      ...(base.other ?? {}),
+      'dc.title': title,
+      'dc.description': description,
+      'dc.language': htmlLang,
+      'dc.identifier': canonical,
+    },
+  };
 }
 
 export function generateStaticParams() {
@@ -141,10 +157,12 @@ export default async function LocaleLayout({
         ) : null}
         <div suppressHydrationWarning className="w-full">
           <HomeStructuredData locale={locale} />
-          <CustomThemeProvider>
-            <NavigationProgress />
-            {children}
-          </CustomThemeProvider>
+          <AppRouterCacheProvider options={{ key: 'mui' }}>
+            <CustomThemeProvider>
+              <NavigationProgress />
+              {children}
+            </CustomThemeProvider>
+          </AppRouterCacheProvider>
         </div>
       </body>
     </html>

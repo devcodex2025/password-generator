@@ -22,13 +22,13 @@ const PcShareBtn: React.FC<PcShareBtnProps> = ({ password = '', isDarkMode }) =>
   }, []);
 
   return (
-    <div style={{ position: 'relative', display: 'inline-block' }}>
+    <div className="relative inline-block">
       <Image
         onClick={() => setShowShareMenu((prev) => !prev)}
         src="/images/share-paper-plane.svg"
         alt="Share password options"
-        className={`hidden lg:flex h-[15px] md:h-[20px] ml-2 transition-all duration-200 hover:scale-110 hover:opacity-80${isDarkMode ? ' invert brightness-0' : ''}`}
-        style={{ cursor: 'pointer' }}
+        className={`cursor-pointer hidden lg:flex h-[15px] md:h-[20px] ml-2 transition-all duration-200 hover:scale-110 hover:opacity-80${isDarkMode ? ' invert brightness-0' : ''}`}
+        
         width={20}
         height={20}
       />
