@@ -1,8 +1,8 @@
 # Keyword research (Google autocomplete)
 
-Generated: 2026-10-31T20:10:11.739Z
+Generated: 2026-11-02T14:12:05.480Z
 
-## en (60 suggestions)
+## en (116 suggestions)
 
 - password generator
 - password generator 12 characters
@@ -45,7 +45,7 @@ Generated: 2026-10-31T20:10:11.739Z
 - password manager opera
 - password manager pin
 
-## ua (43 suggestions)
+## ua (65 suggestions)
 
 - генератор паролів
 - генератор паролів онлайн
@@ -88,7 +88,7 @@ Generated: 2026-10-31T20:10:11.739Z
 - як створити пароль на ноутбуці
 - як створити пароль в ощадбанк
 
-## ru (50 suggestions)
+## ru (92 suggestions)
 
 - генератор паролей
 - генератор паролей онлайн
@@ -131,7 +131,7 @@ Generated: 2026-10-31T20:10:11.739Z
 - как создать пароль для электронной почты
 - как создать пароль приложения gmail
 
-## pl (40 suggestions)
+## pl (71 suggestions)
 
 - generator haseł
 - generator haseł online
@@ -174,7 +174,7 @@ Generated: 2026-10-31T20:10:11.739Z
 - jak utworzyć hasło na komputerze
 - jak utworzyć hasło do folderu windows 11
 
-## de (37 suggestions)
+## de (68 suggestions)
 
 - passwort generator
 - passwort generator heise
@@ -213,8 +213,11 @@ Generated: 2026-10-31T20:10:11.739Z
 - wie erzeuge ich ein sicheres passwort
 - wie vergebe ich ein sicheres passwort
 - wie kann ich ein sicheres passwort generieren
+- passwort prüfen
+- passwort prüfen ob gehackt
+- passwort prüfen bsi
 
-## es (40 suggestions)
+## es (73 suggestions)
 
 - generador de contraseñas
 - generador de contraseñas seguras
@@ -257,7 +260,7 @@ Generated: 2026-10-31T20:10:11.739Z
 - como crear una contraseña segura para facebook
 - como crear una contraseña segura para correo electronico
 
-## fr (39 suggestions)
+## fr (65 suggestions)
 
 - générateur de mot de passe
 - générateur de mot de passe gratuit
@@ -298,8 +301,9 @@ Generated: 2026-10-31T20:10:11.739Z
 - comment generer un mot de passe fort
 - comment créer un mot de passe de sécurité
 - generer un mot de passe sécurisé
+- vérifier mot de passe google
 
-## it (32 suggestions)
+## it (63 suggestions)
 
 - generatore di password
 - generatore di password gratis
@@ -333,8 +337,16 @@ Generated: 2026-10-31T20:10:11.739Z
 - gestore di password cos è
 - come creare una password sicura e facile da ricordare
 - come creare una password sicura
+- verificare password google
+- verificare password compromesse
+- verificare password gmail
+- verificare password
+- verificare password id apple
+- verificare password wifi
+- verificare password spid
+- verificare password outlook
 
-## pt (40 suggestions)
+## pt (80 suggestions)
 
 - gerador de senhas
 - gerador de senhas google
@@ -377,7 +389,7 @@ Generated: 2026-10-31T20:10:11.739Z
 - como criar uma pasta segura com senha no celular
 - como criar uma pasta segura com senha no pc
 
-## ja (31 suggestions)
+## ja (52 suggestions)
 
 - パスワード 生成
 - パスワード 生成 ランダム
@@ -392,7 +404,7 @@ Generated: 2026-10-31T20:10:11.739Z
 - 強力なパスワード
 - 強力なパスワード生成
 - 強力なパスワードを使用しますか
-- 強力なパスワード 作り方
+- 強力なパスワード作り方
 - 強力なパスワード 確認 方法
 - 強力なパスワード オフ
 - 強力なパスワード 作り方 iphone
@@ -410,8 +422,17 @@ Generated: 2026-10-31T20:10:11.739Z
 - パスワード 管理方法 おすすめ
 - パスワード 管理 エクセル
 - 安全なパスワード 作り方
+- パスワード 忘れた
+- パスワード 忘れた google
+- パスワード 忘れた場合
+- パスワード 忘れた iphone
+- パスワード 忘れたandroid
+- パスワード 忘れた gmail
+- パスワード 忘れた windows
+- パスワード 忘れた時の対処法
+- パスワード 忘れた パソコン
 
-## zh (25 suggestions)
+## zh (36 suggestions)
 
 - 密码生成器
 - 密码生成器 1password
@@ -438,3 +459,14 @@ Generated: 2026-10-31T20:10:11.739Z
 - 密码管理器 github
 - 密码管理器有哪些
 - 密码管理器 google
+- 忘记密码
+- 忘记密码 google
+- 忘记密码如何重置手机
+- 忘记密码怎么办
+- 忘记密码忘记账号名免费注册
+- 忘记密码重置iphone
+- 忘记密码锁怎么办
+- 忘记密码手机
+- 忘记密码行李箱
+- 忘记密码 windows
+- 批量生成密码

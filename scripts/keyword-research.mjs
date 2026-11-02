@@ -36,12 +36,26 @@ async function suggest(hl, gl, q) {
   return Array.isArray(data[1]) ? data[1].map(String) : [];
 }
 
+const EXTRA_SEEDS = {
+  en: ['password strength', 'how long should a password be', 'password manager app', 'breach password check', 'random pin generator', 'generate secure password'],
+  ua: ['перевірити пароль', 'як запам’ятати пароль', 'згенерувати пароль', 'пароль з великими літерами', 'менеджер паролів онлайн'],
+  ru: ['проверить пароль', 'как запомнить пароль', 'сгенерировать пароль', 'пароль из букв и цифр', 'менеджер паролей онлайн'],
+  pl: ['sprawdzić hasło', 'jak zapamiętać hasło', 'generator pin', 'bezpieczne hasło przykład'],
+  de: ['passwort prüfen', 'passwort merken', 'pin generator', 'sicheres passwort beispiel'],
+  es: ['comprobar contraseña', 'recordar contraseña', 'generador de pin', 'ejemplo de contraseña segura'],
+  fr: ['vérifier mot de passe', 'mémoriser mot de passe', 'générateur de code pin', 'exemple de mot de passe fort'],
+  it: ['verificare password', 'ricordare password', 'generatore pin', 'esempio password sicura'],
+  pt: ['verificar senha', 'lembrar senha', 'gerador de pin', 'exemplo de senha forte'],
+  ja: ['パスワード 忘れた', '安全なパスワード 例', 'パスワード 自動生成'],
+  zh: ['忘记密码', '安全密码 例子', '批量生成密码'],
+};
+
 async function main() {
   const out = { generatedAt: new Date().toISOString(), source: 'google-autocomplete', locales: {} };
   for (const [code, cfg] of Object.entries(LOCALES)) {
     console.log('locale', code);
     out.locales[code] = { hl: cfg.hl, gl: cfg.gl, seeds: [] };
-    for (const seed of cfg.seeds) {
+    for (const seed of [...cfg.seeds, ...(EXTRA_SEEDS[code] || [])]) {
       try {
         const suggestions = await suggest(cfg.hl, cfg.gl, seed);
         out.locales[code].seeds.push({ seed, suggestions });

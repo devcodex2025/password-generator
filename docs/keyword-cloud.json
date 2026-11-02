@@ -1,0 +1,4008 @@
+{
+  "generatedAt": "2026-11-02T14:12:36.054Z",
+  "source": "google-autocomplete",
+  "locales": {
+    "en": {
+      "phrases": 116,
+      "topTerms": [
+        {
+          "term": "password",
+          "count": 101
+        },
+        {
+          "term": "generator",
+          "count": 45
+        },
+        {
+          "term": "strong",
+          "count": 21
+        },
+        {
+          "term": "manager",
+          "count": 20
+        },
+        {
+          "term": "random",
+          "count": 17
+        },
+        {
+          "term": "characters",
+          "count": 14
+        },
+        {
+          "term": "google",
+          "count": 11
+        },
+        {
+          "term": "passphrase",
+          "count": 10
+        },
+        {
+          "term": "strength",
+          "count": 10
+        },
+        {
+          "term": "breach",
+          "count": 10
+        },
+        {
+          "term": "generate",
+          "count": 10
+        },
+        {
+          "term": "long",
+          "count": 9
+        },
+        {
+          "term": "should",
+          "count": 8
+        },
+        {
+          "term": "pin",
+          "count": 7
+        },
+        {
+          "term": "checker",
+          "count": 7
+        },
+        {
+          "term": "app",
+          "count": 6
+        },
+        {
+          "term": "words",
+          "count": 5
+        },
+        {
+          "term": "remember",
+          "count": 5
+        },
+        {
+          "term": "check",
+          "count": 5
+        },
+        {
+          "term": "12",
+          "count": 4
+        },
+        {
+          "term": "apple",
+          "count": 4
+        },
+        {
+          "term": "data",
+          "count": 4
+        },
+        {
+          "term": "digit",
+          "count": 4
+        },
+        {
+          "term": "15",
+          "count": 3
+        },
+        {
+          "term": "chrome",
+          "count": 3
+        },
+        {
+          "term": "iphone",
+          "count": 3
+        },
+        {
+          "term": "16",
+          "count": 2
+        },
+        {
+          "term": "lastpass",
+          "count": 2
+        },
+        {
+          "term": "easy",
+          "count": 2
+        },
+        {
+          "term": "android",
+          "count": 2
+        },
+        {
+          "term": "14",
+          "count": 1
+        },
+        {
+          "term": "20",
+          "count": 1
+        },
+        {
+          "term": "2025",
+          "count": 1
+        },
+        {
+          "term": "canada",
+          "count": 1
+        },
+        {
+          "term": "delinea",
+          "count": 1
+        },
+        {
+          "term": "gen",
+          "count": 1
+        },
+        {
+          "term": "phrase",
+          "count": 1
+        },
+        {
+          "term": "special",
+          "count": 1
+        },
+        {
+          "term": "account",
+          "count": 1
+        },
+        {
+          "term": "opera",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "password generator",
+          "count": 28
+        },
+        {
+          "term": "strong password",
+          "count": 21
+        },
+        {
+          "term": "password manager",
+          "count": 20
+        },
+        {
+          "term": "random password",
+          "count": 11
+        },
+        {
+          "term": "passphrase generator",
+          "count": 10
+        },
+        {
+          "term": "password strength",
+          "count": 10
+        },
+        {
+          "term": "long should",
+          "count": 7
+        },
+        {
+          "term": "manager app",
+          "count": 6
+        },
+        {
+          "term": "breach password",
+          "count": 6
+        },
+        {
+          "term": "random pin",
+          "count": 6
+        },
+        {
+          "term": "pin generator",
+          "count": 6
+        },
+        {
+          "term": "generator 12",
+          "count": 4
+        },
+        {
+          "term": "12 characters",
+          "count": 4
+        },
+        {
+          "term": "generator words",
+          "count": 4
+        },
+        {
+          "term": "password check",
+          "count": 4
+        },
+        {
+          "term": "password breach",
+          "count": 4
+        },
+        {
+          "term": "breach checker",
+          "count": 4
+        },
+        {
+          "term": "data breach",
+          "count": 4
+        },
+        {
+          "term": "generator 15",
+          "count": 3
+        },
+        {
+          "term": "15 characters",
+          "count": 3
+        },
+        {
+          "term": "generator google",
+          "count": 3
+        },
+        {
+          "term": "manager google",
+          "count": 3
+        },
+        {
+          "term": "manager apple",
+          "count": 3
+        },
+        {
+          "term": "generator 16",
+          "count": 2
+        },
+        {
+          "term": "16 characters",
+          "count": 2
+        },
+        {
+          "term": "password checker",
+          "count": 2
+        },
+        {
+          "term": "generator 20",
+          "count": 1
+        },
+        {
+          "term": "20 characters",
+          "count": 1
+        },
+        {
+          "term": "generator lastpass",
+          "count": 1
+        },
+        {
+          "term": "generator 14",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "password generator",
+          "password generator 12 characters",
+          "password generator 15 characters",
+          "password generator free",
+          "password generator 8 characters",
+          "password generator 16 characters",
+          "password generator 20 characters",
+          "password generator words",
+          "password generator lastpass",
+          "password generator 14 characters",
+          "strong password generator",
+          "strong password generator google",
+          "strong password generator free",
+          "strong password generator google free",
+          "strong password generator words",
+          "strong password generator easy to remember",
+          "strong password generator canada",
+          "strong password generator 12 characters",
+          "strong password generator online",
+          "strong password generator delinea",
+          "random password generator",
+          "random password generator free",
+          "random password gen",
+          "random password generator words",
+          "random password generator google"
+        ],
+        "passphrase": [
+          "random password",
+          "password manager",
+          "password manager google",
+          "password manager chrome",
+          "password manager android",
+          "password manager google chrome",
+          "password manager app",
+          "password manager iphone",
+          "password manager google account",
+          "password manager opera",
+          "password manager pin",
+          "how to create a strong password",
+          "how to create a strong password that i can remember",
+          "how to create a strong password that is easy to remember",
+          "how to create a strong password example",
+          "how to create a strong password with 8 characters",
+          "how to create a strong password with google password manager",
+          "how to create a strong password you can remember",
+          "how to create a strong password and remember it",
+          "how to create a strong password for sars",
+          "how to create a strong password for gmail",
+          "password strength tester",
+          "password strength test",
+          "password strength",
+          "password strength checker"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "password generator",
+          "password generator 12 characters",
+          "password generator 15 characters"
+        ],
+        "h1": [
+          "password generator",
+          "password generator 12 characters"
+        ],
+        "faq": [
+          "random password",
+          "password manager",
+          "password manager google",
+          "password manager chrome",
+          "password manager android"
+        ],
+        "internalLinks": [
+          "password generator",
+          "password generator 12 characters",
+          "password generator 15 characters",
+          "password generator free",
+          "password generator 8 characters"
+        ]
+      }
+    },
+    "ua": {
+      "phrases": 65,
+      "topTerms": [
+        {
+          "term": "паролів",
+          "count": 21
+        },
+        {
+          "term": "генератор",
+          "count": 11
+        },
+        {
+          "term": "надійний",
+          "count": 11
+        },
+        {
+          "term": "менеджер",
+          "count": 11
+        },
+        {
+          "term": "перевірити",
+          "count": 10
+        },
+        {
+          "term": "згенерувати",
+          "count": 10
+        },
+        {
+          "term": "гугл",
+          "count": 5
+        },
+        {
+          "term": "символів",
+          "count": 5
+        },
+        {
+          "term": "телефоні",
+          "count": 3
+        },
+        {
+          "term": "електронної",
+          "count": 3
+        },
+        {
+          "term": "пошти",
+          "count": 3
+        },
+        {
+          "term": "парольна",
+          "count": 3
+        },
+        {
+          "term": "фраза",
+          "count": 3
+        },
+        {
+          "term": "12",
+          "count": 2
+        },
+        {
+          "term": "приват24",
+          "count": 2
+        },
+        {
+          "term": "облікового",
+          "count": 2
+        },
+        {
+          "term": "запису",
+          "count": 2
+        },
+        {
+          "term": "24",
+          "count": 1
+        },
+        {
+          "term": "eset",
+          "count": 1
+        },
+        {
+          "term": "словами",
+          "count": 1
+        },
+        {
+          "term": "україна",
+          "count": 1
+        },
+        {
+          "term": "скачати",
+          "count": 1
+        },
+        {
+          "term": "1password",
+          "count": 1
+        },
+        {
+          "term": "приклад",
+          "count": 1
+        },
+        {
+          "term": "айклауда",
+          "count": 1
+        },
+        {
+          "term": "повинен",
+          "count": 1
+        },
+        {
+          "term": "бути",
+          "count": 1
+        },
+        {
+          "term": "телефон",
+          "count": 1
+        },
+        {
+          "term": "google",
+          "count": 1
+        },
+        {
+          "term": "андроїд",
+          "count": 1
+        },
+        {
+          "term": "хром",
+          "count": 1
+        },
+        {
+          "term": "айфон",
+          "count": 1
+        },
+        {
+          "term": "самсунг",
+          "count": 1
+        },
+        {
+          "term": "комп",
+          "count": 1
+        },
+        {
+          "term": "ютері",
+          "count": 1
+        },
+        {
+          "term": "логіна",
+          "count": 1
+        },
+        {
+          "term": "ощад",
+          "count": 1
+        },
+        {
+          "term": "смарт",
+          "count": 1
+        },
+        {
+          "term": "id",
+          "count": 1
+        },
+        {
+          "term": "ноутбуці",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "менеджер паролів",
+          "count": 11
+        },
+        {
+          "term": "генератор паролів",
+          "count": 10
+        },
+        {
+          "term": "електронної пошти",
+          "count": 3
+        },
+        {
+          "term": "парольна фраза",
+          "count": 3
+        },
+        {
+          "term": "паролів гугл",
+          "count": 2
+        },
+        {
+          "term": "12 символів",
+          "count": 2
+        },
+        {
+          "term": "облікового запису",
+          "count": 2
+        },
+        {
+          "term": "паролів eset",
+          "count": 1
+        },
+        {
+          "term": "паролів словами",
+          "count": 1
+        },
+        {
+          "term": "паролів україна",
+          "count": 1
+        },
+        {
+          "term": "паролів 12",
+          "count": 1
+        },
+        {
+          "term": "паролів скачати",
+          "count": 1
+        },
+        {
+          "term": "паролів 1password",
+          "count": 1
+        },
+        {
+          "term": "повинен бути",
+          "count": 1
+        },
+        {
+          "term": "паролів google",
+          "count": 1
+        },
+        {
+          "term": "паролів андроїд",
+          "count": 1
+        },
+        {
+          "term": "паролів хром",
+          "count": 1
+        },
+        {
+          "term": "паролів айфон",
+          "count": 1
+        },
+        {
+          "term": "телефоні самсунг",
+          "count": 1
+        },
+        {
+          "term": "комп ютері",
+          "count": 1
+        },
+        {
+          "term": "ощад 24",
+          "count": 1
+        },
+        {
+          "term": "смарт id",
+          "count": 1
+        },
+        {
+          "term": "id приват24",
+          "count": 1
+        },
+        {
+          "term": "фраза гугл",
+          "count": 1
+        },
+        {
+          "term": "електронного ключа",
+          "count": 1
+        },
+        {
+          "term": "згенерувати надійний",
+          "count": 1
+        },
+        {
+          "term": "нових знаннях",
+          "count": 1
+        },
+        {
+          "term": "згенерувати складний",
+          "count": 1
+        },
+        {
+          "term": "згенерувати безпечний",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "генератор паролів",
+          "генератор паролів онлайн",
+          "генератор паролів гугл",
+          "генератор паролів eset",
+          "генератор паролів словами",
+          "генератор паролів україна",
+          "генератор паролів 12 символів",
+          "генератор паролів скачати",
+          "генератор паролів 1password",
+          "генератор паролів це",
+          "надійний пароль генератор"
+        ],
+        "general": [
+          "надійний пароль",
+          "надійний пароль приклад",
+          "надійний пароль для приват24",
+          "надійний пароль для облікового запису",
+          "надійний пароль це",
+          "надійний пароль для айклауда",
+          "надійний пароль повинен бути",
+          "надійний пароль гугл",
+          "надійний пароль на телефон",
+          "перевірити пароль",
+          "перевірити пароль на надійність",
+          "перевірити пароль кеп",
+          "перевірити пароль ецп",
+          "згенерувати пароль",
+          "згенерувати пароль онлайн",
+          "згенерувати пароль гугл",
+          "згенерувати надійний пароль",
+          "згенерувати складний пароль",
+          "згенерувати безпечний пароль"
+        ],
+        "manager": [
+          "менеджер паролів",
+          "менеджер паролів google",
+          "менеджер паролів на телефоні",
+          "менеджер паролів андроїд",
+          "менеджер паролів гугл на телефоні",
+          "менеджер паролів хром",
+          "менеджер паролів айфон",
+          "менеджер паролів це",
+          "менеджер паролів на телефоні самсунг",
+          "менеджер паролів на комп ютері",
+          "менеджер паролів онлайн"
+        ],
+        "length": [
+          "як створити пароль з 8 символів",
+          "як створити пароль з 6 символів",
+          "згенерувати пароль 8 символів",
+          "згенерувати пароль 12 символів"
+        ],
+        "howto": [
+          "як створити пароль",
+          "як створити пароль до електронної пошти",
+          "як створити пароль для облікового запису",
+          "як створити пароль для логіна",
+          "як створити пароль для ощад 24",
+          "як створити пароль смарт id приват24",
+          "як створити пароль на ноутбуці",
+          "як створити пароль в ощадбанк",
+          "як перевірити пароль електронної пошти",
+          "як перевірити пароль від електронної пошти",
+          "як перевірити пароль айклауд",
+          "як перевірити пароль від вайфаю",
+          "як перевірити пароль gmail",
+          "як перевірити пароль до електронного ключа",
+          "як запам'ятати пароль",
+          "як згенерувати пароль в нових знаннях",
+          "як згенерувати пароль"
+        ],
+        "passphrase": [
+          "парольна фраза",
+          "парольна фраза гугл",
+          "парольна фраза це"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "генератор паролів",
+          "генератор паролів онлайн",
+          "генератор паролів гугл"
+        ],
+        "h1": [
+          "генератор паролів",
+          "генератор паролів онлайн"
+        ],
+        "faq": [
+          "як створити пароль з 8 символів",
+          "як створити пароль з 6 символів",
+          "згенерувати пароль 8 символів",
+          "згенерувати пароль 12 символів"
+        ],
+        "internalLinks": [
+          "менеджер паролів",
+          "менеджер паролів google",
+          "менеджер паролів на телефоні",
+          "менеджер паролів андроїд",
+          "менеджер паролів гугл на телефоні"
+        ]
+      }
+    },
+    "ru": {
+      "phrases": 92,
+      "topTerms": [
+        {
+          "term": "паролей",
+          "count": 22
+        },
+        {
+          "term": "символов",
+          "count": 13
+        },
+        {
+          "term": "генератор",
+          "count": 12
+        },
+        {
+          "term": "из",
+          "count": 12
+        },
+        {
+          "term": "менеджер",
+          "count": 12
+        },
+        {
+          "term": "надежный",
+          "count": 10
+        },
+        {
+          "term": "парольная",
+          "count": 10
+        },
+        {
+          "term": "фраза",
+          "count": 10
+        },
+        {
+          "term": "проверить",
+          "count": 10
+        },
+        {
+          "term": "запомнить",
+          "count": 10
+        },
+        {
+          "term": "сгенерировать",
+          "count": 10
+        },
+        {
+          "term": "букв",
+          "count": 10
+        },
+        {
+          "term": "цифр",
+          "count": 10
+        },
+        {
+          "term": "гугл",
+          "count": 9
+        },
+        {
+          "term": "пример",
+          "count": 7
+        },
+        {
+          "term": "ржд",
+          "count": 4
+        },
+        {
+          "term": "латинских",
+          "count": 4
+        },
+        {
+          "term": "яндекс",
+          "count": 3
+        },
+        {
+          "term": "12",
+          "count": 2
+        },
+        {
+          "term": "16",
+          "count": 2
+        },
+        {
+          "term": "айклауда",
+          "count": 2
+        },
+        {
+          "term": "телефоне",
+          "count": 2
+        },
+        {
+          "term": "андроид",
+          "count": 2
+        },
+        {
+          "term": "хром",
+          "count": 2
+        },
+        {
+          "term": "госуслугах",
+          "count": 2
+        },
+        {
+          "term": "сайте",
+          "count": 2
+        },
+        {
+          "term": "почты",
+          "count": 2
+        },
+        {
+          "term": "утечку",
+          "count": 2
+        },
+        {
+          "term": "15",
+          "count": 1
+        },
+        {
+          "term": "касперский",
+          "count": 1
+        },
+        {
+          "term": "eset",
+          "count": 1
+        },
+        {
+          "term": "макса",
+          "count": 1
+        },
+        {
+          "term": "сайт",
+          "count": 1
+        },
+        {
+          "term": "проверка",
+          "count": 1
+        },
+        {
+          "term": "роблокс",
+          "count": 1
+        },
+        {
+          "term": "айфон",
+          "count": 1
+        },
+        {
+          "term": "роблоксе",
+          "count": 1
+        },
+        {
+          "term": "сертификату",
+          "count": 1
+        },
+        {
+          "term": "эп",
+          "count": 1
+        },
+        {
+          "term": "ребенка",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "менеджер паролей",
+          "count": 12
+        },
+        {
+          "term": "генератор паролей",
+          "count": 10
+        },
+        {
+          "term": "парольная фраза",
+          "count": 10
+        },
+        {
+          "term": "из букв",
+          "count": 5
+        },
+        {
+          "term": "паролей гугл",
+          "count": 4
+        },
+        {
+          "term": "букв цифр",
+          "count": 4
+        },
+        {
+          "term": "латинских букв",
+          "count": 4
+        },
+        {
+          "term": "из латинских",
+          "count": 3
+        },
+        {
+          "term": "12 символов",
+          "count": 2
+        },
+        {
+          "term": "паролей яндекс",
+          "count": 2
+        },
+        {
+          "term": "16 символов",
+          "count": 2
+        },
+        {
+          "term": "символов пример",
+          "count": 2
+        },
+        {
+          "term": "паролей 12",
+          "count": 1
+        },
+        {
+          "term": "паролей касперский",
+          "count": 1
+        },
+        {
+          "term": "паролей eset",
+          "count": 1
+        },
+        {
+          "term": "паролей 16",
+          "count": 1
+        },
+        {
+          "term": "айклауда пример",
+          "count": 1
+        },
+        {
+          "term": "паролей андроид",
+          "count": 1
+        },
+        {
+          "term": "паролей хром",
+          "count": 1
+        },
+        {
+          "term": "паролей роблокс",
+          "count": 1
+        },
+        {
+          "term": "паролей айфон",
+          "count": 1
+        },
+        {
+          "term": "гугл андроид",
+          "count": 1
+        },
+        {
+          "term": "сайте ржд",
+          "count": 1
+        },
+        {
+          "term": "сертификату эп",
+          "count": 1
+        },
+        {
+          "term": "электронной почты",
+          "count": 1
+        },
+        {
+          "term": "приложения gmail",
+          "count": 1
+        },
+        {
+          "term": "фраза vipnet",
+          "count": 1
+        },
+        {
+          "term": "фраза пример",
+          "count": 1
+        },
+        {
+          "term": "фраза генератор",
+          "count": 1
+        },
+        {
+          "term": "фраза ledger",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "генератор паролей",
+          "генератор паролей онлайн",
+          "генератор паролей гугл",
+          "генератор паролей 8 символов",
+          "генератор паролей 12 символов",
+          "генератор паролей касперский",
+          "генератор паролей eset",
+          "генератор паролей яндекс",
+          "генератор паролей для ржд",
+          "генератор паролей 16 символов",
+          "надежный пароль генератор",
+          "парольная фраза генератор"
+        ],
+        "general": [
+          "надежный пароль",
+          "надежный пароль пример",
+          "надежный пароль для макса",
+          "надежный пароль для айклауда пример",
+          "надежный пароль сайт",
+          "надежный пароль для айклауда",
+          "надежный пароль проверка",
+          "проверить пароль",
+          "проверить пароль на надежность",
+          "проверить пароль на утечку",
+          "проверить пароль гугл",
+          "проверить пароль на утечку google",
+          "проверить пароль от почты",
+          "проверить пароль эпл айди",
+          "проверить пароль айклауд",
+          "проверить пароль apple id",
+          "проверить пароль гугл аккаунта",
+          "сгенерировать пароль",
+          "сгенерировать пароль онлайн",
+          "сгенерировать пароль для ржд",
+          "сгенерировать пароль гугл",
+          "сгенерировать пароль для госуслуг",
+          "сгенерировать пароль бесплатно",
+          "пароль из букв и цифр",
+          "пароль из латинских букв и цифр пример"
+        ],
+        "length": [
+          "надежный пароль из 8 символов",
+          "надежный пароль из 8 символов пример",
+          "сгенерировать пароль 8 символов",
+          "сгенерировать пароль 12 символов",
+          "сгенерировать пароль 15 символов",
+          "сгенерировать пароль 16 символов",
+          "пароль из букв цифр и символов",
+          "пароль из букв цифр и других символов",
+          "пароль из букв цифр и символов пример",
+          "пароль из латинских букв цифр и символов"
+        ],
+        "manager": [
+          "менеджер паролей",
+          "менеджер паролей гугл",
+          "менеджер паролей на телефоне",
+          "менеджер паролей гугл на телефоне",
+          "менеджер паролей андроид",
+          "менеджер паролей хром",
+          "менеджер паролей роблокс",
+          "менеджер паролей яндекс",
+          "менеджер паролей айфон",
+          "менеджер паролей гугл андроид",
+          "менеджер паролей онлайн",
+          "онлайн менеджер паролей что это"
+        ],
+        "howto": [
+          "как создать пароль",
+          "как создать пароль пример",
+          "как создать пароль в роблоксе",
+          "как создать пароль для ржд",
+          "как создать пароль на госуслугах",
+          "как создать пароль на сайте ржд",
+          "как создать пароль к сертификату эп",
+          "как создать пароль на госуслугах для ребенка",
+          "как создать пароль для электронной почты",
+          "как создать пароль приложения gmail",
+          "как запомнить пароль в хроме",
+          "как запомнить пароль",
+          "как запомнить пароль на айфоне",
+          "как запомнить пароль в сафари",
+          "как запомнить пароль на сайте",
+          "как запомнить пароль в гугл хром",
+          "как запомнить пароль в гугле",
+          "как запомнить пароль от телефона",
+          "как запомнить пароль в яндекс браузере",
+          "как запомнить пароль на компьютере"
+        ],
+        "passphrase": [
+          "парольная фраза",
+          "парольная фраза это",
+          "парольная фраза vipnet",
+          "парольная фраза пример",
+          "парольная фраза ledger",
+          "парольная фраза опера",
+          "парольная фраза леджер",
+          "пароль или парольная фраза",
+          "парольная фраза гугл"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "генератор паролей",
+          "генератор паролей онлайн",
+          "генератор паролей гугл"
+        ],
+        "h1": [
+          "генератор паролей",
+          "генератор паролей онлайн"
+        ],
+        "faq": [
+          "надежный пароль из 8 символов",
+          "надежный пароль из 8 символов пример",
+          "сгенерировать пароль 8 символов",
+          "сгенерировать пароль 12 символов",
+          "сгенерировать пароль 15 символов"
+        ],
+        "internalLinks": [
+          "менеджер паролей",
+          "менеджер паролей гугл",
+          "менеджер паролей на телефоне",
+          "менеджер паролей гугл на телефоне",
+          "менеджер паролей андроид"
+        ]
+      }
+    },
+    "pl": {
+      "phrases": 71,
+      "topTerms": [
+        {
+          "term": "hasło",
+          "count": 41
+        },
+        {
+          "term": "generator",
+          "count": 22
+        },
+        {
+          "term": "haseł",
+          "count": 20
+        },
+        {
+          "term": "google",
+          "count": 10
+        },
+        {
+          "term": "silne",
+          "count": 10
+        },
+        {
+          "term": "menedżer",
+          "count": 10
+        },
+        {
+          "term": "sprawdzić",
+          "count": 10
+        },
+        {
+          "term": "zapamiętać",
+          "count": 10
+        },
+        {
+          "term": "utworzyć",
+          "count": 9
+        },
+        {
+          "term": "telefonie",
+          "count": 5
+        },
+        {
+          "term": "komputerze",
+          "count": 3
+        },
+        {
+          "term": "wifi",
+          "count": 3
+        },
+        {
+          "term": "pin",
+          "count": 3
+        },
+        {
+          "term": "zapamiętania",
+          "count": 2
+        },
+        {
+          "term": "przykłady",
+          "count": 2
+        },
+        {
+          "term": "android",
+          "count": 2
+        },
+        {
+          "term": "chrome",
+          "count": 2
+        },
+        {
+          "term": "pliku",
+          "count": 2
+        },
+        {
+          "term": "folderu",
+          "count": 2
+        },
+        {
+          "term": "fb",
+          "count": 2
+        },
+        {
+          "term": "pink",
+          "count": 2
+        },
+        {
+          "term": "11",
+          "count": 1
+        },
+        {
+          "term": "kalambury",
+          "count": 1
+        },
+        {
+          "term": "losowych",
+          "count": 1
+        },
+        {
+          "term": "łatwych",
+          "count": 1
+        },
+        {
+          "term": "jednorazowych",
+          "count": 1
+        },
+        {
+          "term": "słownikowych",
+          "count": 1
+        },
+        {
+          "term": "wyrazów",
+          "count": 1
+        },
+        {
+          "term": "norton",
+          "count": 1
+        },
+        {
+          "term": "sprawdzanie",
+          "count": 1
+        },
+        {
+          "term": "powinno",
+          "count": 1
+        },
+        {
+          "term": "zawierać",
+          "count": 1
+        },
+        {
+          "term": "łatwe",
+          "count": 1
+        },
+        {
+          "term": "test",
+          "count": 1
+        },
+        {
+          "term": "ile",
+          "count": 1
+        },
+        {
+          "term": "znaków",
+          "count": 1
+        },
+        {
+          "term": "gdzie",
+          "count": 1
+        },
+        {
+          "term": "znaleźć",
+          "count": 1
+        },
+        {
+          "term": "samsung",
+          "count": 1
+        },
+        {
+          "term": "opera",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "generator haseł",
+          "count": 10
+        },
+        {
+          "term": "silne hasło",
+          "count": 10
+        },
+        {
+          "term": "menedżer haseł",
+          "count": 10
+        },
+        {
+          "term": "sprawdzić hasło",
+          "count": 10
+        },
+        {
+          "term": "zapamiętać hasło",
+          "count": 10
+        },
+        {
+          "term": "utworzyć hasło",
+          "count": 9
+        },
+        {
+          "term": "haseł google",
+          "count": 5
+        },
+        {
+          "term": "generator pin",
+          "count": 3
+        },
+        {
+          "term": "hasło przykłady",
+          "count": 2
+        },
+        {
+          "term": "hasło generator",
+          "count": 2
+        },
+        {
+          "term": "generator pink",
+          "count": 2
+        },
+        {
+          "term": "haseł kalambury",
+          "count": 1
+        },
+        {
+          "term": "haseł losowych",
+          "count": 1
+        },
+        {
+          "term": "haseł łatwych",
+          "count": 1
+        },
+        {
+          "term": "haseł jednorazowych",
+          "count": 1
+        },
+        {
+          "term": "haseł słownikowych",
+          "count": 1
+        },
+        {
+          "term": "haseł norton",
+          "count": 1
+        },
+        {
+          "term": "hasło sprawdzanie",
+          "count": 1
+        },
+        {
+          "term": "generator google",
+          "count": 1
+        },
+        {
+          "term": "hasło powinno",
+          "count": 1
+        },
+        {
+          "term": "powinno zawierać",
+          "count": 1
+        },
+        {
+          "term": "hasło łatwe",
+          "count": 1
+        },
+        {
+          "term": "hasło test",
+          "count": 1
+        },
+        {
+          "term": "hasło google",
+          "count": 1
+        },
+        {
+          "term": "hasło ile",
+          "count": 1
+        },
+        {
+          "term": "ile znaków",
+          "count": 1
+        },
+        {
+          "term": "haseł android",
+          "count": 1
+        },
+        {
+          "term": "google gdzie",
+          "count": 1
+        },
+        {
+          "term": "gdzie znaleźć",
+          "count": 1
+        },
+        {
+          "term": "haseł chrome",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "generator haseł",
+          "generator haseł online",
+          "generator haseł google",
+          "generator haseł kalambury",
+          "generator haseł losowych",
+          "generator haseł łatwych do zapamiętania",
+          "generator haseł jednorazowych",
+          "generator haseł słownikowych",
+          "generator haseł z wyrazów",
+          "generator haseł norton",
+          "silne hasło generator",
+          "silne hasło generator google",
+          "generator pin",
+          "generator pinów",
+          "generator pin code",
+          "generator pink",
+          "generator pinterest",
+          "generator pink noise",
+          "generator pinout",
+          "generator pins",
+          "generator pinion",
+          "generator pin number"
+        ],
+        "general": [
+          "silne hasło przykłady",
+          "silne hasło",
+          "silne hasło sprawdzanie",
+          "silne hasło powinno zawierać",
+          "silne hasło łatwe do zapamiętania",
+          "silne hasło test",
+          "silne hasło google",
+          "menedżer haseł",
+          "menedżer haseł google",
+          "menedżer haseł w telefonie",
+          "menedżer haseł google na telefonie",
+          "menedżer haseł android",
+          "menedżer haseł google gdzie znaleźć",
+          "menedżer haseł chrome",
+          "menedżer haseł google android",
+          "menedżer haseł samsung",
+          "menedżer haseł opera",
+          "sprawdzić hasło do konta google",
+          "sprawdzić hasło na facebooku",
+          "bezpieczne hasło przykłady"
+        ],
+        "length": [
+          "silne hasło ile znaków"
+        ],
+        "howto": [
+          "jak utworzyć hasło",
+          "jak stworzyć hasło w wikipedii",
+          "jak utworzyć hasło do logowania",
+          "jak utworzyć hasło do pliku zip",
+          "jak utworzyć hasło do folderu",
+          "jak utworzyć hasło do pliku pdf",
+          "jak utworzyć hasło do profilu zaufanego",
+          "jak utworzyć hasło na laptopie",
+          "jak utworzyć hasło na komputerze",
+          "jak utworzyć hasło do folderu windows 11",
+          "jak sprawdzić hasło do wifi",
+          "jak sprawdzić hasło do gmaila",
+          "jak sprawdzić hasło do wifi na telefonie",
+          "jak sprawdzić hasło gmail w telefonie",
+          "jak sprawdzić hasło na fb na telefonie",
+          "jak sprawdzić hasło do wifi na komputerze",
+          "jak sprawdzić hasło do google",
+          "jak sprawdzić hasło na fb będąc zalogowanym",
+          "jak zapamiętać hasło w przeglądarce",
+          "jak zapamiętać hasło",
+          "jak zapamiętać hasło w firefox",
+          "jak zapamiętać hasło w google",
+          "jak zapamiętać hasło na stronie",
+          "jak zapamiętać hasło w chrome",
+          "jak zapamiętać hasło w edge"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "generator haseł",
+          "generator haseł online",
+          "generator haseł google"
+        ],
+        "h1": [
+          "generator haseł",
+          "generator haseł online"
+        ],
+        "faq": [
+          "silne hasło ile znaków"
+        ],
+        "internalLinks": [
+          "jak utworzyć hasło",
+          "jak stworzyć hasło w wikipedii",
+          "jak utworzyć hasło do logowania",
+          "jak utworzyć hasło do pliku zip",
+          "jak utworzyć hasło do folderu"
+        ]
+      }
+    },
+    "de": {
+      "phrases": 68,
+      "topTerms": [
+        {
+          "term": "generator",
+          "count": 21
+        },
+        {
+          "term": "sicheres",
+          "count": 18
+        },
+        {
+          "term": "merken",
+          "count": 11
+        },
+        {
+          "term": "manager",
+          "count": 10
+        },
+        {
+          "term": "prüfen",
+          "count": 10
+        },
+        {
+          "term": "pin",
+          "count": 10
+        },
+        {
+          "term": "ich",
+          "count": 7
+        },
+        {
+          "term": "google",
+          "count": 5
+        },
+        {
+          "term": "generieren",
+          "count": 4
+        },
+        {
+          "term": "stellig",
+          "count": 4
+        },
+        {
+          "term": "app",
+          "count": 3
+        },
+        {
+          "term": "android",
+          "count": 2
+        },
+        {
+          "term": "chrome",
+          "count": 2
+        },
+        {
+          "term": "iphone",
+          "count": 2
+        },
+        {
+          "term": "gehackt",
+          "count": 2
+        },
+        {
+          "term": "heise",
+          "count": 1
+        },
+        {
+          "term": "wörter",
+          "count": 1
+        },
+        {
+          "term": "datenschutz",
+          "count": 1
+        },
+        {
+          "term": "eu",
+          "count": 1
+        },
+        {
+          "term": "bitwarden",
+          "count": 1
+        },
+        {
+          "term": "org",
+          "count": 1
+        },
+        {
+          "term": "beispiel",
+          "count": 1
+        },
+        {
+          "term": "vorschlagen",
+          "count": 1
+        },
+        {
+          "term": "testen",
+          "count": 1
+        },
+        {
+          "term": "öffnen",
+          "count": 1
+        },
+        {
+          "term": "test",
+          "count": 1
+        },
+        {
+          "term": "windows",
+          "count": 1
+        },
+        {
+          "term": "erstelle",
+          "count": 1
+        },
+        {
+          "term": "finde",
+          "count": 1
+        },
+        {
+          "term": "wähle",
+          "count": 1
+        },
+        {
+          "term": "bekomme",
+          "count": 1
+        },
+        {
+          "term": "erzeuge",
+          "count": 1
+        },
+        {
+          "term": "vergebe",
+          "count": 1
+        },
+        {
+          "term": "ob",
+          "count": 1
+        },
+        {
+          "term": "bsi",
+          "count": 1
+        },
+        {
+          "term": "datenleck",
+          "count": 1
+        },
+        {
+          "term": "schweiz",
+          "count": 1
+        },
+        {
+          "term": "lassen",
+          "count": 1
+        },
+        {
+          "term": "leak",
+          "count": 1
+        },
+        {
+          "term": "rückgängig",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "pin generator",
+          "count": 10
+        },
+        {
+          "term": "generator heise",
+          "count": 1
+        },
+        {
+          "term": "generator wörter",
+          "count": 1
+        },
+        {
+          "term": "generator datenschutz",
+          "count": 1
+        },
+        {
+          "term": "generator eu",
+          "count": 1
+        },
+        {
+          "term": "generator google",
+          "count": 1
+        },
+        {
+          "term": "generator bitwarden",
+          "count": 1
+        },
+        {
+          "term": "generator org",
+          "count": 1
+        },
+        {
+          "term": "generieren google",
+          "count": 1
+        },
+        {
+          "term": "manager google",
+          "count": 1
+        },
+        {
+          "term": "manager öffnen",
+          "count": 1
+        },
+        {
+          "term": "manager android",
+          "count": 1
+        },
+        {
+          "term": "manager chrome",
+          "count": 1
+        },
+        {
+          "term": "manager test",
+          "count": 1
+        },
+        {
+          "term": "manager iphone",
+          "count": 1
+        },
+        {
+          "term": "manager app",
+          "count": 1
+        },
+        {
+          "term": "manager windows",
+          "count": 1
+        },
+        {
+          "term": "erstelle ich",
+          "count": 1
+        },
+        {
+          "term": "finde ich",
+          "count": 1
+        },
+        {
+          "term": "wähle ich",
+          "count": 1
+        },
+        {
+          "term": "bekomme ich",
+          "count": 1
+        },
+        {
+          "term": "erzeuge ich",
+          "count": 1
+        },
+        {
+          "term": "vergebe ich",
+          "count": 1
+        },
+        {
+          "term": "prüfen ob",
+          "count": 1
+        },
+        {
+          "term": "ob gehackt",
+          "count": 1
+        },
+        {
+          "term": "prüfen bsi",
+          "count": 1
+        },
+        {
+          "term": "prüfen datenleck",
+          "count": 1
+        },
+        {
+          "term": "prüfen gehackt",
+          "count": 1
+        },
+        {
+          "term": "prüfen schweiz",
+          "count": 1
+        },
+        {
+          "term": "prüfen google",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "passwort generator",
+          "passwort generator heise",
+          "passwort generator wörter",
+          "passwort generator online",
+          "passwort generator datenschutz",
+          "passwort generator eu",
+          "passwort generator google",
+          "passwort generator bitwarden",
+          "passwort generator kostenlos",
+          "passwort generator org",
+          "sicheres passwort generator",
+          "pin generator",
+          "pin generator 6 stellig",
+          "pin generator 4 stellig",
+          "pin generator 5 stellig",
+          "pin generator pinterest",
+          "pin generator sparkasse",
+          "pin generator 8 stellig",
+          "pin generator 6 digit",
+          "pin generator app",
+          "pin generator online"
+        ],
+        "general": [
+          "sicheres passwort generieren",
+          "sicheres passwort",
+          "sicheres passwort erstellen",
+          "sicheres passwort generieren kostenlos",
+          "sicheres passwort beispiel",
+          "sicheres passwort vorschlagen",
+          "sicheres passwort generieren google",
+          "sicheres passwort testen",
+          "sicheres passwort erstellen und merken",
+          "wie erstelle ich ein sicheres passwort",
+          "wie finde ich ein sicheres passwort",
+          "wie wähle ich ein sicheres passwort",
+          "wie bekomme ich ein sicheres passwort",
+          "wie erzeuge ich ein sicheres passwort",
+          "wie vergebe ich ein sicheres passwort",
+          "wie kann ich ein sicheres passwort generieren",
+          "passwort prüfen",
+          "passwort prüfen ob gehackt",
+          "passwort prüfen bsi",
+          "passwort prüfen datenleck",
+          "passwort prüfen gehackt",
+          "passwort prüfen schweiz",
+          "passwort prüfen google",
+          "passwort prüfen lassen",
+          "passwort prüfen online"
+        ],
+        "manager": [
+          "passwort manager",
+          "passwort manager google",
+          "passwort manager öffnen",
+          "passwort manager android",
+          "passwort manager chrome",
+          "passwort manager test",
+          "passwort manager kostenlos",
+          "passwort manager iphone",
+          "passwort manager app",
+          "passwort manager windows"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "passwort generator",
+          "passwort generator heise",
+          "passwort generator wörter"
+        ],
+        "h1": [
+          "passwort generator",
+          "passwort generator heise"
+        ],
+        "faq": [
+          "passwort generator",
+          "passwort generator heise",
+          "passwort generator wörter",
+          "passwort generator online",
+          "passwort generator datenschutz"
+        ],
+        "internalLinks": [
+          "passwort manager",
+          "passwort manager google",
+          "passwort manager öffnen",
+          "passwort manager android",
+          "passwort manager chrome"
+        ]
+      }
+    },
+    "es": {
+      "phrases": 73,
+      "topTerms": [
+        {
+          "term": "contraseñas",
+          "count": 25
+        },
+        {
+          "term": "segura",
+          "count": 25
+        },
+        {
+          "term": "generador",
+          "count": 21
+        },
+        {
+          "term": "recordar",
+          "count": 12
+        },
+        {
+          "term": "google",
+          "count": 11
+        },
+        {
+          "term": "comprobar",
+          "count": 11
+        },
+        {
+          "term": "gestor",
+          "count": 10
+        },
+        {
+          "term": "ejemplo",
+          "count": 5
+        },
+        {
+          "term": "pin",
+          "count": 5
+        },
+        {
+          "term": "guardadas",
+          "count": 3
+        },
+        {
+          "term": "electronico",
+          "count": 3
+        },
+        {
+          "term": "pintura",
+          "count": 3
+        },
+        {
+          "term": "seguras",
+          "count": 2
+        },
+        {
+          "term": "avast",
+          "count": 2
+        },
+        {
+          "term": "caracteres",
+          "count": 2
+        },
+        {
+          "term": "android",
+          "count": 2
+        },
+        {
+          "term": "facebook",
+          "count": 2
+        },
+        {
+          "term": "cómo",
+          "count": 2
+        },
+        {
+          "term": "wifi",
+          "count": 2
+        },
+        {
+          "term": "icloud",
+          "count": 2
+        },
+        {
+          "term": "certificado",
+          "count": 2
+        },
+        {
+          "term": "digital",
+          "count": 2
+        },
+        {
+          "term": "dni",
+          "count": 2
+        },
+        {
+          "term": "clave",
+          "count": 2
+        },
+        {
+          "term": "permanente",
+          "count": 2
+        },
+        {
+          "term": "por",
+          "count": 2
+        },
+        {
+          "term": "digitos",
+          "count": 2
+        },
+        {
+          "term": "12",
+          "count": 1
+        },
+        {
+          "term": "aleatorias",
+          "count": 1
+        },
+        {
+          "term": "lastpass",
+          "count": 1
+        },
+        {
+          "term": "plus",
+          "count": 1
+        },
+        {
+          "term": "bitwarden",
+          "count": 1
+        },
+        {
+          "term": "aleatoria",
+          "count": 1
+        },
+        {
+          "term": "facil",
+          "count": 1
+        },
+        {
+          "term": "chrome",
+          "count": 1
+        },
+        {
+          "term": "gratuito",
+          "count": 1
+        },
+        {
+          "term": "samsung",
+          "count": 1
+        },
+        {
+          "term": "letras",
+          "count": 1
+        },
+        {
+          "term": "números",
+          "count": 1
+        },
+        {
+          "term": "símbolos",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "comprobar contraseñas",
+          "count": 4
+        },
+        {
+          "term": "contraseñas guardadas",
+          "count": 3
+        },
+        {
+          "term": "contraseñas seguras",
+          "count": 2
+        },
+        {
+          "term": "contraseñas google",
+          "count": 2
+        },
+        {
+          "term": "segura generador",
+          "count": 2
+        },
+        {
+          "term": "certificado digital",
+          "count": 2
+        },
+        {
+          "term": "dni electronico",
+          "count": 2
+        },
+        {
+          "term": "clave permanente",
+          "count": 2
+        },
+        {
+          "term": "pintura por",
+          "count": 2
+        },
+        {
+          "term": "seguras google",
+          "count": 1
+        },
+        {
+          "term": "contraseñas aleatorias",
+          "count": 1
+        },
+        {
+          "term": "contraseñas avast",
+          "count": 1
+        },
+        {
+          "term": "contraseñas lastpass",
+          "count": 1
+        },
+        {
+          "term": "contraseñas plus",
+          "count": 1
+        },
+        {
+          "term": "contraseñas bitwarden",
+          "count": 1
+        },
+        {
+          "term": "segura google",
+          "count": 1
+        },
+        {
+          "term": "segura ejemplo",
+          "count": 1
+        },
+        {
+          "term": "segura aleatoria",
+          "count": 1
+        },
+        {
+          "term": "segura comprobar",
+          "count": 1
+        },
+        {
+          "term": "segura facil",
+          "count": 1
+        },
+        {
+          "term": "generador google",
+          "count": 1
+        },
+        {
+          "term": "segura avast",
+          "count": 1
+        },
+        {
+          "term": "contraseñas chrome",
+          "count": 1
+        },
+        {
+          "term": "contraseñas android",
+          "count": 1
+        },
+        {
+          "term": "google android",
+          "count": 1
+        },
+        {
+          "term": "contraseñas gratuito",
+          "count": 1
+        },
+        {
+          "term": "contraseñas facebook",
+          "count": 1
+        },
+        {
+          "term": "contraseñas samsung",
+          "count": 1
+        },
+        {
+          "term": "letras números",
+          "count": 1
+        },
+        {
+          "term": "símbolos combinados",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "generador de contraseñas",
+          "generador de contraseñas seguras",
+          "generador de contraseñas seguras google",
+          "generador de contraseñas google",
+          "generador de contraseñas aleatorias",
+          "generador de contraseñas online",
+          "generador de contraseñas avast",
+          "generador de contraseñas - lastpass",
+          "generador de contraseñas plus",
+          "generador de contraseñas bitwarden",
+          "contraseña segura generador",
+          "contraseña segura generador google",
+          "generador de pin",
+          "generador de pintura por numeros",
+          "generador de pintura",
+          "generador de pin 4 digitos",
+          "generador de pin dga",
+          "generador de pin aleatorio",
+          "generador de pintura por número",
+          "generador de pines wifi",
+          "generador de pin 6 digitos"
+        ],
+        "general": [
+          "contraseña segura",
+          "contraseña segura google",
+          "contraseña segura ejemplo",
+          "contraseña segura aleatoria",
+          "contraseña segura comprobar",
+          "contraseña segura facil de recordar",
+          "contraseña segura avast",
+          "comprobar contraseñas",
+          "comprobar contraseña segura",
+          "comprobar contraseña certificado digital",
+          "comprobar contraseñas google",
+          "comprobar contraseña dni electronico",
+          "comprobar contraseña gmail",
+          "comprobar contraseña clave permanente",
+          "comprobar contraseña homologación",
+          "comprobar contraseñas filtradas",
+          "comprobar contraseñas guardadas en google",
+          "recordar contraseñas",
+          "recordar contraseña google",
+          "recordar contraseña clave permanente",
+          "recordar contraseña certificado digital",
+          "recordar contraseña spotify",
+          "recordar contraseña hotmail",
+          "recordar contraseña apple",
+          "recordar contraseña icloud"
+        ],
+        "length": [
+          "contraseña segura 8 caracteres",
+          "ejemplo de contraseña segura de 12 caracteres"
+        ],
+        "manager": [
+          "gestor de contraseñas",
+          "gestor de contraseñas de google",
+          "gestor de contraseñas guardadas",
+          "gestor de contraseñas guardadas en google",
+          "gestor de contraseñas chrome",
+          "gestor de contraseñas android",
+          "gestor de contraseñas de google android",
+          "gestor de contraseñas gratuito",
+          "gestor de contraseñas facebook",
+          "gestor de contraseñas samsung"
+        ],
+        "howto": [
+          "como crear una contraseña segura",
+          "cómo crear una contraseña segura con letras números y símbolos combinados",
+          "cómo crear una contraseña segura de google",
+          "como crear una contraseña segura ejemplos",
+          "como crear una contraseña segura para wifi",
+          "como crear una contraseña segura y fácil de recordar",
+          "como crear una contraseña segura para instagram",
+          "como crear una contraseña segura para icloud",
+          "como crear una contraseña segura para facebook",
+          "como crear una contraseña segura para correo electronico"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "generador de contraseñas",
+          "generador de contraseñas seguras",
+          "generador de contraseñas seguras google"
+        ],
+        "h1": [
+          "generador de contraseñas",
+          "generador de contraseñas seguras"
+        ],
+        "faq": [
+          "contraseña segura 8 caracteres",
+          "ejemplo de contraseña segura de 12 caracteres"
+        ],
+        "internalLinks": [
+          "gestor de contraseñas",
+          "gestor de contraseñas de google",
+          "gestor de contraseñas guardadas",
+          "gestor de contraseñas guardadas en google",
+          "gestor de contraseñas chrome"
+        ]
+      }
+    },
+    "fr": {
+      "phrases": 65,
+      "topTerms": [
+        {
+          "term": "sécurisé",
+          "count": 17
+        },
+        {
+          "term": "générateur",
+          "count": 11
+        },
+        {
+          "term": "gestionnaire",
+          "count": 10
+        },
+        {
+          "term": "mots",
+          "count": 10
+        },
+        {
+          "term": "google",
+          "count": 9
+        },
+        {
+          "term": "fort",
+          "count": 8
+        },
+        {
+          "term": "verifier",
+          "count": 6
+        },
+        {
+          "term": "memoriser",
+          "count": 6
+        },
+        {
+          "term": "exemple",
+          "count": 4
+        },
+        {
+          "term": "vérifier",
+          "count": 4
+        },
+        {
+          "term": "mémoriser",
+          "count": 4
+        },
+        {
+          "term": "caractères",
+          "count": 3
+        },
+        {
+          "term": "aléatoire",
+          "count": 2
+        },
+        {
+          "term": "samsung",
+          "count": 2
+        },
+        {
+          "term": "orange",
+          "count": 2
+        },
+        {
+          "term": "android",
+          "count": 2
+        },
+        {
+          "term": "chrome",
+          "count": 2
+        },
+        {
+          "term": "apple",
+          "count": 2
+        },
+        {
+          "term": "sur",
+          "count": 2
+        },
+        {
+          "term": "generer",
+          "count": 2
+        },
+        {
+          "term": "outlook",
+          "count": 2
+        },
+        {
+          "term": "code",
+          "count": 2
+        },
+        {
+          "term": "pin",
+          "count": 2
+        },
+        {
+          "term": "12",
+          "count": 1
+        },
+        {
+          "term": "20",
+          "count": 1
+        },
+        {
+          "term": "xyz",
+          "count": 1
+        },
+        {
+          "term": "robuste",
+          "count": 1
+        },
+        {
+          "term": "envoi",
+          "count": 1
+        },
+        {
+          "term": "avis",
+          "count": 1
+        },
+        {
+          "term": "votre",
+          "count": 1
+        },
+        {
+          "term": "appareil",
+          "count": 1
+        },
+        {
+          "term": "bitwarden",
+          "count": 1
+        },
+        {
+          "term": "lettres",
+          "count": 1
+        },
+        {
+          "term": "chiffres",
+          "count": 1
+        },
+        {
+          "term": "symboles",
+          "count": 1
+        },
+        {
+          "term": "mettre",
+          "count": 1
+        },
+        {
+          "term": "sécuritaire",
+          "count": 1
+        },
+        {
+          "term": "sécurité",
+          "count": 1
+        },
+        {
+          "term": "compromis",
+          "count": 1
+        },
+        {
+          "term": "piraté",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "code pin",
+          "count": 2
+        },
+        {
+          "term": "sécurisé générateur",
+          "count": 1
+        },
+        {
+          "term": "sécurisé google",
+          "count": 1
+        },
+        {
+          "term": "sécurisé exemple",
+          "count": 1
+        },
+        {
+          "term": "sécurisé aléatoire",
+          "count": 1
+        },
+        {
+          "term": "sécurisé 20",
+          "count": 1
+        },
+        {
+          "term": "20 caractères",
+          "count": 1
+        },
+        {
+          "term": "sécurisé envoi",
+          "count": 1
+        },
+        {
+          "term": "sécurisé 12",
+          "count": 1
+        },
+        {
+          "term": "12 caractères",
+          "count": 1
+        },
+        {
+          "term": "sécurisé samsung",
+          "count": 1
+        },
+        {
+          "term": "sécurisé orange",
+          "count": 1
+        },
+        {
+          "term": "google chrome",
+          "count": 1
+        },
+        {
+          "term": "google avis",
+          "count": 1
+        },
+        {
+          "term": "google sur",
+          "count": 1
+        },
+        {
+          "term": "sur votre",
+          "count": 1
+        },
+        {
+          "term": "votre appareil",
+          "count": 1
+        },
+        {
+          "term": "sécurisé sur",
+          "count": 1
+        },
+        {
+          "term": "sur google",
+          "count": 1
+        },
+        {
+          "term": "messagerie orange",
+          "count": 1
+        },
+        {
+          "term": "generator code",
+          "count": 1
+        },
+        {
+          "term": "tres fort",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "générateur de mot de passe",
+          "générateur de mot de passe gratuit",
+          "générateur de mot de passe google",
+          "générateur de mot de passe sécurisé",
+          "générateur de mot de passe en ligne",
+          "générateur de mot de passe sécurisé gratuit",
+          "générateur de mot de passe aléatoire",
+          "générateur de mot de passe xyz",
+          "générateur de mot de passe fort",
+          "générateur de mot de passe robuste",
+          "mot de passe sécurisé générateur",
+          "generator code pin"
+        ],
+        "general": [
+          "mot de passe sécurisé",
+          "mot de passe sécurisé google",
+          "mot de passe sécurisé exemple",
+          "mot de passe sécurisé aléatoire",
+          "mot de passe sécurisé 20 caractères",
+          "mot de passe sécurisé envoi",
+          "mot de passe sécurisé 12 caractères",
+          "mot de passe sécurisé samsung",
+          "mot de passe sécurisé orange",
+          "generer un mot de passe sécurisé",
+          "vérifier mot de passe google",
+          "vérifier mot de passe",
+          "vérifier mot de passe compromis",
+          "vérifier mot de passe piraté",
+          "verifier mot de passe gmail",
+          "verifier mot de passe apple",
+          "verifier mot de passe fuite",
+          "verifier mot de passe icloud",
+          "verifier mot de passe outlook",
+          "verifier mot de passe messagerie orange",
+          "mémoriser mot de passe chrome",
+          "memoriser mot de passe",
+          "memoriser mot de passe android",
+          "memoriser mot de passe iphone",
+          "mémoriser mot de passe firefox"
+        ],
+        "manager": [
+          "gestionnaire de mots de passe google",
+          "gestionnaire de mots de passe",
+          "gestionnaire de mots de passe gratuit",
+          "gestionnaire de mots de passe android",
+          "gestionnaire de mots de passe google chrome",
+          "gestionnaire de mots de passe google avis",
+          "gestionnaire de mots de passe apple",
+          "gestionnaire de mots de passe de google sur votre appareil",
+          "gestionnaire de mots de passe bitwarden",
+          "gestionnaire de mots de passe samsung"
+        ],
+        "howto": [
+          "comment créer un mot de passe sécurisé",
+          "comment créer un mot de passe sécurisé sur google",
+          "comment créer un mot de passe sécurisé avec des lettres des chiffres et des symboles",
+          "comment mettre un mot de passe sécurisé",
+          "comment créer un mot de passe fort",
+          "comment créer un mot de passe fort et sécuritaire",
+          "comment generer un mot de passe fort",
+          "comment créer un mot de passe de sécurité"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "générateur de mot de passe",
+          "générateur de mot de passe gratuit",
+          "générateur de mot de passe google"
+        ],
+        "h1": [
+          "générateur de mot de passe",
+          "générateur de mot de passe gratuit"
+        ],
+        "faq": [
+          "générateur de mot de passe",
+          "générateur de mot de passe gratuit",
+          "générateur de mot de passe google",
+          "générateur de mot de passe sécurisé",
+          "générateur de mot de passe en ligne"
+        ],
+        "internalLinks": [
+          "gestionnaire de mots de passe google",
+          "gestionnaire de mots de passe",
+          "gestionnaire de mots de passe gratuit",
+          "gestionnaire de mots de passe android",
+          "gestionnaire de mots de passe google chrome"
+        ]
+      }
+    },
+    "it": {
+      "phrases": 63,
+      "topTerms": [
+        {
+          "term": "generatore",
+          "count": 21
+        },
+        {
+          "term": "sicura",
+          "count": 13
+        },
+        {
+          "term": "ricordare",
+          "count": 11
+        },
+        {
+          "term": "gestore",
+          "count": 10
+        },
+        {
+          "term": "verificare",
+          "count": 10
+        },
+        {
+          "term": "pin",
+          "count": 8
+        },
+        {
+          "term": "google",
+          "count": 6
+        },
+        {
+          "term": "libero",
+          "count": 4
+        },
+        {
+          "term": "apple",
+          "count": 4
+        },
+        {
+          "term": "cifre",
+          "count": 4
+        },
+        {
+          "term": "casuale",
+          "count": 2
+        },
+        {
+          "term": "esempio",
+          "count": 2
+        },
+        {
+          "term": "dimenticata",
+          "count": 2
+        },
+        {
+          "term": "gmail",
+          "count": 2
+        },
+        {
+          "term": "id",
+          "count": 2
+        },
+        {
+          "term": "spid",
+          "count": 2
+        },
+        {
+          "term": "inps",
+          "count": 2
+        },
+        {
+          "term": "casuali",
+          "count": 1
+        },
+        {
+          "term": "sicure",
+          "count": 1
+        },
+        {
+          "term": "lastpass",
+          "count": 1
+        },
+        {
+          "term": "roboform",
+          "count": 1
+        },
+        {
+          "term": "efficaci",
+          "count": 1
+        },
+        {
+          "term": "complesse",
+          "count": 1
+        },
+        {
+          "term": "mail",
+          "count": 1
+        },
+        {
+          "term": "quanti",
+          "count": 1
+        },
+        {
+          "term": "caratteri",
+          "count": 1
+        },
+        {
+          "term": "virgilio",
+          "count": 1
+        },
+        {
+          "term": "app",
+          "count": 1
+        },
+        {
+          "term": "cosa",
+          "count": 1
+        },
+        {
+          "term": "fa",
+          "count": 1
+        },
+        {
+          "term": "gratuito",
+          "count": 1
+        },
+        {
+          "term": "open",
+          "count": 1
+        },
+        {
+          "term": "source",
+          "count": 1
+        },
+        {
+          "term": "sicuro",
+          "count": 1
+        },
+        {
+          "term": "cassaforte",
+          "count": 1
+        },
+        {
+          "term": "digitale",
+          "count": 1
+        },
+        {
+          "term": "nordpass",
+          "count": 1
+        },
+        {
+          "term": "android",
+          "count": 1
+        },
+        {
+          "term": "cos",
+          "count": 1
+        },
+        {
+          "term": "facile",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "generatore pin",
+          "count": 8
+        },
+        {
+          "term": "sicura libero",
+          "count": 4
+        },
+        {
+          "term": "id apple",
+          "count": 2
+        },
+        {
+          "term": "casuale roboform",
+          "count": 1
+        },
+        {
+          "term": "sicura esempio",
+          "count": 1
+        },
+        {
+          "term": "sicura generatore",
+          "count": 1
+        },
+        {
+          "term": "libero dimenticata",
+          "count": 1
+        },
+        {
+          "term": "libero mail",
+          "count": 1
+        },
+        {
+          "term": "sicura quanti",
+          "count": 1
+        },
+        {
+          "term": "quanti caratteri",
+          "count": 1
+        },
+        {
+          "term": "sicura virgilio",
+          "count": 1
+        },
+        {
+          "term": "sicura google",
+          "count": 1
+        },
+        {
+          "term": "libero app",
+          "count": 1
+        },
+        {
+          "term": "cosa fa",
+          "count": 1
+        },
+        {
+          "term": "open source",
+          "count": 1
+        },
+        {
+          "term": "cassaforte digitale",
+          "count": 1
+        },
+        {
+          "term": "digitale nordpass",
+          "count": 1
+        },
+        {
+          "term": "non ricordare",
+          "count": 1
+        },
+        {
+          "term": "account google",
+          "count": 1
+        },
+        {
+          "term": "pin inps",
+          "count": 1
+        },
+        {
+          "term": "generatore pinyin",
+          "count": 1
+        },
+        {
+          "term": "pin casuale",
+          "count": 1
+        },
+        {
+          "term": "pin telefonico",
+          "count": 1
+        },
+        {
+          "term": "telefonico inps",
+          "count": 1
+        },
+        {
+          "term": "generatore torneo",
+          "count": 1
+        },
+        {
+          "term": "torneo ping",
+          "count": 1
+        },
+        {
+          "term": "ping pong",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "generatore di password",
+          "generatore di password gratis",
+          "generatore di password casuali",
+          "generatore di password sicure",
+          "generatore di password online",
+          "generatore di password google",
+          "generatore di password - lastpass",
+          "generatore di password casuale roboform",
+          "generatore di password efficaci",
+          "generatore di password complesse",
+          "password sicura generatore",
+          "generatore pin",
+          "generatore pin 8 cifre",
+          "generatore pin 6 cifre",
+          "generatore pin 4 cifre",
+          "generatore pin inps",
+          "generatore pinyin",
+          "generatore pin casuale",
+          "generatore pin telefonico inps",
+          "generatore pin 5 cifre",
+          "generatore torneo ping pong"
+        ],
+        "passphrase": [
+          "password sicura",
+          "password sicura libero",
+          "password sicura esempio",
+          "password sicura libero dimenticata",
+          "password sicura libero mail",
+          "password sicura quanti caratteri",
+          "password sicura virgilio",
+          "password sicura google",
+          "password sicura libero app",
+          "gestore di password",
+          "gestore di password google",
+          "gestore di password cosa fa",
+          "gestore di password gratuito",
+          "gestore di password open source",
+          "gestore di password sicuro",
+          "gestore di password e cassaforte digitale nordpass",
+          "gestore di password apple",
+          "gestore di password android",
+          "gestore di password cos è",
+          "come creare una password sicura e facile da ricordare",
+          "come creare una password sicura",
+          "verificare password google",
+          "verificare password compromesse",
+          "verificare password gmail",
+          "verificare password"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "generatore di password",
+          "generatore di password gratis",
+          "generatore di password casuali"
+        ],
+        "h1": [
+          "generatore di password",
+          "generatore di password gratis"
+        ],
+        "faq": [
+          "password sicura",
+          "password sicura libero",
+          "password sicura esempio",
+          "password sicura libero dimenticata",
+          "password sicura libero mail"
+        ],
+        "internalLinks": [
+          "generatore di password",
+          "generatore di password gratis",
+          "generatore di password casuali",
+          "generatore di password sicure",
+          "generatore di password online"
+        ]
+      }
+    },
+    "pt": {
+      "phrases": 80,
+      "topTerms": [
+        {
+          "term": "senhas",
+          "count": 30
+        },
+        {
+          "term": "gerador",
+          "count": 20
+        },
+        {
+          "term": "segura",
+          "count": 15
+        },
+        {
+          "term": "forte",
+          "count": 12
+        },
+        {
+          "term": "gerenciador",
+          "count": 10
+        },
+        {
+          "term": "verificar",
+          "count": 10
+        },
+        {
+          "term": "lembrar",
+          "count": 10
+        },
+        {
+          "term": "exemplo",
+          "count": 10
+        },
+        {
+          "term": "google",
+          "count": 9
+        },
+        {
+          "term": "no",
+          "count": 7
+        },
+        {
+          "term": "salvas",
+          "count": 6
+        },
+        {
+          "term": "segurança",
+          "count": 5
+        },
+        {
+          "term": "caracteres",
+          "count": 4
+        },
+        {
+          "term": "celular",
+          "count": 4
+        },
+        {
+          "term": "link",
+          "count": 4
+        },
+        {
+          "term": "wifi",
+          "count": 3
+        },
+        {
+          "term": "instagram",
+          "count": 3
+        },
+        {
+          "term": "pasta",
+          "count": 3
+        },
+        {
+          "term": "whatsapp",
+          "count": 3
+        },
+        {
+          "term": "pin",
+          "count": 3
+        },
+        {
+          "term": "social",
+          "count": 2
+        },
+        {
+          "term": "facebook",
+          "count": 2
+        },
+        {
+          "term": "chrome",
+          "count": 2
+        },
+        {
+          "term": "vazadas",
+          "count": 2
+        },
+        {
+          "term": "gmail",
+          "count": 2
+        },
+        {
+          "term": "gov",
+          "count": 2
+        },
+        {
+          "term": "digitos",
+          "count": 2
+        },
+        {
+          "term": "12",
+          "count": 1
+        },
+        {
+          "term": "fortes",
+          "count": 1
+        },
+        {
+          "term": "lastpass",
+          "count": 1
+        },
+        {
+          "term": "avast",
+          "count": 1
+        },
+        {
+          "term": "aleatórias",
+          "count": 1
+        },
+        {
+          "term": "4devs",
+          "count": 1
+        },
+        {
+          "term": "free",
+          "count": 1
+        },
+        {
+          "term": "fire",
+          "count": 1
+        },
+        {
+          "term": "seguras",
+          "count": 1
+        },
+        {
+          "term": "direta",
+          "count": 1
+        },
+        {
+          "term": "cofre",
+          "count": 1
+        },
+        {
+          "term": "pam",
+          "count": 1
+        },
+        {
+          "term": "empresa",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "verificar senhas",
+          "count": 8
+        },
+        {
+          "term": "senhas salvas",
+          "count": 6
+        },
+        {
+          "term": "senhas google",
+          "count": 5
+        },
+        {
+          "term": "no celular",
+          "count": 4
+        },
+        {
+          "term": "pasta segura",
+          "count": 3
+        },
+        {
+          "term": "salvas no",
+          "count": 3
+        },
+        {
+          "term": "link whatsapp",
+          "count": 3
+        },
+        {
+          "term": "segurança social",
+          "count": 2
+        },
+        {
+          "term": "senhas vazadas",
+          "count": 2
+        },
+        {
+          "term": "lembrar senhas",
+          "count": 2
+        },
+        {
+          "term": "senhas fortes",
+          "count": 1
+        },
+        {
+          "term": "senhas lastpass",
+          "count": 1
+        },
+        {
+          "term": "senhas avast",
+          "count": 1
+        },
+        {
+          "term": "senhas aleatórias",
+          "count": 1
+        },
+        {
+          "term": "senhas 4devs",
+          "count": 1
+        },
+        {
+          "term": "free fire",
+          "count": 1
+        },
+        {
+          "term": "senhas seguras",
+          "count": 1
+        },
+        {
+          "term": "social direta",
+          "count": 1
+        },
+        {
+          "term": "segura cofre",
+          "count": 1
+        },
+        {
+          "term": "segura pam",
+          "count": 1
+        },
+        {
+          "term": "segura empresa",
+          "count": 1
+        },
+        {
+          "term": "segura login",
+          "count": 1
+        },
+        {
+          "term": "senhas facebook",
+          "count": 1
+        },
+        {
+          "term": "google chrome",
+          "count": 1
+        },
+        {
+          "term": "senhas roblox",
+          "count": 1
+        },
+        {
+          "term": "senhas no",
+          "count": 1
+        },
+        {
+          "term": "google no",
+          "count": 1
+        },
+        {
+          "term": "senhas instagram",
+          "count": 1
+        },
+        {
+          "term": "senhas microsoft",
+          "count": 1
+        },
+        {
+          "term": "segura na",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "gerador de senhas",
+          "gerador de senhas google",
+          "gerador de senhas fortes",
+          "gerador de senhas - lastpass",
+          "gerador de senhas avast",
+          "gerador de senhas aleatórias",
+          "gerador de senhas 4devs",
+          "gerador de senhas online",
+          "gerador de senhas para free fire",
+          "gerador de senhas seguras",
+          "gerador de link whatsapp",
+          "gerador de link",
+          "gerador de pin",
+          "gerador de pink noise",
+          "gerador de pintura numerada",
+          "gerador de pin 4 digitos",
+          "gerador de pin 6 digitos",
+          "gerador de link whatsapp gratuito",
+          "gerador de link whatsapp curto",
+          "gerador de links"
+        ],
+        "general": [
+          "senha segurança social",
+          "senha segurança social direta",
+          "senha segura",
+          "senha segura cofre de senha",
+          "senha segura pam",
+          "senha segurança",
+          "senha segura empresa",
+          "senha segura login",
+          "senha segura para wifi",
+          "verificar senhas google",
+          "verificar senhas salvas no google",
+          "verificar senhas",
+          "verificar senhas vazadas google",
+          "verificar senhas vazadas",
+          "verificar senha do gmail",
+          "verificar senhas salvas",
+          "verificar senhas salvas no celular",
+          "verificar senha wifi",
+          "verificar senhas salvas no chrome",
+          "lembrar senha gmail",
+          "lembrar senha google",
+          "lembrar senha icloud",
+          "lembrar senhas",
+          "lembrar senha instagram",
+          "lembrar senha facebook"
+        ],
+        "length": [
+          "senha segura 8 caracteres",
+          "exemplo de senha forte com 8 caracteres",
+          "exemplo de senha forte 12 caracteres",
+          "exemplo de senha forte com 6 caracteres"
+        ],
+        "manager": [
+          "gerenciador de senhas",
+          "gerenciador de senhas google",
+          "gerenciador de senhas salvas",
+          "gerenciador de senhas facebook",
+          "gerenciador de senhas google chrome",
+          "gerenciador de senhas roblox",
+          "gerenciador de senhas no celular",
+          "gerenciador de senhas google no celular",
+          "gerenciador de senhas instagram",
+          "gerenciador de senhas microsoft"
+        ],
+        "howto": [
+          "como criar uma senha segura",
+          "como criar uma senha segura e forte",
+          "como criar uma senha segura na internet",
+          "como criar uma senha de segurança",
+          "como criar uma senha mais segura",
+          "como criar uma senha forte e segura para redes sociais",
+          "como criar senha de segurança bradesco",
+          "como criar uma pasta segura com senha",
+          "como criar uma pasta segura com senha no celular",
+          "como criar uma pasta segura com senha no pc"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "gerador de senhas",
+          "gerador de senhas google",
+          "gerador de senhas fortes"
+        ],
+        "h1": [
+          "gerador de senhas",
+          "gerador de senhas google"
+        ],
+        "faq": [
+          "senha segura 8 caracteres",
+          "exemplo de senha forte com 8 caracteres",
+          "exemplo de senha forte 12 caracteres",
+          "exemplo de senha forte com 6 caracteres"
+        ],
+        "internalLinks": [
+          "gerenciador de senhas",
+          "gerenciador de senhas google",
+          "gerenciador de senhas salvas",
+          "gerenciador de senhas facebook",
+          "gerenciador de senhas google chrome"
+        ]
+      }
+    },
+    "ja": {
+      "phrases": 52,
+      "topTerms": [
+        {
+          "term": "生成",
+          "count": 10
+        },
+        {
+          "term": "自動生成",
+          "count": 10
+        },
+        {
+          "term": "管理",
+          "count": 8
+        },
+        {
+          "term": "忘れた",
+          "count": 7
+        },
+        {
+          "term": "強力なパスワード",
+          "count": 6
+        },
+        {
+          "term": "google",
+          "count": 5
+        },
+        {
+          "term": "iphone",
+          "count": 5
+        },
+        {
+          "term": "おすすめ",
+          "count": 4
+        },
+        {
+          "term": "確認",
+          "count": 2
+        },
+        {
+          "term": "方法",
+          "count": 2
+        },
+        {
+          "term": "サイト",
+          "count": 2
+        },
+        {
+          "term": "作り方",
+          "count": 2
+        },
+        {
+          "term": "アプリ",
+          "count": 2
+        },
+        {
+          "term": "管理方法",
+          "count": 2
+        },
+        {
+          "term": "安全なパスワード",
+          "count": 2
+        },
+        {
+          "term": "ランダム",
+          "count": 1
+        },
+        {
+          "term": "ラッコ",
+          "count": 1
+        },
+        {
+          "term": "8桁",
+          "count": 1
+        },
+        {
+          "term": "強力なパスワード生成",
+          "count": 1
+        },
+        {
+          "term": "強力なパスワードを使用しますか",
+          "count": 1
+        },
+        {
+          "term": "強力なパスワード作り方",
+          "count": 1
+        },
+        {
+          "term": "オフ",
+          "count": 1
+        },
+        {
+          "term": "強力なパスワードとは",
+          "count": 1
+        },
+        {
+          "term": "ノート",
+          "count": 1
+        },
+        {
+          "term": "どうしてる",
+          "count": 1
+        },
+        {
+          "term": "エクセル",
+          "count": 1
+        },
+        {
+          "term": "忘れた場合",
+          "count": 1
+        },
+        {
+          "term": "忘れたandroid",
+          "count": 1
+        },
+        {
+          "term": "gmail",
+          "count": 1
+        },
+        {
+          "term": "windows",
+          "count": 1
+        },
+        {
+          "term": "忘れた時の対処法",
+          "count": 1
+        },
+        {
+          "term": "パソコン",
+          "count": 1
+        },
+        {
+          "term": "ipad",
+          "count": 1
+        },
+        {
+          "term": "出て",
+          "count": 1
+        },
+        {
+          "term": "こない",
+          "count": 1
+        },
+        {
+          "term": "デメリット",
+          "count": 1
+        },
+        {
+          "term": "自動生成ツール",
+          "count": 1
+        },
+        {
+          "term": "無料",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "生成 google",
+          "count": 2
+        },
+        {
+          "term": "生成 ランダム",
+          "count": 1
+        },
+        {
+          "term": "google 確認",
+          "count": 1
+        },
+        {
+          "term": "生成 方法",
+          "count": 1
+        },
+        {
+          "term": "生成 おすすめ",
+          "count": 1
+        },
+        {
+          "term": "生成 ラッコ",
+          "count": 1
+        },
+        {
+          "term": "生成 8桁",
+          "count": 1
+        },
+        {
+          "term": "生成 サイト",
+          "count": 1
+        },
+        {
+          "term": "強力なパスワード 確認",
+          "count": 1
+        },
+        {
+          "term": "確認 方法",
+          "count": 1
+        },
+        {
+          "term": "強力なパスワード オフ",
+          "count": 1
+        },
+        {
+          "term": "強力なパスワード 作り方",
+          "count": 1
+        },
+        {
+          "term": "作り方 iphone",
+          "count": 1
+        },
+        {
+          "term": "強力なパスワード 自動生成",
+          "count": 1
+        },
+        {
+          "term": "強力なパスワード iphone",
+          "count": 1
+        },
+        {
+          "term": "管理 アプリ",
+          "count": 1
+        },
+        {
+          "term": "管理 ノート",
+          "count": 1
+        },
+        {
+          "term": "管理 iphone",
+          "count": 1
+        },
+        {
+          "term": "管理 google",
+          "count": 1
+        },
+        {
+          "term": "管理 おすすめ",
+          "count": 1
+        },
+        {
+          "term": "管理 どうしてる",
+          "count": 1
+        },
+        {
+          "term": "管理方法 おすすめ",
+          "count": 1
+        },
+        {
+          "term": "管理 エクセル",
+          "count": 1
+        },
+        {
+          "term": "安全なパスワード 作り方",
+          "count": 1
+        },
+        {
+          "term": "忘れた google",
+          "count": 1
+        },
+        {
+          "term": "忘れた iphone",
+          "count": 1
+        },
+        {
+          "term": "忘れた gmail",
+          "count": 1
+        },
+        {
+          "term": "忘れた windows",
+          "count": 1
+        },
+        {
+          "term": "忘れた パソコン",
+          "count": 1
+        },
+        {
+          "term": "忘れた ipad",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "パスワード 生成",
+          "パスワード 生成 ランダム",
+          "パスワード 生成 google 確認",
+          "パスワード 生成 方法",
+          "パスワード 生成 4 桁",
+          "パスワード 生成 google",
+          "パスワード 生成 おすすめ",
+          "パスワード 生成 ラッコ",
+          "パスワード 生成 8桁",
+          "パスワード 生成 サイト",
+          "強力なパスワード生成"
+        ],
+        "general": [
+          "強力なパスワード",
+          "強力なパスワードを使用しますか",
+          "強力なパスワード作り方",
+          "強力なパスワード 確認 方法",
+          "強力なパスワード オフ",
+          "強力なパスワード 作り方 iphone",
+          "強力なパスワードとは",
+          "強力なパスワード 自動生成",
+          "強力なパスワード iphone",
+          "安全なパスワード 作り方",
+          "パスワード 忘れた",
+          "パスワード 忘れた google",
+          "パスワード 忘れた場合",
+          "パスワード 忘れた iphone",
+          "パスワード 忘れたandroid",
+          "パスワード 忘れた gmail",
+          "パスワード 忘れた windows",
+          "パスワード 忘れた時の対処法",
+          "パスワード 忘れた パソコン",
+          "パスワード 忘れた ipad",
+          "安全なパスワード 例",
+          "パスワード 自動生成",
+          "パスワード 自動生成 出て こない",
+          "パスワード 自動生成 google",
+          "パスワード 自動生成 サイト"
+        ],
+        "manager": [
+          "パスワード 管理",
+          "パスワード 管理 アプリ",
+          "パスワード 管理 ノート",
+          "パスワード 管理 iphone",
+          "パスワード 管理方法",
+          "パスワード 管理 google",
+          "パスワード 管理 おすすめ",
+          "パスワード 管理 どうしてる",
+          "パスワード 管理方法 おすすめ",
+          "パスワード 管理 エクセル"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "パスワード 生成",
+          "パスワード 生成 ランダム",
+          "パスワード 生成 google 確認"
+        ],
+        "h1": [
+          "パスワード 生成",
+          "パスワード 生成 ランダム"
+        ],
+        "faq": [
+          "パスワード 生成",
+          "パスワード 生成 ランダム",
+          "パスワード 生成 google 確認",
+          "パスワード 生成 方法",
+          "パスワード 生成 4 桁"
+        ],
+        "internalLinks": [
+          "パスワード 管理",
+          "パスワード 管理 アプリ",
+          "パスワード 管理 ノート",
+          "パスワード 管理 iphone",
+          "パスワード 管理方法"
+        ]
+      }
+    },
+    "zh": {
+      "phrases": 36,
+      "topTerms": [
+        {
+          "term": "密码生成器",
+          "count": 3
+        },
+        {
+          "term": "密码管理器",
+          "count": 3
+        },
+        {
+          "term": "忘记密码",
+          "count": 3
+        },
+        {
+          "term": "强密码",
+          "count": 2
+        },
+        {
+          "term": "google",
+          "count": 2
+        },
+        {
+          "term": "1password",
+          "count": 1
+        },
+        {
+          "term": "密码生成器chrome",
+          "count": 1
+        },
+        {
+          "term": "密码生成器批量",
+          "count": 1
+        },
+        {
+          "term": "密码生成器github",
+          "count": 1
+        },
+        {
+          "term": "强密码生成",
+          "count": 1
+        },
+        {
+          "term": "强密码生成器",
+          "count": 1
+        },
+        {
+          "term": "强密码在线生成",
+          "count": 1
+        },
+        {
+          "term": "强密码随机生成",
+          "count": 1
+        },
+        {
+          "term": "强密码规则",
+          "count": 1
+        },
+        {
+          "term": "强密码检查器",
+          "count": 1
+        },
+        {
+          "term": "强密码产生",
+          "count": 1
+        },
+        {
+          "term": "英文",
+          "count": 1
+        },
+        {
+          "term": "密码管理器推荐",
+          "count": 1
+        },
+        {
+          "term": "密码管理器生成",
+          "count": 1
+        },
+        {
+          "term": "密码管理器开源",
+          "count": 1
+        },
+        {
+          "term": "密码管理器安全吗",
+          "count": 1
+        },
+        {
+          "term": "密码管理器产生",
+          "count": 1
+        },
+        {
+          "term": "密码管理器ptt",
+          "count": 1
+        },
+        {
+          "term": "github",
+          "count": 1
+        },
+        {
+          "term": "密码管理器有哪些",
+          "count": 1
+        },
+        {
+          "term": "忘记密码如何重置手机",
+          "count": 1
+        },
+        {
+          "term": "忘记密码怎么办",
+          "count": 1
+        },
+        {
+          "term": "忘记密码忘记账号名免费注册",
+          "count": 1
+        },
+        {
+          "term": "忘记密码重置iphone",
+          "count": 1
+        },
+        {
+          "term": "忘记密码锁怎么办",
+          "count": 1
+        },
+        {
+          "term": "忘记密码手机",
+          "count": 1
+        },
+        {
+          "term": "忘记密码行李箱",
+          "count": 1
+        },
+        {
+          "term": "windows",
+          "count": 1
+        },
+        {
+          "term": "批量生成密码",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "密码生成器 1password",
+          "count": 1
+        },
+        {
+          "term": "强密码 英文",
+          "count": 1
+        },
+        {
+          "term": "密码管理器 github",
+          "count": 1
+        },
+        {
+          "term": "密码管理器 google",
+          "count": 1
+        },
+        {
+          "term": "忘记密码 google",
+          "count": 1
+        },
+        {
+          "term": "忘记密码 windows",
+          "count": 1
+        }
+      ],
+      "intentPhrases": {
+        "generator": [
+          "密码生成器",
+          "密码生成器 1password",
+          "密码生成器chrome",
+          "密码生成器批量",
+          "密码生成器github",
+          "密码生成器、",
+          "强密码生成器"
+        ],
+        "general": [
+          "强密码生成",
+          "强密码",
+          "强密码在线生成",
+          "强密码随机生成",
+          "强密码规则",
+          "强密码检查器",
+          "强密码产生",
+          "强密码 英文",
+          "忘记密码",
+          "忘记密码 google",
+          "忘记密码如何重置手机",
+          "忘记密码怎么办",
+          "忘记密码忘记账号名免费注册",
+          "忘记密码重置iphone",
+          "忘记密码锁怎么办",
+          "忘记密码手机",
+          "忘记密码行李箱",
+          "忘记密码 windows",
+          "批量生成密码"
+        ],
+        "manager": [
+          "密码管理器",
+          "密码管理器推荐",
+          "密码管理器生成",
+          "密码管理器开源",
+          "密码管理器安全吗",
+          "密码管理器产生",
+          "密码管理器ptt",
+          "密码管理器 github",
+          "密码管理器有哪些",
+          "密码管理器 google"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "密码生成器",
+          "密码生成器 1password",
+          "密码生成器chrome"
+        ],
+        "h1": [
+          "密码生成器",
+          "密码生成器 1password"
+        ],
+        "faq": [
+          "密码生成器",
+          "密码生成器 1password",
+          "密码生成器chrome",
+          "密码生成器批量",
+          "密码生成器github"
+        ],
+        "internalLinks": [
+          "密码管理器",
+          "密码管理器推荐",
+          "密码管理器生成",
+          "密码管理器开源",
+          "密码管理器安全吗"
+        ]
+      }
+    }
+  }
+}

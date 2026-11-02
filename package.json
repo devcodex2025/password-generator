@@ -63,7 +63,8 @@
     "indexnow": "node scripts/indexnow.mjs",
     "gsc": "node scripts/gsc-report.mjs",
     "keywords": "node scripts/keyword-research.mjs",
-    "keywords:map": "node scripts/keyword-map.mjs"
+    "keywords:map": "node scripts/keyword-map.mjs",
+    "keywords:cloud": "node scripts/keyword-cloud.mjs"
   },
   "eslintConfig": {
     "extends": [
