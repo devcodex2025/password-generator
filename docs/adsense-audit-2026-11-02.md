@@ -5,7 +5,9 @@ policy/technical compatibility.
 
 > **Status update (same day):** the loader and `/about` findings are fixed in code. The tag is
 > gated behind `NEXT_PUBLIC_ADSENSE_ENABLED` because the site is not approved yet, and behind
-> marketing consent. See `docs/adsense-fix-plan-2026-11-02.md` for what remains.
+> marketing consent. Privacy/terms now have structured sections in all 12 locales, contact pages
+> have an intro plus six FAQs, and the ru/ua and vi content findings are addressed. Remaining:
+> Phase 3 technical hygiene. See `docs/adsense-fix-plan-2026-11-02.md`.
 
 ## What ran
 

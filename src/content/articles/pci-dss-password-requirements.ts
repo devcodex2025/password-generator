@@ -343,6 +343,13 @@ export const vi: LocalizedArticleContent = {
   ],
   sections: [
     {
+      heading: 'Ai nên dùng hướng dẫn này',
+      paragraphs: [
+        'Hướng dẫn dành cho quản trị viên hệ thống thanh toán, chủ cửa hàng và nhóm tuân thủ chịu trách nhiệm về môi trường dữ liệu chủ thẻ (CDE). Nếu bạn chỉ dùng cổng thanh toán bên thứ ba và không lưu dữ liệu thẻ, phần lớn yêu cầu vẫn áp dụng ở mức SAQ phù hợp; hãy xác nhận phạm vi với QSA hoặc nhà cung cấp dịch vụ thanh toán trước khi thay đổi chính sách.',
+        'Bài viết không thay thế đánh giá chính thức. Nó giúp bạn chuẩn bị câu hỏi, hồ sơ và bằng chứng trước buổi kiểm toán, đồng thời tránh áp dụng máy móc các quy tắc cũ đã bị v4.0 thay thế.',
+      ],
+    },
+    {
       heading: 'Hiểu PCI DSS và vì sao quan trọng',
       paragraphs: [
         'Payment Card Industry Data Security Standard (PCI DSS) là bộ yêu cầu bảo mật nhằm bảo vệ dữ liệu chủ thẻ. Mọi tổ chức xử lý, lưu hoặc truyền thông tin thẻ tín dụng đều phải tuân thủ. Phiên bản 4.0 phát hành tháng 3 năm 2022, hạn tuân thủ bắt buộc 31 tháng 3 năm 2025 (một số yêu cầu mở rộng tới tháng 3 năm 2026), đưa ra thay đổi lớn về xác thực.',

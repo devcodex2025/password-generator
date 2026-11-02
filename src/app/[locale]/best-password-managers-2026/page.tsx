@@ -102,6 +102,20 @@ const breadcrumbPage: Record<string, string> = {
   vi: 'Trình quản lý mật khẩu tốt nhất 2026',
 };
 
+// Extra buying-checklist copy for the thinnest locales (see docs/adsense-audit-2026-11-02).
+const buyerChecklist: Record<string, { title: string; text: string }> = {
+  ru: {
+    title: 'Что проверить перед покупкой',
+    text:
+      'Сравнивайте не только цену первого года: проверьте стоимость продления, поддержку двухфакторной аутентификации, офлайн-доступ и экспорт хранилища. Для семейного плана важно, сколько участников можно добавить и есть ли аварийный доступ. Если вы пользуетесь только одним браузером, встроенный менеджер закроет базовые задачи, но синхронизация между устройствами обычно требует отдельного приложения.',
+  },
+  ua: {
+    title: 'Що перевірити перед покупкою',
+    text:
+      'Порівнюйте не лише ціну першого року: перевірте вартість продовження, підтримку двофакторної автентифікації, офлайн-доступ і експорт сховища. Для сімейного плану важливо, скільки учасників можна додати і чи є аварійний доступ. Якщо ви користуєтеся лише одним браузером, вбудований менеджер закриє базові задачі, але синхронізація між пристроями зазвичай потребує окремого застосунку.',
+  },
+};
+
 export default async function BestPasswordManagersPage({
   params,
 }: {
@@ -212,6 +226,17 @@ export default async function BestPasswordManagersPage({
             {t.sectionCompareText}
           </p>
         </section>
+
+        {buyerChecklist[locale] ? (
+          <section className="mt-10">
+            <h2 className="text-2xl font-semibold text-[#071016] dark:text-[#e0e0e0]">
+              {buyerChecklist[locale].title}
+            </h2>
+            <p className="mt-3 text-[#374151] dark:text-[#c7c7c7] leading-7">
+              {buyerChecklist[locale].text}
+            </p>
+          </section>
+        ) : null}
 
         {/* Affiliate promo block with comparison table + CTAs */}
         <NordPassAffiliatePromo

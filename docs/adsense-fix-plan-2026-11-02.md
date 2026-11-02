@@ -89,7 +89,10 @@ Effort: 3–4 h including translations.
 
 ## Phase 2 — Content quality (days 2–3)
 
-### Step 2.1 — Rewrite privacy policy and terms, fix the contradiction
+> Done 2026-11-02. Privacy and terms now have structured sections in all 12 locales, contact pages
+> have an intro plus six FAQs, and the ru/ua and vi thin/duplicate findings are addressed.
+
+### Step 2.1 — Rewrite privacy policy and terms, fix the contradiction ✅
 
 Files: `src/lib/static-pages-i18n.ts`, `src/app/[locale]/privacy-policy/page.tsx`,
 `src/app/[locale]/terms-of-service/page.tsx`.
@@ -130,7 +133,7 @@ Acceptance:
 
 Effort: 1.5–2 days (translation-heavy).
 
-### Step 2.2 — Expand the contact pages
+### Step 2.2 — Expand the contact pages ✅
 
 Files: `src/lib/static-pages-i18n.ts`, `src/app/[locale]/contact/page.tsx`.
 
@@ -152,7 +155,7 @@ Acceptance:
 
 Effort: 4–6 h including translations.
 
-### Step 2.3 — Top up the ru/ua password-manager comparisons
+### Step 2.3 — Top up the ru/ua password-manager comparisons ✅
 
 Files: `src/app/[locale]/best-password-managers-2026/page.tsx`.
 
@@ -166,7 +169,7 @@ Acceptance: both pages ≥320 words; no new affiliate links without `rel="sponso
 
 Effort: 1–2 h.
 
-### Step 2.4 — Differentiate the Vietnamese duplicate pair
+### Step 2.4 — Differentiate the Vietnamese duplicate pair ✅
 
 Files: `src/content/articles/pci-dss-password-requirements.ts`,
 `src/content/articles/team-password-policy-template.ts`.

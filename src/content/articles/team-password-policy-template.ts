@@ -391,6 +391,13 @@ export const vi: LocalizedArticleContent = {
   ],
   sections: [
     {
+      heading: 'Cách dùng mẫu này trong tổ chức',
+      paragraphs: [
+        'Mẫu phù hợp cho quản lý CNTT, nhân sự và trưởng nhóm cần ban hành chính sách trong một tuần. Sao chép khung, thay các giá trị trong ngoặc bằng quyết định của bạn, rồi đưa qua luật sư hoặc bộ phận tuân thủ. Với nhân sự mới, hãy đưa chính sách vào quy trình hội nhập và ký xác nhận; khi thay đổi công cụ, cập nhật mục quản lý thay đổi và thông báo trước.',
+        'Đừng ban hành chính sách mà không có người chịu trách nhiệm kiểm tra và gia hạn hằng năm, nếu không tài liệu sẽ lỗi thời ngay sau lần thay đổi công cụ tiếp theo.',
+      ],
+    },
+    {
       heading: 'Vì sao nhóm cần chính sách mật khẩu bằng văn bản',
       paragraphs: [
         'Chính sách mật khẩu bằng văn bản biến bảo mật từ phỏng đoán cá nhân thành chuẩn mực tổ chức. Không có chính sách, các thành viên dùng cách rất khác nhau: người dùng trình quản lý với mật khẩu ngẫu nhiên 20 ký tự, người dùng lại "CompanyName2026" cho mọi dịch vụ. Chính sách rõ ràng xóa bỏ sự thiếu nhất quán và tạo bảo vệ pháp lý bằng chứng minh nỗ lực hợp lý.',
