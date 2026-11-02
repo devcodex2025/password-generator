@@ -61,12 +61,15 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const { isDarkMode } = useContext(ThemeContext);
   const [snackbars, setSnackbars] = useState<SnackbarMessage[]>([]);
   const [saveModalOpen, setSaveModalOpen] = useState(false);
-  const [passwordLength, setPasswordLength] = useState<number>(12);
   const [selectedCharacterSets, setSelectedCharacterSets] = useState<string[]>(['A-Z', 'a-z', '0-9', '#$%']);
   const [quantity, setQuantity] = useState<number>(1);
   const [passwords, setPasswords] = useState<string[]>([]);
   const [selectedStandard, setSelectedStandard] = useState<string>('nist');
   const [mode, setMode] = useState<GeneratorMode>('chars');
+  // each mode remembers its own slider value
+  const [lengths, setLengths] = useState<Record<GeneratorMode, number>>({ chars: 12, words: 4, pin: 6 });
+  const passwordLength = lengths[mode];
+  const setPasswordLength = useCallback((length: number) => setLengths((prev) => ({ ...prev, [mode]: length })), [mode]);
   const [separator, setSeparator] = useState<string>('-');
   const [capitalize, setCapitalize] = useState<boolean>(true);
   const maxQuantity = 100;
@@ -97,147 +100,93 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
     }
   }, [language]);
 
+  // Builds one password from the current rules; '' means it could not be built.
+  const buildPassword = useCallback(async (): Promise<string> => {
+    if (mode === 'pin') {
+      return generatePin(Math.min(12, Math.max(4, passwordLength)), secureRandomIndex);
+    }
+    if (mode === 'words') {
+      try {
+        const words = await loadWordlist();
+        return generatePassphrase(words, Math.min(8, Math.max(3, passwordLength)), separator, capitalize, secureRandomIndex);
+      } catch {
+        return '';
+      }
+    }
+    const standardConfig = passwordStandards[selectedStandard];
+    const effectiveLength = Math.max(passwordLength, standardConfig.minLength);
+    let allCharacters = '';
+    selectedCharacterSets.forEach((set) => {
+      allCharacters += characterSets[set];
+    });
+    if (allCharacters.length === 0) return '';
+
+    let password = '';
+    standardConfig.requiredSets.forEach((set) => {
+      const chars = characterSets[set];
+      if (chars) password += chars.charAt(secureRandomIndex(chars.length));
+    });
+    for (let i = password.length; i < effectiveLength; i++) {
+      password += allCharacters.charAt(secureRandomIndex(allCharacters.length));
+    }
+
+    // Fisher-Yates shuffle using cryptographically secure random
+    const arr = password.split('');
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = secureRandomIndex(i + 1);
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr.join('');
+  }, [mode, passwordLength, selectedCharacterSets, selectedStandard, separator, capitalize]);
+
+  const warnNoPassword = useCallback(() => {
+    setSnackbars((prev) => [...prev, { id: Date.now(), message: t('warning_no_characters') }]);
+  }, [t]);
+
   const generatePassword = useCallback(
     async (index: number) => {
-      if (mode === 'pin') {
-        const len = Math.min(12, Math.max(4, passwordLength));
-        const pin = generatePin(len, secureRandomIndex);
-        const updated = [...passwords];
-        updated[index] = pin;
-        setPasswords(updated);
-        ga('password_generated', { length: len, mode, ui_language: language, surface: 'home' });
-        return;
-      }
-      if (mode === 'words') {
-        const count = Math.min(8, Math.max(3, passwordLength));
-        try {
-          const words = await loadWordlist();
-          const phrase = generatePassphrase(words, count, separator, capitalize, secureRandomIndex);
-          const updated = [...passwords];
-          updated[index] = phrase;
-          setPasswords(updated);
-          ga('password_generated', { length: count, mode, ui_language: language, surface: 'home' });
-        } catch {
-          setSnackbars((prev) => [...prev, { id: Date.now(), message: t('warning_no_characters') }]);
-        }
-        return;
-      }
-      const standardConfig = passwordStandards[selectedStandard];
-      const effectiveLength = Math.max(passwordLength, standardConfig.minLength);
-      let password = '';
-
-      if (selectedStandard === 'custom') {
-        let allCharacters = '';
-        selectedCharacterSets.forEach((set) => {
-          allCharacters += characterSets[set];
-        });
-
-        if (allCharacters.length === 0) {
-          const updatedPasswords = [...passwords];
-          updatedPasswords[index] = '';
-          setPasswords(updatedPasswords);
-          setSnackbars((prev) => [
-            ...prev,
-            { id: Date.now(), message: t('warning_no_characters') },
-          ]);
-          setTimeout(() => {
-            setSnackbars((prev) => prev.filter((s) => s.id !== Date.now()));
-          }, 3000);
-          return;
-        }
-
-        for (let i = 0; i < effectiveLength; i++) {
-          password += allCharacters.charAt(secureRandomIndex(allCharacters.length));
-        }
-      } else {
-        standardConfig.requiredSets.forEach((set) => {
-          const chars = characterSets[set];
-          if (chars) {
-            password += chars.charAt(secureRandomIndex(chars.length));
-          }
-        });
-
-        let allCharacters = '';
-        selectedCharacterSets.forEach((set) => {
-          allCharacters += characterSets[set];
-        });
-
-        for (let i = password.length; i < effectiveLength; i++) {
-          password += allCharacters.charAt(secureRandomIndex(allCharacters.length));
-        }
-      }
-
-      // Fisher-Yates shuffle using cryptographically secure random
-      const arr = password.split('');
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = secureRandomIndex(i + 1);
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      password = arr.join('');
-      const updatedPasswords = [...passwords];
-      updatedPasswords[index] = password;
-      setPasswords(updatedPasswords);
-      ga('password_generated', {
-        length: effectiveLength,
-        standard: selectedStandard,
-        ui_language: language,
-        surface: 'home',
+      const password = await buildPassword();
+      if (!password) warnNoPassword();
+      setPasswords((prev) => {
+        const updated = [...prev];
+        updated[index] = password;
+        return updated;
       });
+      if (password) {
+        ga('password_generated', { length: password.length, mode, standard: selectedStandard, ui_language: language, surface: 'home' });
+      }
     },
-    [passwords, passwordLength, selectedCharacterSets, selectedStandard, t, mode, separator, capitalize, language]
+    [buildPassword, warnNoPassword, mode, selectedStandard, language]
   );
 
-  const generatePasswords = useCallback(async () => {
-    const currentQuantity = passwords.length;
-    const newQuantity = quantity - currentQuantity;
-    if (newQuantity > 0) {
-      const generatedPasswords = [...passwords];
-      for (let i = 0; i < newQuantity; i++) {
-        let password = '';
-        if (mode === 'pin') {
-          const len = Math.min(12, Math.max(4, passwordLength));
-          password = generatePin(len, secureRandomIndex);
-        } else if (mode === 'words') {
-          const count = Math.min(8, Math.max(3, passwordLength));
-          try {
-            const words = await loadWordlist();
-            password = generatePassphrase(words, count, separator, capitalize, secureRandomIndex);
-          } catch {
-            password = '';
-          }
-        } else {
-          let characters = '';
-          selectedCharacterSets.forEach((set) => {
-            characters += characterSets[set];
-          });
+  const lastQuantity = useRef(0);
 
-          if (characters.length === 0) {
-            generatedPasswords.push('');
-            continue;
-          }
-
-          for (let j = 0; j < passwordLength; j++) {
-            password += characters.charAt(secureRandomIndex(characters.length));
-          }
-        }
-        generatedPasswords.push(password);
-      }
-      setPasswords(generatedPasswords);
-      ga('passwords_generated_batch', {
-        count: newQuantity,
-        length: passwordLength,
-        mode,
-        ui_language: language,
-        surface: 'home',
-      });
-    } else if (currentQuantity > quantity) {
-      setPasswords(passwords.slice(0, quantity));
-    }
-  }, [passwords, quantity, selectedCharacterSets, passwordLength, mode, separator, capitalize, language]);
-
+  // Regenerate the whole list whenever any rule (or the quantity) changes.
   useEffect(() => {
-    generatePasswords();
-  }, [generatePasswords]);
+    let cancelled = false;
+    (async () => {
+      const generated = await Promise.all(Array.from({ length: Math.max(0, quantity) }, () => buildPassword()));
+      if (cancelled) return;
+      setPasswords(generated);
+      if (generated.some((p) => !p)) warnNoPassword();
+      else if (generated.length > 0) {
+        const params = { length: generated[0].length, mode, ui_language: language, surface: 'home' };
+        if (quantity !== lastQuantity.current) {
+          // initial load or quantity change: same event/semantics as before (only newly added passwords count)
+          const added = quantity - lastQuantity.current;
+          if (added > 0) ga('passwords_generated_batch', { count: added, ...params });
+        } else {
+          // rules changed: tracked separately so passwords_generated_batch stays comparable
+          ga('passwords_regenerated', { count: generated.length, ...params });
+        }
+      }
+      lastQuantity.current = quantity;
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [buildPassword, quantity]);
 
   const handleCopyClick = (index: number) => {
     if (index >= 0 && index < passwords.length && passwords[index]) {
