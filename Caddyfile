@@ -1,0 +1,14 @@
+{
+	auto_https disable_redirects
+}
+
+# SITE_ADDRESS=localhost -> Caddy's local CA (browser warning until its root is trusted)
+# SITE_ADDRESS=example.com -> real Let's Encrypt cert (needs public 80/443)
+{$SITE_ADDRESS:localhost} {
+	reverse_proxy web:3000
+}
+
+# explicit redirect so a non-443 HTTPS_PORT override still lands on the right port
+http://{$SITE_ADDRESS:localhost} {
+	redir https://{host}:{$HTTPS_PORT:443}{uri} permanent
+}
