@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { resolveAffiliateUrl } from '@/content/affiliate/links';
@@ -171,7 +172,8 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
     onClose();
   };
 
-  return (
+  // portal: an ancestor with transform/filter would otherwise become the containing block of `fixed`
+  return createPortal(
     <div
       className="fixed inset-0 z-[10050] flex items-end justify-center bg-black/50 p-3 sm:items-center"
       role="dialog"
@@ -234,6 +236,7 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
 
         <p className="mt-2 text-center text-[11px] italic text-[#6b7280] dark:text-[#9ca3af] dark:text-[#6B7280]">{c.ad}</p>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
