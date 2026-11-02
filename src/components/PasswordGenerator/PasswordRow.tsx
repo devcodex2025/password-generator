@@ -53,7 +53,7 @@ export default function PasswordRow({
           readOnly
         />
         {/* Tablet / small laptop: black pill — keep actions vertically centred with the field */}
-        <div className="hidden min-h-0 shrink-0 items-center justify-end gap-1.5 self-stretch pr-1.5 md:flex md:rounded-l-none md:rounded-r-[36px] md:bg-black lg:max-w-[300px] lg:gap-2 lg:rounded-[40px] lg:bg-transparent lg:pr-2">
+        <div className="hidden min-h-0 shrink-0 items-center justify-end gap-1.5 self-stretch pr-1.5 md:flex lg:max-w-[300px] lg:gap-2 lg:rounded-[40px] lg:pr-2">
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
