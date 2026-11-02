@@ -1,7 +1,7 @@
 # SEO todo — from tools.org.ua audit (2026-11-02)
 
-Source: https://tools.org.ua/uk/www/generatepasswordto.me — score **71/100**.
-Secondary source: W3C validator (validator.nu), 50 messages on `/ua`.
+Source: https://tools.org.ua/uk/www/generatepasswordto.me — score **71/100** → **74/100**
+after the fixes below (re-audited 15:03). W3C errors: **207 → 4**.
 
 ## Done already
 - [x] Title 54 chars, description 149 chars, keywords, OG tags, alt on all images, SEF URLs,
@@ -9,13 +9,15 @@ Secondary source: W3C validator (validator.nu), 50 messages on `/ua`.
 
 ## P1 — score points, low effort
 
-- [ ] **Print stylesheet** (+1.5): add `@media print` rules (white background, black text,
-      hide header/footer/ads). File: `src/styles/index.css`.
-- [ ] **Dublin Core meta** (+1): add `dc.title`, `dc.description`, `dc.language`,
-      `dc.identifier` via `metadata.other` in `[locale]/layout.tsx`.
-- [ ] **Inline styles cleanup**: reduce `style={{...}}` attributes in
-      `PasswordRow.tsx`, `PcShareBtn.tsx`, `ShareBlock.tsx`, `PasswordGenerator.tsx` —
-      move to classes. Validator flags inline CSS and it lowers the text/HTML ratio.
+- [x] **Print stylesheet** (+1.5): inline `<style media="print">` added to the head in
+      `[locale]/layout.tsx` (auditor does not detect `@media print` inside bundled CSS).
+      Result: "Чудово. Ми знайшли CSS файл…".
+- [x] **Dublin Core meta** (+1): `dc.title`, `dc.description`, `dc.language`, `dc.identifier`
+      via `generateMetadata` in `[locale]/layout.tsx`. Result: "Чудово".
+- [x] **Inline styles cleanup**: removed static inline styles in
+      `PasswordSettings.tsx`, `PcShareBtn.tsx`, `PasswordRow.tsx`, `PasswordGenerator.tsx`.
+      Remaining 30 style attributes are framework internals (Radix height var, Next Image
+      `color:transparent`, MUI Slider, AnimatedPassword `--char-index`).
 
 ## P2 — content/HTML ratio (7% vs 15% target)
 
@@ -29,11 +31,11 @@ Secondary source: W3C validator (validator.nu), 50 messages on `/ua`.
 
 ## P3 — HTML validity (validator.nu: 50 messages)
 
-- [ ] 42 of 50 errors are **Emotion `<style>` tags injected inside label/span/div/a** by MUI.
-      Fix: add `@mui/material-nextjs` `AppRouterCacheProvider` in the root layout (collects
-      Emotion styles into the head) or replace those MUI components with plain HTML controls.
+- [x] 42 of 50 errors were **Emotion `<style>` tags injected inside label/span/div/a** by MUI.
+      Fixed with `@mui/material-nextjs` `AppRouterCacheProvider` in the root layout; style tags
+      now render only in `<head>` (2 total). validator.nu: **50 → 8** messages, auditor: 207 → 4.
 - [ ] `aria-valuemin` / `aria-valuemax` duplicated on an element that already has `min`/`max`
-      (MUI Slider) — pass explicit aria props or drop them.
+      (MUI Slider internals) — cosmetic, cannot be fixed without replacing the component.
 - [ ] `div` inside `button` — find the offender (likely a MUI Button with block children) and
       switch to allowed phrasing content.
 - [ ] One `label for=` points to a non-existent id.
