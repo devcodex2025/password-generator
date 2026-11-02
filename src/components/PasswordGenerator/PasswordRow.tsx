@@ -119,6 +119,7 @@ export default function PasswordRow({
       {/* Mobile Share Button with dropdown menu */}
       <LongPressTip
         label={t('share-password')}
+        disabled={showShareMenu}
         className="flex h-14 min-w-0 flex-1 basis-0 items-center justify-center md:w-full md:flex-none md:basis-auto lg:hidden"
       >
         <ShareButton
