@@ -427,7 +427,9 @@ header {
 .logo {
   height: 40px;
   width: auto;
-  max-width: 100%;
+  max-width: none;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 @media (min-width: 640px) {

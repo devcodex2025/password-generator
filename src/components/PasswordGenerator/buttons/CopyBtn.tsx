@@ -10,8 +10,9 @@ interface CopyButtonProps {
 
 const CopyButton: React.FC<CopyButtonProps> = ({ onClick, disabled, children, className = '', style }) => (
   <button
+    type="button"
     disabled={disabled}
-    className={`copy-btn w-full h-14 font-semibold text-[16px] md:text-[20px] rounded-[60px] py-[12px] transition-all duration-200 ${className}`}
+    className={`copy-btn inline-flex w-full h-14 items-center justify-center font-semibold text-[16px] md:text-[20px] rounded-[60px] py-0 transition-all duration-200 ${className}`}
     style={style}
     onClick={onClick}
   >

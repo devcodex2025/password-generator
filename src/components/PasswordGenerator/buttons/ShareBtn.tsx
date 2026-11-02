@@ -11,7 +11,8 @@ interface ShareButtonProps {
 
 const ShareButton: React.FC<ShareButtonProps> = ({ onClick, children, className = '', style, iconClassName }) => (
   <button
-    className={`bg-[#E5F6FF] text-[#2A4E63] dark:!bg-[#05a9ff] dark:!text-[#0a1e2a] font-semibold rounded-[60px] px-[16px] py-[12px] flex items-center transition-all duration-200 hover:bg-[#d7eefb] dark:hover:!bg-[#38beff] hover:underline underline-offset-4 decoration-2 ${className}`}
+    type="button"
+    className={`inline-flex items-center justify-center bg-[#E5F6FF] text-[#2A4E63] dark:!bg-[#05a9ff] dark:!text-[#0a1e2a] font-semibold leading-none rounded-[60px] px-[16px] py-[12px] transition-all duration-200 hover:bg-[#d7eefb] dark:hover:!bg-[#38beff] hover:underline underline-offset-4 decoration-2 ${className}`}
     onClick={onClick}
     style={{ cursor: 'pointer', ...style }}
   >

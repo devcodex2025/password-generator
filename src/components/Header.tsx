@@ -124,14 +124,13 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
 
   const localePrefix = `/${language}`;
   const homeHref = language === 'en' ? '/' : localePrefix;
+  /* Keep only the primary pages in the header so each gets more internal
+     weight. Legal/contact pages already live in the footer. */
   const navItemDefinitions: Array<{ labelKey: LinkLabelKey; href: string }> = [
     { labelKey: 'generator', href: homeHref },
     { labelKey: 'guides', href: `${localePrefix}/guides` },
     { labelKey: 'bestManagers', href: `${localePrefix}/best-password-managers-2026` },
     { labelKey: 'vpn', href: `${localePrefix}/guides/vpn-security-privacy-guide` },
-    { labelKey: 'contact', href: `${localePrefix}/contact` },
-    { labelKey: 'privacyPolicy', href: `${localePrefix}/privacy-policy` },
-    { labelKey: 'termsOfService', href: `${localePrefix}/terms-of-service` },
   ];
   const navItems = navItemDefinitions.map((item) => ({
     ...item,
@@ -373,7 +372,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             <Image
               src={isDarkMode ? '/images/logo-dark.svg' : '/images/logo.svg'}
               alt="Generate Password To Me - Secure Password Generator Logo"
-              className="w-auto mr-2 logo"
+              className="w-auto mr-2 logo shrink-0 object-contain"
               priority
               decoding="async"
               width={405}
@@ -389,7 +388,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             <Image
               src={isDarkMode ? '/images/logo-dark.svg' : '/images/logo.svg'}
               alt="Generate Password To Me - Secure Password Generator Logo"
-              className="w-auto mr-2 logo"
+              className="w-auto mr-2 logo shrink-0 object-contain"
               priority
               decoding="async"
               width={405}

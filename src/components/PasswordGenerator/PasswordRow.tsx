@@ -52,8 +52,8 @@ export default function PasswordRow({
           className="ml-3 min-w-0 flex-1 self-center rounded-[40px] border-none bg-transparent py-2 pr-2 text-base outline-none dark:text-white md:ml-4 md:text-lg lg:h-full lg:py-1"
           readOnly
         />
-        {/* Tablet / small laptop: black pill — nudge up slightly between md and lg */}
-        <div className="hidden min-h-0 shrink-0 items-center justify-end gap-1.5 self-center pr-1.5 md:max-lg:-translate-y-1 md:flex md:rounded-l-none md:rounded-r-[36px] md:bg-black lg:max-w-[300px] lg:translate-y-0 lg:gap-2 lg:rounded-[40px] lg:bg-transparent lg:pr-2">
+        {/* Tablet / small laptop: black pill — keep actions vertically centred with the field */}
+        <div className="hidden min-h-0 shrink-0 items-center justify-end gap-1.5 self-center pr-1.5 md:flex md:rounded-l-none md:rounded-r-[36px] md:bg-black lg:max-w-[300px] lg:gap-2 lg:rounded-[40px] lg:bg-transparent lg:pr-2">
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
@@ -104,7 +104,7 @@ export default function PasswordRow({
       </div>
       <CopyButton
         disabled={!password || isAnimating}
-        className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} w-full -bottom-12 h-14 lg:w-[20%] ${isDarkMode ? 'text-[#000000]' : 'text-white'} font-semibold text-[16px] md:text-[20px] rounded-[60px] py-[12px] ${!password || isAnimating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+        className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} w-full h-14 lg:w-[20%] ${isDarkMode ? 'text-[#000000]' : 'text-white'} font-semibold text-[16px] md:text-[20px] rounded-[60px] py-0 ${!password || isAnimating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
         onClick={handleCopy}
       >
         {copied ? t('copied_short') : t('copy')}

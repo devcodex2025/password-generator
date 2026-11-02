@@ -58,63 +58,69 @@ const Footer = ({ language }) => {
 
   return (
     <>
-      <footer className="footer-accent-scope w-full py-6 px-2 dark:px-0 border-t border-[#E5F6FF] dark:border-transparent bg-transparent">
-        <div className="mb-5 h-px w-full bg-[#dff2fb] dark:hidden" />
-        <div className="mt-8 w-full grid grid-cols-1 md:grid-cols-2 items-start justify-items-stretch gap-6 text-left">
-          <div className="w-full min-w-0 self-stretch">
-            <h3 className="text-base font-semibold text-slate-900 dark:text-white">{headingLabel('footer_guide_articles')}</h3>
-            <ul className="mt-3 w-full space-y-2 text-sm text-slate-600 dark:text-slate-200">
-              {guideArticleLinks.slice(0, 4).map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className={linkClass}>
-                    {item.label}
+      <footer className="footer-accent-scope w-full border-t border-[#E5F6FF] px-4 py-8 dark:border-transparent">
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-8 text-center">
+          <div className="flex w-full flex-col items-start justify-between gap-8 text-left sm:flex-row sm:items-start sm:gap-12">
+            <div className="flex w-full min-w-0 flex-col items-start sm:w-auto">
+              <h3 className="text-base font-semibold text-slate-900 dark:text-white">{headingLabel('footer_guide_articles')}</h3>
+              <ul className="mt-3 flex w-full flex-col items-start space-y-2 text-sm text-slate-600 dark:text-slate-200">
+                {guideArticleLinks.slice(0, 4).map((item) => (
+                  <li key={item.href} className="w-full">
+                    <Link href={item.href} className={linkClass}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+                <li className="w-full">
+                  <Link href={`/${locale}/best-password-managers-2026`} className={linkClass}>
+                    {linkLabel('bestManagers')}
                   </Link>
                 </li>
-              ))}
-              <li>
-                <Link href={`/${locale}/best-password-managers-2026`} className={linkClass}>
-                  {linkLabel('bestManagers')}
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full min-w-0 self-stretch">
-            <h3 className="text-base font-semibold text-slate-900 dark:text-white">{headingLabel('footer_legal')}</h3>
-            <ul className="mt-3 w-full space-y-3 text-sm text-slate-600 dark:text-slate-200">
-              {legalLinks.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className={linkClass}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+              </ul>
+            </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 text-sm text-[#b2b2b2] md:flex-row md:items-end md:text-left">
-          <div className="flex items-center justify-center md:justify-start">
-            <Image
-              src={isDarkMode ? '/images/logo-dark.svg' : '/images/logo.svg'}
-              alt="Generate Password To Me - Secure Password Generator Logo"
-              width={180}
-              height={58}
-              className="w-[180px] h-auto"
-              loading="lazy"
-            />
+            <div className="flex w-full min-w-0 flex-col items-start sm:w-auto">
+              <h3 className="text-base font-semibold text-slate-900 dark:text-white">{headingLabel('footer_legal')}</h3>
+              <ul className="mt-3 flex w-full flex-col items-start space-y-3 text-sm text-slate-600 dark:text-slate-200">
+                {legalLinks.map((item) => (
+                  <li key={item.href} className="w-full">
+                    <Link href={item.href} className={linkClass}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="text-center md:text-center">
-            {t('footer_copyright', language)} © <span className="text-[#05a9ff] dark:!text-[#7dd3fc] font-bold">GeneratePasswordTo.Me</span> {currentYear}
-          </div>
-          <div className="flex items-center gap-4">
-            <Link href={githubLink.href} target="_blank" rel="noopener noreferrer" className={externalLinkClass}>
-              <GitHubIcon fontSize="small" />
-              {githubLink.label}
+
+          <div className="grid w-full grid-cols-1 justify-items-center gap-5 border-t border-[#E5F6FF] pt-6 text-sm text-[#b2b2b2] md:grid-cols-[1fr_auto_1fr] md:items-center dark:border-[#374151]">
+            <Link
+              href={locale === 'en' ? '/' : `/${locale}`}
+              aria-label="Generate Password To Me - home"
+              className="inline-flex justify-self-center transition-opacity duration-200 hover:opacity-90 md:justify-self-start"
+            >
+              <Image
+                src={isDarkMode ? '/images/logo-dark.svg' : '/images/logo.svg'}
+                alt="Generate Password To Me - Secure Password Generator Logo"
+                width={200}
+                height={45}
+                className="h-auto w-[170px] object-contain sm:w-[190px]"
+                loading="lazy"
+              />
             </Link>
-            <Link href={sitemapLink.href} target="_blank" rel="noopener noreferrer" className={externalLinkClass}>
-              <LanguageIcon fontSize="small" />
-              {sitemapLink.label}
-            </Link>
+            <p className="text-center">
+              {t('footer_copyright', language)} © <span className="font-bold text-[#05a9ff] dark:!text-[#7dd3fc]">GeneratePasswordTo.Me</span> {currentYear}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3 md:justify-self-end">
+              <Link href={githubLink.href} target="_blank" rel="noopener noreferrer" className={externalLinkClass}>
+                <GitHubIcon fontSize="small" />
+                {githubLink.label}
+              </Link>
+              <Link href={sitemapLink.href} target="_blank" rel="noopener noreferrer" className={externalLinkClass}>
+                <LanguageIcon fontSize="small" />
+                {sitemapLink.label}
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
