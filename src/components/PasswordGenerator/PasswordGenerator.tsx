@@ -301,7 +301,10 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   });
 
   useEffect(() => {
+    let cancelled = false;
+
     const calculateStrength = async () => {
+      if (cancelled) return;
       if (passwords.length === 0) {
         setPasswordStrengthAnalysis({
           strengthWord: '',
@@ -314,6 +317,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
 
       try {
         const zxcvbn = (await import('zxcvbn')).default;
+        if (cancelled) return;
         const TimeToCrackResult = zxcvbn(passwords[0]);
         const CrackScore = TimeToCrackResult.score;
         const strengthWord = getStrengthWord(CrackScore, i18n.language);
@@ -335,7 +339,17 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       }
     };
 
-    calculateStrength();
+    // zxcvbn ships ~800 KB of dictionaries — load and run it when the browser is
+    // idle so it never competes with LCP/TBT on first paint.
+    const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback;
+    const cic = (window as unknown as { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback;
+    const id = ric ? ric(() => void calculateStrength(), { timeout: 2500 }) : window.setTimeout(() => void calculateStrength(), 1200);
+
+    return () => {
+      cancelled = true;
+      if (cic) cic(id);
+      else clearTimeout(id);
+    };
   }, [passwords, t]);
 
   return (
