@@ -74,12 +74,15 @@ left untouched; it never fires on this site.
 ```powershell
 $env:GA4_CREDENTIALS='\\wsl.localhost\Ubuntu\home\<user>\.config\minebench-google-analytics\gsc-service-account.json'
 
-npm run ga4                    # 28-day report
-npm run ga4 -- --days=7        # shorter window
-npm run ga4 -- --funnel        # add the conversion funnel
-npm run ga4 -- --json          # machine-readable output
-npm run ga4 -- --funnel --by=customEvent:ui_language
+npm.cmd run ga4                    # 28-day report
+npm.cmd run ga4 -- --days=7        # shorter window
+npm.cmd run ga4 -- --funnel        # add the conversion funnel
+npm.cmd run ga4 -- --json          # machine-readable output
+npm.cmd run ga4 -- --funnel --by=customEvent:ui_language
 ```
+
+On Windows PowerShell use `npm.cmd`, not `npm`: the `npm.ps1` shim silently drops arguments
+after `--`. `GA4_CREDENTIALS` is read from `.env.local` when it is not in the environment.
 
 The script reports totals, channels, landing pages, top pages, events, key events, the funnel
 `page_view → password_generated → password_copied → affiliate click`, and data-quality warnings.

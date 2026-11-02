@@ -21,28 +21,13 @@
  * Join key: the sub-id written by resolveAffiliateUrl() — "gen-<locale>-<placement>" —
  * which the network stores as Stat.affiliate_info1.
  */
-import fs from 'node:fs';
-import path from 'node:path';
-import { loadServiceAccount, getAccessToken, apiJson, resolvePropertyId } from './lib/google-auth.mjs';
+import { loadServiceAccount, getAccessToken, apiJson, resolvePropertyId, loadEnvFiles } from './lib/google-auth.mjs';
 
 const args = process.argv.slice(2);
 const getArg = (name, fallback = '') => {
   const hit = args.find((a) => a.startsWith(`--${name}=`));
   return hit ? hit.split('=').slice(1).join('=') : fallback;
 };
-
-function loadEnvFiles(files) {
-  for (const file of files) {
-    const full = path.join(process.cwd(), file);
-    if (!fs.existsSync(full)) continue;
-    for (const line of fs.readFileSync(full, 'utf8').split(/\r?\n/)) {
-      const match = line.match(/^\s*([A-Za-z0-9_]+)\s*=\s*(.*)\s*$/);
-      if (match && !process.env[match[1]]) {
-        process.env[match[1]] = match[2].replace(/^["']|["']$/g, '').trim();
-      }
-    }
-  }
-}
 
 loadEnvFiles(['.env.local', '.env']);
 

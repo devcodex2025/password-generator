@@ -36,12 +36,14 @@ The script never prints the key. Rotate it in the panel if it ever leaks.
 ## Usage
 
 ```powershell
-npm run affiliate                  # 28-day window, network + GA4 cross-check
-npm run affiliate -- --days=7
-npm run affiliate -- --days=90
-npm run affiliate -- --json
-npm run affiliate -- --no-ga4       # skip the GA4 cross-check
+npm.cmd run affiliate                  # 28-day window, network + GA4 cross-check
+npm.cmd run affiliate -- --days=7
+npm.cmd run affiliate -- --days=90
+npm.cmd run affiliate -- --json
+npm.cmd run affiliate -- --no-ga4       # skip the GA4 cross-check
 ```
+
+On Windows PowerShell use `npm.cmd`: the `npm.ps1` shim silently drops arguments after `--`.
 
 Output: totals (clicks, conversions, CR, payout, EPC), approved/pending/rejected split when
 conversions exist, breakdown by placement, by locale and by raw sub-id, plus warnings for

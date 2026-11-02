@@ -17,6 +17,9 @@
  */
 import fs from 'node:fs';
 import crypto from 'node:crypto';
+import { loadEnvFiles } from './lib/google-auth.mjs';
+
+loadEnvFiles(['.env.local', '.env']);
 
 const args = process.argv.slice(2);
 const getArg = (name, fallback = '') => {
@@ -165,6 +168,7 @@ async function buildFunnel(token, propertyId) {
           filterExpression: {
             orGroup: {
               expressions: [
+                { funnelEventFilter: { eventName: 'affiliate_outbound_click' } },
                 { funnelEventFilter: { eventName: 'nordpass_affiliate_click' } },
                 { funnelEventFilter: { eventName: 'nordvpn_affiliate_click' } },
               ],

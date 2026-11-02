@@ -3,7 +3,22 @@
  * Zero dependencies: signs a JWT with the key and exchanges it for an access token.
  */
 import fs from 'node:fs';
+import path from 'node:path';
 import crypto from 'node:crypto';
+
+/** Loads KEY=value pairs from .env files without overriding the real environment. */
+export function loadEnvFiles(files) {
+  for (const file of files) {
+    const full = path.join(process.cwd(), file);
+    if (!fs.existsSync(full)) continue;
+    for (const line of fs.readFileSync(full, 'utf8').split(/\r?\n/)) {
+      const match = line.match(/^\s*([A-Za-z0-9_]+)\s*=\s*(.*)\s*$/);
+      if (match && !process.env[match[1]]) {
+        process.env[match[1]] = match[2].replace(/^["']|["']$/g, '').trim();
+      }
+    }
+  }
+}
 
 const b64url = (data) =>
   Buffer.from(data)
