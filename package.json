@@ -58,6 +58,7 @@
     "db:seed-content": "node scripts/seed-content.mjs",
     "db:seed-content:mongo": "node scripts/seed-content-mongo.mjs",
     "content:validate": "node scripts/validate-content.mjs",
+    "cdn:check": "node scripts/check-cdn.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "gsc": "node scripts/gsc-report.mjs",
     "keywords": "node scripts/keyword-research.mjs",
