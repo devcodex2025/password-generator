@@ -30,7 +30,7 @@ A privacy-first password generator, breach checker, and password security tool b
 ## Features
 
 - **Secure password generation** - uses browser-side cryptographically strong randomness.
-- **Multi-language support** - Ukrainian, English, Spanish, French, German, Italian, Portuguese, Russian, Chinese, Japanese, and Polish.
+- **Multi-language support** - English, Ukrainian, Spanish, French, German, Italian, Portuguese, Russian, Chinese, Japanese, Polish, and Vietnamese.
 - **Password strength analysis** - estimates crack time with `zxcvbn`.
 - **Password breach check** - checks passwords against Have I Been Pwned Pwned Passwords using k-anonymity.
 - **Flexible settings** - password length from 4 to 100 characters.
@@ -45,7 +45,7 @@ A privacy-first password generator, breach checker, and password security tool b
 
 ## Languages
 
-Generate Password To Me currently supports 11 interface languages:
+Generate Password To Me currently supports 12 interface languages:
 
 | Flag | Code | Language |
 | --- | --- | --- |
@@ -60,6 +60,9 @@ Generate Password To Me currently supports 11 interface languages:
 | 🇨🇳 | `zh` | [中文](https://www.generatepasswordto.me/zh) |
 | 🇯🇵 | `ja` | [日本語](https://www.generatepasswordto.me/ja) |
 | 🇵🇱 | `pl` | [Polski](https://www.generatepasswordto.me/pl) |
+| 🇻🇳 | `vi` | [Tiếng Việt](https://www.generatepasswordto.me/vi) |
+
+The English home is canonical at `/`. Requests to `/en` receive a 301 redirect to `/`, while English subpages keep the `/en` prefix (for example, `/en/guides`).
 
 ## Translations
 
