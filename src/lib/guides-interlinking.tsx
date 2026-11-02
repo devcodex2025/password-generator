@@ -127,11 +127,21 @@ export function createGuideLinkTargets(
     });
 }
 
+/** Adds an attributable sub-id to hard-coded affiliate links in article bodies. */
+function withAffiliateSubId(href: string, ctx?: { locale: string; slug: string }): string {
+  if (/[?&]aff_sub=/.test(href)) return href;
+  const locale = (ctx?.locale || 'en').replace(/[^a-zA-Z0-9_-]/g, '');
+  const slug = (ctx?.slug || 'article').replace(/[^a-zA-Z0-9_-]/g, '');
+  const subId = `gen-${locale}-guide-${slug}`;
+  return `${href}${href.includes('?') ? '&' : '?'}aff_sub=${subId}`;
+}
+
 export function renderGuideTextWithLinks(
   text: string,
   targets: GuideLinkTarget[],
   state: InterlinkState,
   keyPrefix: string,
+  affiliate?: { locale: string; slug: string },
 ): ReactNode[] {
   const parts = text.split(/(\*\*.+?\*\*|\[.+?\]\(.+?\))/g);
 
@@ -151,12 +161,13 @@ export function renderGuideTextWithLinks(
       const match = part.match(/\[(.+?)\]\((.+?)\)/);
       if (match) {
         const [, linkText, href] = match;
+        const isAffiliate = /go\.nordvpn\.net\/aff_c/.test(href);
         return (
           <a
             key={`${keyPrefix}-link-${index}`}
-            href={href}
+            href={isAffiliate ? withAffiliateSubId(href, affiliate) : href}
             target="_blank"
-            rel="noopener noreferrer"
+            rel={isAffiliate ? 'sponsored noopener noreferrer' : 'noopener noreferrer'}
             className="text-[#2A4E63] dark:text-[#d7f2ff] hover:text-[#1f3b4c] dark:hover:text-white underline underline-offset-4 decoration-2 transition-colors font-semibold"
           >
             {linkText}

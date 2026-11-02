@@ -17,12 +17,14 @@ interface NordVpnAffiliatePromoProps {
 
 /* в”Ђв”Ђ Analytics helper в”Ђв”Ђ */
 
-function trackClick(label: string) {
+function trackClick(label: string, locale: string, placement: string) {
   try {
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
       window.gtag('event', 'nordvpn_affiliate_click', {
         event_category: 'affiliate',
         event_label: label,
+        placement,
+        ui_language: locale,
       });
     }
     if (typeof window !== 'undefined' && typeof window.va === 'function') {
@@ -128,7 +130,7 @@ export default function NordVpnAffiliatePromo({ locale, className = '', placemen
           href={vpn.href}
           target="_blank"
           rel="sponsored noopener"
-          onClick={() => trackClick('get_nordvpn')}
+          onClick={() => trackClick('get_nordvpn', locale, placement)}
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#05a9ff] hover:bg-[#38beff] !text-[#0a1e2a] font-semibold py-3 px-6 transition-all duration-200 shadow-md hover:shadow-lg"
         >
           <Shield className="w-5 h-5" aria-hidden="true" />
@@ -138,7 +140,7 @@ export default function NordVpnAffiliatePromo({ locale, className = '', placemen
           href={vpn.href}
           target="_blank"
           rel="sponsored noopener"
-          onClick={() => trackClick('learn_more_nordvpn')}
+          onClick={() => trackClick('learn_more_nordvpn', locale, placement)}
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#05a9ff] !text-[#38beff] hover:bg-[#05a9ff] hover:!text-[#0a1e2a] font-semibold py-3 px-6 transition-all duration-200"
         >
           <ExternalLink className="w-5 h-5" aria-hidden="true" />

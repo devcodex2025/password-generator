@@ -126,7 +126,7 @@ function track(event: string, locale: string) {
       window.gtag('event', event, {
         event_category: 'affiliate',
         placement: 'save-modal',
-        locale,
+        ui_language: locale,
         offer: 'nordpass',
       });
     }

@@ -104,7 +104,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         const updated = [...passwords];
         updated[index] = pin;
         setPasswords(updated);
-        ga('password_generated', { length: len, mode });
+        ga('password_generated', { length: len, mode, ui_language: language, surface: 'home' });
         return;
       }
       if (mode === 'words') {
@@ -115,7 +115,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           const updated = [...passwords];
           updated[index] = phrase;
           setPasswords(updated);
-          ga('password_generated', { length: count, mode });
+          ga('password_generated', { length: count, mode, ui_language: language, surface: 'home' });
         } catch {
           setSnackbars((prev) => [...prev, { id: Date.now(), message: t('warning_no_characters') }]);
         }
@@ -176,9 +176,14 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       const updatedPasswords = [...passwords];
       updatedPasswords[index] = password;
       setPasswords(updatedPasswords);
-      ga('password_generated', { length: effectiveLength, standard: selectedStandard });
+      ga('password_generated', {
+        length: effectiveLength,
+        standard: selectedStandard,
+        ui_language: language,
+        surface: 'home',
+      });
     },
-    [passwords, passwordLength, selectedCharacterSets, selectedStandard, t, mode, separator, capitalize]
+    [passwords, passwordLength, selectedCharacterSets, selectedStandard, t, mode, separator, capitalize, language]
   );
 
   const generatePasswords = useCallback(async () => {
@@ -217,11 +222,17 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         generatedPasswords.push(password);
       }
       setPasswords(generatedPasswords);
-      ga('passwords_generated_batch', { count: newQuantity, length: passwordLength, mode });
+      ga('passwords_generated_batch', {
+        count: newQuantity,
+        length: passwordLength,
+        mode,
+        ui_language: language,
+        surface: 'home',
+      });
     } else if (currentQuantity > quantity) {
       setPasswords(passwords.slice(0, quantity));
     }
-  }, [passwords, quantity, selectedCharacterSets, passwordLength, mode, separator, capitalize]);
+  }, [passwords, quantity, selectedCharacterSets, passwordLength, mode, separator, capitalize, language]);
 
   useEffect(() => {
     generatePasswords();
@@ -238,7 +249,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         setSnackbars((prev) => prev.filter((s) => s.id !== Date.now()));
       }, 500);
       runReward('confetti');
-      ga('password_copied', { index });
+      ga('password_copied', { index, ui_language: language, surface: 'home' });
 
       // Highest-intent moment: offer to store the password (max 2 times per visitor)
       if (shouldShowSavePrompt()) {
@@ -258,7 +269,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         setSnackbars((prev) => prev.filter((s) => s.id !== Date.now()));
       }, 500);
       runReward('balloons');
-      ga('passwords_copied_all', { count: passwords.length });
+      ga('passwords_copied_all', { count: passwords.length, ui_language: language, surface: 'home' });
     }
   };
 
@@ -273,7 +284,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       link.click();
       document.body.removeChild(link);
       runReward('emoji');
-      ga('passwords_downloaded', { count: passwords.length });
+      ga('passwords_downloaded', { count: passwords.length, ui_language: language, surface: 'home' });
     }
   };
 

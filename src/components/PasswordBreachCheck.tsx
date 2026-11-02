@@ -259,7 +259,7 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
                         event_category: 'affiliate',
                         event_label: 'breach-result',
                         placement: 'breach-result',
-                        locale: language,
+                        ui_language: language,
                         offer: 'nordpass',
                         value: 7.74,
                         currency: 'USD',

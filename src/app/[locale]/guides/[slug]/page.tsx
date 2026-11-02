@@ -303,12 +303,12 @@ export default async function GuideArticlePage({
               <Fragment key={`${section.heading}-${index}`}>
                 <section>
                   <h2 className="text-2xl font-semibold text-[#071016] dark:text-[#e0e0e0]">
-                    {renderGuideTextWithLinks(section.heading, linkTargets, interlinkState, `heading-${index}`)}
+                    {renderGuideTextWithLinks(section.heading, linkTargets, interlinkState, `heading-${index}`, { locale, slug })}
                   </h2>
                   <div className="mt-3 space-y-3">
                     {section.paragraphs.map((paragraph, pIndex) => (
                       <p key={pIndex} className="text-[#374151] dark:text-[#c7c7c7] leading-7">
-                        {renderGuideTextWithLinks(paragraph, linkTargets, interlinkState, `paragraph-${index}-${pIndex}`)}
+                        {renderGuideTextWithLinks(paragraph, linkTargets, interlinkState, `paragraph-${index}-${pIndex}`, { locale, slug })}
                       </p>
                     ))}
                   </div>
@@ -316,7 +316,7 @@ export default async function GuideArticlePage({
                     <ul className="mt-4 list-disc pl-5 space-y-2 text-[#374151] dark:text-[#c7c7c7]">
                       {section.bullets.map((bullet, bIndex) => (
                         <li key={bIndex}>
-                          {renderGuideTextWithLinks(bullet, linkTargets, interlinkState, `bullet-${index}-${bIndex}`)}
+                          {renderGuideTextWithLinks(bullet, linkTargets, interlinkState, `bullet-${index}-${bIndex}`, { locale, slug })}
                         </li>
                       ))}
                     </ul>

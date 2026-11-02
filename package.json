@@ -63,7 +63,10 @@
     "indexnow": "node scripts/indexnow.mjs",
     "backlinks": "node scripts/backlink-queue.mjs",
     "gsc": "node scripts/gsc-report.mjs",
+    "ga4": "node scripts/ga4-report.mjs",
+    "affiliate": "node scripts/affiliate-report.mjs",
     "antislop": "node scripts/antislop-scan.mjs",
+    "adsense:audit": "node scripts/adsense-audit.mjs",
     "keywords": "node scripts/keyword-research.mjs",
     "keywords:map": "node scripts/keyword-map.mjs",
     "keywords:cloud": "node scripts/keyword-cloud.mjs"

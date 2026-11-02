@@ -24,7 +24,7 @@ function trackClick(label: string, locale: string, placement: string) {
         event_category: 'affiliate',
         event_label: `${placement}:${label}`,
         placement,
-        locale,
+        ui_language: locale,
         offer: 'nordpass',
         value: 7.74,
         currency: 'USD',
