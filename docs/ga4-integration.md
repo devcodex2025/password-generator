@@ -67,6 +67,10 @@ left untouched; it never fires on this site.
 | `nordvpn_affiliate_click` | `placement`, `ui_language`, `event_label` |
 | `affiliate_outbound_click` | `product`, `placement`, `ui_language`, `affiliate_offer_id` — every outbound affiliate click, including plain prose links |
 
+Server-side, `npm run affiliate:sync` sends a `purchase` event per approved conversion through the
+Measurement Protocol: `transaction_id` = `aff-<conversion id>`, `value` = affiliate payout,
+`currency`, `items` with the offer name. GA4 deduplicates on `transaction_id`.
+
 `length` means characters for random/PIN modes and word count for passphrase mode.
 
 ## Usage

@@ -65,6 +65,7 @@
     "gsc": "node scripts/gsc-report.mjs",
     "ga4": "node scripts/ga4-report.mjs",
     "affiliate": "node scripts/affiliate-report.mjs",
+    "affiliate:sync": "node scripts/affiliate-sync.mjs",
     "antislop": "node scripts/antislop-scan.mjs",
     "adsense:audit": "node scripts/adsense-audit.mjs",
     "keywords": "node scripts/keyword-research.mjs",

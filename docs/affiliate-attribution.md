@@ -100,22 +100,55 @@ volume the difference between 1 sale and 0 is noise, not a signal.
 - **No GA4 revenue.** Sales stay outside GA4 unless purchase events are pushed back with the
   Measurement Protocol.
 
-## Phase 2 — sales inside GA4 (optional, heavier)
+## Phase 2 — sales inside GA4 (implemented 2026-11-02)
 
-Prerequisites: unique click id, server-side storage for the click → GA4 `client_id` mapping, and
-the Measurement Protocol secret.
+GA4 now receives a `purchase` event for every approved conversion, with revenue in the property.
 
-1. Put a unique id in `aff_sub2` (`gp_<random>`), keep the readable bucket in `aff_sub`.
-2. On click, `POST /api/affiliate/click` with `{ clickId, clientId, placement, locale }`; store
-   with a TTL of ~60 days.
-3. Pull conversions, look up the client id, send a `purchase` event with `transaction_id` =
-   conversion id, `value` = payout, `currency` = USD.
-4. GA4 deduplicates on `transaction_id`, so re-running is safe.
+**How the join works without a database**
 
-Hard limit: the Measurement Protocol accepts events backdated at most **72 hours**. Later
-conversions can be counted offline but cannot be inserted into the original GA4 session. That is
-why the network report stays the source of truth for revenue.
+1. On every outbound affiliate click, `AffiliateOutboundTracker` reads the GA4 client id from the
+   `_ga` cookie (only when analytics consent is granted) and appends it as `aff_sub2`.
+2. The network stores it and returns it on the conversion as `Stat.affiliate_info2`.
+3. `runAffiliateSync()` reads approved conversions, maps `aff_sub2 → client_id`, and posts a
+   Measurement Protocol `purchase` with `transaction_id` = `aff-<conversion id>`.
 
-Privacy: the mapping stores a pseudonymous GA4 client id and click metadata only. No emails, no
-passwords, no newsletter data. Nothing that identifies a person, and nothing beyond the click
-registration is exposed publicly.
+**Where the code lives**
+
+| Piece | File |
+|---|---|
+| Click id injection + click event | `src/components/affiliate/AffiliateOutboundTracker.tsx` |
+| Conversion → GA4 mapping | `src/lib/affiliate/sync.ts` |
+| Endpoint (auth: `CRON_SECRET`) | `src/app/api/affiliate/sync/route.ts` |
+| Daily cron (05:00 UTC) | `vercel.json` |
+| Manual trigger | `npm.cmd run affiliate:sync` |
+
+**Required environment variables (Vercel + `.env.local`)**
+
+```text
+NORD_AFFILIATE_API_KEY=...
+NORD_AFFILIATE_NETWORK_ID=nordvpn
+GA4_MEASUREMENT_ID=G-0D1YR3HRJD
+GA4_MP_API_SECRET=...          # GA4 → Admin → Data streams → Measurement Protocol API secrets
+CRON_SECRET=...                # any long random string
+```
+
+The Measurement Protocol secret for this property is `affiliate-purchase-sync`; the value is in
+`.env.local` and must be copied into Vercel.
+
+**Manual run**
+
+```powershell
+npm.cmd run affiliate:sync                 # last 30 days, live
+npm.cmd run affiliate:sync -- --validate   # GA4 validation endpoint, writes nothing
+npm.cmd run affiliate:sync -- --dry        # list what would be sent
+```
+
+**Limits that remain**
+
+- Only `approved` conversions are sent. Pending ones are created later; rejected ones never.
+- `value` is the **affiliate payout**, not the customer's purchase amount.
+- Measurement Protocol accepts backdating up to **72 hours**; later conversions are recorded with
+  the sync timestamp instead of the original one.
+- The GA4 client id is shared with the affiliate network as `aff_sub2` (pseudonymous, no PII). The
+  privacy policy must disclose this; update it before relying on the numbers.
+- If the visitor denied analytics consent, no client id exists and the conversion stays offline.
