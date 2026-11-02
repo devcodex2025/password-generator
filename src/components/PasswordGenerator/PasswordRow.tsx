@@ -8,6 +8,10 @@ import CopyButton from './buttons/CopyBtn';
 import ShareButton from './buttons/ShareBtn';
 import SharePassword from './buttons/SharePassword';
 import PcShareBtn from './buttons/PcShareBtn';
+import LongPressTip from './buttons/LongPressTip';
+import RefreshIcon from '@mui/icons-material/Refresh';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CheckIcon from '@mui/icons-material/Check';
 
 interface PasswordRowProps {
   password: string;
@@ -93,36 +97,44 @@ export default function PasswordRow({
           />
         </div>
       </div>
-      <div className="flex md:hidden h-16 items-center justify-center flex-nowrap w-full bg-[#E5F6FF] lg:bg-transparent rounded-[40px]">
+      <LongPressTip label={t('generate')} className="flex h-14 min-w-0 flex-1 basis-0 md:hidden">
         <GenerateButton
           onClick={() => onGenerate(index)}
-          onLongPress={handleLongPress}
-          className="flex h-14 w-full items-center justify-center whitespace-nowrap rounded-[60px] px-4 text-[16px]"
+          className="h-full w-full px-4"
         >
-          {t('generate_short')}
+          <RefreshIcon aria-hidden="true" />
+          <span className="sr-only">{t('generate_short')}</span>
         </GenerateButton>
-      </div>
-      <CopyButton
-        disabled={!password || isAnimating}
-        className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} w-full h-14 lg:w-[20%] ${isDarkMode ? 'text-[#000000]' : 'text-white'} font-semibold text-[16px] md:text-[20px] rounded-[60px] py-0 ${!password || isAnimating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
-        onClick={handleCopy}
-      >
-        {copied ? t('copied_short') : t('copy')}
-      </CopyButton>
+      </LongPressTip>
+      <LongPressTip label={t('copy')} className="flex h-14 min-w-0 flex-1 basis-0 md:contents">
+        <CopyButton
+          disabled={!password || isAnimating}
+          className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} w-full h-14 lg:w-[20%] ${isDarkMode ? 'text-[#000000]' : 'text-white'} font-semibold text-[16px] md:text-[20px] rounded-[60px] py-0 ${!password || isAnimating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+          onClick={handleCopy}
+        >
+          <span className="flex md:hidden" aria-hidden="true">{copied ? <CheckIcon /> : <ContentCopyIcon />}</span>
+          <span className="sr-only md:not-sr-only">{copied ? t('copied_short') : t('copy')}</span>
+        </CopyButton>
+      </LongPressTip>
       {/* Mobile Share Button with dropdown menu */}
-      <div className="flex lg:hidden h-14 items-center justify-center flex-nowrap w-full bg-[#E5F6FF] lg:bg-transparent rounded-[40px] relative">
+      <LongPressTip
+        label={t('share-password')}
+        disabled={showShareMenu}
+        className="flex h-14 min-w-0 flex-1 basis-0 items-center justify-center md:w-full md:flex-none md:basis-auto lg:hidden"
+      >
         <ShareButton
           onClick={() => setShowShareMenu((prev) => !prev)}
-          className="flex lg:hidden text-[16px] md:text-[18px] lg:text-[24px] rounded-[60px] px-[8px] md:px-[16px] py-[10px] md:py-[12px] lg:my-0 whitespace-nowrap justify-center py-0 items-center px-4 h-full w-full"
+          iconClassName="transition-transform duration-200 hover:scale-110 md:mr-2"
+          className="flex h-full w-full items-center justify-center whitespace-nowrap rounded-[60px] px-4 text-[16px] md:text-[18px] lg:hidden"
         >
-          {t('share-password')}
+          <span className="sr-only md:not-sr-only">{t('share-password')}</span>
         </ShareButton>
         {showShareMenu && (
-          <div className="absolute top-[110%] left-0 z-10 w-full">
+          <div className="absolute top-[110%] right-0 z-10 w-56 md:left-0 md:w-full">
             <SharePassword password={password} isDarkMode={isDarkMode} />
           </div>
         )}
-      </div>
+      </LongPressTip>
     </div>
   );
 }
