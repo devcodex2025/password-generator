@@ -1,84 +1,44 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import AdSense from 'react-adsense';
-import SeoAccordion from "@/components/SeoAccordion";
+import { ADSENSE_ENABLED, useMarketingConsent } from '@/lib/marketing-consent';
 
+/**
+ * AdSense unit with reserved space and an unfilled check.
+ *
+ * `react-adsense` never calls `onLoad`/`onError`, so readiness is read from the
+ * `<ins>` element that AdSense fills. The unit only mounts after marketing
+ * consent, and the tag itself is loaded by `AdSenseLoader`.
+ */
 const SmartAdBanner = ({
   adSlot = '8766567218',
   className = '',
   style = {},
-  fallbackContent = null
+  fallbackContent = null,
 }) => {
-  const [adState, setAdState] = useState('loading');
   const [showContainer, setShowContainer] = useState(true);
-  const timeoutRef = useRef(null);
   const containerRef = useRef(null);
-
-  // Detect ad blocker
-  const detectAdBlocker = () => {
-    try {
-      if (typeof window !== 'undefined' && !window.adsbygoogle) {
-        return true;
-      }
-      if (typeof document !== "undefined") {
-        const testAd = document.createElement('div');
-        testAd.className = 'adsbygoogle';
-        testAd.style.cssText = 'position: absolute; left: -10000px; width: 1px; height: 1px;';
-        document.body.appendChild(testAd);
-
-        const isBlocked = testAd.offsetHeight === 0;
-        document.body.removeChild(testAd);
-
-        return isBlocked;
-      }
-
-    } catch (error) {
-      return true;
-    }
-  };
-
-  // Check if container has proper dimensions
-  const checkContainerDimensions = () => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      return rect.width > 0 && rect.height > 0;
-    }
-    return false;
-  };
+  const consentGranted = useMarketingConsent();
 
   useEffect(() => {
-    // In production, don't show anything if ad blocker detected
-    if (process.env.NODE_ENV === 'production' && detectAdBlocker()) {
-      setShowContainer(false);
-      return;
+    if (!ADSENSE_ENABLED || !consentGranted || process.env.NODE_ENV !== 'production') {
+      return undefined;
     }
 
-    // In production, load ads immediately without delays
-    if (process.env.NODE_ENV === 'production') {
-      // Set a very short timeout just to ensure DOM is ready
-      timeoutRef.current = setTimeout(() => {
-        if (adState === 'loading') {
-          setAdState('failed');
-          setShowContainer(false);
-        }
-      }, 2000); // 2 second timeout for production
-    } else {
-      // Development mode - longer timeout
-      timeoutRef.current = setTimeout(() => {
-        if (adState === 'loading') {
-          setAdState('failed');
-          setShowContainer(false);
-        }
-      }, 8000);
-    }
-
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+    setShowContainer(true);
+    const timer = setTimeout(() => {
+      const unit = containerRef.current?.querySelector('ins.adsbygoogle');
+      const status = unit?.getAttribute('data-ad-status');
+      const loader = document.querySelector('script[src*="adsbygoogle.js"]');
+      // No tag means the loader never ran; unfilled means there is no ad.
+      if (!unit || !loader || status === 'unfilled') {
+        setShowContainer(false);
       }
-    };
-  }, [adState]);
+    }, 3000);
 
-  // Don't show ads in development
+    return () => clearTimeout(timer);
+  }, [consentGranted]);
+
+  // Never render real ad units in development or before consent.
   if (process.env.NODE_ENV === 'development') {
     return fallbackContent || (
       <div className={`ad-placeholder ${className}`} style={style}>
@@ -89,26 +49,7 @@ const SmartAdBanner = ({
     );
   }
 
-  // Don't render anything if ad shouldn't be shown
-  if (!showContainer || adState === 'blocked' || adState === 'failed') {
-    return null; // Return null instead of fallback content
-  }
-
-  const handleAdLoad = () => {
-    setAdState('loaded');
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
-
-  const handleAdError = (error) => {
-    console.error('AdSense error:', error);
-    setAdState('failed');
-    setShowContainer(false);
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
+  if (!ADSENSE_ENABLED || !consentGranted || !showContainer) return null;
 
   return (
     <div
@@ -121,25 +62,24 @@ const SmartAdBanner = ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        position: 'relative'
+        position: 'relative',
       }}
     >
       <AdSense.Google
-        client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "ca-pub-5995594246081561"}
+        client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT || 'ca-pub-5995594246081561'}
         slot={adSlot}
         format="auto"
         responsive="true"
         style={{
           display: 'block',
           minHeight: '90px',
-          minWidth: '320px'
+          minWidth: '320px',
+          width: '100%',
         }}
         data-full-width-responsive="true"
-        onLoad={handleAdLoad}
-        onError={handleAdError}
       />
     </div>
   );
 };
 
-export default SmartAdBanner; 
+export default SmartAdBanner;

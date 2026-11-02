@@ -7,6 +7,8 @@ import NavigationProgress from '@/components/NavigationProgress';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
 import { buildHomeMetadata, SUPPORTED_LANGS, HTML_LANG_MAP } from '@/lib/home-metadata';
 import HomeStructuredData from '@/components/seo/HomeStructuredData';
+import AdSenseLoader from '@/components/Advertising/AdSenseLoader';
+import CookieConsentMount from '@/components/CookieConsent/CookieConsentMount';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const arsenal = Arsenal({ 
@@ -112,12 +114,52 @@ export default async function LocaleLayout({
             `,
           }}
         />
+        {/*
+          Consent Mode v2 defaults must be set before any Google tag (AdSense,
+          GA) runs, regardless of whether GA is configured.
+        */}
+        <Script
+          id="consent-mode-default"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('consent', 'default', {
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                analytics_storage: 'denied',
+                wait_for_update: 500,
+              });
+              try {
+                var cc = document.cookie.match(/(?:^|;\\s*)cc_cookie=([^;]+)/);
+                if (cc) {
+                  var stored = JSON.parse(decodeURIComponent(cc[1]));
+                  var cats = stored.categories || [];
+                  var analytics = cats.indexOf('analytics') !== -1;
+                  var marketing = cats.indexOf('marketing') !== -1;
+                  if (analytics || marketing) {
+                    gtag('consent', 'update', {
+                      analytics_storage: analytics ? 'granted' : 'denied',
+                      ad_storage: marketing ? 'granted' : 'denied',
+                      ad_user_data: marketing ? 'granted' : 'denied',
+                      ad_personalization: marketing ? 'granted' : 'denied',
+                    });
+                  }
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+        <AdSenseLoader />
         {process.env.NEXT_PUBLIC_GA_ID ? (
           <>
             {/*
               GA is third-party and not needed for the first paint. Loading it
               after window load keeps it out of the LCP critical path; consent
-              mode defaults to denied until the CMP updates it.
+              defaults to denied until the CMP updates it.
             */}
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
@@ -128,33 +170,6 @@ export default async function LocaleLayout({
               strategy="lazyOnload"
               dangerouslySetInnerHTML={{
                 __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);} 
-                  gtag('js', new Date());
-                  gtag('consent', 'default', {
-                    ad_storage: 'denied',
-                    ad_user_data: 'denied',
-                    ad_personalization: 'denied',
-                    analytics_storage: 'denied',
-                    wait_for_update: 500,
-                  });
-                  try {
-                    var cc = document.cookie.match(/(?:^|;\\s*)cc_cookie=([^;]+)/);
-                    if (cc) {
-                      var stored = JSON.parse(decodeURIComponent(cc[1]));
-                      var cats = stored.categories || [];
-                      var analytics = cats.indexOf('analytics') !== -1;
-                      var marketing = cats.indexOf('marketing') !== -1;
-                      if (analytics || marketing) {
-                        gtag('consent', 'update', {
-                          analytics_storage: analytics ? 'granted' : 'denied',
-                          ad_storage: marketing ? 'granted' : 'denied',
-                          ad_user_data: marketing ? 'granted' : 'denied',
-                          ad_personalization: marketing ? 'granted' : 'denied',
-                        });
-                      }
-                    }
-                  } catch (e) {}
                   gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
                     anonymize_ip: true,
                   });
@@ -173,6 +188,7 @@ export default async function LocaleLayout({
           </AppRouterCacheProvider>
         </div>
         <SpeedInsights />
+        <CookieConsentMount language={locale} />
       </body>
     </html>
   );

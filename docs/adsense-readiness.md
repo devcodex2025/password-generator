@@ -3,6 +3,10 @@
 Status as of 2026-11-01. Everything technical is in place; approval itself is an account-level
 action that only the site owner can perform.
 
+> **2026-11-02 live audit:** see `docs/adsense-audit-2026-11-02.md` (208 URLs crawled). Two P0 gaps
+> found: the AdSense loader script is not served at all, and `/about` returns 404. Thin-content risk
+> is low; legal pages and contact pages are thin in most locales.
+
 ## Checklist
 
 | Requirement | Status | Where |
@@ -15,7 +19,7 @@ action that only the site owner can perform.
 | Google Consent Mode v2 | ✅ default denied → updated on consent |
 | Terms of service | ✅ exists | `/{locale}/terms-of-service` |
 | Contact page | ✅ exists | `/{locale}/contact` |
-| Ad units in code | ✅ SmartAdBanner / AdBanner components render `adsbygoogle` |
+| Ad units in code | ⚠️ components exist, loader missing | `SmartAdBanner` / `AdBanner` render `adsbygoogle`, but `pagead2`/`adsbygoogle.js` is absent from production; containers hide after 2 s. See audit. |
 | No prohibited content | ✅ tool site, no adult/violent/pirated content |
 | Core Web Vitals | ✅ Lighthouse 100/100/100 on the home page |
 | HTTPS + canonical + hreflang | ✅ |

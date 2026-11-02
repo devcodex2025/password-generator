@@ -24,7 +24,6 @@ const SeoAccordion = SeoAccordionDirect;
 const ShareBlock = dynamic(() => import('@/components/ShareBlock'), { ssr: false });
 const AdBanner = dynamic(() => import('@/components/Advertising/Adbanner'), { ssr: false });
 const AdBannerSecond = dynamic(() => import('@/components/Advertising/AdbannerSecond'), { ssr: false });
-const CookieConsent = dynamic(() => import('@/components/CookieConsent/CookieConsent'), { ssr: false });
 const NordPassAffiliatePromo = dynamic(() => import('@/components/affiliate/NordPassAffiliatePromo'));
 const OfferStrip = dynamic(() => import('@/components/affiliate/OfferStrip'), { ssr: false });
 const AffiliateBanner = dynamic(() => import('@/components/affiliate/AffiliateBanner'), { ssr: false });
@@ -108,7 +107,6 @@ export default function Page({ params }: PageProps) {
           <AdBannerSecond language={locale} isDarkMode={isDarkMode} />
         </main>
         <Footer language={locale} />
-        <CookieConsent language={locale} />
       </div>
     </I18nextProvider>
   );

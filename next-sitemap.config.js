@@ -24,7 +24,7 @@ const guideSlugs = [
   'secure-password-generator-guide',
   'vpn-security-privacy-guide',
 ];
-const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'best-password-managers-2026'];
+const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'about', 'best-password-managers-2026'];
 
 /**
  * Guides that have a Vietnamese `vi` export in src/content/articles/<slug>.ts.
@@ -88,7 +88,7 @@ module.exports = {
     // `vi` has routes and translated home/legal pages. Vietnamese guide articles
     // are listed only for slugs that have a translated `vi` export.
     const allLanguages = [...availableLanguages, 'vi'];
-    const viStaticSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'best-password-managers-2026'];
+    const viStaticSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'about', 'best-password-managers-2026'];
 
     const localePages = allLanguages.map((langCode) => ({
         loc: `/${langCode}`,

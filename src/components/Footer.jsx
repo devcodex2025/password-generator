@@ -30,6 +30,7 @@ const Footer = ({ language }) => {
     { label: linkLabel('privacyPolicy'), href: `/${locale}/privacy-policy` },
     { label: linkLabel('termsOfService'), href: `/${locale}/terms-of-service` },
     { label: linkLabel('contact'), href: `/${locale}/contact` },
+    { label: t('aboutus_title', locale), href: `/${locale}/about` },
   ];
 
   const homepageGuideSlugs = new Set([
