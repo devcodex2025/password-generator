@@ -89,7 +89,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={htmlLang} suppressHydrationWarning>
-      <head />
+      <head>
+        <style media="print">{`body{background:#fff!important;color:#000!important}header,footer,aside,.smart-ad-container,#cc-main{display:none!important}a{color:#000!important;text-decoration:underline}`}</style>
+      </head>
       <body className={`${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}>
         <Script
           id="theme-init"

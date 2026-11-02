@@ -358,14 +358,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         <div
           id="rewardSingle"
           ref={rewardAnchorRef}
-          style={{
-            position: 'fixed',
-            left: '50%',
-            top: '35%',
-            transform: 'translate(-50%, -50%)',
-            pointerEvents: 'none',
-            zIndex: 9999,
-          }}
+          className="fixed left-1/2 top-[35%] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[9999]"
         />
         <div
           className={`${isDarkMode ? 'bg-[rgb(22_20_20)] border-[#1d2e48]' : 'bg-white border-[#E5F6FF]'} floating-pill absolute hidden drop-shadow-lg top-[-5px] left-[-140px] z-[999] border-2 border-solid rounded-[120px] py-[2px] w-[200px] text-[#2A4E63] text-[30px] hidden items-center gap-2 overflow-hidden pointer-events-none `}

@@ -27,9 +27,6 @@ export default function PasswordRow({
   isDarkMode,
 }: PasswordRowProps) {
   const { t } = useTranslation();
-  const copyDisabledStyle = isAnimating
-    ? { pointerEvents: 'none' as const, opacity: 0.5, cursor: 'not-allowed' }
-    : { cursor: 'pointer' };
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -107,8 +104,7 @@ export default function PasswordRow({
       </div>
       <CopyButton
         disabled={!password || isAnimating}
-        className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} w-full -bottom-12 h-14 lg:w-[20%] ${isDarkMode ? 'text-[#000000]' : 'text-white'} font-semibold text-[16px] md:text-[20px] rounded-[60px] py-[12px]`}
-        style={password ? copyDisabledStyle : { cursor: 'not-allowed', opacity: 0.5 }}
+        className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} w-full -bottom-12 h-14 lg:w-[20%] ${isDarkMode ? 'text-[#000000]' : 'text-white'} font-semibold text-[16px] md:text-[20px] rounded-[60px] py-[12px] ${!password || isAnimating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
         onClick={handleCopy}
       >
         {copied ? t('copied_short') : t('copy')}
