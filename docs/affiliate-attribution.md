@@ -133,7 +133,9 @@ CRON_SECRET=...                # any long random string
 ```
 
 The Measurement Protocol secret for this property is `affiliate-purchase-sync`; the value is in
-`.env.local` and must be copied into Vercel.
+`.env.local`. All five variables are configured for Production and Preview in Vercel
+(2026-11-02); the cron is registered at 05:00 UTC and the endpoint returns 401 without the bearer
+token and 200 with it.
 
 **Manual run**
 
