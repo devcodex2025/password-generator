@@ -264,13 +264,13 @@ export default function ShareBlock({
         aria-expanded={isOpen}
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <div className="min-w-0">
-          <div className="flex items-center gap-2">
+        <span className="block min-w-0">
+          <span className="flex items-center gap-2">
             <ShareIcon className="text-[#3a6077] dark:text-[#d7f2ff]" fontSize="small" />
-            <h4 className="text-[#071016] dark:text-[#e0e0e0] font-semibold">{t.share}</h4>
-          </div>
-          <span className="text-sm text-gray-500 dark:text-gray-300">{t.help}</span>
-        </div>
+            <span className="text-[#071016] dark:text-[#e0e0e0] font-semibold">{t.share}</span>
+          </span>
+          <span className="block text-sm text-gray-500 dark:text-gray-300">{t.help}</span>
+        </span>
         <svg
           width="18"
           height="18"

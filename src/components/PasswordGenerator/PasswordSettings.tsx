@@ -134,9 +134,9 @@ export default function PasswordSettings({
                 ))}
             </div>
             <div className="mt-8 flex min-w-0 max-w-full flex-col gap-3 items-start lg:mt-6">
-                <label htmlFor="password-length" className="hero-muted-label text-[16px] md:text-[22px]">
+                <span className="hero-muted-label text-[16px] md:text-[22px]">
                     {lengthLabel} {passwordLength}
-                </label>
+                </span>
                 <div className="flex min-w-0 w-full max-w-full items-center gap-2 sm:gap-4">
                       <RemoveCircleOutlineIcon
                         aria-hidden={false}
