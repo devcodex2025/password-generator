@@ -21,6 +21,7 @@ const LOCALES = {
   pt: { hl: 'pt', gl: 'pt', seeds: ['gerador de senhas', 'senha segura', 'gerenciador de senhas', 'como criar uma senha segura'] },
   ja: { hl: 'ja', gl: 'jp', seeds: ['パスワード 生成', '強力なパスワード', 'パスワード 管理', '安全なパスワード 作り方'] },
   zh: { hl: 'zh-CN', gl: 'cn', seeds: ['密码生成器', '强密码', '密码管理器', '如何创建强密码'] },
+  vi: { hl: 'vi', gl: 'vn', seeds: ['tạo mật khẩu', 'mật khẩu mạnh', 'trình quản lý mật khẩu', 'cách tạo mật khẩu', 'cụm mật khẩu', 'kiểm tra mật khẩu', 'mật khẩu ngẫu nhiên'] },
 };
 
 async function suggest(hl, gl, q) {

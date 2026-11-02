@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T14:12:36.054Z",
+  "generatedAt": "2026-11-02T15:37:26.613Z",
   "source": "google-autocomplete",
   "locales": {
     "en": {
@@ -4001,6 +4001,349 @@
           "密码管理器生成",
           "密码管理器开源",
           "密码管理器安全吗"
+        ]
+      }
+    },
+    "vi": {
+      "phrases": 69,
+      "topTerms": [
+        {
+          "term": "mật",
+          "count": 70
+        },
+        {
+          "term": "khẩu",
+          "count": 70
+        },
+        {
+          "term": "tạo",
+          "count": 24
+        },
+        {
+          "term": "trình",
+          "count": 11
+        },
+        {
+          "term": "mạnh",
+          "count": 10
+        },
+        {
+          "term": "ngẫu",
+          "count": 10
+        },
+        {
+          "term": "nhiên",
+          "count": 10
+        },
+        {
+          "term": "quản",
+          "count": 10
+        },
+        {
+          "term": "lý",
+          "count": 10
+        },
+        {
+          "term": "cách",
+          "count": 10
+        },
+        {
+          "term": "cụm",
+          "count": 10
+        },
+        {
+          "term": "kiểm",
+          "count": 10
+        },
+        {
+          "term": "tra",
+          "count": 10
+        },
+        {
+          "term": "trên",
+          "count": 9
+        },
+        {
+          "term": "là",
+          "count": 8
+        },
+        {
+          "term": "gì",
+          "count": 8
+        },
+        {
+          "term": "google",
+          "count": 7
+        },
+        {
+          "term": "cho",
+          "count": 6
+        },
+        {
+          "term": "của",
+          "count": 6
+        },
+        {
+          "term": "laptop",
+          "count": 4
+        },
+        {
+          "term": "máy",
+          "count": 4
+        },
+        {
+          "term": "tính",
+          "count": 4
+        },
+        {
+          "term": "win",
+          "count": 3
+        },
+        {
+          "term": "pi",
+          "count": 3
+        },
+        {
+          "term": "wifi",
+          "count": 3
+        },
+        {
+          "term": "đã",
+          "count": 3
+        },
+        {
+          "term": "lưu",
+          "count": 3
+        },
+        {
+          "term": "11",
+          "count": 2
+        },
+        {
+          "term": "fb",
+          "count": 2
+        },
+        {
+          "term": "nhất",
+          "count": 2
+        },
+        {
+          "term": "ví",
+          "count": 2
+        },
+        {
+          "term": "android",
+          "count": 2
+        },
+        {
+          "term": "đâu",
+          "count": 2
+        },
+        {
+          "term": "gmail",
+          "count": 2
+        },
+        {
+          "term": "dụng",
+          "count": 2
+        },
+        {
+          "term": "điện",
+          "count": 2
+        },
+        {
+          "term": "thoại",
+          "count": 2
+        },
+        {
+          "term": "chrome",
+          "count": 2
+        },
+        {
+          "term": "10",
+          "count": 1
+        },
+        {
+          "term": "24",
+          "count": 1
+        }
+      ],
+      "topBigrams": [
+        {
+          "term": "mật khẩu",
+          "count": 70
+        },
+        {
+          "term": "tạo mật",
+          "count": 24
+        },
+        {
+          "term": "khẩu mạnh",
+          "count": 10
+        },
+        {
+          "term": "ngẫu nhiên",
+          "count": 10
+        },
+        {
+          "term": "trình quản",
+          "count": 10
+        },
+        {
+          "term": "quản lý",
+          "count": 10
+        },
+        {
+          "term": "lý mật",
+          "count": 10
+        },
+        {
+          "term": "cách tạo",
+          "count": 10
+        },
+        {
+          "term": "cụm mật",
+          "count": 10
+        },
+        {
+          "term": "kiểm tra",
+          "count": 10
+        },
+        {
+          "term": "tra mật",
+          "count": 10
+        },
+        {
+          "term": "khẩu ngẫu",
+          "count": 9
+        },
+        {
+          "term": "là gì",
+          "count": 7
+        },
+        {
+          "term": "khẩu cho",
+          "count": 5
+        },
+        {
+          "term": "khẩu trên",
+          "count": 4
+        },
+        {
+          "term": "máy tính",
+          "count": 4
+        },
+        {
+          "term": "khẩu google",
+          "count": 4
+        },
+        {
+          "term": "khẩu của",
+          "count": 4
+        },
+        {
+          "term": "khẩu wifi",
+          "count": 3
+        },
+        {
+          "term": "đã lưu",
+          "count": 3
+        },
+        {
+          "term": "lưu trên",
+          "count": 3
+        },
+        {
+          "term": "win 11",
+          "count": 2
+        },
+        {
+          "term": "trên laptop",
+          "count": 2
+        },
+        {
+          "term": "khẩu fb",
+          "count": 2
+        },
+        {
+          "term": "mạnh nhất",
+          "count": 2
+        },
+        {
+          "term": "mạnh là",
+          "count": 2
+        },
+        {
+          "term": "khẩu là",
+          "count": 2
+        },
+        {
+          "term": "trên điện",
+          "count": 2
+        },
+        {
+          "term": "điện thoại",
+          "count": 2
+        },
+        {
+          "term": "khẩu chrome",
+          "count": 2
+        }
+      ],
+      "intentPhrases": {
+        "general": [
+          "tạo mật khẩu chatgpt",
+          "tạo mật khẩu cho win 11",
+          "tạo mật khẩu cho thư mục win 10",
+          "tạo mật khẩu trên laptop",
+          "tạo mật khẩu đăng nhập máy tính",
+          "tạo mật khẩu viber",
+          "tạo mật khẩu steam",
+          "tạo mật khẩu file nén",
+          "tạo mật khẩu fb",
+          "mật khẩu mạnh ngẫu nhiên",
+          "mật khẩu mạnh nhất là gì",
+          "mật khẩu mạnh cho id apple",
+          "mật khẩu mạnh google",
+          "mật khẩu mạnh là mật khẩu như thế nào",
+          "mật khẩu mạnh 8 ký tự",
+          "mật khẩu mạnh ví dụ",
+          "mật khẩu mạnh là gì",
+          "mật khẩu mạnh nhất",
+          "mật khẩu mạnh dễ nhớ",
+          "trình quản lý mật khẩu android",
+          "trình quản lý mật khẩu là gì",
+          "trình quản lý mật khẩu google ở đâu",
+          "trình quản lý mật khẩu của gmail",
+          "trình quản lý mật khẩu có tác dụng gì",
+          "trình quản lý mật khẩu của roblox"
+        ],
+        "passphrase": [
+          "tạo mật khẩu word",
+          "trình quản lý mật khẩu (password manager)",
+          "cụm mật khẩu passphrase là gì"
+        ],
+        "manager": [
+          "trình quản lý mật khẩu bitwarden"
+        ]
+      },
+      "useInSeo": {
+        "title": [
+          "tạo mật khẩu chatgpt",
+          "tạo mật khẩu word",
+          "tạo mật khẩu cho win 11"
+        ],
+        "h1": [
+          "tạo mật khẩu chatgpt",
+          "tạo mật khẩu word"
+        ],
+        "faq": [
+          "tạo mật khẩu word",
+          "trình quản lý mật khẩu (password manager)",
+          "cụm mật khẩu passphrase là gì"
+        ],
+        "internalLinks": [
+          "trình quản lý mật khẩu bitwarden"
         ]
       }
     }

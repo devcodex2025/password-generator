@@ -1,6 +1,6 @@
 # Keyword cloud per locale
 
-Generated: 2026-11-02T14:12:36.054Z
+Generated: 2026-11-02T15:37:26.613Z
 
 Weight = number of distinct autocomplete suggestions containing the term.
 
@@ -255,3 +255,25 @@ verificar senhas (8) · senhas salvas (6) · senhas google (5) · no celular (4)
 - title: 密码生成器 / 密码生成器 1password / 密码生成器chrome
 - H1: 密码生成器 / 密码生成器 1password
 - FAQ: 密码生成器 / 密码生成器 1password / 密码生成器chrome / 密码生成器批量 / 密码生成器github
+
+## vi — 69 phrases
+
+**Top terms (term × weight):**
+
+mật (70) · khẩu (70) · tạo (24) · trình (11) · mạnh (10) · ngẫu (10) · nhiên (10) · quản (10) · lý (10) · cách (10) · cụm (10) · kiểm (10) · tra (10) · trên (9) · là (8) · gì (8) · google (7) · cho (6) · của (6) · laptop (4) · máy (4) · tính (4) · win (3) · pi (3) · wifi (3)
+
+**Top bigrams:**
+
+mật khẩu (70) · tạo mật (24) · khẩu mạnh (10) · ngẫu nhiên (10) · trình quản (10) · quản lý (10) · lý mật (10) · cách tạo (10) · cụm mật (10) · kiểm tra (10) · tra mật (10) · khẩu ngẫu (9) · là gì (7) · khẩu cho (5) · khẩu trên (4)
+
+**By intent:**
+
+- **general**: tạo mật khẩu chatgpt · tạo mật khẩu cho win 11 · tạo mật khẩu cho thư mục win 10 · tạo mật khẩu trên laptop · tạo mật khẩu đăng nhập máy tính · tạo mật khẩu viber · tạo mật khẩu steam · tạo mật khẩu file nén
+- **passphrase**: tạo mật khẩu word · trình quản lý mật khẩu (password manager) · cụm mật khẩu passphrase là gì
+- **manager**: trình quản lý mật khẩu bitwarden
+
+**Where to use:**
+
+- title: tạo mật khẩu chatgpt / tạo mật khẩu word / tạo mật khẩu cho win 11
+- H1: tạo mật khẩu chatgpt / tạo mật khẩu word
+- FAQ: tạo mật khẩu word / trình quản lý mật khẩu (password manager) / cụm mật khẩu passphrase là gì

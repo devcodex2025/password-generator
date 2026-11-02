@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T14:12:36.512Z",
+  "generatedAt": "2026-11-02T15:37:27.893Z",
   "source": "google-autocomplete",
   "locales": {
     "en": {
@@ -1103,6 +1103,48 @@
             "密码生成器github",
             "密码生成器、",
             "强密码生成器"
+          ]
+        }
+      }
+    },
+    "vi": {
+      "locale": "vi",
+      "totalUnique": 69,
+      "clusters": {
+        "other": {
+          "count": 65,
+          "target": "/vi",
+          "status": "review",
+          "note": "manual review",
+          "keywords": [
+            "tạo mật khẩu chatgpt",
+            "tạo mật khẩu cho win 11",
+            "tạo mật khẩu cho thư mục win 10",
+            "tạo mật khẩu trên laptop",
+            "tạo mật khẩu đăng nhập máy tính",
+            "tạo mật khẩu viber",
+            "tạo mật khẩu steam",
+            "tạo mật khẩu file nén"
+          ]
+        },
+        "passphrase": {
+          "count": 2,
+          "target": "/vi/guides/passphrase-vs-password-entropy",
+          "status": "gap-feature",
+          "note": "add words-mode generator + landing section",
+          "keywords": [
+            "tạo mật khẩu word",
+            "cụm mật khẩu passphrase là gì"
+          ]
+        },
+        "manager": {
+          "count": 2,
+          "target": "/vi/best-password-managers-2026",
+          "status": "partial",
+          "note": "platform sections (Android/iPhone/Chrome)",
+          "keywords": [
+            "trình quản lý mật khẩu (password manager)",
+            "trình quản lý mật khẩu bitwarden"
           ]
         }
       }

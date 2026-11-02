@@ -1,6 +1,6 @@
 # Keyword map by locale
 
-Generated: 2026-11-02T14:12:36.512Z
+Generated: 2026-11-02T15:37:27.893Z
 
 Every cluster is mapped to the page that must rank for it. Status: `exists` (page exists,
 verify on-page), `partial` (page exists, needs sections), `gap-section` (content to add),
@@ -12,11 +12,11 @@ verify on-page), `partial` (page exists, needs sections), `gap-section` (content
 |---|---|
 | core | 11/11 |
 | strength | 11/11 |
-| manager | 9/11 |
+| manager | 10/11 |
 | howto | 9/11 |
 | check | 8/11 |
 | length | 5/11 |
-| passphrase | 4/11 |
+| passphrase | 5/11 |
 
 ## en — 116 unique queries
 
@@ -318,5 +318,23 @@ verify on-page), `partial` (page exists, needs sections), `gap-section` (content
 **strength**: 强密码生成 · 强密码 · 强密码在线生成 · 强密码随机生成 · 强密码规则 · 强密码检查器 · 强密码产生 · 强密码 英文
 
 **core**: 密码生成器 · 密码生成器 1password · 密码生成器chrome · 密码生成器批量 · 密码生成器github · 密码生成器、 · 强密码生成器
+
+</details>
+
+## vi — 69 unique queries
+
+| Cluster | Queries | Target | Status | Action |
+|---|---|---|---|---|
+| other | 65 | `/vi` | review | manual review |
+| passphrase | 2 | `/vi/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
+| manager | 2 | `/vi/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+
+<details><summary>top keywords</summary>
+
+**other**: tạo mật khẩu chatgpt · tạo mật khẩu cho win 11 · tạo mật khẩu cho thư mục win 10 · tạo mật khẩu trên laptop · tạo mật khẩu đăng nhập máy tính · tạo mật khẩu viber · tạo mật khẩu steam · tạo mật khẩu file nén
+
+**passphrase**: tạo mật khẩu word · cụm mật khẩu passphrase là gì
+
+**manager**: trình quản lý mật khẩu (password manager) · trình quản lý mật khẩu bitwarden
 
 </details>
