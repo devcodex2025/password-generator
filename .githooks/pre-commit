@@ -1,0 +1,8 @@
+#!/bin/sh
+# Staged-only secret scan. Install with: npm run hooks:install
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "gitleaks is not installed; skipping secret scan (see docs/secret-scanning.md)" >&2
+  exit 0
+fi
+
+gitleaks git --staged --config .gitleaks.toml --redact -v

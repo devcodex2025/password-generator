@@ -69,6 +69,7 @@
     "antislop": "node scripts/antislop-scan.mjs",
     "adsense:audit": "node scripts/adsense-audit.mjs",
     "secrets:scan": "gitleaks git . --config .gitleaks.toml --redact -v",
+    "hooks:install": "git config core.hooksPath .githooks",
     "keywords": "node scripts/keyword-research.mjs",
     "keywords:map": "node scripts/keyword-map.mjs",
     "keywords:cloud": "node scripts/keyword-cloud.mjs"

@@ -14,6 +14,15 @@ npm run secrets:scan
 The command scans the full git history with `.gitleaks.toml` and prints a redacted report.
 It exits non-zero when a finding is not covered by the allowlist.
 
+Optional pre-commit hook (scans only staged changes):
+
+```bash
+npm run hooks:install
+```
+
+It skips silently when gitleaks is not installed, so contributors without the binary are not
+blocked.
+
 ## CI
 
 `.github/workflows/gitleaks.yml` runs on every push to `next` and on every pull request:
