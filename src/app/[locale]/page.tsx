@@ -13,10 +13,14 @@ import { useRouter, usePathname } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 
 /* ── Below-fold components: lazy-loaded to reduce initial JS bundle ── */
-const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs'), { ssr: false });
-const PasswordBreachCheck = dynamic(() => import('@/components/PasswordBreachCheck'), { ssr: false });
-const GuideLinksSection = dynamic(() => import('@/components/GuideLinksSection'), { ssr: false });
-const SeoAccordion = dynamic(() => import('@/components/SeoAccordion'), { ssr: false });
+import WhyChooseUsDirect from '@/components/WhyChooseUs';
+import PasswordBreachCheckDirect from '@/components/PasswordBreachCheck';
+import GuideLinksSectionDirect from '@/components/GuideLinksSection';
+import SeoAccordionDirect from '@/components/SeoAccordion';
+const WhyChooseUs = WhyChooseUsDirect;
+const PasswordBreachCheck = PasswordBreachCheckDirect;
+const GuideLinksSection = GuideLinksSectionDirect;
+const SeoAccordion = SeoAccordionDirect;
 const ShareBlock = dynamic(() => import('@/components/ShareBlock'), { ssr: false });
 const AdBanner = dynamic(() => import('@/components/Advertising/Adbanner'), { ssr: false });
 const AdBannerSecond = dynamic(() => import('@/components/Advertising/AdbannerSecond'), { ssr: false });
