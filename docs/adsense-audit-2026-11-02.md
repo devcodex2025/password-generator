@@ -3,6 +3,10 @@
 Live audit of `https://www.generatepasswordto.me`: thin content, duplicate content, and AdSense
 policy/technical compatibility.
 
+> **Status update (same day):** the loader and `/about` findings are fixed in code. The tag is
+> gated behind `NEXT_PUBLIC_ADSENSE_ENABLED` because the site is not approved yet, and behind
+> marketing consent. See `docs/adsense-fix-plan-2026-11-02.md` for what remains.
+
 ## What ran
 
 | Step | Tool | Scope | Result |
@@ -52,6 +56,9 @@ All four links exist in the served HTML (`/en/privacy-policy`, `/en/terms-of-ser
 
 ### P0 — AdSense loader is not on the page
 
+> Fixed in code: `AdSenseLoader` renders the tag after marketing consent when
+> `NEXT_PUBLIC_ADSENSE_ENABLED=true`. The flag stays off until the account is approved.
+
 The publisher meta tag and `ads.txt` are present, but the AdSense loader script is not.
 
 Evidence:
@@ -81,6 +88,9 @@ Fix, in `src/app/[locale]/layout.tsx` (or the root layout), inside the consent-g
 Keep Consent Mode v2 default-denied behavior; do not load it on legal/404 pages.
 
 ### P0 — `/about` returns 404
+
+> Fixed: `/{locale}/about` now exists in 12 locales, is linked from the footer and listed in the
+> sitemap.
 
 AdSense reviewers look for an About page. There is no `/{locale}/about` route and no About link in
 the footer. Add a real About page (who runs the site, why it exists, how the generator works, contact)

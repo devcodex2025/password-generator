@@ -21,7 +21,10 @@ Done when: baseline JSON is committed and the branch builds (`npm run build`).
 
 ## Phase 1 — Blockers (day 1)
 
-### Step 1.1 — Ship the AdSense loader
+> Done 2026-11-02. The tag ships gated behind `NEXT_PUBLIC_ADSENSE_ENABLED` (off until approval)
+> and marketing consent, because the account is not approved yet.
+
+### Step 1.1 — Ship the AdSense loader ✅
 
 Files: `src/app/[locale]/layout.tsx`, optionally a new `src/components/Advertising/AdSenseScript.tsx`.
 
@@ -57,7 +60,7 @@ legal requires harder gating, load the tag only after `marketing` consent and ac
 
 Effort: 0.5–1 h.
 
-### Step 1.2 — Add the About page
+### Step 1.2 — Add the About page ✅
 
 Files: `src/app/[locale]/about/page.tsx` (new), `src/lib/static-pages-i18n.ts`,
 `src/components/Footer.jsx`, `next-sitemap.config.js`.
