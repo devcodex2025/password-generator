@@ -93,7 +93,7 @@ export default function PasswordRow({
           />
         </div>
       </div>
-      <div className="flex md:hidden h-14 items-center justify-center flex-nowrap w-full bg-[#E5F6FF] lg:bg-transparent rounded-[40px] px-2">
+      <div className="flex md:hidden h-14 items-center justify-center flex-nowrap w-full bg-[#E5F6FF] lg:bg-transparent rounded-[40px]">
         <GenerateButton
           onClick={() => onGenerate(index)}
           onLongPress={handleLongPress}
@@ -110,7 +110,7 @@ export default function PasswordRow({
         {copied ? t('copied_short') : t('copy')}
       </CopyButton>
       {/* Mobile Share Button with dropdown menu */}
-      <div className="flex lg:hidden h-14 items-center justify-center flex-nowrap w-full bg-[#E5F6FF] lg:bg-transparent rounded-[40px] px-2 relative">
+      <div className="flex lg:hidden h-14 items-center justify-center flex-nowrap w-full bg-[#E5F6FF] lg:bg-transparent rounded-[40px] relative">
         <ShareButton
           onClick={() => setShowShareMenu((prev) => !prev)}
           className="flex lg:hidden text-[16px] md:text-[18px] lg:text-[24px] rounded-[60px] px-[8px] md:px-[16px] py-[10px] md:py-[12px] lg:my-0 whitespace-nowrap justify-center py-0 items-center px-4 h-full w-full"
