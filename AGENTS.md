@@ -60,7 +60,7 @@ Choose verification based on the change:
 - Documentation-only changes: inspect the rendered Markdown or review the diff.
 - Dependency changes: run `npm audit` and `npm run build`.
 - Code changes: run `npm run build` and any relevant tests.
-- Security-sensitive changes: explain what data is processed locally, what is sent over the network, and how that was verified.
+- Security-sensitive changes: explain what data is processed locally, what is sent over the network, and how that was verified. Run `npm run secrets:scan` before committing.
 
 If a command cannot be run, record the reason clearly.
 

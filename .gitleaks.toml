@@ -1,0 +1,34 @@
+# Gitleaks configuration.
+#
+# Run locally:
+#   npm run secrets:scan
+# CI: .github/workflows/gitleaks.yml
+#
+# The allowlists below cover false positives that already exist in the history.
+
+[extend]
+useDefault = true
+
+# Next.js build output was committed in early commits and removed from tracking
+# in a7d8ff6. The generated encryption/preview keys in those files are not
+# credentials.
+[[allowlists]]
+description = "Generated Next.js build artifacts"
+paths = [
+  '''^\.next/''',
+  '''^node_modules/''',
+  '''^\.vercel/''',
+]
+
+# Article metadata and audit notes contain `keywords: [...]` lines that the
+# generic-api-key rule reads as key/value assignments.
+[[allowlists]]
+description = "Multilingual keyword arrays in article metadata"
+paths = [
+  '''^src/content/articles/.*\.ts$''',
+  '''^docs/seo-audit-.*\.md$''',
+]
+regexTarget = "line"
+regexes = [
+  '''keywords:\s*\[''',
+]
