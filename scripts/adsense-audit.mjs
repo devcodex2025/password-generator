@@ -300,7 +300,10 @@ async function main() {
   }
 
   const ok = pages.filter((p) => p.status === 200);
-  const thin = ok.filter((p) => p.template !== 'legal' && p.wordsMain < THIN);
+  // Legal and contact pages are utility pages by design; AdSense reviewers expect them to be
+  // short. Thin-content risk is measured on the content templates only.
+  const utilityTemplates = new Set(['legal', 'contact']);
+  const thin = ok.filter((p) => !utilityTemplates.has(p.template) && p.wordsMain < THIN);
   const veryThin = thin.filter((p) => p.wordsMain < VERY_THIN);
   const iframeOnly = ok.filter((p) => p.iframes > 0 && p.wordsMain < VERY_THIN);
   const noAd = ok.filter((p) => !p.hasAdLoader);

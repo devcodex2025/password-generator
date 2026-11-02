@@ -417,5 +417,20 @@ export const vi: LocalizedArticleContent = {
         'Ghi log chưa đủ là lỗi phổ biến khác. PCI DSS yêu cầu ghi mọi sự kiện xác thực (đăng nhập thành công, thất bại, đổi mật khẩu, khóa tài khoản) kèm thời gian và nhận dạng người dùng. Log phải được xem hằng ngày và lưu ít nhất một năm, với ba tháng gần nhất sẵn sàng phân tích.',
       ],
     },
+    {
+      heading: 'Câu hỏi thường gặp về PCI DSS',
+      paragraphs: [
+        'PCI DSS v4.0 có bắt buộc đổi mật khẩu mỗi 90 ngày không? Yêu cầu 8.3.9 vẫn nêu mốc 90 ngày, nhưng cách tiếp cận tùy chỉnh cho phép thay bằng giám sát liên tục nếu chứng minh được kiểm soát tương đương. Hãy ghi lại quyết định và bằng chứng trong hồ sơ đánh giá.',
+        'Mật khẩu 12 ký tự có đủ để đạt chứng nhận? Độ dài 12 là mức tối thiểu của yêu cầu 8.3.6, không phải mục tiêu bảo mật. Với tài khoản quản trị và dịch vụ, nên dùng 20 ký tự trở lên hoặc cụm mật khẩu dài, kèm MFA và kiểm tra danh sách mật khẩu bị rò rỉ.',
+        'Tài khoản dịch vụ có cần MFA? Yêu cầu 8.4.2 áp dụng cho mọi truy cập vào CDE, nhưng tài khoản dịch vụ không tương tác thường được xử lý bằng kiểm soát thay thế như khóa bí mật, giới hạn nguồn và xoay vòng tự động. QSA sẽ yêu cầu bằng chứng cho lựa chọn đó, nên ghi rõ trong tài liệu kiểm soát.',
+        'Ví dụ hồ sơ thực tế: cửa hàng bán lẻ dùng thiết bị POS tích hợp có thể thuộc SAQ B hoặc SAQ B-IP; đơn vị thương mại điện tử lưu token thẻ thường thuộc SAQ A-EP. Hãy xác định loại SAQ với acquirer và QSA trước khi chọn mức kiểm soát, vì phạm vi CDE và yêu cầu quét ASV khác nhau giữa các mô hình.',
+      ],
+    },
+    {
+      heading: 'Thuật ngữ và phạm vi kiểm toán',
+      paragraphs: [
+        'Khi làm việc với acquirer, hãy phân biệt merchant ID, terminal ID, PAN, truncation, masking và tokenization. EMV và PIN pad thuộc phạm vi thiết bị đầu cuối; vault lưu token không thay thế yêu cầu bảo vệ khóa. Dùng đúng thuật ngữ giúp hồ sơ kiểm toán rõ ràng và tránh đánh giá sai phạm vi CDE. Ví dụ: chuỗi nhà hàng, đại lý du lịch trực tuyến và hãng taxi cũng thuộc phạm vi nếu họ nhận thẻ.',
+      ],
+    },
   ],
 };

@@ -484,5 +484,20 @@ export const vi: LocalizedArticleContent = {
         'Cuối cùng, xem xét và cập nhật chính sách ít nhất hằng năm. Mối đe dọa thay đổi, công cụ mới xuất hiện và quy định cũng đổi. Mỗi lần rà soát nên gồm bài học từ sự cố năm trước và phản hồi của thành viên về khó khăn thực tế.',
       ],
     },
+    {
+      heading: 'Câu hỏi thường gặp khi ban hành chính sách',
+      paragraphs: [
+        'Chính sách nên dài bao nhiêu? Đủ ngắn để nhân viên đọc trong 10 phút, đủ cụ thể để xử lý tình huống thường gặp. Mẫu này khoảng 6 phần; tổ chức nhỏ có thể gộp phần đào tạo và ứng phó sự cố, nhưng không nên bỏ yêu cầu MFA và quản lý mật khẩu.',
+        'Bao lâu rà soát lại? Ít nhất mỗi năm một lần, và ngay sau khi đổi công cụ, sáp nhập nhóm hoặc có sự cố rò rỉ. Ghi ngày rà soát và người phê duyệt vào cuối tài liệu để chứng minh với kiểm toán.',
+        'Nhân viên không tuân thủ thì sao? Áp dụng quy trình kỷ luật tăng dần đã nêu: nhắc nhở và đào tạo, khiển trách chính thức, hạn chế quyền truy cập. Trường hợp cố ý chia sẻ mật khẩu hoặc tắt MFA cần xử lý ngay, vì rủi ro không dừng ở cá nhân vi phạm.',
+        'Ví dụ triển khai: phòng nhân sự đưa chính sách vào sổ tay nhân viên và buổi hội nhập; quản lý trực tiếp xác nhận từng thành viên đã cài trình quản lý trước khi cấp quyền; bộ phận CNTT kiểm tra quyền truy cập khi nhân viên nghỉ việc hoặc chuyển bộ phận. Nhà thầu và thời gian thử việc cũng cần cùng mức yêu cầu.',
+      ],
+    },
+    {
+      heading: 'Danh sách kiểm tra hội nhập và nghỉ việc',
+      paragraphs: [
+        'Khi hội nhập: tạo tài khoản trên HRIS, cấp badge, mở VPN, thêm vào mail group, tạo thư mục vault và ký thỏa thuận bảo mật. Khi nghỉ việc: thu hồi badge, đóng tài khoản, xóa khỏi mail group, chuyển quyền sở hữu vault và phỏng vấn bàn giao. Nhà thầu áp dụng cùng danh sách. Ví dụ: công ty logistics, phòng khám tư và trường tư thục đều dùng được khung này.',
+      ],
+    },
   ],
 };
