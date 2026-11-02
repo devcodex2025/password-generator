@@ -57,14 +57,14 @@ export default function PasswordRow({
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
-            className="hidden lg:inline-flex lg:h-full lg:px-6 lg:py-0 lg:text-[20px]"
+            className="hidden lg:inline-flex lg:h-14 lg:px-6 lg:py-0 lg:text-[20px]"
           >
             {t('generate')}
           </GenerateButton>
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
-            className="inline-flex shrink-0 items-center justify-center px-3 py-2 text-[14px] font-semibold leading-none md:h-full md:px-3.5 md:py-0 md:text-[15px] lg:hidden"
+            className="inline-flex shrink-0 items-center justify-center px-3 py-2 text-[14px] font-semibold leading-none md:h-14 md:px-3.5 md:py-0 md:text-[15px] lg:hidden"
           >
             {t('generate_short')}
           </GenerateButton>
@@ -97,7 +97,7 @@ export default function PasswordRow({
         <GenerateButton
           onClick={() => onGenerate(index)}
           onLongPress={handleLongPress}
-          className="flex lg:hidden text-[16px] md:text-[18px] lg:text-[24px] rounded-[60px] px-[8px] md:px-[16px] py-[10px] md:py-[12px] lg:my-0 whitespace-nowrap justify-center py-0 items-center px-4 h-full w-full"
+          className="flex h-14 w-full items-center justify-center whitespace-nowrap rounded-[60px] px-4 text-[16px]"
         >
           {t('generate_short')}
         </GenerateButton>
