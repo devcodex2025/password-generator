@@ -6,7 +6,6 @@ import NavigationProgress from '@/components/NavigationProgress';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
 import { buildHomeMetadata, SUPPORTED_LANGS, HTML_LANG_MAP } from '@/lib/home-metadata';
 import HomeStructuredData from '@/components/seo/HomeStructuredData';
-import HtmlLangSync from '@/components/HtmlLangSync';
 
 const arsenal = Arsenal({ 
   subsets: ['cyrillic', 'latin'], 
@@ -73,83 +72,82 @@ export default async function LocaleLayout({
   const htmlLang = HTML_LANG_MAP[locale] || 'en';
 
   return (
-    <>
-      <HtmlLangSync locale={htmlLang} />
-      <Script
-        id="theme-init"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function () {
-              try {
-                var saved = localStorage.getItem('darkMode');
-                var isDark = saved !== null
-                  ? JSON.parse(saved)
-                  : window.matchMedia('(prefers-color-scheme: dark)').matches;
-                document.cookie = 'theme=' + (isDark ? 'dark' : 'light') + '; path=/; max-age=31536000; samesite=lax';
-                document.documentElement.classList.toggle('dark', !!isDark);
-              } catch (e) {}
-            })();
-          `,
-        }}
-      />
-      {process.env.NEXT_PUBLIC_GA_ID ? (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script
-            id="gtag-config"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);} 
-                gtag('js', new Date());
-                gtag('consent', 'default', {
-                  ad_storage: 'denied',
-                  ad_user_data: 'denied',
-                  ad_personalization: 'denied',
-                  analytics_storage: 'denied',
-                  wait_for_update: 500,
-                });
+    <html lang={htmlLang} suppressHydrationWarning>
+      <head />
+      <body className={`${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}>
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
                 try {
-                  var cc = document.cookie.match(/(?:^|;\\s*)cc_cookie=([^;]+)/);
-                  if (cc) {
-                    var stored = JSON.parse(decodeURIComponent(cc[1]));
-                    var cats = stored.categories || [];
-                    var analytics = cats.indexOf('analytics') !== -1;
-                    var marketing = cats.indexOf('marketing') !== -1;
-                    if (analytics || marketing) {
-                      gtag('consent', 'update', {
-                        analytics_storage: analytics ? 'granted' : 'denied',
-                        ad_storage: marketing ? 'granted' : 'denied',
-                        ad_user_data: marketing ? 'granted' : 'denied',
-                        ad_personalization: marketing ? 'granted' : 'denied',
-                      });
-                    }
-                  }
+                  var saved = localStorage.getItem('darkMode');
+                  var isDark = saved !== null
+                    ? JSON.parse(saved)
+                    : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  document.cookie = 'theme=' + (isDark ? 'dark' : 'light') + '; path=/; max-age=31536000; samesite=lax';
+                  document.documentElement.classList.toggle('dark', !!isDark);
                 } catch (e) {}
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-                  anonymize_ip: true,
-                });
-              `,
-            }}
-          />
-        </>
-      ) : null}
-      <div
-        suppressHydrationWarning
-        className={`w-full ${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}
-      >
-        <HomeStructuredData locale={locale} />
-        <CustomThemeProvider>
-          <NavigationProgress />
-          {children}
-        </CustomThemeProvider>
-      </div>
-    </>
+              })();
+            `,
+          }}
+        />
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="gtag-config"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);} 
+                  gtag('js', new Date());
+                  gtag('consent', 'default', {
+                    ad_storage: 'denied',
+                    ad_user_data: 'denied',
+                    ad_personalization: 'denied',
+                    analytics_storage: 'denied',
+                    wait_for_update: 500,
+                  });
+                  try {
+                    var cc = document.cookie.match(/(?:^|;\\s*)cc_cookie=([^;]+)/);
+                    if (cc) {
+                      var stored = JSON.parse(decodeURIComponent(cc[1]));
+                      var cats = stored.categories || [];
+                      var analytics = cats.indexOf('analytics') !== -1;
+                      var marketing = cats.indexOf('marketing') !== -1;
+                      if (analytics || marketing) {
+                        gtag('consent', 'update', {
+                          analytics_storage: analytics ? 'granted' : 'denied',
+                          ad_storage: marketing ? 'granted' : 'denied',
+                          ad_user_data: marketing ? 'granted' : 'denied',
+                          ad_personalization: marketing ? 'granted' : 'denied',
+                        });
+                      }
+                    }
+                  } catch (e) {}
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                    anonymize_ip: true,
+                  });
+                `,
+              }}
+            />
+          </>
+        ) : null}
+        <div suppressHydrationWarning className="w-full">
+          <HomeStructuredData locale={locale} />
+          <CustomThemeProvider>
+            <NavigationProgress />
+            {children}
+          </CustomThemeProvider>
+        </div>
+      </body>
+    </html>
   );
 }
 
