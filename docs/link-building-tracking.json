@@ -7,5 +7,14 @@
     "posted_url": "",
     "status": "init",
     "notes": "Compliant plan based on E:/Projects/link-building-skills structure. Temp-mail mass registration intentionally NOT used (link spam risk). Do not store passwords or temp emails here."
+  },
+  {
+    "timestamp": "2026-11-02T12:40:00Z",
+    "site_url": "https://tools.org.ua",
+    "action": "public_review_page",
+    "anchor_text": "Generator, Guides, Password managers, VPN, Contact, Privacy Policy (nav links)",
+    "posted_url": "https://tools.org.ua/uk/www/generatepasswordto.me",
+    "status": "success",
+    "notes": "Anonymous GET-form submission (no account, no temp email). Dofollow links to the site, no robots meta, no canonical. Locale variants also published (/en, /de, /es, /fr, /it, /pt, /ru, ...). One referring domain, ~11 link placements."
   }
 ]

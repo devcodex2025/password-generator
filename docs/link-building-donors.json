@@ -3,7 +3,7 @@
   "niche": "password security / developer tools / privacy",
   "generated": "2026-11-02",
   "donors": [
-    { "id": 1, "name": "tools.org.ua", "url": "https://tools.org.ua/uk/www/passgenerator.com.ua", "type": "ua-directory", "requiresAccount": false, "cost": "free", "priority": "high", "status": "planned", "notes": "competitor listed here; automated SEO review submission" },
+    { "id": 1, "name": "tools.org.ua", "url": "https://tools.org.ua/uk/www/generatepasswordto.me", "type": "ua-directory", "requiresAccount": false, "cost": "free", "priority": "high", "status": "done", "notes": "submitted 2026-11-02; dofollow links, page published in all locale variants" },
     { "id": 2, "name": "SaaSHub", "url": "https://www.saashub.com", "type": "tool-directory", "requiresAccount": true, "cost": "free", "priority": "high", "status": "planned" },
     { "id": 3, "name": "AlternativeTo", "url": "https://alternativeto.net", "type": "alternatives-directory", "requiresAccount": true, "cost": "free", "priority": "high", "status": "planned" },
     { "id": 4, "name": "Product Hunt", "url": "https://www.producthunt.com", "type": "launch", "requiresAccount": true, "cost": "free", "priority": "high", "status": "planned", "notes": "launch Tue-Thu 00:01 PT" },
