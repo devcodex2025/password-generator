@@ -350,18 +350,18 @@
     "vi": "Chia sẻ mật khẩu"
   },
   "main_title": {
-    "ua": "Потрібен унікальний, безпечний Пароль?",
-    "en": "Need a Unique, Secure Password?",
-    "es": "¿Necesitas una contraseña única y segura?",
-    "fr": "Besoin d'un mot de passe unique et sécurisé ?",
-    "de": "Brauchen Sie ein einzigartiges, sicheres Passwort?",
-    "it": "Hai bisogno di una password unica e sicura?",
-    "pt": "Precisa de uma senha única e segura?",
-    "ru": "Нужен уникальный, безопасный пароль?",
-    "zh": "需要一个独特、安全的密码？",
-    "ja": "ユニークで安全なパスワードが必要ですか？",
-    "pl": "Potrzebujesz unikalnego, bezpiecznego hasła?",
-    "vi": "Bạn cần một mật khẩu duy nhất và an toàn?"
+    "ua": "Генератор паролів онлайн — надійні та випадкові",
+    "en": "Password Generator — Strong, Random, Free",
+    "es": "Generador de contraseñas — seguras y aleatorias",
+    "fr": "Générateur de mots de passe — forts et aléatoires",
+    "de": "Passwort-Generator — sicher, zufällig, kostenlos",
+    "it": "Generatore di password — sicure e casuali",
+    "pt": "Gerador de senhas — fortes e aleatórias",
+    "ru": "Генератор паролей онлайн — надёжные и случайные",
+    "zh": "密码生成器 — 强密码、随机生成",
+    "ja": "パスワード自動生成 — 強力で無料",
+    "pl": "Generator haseł — silne i losowe",
+    "vi": "Trình tạo mật khẩu — mạnh và ngẫu nhiên"
   },
   "main_subtitle": {
     "ua": "За допомогою \"Згенерувати пароль для мене\" ви легко створите надійний пароль.",
