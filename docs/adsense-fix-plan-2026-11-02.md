@@ -210,7 +210,12 @@ Actions:
 
 Acceptance: `/en` returns 301 to `/`; sitemap has one English home URL; no internal link to `/en`.
 
-### Step 3.2 — Stop blocking `/_next/` for Googlebot ✅
+### Step 3.2 — Stop blocking the Next.js assets Googlebot needs ✅
+
+`/_next/` stays closed, but these paths are allowed explicitly: `/_next/static/immutable/`,
+`/_next/static/chunks/`, `/_next/static/css/`, `/_next/static/media/`, `/_next/image`.
+Everything else under `/_next/` (data payloads, manifests, dev endpoints) remains blocked.
+Re-check the list after a Next.js major upgrade, because the asset layout can change.
 
 Files: `next-sitemap.config.js`.
 

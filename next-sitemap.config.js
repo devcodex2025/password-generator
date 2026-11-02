@@ -80,8 +80,20 @@ module.exports = {
     policies: [
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/server-sitemap.xml'],
+        allow: [
+          '/',
+          // Only the build assets Googlebot needs to render a page. Everything else under
+          // /_next/ (data payloads, manifests, dev endpoints) stays blocked.
+          // Next 16 + Turbopack emits /_next/static/immutable/; the other three cover
+          // the stable webpack layout and are harmless if unused.
+          '/_next/static/immutable/',
+          '/_next/static/chunks/',
+          '/_next/static/css/',
+          '/_next/static/media/',
+          // next/image optimizer URLs referenced by srcset.
+          '/_next/image',
+        ],
+        disallow: ['/api/', '/_next/', '/server-sitemap.xml'],
       },
     ],
     additionalSitemaps: [

@@ -1,7 +1,13 @@
 # *
 User-agent: *
 Allow: /
+Allow: /_next/static/immutable/
+Allow: /_next/static/chunks/
+Allow: /_next/static/css/
+Allow: /_next/static/media/
+Allow: /_next/image
 Disallow: /api/
+Disallow: /_next/
 Disallow: /server-sitemap.xml
 
 # Host

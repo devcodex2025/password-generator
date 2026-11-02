@@ -7,8 +7,8 @@ policy/technical compatibility.
 > gated behind `NEXT_PUBLIC_ADSENSE_ENABLED` because the site is not approved yet, and behind
 > marketing consent. Privacy/terms now have structured sections in all 12 locales, contact pages
 > have an intro plus six FAQs, and the ru/ua and vi content findings are addressed. `/en` now
-> 301-redirects to `/`, the sitemap lists 219 URLs with consistent hreflang, and robots.txt no
-> longer blocks `/_next/`. See `docs/adsense-fix-plan-2026-11-02.md`.
+> 301-redirects to `/`, the sitemap lists 219 URLs with consistent hreflang, and robots.txt allows
+> only the `/_next/` build assets needed for rendering. See `docs/adsense-fix-plan-2026-11-02.md`.
 
 ## What ran
 
