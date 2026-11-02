@@ -7,6 +7,7 @@ import PasswordRow from './PasswordRow';
 import PasswordSettings from './PasswordSettings';
 import PasswordStrength from './PasswordStrength';
 import PasswordStandards from './PasswordStandards';
+import { GeneratorMode, loadWordlist, generatePassphrase, generatePin } from './generatorModes';
 import { ThemeContext } from '../../context/ThemeContext';
 import { rankColor } from '../../functions/RankColor';
 import { getStrengthWord } from '../../functions/GetStrengthWord';
@@ -66,6 +67,9 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const [quantity, setQuantity] = useState<number>(1);
   const [passwords, setPasswords] = useState<string[]>([]);
   const [selectedStandard, setSelectedStandard] = useState<string>('nist');
+  const [mode, setMode] = useState<GeneratorMode>('chars');
+  const [separator, setSeparator] = useState<string>('-');
+  const [capitalize, setCapitalize] = useState<boolean>(true);
   const maxQuantity = 100;
   const rewardQueue = useRef<string[]>([]);
   const rewardAnchorRef = useRef<HTMLDivElement | null>(null);
@@ -95,7 +99,30 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   }, [language]);
 
   const generatePassword = useCallback(
-    (index: number) => {
+    async (index: number) => {
+      if (mode === 'pin') {
+        const len = Math.min(12, Math.max(4, passwordLength));
+        const pin = generatePin(len, secureRandomIndex);
+        const updated = [...passwords];
+        updated[index] = pin;
+        setPasswords(updated);
+        ga('password_generated', { length: len, mode });
+        return;
+      }
+      if (mode === 'words') {
+        const count = Math.min(8, Math.max(3, passwordLength));
+        try {
+          const words = await loadWordlist();
+          const phrase = generatePassphrase(words, count, separator, capitalize, secureRandomIndex);
+          const updated = [...passwords];
+          updated[index] = phrase;
+          setPasswords(updated);
+          ga('password_generated', { length: count, mode });
+        } catch {
+          setSnackbars((prev) => [...prev, { id: Date.now(), message: t('warning_no_characters') }]);
+        }
+        return;
+      }
       const standardConfig = passwordStandards[selectedStandard];
       const effectiveLength = Math.max(passwordLength, standardConfig.minLength);
       let password = '';
@@ -153,37 +180,50 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       setPasswords(updatedPasswords);
       ga('password_generated', { length: effectiveLength, standard: selectedStandard });
     },
-    [passwords, passwordLength, selectedCharacterSets, selectedStandard, t]
+    [passwords, passwordLength, selectedCharacterSets, selectedStandard, t, mode, separator, capitalize]
   );
 
-  const generatePasswords = useCallback(() => {
+  const generatePasswords = useCallback(async () => {
     const currentQuantity = passwords.length;
     const newQuantity = quantity - currentQuantity;
     if (newQuantity > 0) {
       const generatedPasswords = [...passwords];
       for (let i = 0; i < newQuantity; i++) {
-        let characters = '';
-        selectedCharacterSets.forEach((set) => {
-          characters += characterSets[set];
-        });
-
-        if (characters.length === 0) {
-          generatedPasswords.push('');
-          continue;
-        }
-
         let password = '';
-        for (let j = 0; j < passwordLength; j++) {
-          password += characters.charAt(secureRandomIndex(characters.length));
+        if (mode === 'pin') {
+          const len = Math.min(12, Math.max(4, passwordLength));
+          password = generatePin(len, secureRandomIndex);
+        } else if (mode === 'words') {
+          const count = Math.min(8, Math.max(3, passwordLength));
+          try {
+            const words = await loadWordlist();
+            password = generatePassphrase(words, count, separator, capitalize, secureRandomIndex);
+          } catch {
+            password = '';
+          }
+        } else {
+          let characters = '';
+          selectedCharacterSets.forEach((set) => {
+            characters += characterSets[set];
+          });
+
+          if (characters.length === 0) {
+            generatedPasswords.push('');
+            continue;
+          }
+
+          for (let j = 0; j < passwordLength; j++) {
+            password += characters.charAt(secureRandomIndex(characters.length));
+          }
         }
         generatedPasswords.push(password);
       }
       setPasswords(generatedPasswords);
-      ga('passwords_generated_batch', { count: newQuantity, length: passwordLength });
+      ga('passwords_generated_batch', { count: newQuantity, length: passwordLength, mode });
     } else if (currentQuantity > quantity) {
       setPasswords(passwords.slice(0, quantity));
     }
-  }, [passwords, quantity, selectedCharacterSets, passwordLength]);
+  }, [passwords, quantity, selectedCharacterSets, passwordLength, mode, separator, capitalize]);
 
   useEffect(() => {
     generatePasswords();
@@ -390,7 +430,14 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           selectedStandard={selectedStandard}
           setSelectedStandard={setSelectedStandard}
           setSnackbars={setSnackbars}
+          mode={mode}
+          onModeChange={setMode}
+          separator={separator}
+          setSeparator={setSeparator}
+          capitalize={capitalize}
+          setCapitalize={setCapitalize}
         />
+        {mode === 'chars' && (
         <PasswordStandards
           selectedStandard={selectedStandard}
           setSelectedStandard={setSelectedStandard}
@@ -398,6 +445,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           setPasswordLength={setPasswordLength}
           setSelectedCharacterSets={setSelectedCharacterSets}
         />
+        )}
         {passwords.slice(1).map((password, index) => (
           <PasswordRow
             key={index + 1}
