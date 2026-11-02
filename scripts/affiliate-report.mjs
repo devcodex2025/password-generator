@@ -64,7 +64,7 @@ const END = new Date();
 const START = new Date(END.getTime() - DAYS * 86400000);
 
 const LOCALES = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl', 'vi'];
-const CLICK_EVENTS = ['nordpass_affiliate_click', 'nordvpn_affiliate_click'];
+const CLICK_EVENTS = ['affiliate_outbound_click', 'nordpass_affiliate_click', 'nordvpn_affiliate_click'];
 const OFFERS = { 488: 'NordPass', 15: 'NordVPN', 489: 'NordLocker', 754: 'NordPass Business' };
 
 /** "gen-ua-breach-result" -> { locale: "ua", placement: "breach-result" } */

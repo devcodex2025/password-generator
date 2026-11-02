@@ -65,6 +65,7 @@ left untouched; it never fires on this site.
 | `share_copy` | `type`, `language` |
 | `nordpass_affiliate_click` | `placement`, `ui_language`, `offer`, `value`, `currency` |
 | `nordvpn_affiliate_click` | `placement`, `ui_language`, `event_label` |
+| `affiliate_outbound_click` | `product`, `placement`, `ui_language`, `affiliate_offer_id` — every outbound affiliate click, including plain prose links |
 
 `length` means characters for random/PIN modes and word count for passphrase mode.
 

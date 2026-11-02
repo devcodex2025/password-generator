@@ -18,6 +18,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import NordPassAffiliatePromo from '@/components/affiliate/NordPassAffiliatePromo';
 import NordVpnAffiliatePromo from '@/components/affiliate/NordVpnAffiliatePromo';
 import AffiliateBanner from '@/components/affiliate/AffiliateBanner';
+import AffiliateOutboundTracker from '@/components/affiliate/AffiliateOutboundTracker';
 import {
   GuideInterlinkEntry,
   GuideInterlinkPlacement,
@@ -262,6 +263,7 @@ export default async function GuideArticlePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(guideBreadcrumbJsonLd) }}
       />
       <LocalizedPageShell locale={locale}>
+        <AffiliateOutboundTracker />
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
           items={[

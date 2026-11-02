@@ -67,9 +67,11 @@ Three problems surfaced:
    `src/content/articles/vpn-security-privacy-guide.ts` bypassed the link registry. Fixed:
    `renderGuideTextWithLinks()` now appends `aff_sub=gen-<locale>-guide-<slug>` and marks those
    links `rel="sponsored"`.
-2. **GA4 recorded zero affiliate clicks while the network recorded 38.** Either the gtag event
-   never fires in production, or these clicks do not originate from pages where GA4 is loaded.
-   Worth verifying in GA4 DebugView before trusting any GA4-based funnel.
+2. **GA4 recorded zero affiliate clicks.** Verified in the browser on 2026-11-02: `gtag` loads,
+   consent grants, and a promo click sends `en=nordpass_affiliate_click` to
+   `region1.google-analytics.com/g/collect`. The gap was the prose links — they had no handler at
+   all. Fixed with `AffiliateOutboundTracker`, which fires `affiliate_outbound_click` for every
+   outbound affiliate link, including plain article links.
 3. **Zero sales.** Expected at this traffic level; nothing to optimise until clicks convert.
 
 ## Limitations to keep in mind
