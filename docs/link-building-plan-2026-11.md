@@ -96,6 +96,13 @@ No account creation beyond a normal signup; each is reviewed by a human.
 - 90 days: 15–25 referring domains, ≥1 editorial mention.
 - Track in GSC → Links (UI) weekly; log every placement in `docs/link-building-tracking.json`.
 
+## Machine-readable source catalog
+
+The manual phases above are the strategy. The working list lives in
+[`docs/backlink-sources-2026-11.md`](./backlink-sources-2026-11.md) (256 candidates, tiered,
+with a batch queue helper: `node scripts/backlink-queue.mjs --check`). That file also documents why a
+"1000 registration-free services" run is not possible without link spam.
+
 ## What I can execute vs what needs you
 
 I can (and did): donor research, submission copy, tracking file, the linkable data asset.

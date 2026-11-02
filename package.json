@@ -61,6 +61,7 @@
     "content:validate": "node scripts/validate-content.mjs",
     "cdn:check": "node scripts/check-cdn.mjs",
     "indexnow": "node scripts/indexnow.mjs",
+    "backlinks": "node scripts/backlink-queue.mjs",
     "gsc": "node scripts/gsc-report.mjs",
     "keywords": "node scripts/keyword-research.mjs",
     "keywords:map": "node scripts/keyword-map.mjs",

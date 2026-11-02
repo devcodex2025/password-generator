@@ -1,0 +1,544 @@
+# Backlink work queue
+
+Generated 2026-11-02 from `docs/backlink-sources.csv`.
+Tick a box only after the page is live and `--verify` confirms the link.
+
+## Tier A (48)
+
+- [ ] **A01** Telegraph — create page with real content — <https://telegra.ph/> (dofollow, value 4, ~10 min)
+  - no account; indexable; do not mass-create thin pages
+- [ ] **A02** Rentry — create paste page — <https://rentry.co/> (nofollow, value 3, ~10 min)
+  - anonymous markdown; edit code required
+- [ ] **A03** Write.as — anonymous post — <https://write.as/> (nofollow, value 3, ~15 min)
+  - anonymous publishing supported
+- [ ] **A05** HackMD — create note and publish — <https://hackmd.io/> (nofollow, value 3, ~15 min)
+  - anonymous notes; publish to get a public URL
+- [ ] **A36** Wayback Machine Save Page Now — archive the site — <https://web.archive.org/save/> (nofollow, value 2, ~2 min)
+  - creates a public archived copy; not a ranking link
+- [ ] **A26** DocDroid — upload PDF — <https://www.docdroid.net/> (nofollow, value 2, ~15 min)
+  - PDF page can carry a link; low value
+- [ ] **A04** txt.fyi — publish text — <https://txt.fyi/> (nofollow, value 1, ~5 min)
+  - no rich links; minimal SEO value
+- [ ] **A06** Pastebin — create paste — <https://pastebin.com/> (nofollow, value 1, ~5 min)
+  - nofollow; most pastes not indexed
+- [ ] **A07** dpaste.org — create paste — <https://dpaste.org/> (nofollow, value 1, ~3 min)
+  - short retention
+- [ ] **A08** dpaste.com — create paste — <https://dpaste.com/> (nofollow, value 1, ~3 min)
+  - short retention
+- [ ] **A09** bpa.st — create paste — <https://bpa.st/> (nofollow, value 1, ~3 min)
+  - retention varies
+- [ ] **A10** pastes.dev — create paste — <https://pastes.dev/> (nofollow, value 1, ~3 min)
+  - raw text host
+- [ ] **A11** ControlC — create paste — <https://controlc.com/> (nofollow, value 1, ~3 min)
+  - legacy paste host
+- [ ] **A12** JustPaste.it — create paste — <https://justpaste.it/> (nofollow, value 1, ~3 min)
+  - nofollow
+- [ ] **A13** Paste.ee — create paste — <https://paste.ee/> (nofollow, value 1, ~3 min)
+  - nofollow
+- [ ] **A14** Hastebin — create paste — <https://hastebin.com/> (nofollow, value 1, ~3 min)
+  - short retention
+- [ ] **A15** paste.rs — curl upload — <https://paste.rs/> (none, value 1, ~2 min)
+  - CLI only; no page SEO
+- [ ] **A16** sprunge — curl upload — <http://sprunge.us/> (none, value 1, ~2 min)
+  - CLI only
+- [ ] **A17** clbin — curl upload — <https://clbin.com/> (none, value 1, ~2 min)
+  - CLI only
+- [ ] **A18** ix.io — curl upload — <http://ix.io/> (none, value 1, ~2 min)
+  - CLI only
+- [ ] **A19** 0x0.st — file upload — <https://0x0.st/> (none, value 1, ~2 min)
+  - no outbound link
+- [ ] **A20** JSFiddle — save anonymous fiddle — <https://jsfiddle.net/> (nofollow, value 1, ~10 min)
+  - link in code comment only
+- [ ] **A21** JSBin — save anonymous bin — <https://jsbin.com/> (nofollow, value 1, ~10 min)
+  - link in code comment only
+- [ ] **A23** glot.io — save snippet — <https://glot.io/> (nofollow, value 1, ~5 min)
+  - snippet host
+- [ ] **A24** Pastebin.pl — create paste — <https://pastebin.pl/> (nofollow, value 1, ~3 min)
+  - nofollow
+- [ ] **A37** archive.today — archive the site — <https://archive.ph/> (nofollow, value 1, ~2 min)
+  - public snapshot
+- [ ] **A38** is.gd — shorten URL — <https://is.gd/> (nofollow, value 1, ~1 min)
+  - tracking only
+- [ ] **A39** v.gd — shorten URL — <https://v.gd/> (nofollow, value 1, ~1 min)
+  - tracking only
+- [ ] **A40** TinyURL — shorten URL — <https://tinyurl.com/> (nofollow, value 1, ~1 min)
+  - tracking only
+- [ ] **A41** t.ly — shorten URL — <https://t.ly/> (unknown, value 1, ~1 min)
+  - may require account for custom slug
+- [ ] **A42** shorturl.at — shorten URL — <https://www.shorturl.at/> (nofollow, value 1, ~1 min)
+  - tracking only
+- [ ] **A43** clck.ru — shorten URL — <https://clck.ru/> (nofollow, value 1, ~1 min)
+  - RU host
+- [ ] **A44** spoo.me — shorten URL — <https://spoo.me/> (nofollow, value 1, ~1 min)
+  - open source
+- [ ] **A45** s.id — shorten URL — <https://s.id/> (nofollow, value 1, ~1 min)
+  - may require account
+- [ ] **A46** ulvis.net — shorten URL — <https://ulvis.net/> (nofollow, value 1, ~1 min)
+  - tracking only
+- [ ] **A47** da.gd — shorten URL — <https://da.gd/> (nofollow, value 1, ~1 min)
+  - tracking only
+- [ ] **A48** Ping-O-Matic — ping blog update — <https://pingomatic.com/> (none, value 1, ~2 min)
+  - legacy blog ping; near-zero effect
+- [ ] **A22** SQLFiddle — save schema — <http://sqlfiddle.com/> (none, value 0, ~10 min)
+  - no useful link surface
+- [ ] **A25** Wikimedia Etherpad — create pad — <https://etherpad.wikimedia.org/> (none, value 0, ~5 min)
+  - ephemeral; no SEO
+- [ ] **A27** Postimages — upload image — <https://postimages.org/> (none, value 0, ~3 min)
+  - no clickable outbound link
+- [ ] **A28** Imgbb — upload image — <https://imgbb.com/> (none, value 0, ~3 min)
+  - no clickable outbound link
+- [ ] **A29** Imgbox — upload image — <https://imgbox.com/> (none, value 0, ~3 min)
+  - no clickable outbound link
+- [ ] **A30** FreeImage.host — upload image — <https://freeimage.host/> (none, value 0, ~3 min)
+  - no clickable outbound link
+- [ ] **A31** Catbox — upload file — <https://catbox.moe/> (none, value 0, ~3 min)
+  - permanent file host; no SEO
+- [ ] **A32** Litterbox — temporary upload — <https://litterbox.catbox.moe/> (none, value 0, ~3 min)
+  - temporary
+- [ ] **A33** tmpfiles.org — temporary upload — <https://tmpfiles.org/> (none, value 0, ~3 min)
+  - temporary
+- [ ] **A34** Uguu — temporary upload — <https://uguu.se/> (none, value 0, ~3 min)
+  - temporary
+- [ ] **A35** pixeldrain — upload file — <https://pixeldrain.com/> (none, value 0, ~3 min)
+  - no SEO
+
+## Tier B (25)
+
+- [ ] **B01** Viesearch — submit site — <https://www.viesearch.com/> (unknown, value 2, ~10 min)
+  - human-reviewed directory
+- [ ] **B03** ExactSeek — submit URL — <https://www.exactseek.com/> (unknown, value 2, ~5 min)
+  - small search engine
+- [ ] **B11** Directory Critic — read the list — <https://www.directorycritic.com/> (none, value 2, ~5 min)
+  - meta-list of directories; use to expand only
+- [ ] **B12** AI Tools Directory — submit tool — <https://aitoolsdirectory.com/> (nofollow, value 2, ~10 min)
+  - free submission
+- [ ] **B13** ToolPilot — submit tool — <https://www.toolpilot.ai/> (nofollow, value 2, ~10 min)
+  - free tier
+- [ ] **B14** TopAI.tools — submit tool — <https://topai.tools/> (nofollow, value 2, ~10 min)
+  - free submission
+- [ ] **B15** AI Tool Hunt — submit tool — <https://www.aitoolhunt.com/> (nofollow, value 2, ~10 min)
+  - free submission
+- [ ] **B20** TinyLaunch — launch — <https://tinylaunch.com/> (nofollow, value 2, ~10 min)
+  - free launch board
+- [ ] **B21** Fazier — launch — <https://fazier.com/> (nofollow, value 2, ~10 min)
+  - free launch board
+- [ ] **B22** Turbo0 — launch — <https://turbo0.com/> (nofollow, value 2, ~10 min)
+  - free launch board
+- [ ] **B16** Insidr AI Tools — submit tool — <https://www.insidr.ai/> (nofollow, value 2, ~10 min)
+  - free tier
+- [ ] **B17** OpenFuture — submit tool — <https://openfuture.ai/> (nofollow, value 2, ~10 min)
+  - free submission
+- [ ] **B18** SuperTools — submit tool — <https://supertools.therundown.ai/> (nofollow, value 2, ~10 min)
+  - newsletter-adjacent
+- [ ] **B19** AIXploria — submit tool — <https://www.aixploria.com/> (nofollow, value 2, ~10 min)
+  - free submission
+- [ ] **B23** PitchWall — launch — <https://pitchwall.co/> (nofollow, value 2, ~10 min)
+  - free launch board
+- [ ] **B24** StartupFa.me — launch — <https://startupfa.me/> (nofollow, value 2, ~10 min)
+  - free launch board
+- [ ] **B25** OpenHunts — launch — <https://openhunts.com/> (nofollow, value 2, ~10 min)
+  - free launch board
+- [ ] **B02** Directory-Free — submit site — <https://www.directory-free.com/> (unknown, value 1, ~10 min)
+  - low quality; verify indexation
+- [ ] **B04** SoMuch — submit site — <https://www.somuch.com/> (unknown, value 1, ~10 min)
+  - legacy directory
+- [ ] **B05** 01WebDirectory — submit site — <https://www.01webdirectory.com/> (unknown, value 1, ~10 min)
+  - legacy directory; low quality
+- [ ] **B06** WowDirectory — submit site — <https://www.wowdirectory.com/> (unknown, value 1, ~10 min)
+  - legacy directory
+- [ ] **B07** GoGuides — submit site — <https://www.goguides.org/> (unknown, value 1, ~10 min)
+  - legacy directory
+- [ ] **B08** A1WebDirectory — submit site — <https://www.a1webdirectory.org/> (unknown, value 1, ~10 min)
+  - legacy directory
+- [ ] **B09** DirectoryVault — submit site — <https://www.directoryvault.com/> (unknown, value 1, ~10 min)
+  - legacy directory
+- [ ] **B10** FreeWebDirectory — submit site — <https://www.freewebdirectory.org/> (unknown, value 1, ~10 min)
+  - legacy directory
+
+## Tier C (28)
+
+- [ ] **C17** GitHub profile — profile and repo — <https://github.com/> (nofollow, value 3, ~20 min)
+  - link in profile/repo homepage
+- [ ] **C30** npm — publish CLI package — <https://www.npmjs.com/> (nofollow, value 3, ~60 min)
+  - package homepage links to site; only if genuinely useful
+- [ ] **C01** SaaS Mantra — submit product — <https://www.saasmantra.com/> (unknown, value 2, ~15 min)
+  - low traffic
+- [ ] **C02** SaaS AI Tools — submit tool — <https://saasaitools.com/> (unknown, value 2, ~15 min)
+  - low traffic
+- [ ] **C03** Startup Buffer — submit startup — <https://startupbuffer.com/> (unknown, value 2, ~15 min)
+  - low traffic
+- [ ] **C06** Product Hunt Ship — upcoming page — <https://www.producthunt.com/ship> (nofollow, value 2, ~15 min)
+  - pre-launch page
+- [ ] **C07** IndieMaker — submit project — <https://indiemaker.co/> (unknown, value 2, ~15 min)
+  - small board
+- [ ] **C08** Bear Blog — create blog — <https://bearblog.dev/> (nofollow, value 2, ~20 min)
+  - free blog; can host the article
+- [ ] **C09** WriteFreely — self-host or join instance — <https://writefreely.org/> (nofollow, value 2, ~30 min)
+  - federated blogs; instance-dependent
+- [ ] **C10** Substack — newsletter — <https://substack.com/> (nofollow, value 2, ~30 min)
+  - only with real audience
+- [ ] **C12** Blogger — blog — <https://www.blogger.com/> (nofollow, value 2, ~20 min)
+  - Google property; low value
+- [ ] **C13** WordPress.com — free blog — <https://wordpress.com/> (nofollow, value 2, ~20 min)
+  - free subdomain
+- [ ] **C15** About.me — profile — <https://about.me/> (nofollow, value 2, ~10 min)
+  - profile link
+- [ ] **C18** GitLab — profile and repo — <https://gitlab.com/> (nofollow, value 2, ~20 min)
+  - mirror repo
+- [ ] **C19** Codeberg — repo — <https://codeberg.org/> (nofollow, value 2, ~20 min)
+  - EU-hosted forge
+- [ ] **C20** Devpost — project — <https://devpost.com/> (nofollow, value 2, ~15 min)
+  - hackathon projects
+- [ ] **C21** ProductHunt profile — maker profile — <https://www.producthunt.com/> (nofollow, value 2, ~10 min)
+  - link in bio
+- [ ] **C26** StackShare — company stack — <https://stackshare.io/> (nofollow, value 2, ~15 min)
+  - tool profile
+- [ ] **C27** AlternativeTo profile — user profile — <https://alternativeto.net/> (nofollow, value 2, ~10 min)
+  - link in bio
+- [ ] **C11** Tumblr — post — <https://www.tumblr.com/> (nofollow, value 1, ~10 min)
+  - low value
+- [ ] **C14** Blogspot — blog — <https://blogspot.com/> (nofollow, value 1, ~15 min)
+  - spam-adjacent
+- [ ] **C16** Gravatar — profile — <https://gravatar.com/> (nofollow, value 1, ~5 min)
+  - author avatar link
+- [ ] **C22** Behance — project — <https://www.behance.net/> (nofollow, value 1, ~15 min)
+  - only with real design work
+- [ ] **C23** Dribbble — shot — <https://dribbble.com/> (nofollow, value 1, ~15 min)
+  - only with real design work
+- [ ] **C24** Kaggle — notebook — <https://www.kaggle.com/> (nofollow, value 1, ~20 min)
+  - only with real data work
+- [ ] **C25** HackerRank — profile — <https://www.hackerrank.com/> (nofollow, value 1, ~10 min)
+  - low value
+- [ ] **C28** Beacons — link page — <https://beacons.ai/> (nofollow, value 1, ~10 min)
+  - link-in-bio
+- [ ] **C29** Linktree — link page — <https://linktr.ee/> (nofollow, value 1, ~10 min)
+  - link-in-bio
+
+## Tier D (25)
+
+- [ ] **D01** r/security — participate — <https://www.reddit.com/r/security/> (nofollow, value 3, ~30 min)
+  - rules strict
+- [ ] **D02** r/webdev — participate — <https://www.reddit.com/r/webdev/> (nofollow, value 3, ~30 min)
+  - show-off Saturday only
+- [ ] **D08** r/sysadmin — participate — <https://www.reddit.com/r/sysadmin/> (nofollow, value 3, ~30 min)
+  - enterprise angle
+- [ ] **D14** DOU forum — participate — <https://dou.ua/forums/> (nofollow, value 3, ~30 min)
+  - UA dev audience
+- [ ] **D16** Reddit r/passwordmanagers — answer questions — <https://www.reddit.com/r/passwordmanagers/> (nofollow, value 3, ~30 min)
+  - small but on-topic
+- [ ] **D17** Reddit r/PrivacyGuides — participate — <https://www.reddit.com/r/PrivacyGuides/> (nofollow, value 3, ~30 min)
+  - on-topic; strict
+- [ ] **D23** Telegram channels — ask admins — <https://t.me/> (none, value 3, ~30 min)
+  - ask before posting; no unsolicited drops
+- [ ] **D03** r/selfhosted — participate — <https://www.reddit.com/r/selfhosted/> (nofollow, value 2, ~30 min)
+  - weak fit
+- [ ] **D04** r/opensource — participate — <https://www.reddit.com/r/opensource/> (nofollow, value 2, ~30 min)
+  - only with OSS component
+- [ ] **D05** r/ukraine — participate — <https://www.reddit.com/r/ukraine/> (nofollow, value 2, ~30 min)
+  - not a promo channel
+- [ ] **D06** r/Ukrainian — participate — <https://www.reddit.com/r/Ukrainian/> (nofollow, value 2, ~30 min)
+  - language/community angle
+- [ ] **D07** r/techsupport — answer questions — <https://www.reddit.com/r/techsupport/> (nofollow, value 2, ~30 min)
+  - no top-level promo
+- [ ] **D09** r/software — participate — <https://www.reddit.com/r/software/> (nofollow, value 2, ~30 min)
+  - low value
+- [ ] **D11** Tildes — participate — <https://tildes.net/> (nofollow, value 2, ~30 min)
+  - invite-ish
+- [ ] **D13** Indie Hackers Ukraine — search for UA threads — <https://www.indiehackers.com/> (nofollow, value 2, ~20 min)
+  - local angle
+- [ ] **D15** Linux.org.ua forum — participate — <https://linux.org.ua/> (nofollow, value 2, ~30 min)
+  - UA FOSS audience
+- [ ] **D18** Reddit r/cybersecurity_help — answer questions — <https://www.reddit.com/r/cybersecurity_help/> (nofollow, value 2, ~30 min)
+  - low value
+- [ ] **D19** Hacker News comments — comment only — <https://news.ycombinator.com/> (nofollow, value 2, ~20 min)
+  - no link drops
+- [ ] **D20** dev.to comments — comment only — <https://dev.to/> (nofollow, value 2, ~20 min)
+  - add value first
+- [ ] **D21** Mastodon — post — <https://mastodon.social/> (nofollow, value 2, ~15 min)
+  - federated; no SEO
+- [ ] **D22** Bluesky — post — <https://bsky.app/> (nofollow, value 2, ~15 min)
+  - no SEO
+- [ ] **D24** Discord security servers — participate — <https://discord.com/> (none, value 2, ~30 min)
+  - no link value; traffic only
+- [ ] **D25** Ukrainian cybersecurity chats — ask admins — <https://t.me/> (none, value 2, ~30 min)
+  - build relationships
+- [ ] **D10** r/alphaandbetausers — post — <https://www.reddit.com/r/alphaandbetausers/> (nofollow, value 1, ~15 min)
+  - promo-tolerant and low value
+- [ ] **D12** GrowthHackers — participate — <https://growthhackers.com/> (nofollow, value 1, ~20 min)
+  - marketing audience
+
+## Tier E (38)
+
+- [ ] **E01** PageSpeed Insights — run audit — <https://pagespeed.web.dev/> (none, value 0, ~3 min)
+  - no public report link
+- [ ] **E02** web.dev Measure — run audit — <https://web.dev/measure/> (none, value 0, ~3 min)
+  - no backlink
+- [ ] **E03** W3C Validator — validate — <https://validator.w3.org/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E04** Nu Validator — validate — <https://validator.nu/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E05** CSS Validator — validate — <https://jigsaw.w3.org/css-validator/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E06** Security Headers — scan — <https://securityheaders.com/> (none, value 0, ~2 min)
+  - 403 to bots
+- [ ] **E07** Mozilla Observatory — scan — <https://observatory.mozilla.org/> (none, value 0, ~2 min)
+  - report is noindex nofollow
+- [ ] **E08** SSL Labs — scan — <https://www.ssllabs.com/ssltest/> (none, value 0, ~2 min)
+  - no outbound link
+- [ ] **E09** Internet.nl — scan — <https://internet.nl/> (none, value 0, ~2 min)
+  - public report but no outbound link
+- [ ] **E10** urlscan.io — scan — <https://urlscan.io/> (none, value 0, ~2 min)
+  - requires account for public scans
+- [ ] **E11** VirusTotal — scan URL — <https://www.virustotal.com/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E12** BuiltWith — lookup — <https://builtwith.com/> (none, value 0, ~2 min)
+  - technology profile only
+- [ ] **E13** Wappalyzer — lookup — <https://www.wappalyzer.com/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E14** GTmetrix — scan — <https://gtmetrix.com/> (none, value 0, ~2 min)
+  - 403
+- [ ] **E15** WebPageTest — scan — <https://www.webpagetest.org/> (none, value 0, ~2 min)
+  - 403
+- [ ] **E16** DNSChecker — lookup — <https://dnschecker.org/> (none, value 0, ~2 min)
+  - 403
+- [ ] **E17** Cloudflare Radar — lookup — <https://radar.cloudflare.com/> (none, value 0, ~2 min)
+  - 403
+- [ ] **E18** HSTS Preload — submit domain — <https://hstspreload.org/> (none, value 0, ~10 min)
+  - requires HTTPS config; no backlink
+- [ ] **E19** CSP Evaluator — evaluate policy — <https://csp-evaluator.withgoogle.com/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E20** Rich Results Test — test markup — <https://search.google.com/test/rich-results> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E21** Schema Validator — validate — <https://validator.schema.org/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E22** Sitechecker — scan — <https://sitechecker.pro/> (none, value 0, ~2 min)
+  - requires account
+- [ ] **E23** Seobility — scan — <https://www.seobility.net/en/seocheck/> (none, value 0, ~2 min)
+  - captcha/account
+- [ ] **E24** WooRank — scan — <https://www.woorank.com/> (none, value 0, ~2 min)
+  - report behind signup
+- [ ] **E25** SmallSEOTools — scan — <https://smallseotools.com/website-seo-score-checker/> (none, value 0, ~2 min)
+  - results are not public pages
+- [ ] **E26** SEOptimer — scan — <https://www.seoptimer.com/> (none, value 0, ~2 min)
+  - 403
+- [ ] **E27** Nibbler — scan — <https://nibbler.silktide.com/> (none, value 0, ~2 min)
+  - indexable report but no dofollow link
+- [ ] **E28** Site24x7 Tools — scan — <https://www.site24x7.com/tools/> (none, value 0, ~2 min)
+  - no site report page
+- [ ] **E29** Uptrends Tools — scan — <https://www.uptrends.com/tools/uptime> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E30** MXToolbox — lookup — <https://mxtoolbox.com/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E31** IntoDNS — lookup — <https://intodns.com/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E32** DNSDumpster — lookup — <https://dnsdumpster.com/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E33** crt.sh — certificate search — <https://crt.sh/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E34** Tranco List — check rank — <https://tranco-list.eu/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E35** Open PageRank — check score — <https://www.openpagerank.com/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E36** Similarweb — lookup — <https://www.similarweb.com/> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E37** Ahrefs Free Tools — lookup — <https://ahrefs.com/tools> (none, value 0, ~2 min)
+  - no backlink
+- [ ] **E38** Semrush Free Tools — lookup — <https://www.semrush.com/free-tools/> (none, value 0, ~2 min)
+  - no backlink
+
+## Tier F (7)
+
+- [ ] **F01** IndexNow — POST URL set — <https://www.indexnow.org/> (none, value 0, ~5 min)
+  - already wired via script; Bing/Yandex/Seznam/Naver
+- [ ] **F03** Google Search Console — request indexing — <https://search.google.com/search-console> (none, value 0, ~10 min)
+  - use URL Inspection
+- [ ] **F02** Bing Webmaster URL Submission — submit URL — <https://www.bing.com/webmasters/> (none, value 0, ~10 min)
+  - covered by IndexNow
+- [ ] **F04** Yandex Webmaster — add URL — <https://webmaster.yandex.com/> (none, value 0, ~10 min)
+  - RU traffic
+- [ ] **F05** Seznam Webmaster — add URL — <https://search.seznam.cz/> (none, value 0, ~10 min)
+  - CZ traffic
+- [ ] **F06** Naver Search Advisor — add URL — <https://searchadvisor.naver.com/> (none, value 0, ~10 min)
+  - KR traffic
+- [ ] **F07** Ping-O-Matic — ping — <https://pingomatic.com/> (none, value 0, ~2 min)
+  - legacy; near-zero effect
+
+## Tier S (58)
+
+- [ ] **S01** tools.org.ua — submit domain form — <https://tools.org.ua/uk/> (dofollow, value 5, ~5 min)
+  - verified 2026-11-02; 11 dofollow links; locale variants published
+- [ ] **S02** PrivacyTools — suggest a tool — <https://www.privacytools.io/> (unknown, value 5, ~10 min)
+  - privacy directory; human review; strong topical fit
+- [ ] **S03** awesome-privacy — pull request — <https://github.com/Lissy93/awesome-privacy> (nofollow, value 5, ~20 min)
+  - one-line entry; follow contribution guide
+- [ ] **S05** AlternativeTo — add app as alternative — <https://alternativeto.net/> (nofollow, value 5, ~20 min)
+  - list as alternative to NordPass/1Password/Bitwarden
+- [ ] **S22** Hacker News — Show HN — <https://news.ycombinator.com/show> (nofollow, value 5, ~30 min)
+  - technical angle: local-only generation + 11 locales
+- [ ] **S23** dev.to — technical article — <https://dev.to/> (nofollow, value 5, ~90 min)
+  - canonical to our guide; not a repost farm
+- [ ] **S27** DOU.ua — blog post — <https://dou.ua/> (nofollow, value 5, ~120 min)
+  - Ukrainian dev audience; technical post
+- [ ] **S04** Product Hunt — launch post — <https://www.producthunt.com/> (nofollow, value 4, ~60 min)
+  - launch Tue-Thu 00:01 PT; gallery image required
+- [ ] **S06** SaaSHub — submit product — <https://www.saashub.com/> (nofollow, value 4, ~15 min)
+  - fast approval; free tier
+- [ ] **S07** Slant — add option to a question — <https://www.slant.co/> (nofollow, value 4, ~15 min)
+  - answer Best password generator question
+- [ ] **S16** DevHunt — launch — <https://devhunt.org/> (nofollow, value 4, ~20 min)
+  - dev audience; GitHub login
+- [ ] **S21** Indie Hackers — Show IH post — <https://www.indiehackers.com/> (nofollow, value 4, ~30 min)
+  - story angle; no drive-by promo
+- [ ] **S31** r/passwords — answer questions — <https://www.reddit.com/r/passwords/> (nofollow, value 4, ~30 min)
+  - no promo posts; link only when it answers the question
+- [ ] **S32** r/privacy — participate — <https://www.reddit.com/r/privacy/> (nofollow, value 4, ~30 min)
+  - strict self-promotion rules
+- [ ] **S24** Hashnode — technical article — <https://hashnode.com/> (nofollow, value 4, ~90 min)
+  - same article; set canonical
+- [ ] **S28** Dev.ua — op-ed pitch — <https://dev.ua/> (unknown, value 4, ~60 min)
+  - topic: why a generator must never see the password
+- [ ] **S34** r/netsec — participate — <https://www.reddit.com/r/netsec/> (nofollow, value 4, ~30 min)
+  - high bar; technical comments only
+- [ ] **S37** Security StackExchange — answer questions — <https://security.stackexchange.com/> (nofollow, value 4, ~40 min)
+  - link only if it genuinely helps
+- [ ] **S08** Uneed — submit tool — <https://www.uneed.best/> (nofollow, value 3, ~15 min)
+  - free listing; queue is long
+- [ ] **S09** MicroLaunch — launch — <https://microlaunch.net/> (nofollow, value 3, ~15 min)
+  - free tier
+- [ ] **S10** Startup Stash — submit startup — <https://startupstash.com/> (nofollow, value 3, ~15 min)
+  - free tier form; review
+- [ ] **S11** Toolify — submit tool — <https://www.toolify.ai/> (nofollow, value 3, ~15 min)
+  - AI tool directory; low relevance but indexed
+- [ ] **S15** OpenAlternative — submit alternative — <https://openalternative.co/> (nofollow, value 3, ~15 min)
+  - only if we publish open-source component
+- [ ] **S17** BetaList — submit startup — <https://betalist.com/> (nofollow, value 3, ~20 min)
+  - free tier; startup angle
+- [ ] **S20** Peerlist — project launch — <https://peerlist.io/> (nofollow, value 3, ~20 min)
+  - weekly launch board
+- [ ] **S33** r/cybersecurity — participate — <https://www.reddit.com/r/cybersecurity/> (nofollow, value 3, ~30 min)
+  - read rules first
+- [ ] **S35** r/InternetIsBeautiful — post the tool — <https://www.reddit.com/r/InternetIsBeautiful/> (nofollow, value 3, ~15 min)
+  - one-shot sub; read rules
+- [ ] **S42** Lobsters — submit link — <https://lobste.rs/> (nofollow, value 4, ~20 min)
+  - invite-only
+- [ ] **S25** Medium — article — <https://medium.com/> (nofollow, value 3, ~60 min)
+  - canonical; low SEO value but real traffic
+- [ ] **S26** HackerNoon — submit story — <https://hackernoon.com/> (nofollow, value 3, ~60 min)
+  - editorial review
+- [ ] **S29** AIN.ua — op-ed pitch — <https://ain.ua/> (unknown, value 3, ~60 min)
+  - UA tech media
+- [ ] **S30** Speka.media — op-ed pitch — <https://speka.media/> (unknown, value 3, ~60 min)
+  - UA tech media
+- [ ] **S38** Super User — answer questions — <https://superuser.com/> (nofollow, value 3, ~40 min)
+  - password manager questions
+- [ ] **S39** Stack Overflow — answer questions — <https://stackoverflow.com/> (nofollow, value 3, ~40 min)
+  - only code-level questions
+- [ ] **S43** Crunchbase — company profile — <https://www.crunchbase.com/> (nofollow, value 3, ~30 min)
+  - needs company details
+- [ ] **S52** Alternative.me — add alternative — <https://alternative.me/> (unknown, value 3, ~15 min)
+  - may need account
+- [ ] **S53** Softpedia — submit software — <https://www.softpedia.com/> (nofollow, value 3, ~30 min)
+  - web apps accepted
+- [ ] **S12** Futurepedia — submit tool — <https://www.futurepedia.io/> (nofollow, value 2, ~15 min)
+  - AI-only audience; weak fit
+- [ ] **S13** TheresAnAIForThat — submit tool — <https://theresanaiforthat.com/> (nofollow, value 2, ~15 min)
+  - paid fast-track; free queue slow
+- [ ] **S14** FutureTools — submit tool — <https://www.futuretools.io/> (nofollow, value 2, ~10 min)
+  - form submission
+- [ ] **S18** Launching Next — submit startup — <https://www.launchingnext.com/> (nofollow, value 2, ~10 min)
+  - form
+- [ ] **S19** SideProjectors — submit project — <https://www.sideprojectors.com/> (nofollow, value 2, ~15 min)
+  - showcase
+- [ ] **S36** r/SideProject — post the tool — <https://www.reddit.com/r/SideProject/> (nofollow, value 2, ~15 min)
+  - low value; promo-tolerant
+- [ ] **S44** F6S — startup profile — <https://www.f6s.com/> (nofollow, value 2, ~20 min)
+  - startup directory
+- [ ] **S45** Wellfound — company profile — <https://wellfound.com/> (nofollow, value 2, ~20 min)
+  - startup directory
+- [ ] **S40** Webmasters StackExchange — answer questions — <https://webmasters.stackexchange.com/> (nofollow, value 2, ~40 min)
+  - SEO questions; low fit
+- [ ] **S41** Quora — answer questions — <https://www.quora.com/> (nofollow, value 2, ~30 min)
+  - decaying value; no bulk answers
+- [ ] **S46** G2 — vendor listing — <https://www.g2.com/> (nofollow, value 2, ~40 min)
+  - B2B SaaS focus; weak fit
+- [ ] **S47** Capterra — vendor listing — <https://www.capterra.com/> (nofollow, value 2, ~40 min)
+  - paid placement pressure
+- [ ] **S48** GetApp — vendor listing — <https://www.getapp.com/> (nofollow, value 2, ~40 min)
+  - same group as Capterra
+- [ ] **S49** GoodFirms — vendor listing — <https://www.goodfirms.co/> (nofollow, value 2, ~40 min)
+  - B2B focus
+- [ ] **S50** SaaSworthy — vendor listing — <https://www.saasworthy.com/> (nofollow, value 2, ~30 min)
+  - B2B focus
+- [ ] **S51** Crozdesk — vendor listing — <https://crozdesk.com/> (nofollow, value 2, ~30 min)
+  - B2B focus
+- [ ] **S54** SourceForge — project page — <https://sourceforge.net/> (nofollow, value 2, ~30 min)
+  - only with an open-source repo
+- [ ] **S55** Slashdot — submit story — <https://slashdot.org/> (nofollow, value 2, ~20 min)
+  - low acceptance
+- [ ] **S56** BetaPage — submit startup — <https://betapage.co/> (nofollow, value 2, ~15 min)
+  - low traffic
+- [ ] **S57** KillerStartups — submit startup — <https://www.killerstartups.com/> (nofollow, value 2, ~15 min)
+  - low traffic
+- [ ] **S58** AppSumo — submit deal — <https://appsumo.com/> (nofollow, value 2, ~45 min)
+  - requires a paid product
+
+## Tier X (15)
+
+- [ ] **X01** Serpstat — scan — <https://serpstat.com/> (none, value 0, ~0 min)
+  - requires account
+- [ ] **X02** Pingdom Tools — scan — <https://tools.pingdom.com/> (none, value 0, ~0 min)
+  - speed test only
+- [ ] **X03** SEO Review Tools — scan — <https://www.seoreviewtools.com/> (none, value 0, ~0 min)
+  - unknown/no link
+- [ ] **X04** SEO Audit Info — scan — <https://seo-audit.info/> (none, value 0, ~0 min)
+  - no usable public page
+- [ ] **X05** Sitechecker.io — scan — <https://sitechecker.io/> (none, value 0, ~0 min)
+  - no link
+- [ ] **X06** SEOSiteCheckup — scan — <https://seositecheckup.com/> (none, value 0, ~0 min)
+  - requires account
+- [ ] **X07** Be1.ru — scan — <https://be1.ru/> (none, value 0, ~0 min)
+  - network failure
+- [ ] **X08** PR-CY — scan — <https://pr-cy.ru/> (none, value 0, ~0 min)
+  - network failure
+- [ ] **X09** Similartech — lookup — <https://www.similartech.com/> (none, value 0, ~0 min)
+  - network failure
+- [ ] **X10** Sitereview.io — scan — <https://sitereview.io/> (none, value 0, ~0 min)
+  - network failure
+- [ ] **X11** SEO-Analyzer.ru — scan — <https://seo-analyzer.ru/> (none, value 0, ~0 min)
+  - network failure
+- [ ] **X12** Site-Analyzer.pro — scan — <https://site-analyzer.pro/> (none, value 0, ~0 min)
+  - network failure
+- [ ] **X13** a.pr-cy.ru — scan — <https://a.pr-cy.ru/> (none, value 0, ~0 min)
+  - network failure
+- [ ] **X14** Cy-PR — scan — <https://www.cy-pr.com/> (none, value 0, ~0 min)
+  - network failure
+- [ ] **X15** Sitechecker.cc — scan — <https://sitechecker.cc/> (none, value 0, ~0 min)
+  - network failure
+
+## Tier Z (12)
+
+- [ ] **Z01** Fiverr backlink gigs — do not buy — <https://www.fiverr.com/> (unknown, value 0, ~0 min)
+  - paid links and PBNs violate Google spam policies
+- [ ] **Z02** LinkCollider — do not use — <https://www.linkcollider.com/> (unknown, value 0, ~0 min)
+  - auto social-exchange links
+- [ ] **Z03** 10KHits — do not use — <https://10khits.com/> (unknown, value 0, ~0 min)
+  - traffic exchange
+- [ ] **Z04** Hitleap — do not use — <https://hitleap.com/> (unknown, value 0, ~0 min)
+  - fake traffic
+- [ ] **Z05** TrafficAdBar — do not use — <https://trafficadbar.com/> (unknown, value 0, ~0 min)
+  - fake traffic
+- [ ] **Z06** Auto directory submitters — do not use — <https://www.google.com/search?q=automated+directory+submitter> (unknown, value 0, ~0 min)
+  - mass low-quality submissions
+- [ ] **Z07** Free PR distribution — do not use — <https://www.google.com/search?q=free+press+release+distribution> (unknown, value 0, ~0 min)
+  - spam vertical
+- [ ] **Z08** Article directories — do not use — <https://www.google.com/search?q=free+article+directory> (unknown, value 0, ~0 min)
+  - outdated spam pattern
+- [ ] **Z09** Bulk blog comment tools — do not use — <https://www.google.com/search?q=blog+comment+backlink+tool> (unknown, value 0, ~0 min)
+  - comment spam
+- [ ] **Z10** Profile link blast lists — do not use — <https://www.google.com/search?q=forum+profile+backlink+list> (unknown, value 0, ~0 min)
+  - bulk profile spam
+- [ ] **Z11** Wiki backlink services — do not use — <https://www.google.com/search?q=wiki+backlink+service> (unknown, value 0, ~0 min)
+  - wiki spam; instant revert
+- [ ] **Z12** Web 2.0 blog farms — do not use — <https://www.google.com/search?q=web+2.0+backlinks+service> (unknown, value 0, ~0 min)
+  - expired/automated blog networks
+
