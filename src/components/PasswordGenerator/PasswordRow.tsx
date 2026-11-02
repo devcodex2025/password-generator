@@ -42,7 +42,7 @@ export default function PasswordRow({
   return (
     <div className="relative my-5 flex h-auto w-full flex-row flex-wrap items-center gap-2 lg:my-1 lg:flex-nowrap">
       <div
-        className={`flex h-14 w-full min-w-0 items-stretch border-2 border-solid border-[#E5F6FF] py-0 text-[12px] text-[#071016] dark:border-transparent dark:bg-[#000000] lg:w-[80%] lg:items-center lg:rounded-[120px] lg:px-4 md:text-[20px] rounded-[120px] bg-white`}
+        className={`flex h-16 w-full min-w-0 items-stretch border-2 border-solid border-[#E5F6FF] py-0 text-[12px] text-[#071016] dark:border-transparent dark:bg-[#000000] lg:w-[80%] lg:items-center lg:rounded-[120px] lg:px-4 md:text-[20px] rounded-[120px] bg-white`}
       >
         <label htmlFor={`password-output-${index}`} className="sr-only">Generated password</label>
         <input
@@ -57,14 +57,14 @@ export default function PasswordRow({
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
-            className="hidden lg:inline-flex lg:h-12 lg:px-6 lg:py-0 lg:text-[20px]"
+            className="hidden lg:inline-flex lg:h-14 lg:px-6 lg:py-0 lg:text-[20px]"
           >
             {t('generate')}
           </GenerateButton>
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
-            className="inline-flex shrink-0 items-center justify-center px-3 py-2 text-[14px] font-semibold leading-none md:h-12 md:px-3.5 md:py-0 md:text-[15px] lg:hidden"
+            className="inline-flex shrink-0 items-center justify-center px-3 py-2 text-[14px] font-semibold leading-none md:h-14 md:px-3.5 md:py-0 md:text-[15px] lg:hidden"
           >
             {t('generate_short')}
           </GenerateButton>
@@ -93,11 +93,11 @@ export default function PasswordRow({
           />
         </div>
       </div>
-      <div className="flex md:hidden h-14 items-center justify-center flex-nowrap w-full bg-[#E5F6FF] lg:bg-transparent rounded-[40px]">
+      <div className="flex md:hidden h-16 items-center justify-center flex-nowrap w-full bg-[#E5F6FF] lg:bg-transparent rounded-[40px]">
         <GenerateButton
           onClick={() => onGenerate(index)}
           onLongPress={handleLongPress}
-          className="flex h-12 w-full items-center justify-center whitespace-nowrap rounded-[60px] px-4 text-[16px]"
+          className="flex h-14 w-full items-center justify-center whitespace-nowrap rounded-[60px] px-4 text-[16px]"
         >
           {t('generate_short')}
         </GenerateButton>
