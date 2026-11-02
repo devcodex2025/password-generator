@@ -2,7 +2,6 @@
 #
 # Run locally:
 #   npm run secrets:scan
-# CI: .github/workflows/gitleaks.yml
 #
 # The allowlists below cover false positives that already exist in the history.
 

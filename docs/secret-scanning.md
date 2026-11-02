@@ -1,6 +1,7 @@
 # Secret scanning
 
-The repository uses [gitleaks](https://github.com/gitleaks/gitleaks) in CI and locally.
+The repository uses [gitleaks](https://github.com/gitleaks/gitleaks) locally. Secret scanning
+does not run in GitHub Actions; the workflow was removed on purpose.
 
 ## Local
 
@@ -22,14 +23,6 @@ npm run hooks:install
 
 It skips silently when gitleaks is not installed, so contributors without the binary are not
 blocked.
-
-## CI
-
-`.github/workflows/gitleaks.yml` runs on every push to `next` and on every pull request:
-
-- pull requests scan only the commits in the PR range;
-- pushes to `next` scan the full history;
-- `workflow_dispatch` allows a manual full scan.
 
 ## Allowlist policy
 
