@@ -10,3 +10,7 @@ Host: https://www.generatepasswordto.me
 
 # Sitemaps
 Sitemap: https://www.generatepasswordto.me/sitemap.xml
+
+# AdSense crawler (needed for ad targeting)
+User-agent: Mediapartners-Google
+Allow: /

@@ -7,6 +7,20 @@ const baseUrl = 'https://www.generatepasswordto.me';
 const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
 const hreflangMap: Record<string, string> = { ua: 'uk' };
 
+const ADS_DISCLOSURE: Record<string, string> = {
+  en: 'Advertising: this site displays ads served by third-party vendors, including Google. Google uses cookies (including the DoubleClick cookie) to serve ads based on your prior visits to this and other websites. You can opt out of personalized advertising in Google Ads Settings (adssettings.google.com) or at aboutads.info.',
+  ua: 'Реклама: на сайті показуються оголошення третіх сторін, зокрема Google. Google використовує файли cookie (включно з cookie DoubleClick), щоб показувати рекламу на основі ваших попередніх відвідувань цього та інших сайтів. Ви можете вимкнути персоналізовану рекламу в налаштуваннях реклами Google (adssettings.google.com) або на aboutads.info.',
+  ru: 'Реклама: на сайте показываются объявления третьих сторон, в том числе Google. Google использует файлы cookie (включая cookie DoubleClick), чтобы показывать рекламу на основе ваших предыдущих посещений этого и других сайтов. Вы можете отключить персонализированную рекламу в настройках рекламы Google (adssettings.google.com) или на aboutads.info.',
+  pl: 'Reklamy: witryna wyświetla reklamy dostarczane przez podmioty zewnętrzne, w tym Google. Google wykorzystuje pliki cookie (w tym cookie DoubleClick), aby wyświetlać reklamy na podstawie wcześniejszych wizyt w tej i innych witrynach. Możesz wyłączyć reklamy spersonalizowane w ustawieniach reklam Google (adssettings.google.com) lub na aboutads.info.',
+  de: 'Werbung: Diese Website zeigt Anzeigen von Drittanbietern, einschließlich Google. Google verwendet Cookies (einschließlich des DoubleClick-Cookies), um Anzeigen basierend auf früheren Besuchen dieser und anderer Websites zu schalten. Sie können personalisierte Werbung in den Google-Anzeigeneinstellungen (adssettings.google.com) oder unter aboutads.info deaktivieren.',
+  es: 'Publicidad: este sitio muestra anuncios de terceros proveedores, incluido Google. Google utiliza cookies (incluida la cookie de DoubleClick) para mostrar anuncios basados en tus visitas previas a este y otros sitios. Puedes desactivar la publicidad personalizada en la Configuración de anuncios de Google (adssettings.google.com) o en aboutads.info.',
+  fr: 'Publicité : ce site affiche des annonces fournies par des tiers, notamment Google. Google utilise des cookies (dont le cookie DoubleClick) pour diffuser des annonces en fonction de vos visites précédentes sur ce site et d\'autres sites. Vous pouvez désactiver la publicité personnalisée dans les paramètres des annonces Google (adssettings.google.com) ou sur aboutads.info.',
+  it: 'Pubblicità: questo sito mostra annunci forniti da terze parti, incluso Google. Google utilizza cookie (incluso il cookie DoubleClick) per mostrare annunci basati sulle tue visite precedenti a questo e ad altri siti. Puoi disattivare la pubblicità personalizzata nelle impostazioni degli annunci Google (adssettings.google.com) o su aboutads.info.',
+  pt: 'Publicidade: este site mostra anúncios de terceiros, incluindo o Google. O Google utiliza cookies (incluindo o cookie DoubleClick) para exibir anúncios com base nas suas visitas anteriores a este e a outros sites. Pode desativar a publicidade personalizada nas definições de anúncios do Google (adssettings.google.com) ou em aboutads.info.',
+  ja: '広告について：当サイトでは、Google を含む第三者配信事業者が配信する広告を表示しています。Google は Cookie（DoubleClick Cookie を含む）を使用し、このサイトや他のサイトへの過去のアクセスに基づいて広告を配信します。パーソナライズ広告は Google の広告設定（adssettings.google.com）または aboutads.info で無効にできます。',
+  zh: '广告说明：本站展示由第三方（包括 Google）投放的广告。Google 使用 Cookie（包括 DoubleClick Cookie），根据您对本站及其他网站的既往访问投放广告。您可以在 Google 广告设置（adssettings.google.com）或 aboutads.info 中关闭个性化广告。',
+};
+
 export const runtime = 'nodejs';
 export const revalidate = 3600;
 
@@ -65,6 +79,9 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
               <li key={bullet}>{bullet}</li>
             ))}
           </ul>
+          <p className="mt-4 text-[#374151] dark:text-[#c7c7c7] leading-7">
+            {ADS_DISCLOSURE[locale] ?? ADS_DISCLOSURE.en}
+          </p>
         </article>
       </section>
     </LocalizedPageShell>

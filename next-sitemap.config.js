@@ -50,6 +50,8 @@ module.exports = {
   sitemapSize: 5000,
   exclude: ['/server-sitemap.xml', '**/opengraph-image', '**/opengraph-image/**'],
   robotsTxtOptions: {
+    transformRobotsTxt: async (_config, robotsTxt) =>
+      `${robotsTxt.trimEnd()}\n\n# AdSense crawler (needed for ad targeting)\nUser-agent: Mediapartners-Google\nAllow: /\n`,
     policies: [
       {
         userAgent: '*',

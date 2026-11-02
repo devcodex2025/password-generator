@@ -114,6 +114,14 @@ Done:
 - [x] Guide `updatedAt` bumped to 2026-10-31.
 
 Next:
+- [x] SSR for the home SEO content — accordion, guides and why-us now render on the server
+  (HTML words on `/ua`: 281 → 1925).
+- [x] Item 2 — passphrase ("words") generator: EFF large wordlist (7,776 words), 3–8 words,
+  separators `- _ . space`, capitalize-one-word option, plus PIN mode (digits, 4–12).
+- [x] AdSense readiness: `Mediapartners-Google` allowed in robots, advertising disclosure added
+  to the privacy policy in 11 locales (`docs/adsense-readiness.md`).
+- [x] Link-building kit and indexing runbook (`docs/link-building-2026-11.md`,
+  `docs/indexing-runbook.md`).
 - [ ] Extend items 1 + 3 to the remaining 9 locales (adapt, not machine-translate).
 - [ ] Home FAQ entries for the length cluster — blocked on `lang.json` keys for all 11 locales
   (avoid a partial-locale render).
