@@ -188,7 +188,10 @@ Effort: 2 h.
 
 ## Phase 3 — Technical SEO hygiene (day 3)
 
-### Step 3.1 — Remove the duplicate `/en` home from the sitemap
+> Done 2026-11-02. `/en` 301-redirects to `/`, the English home is listed once in the sitemap
+> with consistent hreflang, and `/_next/` is no longer blocked in robots.txt.
+
+### Step 3.1 — Remove the duplicate `/en` home from the sitemap ✅
 
 Files: `next-sitemap.config.js`, `next.config.js`, `src/components/Footer.jsx`,
 `src/components/Header.tsx`.
@@ -207,7 +210,7 @@ Actions:
 
 Acceptance: `/en` returns 301 to `/`; sitemap has one English home URL; no internal link to `/en`.
 
-### Step 3.2 — Stop blocking `/_next/` for Googlebot
+### Step 3.2 — Stop blocking `/_next/` for Googlebot ✅
 
 Files: `next-sitemap.config.js`.
 

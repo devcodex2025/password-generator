@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { getAvailableLanguages } from '@/utils/languageUtils';
+import { localizedPath } from '@/lib/locale-links';
 
 interface LocalizedPageShellProps {
   locale: string;
@@ -25,14 +26,7 @@ export default function LocalizedPageShell({ locale, children }: LocalizedPageSh
     localStorage.setItem('preferredLanguage', nextLocale);
     document.cookie = `preferredLanguage=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
 
-    const segments = pathname.split('/').filter(Boolean);
-    if (segments.length === 0) {
-      router.push(`/${nextLocale}`);
-      return;
-    }
-
-    segments[0] = nextLocale;
-    router.push(`/${segments.join('/')}`);
+    router.push(localizedPath(pathname, nextLocale));
   };
 
   useEffect(() => {

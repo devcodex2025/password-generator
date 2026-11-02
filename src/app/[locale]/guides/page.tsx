@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { getCachedGuides } from '@/lib/cached-content';
+import { homeHref } from '@/lib/locale-links';
 import { getGuideCategoryLabel, getGuidesUiLabels } from '@/lib/guides-i18n';
 import { formatGuideDate, getGuidesUiCopy } from '@/lib/guides-ui';
 import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles';
@@ -163,7 +164,7 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
       <section className="max-w-6xl mx-auto px-4 py-10">
         <Breadcrumbs
           items={[
-            { label: labels.home, href: `/${locale}` },
+            { label: labels.home, href: homeHref(locale) },
             { label: labels.guides },
           ]}
         />

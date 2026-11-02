@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getAffiliateStrings } from '@/components/affiliate/affiliate-i18n';
+import { homeHref } from '@/lib/locale-links';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import NordPassAffiliatePromo from '@/components/affiliate/NordPassAffiliatePromo';
@@ -184,7 +185,7 @@ export default async function BestPasswordManagersPage({
       <article className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
           items={[
-            { label: breadcrumbHome[locale] || breadcrumbHome.en, href: `/${locale}` },
+            { label: breadcrumbHome[locale] || breadcrumbHome.en, href: homeHref(locale) },
             { label: breadcrumbPage[locale] || breadcrumbPage.en },
           ]}
         />

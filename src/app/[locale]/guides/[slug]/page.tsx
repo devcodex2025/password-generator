@@ -27,6 +27,7 @@ import {
 } from '@/lib/guides-interlink-plan';
 import { getLocalizedInterlinkAnchor } from '@/lib/interlinking-anchors';
 import { getPlacementLabel } from '@/lib/interlinking-placements';
+import { homeHref } from '@/lib/locale-links';
 import VpnGuideVisualBlocks, {
   type VpnGuideVisualBlockId,
 } from '@/components/guides/VpnGuideVisualBlocks';
@@ -267,7 +268,7 @@ export default async function GuideArticlePage({
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
           items={[
-            { label: labels.home, href: `/${locale}` },
+            { label: labels.home, href: homeHref(locale) },
             { label: labels.guides, href: `/${locale}/guides` },
             { label: guide.title },
           ]}

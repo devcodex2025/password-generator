@@ -4,6 +4,7 @@ import ContactCaptcha from '@/components/ContactCaptcha';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import { getStaticPageCopy, STATIC_PAGE_LOCALES } from '@/lib/static-pages-i18n';
 import { CONTACT_COPY, FAQ_TITLE } from '@/lib/contact-i18n';
+import { homeHref } from '@/lib/locale-links';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const contactEmail = 'support@generatepasswordto.me';
@@ -92,7 +93,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
           items={[
-            { label: copy.home, href: `/${locale}` },
+            { label: copy.home, href: homeHref(locale) },
             { label: copy.contact },
           ]}
         />

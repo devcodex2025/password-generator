@@ -43,10 +43,22 @@ function readCountry(request: NextRequest): string | null {
  * and the registry falls back to locale-based links.
  */
 export function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // The English home is canonical at `/`. `/en` is an internal alias; send
+  // direct requests to the canonical URL so sitemap, canonical and hreflang
+  // all describe one page. Rewrites do not re-enter the proxy, so `/` → `/en`
+  // below is unaffected.
+  if (pathname === '/en') {
+    const canonical = request.nextUrl.clone();
+    canonical.pathname = '/';
+    return NextResponse.redirect(canonical, 301);
+  }
+
   // Root URL renders the English locale without changing the URL (the canonical
   // home stays https://www.generatepasswordto.me). [locale] is the root layout now,
   // so `/` must be mapped onto it explicitly.
-  const isRoot = request.nextUrl.pathname === '/';
+  const isRoot = pathname === '/';
   const response = isRoot
     ? NextResponse.rewrite(new URL('/en', request.url))
     : NextResponse.next();

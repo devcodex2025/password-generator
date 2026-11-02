@@ -6,6 +6,7 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import HowToUse from '@/components/HowToUse';
 import { ABOUT_COPY } from '@/lib/about-i18n';
 import { getStaticPageCopy, STATIC_PAGE_LOCALES } from '@/lib/static-pages-i18n';
+import { homeHref } from '@/lib/locale-links';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const contactEmail = 'support@generatepasswordto.me';
@@ -62,7 +63,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <section className="max-w-5xl mx-auto px-4 pt-10 pb-10">
         <Breadcrumbs
           items={[
-            { label: shellCopy.home, href: `/${locale}` },
+            { label: shellCopy.home, href: homeHref(locale) },
             { label: copy.title },
           ]}
         />

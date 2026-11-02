@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
+import { homeHref } from '@/lib/locale-links';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const LOCALES = ['en', 'ua', 'vi'] as const;
@@ -225,7 +226,7 @@ export default async function PasswordStatisticsPage({ params }: { params: Promi
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
           items={[
-            { label: locale === 'ua' ? 'Головна' : locale === 'vi' ? 'Trang chủ' : 'Home', href: `/${locale}` },
+            { label: locale === 'ua' ? 'Головна' : locale === 'vi' ? 'Trang chủ' : 'Home', href: homeHref(locale) },
             { label: copy.h1 },
           ]}
         />

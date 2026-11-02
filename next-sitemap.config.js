@@ -56,7 +56,11 @@ const toHreflang = (code) => hreflangMap[code] || code;
  */
 function buildAlternateRefs(pathSuffix) {
   return availableLanguages.map((langCode) => ({
-    href: `${siteUrl}/${langCode}${pathSuffix}`,
+    // The English home lives at `/`; its `/en` alias is redirected.
+    href:
+      langCode === 'en' && pathSuffix === ''
+        ? siteUrl
+        : `${siteUrl}/${langCode}${pathSuffix}`,
     hreflang: toHreflang(langCode),
     hrefIsAbsolute: true,
   }));
@@ -77,7 +81,7 @@ module.exports = {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/server-sitemap.xml'],
+        disallow: ['/api/', '/server-sitemap.xml'],
       },
     ],
     additionalSitemaps: [
@@ -90,13 +94,15 @@ module.exports = {
     const allLanguages = [...availableLanguages, 'vi'];
     const viStaticSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'about', 'best-password-managers-2026'];
 
-    const localePages = allLanguages.map((langCode) => ({
+    const localePages = allLanguages
+      .filter((langCode) => langCode !== 'en')
+      .map((langCode) => ({
         loc: `/${langCode}`,
         changefreq: 'weekly',
         priority: 0.9,
         lastmod: new Date().toISOString(),
         alternateRefs: buildAlternateRefs(''),
-    }));
+      }));
 
     const guideIndexPages = availableLanguages.map((langCode) => ({
       loc: `/${langCode}/guides`,
@@ -198,6 +204,8 @@ module.exports = {
     return [rootPage, ...localePages, ...guideIndexPages, viGuideIndexPage, ...guideArticlePages, ...staticPages, ...viStaticPages, ...viGuideArticlePages, ...dataPages];
   },
   transform: async (config, path) => {
+    // `/en` redirects to `/`; only the canonical URL belongs in the sitemap.
+    if (path === '/en' || path === '/en/') return null;
     // Never list generated OG-image routes as pages — they are PNG endpoints,
     // not indexable HTML. Keeps crawl budget on real pages only.
     if (/\/opengraph-image(\/|$)/.test(path)) return null;

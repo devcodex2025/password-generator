@@ -3,6 +3,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import { getStaticPageCopy, STATIC_PAGE_LOCALES } from '@/lib/static-pages-i18n';
 import { LEGAL_COPY } from '@/lib/legal-i18n';
+import { homeHref } from '@/lib/locale-links';
 
 const baseUrl = 'https://www.generatepasswordto.me';
 const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl', 'vi'];
@@ -71,7 +72,7 @@ export default async function PrivacyPolicyPage({ params }: { params: Promise<{ 
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
           items={[
-            { label: copy.home, href: `/${locale}` },
+            { label: copy.home, href: homeHref(locale) },
             { label: copy.privacyPolicy },
           ]}
         />
