@@ -107,6 +107,29 @@ npm run dev
 http://localhost:3000
 ```
 
+### Optional: Docker Compose (isolated install)
+
+Requires Docker Compose 2.24 or newer (`develop.watch` needs 2.22+, the optional `.env` needs 2.24+). Runs the app and a [Caddy](https://caddyserver.com) HTTPS proxy in containers, so nothing is installed on the host. Dependencies are installed with `npm ci`, which uses the exact versions in `package-lock.json`.
+
+```bash
+docker compose up -d --build
+```
+
+Open `https://localhost`. By default Caddy issues a certificate from its local CA, so the browser shows a warning until you trust it.
+
+Optional settings go in `.env` (see the Docker section of `.env.example`):
+
+- `HTTP_PORT` / `HTTPS_PORT`: host ports (default `80` / `443`). For example, `HTTPS_PORT=8443` serves `https://localhost:8443`.
+- `SITE_ADDRESS`: hostname Caddy serves (default `localhost`). A public domain gets a Let's Encrypt certificate and needs public ports 80 and 443.
+
+`NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_ADSENSE_CLIENT` and `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` are read from `.env` and baked in at build time (unset ones fall back to the defaults in the source), so re-run `docker compose up -d --build` after changing them.
+
+To rebuild automatically on dependency or source changes:
+
+```bash
+docker compose up --watch
+```
+
 ## Technologies
 
 [![Frontend](https://skillicons.dev/icons?i=nextjs,react,ts,js,tailwind,materialui&theme=light)](https://skillicons.dev)

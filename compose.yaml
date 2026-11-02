@@ -1,0 +1,71 @@
+services:
+  web:
+    build:
+      context: .
+      # read from the shell or .env; inlined at build time, so changing them needs a rebuild
+      args:
+        - NEXT_PUBLIC_GTM_ID
+        - NEXT_PUBLIC_GA_ID
+        - NEXT_PUBLIC_ADSENSE_CLIENT
+        - NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1),()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+    expose:
+      - "3000"
+    volumes:
+      # next/image optimisations are written here once and reused across restarts
+      - next_cache:/app/.next/cache
+    # `docker compose up --watch` rebuilds and restarts the image on dependency or source changes
+    develop:
+      watch:
+        - action: rebuild
+          path: package.json
+        - action: rebuild
+          path: package-lock.json
+        - action: rebuild
+          path: .npmrc
+        - action: rebuild
+          path: src
+        - action: rebuild
+          path: public
+        - action: rebuild
+          path: content.json
+        - action: rebuild
+          path: next.config.js
+        - action: rebuild
+          path: tailwind.config.js
+        - action: rebuild
+          path: postcss.config.js
+        - action: rebuild
+          path: tsconfig.json
+    # optional: copy .env.example to .env to override defaults (CONTENT_SOURCE=json needs no database)
+    env_file:
+      - path: .env
+        required: false
+
+  caddy:
+    image: caddy:2.10-alpine
+    restart: unless-stopped
+    depends_on:
+      web:
+        condition: service_healthy
+    ports:
+      # override on the host with HTTP_PORT / HTTPS_PORT (shell env or .env)
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-localhost}
+      HTTPS_PORT: ${HTTPS_PORT:-443}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  next_cache:
+  caddy_data:
+  caddy_config:
