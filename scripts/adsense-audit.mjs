@@ -151,7 +151,7 @@ async function auditPage(url) {
       template: templateOf(url),
       status: res.status,
       finalUrl: res.url,
-      redirected: res.url !== url,
+      redirected: res.url.replace(/\/+$/, '') !== url.replace(/\/+$/, ''),
       contentType: res.headers.get('content-type') || '',
       title: decodeEntities((body.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [, ''])[1]).trim(),
       description: meta(body, 'description'),
@@ -371,7 +371,9 @@ async function main() {
     console.log(`  ${label}  ${item.label}  (${item.detail})`);
   }
 
-  const broken = ok.filter((p) => p.redirected || (p.canonical && p.canonical !== p.url));
+  const broken = ok.filter(
+    (p) => p.redirected || (p.canonical && p.canonical.replace(/\/+$/, '') !== p.url.replace(/\/+$/, '')),
+  );
   const noindex = ok.filter((p) => /noindex/i.test(p.robots));
   const badH1 = ok.filter((p) => p.h1 !== 1);
   const missingDesc = ok.filter((p) => !p.description);
