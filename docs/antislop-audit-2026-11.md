@@ -51,13 +51,22 @@ Scope: 11 guides (all locale blocks), 211 UI strings per locale, static pages, m
 - Italian “è importante” and Japanese “重要です” — plain, correct language in context.
 - “overall analytics” in the cookie policy — means aggregate analytics, not filler.
 
+## Final state (2026-11-02)
+
+`npm run antislop` now reports **0 non-allowlisted hits** in every locale
+(en 17 993 words, ua 13 147, ru 6 665, es 10 345, fr 9 789, de 6 902, it 7 911,
+pt 7 771, pl 6 757, ja 573, zh 520, vi 21 684).
+
+The check is part of the repository: `scripts/antislop-scan.mjs`
+(patterns per locale + context allowlist), run it before publishing content or translations.
+
+Keep-allowed (legitimate, not filler): “phone unlock PINs”, “biometric unlock”,
+“the overall package”, “dérivation de clés robuste”, Italian “è importante”, Japanese “重要です”.
+
 ## Remaining work
 
-- Files currently being edited by a parallel session (`common-password-mistakes.ts`,
-  `nist-800-63b-password-rules.ts`, `passphrase-vs-password-entropy.ts`) contain one more small
-  fix each that will be committed with that work: “фактично незламні” → “практично незламні”,
-  “khuyến nghị mạnh mẽ” → “khuyến nghị”, “essentially impossible” and the ja/zh wording.
-- Vietnamese guide bodies: apply the same scan after each translation batch.
+- None for the current corpus. Apply the same check after every Vietnamese translation batch
+  (`npm run antislop`) and after any new article or UI copy.
 
 ## Rule for new content
 

@@ -63,6 +63,7 @@
     "indexnow": "node scripts/indexnow.mjs",
     "backlinks": "node scripts/backlink-queue.mjs",
     "gsc": "node scripts/gsc-report.mjs",
+    "antislop": "node scripts/antislop-scan.mjs",
     "keywords": "node scripts/keyword-research.mjs",
     "keywords:map": "node scripts/keyword-map.mjs",
     "keywords:cloud": "node scripts/keyword-cloud.mjs"
