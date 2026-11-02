@@ -368,7 +368,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
     <header className="py-4 lg:py-5 px-2 flex justify-between items-center w-full">
       <div className="flex items-center">
         {isHomePage ? (
-          <div className="logo-plate inline-flex">
+          <div className="inline-flex">
             <Image
               src="/images/logo.svg"
               alt="Generate Password To Me - Secure Password Generator Logo"
@@ -383,7 +383,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           <Link
             href={homeHref}
             aria-label="Go to homepage"
-            className="logo-link logo-plate inline-flex transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+            className="logo-link inline-flex transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
           >
             <Image
               src="/images/logo.svg"

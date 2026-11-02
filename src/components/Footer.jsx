@@ -95,7 +95,7 @@ const Footer = ({ language }) => {
             <Link
               href={locale === 'en' ? '/' : `/${locale}`}
               aria-label="Generate Password To Me - home"
-              className="logo-plate inline-flex justify-self-center transition-opacity duration-200 hover:opacity-90 md:justify-self-start"
+              className="inline-flex justify-self-center transition-opacity duration-200 hover:opacity-90 md:justify-self-start"
             >
               <Image
                 src="/images/logo.svg"

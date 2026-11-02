@@ -432,23 +432,6 @@ header {
   object-fit: contain;
 }
 
-/* The logo keeps its dark-navy wordmark in both themes. On the dark header /
-   footer it needs a light backing plate so the wordmark and the small
-   PASSWORDTO.ME line keep WCAG contrast. Padding and negative margin are
-   identical in both themes, so switching themes causes no layout shift. */
-.logo-plate {
-  display: inline-flex;
-  padding: 0.25rem;
-  margin: -0.25rem;
-  border-radius: 0.75rem;
-  transition: background-color 200ms ease;
-}
-
-.dark .logo-plate {
-  background-color: #e5f6ff;
-  box-shadow: 0 0 0 1px rgba(229, 246, 255, 0.4);
-}
-
 @media (min-width: 640px) {
   .logo {
     height: 48px;
