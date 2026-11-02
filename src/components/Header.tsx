@@ -10,6 +10,7 @@ import { getLanguagesWithFlags, getLanguageSelectionText, getThemeText } from '.
 import type { SelectChangeEvent } from '@mui/material/Select';
 import { getAvailableLanguages } from '../utils/languageUtils';
 import { getLinkLabel, type LinkLabelKey } from '@/utils/linkTranslations';
+import { startNavigationLoading } from '@/lib/navigation-events';
 
 /* ── Lazy-loaded heavy dependencies (perf: saves ~1.4 MB from initial bundle) ── */
 const Drawer = lazy(() => import('@mui/material/Drawer'));
@@ -145,6 +146,12 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
 
   const handleLanguageChange = (event: SelectChangeEvent) => {
     const lang = event.target.value;
+    if (lang === language) {
+      return;
+    }
+    // Locale switches go through the router, not an <a> click, so start the
+    // shared overlay explicitly before the new route begins loading.
+    startNavigationLoading(lang);
     setLanguage(lang);
     onLanguageChange(lang);
   };
@@ -397,7 +404,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           </Link>
         )}
       </div>
-      <ul className="lg:flex flex-1 justify-end items-center hidden gap-3 xl:gap-5 whitespace-nowrap text-[#071016] text-sm font-medium">
+      <ul className="lg:flex flex-1 justify-start items-center hidden gap-3 pl-4 xl:gap-5 xl:pl-8 whitespace-nowrap text-[#071016] text-sm font-medium">
         {navItems.map((item) => (
           <li key={item.href}>
             <Link
@@ -408,7 +415,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             </Link>
           </li>
         ))}
-        <li>
+        <li className="ml-auto pl-4 xl:pl-8">
           <Suspense fallback={<span className="w-10 h-10 inline-block" />}>
             <IconButton
               onClick={toggleMode}
@@ -441,7 +448,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           handleLanguageChange({ target: { value: e.target.value } } as SelectChangeEvent)
         }
         id="eng"
-        className={`language-select py-3 lg:flex hidden px-4 justify-center border-2 border-[#2A4E63] rounded-[60px] bg-transparent w-auto ${isAnimating ? 'language-change-animation' : ''} ${isHomePage ? '' : 'hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:border-[#1a3a4a]'}`}
+        className={`language-select py-3 lg:flex hidden px-4 lg:ml-5 justify-center border-2 border-[#2A4E63] rounded-[60px] bg-transparent w-auto ${isAnimating ? 'language-change-animation' : ''} ${isHomePage ? '' : 'hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:border-[#1a3a4a]'}`}
       >
         {languages.map((lang) => (
           <option key={lang.value} value={lang.value}>

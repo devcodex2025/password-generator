@@ -276,6 +276,20 @@ body {
   overflow-y: auto !important;
 }
 
+/* Confetti and decorative layers must never widen the page. `clip` does not
+   create a scroll container, so it does not break position: sticky. */
+html,
+body {
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
 .dark .MuiSelect-select {
   background-color: #374151 !important;
   color: var(--dark-theme-white) !important;

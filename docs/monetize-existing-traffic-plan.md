@@ -207,7 +207,7 @@ Cookie NordPass — 30 днів. Один клік може оплатити п�
 | 1.3 | `Header.tsx`, `Footer.jsx`, `linkTranslations.ts` | пункт «Менеджери паролів» у навігації та футері, 11 локалей |
 | 1.4 | `PasswordBreachCheck.tsx` | CTA після результату перевірки (+подія `nordpass_affiliate_click` з `placement: breach-result`) |
 | 1.5 | `[locale]/page.tsx` | `AdBanner` перенесено під партнерський блок; блок тепер рендериться на сервері (прибрано `ssr:false`) |
-| 2 | `SavePasswordModal.tsx` (новий), `PasswordGenerator.tsx` | модалка після першого copy: 11 локалей, максимум 1 раз за сесію і 2 рази за весь час, Escape/backdrop, події `save_modal_view/cta/dismiss` |
+| 2 | `SavePasswordModal.tsx` (новий), `PasswordGenerator.tsx` | модалка після кожного copy: 11 локалей, Escape/backdrop, події `save_modal_view/cta/dismiss` |
 | 5 | `best-password-managers-2026/page.tsx` | прибрано вигадані `review`/`aggregateRating`; прибрано `NordPass affiliate` з keywords; узгоджено `highPrice` |
 | 5 | `NordPassAffiliatePromo.tsx` | виправлено факти про Bitwarden (passkeys, breach scan) |
 

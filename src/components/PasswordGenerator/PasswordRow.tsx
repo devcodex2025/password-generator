@@ -42,7 +42,7 @@ export default function PasswordRow({
   return (
     <div className="relative my-5 flex h-auto w-full flex-row flex-wrap items-center gap-2 lg:my-1 lg:flex-nowrap">
       <div
-        className={`flex h-14 w-full min-w-0 items-stretch border-2 border-solid border-[#E5F6FF] py-0 text-[12px] text-[#071016] dark:border-transparent dark:bg-[#000000] lg:w-[80%] lg:items-center lg:rounded-[120px] lg:px-4 md:text-[20px] rounded-[120px] bg-white lg:py-1`}
+        className={`flex h-14 w-full min-w-0 items-stretch border-2 border-solid border-[#E5F6FF] py-0 text-[12px] text-[#071016] dark:border-transparent dark:bg-[#000000] lg:w-[80%] lg:items-center lg:rounded-[120px] lg:px-4 md:text-[20px] rounded-[120px] bg-white`}
       >
         <label htmlFor={`password-output-${index}`} className="sr-only">Generated password</label>
         <input
@@ -53,18 +53,18 @@ export default function PasswordRow({
           readOnly
         />
         {/* Tablet / small laptop: black pill — keep actions vertically centred with the field */}
-        <div className="hidden min-h-0 shrink-0 items-center justify-end gap-1.5 self-center pr-1.5 md:flex md:rounded-l-none md:rounded-r-[36px] md:bg-black lg:max-w-[300px] lg:gap-2 lg:rounded-[40px] lg:bg-transparent lg:pr-2">
+        <div className="hidden min-h-0 shrink-0 items-center justify-end gap-1.5 self-stretch pr-1.5 md:flex md:rounded-l-none md:rounded-r-[36px] md:bg-black lg:max-w-[300px] lg:gap-2 lg:rounded-[40px] lg:bg-transparent lg:pr-2">
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
-            className="hidden lg:inline-flex lg:px-6 lg:py-2 lg:text-[20px]"
+            className="hidden lg:inline-flex lg:h-full lg:px-6 lg:py-0 lg:text-[20px]"
           >
             {t('generate')}
           </GenerateButton>
           <GenerateButton
             onClick={() => onGenerate(index)}
             onLongPress={handleLongPress}
-            className="inline-flex shrink-0 items-center justify-center px-3 py-2 text-[14px] font-semibold leading-none lg:hidden md:px-3.5 md:text-[15px]"
+            className="inline-flex shrink-0 items-center justify-center px-3 py-2 text-[14px] font-semibold leading-none md:h-full md:px-3.5 md:py-0 md:text-[15px] lg:hidden"
           >
             {t('generate_short')}
           </GenerateButton>

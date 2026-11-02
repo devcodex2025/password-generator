@@ -251,7 +251,8 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       runReward('confetti');
       ga('password_copied', { index, ui_language: language, surface: 'home' });
 
-      // Highest-intent moment: offer to store the password (max 2 times per visitor)
+      // Highest-intent moment: offer to store the password. This runs on every
+      // copy, which is the explicit action that makes the prompt relevant.
       if (shouldShowSavePrompt()) {
         window.setTimeout(() => setSaveModalOpen(true), 400);
       }
@@ -376,13 +377,18 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         {t('main_subtitle')}
       </p>
       <div
-        className={`relative flex w-full min-w-0 max-w-full flex-col overflow-visible rounded-[48px] shadow drop-shadow-lg p-[16px] md:p-[40px] lg:w-9/12 xl:w-9/12 2xl:w-9/12 ${isDarkMode ? 'bg-[#1c1c1c]' : 'bg-white'}`}
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden"
       >
         <div
           id="rewardSingle"
           ref={rewardAnchorRef}
-          className="fixed left-1/2 top-[35%] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[9999]"
+          className="absolute left-1/2 top-[35%] -translate-x-1/2 -translate-y-1/2"
         />
+      </div>
+      <div
+        className={`relative flex w-full min-w-0 max-w-full flex-col overflow-visible rounded-[48px] shadow drop-shadow-lg p-[16px] md:p-[40px] lg:w-9/12 xl:w-9/12 2xl:w-9/12 ${isDarkMode ? 'bg-[#1c1c1c]' : 'bg-white'}`}
+      >
         {passwords.length > 0 ? (
           <PasswordRow
             password={passwords[0]}

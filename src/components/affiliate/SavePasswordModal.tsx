@@ -94,30 +94,12 @@ function copyFor(locale: string): Copy {
   return COPY[locale] ?? COPY.en;
 }
 
-const MAX_SHOWS = 2;
-const SHOWN_KEY = 'spm_shown_count';
-const SESSION_KEY = 'spm_shown_session';
-
-/** Should the save prompt be shown for this visitor? */
+/**
+ * The prompt is shown on every copy action. It only appears after an explicit
+ * user gesture, so it stays intentional rather than interrupting the page.
+ */
 export function shouldShowSavePrompt(): boolean {
-  if (typeof window === 'undefined') return false;
-  try {
-    if (sessionStorage.getItem(SESSION_KEY) === '1') return false;
-    const shown = Number(localStorage.getItem(SHOWN_KEY) || '0');
-    return Number.isFinite(shown) ? shown < MAX_SHOWS : true;
-  } catch {
-    return false;
-  }
-}
-
-function markShown() {
-  try {
-    sessionStorage.setItem(SESSION_KEY, '1');
-    const shown = Number(localStorage.getItem(SHOWN_KEY) || '0');
-    localStorage.setItem(SHOWN_KEY, String((Number.isFinite(shown) ? shown : 0) + 1));
-  } catch {
-    /* storage can be blocked — fail closed */
-  }
+  return typeof window !== 'undefined';
 }
 
 function track(event: string, locale: string) {
@@ -154,7 +136,6 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
     track('save_modal_view', locale);
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        markShown();
         track('save_modal_dismiss', locale);
         onClose();
       }
@@ -166,29 +147,30 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
   if (!open) return null;
 
   const dismiss = () => {
-    markShown();
     track('save_modal_dismiss', locale);
     onClose();
   };
 
   return (
     <div
-      className="fixed inset-0 z-[10050] flex items-end justify-center bg-black/50 p-3 sm:items-center"
+      className="fixed inset-0 z-[10050] flex items-end justify-center bg-[#071016]/45 p-3 backdrop-blur-[2px] sm:items-center"
       role="dialog"
       aria-modal="true"
       aria-labelledby="save-password-modal-title"
       onClick={dismiss}
     >
       <div
-        className="w-full max-w-md rounded-3xl bg-white p-6 shadow-2xl dark:bg-[#1c1c1c]"
+        className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-[#E5F6FF] bg-white p-6 shadow-2xl ring-1 ring-[#2A4E63]/5 dark:border-[#374151] dark:bg-[#1c1c1c] dark:ring-white/10"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="h-6 w-6 text-[#05a9ff]" aria-hidden="true" />
+          <div className="flex items-start gap-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EAF8FF] text-[#2A4E63] dark:bg-[#05a9ff]/15 dark:text-[#38beff]">
+              <ShieldCheck className="h-6 w-6" aria-hidden="true" />
+            </span>
             <h2
               id="save-password-modal-title"
-              className="text-[19px] font-bold leading-snug text-[#071016] dark:text-[#e0e0e0]"
+              className="mt-1 text-[19px] font-bold leading-snug text-[#071016] dark:text-[#e0e0e0]"
             >
               {c.title}
             </h2>
@@ -197,20 +179,19 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
             type="button"
             onClick={dismiss}
             aria-label={c.dismiss}
-            className="shrink-0 rounded-full p-1 text-[#6b7280] transition hover:bg-black/5 dark:text-[#6b7280] dark:text-[#9ca3af] dark:hover:bg-white/10"
+            className="shrink-0 rounded-full p-1 text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] dark:text-[#9ca3af] dark:hover:bg-white/10 dark:hover:text-white"
           >
             <X className="h-5 w-5" aria-hidden="true" />
           </button>
         </div>
 
-        <p className="mt-3 text-[15px] leading-6 text-[#4B5563] dark:text-[#c7c7c7]">{c.body}</p>
+        <p className="mt-4 text-[15px] leading-6 text-[#374151] dark:text-[#c7c7c7]">{c.body}</p>
 
         <a
           href={target.href}
           target="_blank"
           rel="sponsored noopener"
           onClick={() => {
-            markShown();
             track('save_modal_cta', locale);
             onClose();
           }}
@@ -218,7 +199,8 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
           data-placement="save-modal"
           className={cn(
             'mt-5 flex w-full items-center justify-center rounded-full bg-[#05a9ff] px-6 py-3.5',
-            'text-[16px] font-semibold !text-[#0a1e2a] shadow-md transition hover:bg-[#38beff]'
+            'text-[16px] font-semibold !text-[#0a1e2a] shadow-md transition hover:bg-[#38beff]',
+            'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#05a9ff]/30'
           )}
         >
           {c.cta}
@@ -227,12 +209,12 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
         <button
           type="button"
           onClick={dismiss}
-          className="mt-2 w-full rounded-full px-6 py-2.5 text-[14px] font-medium text-[#6b7280] transition hover:text-[#2A4E63] dark:text-[#6b7280] dark:text-[#9ca3af] dark:hover:text-white"
+          className="mt-2 w-full rounded-full px-6 py-2.5 text-[14px] font-medium text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] dark:text-[#9ca3af] dark:hover:bg-white/5 dark:hover:text-white"
         >
           {c.dismiss}
         </button>
 
-        <p className="mt-2 text-center text-[11px] italic text-[#6b7280] dark:text-[#9ca3af] dark:text-[#6B7280]">{c.ad}</p>
+        <p className="mt-2 text-center text-[11px] italic text-[#6b7280] dark:text-[#9ca3af]">{c.ad}</p>
       </div>
     </div>
   );
