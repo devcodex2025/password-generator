@@ -1,0 +1,231 @@
+{
+  "date": "2026-11-02",
+  "target_domain": "www.generatepasswordto.me",
+  "summary": {
+    "sources_total": 256,
+    "http_checked": 256,
+    "live": 210,
+    "dead": 46,
+    "noindex_detected": 26,
+    "noindex_real_on_2xx": 1,
+    "noindex_false_positive_403": 25,
+    "published_pages": 1,
+    "publication_attempts": 2,
+    "verified_links": 1,
+    "dofollow": 0,
+    "nofollow": 1,
+    "blocked": 3,
+    "referring_domains_added": 1,
+    "elapsed_minutes_estimate": 25,
+    "http_status_breakdown": {
+      "200": 209,
+      "202": 1,
+      "403": 28,
+      "404": 1,
+      "429": 2,
+      "526": 1,
+      "0": 14
+    },
+    "csv_status_breakdown": {
+      "done": 5,
+      "todo": 108,
+      "tested-fail": 73,
+      "blocked": 19,
+      "verify": 39,
+      "avoid": 12
+    },
+    "csv_status_note": "Updated after the follow-up full directory audit on the same day: 65 account-free sources reclassified (16 blocked, 7 tested-fail, 28 verify notes)."
+  },
+  "published": [
+    {
+      "id": "A01",
+      "platform": "Telegraph",
+      "url": "https://telegra.ph/How-long-does-it-take-to-crack-a-password-A-working-estimate-11-02",
+      "target_url": "https://www.generatepasswordto.me/en/password-statistics-2026",
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "anchor": "crack-time dataset",
+      "words": 734,
+      "verified": true,
+      "verify_raw": {
+        "page": "https://telegra.ph/How-long-does-it-take-to-crack-a-password-A-working-estimate-11-02",
+        "http": 200,
+        "finalUrl": "https://telegra.ph/How-long-does-it-take-to-crack-a-password-A-working-estimate-11-02",
+        "noindex": false,
+        "found": 1,
+        "links": [
+          {
+            "href": "https://www.generatepasswordto.me/en/password-statistics-2026",
+            "rel": "nofollow",
+            "text": "crack-time dataset"
+          }
+        ]
+      }
+    }
+  ],
+  "failed": [
+    {
+      "id": "A03",
+      "source": "Write.as",
+      "url": "https://write.as/lx7jnemx7lwwo",
+      "reason": "Anonymous post created via official API (POST /api/posts -> 201), but Write.as renders anonymous posts as plain text: markdown link was not converted to an anchor and a pre-rendered HTML body was escaped. --verify found=0.",
+      "http": 200,
+      "noindex": false,
+      "found": 0,
+      "verify_raw": {
+        "page": "https://write.as/lx7jnemx7lwwo",
+        "http": 200,
+        "finalUrl": "https://write.as/lx7jnemx7lwwo",
+        "noindex": false,
+        "found": 0,
+        "links": []
+      },
+      "action": "Post deleted (DELETE -> 204, URL now 404). Do not retry anonymously; with an account, paste the prepared text into the Write.as editor where markdown renders."
+    }
+  ],
+  "blocked": [
+    {
+      "id": "A02",
+      "source": "Rentry",
+      "blocker": "No public API; publishing only via web form with CSRF token, captcha and edit code. Markdown links are supported, but anonymous automation is impossible."
+    },
+    {
+      "id": "A05",
+      "source": "HackMD",
+      "blocker": "Official API requires Authorization: Bearer <token> from a signed-in account (hackmd.io/@docs/api-authorization). Anonymous publishing via API is not documented."
+    },
+    {
+      "id": "S42",
+      "source": "Lobsters",
+      "blocker": "Invite-only registration."
+    }
+  ],
+  "blocked_note": "98 of 111 Tier S/C/D sources have registration=account (plus 2 GitHub, 1 invite). Account, captcha and ToS requirements were not bypassed; those sources are covered by next_actions.",
+  "files_changed": [
+    {
+      "path": "docs/backlink-sources.checked.csv",
+      "change": "New: all 256 rows with http_status, reachable, noindex, final_url, checked_at."
+    },
+    {
+      "path": "docs/backlink-sources.csv",
+      "change": "46 unreachable + 1 real noindex row set to status=tested-fail, value=0, HTTP code and date in notes; A01 done with actual link_type=nofollow; A02/A05 blocked; A03 tested-fail. 256 rows x 13 columns preserved."
+    },
+    {
+      "path": "docs/backlink-queue.md",
+      "change": "Regenerated from live todo S/A P1-P2 sources: 23 items, no tested-fail."
+    },
+    {
+      "path": "docs/link-building-tracking.json",
+      "change": "Two entries added: Telegraph verified, Write.as failed."
+    },
+    {
+      "path": "docs/backlink-check-2026-11-02.log",
+      "change": "Raw output of --check."
+    },
+    {
+      "path": "docs/verification-2026-11-02-telegraph.json",
+      "change": "Raw --verify output for the published page."
+    },
+    {
+      "path": "docs/verification-2026-11-02-writeas.json",
+      "change": "Raw --verify output for the failed Write.as attempt."
+    },
+    {
+      "path": "docs/link-building-run-2026-11-02.md",
+      "change": "Human-readable report (this run)."
+    },
+    {
+      "path": "docs/link-building-run-2026-11-02.json",
+      "change": "Machine-readable report with the same numbers."
+    }
+  ],
+  "next_actions": [
+    {
+      "rank": 1,
+      "id": "S02",
+      "action": "Submit the tool via PrivacyTools' suggest-a-tool form",
+      "url": "https://www.privacytools.io/",
+      "minutes": 10,
+      "expected": "Topical privacy directory listing, human review"
+    },
+    {
+      "rank": 2,
+      "id": "S03",
+      "action": "Fork + PR: one-line entry in awesome-privacy following the contribution guide",
+      "url": "https://github.com/Lissy93/awesome-privacy",
+      "minutes": 20,
+      "expected": "Permanent GitHub repository mention, nofollow"
+    },
+    {
+      "rank": 3,
+      "id": "S05",
+      "action": "Create account, add the app as an alternative (403 to bots, page works in a browser)",
+      "url": "https://alternativeto.net/",
+      "minutes": 20,
+      "expected": "Traffic plus indexation"
+    },
+    {
+      "rank": 4,
+      "id": "S06",
+      "action": "Submit product on the free tier",
+      "url": "https://www.saashub.com/",
+      "minutes": 15,
+      "expected": "Fast approval"
+    },
+    {
+      "rank": 5,
+      "id": "S16",
+      "action": "Launch with GitHub login; angle: 11 locales + local-only generation",
+      "url": "https://devhunt.org/",
+      "minutes": 20,
+      "expected": "Developer audience"
+    },
+    {
+      "rank": 6,
+      "id": "S23",
+      "action": "Publish the prepared text from section 7.4 with canonical_url set",
+      "url": "https://dev.to/",
+      "minutes": 30,
+      "expected": "Referring domain, nofollow"
+    },
+    {
+      "rank": 7,
+      "id": "S22",
+      "action": "Show HN on Tuesday-Thursday, technical angle, no marketing",
+      "url": "https://news.ycombinator.com/show",
+      "minutes": 30,
+      "expected": "Traffic spike plus a link"
+    },
+    {
+      "rank": 8,
+      "id": "S27",
+      "action": "Publish a Ukrainian technical post (adapt section 7.4)",
+      "url": "https://dou.ua/",
+      "minutes": 120,
+      "expected": "Ukrainian developer audience, editorial value"
+    },
+    {
+      "rank": 9,
+      "id": "S31",
+      "action": "Give 3 substantive answers without links, then 1 relevant link",
+      "url": "https://www.reddit.com/r/passwords/",
+      "minutes": 30,
+      "expected": "Traffic without promo-ban risk"
+    },
+    {
+      "rank": 10,
+      "id": "S37",
+      "action": "Answer 2 questions on entropy/cracking; link only if it completes the answer",
+      "url": "https://security.stackexchange.com/",
+      "minutes": 40,
+      "expected": "Expert answer with a nofollow link"
+    }
+  ],
+  "not_done": [
+    "Third page (topic: what NIST 800-63B actually requires) - no third Tier A platform with an official anonymous-publishing API; Rentry and HackMD are blocked and the one-page-per-platform rule forbids a second Telegraph page.",
+    "Write.as link - anonymous posts do not render Markdown, found=0; the post was deleted to avoid leaving a half-broken copy.",
+    "Actions for 98 Tier S/C/D sources with registration=account - require an account, captcha or ToS acceptance; listed in next_actions.",
+    "Fixing the status/http_status bug in scripts/backlink-queue.mjs - out of scope for this run to keep the diff focused."
+  ]
+}

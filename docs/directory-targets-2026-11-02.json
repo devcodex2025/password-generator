@@ -1,0 +1,507 @@
+{
+  "date": "2026-11-02",
+  "type": "directory_target_list",
+  "mailbox": {
+    "created": true,
+    "provider": "mail.tm",
+    "address": "gp-linkbuild-606cb0@fldubai.com",
+    "access_retained": true,
+    "credentials_location": "local temp file outside the repository",
+    "used_for": [
+      "SaaSHub",
+      "BetaList",
+      "F6S",
+      "DevHunt",
+      "MicroLaunch",
+      "SideProjectors",
+      "Submit AI Tools",
+      "Glama",
+      "Super Launch"
+    ],
+    "registrations_completed": 0,
+    "blockers": {
+      "captcha": [
+        "SaaSHub register",
+        "BetaList signup",
+        "Uneed submit",
+        "Firsto",
+        "AI Valley"
+      ],
+      "cloudflare": [
+        "F6S",
+        "SaaSHub login"
+      ],
+      "oauth_only": [
+        "DevHunt (GitHub)",
+        "Submit AI Tools (Google)",
+        "MicroLaunch (SPA/OAuth)"
+      ],
+      "reciprocal_backlink_required": [
+        "DodoDirectory",
+        "Smol Launch",
+        "ShinyLaunch",
+        "Trust MRR",
+        "ShowMeBestAI",
+        "Anyfp",
+        "See What New AI",
+        "AI Toolz Dir",
+        "Launchory"
+      ]
+    },
+    "verification_emails_received": 0
+  },
+  "candidates_total": 36,
+  "recommended": [
+    {
+      "rank": 1,
+      "name": "SaaSHub",
+      "submit_url": "https://www.saashub.com/register",
+      "requires": "account + captcha",
+      "minutes": 15,
+      "link": "dofollow claimed"
+    },
+    {
+      "rank": 2,
+      "name": "DevHunt",
+      "submit_url": "https://devhunt.org/",
+      "requires": "GitHub login",
+      "minutes": 20,
+      "link": "dofollow"
+    },
+    {
+      "rank": 3,
+      "name": "MicroLaunch",
+      "submit_url": "https://microlaunch.net/",
+      "requires": "account/OAuth, free queue",
+      "minutes": 15,
+      "link": "dofollow claimed"
+    },
+    {
+      "rank": 4,
+      "name": "Uneed",
+      "submit_url": "https://www.uneed.best/submit-a-tool",
+      "requires": "captcha, queue 30d-5m",
+      "minutes": 15,
+      "link": "dofollow at 20 upvotes"
+    },
+    {
+      "rank": 5,
+      "name": "Launching Next",
+      "submit_url": "https://www.launchingnext.com/submit/",
+      "requires": "math check + email, queue 2-4 months",
+      "minutes": 10,
+      "link": "unknown"
+    },
+    {
+      "rank": 6,
+      "name": "Product Hunt",
+      "submit_url": "https://www.producthunt.com/",
+      "requires": "account, Tue-Thu launch",
+      "minutes": 60,
+      "link": "nofollow/ugc"
+    },
+    {
+      "rank": 7,
+      "name": "AlternativeTo",
+      "submit_url": "https://alternativeto.net/",
+      "requires": "account",
+      "minutes": 20,
+      "link": "nofollow"
+    },
+    {
+      "rank": 8,
+      "name": "Peerlist or SideProjectors",
+      "submit_url": "https://peerlist.io/",
+      "requires": "account",
+      "minutes": 20,
+      "link": "nofollow"
+    }
+  ],
+  "rejected_by_category": {
+    "reciprocal_backlink_or_badge": [
+      "DodoDirectory",
+      "Smol Launch",
+      "ShinyLaunch",
+      "Trust MRR",
+      "ShowMeBestAI",
+      "Anyfp",
+      "See What New AI",
+      "AI Toolz Dir",
+      "Launchory"
+    ],
+    "paid_only": [
+      "Launchory",
+      "AI Valley",
+      "Free AI Directories"
+    ],
+    "captcha": [
+      "SaaSHub registration",
+      "BetaList",
+      "Uneed submission",
+      "Firsto",
+      "AI Valley"
+    ],
+    "oauth_only": [
+      "DevHunt",
+      "Submit AI Tools",
+      "Glama"
+    ],
+    "cloudflare": [
+      "F6S",
+      "SaaSHub login"
+    ],
+    "dead_or_bot_blocked": [
+      "FeedMyApp",
+      "Product Hunt",
+      "AlternativeTo",
+      "Peerlist",
+      "Indie Hackers",
+      "Crunchbase",
+      "G2",
+      "Capterra",
+      "Slant",
+      "StackShare",
+      "SourceForge",
+      "Softpedia"
+    ],
+    "weak_fit": [
+      "G2",
+      "Capterra",
+      "Wellfound",
+      "Crunchbase"
+    ]
+  },
+  "rows": [
+    {
+      "name": "AlternativeTo",
+      "url": "https://alternativeto.net/",
+      "status": 403,
+      "verdict": "human, account, nofollow"
+    },
+    {
+      "name": "SaaSHub",
+      "url": "https://www.saashub.com/",
+      "status": 200,
+      "verdict": "human, account, captcha on register"
+    },
+    {
+      "name": "Uneed",
+      "url": "https://www.uneed.best/",
+      "status": 200,
+      "verdict": "human, captcha, queue"
+    },
+    {
+      "name": "MicroLaunch",
+      "url": "https://microlaunch.net/",
+      "status": 200,
+      "verdict": "human, account/OAuth"
+    },
+    {
+      "name": "BetaList",
+      "url": "https://betalist.com/",
+      "status": 200,
+      "verdict": "reject, free tier closed, captcha"
+    },
+    {
+      "name": "Launching Next",
+      "url": "https://www.launchingnext.com/",
+      "status": 200,
+      "verdict": "human, math check"
+    },
+    {
+      "name": "Product Hunt",
+      "url": "https://www.producthunt.com/",
+      "status": 403,
+      "verdict": "human, nofollow"
+    },
+    {
+      "name": "DevHunt",
+      "url": "https://devhunt.org/",
+      "status": 200,
+      "verdict": "human, GitHub OAuth, dofollow"
+    },
+    {
+      "name": "Peerlist",
+      "url": "https://peerlist.io/",
+      "status": 403,
+      "verdict": "human, account"
+    },
+    {
+      "name": "SideProjectors",
+      "url": "https://www.sideprojectors.com/",
+      "status": 200,
+      "verdict": "human, account"
+    },
+    {
+      "name": "Indie Hackers",
+      "url": "https://www.indiehackers.com/",
+      "status": 403,
+      "verdict": "human, account"
+    },
+    {
+      "name": "Crunchbase",
+      "url": "https://www.crunchbase.com/",
+      "status": 403,
+      "verdict": "reject, weak fit, nofollow"
+    },
+    {
+      "name": "F6S",
+      "url": "https://www.f6s.com/",
+      "status": 200,
+      "verdict": "human, Cloudflare"
+    },
+    {
+      "name": "Wellfound",
+      "url": "https://wellfound.com/",
+      "status": 200,
+      "verdict": "reject, weak fit"
+    },
+    {
+      "name": "G2",
+      "url": "https://www.g2.com/",
+      "status": 403,
+      "verdict": "reject, B2B"
+    },
+    {
+      "name": "Capterra",
+      "url": "https://www.capterra.com/",
+      "status": 403,
+      "verdict": "reject, B2B/paid"
+    },
+    {
+      "name": "Slant",
+      "url": "https://www.slant.co/",
+      "status": 403,
+      "verdict": "human, account"
+    },
+    {
+      "name": "StackShare",
+      "url": "https://stackshare.io/",
+      "status": 429,
+      "verdict": "human, account"
+    },
+    {
+      "name": "SourceForge",
+      "url": "https://sourceforge.net/",
+      "status": 403,
+      "verdict": "reject, needs OSS"
+    },
+    {
+      "name": "Softpedia",
+      "url": "https://www.softpedia.com/",
+      "status": 403,
+      "verdict": "human, email submission"
+    },
+    {
+      "name": "Smol Launch",
+      "url": "https://smollaunch.com/",
+      "status": 200,
+      "verdict": "reject, badge"
+    },
+    {
+      "name": "Launchory",
+      "url": "https://www.launchory.app/",
+      "status": 200,
+      "verdict": "reject, paid $10"
+    },
+    {
+      "name": "DodoDirectory",
+      "url": "https://dododirectory.com/",
+      "status": 200,
+      "verdict": "reject, reciprocal backlink required"
+    },
+    {
+      "name": "Super Launch",
+      "url": "https://superlaun.ch/",
+      "status": 200,
+      "verdict": "human, SPA, verify link"
+    },
+    {
+      "name": "ShinyLaunch",
+      "url": "https://shinylaunch.com/",
+      "status": 200,
+      "verdict": "reject, badge"
+    },
+    {
+      "name": "Firsto",
+      "url": "https://firsto.co/",
+      "status": 200,
+      "verdict": "reject, captcha + password"
+    },
+    {
+      "name": "FeedMyApp",
+      "url": "https://feedmyapp.com/",
+      "status": 0,
+      "verdict": "reject, dead"
+    },
+    {
+      "name": "Trust MRR",
+      "url": "https://trustmrr.com/",
+      "status": 200,
+      "verdict": "reject, badge"
+    },
+    {
+      "name": "AI Valley",
+      "url": "https://aivalley.ai/",
+      "status": 200,
+      "verdict": "reject, captcha"
+    },
+    {
+      "name": "Submit AI Tools",
+      "url": "https://submitaitools.org/",
+      "status": 200,
+      "verdict": "reject, Google OAuth, nofollow"
+    },
+    {
+      "name": "Glama",
+      "url": "https://glama.ai/",
+      "status": 200,
+      "verdict": "reject, no submit page"
+    },
+    {
+      "name": "ShowMeBestAI",
+      "url": "https://showmebest.ai/",
+      "status": 200,
+      "verdict": "reject, badge"
+    },
+    {
+      "name": "Anyfp",
+      "url": "https://anyfp.com/",
+      "status": 200,
+      "verdict": "reject, captcha + badge"
+    },
+    {
+      "name": "See What New AI",
+      "url": "https://seewhatnewai.com/",
+      "status": 200,
+      "verdict": "reject, badge"
+    },
+    {
+      "name": "AI Toolz Dir",
+      "url": "https://aitoolzdir.com/",
+      "status": 200,
+      "verdict": "reject, reciprocal backlink"
+    },
+    {
+      "name": "Free AI Directories",
+      "url": "https://freeaidirectories.com/",
+      "status": 200,
+      "verdict": "reject, aggregator/paid"
+    }
+  ],
+  "conclusion": {
+    "autonomous_optimal": 0,
+    "reason": "Every free tier in this set is gated by captcha, Cloudflare, OAuth, or a reciprocal backlink. The single mailbox cannot complete any registration, and badge/backlink deals are link schemes.",
+    "human_max": 8,
+    "human_minutes_total": 180
+  },
+  "pass": {
+    "date": "2026-11-02",
+    "attempts": 12,
+    "accounts_created": 1,
+    "verification_emails_received": 1,
+    "links": 0,
+    "results": [
+      {
+        "name": "dev.to",
+        "step": "signup form submit",
+        "blocker": "reCAPTCHA: \"You must complete the recaptcha\""
+      },
+      {
+        "name": "Firsto",
+        "step": "signup + email verification + project draft",
+        "blocker": "free plan: \"No dates are available for this plan right now\"; paid plans not purchased",
+        "account_created": true,
+        "listing_created": false
+      },
+      {
+        "name": "SaaSHub",
+        "step": "GET /register",
+        "blocker": "captcha"
+      },
+      {
+        "name": "DevHunt",
+        "step": "GET /signin",
+        "blocker": "GitHub OAuth only"
+      },
+      {
+        "name": "MicroLaunch",
+        "step": "GET /signup + click Signup",
+        "blocker": "no email form, provider auth"
+      },
+      {
+        "name": "Uneed",
+        "step": "GET /submit-a-tool",
+        "blocker": "Cloudflare Turnstile"
+      },
+      {
+        "name": "Launching Next",
+        "step": "GET /submit/",
+        "blocker": "math human check"
+      },
+      {
+        "name": "Product Hunt",
+        "step": "GET /",
+        "blocker": "403 Cloudflare + account"
+      },
+      {
+        "name": "AlternativeTo",
+        "step": "GET /",
+        "blocker": "403 Cloudflare + account"
+      },
+      {
+        "name": "Peerlist",
+        "step": "GET /",
+        "blocker": "403 Cloudflare + account"
+      },
+      {
+        "name": "SideProjectors",
+        "step": "GET /signup",
+        "blocker": "SPA account modal, no email form"
+      },
+      {
+        "name": "Super Launch",
+        "step": "Clerk sign-up: email + password + Continue",
+        "blocker": "hidden cf-turnstile-response; Turnstile challenge blocked signup"
+      }
+    ]
+  },
+  "discovery": {
+    "date": "2026-11-02",
+    "domains_scanned": 62,
+    "verdicts": {
+      "bot-blocked": 15,
+      "no-form": 16,
+      "badge": 11,
+      "captcha": 7,
+      "form-other": 6,
+      "oauth": 2,
+      "unreachable": 2,
+      "email-signup": 1
+    },
+    "email_signup_candidates": [
+      {
+        "name": "Firsto",
+        "url": "https://firsto.co/sign-up",
+        "fields": [
+          "name",
+          "email",
+          "password"
+        ],
+        "captcha": false,
+        "policy": "Temporary or disposable email addresses are not accepted. Accounts using them may be suspended and their listings removed during manual review.",
+        "attempted": false,
+        "reason": "Explicitly bans disposable email addresses; registering with the temp mailbox would violate their policy."
+      }
+    ],
+    "viable_with_temp_mailbox": 0
+  },
+  "firsto": {
+    "account": true,
+    "email_verified": true,
+    "project_drafted": true,
+    "listing_submitted": false,
+    "reason": "No free launch dates available; paid plans not used",
+    "profile": "https://firsto.co/dashboard"
+  }
+}

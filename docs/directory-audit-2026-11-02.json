@@ -1,0 +1,880 @@
+{
+  "date": "2026-11-02",
+  "scope": {
+    "description": "All live sources with registration=none in tiers S/A/B that were not already done/tested-fail/blocked",
+    "audited": 65,
+    "excluded_tiers": [
+      "C",
+      "D",
+      "E",
+      "F",
+      "X",
+      "Z"
+    ]
+  },
+  "summary": {
+    "audited": 65,
+    "blocked": 22,
+    "no_usable_form": 30,
+    "no_backlink_by_definition": 12,
+    "unreachable": 1,
+    "new_links": 0,
+    "total_links_on_site": 12,
+    "referring_domains": 2
+  },
+  "counts_by_verdict": {
+    "captcha": 10,
+    "account": 2,
+    "tos": 1,
+    "human-check": 1,
+    "bot-blocked": 6,
+    "js-email-form": 2,
+    "no-form": 29,
+    "email-capture": 1,
+    "shortener": 4,
+    "ping": 1,
+    "paste": 3,
+    "file-upload": 3,
+    "archive-form": 1,
+    "unreachable": 1
+  },
+  "attempts": [
+    {
+      "id": "B01",
+      "source": "Viesearch",
+      "action": "POST https://viesearch.com/submit",
+      "result": "success:true -> /2abeo/plan (paid plans); draft and plan returned 404",
+      "published": false,
+      "found": 0
+    },
+    {
+      "id": "A36",
+      "source": "Wayback Machine Save Page Now",
+      "action": "GET https://web.archive.org/save/https://www.generatepasswordto.me/",
+      "result": "HTTP 429 \"suspected abusive bot traffic\"; no snapshot created",
+      "published": false,
+      "found": 0
+    }
+  ],
+  "not_attempted": [
+    {
+      "ids": [
+        "A04",
+        "A06",
+        "A24"
+      ],
+      "reason": "Paste hosts: no SEO value, one-page-per-platform policy"
+    },
+    {
+      "ids": [
+        "A39",
+        "A45",
+        "A46",
+        "A47"
+      ],
+      "reason": "URL shorteners: redirects, not backlinks"
+    },
+    {
+      "ids": [
+        "A09",
+        "A29",
+        "A33"
+      ],
+      "reason": "File hosts: no clickable outbound link"
+    },
+    {
+      "ids": [
+        "A48"
+      ],
+      "reason": "Ping service: no outbound link"
+    },
+    {
+      "ids": [
+        "A37"
+      ],
+      "reason": "archive.today: low value, Cloudflare challenge risk"
+    }
+  ],
+  "csv_changes": {
+    "blocked": 16,
+    "tested_fail": 7,
+    "verify_with_browser_note": 28,
+    "kept_todo_editorial": [
+      "S02"
+    ],
+    "status_distribution_after": {
+      "done": 5,
+      "todo": 108,
+      "tested-fail": 73,
+      "blocked": 19,
+      "verify": 39,
+      "avoid": 12
+    },
+    "queue_items_after": 21
+  },
+  "rows": [
+    {
+      "id": "A04",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "txt.fyi",
+      "url": "https://txt.fyi/",
+      "verdict": "paste",
+      "reason": "Анонімна паста можлива, але без SEO-цінності; політика — 1 сторінка/платформа",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A06",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "Pastebin",
+      "url": "https://pastebin.com/",
+      "verdict": "paste",
+      "reason": "Анонімна паста можлива, але без SEO-цінності; політика — 1 сторінка/платформа",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "A09",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "bpa.st",
+      "url": "https://bpa.st/",
+      "verdict": "file-upload",
+      "reason": "Завантаження файлу, клікабельного лінка немає",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A10",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "pastes.dev",
+      "url": "https://pastes.dev/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A11",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "ControlC",
+      "url": "https://controlc.com/",
+      "verdict": "captcha",
+      "reason": "CAPTCHA у формі подання",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A12",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "JustPaste.it",
+      "url": "https://justpaste.it/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A13",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "Paste.ee",
+      "url": "https://paste.ee/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A14",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "Hastebin",
+      "url": "https://hastebin.com/",
+      "verdict": "bot-blocked",
+      "reason": "403/429 для ботів",
+      "homeStatus": 403,
+      "submitStatus": []
+    },
+    {
+      "id": "A15",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "paste.rs",
+      "url": "https://paste.rs/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A18",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "ix.io",
+      "url": "http://ix.io/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A19",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "0x0.st",
+      "url": "https://0x0.st/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A20",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "JSFiddle",
+      "url": "https://jsfiddle.net/",
+      "verdict": "captcha",
+      "reason": "CAPTCHA у формі подання",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A22",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "SQLFiddle",
+      "url": "http://sqlfiddle.com/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A23",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "glot.io",
+      "url": "https://glot.io/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A24",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "Pastebin.pl",
+      "url": "https://pastebin.pl/",
+      "verdict": "paste",
+      "reason": "Анонімна паста можлива, але без SEO-цінності; політика — 1 сторінка/платформа",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A25",
+      "tier": "A",
+      "category": "anon-publish",
+      "name": "Wikimedia Etherpad",
+      "url": "https://etherpad.wikimedia.org/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A26",
+      "tier": "A",
+      "category": "file-host",
+      "name": "DocDroid",
+      "url": "https://www.docdroid.net/",
+      "verdict": "captcha",
+      "reason": "CAPTCHA у формі подання",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A27",
+      "tier": "A",
+      "category": "file-host",
+      "name": "Postimages",
+      "url": "https://postimages.org/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A28",
+      "tier": "A",
+      "category": "file-host",
+      "name": "Imgbb",
+      "url": "https://imgbb.com/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "A29",
+      "tier": "A",
+      "category": "file-host",
+      "name": "Imgbox",
+      "url": "https://imgbox.com/",
+      "verdict": "file-upload",
+      "reason": "Завантаження файлу, клікабельного лінка немає",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A30",
+      "tier": "A",
+      "category": "file-host",
+      "name": "FreeImage.host",
+      "url": "https://freeimage.host/",
+      "verdict": "captcha",
+      "reason": "CAPTCHA у формі подання",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A31",
+      "tier": "A",
+      "category": "file-host",
+      "name": "Catbox",
+      "url": "https://catbox.moe/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A32",
+      "tier": "A",
+      "category": "file-host",
+      "name": "Litterbox",
+      "url": "https://litterbox.catbox.moe/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A33",
+      "tier": "A",
+      "category": "file-host",
+      "name": "tmpfiles.org",
+      "url": "https://tmpfiles.org/",
+      "verdict": "file-upload",
+      "reason": "Завантаження файлу, клікабельного лінка немає",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A34",
+      "tier": "A",
+      "category": "file-host",
+      "name": "Uguu",
+      "url": "https://uguu.se/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A35",
+      "tier": "A",
+      "category": "file-host",
+      "name": "pixeldrain",
+      "url": "https://pixeldrain.com/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A36",
+      "tier": "A",
+      "category": "archive",
+      "name": "Wayback Machine Save Page Now",
+      "url": "https://web.archive.org/save/",
+      "verdict": "bot-blocked",
+      "reason": "Save Page Now відповів 429: «suspected abusive bot traffic»; снепшот не створено",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A37",
+      "tier": "A",
+      "category": "archive",
+      "name": "archive.today",
+      "url": "https://archive.ph/",
+      "verdict": "archive-form",
+      "reason": "Є анонімна форма /submit/, але не використовувалась (низька цінність, ризик Cloudflare)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A39",
+      "tier": "A",
+      "category": "shortener",
+      "name": "v.gd",
+      "url": "https://v.gd/",
+      "verdict": "shortener",
+      "reason": "Форма є, але це редирект: не беклінк",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A40",
+      "tier": "A",
+      "category": "shortener",
+      "name": "TinyURL",
+      "url": "https://tinyurl.com/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A41",
+      "tier": "A",
+      "category": "shortener",
+      "name": "t.ly",
+      "url": "https://t.ly/",
+      "verdict": "bot-blocked",
+      "reason": "403/429 для ботів",
+      "homeStatus": 403,
+      "submitStatus": []
+    },
+    {
+      "id": "A42",
+      "tier": "A",
+      "category": "shortener",
+      "name": "shorturl.at",
+      "url": "https://www.shorturl.at/",
+      "verdict": "bot-blocked",
+      "reason": "403/429 для ботів",
+      "homeStatus": 403,
+      "submitStatus": []
+    },
+    {
+      "id": "A44",
+      "tier": "A",
+      "category": "shortener",
+      "name": "spoo.me",
+      "url": "https://spoo.me/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": [
+        404
+      ]
+    },
+    {
+      "id": "A45",
+      "tier": "A",
+      "category": "shortener",
+      "name": "s.id",
+      "url": "https://s.id/",
+      "verdict": "shortener",
+      "reason": "Форма є, але це редирект: не беклінк",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A46",
+      "tier": "A",
+      "category": "shortener",
+      "name": "ulvis.net",
+      "url": "https://ulvis.net/",
+      "verdict": "shortener",
+      "reason": "Форма є, але це редирект: не беклінк",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A47",
+      "tier": "A",
+      "category": "shortener",
+      "name": "da.gd",
+      "url": "https://da.gd/",
+      "verdict": "shortener",
+      "reason": "Форма є, але це редирект: не беклінк",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "A48",
+      "tier": "A",
+      "category": "ping",
+      "name": "Ping-O-Matic",
+      "url": "https://pingomatic.com/",
+      "verdict": "ping",
+      "reason": "Пінг-сервіс, вихідного посилання немає",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "B02",
+      "tier": "B",
+      "category": "open-directory",
+      "name": "Directory-Free",
+      "url": "https://www.directory-free.com/",
+      "verdict": "captcha",
+      "reason": "Картинка-код (randomImage3.php + txtNumber) на add.php",
+      "homeStatus": 200,
+      "submitStatus": [
+        200,
+        200
+      ]
+    },
+    {
+      "id": "B03",
+      "tier": "B",
+      "category": "open-directory",
+      "name": "ExactSeek",
+      "url": "https://www.exactseek.com/",
+      "verdict": "captcha",
+      "reason": "CAPTCHA у формі подання",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "B04",
+      "tier": "B",
+      "category": "open-directory",
+      "name": "SoMuch",
+      "url": "https://www.somuch.com/",
+      "verdict": "tos",
+      "reason": "Обовʼязкове прийняття ToS перед поданням",
+      "homeStatus": 200,
+      "submitStatus": [
+        200,
+        200
+      ]
+    },
+    {
+      "id": "B05",
+      "tier": "B",
+      "category": "open-directory",
+      "name": "01WebDirectory",
+      "url": "https://www.01webdirectory.com/",
+      "verdict": "no-form",
+      "reason": "Лише інструкції; форма доступна з категорії, платна/ручна",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "B06",
+      "tier": "B",
+      "category": "open-directory",
+      "name": "WowDirectory",
+      "url": "https://www.wowdirectory.com/",
+      "verdict": "no-form",
+      "reason": "Сторінка 482 байти, лише «Loading...» — JS-only, серверної форми немає",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "B07",
+      "tier": "B",
+      "category": "open-directory",
+      "name": "GoGuides",
+      "url": "https://www.goguides.org/",
+      "verdict": "account",
+      "reason": "Email + пароль + captcha + TOS = реєстрація",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "B08",
+      "tier": "B",
+      "category": "open-directory",
+      "name": "A1WebDirectory",
+      "url": "https://www.a1webdirectory.org/",
+      "verdict": "captcha",
+      "reason": "CAPTCHA у формі подання",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "B09",
+      "tier": "B",
+      "category": "open-directory",
+      "name": "DirectoryVault",
+      "url": "https://www.directoryvault.com/",
+      "verdict": "unreachable",
+      "reason": "Таймаут під час аудиту (був живий у --check; ймовірно тимчасово)",
+      "homeStatus": 0,
+      "submitStatus": []
+    },
+    {
+      "id": "B10",
+      "tier": "B",
+      "category": "open-directory",
+      "name": "FreeWebDirectory",
+      "url": "https://www.freewebdirectory.org/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "B11",
+      "tier": "B",
+      "category": "open-directory",
+      "name": "Directory Critic",
+      "url": "https://www.directorycritic.com/",
+      "verdict": "no-form",
+      "reason": "Мета-список; сторінки /submit віддають 404",
+      "homeStatus": 200,
+      "submitStatus": [
+        404,
+        404
+      ]
+    },
+    {
+      "id": "B12",
+      "tier": "B",
+      "category": "directory",
+      "name": "AI Tools Directory",
+      "url": "https://aitoolsdirectory.com/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "B13",
+      "tier": "B",
+      "category": "directory",
+      "name": "ToolPilot",
+      "url": "https://www.toolpilot.ai/",
+      "verdict": "captcha",
+      "reason": "CAPTCHA у формі подання",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "B14",
+      "tier": "B",
+      "category": "directory",
+      "name": "TopAI.tools",
+      "url": "https://topai.tools/",
+      "verdict": "bot-blocked",
+      "reason": "403/429 для ботів",
+      "homeStatus": 403,
+      "submitStatus": []
+    },
+    {
+      "id": "B15",
+      "tier": "B",
+      "category": "directory",
+      "name": "AI Tool Hunt",
+      "url": "https://www.aitoolhunt.com/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "B16",
+      "tier": "B",
+      "category": "directory",
+      "name": "Insidr AI Tools",
+      "url": "https://www.insidr.ai/",
+      "verdict": "js-email-form",
+      "reason": "JS-форма Elementor; поле email — насправді категорія; публікації не гарантує",
+      "homeStatus": 200,
+      "submitStatus": [
+        200,
+        200
+      ]
+    },
+    {
+      "id": "B17",
+      "tier": "B",
+      "category": "directory",
+      "name": "OpenFuture",
+      "url": "https://openfuture.ai/",
+      "verdict": "bot-blocked",
+      "reason": "403/429 для ботів",
+      "homeStatus": 403,
+      "submitStatus": []
+    },
+    {
+      "id": "B18",
+      "tier": "B",
+      "category": "directory",
+      "name": "SuperTools",
+      "url": "https://supertools.therundown.ai/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "B19",
+      "tier": "B",
+      "category": "directory",
+      "name": "AIXploria",
+      "url": "https://www.aixploria.com/",
+      "verdict": "no-form",
+      "reason": "Сторінка add-ai не має серверної форми (JS)",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "B20",
+      "tier": "B",
+      "category": "launch",
+      "name": "TinyLaunch",
+      "url": "https://tinylaunch.com/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "B21",
+      "tier": "B",
+      "category": "launch",
+      "name": "Fazier",
+      "url": "https://fazier.com/",
+      "verdict": "email-capture",
+      "reason": "Лише збір email, а не подання проєкту",
+      "homeStatus": 200,
+      "submitStatus": [
+        200,
+        200
+      ]
+    },
+    {
+      "id": "B22",
+      "tier": "B",
+      "category": "launch",
+      "name": "Turbo0",
+      "url": "https://turbo0.com/",
+      "verdict": "account",
+      "reason": "Потрібен логін (/auth/login)",
+      "homeStatus": 200,
+      "submitStatus": [
+        200,
+        200
+      ]
+    },
+    {
+      "id": "B23",
+      "tier": "B",
+      "category": "launch",
+      "name": "PitchWall",
+      "url": "https://pitchwall.co/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "B25",
+      "tier": "B",
+      "category": "launch",
+      "name": "OpenHunts",
+      "url": "https://openhunts.com/",
+      "verdict": "captcha",
+      "reason": "CAPTCHA у формі подання",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "S02",
+      "tier": "S",
+      "category": "directory",
+      "name": "PrivacyTools",
+      "url": "https://www.privacytools.io/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "S10",
+      "tier": "S",
+      "category": "directory",
+      "name": "Startup Stash",
+      "url": "https://startupstash.com/",
+      "verdict": "captcha",
+      "reason": "CAPTCHA у формі подання",
+      "homeStatus": 200,
+      "submitStatus": []
+    },
+    {
+      "id": "S14",
+      "tier": "S",
+      "category": "directory",
+      "name": "FutureTools",
+      "url": "https://www.futuretools.io/",
+      "verdict": "js-email-form",
+      "reason": "JS-only форма (Next.js), обовʼязковий email; серверного POST немає",
+      "homeStatus": 200,
+      "submitStatus": [
+        200,
+        200
+      ]
+    },
+    {
+      "id": "S18",
+      "tier": "S",
+      "category": "directory",
+      "name": "Launching Next",
+      "url": "https://www.launchingnext.com/",
+      "verdict": "human-check",
+      "reason": "Арифметичне поле math + email",
+      "homeStatus": 200,
+      "submitStatus": [
+        200
+      ]
+    },
+    {
+      "id": "S52",
+      "tier": "S",
+      "category": "directory",
+      "name": "Alternative.me",
+      "url": "https://alternative.me/",
+      "verdict": "no-form",
+      "reason": "Немає серверної форми подання (JS-only, лише інструкції або 404)",
+      "homeStatus": 200,
+      "submitStatus": [
+        200,
+        200
+      ]
+    }
+  ]
+}

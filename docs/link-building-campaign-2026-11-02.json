@@ -1,0 +1,199 @@
+{
+  "date": "2026-11-02",
+  "objective": "Place at least 10 links; skip captcha-protected sites.",
+  "method": "Telegraph API (anonymous pages); unique article per page; one link per page; verified with scripts/backlink-queue.mjs --verify.",
+  "placements": [
+    {
+      "n": 1,
+      "title": "How long does it take to crack a password? A working estimate",
+      "url": "https://telegra.ph/How-long-does-it-take-to-crack-a-password-A-working-estimate-11-02",
+      "target_url": "https://www.generatepasswordto.me/en/password-statistics-2026",
+      "anchor": "crack-time dataset",
+      "words": 734,
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "found": 1,
+      "verification_file": "docs/verification-2026-11-02-telegraph-01.json"
+    },
+    {
+      "n": 2,
+      "title": "Passphrase or complex password: which is actually stronger?",
+      "url": "https://telegra.ph/Passphrase-or-complex-password-which-is-actually-stronger-11-02",
+      "target_url": "https://www.generatepasswordto.me/en/guides/passphrase-vs-password-entropy",
+      "anchor": "passphrase entropy guide",
+      "words": 560,
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "found": 1,
+      "verification_file": "docs/verification-2026-11-02-telegraph-02.json"
+    },
+    {
+      "n": 3,
+      "title": "What NIST 800-63B actually requires from a password",
+      "url": "https://telegra.ph/What-NIST-800-63B-actually-requires-from-a-password-11-02",
+      "target_url": "https://www.generatepasswordto.me/en/guides/secure-password-generator-guide",
+      "anchor": "secure password generator guide",
+      "words": 504,
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "found": 1,
+      "verification_file": "docs/verification-2026-11-02-telegraph-03.json"
+    },
+    {
+      "n": 4,
+      "title": "Password reuse is the real breach multiplier",
+      "url": "https://telegra.ph/Password-reuse-is-the-real-breach-multiplier-11-02",
+      "target_url": "https://www.generatepasswordto.me/en/guides/secure-password-generator-guide",
+      "anchor": "practical password security guide",
+      "words": 571,
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "found": 1,
+      "verification_file": "docs/verification-2026-11-02-telegraph-04.json"
+    },
+    {
+      "n": 5,
+      "title": "PINs, passwords and passphrases: when each one fits",
+      "url": "https://telegra.ph/PINs-passwords-and-passphrases-when-each-one-fits-11-02",
+      "target_url": "https://www.generatepasswordto.me/en",
+      "anchor": "the generator",
+      "words": 516,
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "found": 1,
+      "verification_file": "docs/verification-2026-11-02-telegraph-05.json"
+    },
+    {
+      "n": 6,
+      "title": "Why breached-password lists matter more than complexity rules",
+      "url": "https://telegra.ph/Why-breached-password-lists-matter-more-than-complexity-rules-11-02",
+      "target_url": "https://www.generatepasswordto.me/en/guides/secure-password-generator-guide",
+      "anchor": "breached-password guidance",
+      "words": 537,
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "found": 1,
+      "verification_file": "docs/verification-2026-11-02-telegraph-06.json"
+    },
+    {
+      "n": 7,
+      "title": "How password managers change what you need to memorise",
+      "url": "https://telegra.ph/How-password-managers-change-what-you-need-to-memorise-11-02",
+      "target_url": "https://www.generatepasswordto.me/en/best-password-managers-2026",
+      "anchor": "password manager comparison",
+      "words": 526,
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "found": 1,
+      "verification_file": "docs/verification-2026-11-02-telegraph-07.json"
+    },
+    {
+      "n": 8,
+      "title": "Entropy without the maths: what makes a password strong",
+      "url": "https://telegra.ph/Entropy-without-the-maths-what-makes-a-password-strong-11-02",
+      "target_url": "https://www.generatepasswordto.me/en/password-statistics-2026",
+      "anchor": "entropy data",
+      "words": 535,
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "found": 1,
+      "verification_file": "docs/verification-2026-11-02-telegraph-08.json"
+    },
+    {
+      "n": 9,
+      "title": "Two-factor authentication does not fix a weak password",
+      "url": "https://telegra.ph/Two-factor-authentication-does-not-fix-a-weak-password-11-02",
+      "target_url": "https://www.generatepasswordto.me/en/guides/secure-password-generator-guide",
+      "anchor": "password security guide",
+      "words": 542,
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "found": 1,
+      "verification_file": "docs/verification-2026-11-02-telegraph-09.json"
+    },
+    {
+      "n": 10,
+      "title": "Generating passwords offline: what client-side actually means",
+      "url": "https://telegra.ph/Generating-passwords-offline-what-client-side-actually-means-11-02",
+      "target_url": "https://www.generatepasswordto.me/en",
+      "anchor": "client-side password generator",
+      "words": 532,
+      "http": 200,
+      "noindex": false,
+      "rel": "nofollow",
+      "found": 1,
+      "verification_file": "docs/verification-2026-11-02-telegraph-10.json"
+    }
+  ],
+  "totals": {
+    "new_placements": 10,
+    "referring_domains_added": 1,
+    "total_links_on_site": 21,
+    "referring_domains_total": 2,
+    "dofollow": 11,
+    "nofollow": 10
+  },
+  "skipped": [
+    {
+      "platform": "dev.to",
+      "blocker": "reCAPTCHA on submit"
+    },
+    {
+      "platform": "SaaSHub",
+      "blocker": "captcha on registration"
+    },
+    {
+      "platform": "Uneed",
+      "blocker": "Cloudflare Turnstile"
+    },
+    {
+      "platform": "GitLab",
+      "blocker": "Arkose Labs captcha"
+    },
+    {
+      "platform": "Codeberg",
+      "blocker": "image captcha"
+    },
+    {
+      "platform": "Medium / WordPress.com / Tumblr / About.me",
+      "blocker": "captcha"
+    },
+    {
+      "platform": "Product Hunt / Peerlist / Indie Hackers",
+      "blocker": "Cloudflare 403 + account"
+    },
+    {
+      "platform": "Hacker News",
+      "blocker": "account creation disabled"
+    },
+    {
+      "platform": "Substack",
+      "blocker": "creator session lost on navigation"
+    },
+    {
+      "platform": "Hashnode",
+      "blocker": "auth entry point unavailable"
+    }
+  ],
+  "rejected": [
+    {
+      "platform": "Linktree",
+      "url": "https://linktr.ee/generatepasswordto",
+      "reason": "page is noindex, not counted"
+    }
+  ],
+  "risk_notes": [
+    "All ten new links are nofollow and on one domain; brand/indexation signal only.",
+    "Unique content and one link per page, but ten pages on one platform is a volume pattern; do not scale further.",
+    "Dofollow referring domains still require Tier S actions with human captcha/account steps."
+  ]
+}
