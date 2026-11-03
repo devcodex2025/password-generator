@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState, useEffect, useMemo } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -25,6 +25,31 @@ export const useTheme = () => {
   return context;
 };
 
+/* The `dark` class lives on <html> only: it is set before the first paint by the
+   inline script in layout.tsx, so every theme change has to go through the same
+   root element to keep `.dark body` and `.dark *` selectors in sync. */
+function applyTheme(isDark: boolean) {
+  if (typeof document === 'undefined' || typeof window === 'undefined') return;
+
+  document.documentElement.classList.toggle('dark', isDark);
+
+  try {
+    window.localStorage.setItem('darkMode', JSON.stringify(isDark));
+  } catch {
+    // Storage can be blocked (private mode, quotas); the class change still works.
+  }
+  document.cookie = `theme=${isDark ? 'dark' : 'light'}; path=/; max-age=31536000; samesite=lax`;
+}
+
+function readStoredDarkMode(): boolean | null {
+  try {
+    const saved = window.localStorage.getItem('darkMode');
+    return saved === null ? null : JSON.parse(saved);
+  } catch {
+    return null;
+  }
+}
+
 export const CustomThemeProvider = ({
   children,
   initialDarkMode = false,
@@ -36,27 +61,29 @@ export const CustomThemeProvider = ({
   const [isDarkMode, setIsDarkMode] = useState<boolean>(initialDarkMode);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  const toggleMode = () => {
-    setIsDarkMode((prev: boolean) => !prev);
-  };
+  // The class is toggled in the click handler instead of an effect so it lands
+  // in the same frame as the click.
+  const toggleMode = useCallback(() => {
+    const next = !document.documentElement.classList.contains('dark');
+    applyTheme(next);
+    setIsDarkMode(next);
+  }, []);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const saved = window.localStorage.getItem('darkMode');
-    if (saved !== null) {
-      setIsDarkMode(JSON.parse(saved));
-    } else {
-      setIsDarkMode(window.matchMedia?.('(prefers-color-scheme: dark)').matches || false);
-    }
-
+    // <html class="dark"> is already correct: the pre-paint script in layout.tsx
+    // has applied the stored/system preference. This effect only mirrors it into
+    // React state, it must not repaint the document.
+    const saved = readStoredDarkMode();
+    const mediaQuery = window.matchMedia?.('(prefers-color-scheme: dark)');
+    setIsDarkMode(saved !== null ? saved : mediaQuery?.matches || false);
     setIsInitialized(true);
 
-    const mediaQuery = window.matchMedia?.('(prefers-color-scheme: dark)');
     const handleChange = (e: MediaQueryListEvent) => {
-      if (!window.localStorage.getItem('darkMode')) {
-        setIsDarkMode(e.matches);
-      }
+      if (readStoredDarkMode() !== null) return;
+      applyTheme(e.matches);
+      setIsDarkMode(e.matches);
     };
 
     mediaQuery?.addEventListener('change', handleChange);
@@ -87,15 +114,6 @@ export const CustomThemeProvider = ({
       },
     });
   }, [isDarkMode]);
-
-  useEffect(() => {
-    if (!isInitialized || typeof document === 'undefined' || typeof window === 'undefined') return;
-
-    document.documentElement.classList.toggle('dark', isDarkMode);
-    document.body.classList.toggle('dark', isDarkMode);
-    window.localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    document.cookie = `theme=${isDarkMode ? 'dark' : 'light'}; path=/; max-age=31536000; samesite=lax`;
-  }, [isDarkMode, isInitialized]);
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleMode, isInitialized }}>

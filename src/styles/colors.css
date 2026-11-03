@@ -1,6 +1,20 @@
 /* Color Variables for Password Generator */
 
 :root {
+  /* Native controls, scrollbars and form widgets follow the light theme. */
+  color-scheme: light;
+
+  /* Semantic surface/text/border tokens. The MUI palette points at these, so a
+     theme switch only redefines the variables — no theme object is rebuilt. */
+  --surface-1: #ffffff;
+  --surface-2: #ffffff;
+  --text-1: #071016;
+  --text-2: #2A4E63;
+  --border-1: #E5F6FF;
+  /* Header theme toggle icon; CSS-driven so it is already correct before
+     hydration has read isDarkMode into React state. */
+  --theme-toggle-icon: #071016;
+
   /* Dark Theme Colors */
   --dark-theme-bg: #121212;
   --dark-theme-text: #E0E0E0;
@@ -52,6 +66,15 @@
 
 /* Dark Theme Overrides */
 .dark {
+  color-scheme: dark;
+
+  --surface-1: #121212;
+  --surface-2: #1c1c1c;
+  --text-1: #E0E0E0;
+  --text-2: #b0b0b0;
+  --border-1: #374151;
+  --theme-toggle-icon: #9ca3af;
+
   --text-primary: #E0E0E0;
   --text-secondary: #b0b0b0;
   --text-muted: #9ca3af;

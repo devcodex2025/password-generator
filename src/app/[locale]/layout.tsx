@@ -77,7 +77,32 @@ export const dynamicParams = false;
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#121212' },
+  ],
 };
+
+/*
+  Runs in <head>, before <body> is parsed and therefore before the first paint.
+  next/script strategy="beforeInteractive" does not inline in the App Router: it
+  is serialised into self.__next_s and executed by the client runtime after the
+  first paint, which is what produced the light-theme flash for dark users.
+  The server never renders the dark class, so this stays a client concern and
+  the 12 locales keep their static generation.
+*/
+const THEME_INIT_SCRIPT = `
+  (function () {
+    try {
+      var saved = localStorage.getItem('darkMode');
+      var isDark = saved !== null
+        ? JSON.parse(saved)
+        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.cookie = 'theme=' + (isDark ? 'dark' : 'light') + '; path=/; max-age=31536000; samesite=lax';
+      document.documentElement.classList.toggle('dark', !!isDark);
+    } catch (e) {}
+  })();
+`;
 
 export default async function LocaleLayout({
   children,
@@ -93,27 +118,13 @@ export default async function LocaleLayout({
   return (
     <html lang={htmlLang} suppressHydrationWarning>
       <head>
+        <script
+          id="theme-init"
+          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
+        />
         <style media="print">{`body{background:#fff!important;color:#000!important}header,footer,aside,.smart-ad-container,#cc-main{display:none!important}a{color:#000!important;text-decoration:underline}`}</style>
       </head>
       <body className={`${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}>
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function () {
-                try {
-                  var saved = localStorage.getItem('darkMode');
-                  var isDark = saved !== null
-                    ? JSON.parse(saved)
-                    : window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  document.cookie = 'theme=' + (isDark ? 'dark' : 'light') + '; path=/; max-age=31536000; samesite=lax';
-                  document.documentElement.classList.toggle('dark', !!isDark);
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
         {/*
           Consent Mode v2 defaults must be set before any Google tag (AdSense,
           GA) runs, regardless of whether GA is configured.
