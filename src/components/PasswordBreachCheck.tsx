@@ -7,6 +7,7 @@ import { parseHibpRange } from '../utils/parseHibpRange.mjs';
 import lang from './lang.json';
 import { resolveAffiliateUrl } from '@/content/affiliate/links';
 import { useGeoCountry } from './affiliate/useGeoCountry';
+import Button from '@/components/ui/Button';
 
 function t(key: string, language: string): string {
   const entry = (lang as unknown as Record<string, Record<string, string>>)[key];
@@ -190,21 +191,15 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
               if (e.key === 'Enter') checkBreach();
             }}
           />
-          <button
+          <Button
+            variant="primary"
+            size="lg"
             onClick={checkBreach}
             disabled={loading || !inputPassword.trim()}
-            className={`px-6 py-3 rounded-xl font-semibold text-[16px] transition-all duration-200 cursor-pointer ${
-              loading || !inputPassword.trim()
-                ? 'opacity-50 cursor-not-allowed'
-                : ''
-            } ${
-              isDarkMode
-                ? 'bg-[#05a9ff] text-[#0a1929] hover:bg-[#38beff]'
-                : 'bg-[#2A4E63] text-white hover:bg-[#1f3b4c]'
-            }`}
+            className="rounded-xl"
           >
             {loading ? t('breach_checking', language) : t('breach_check_btn', language)}
-          </button>
+          </Button>
         </div>
 
         {error && (

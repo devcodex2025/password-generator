@@ -290,6 +290,14 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   };
 
   const runReward = (type: string) => {
+    // Confetti is driven by JS, so the global reduced-motion CSS cannot stop
+    // it; skip the reward entirely when the visitor asked for less motion.
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches
+    ) {
+      return;
+    }
     if (isAnimating) {
       rewardQueue.current.push(type);
       return;

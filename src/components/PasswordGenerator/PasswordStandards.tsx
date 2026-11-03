@@ -3,6 +3,7 @@
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
+import Button from '@/components/ui/Button';
 
 interface PasswordStandardsProps {
   selectedStandard: string;
@@ -57,18 +58,16 @@ export default function PasswordStandards({
         </label>
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full lg:w-auto">
           {Object.keys(passwordStandards).map((standard) => (
-            <button
+            <Button
               key={standard}
-              type="button"
-              className={`min-h-11 px-3 sm:px-4 py-2 rounded-lg font-bold text-[14px] sm:text-[16px] md:text-[18px] transition-all border-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A4E63] dark:focus-visible:ring-[#05a9ff] w-full sm:w-auto ${
-                selectedStandard === standard
-                  ? 'border-[#2A4E63] bg-[#e5f6ff] dark:bg-[#05a9ff] text-[#2A4E63] dark:text-[#0a1e2a]'
-                  : 'border-gray-200 dark:border-gray-600 bg-white dark:bg-[#374151] text-[#2A4E63] dark:text-[#e0e0e0]'
-              }`}
+              variant="choice"
+              selected={selectedStandard === standard}
+              size="md"
+              className="w-full sm:w-auto"
               onClick={() => handleStandardChange(standard)}
             >
               {t(`standard_${standard}`)}
-            </button>
+            </Button>
           ))}
         </div>
       </div>
