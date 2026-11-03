@@ -19,6 +19,7 @@ import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import { SnackbarMessage } from '@/app/types/SnackBar';
 import i18n from '@/components/i18n';
 import SavePasswordModal, { shouldShowSavePrompt } from '@/components/affiliate/SavePasswordModal';
+import BookmarkPrompt from '@/components/BookmarkPrompt/BookmarkPrompt';
 
 const characterSets: Record<string, string> = {
   'A-Z': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -495,6 +496,11 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           onClose={() => setSaveModalOpen(false)}
         />
       </div>
+      {/* Sits directly under the generator and appears after the first password. */}
+      <BookmarkPrompt
+        language={language}
+        active={passwords.length > 0 && Boolean(passwords[0])}
+      />
     </div>
   );
 }
