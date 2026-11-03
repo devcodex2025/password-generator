@@ -90,7 +90,7 @@ export const en: LocalizedArticleContent = {
         'Built-in strength meter (zxcvbn library)',
         'Breach check via Have I Been Pwned (k-anonymity)',
         'Open-source code on GitHub for verification',
-        'Supports 11 languages including Ukrainian and English',
+        'Supports 12 languages including Ukrainian and English',
       ],
     },
     {
@@ -195,7 +195,7 @@ export const ua: LocalizedArticleContent = {
         'Вбудований метр надійності (бібліотека zxcvbn)',
         'Перевірка витоків через Have I Been Pwned (k-анонімність)',
         'Відкритий код на GitHub для перевірки',
-        'Підтримка 11 мов, включаючи українську та англійську',
+        'Підтримка 12 мов, включаючи українську та англійську',
       ],
     },
   ],
@@ -215,7 +215,7 @@ export const es: LocalizedArticleContent = {
     { heading: 'Por qué los generadores sin registro son más seguros', paragraphs: ['Muchos generadores requieren crear cuenta. Señal de alarma. La cuenta se vuelve un objetivo y la generación probablemente es del lado del servidor.', 'Un generador sin registro como generatepasswordto.me funciona completamente del lado del cliente. Sin cuenta, sin comunicación con servidor, sin almacenamiento.', 'Cómo verificar: abra DevTools (F12), pestaña Network, genere una contraseña y confirme que no hubo peticiones HTTP.'] },
     { heading: 'Generación según estándares: NIST y PCI DSS', paragraphs: ['NIST 800-63B no especifica cómo generar contraseñas, pero el énfasis en longitud y aleatoriedad se alinea con generadores. 16+ caracteres aleatorios satisfacen la intención NIST.', 'PCI DSS v4.0 requiere mínimo 12 caracteres. Nuestros ajustes predeterminados superan estos requisitos.', 'Para desarrolladores: usen CSPRNG del servidor: secrets de Python, crypto.randomBytes() de Node.js, SecureRandom de Java.'] },
     { heading: 'Errores comunes al usar un generador', paragraphs: ['Generar y luego modificar la contraseña. Esto reduce la entropía dramáticamente.', 'Usar la misma contraseña generada para múltiples cuentas.', 'Guardar contraseñas generadas en texto plano.', 'Ignorar restricciones de caracteres del servicio.'] },
-    { heading: 'Guía paso a paso: genera tu primera contraseña', paragraphs: ['Paso 1: Ve a generatepasswordto.me. Sin registro.', 'Paso 2: Configura parámetros. Para la mayoría: 20 caracteres, todas las clases.', 'Paso 3: Genera. Tu navegador CSPRNG crea la contraseña.', 'Paso 4: Verifica fortaleza con el medidor zxcvbn integrado.', 'Paso 5: Verifica filtraciones vía Have I Been Pwned (k-anonimato).', 'Paso 6: Copia directamente al gestor de contraseñas.'], bullets: ['Sin registro — generación 100% del lado del cliente', 'Longitud y clases de caracteres configurables', 'Medidor de fortaleza integrado (zxcvbn)', 'Verificación de filtraciones vía HIBP (k-anonimato)', 'Código abierto en GitHub', 'Soporte para 11 idiomas'] },
+    { heading: 'Guía paso a paso: genera tu primera contraseña', paragraphs: ['Paso 1: Ve a generatepasswordto.me. Sin registro.', 'Paso 2: Configura parámetros. Para la mayoría: 20 caracteres, todas las clases.', 'Paso 3: Genera. Tu navegador CSPRNG crea la contraseña.', 'Paso 4: Verifica fortaleza con el medidor zxcvbn integrado.', 'Paso 5: Verifica filtraciones vía Have I Been Pwned (k-anonimato).', 'Paso 6: Copia directamente al gestor de contraseñas.'], bullets: ['Sin registro — generación 100% del lado del cliente', 'Longitud y clases de caracteres configurables', 'Medidor de fortaleza integrado (zxcvbn)', 'Verificación de filtraciones vía HIBP (k-anonimato)', 'Código abierto en GitHub', 'Soporte para 12 idiomas'] },
   ],
 };
 
@@ -233,7 +233,7 @@ export const fr: LocalizedArticleContent = {
     { heading: 'Pourquoi les générateurs sans inscription sont plus sûrs', paragraphs: ['Beaucoup exigent un compte — signe d\'alerte. Le compte devient une cible.', 'generatepasswordto.me fonctionne entièrement côté client.', 'Vérifiez : DevTools (F12), onglet Network, aucune requête HTTP lors de la génération.'] },
     { heading: 'Conformité NIST et PCI DSS', paragraphs: ['NIST 800-63B s\'aligne avec les générateurs. 16+ caractères aléatoires satisfont l\'intention.', 'PCI DSS v4.0 exige 12 caractères minimum. Nos réglages dépassent ces exigences.', 'Développeurs : utilisez les CSPRNG serveur appropriés.'] },
     { heading: 'Erreurs courantes', paragraphs: ['Modifier la sortie du générateur réduit l\'entropie.', 'Réutiliser un mot de passe généré pour plusieurs comptes.', 'Stocker en texte clair.', 'Ignorer les restrictions de caractères du service.'] },
-    { heading: 'Guide étape par étape', paragraphs: ['Étape 1 : Allez sur generatepasswordto.me.', 'Étape 2 : Configurez. 20 caractères, toutes les classes.', 'Étape 3 : Générez. CSPRNG local.', 'Étape 4 : Vérifiez la force (zxcvbn).', 'Étape 5 : Vérification HIBP (k-anonymat).', 'Étape 6 : Copiez dans le gestionnaire.'], bullets: ['Sans inscription', 'Longueur et classes configurables', 'Indicateur de force (zxcvbn)', 'Vérification HIBP', 'Open source', '11 langues supportées'] },
+    { heading: 'Guide étape par étape', paragraphs: ['Étape 1 : Allez sur generatepasswordto.me.', 'Étape 2 : Configurez. 20 caractères, toutes les classes.', 'Étape 3 : Générez. CSPRNG local.', 'Étape 4 : Vérifiez la force (zxcvbn).', 'Étape 5 : Vérification HIBP (k-anonymat).', 'Étape 6 : Copiez dans le gestionnaire.'], bullets: ['Sans inscription', 'Longueur et classes configurables', 'Indicateur de force (zxcvbn)', 'Vérification HIBP', 'Open source', '12 langues supportées'] },
   ],
 };
 
@@ -251,7 +251,7 @@ export const de: LocalizedArticleContent = {
     { heading: 'Warum Generatoren ohne Registrierung sicherer sind', paragraphs: ['Kontoerstellung = Warnsignal. generatepasswordto.me arbeitet komplett clientseitig.', 'Überprüfung: DevTools, Network-Tab, keine HTTP-Anfragen.'] },
     { heading: 'NIST und PCI DSS Konformität', paragraphs: ['NIST 800-63B passt zu Generatoren. 16+ zufällige Zeichen erfüllen die Intention.', 'PCI DSS v4.0 fordert 12 Zeichen Minimum.', 'Entwickler: Server-CSPRNGs verwenden.'] },
     { heading: 'Häufige Fehler', paragraphs: ['Generierte Ausgabe ändern reduziert Entropie.', 'Wiederverwendung generierter Passwörter.', 'Speicherung im Klartext.', 'Zeichenbeschränkungen ignorieren.'] },
-    { heading: 'Schritt-für-Schritt-Anleitung', paragraphs: ['Schritt 1: generatepasswordto.me besuchen.', 'Schritt 2: 20 Zeichen, alle Klassen.', 'Schritt 3: Generieren. Lokaler CSPRNG.', 'Schritt 4: Stärke prüfen (zxcvbn).', 'Schritt 5: HIBP-Prüfung.', 'Schritt 6: In Passwort-Manager kopieren.'], bullets: ['Ohne Registrierung', 'Konfigurierbar', 'Stärkeanzeige (zxcvbn)', 'HIBP-Prüfung', 'Open Source', '11 Sprachen'] },
+    { heading: 'Schritt-für-Schritt-Anleitung', paragraphs: ['Schritt 1: generatepasswordto.me besuchen.', 'Schritt 2: 20 Zeichen, alle Klassen.', 'Schritt 3: Generieren. Lokaler CSPRNG.', 'Schritt 4: Stärke prüfen (zxcvbn).', 'Schritt 5: HIBP-Prüfung.', 'Schritt 6: In Passwort-Manager kopieren.'], bullets: ['Ohne Registrierung', 'Konfigurierbar', 'Stärkeanzeige (zxcvbn)', 'HIBP-Prüfung', 'Open Source', '12 Sprachen'] },
   ],
 };
 
@@ -269,7 +269,7 @@ export const it: LocalizedArticleContent = {
     { heading: 'Perché i generatori senza registrazione sono più sicuri', paragraphs: ['Registrazione = segnale d\'allarme. generatepasswordto.me funziona completamente lato client.', 'Verifica: DevTools, tab Network, nessuna richiesta HTTP.'] },
     { heading: 'Conformità NIST e PCI DSS', paragraphs: ['NIST 800-63B si allinea con i generatori. 16+ caratteri casuali soddisfano l\'intento.', 'PCI DSS v4.0 richiede minimo 12 caratteri.', 'Sviluppatori: usate CSPRNG lato server.'] },
     { heading: 'Errori comuni', paragraphs: ['Modificare l\'output riduce l\'entropia.', 'Riutilizzare password generate.', 'Salvare in testo semplice.', 'Ignorare le restrizioni di caratteri.'] },
-    { heading: 'Guida passo passo', paragraphs: ['Passo 1: Vai su generatepasswordto.me.', 'Passo 2: 20 caratteri, tutte le classi.', 'Passo 3: Genera. CSPRNG locale.', 'Passo 4: Verifica forza (zxcvbn).', 'Passo 5: Verifica HIBP.', 'Passo 6: Copia nel gestore password.'], bullets: ['Senza registrazione', 'Configurabile', 'Indicatore di forza (zxcvbn)', 'Verifica HIBP', 'Open source', '11 lingue supportate'] },
+    { heading: 'Guida passo passo', paragraphs: ['Passo 1: Vai su generatepasswordto.me.', 'Passo 2: 20 caratteri, tutte le classi.', 'Passo 3: Genera. CSPRNG locale.', 'Passo 4: Verifica forza (zxcvbn).', 'Passo 5: Verifica HIBP.', 'Passo 6: Copia nel gestore password.'], bullets: ['Senza registrazione', 'Configurabile', 'Indicatore di forza (zxcvbn)', 'Verifica HIBP', 'Open source', '12 lingue supportate'] },
   ],
 };
 
@@ -287,7 +287,7 @@ export const pt: LocalizedArticleContent = {
     { heading: 'Por que geradores sem registro são mais seguros', paragraphs: ['Registro = sinal de alerta. generatepasswordto.me funciona inteiramente no cliente.', 'Verifique: DevTools, aba Network, sem requisições HTTP.'] },
     { heading: 'Conformidade NIST e PCI DSS', paragraphs: ['NIST 800-63B alinha com geradores. 16+ caracteres aleatórios satisfazem a intenção.', 'PCI DSS v4.0 exige mínimo 12 caracteres.', 'Desenvolvedores: usem CSPRNGs do servidor.'] },
     { heading: 'Erros comuns', paragraphs: ['Modificar a saída reduz a entropia.', 'Reutilizar senhas geradas.', 'Salvar em texto puro.', 'Ignorar restrições de caracteres.'] },
-    { heading: 'Guia passo a passo', paragraphs: ['Passo 1: Vá para generatepasswordto.me.', 'Passo 2: 20 caracteres, todas as classes.', 'Passo 3: Gere. CSPRNG local.', 'Passo 4: Verifique a força (zxcvbn).', 'Passo 5: Verificação HIBP.', 'Passo 6: Copie para o gerenciador.'], bullets: ['Sem registro', 'Configurável', 'Indicador de força (zxcvbn)', 'Verificação HIBP', 'Open source', '11 idiomas suportados'] },
+    { heading: 'Guia passo a passo', paragraphs: ['Passo 1: Vá para generatepasswordto.me.', 'Passo 2: 20 caracteres, todas as classes.', 'Passo 3: Gere. CSPRNG local.', 'Passo 4: Verifique a força (zxcvbn).', 'Passo 5: Verificação HIBP.', 'Passo 6: Copie para o gerenciador.'], bullets: ['Sem registro', 'Configurável', 'Indicador de força (zxcvbn)', 'Verificação HIBP', 'Open source', '12 idiomas suportados'] },
   ],
 };
 
@@ -305,7 +305,7 @@ export const ru: LocalizedArticleContent = {
     { heading: 'Почему генераторы без регистрации безопаснее', paragraphs: ['Регистрация = тревожный знак. generatepasswordto.me работает полностью на стороне клиента.', 'Проверка: DevTools, вкладка Network, никаких HTTP-запросов.'] },
     { heading: 'Соответствие NIST и PCI DSS', paragraphs: ['NIST 800-63B совместим с генераторами. 16+ случайных символов удовлетворяют намерению.', 'PCI DSS v4.0 требует минимум 12 символов.', 'Разработчикам: используйте серверные CSPRNG.'] },
     { heading: 'Распространённые ошибки', paragraphs: ['Модификация выхода генератора снижает энтропию.', 'Повторное использование сгенерированных паролей.', 'Хранение в открытом тексте.', 'Игнорирование ограничений символов.'] },
-    { heading: 'Пошаговая инструкция', paragraphs: ['Шаг 1: Откройте generatepasswordto.me.', 'Шаг 2: 20 символов, все классы.', 'Шаг 3: Сгенерируйте. Локальный CSPRNG.', 'Шаг 4: Проверьте надёжность (zxcvbn).', 'Шаг 5: Проверка HIBP.', 'Шаг 6: Скопируйте в менеджер паролей.'], bullets: ['Без регистрации', 'Настраиваемый', 'Индикатор надёжности (zxcvbn)', 'Проверка HIBP', 'Открытый код', '11 языков'] },
+    { heading: 'Пошаговая инструкция', paragraphs: ['Шаг 1: Откройте generatepasswordto.me.', 'Шаг 2: 20 символов, все классы.', 'Шаг 3: Сгенерируйте. Локальный CSPRNG.', 'Шаг 4: Проверьте надёжность (zxcvbn).', 'Шаг 5: Проверка HIBP.', 'Шаг 6: Скопируйте в менеджер паролей.'], bullets: ['Без регистрации', 'Настраиваемый', 'Индикатор надёжности (zxcvbn)', 'Проверка HIBP', 'Открытый код', '12 языков'] },
   ],
 };
 
@@ -341,7 +341,7 @@ export const ja: LocalizedArticleContent = {
     { heading: '登録不要の生成器が安全な理由', paragraphs: ['登録要求=警告サイン。generatepasswordto.meは完全にクライアントサイド。', '確認：DevTools、Networkタブ、HTTPリクエストなし。'] },
     { heading: 'NISTとPCI DSS準拠', paragraphs: ['NIST 800-63Bは生成器と整合。16+ランダム文字で意図を満たす。', 'PCI DSS v4.0は最低12文字。', '開発者：サーバーサイドCSPRNGを使用。'] },
     { heading: '一般的な間違い', paragraphs: ['生成出力の変更はエントロピーを低下。', '生成パスワードの再利用。', '平文保存。', '文字制限の無視。'] },
-    { heading: 'ステップバイステップガイド', paragraphs: ['ステップ1：generatepasswordto.meにアクセス。', 'ステップ2：20文字、全クラス。', 'ステップ3：生成。ローカルCSPRNG。', 'ステップ4：強度確認（zxcvbn）。', 'ステップ5：HIBP検証。', 'ステップ6：パスワードマネージャーにコピー。'], bullets: ['登録不要', '設定可能', '強度インジケーター（zxcvbn）', 'HIBP検証', 'オープンソース', '11言語対応'] },
+    { heading: 'ステップバイステップガイド', paragraphs: ['ステップ1：generatepasswordto.meにアクセス。', 'ステップ2：20文字、全クラス。', 'ステップ3：生成。ローカルCSPRNG。', 'ステップ4：強度確認（zxcvbn）。', 'ステップ5：HIBP検証。', 'ステップ6：パスワードマネージャーにコピー。'], bullets: ['登録不要', '設定可能', '強度インジケーター（zxcvbn）', 'HIBP検証', 'オープンソース', '12言語対応'] },
   ],
 };
 
@@ -359,7 +359,7 @@ export const pl: LocalizedArticleContent = {
     { heading: 'Dlaczego generatory bez rejestracji są bezpieczniejsze', paragraphs: ['Wymóg rejestracji = sygnał ostrzegawczy. generatepasswordto.me działa całkowicie po stronie klienta.', 'Weryfikacja: DevTools, zakładka Network, brak żądań HTTP.'] },
     { heading: 'Zgodność z NIST i PCI DSS', paragraphs: ['NIST 800-63B pasuje do generatorów. 16+ losowych znaków spełnia intencję.', 'PCI DSS v4.0 wymaga minimum 12 znaków.', 'Deweloperzy: używajcie serwerowych CSPRNG.'] },
     { heading: 'Częste błędy', paragraphs: ['Modyfikacja wyjścia generatora zmniejsza entropię.', 'Ponowne użycie wygenerowanych haseł.', 'Przechowywanie w tekście jawnym.', 'Ignorowanie ograniczeń znaków.'] },
-    { heading: 'Przewodnik krok po kroku', paragraphs: ['Krok 1: Wejdź na generatepasswordto.me.', 'Krok 2: 20 znaków, wszystkie klasy.', 'Krok 3: Wygeneruj. Lokalny CSPRNG.', 'Krok 4: Sprawdź siłę (zxcvbn).', 'Krok 5: Weryfikacja HIBP.', 'Krok 6: Skopiuj do menedżera haseł.'], bullets: ['Bez rejestracji', 'Konfigurowalne', 'Wskaźnik siły (zxcvbn)', 'Weryfikacja HIBP', 'Open source', '11 języków'] },
+    { heading: 'Przewodnik krok po kroku', paragraphs: ['Krok 1: Wejdź na generatepasswordto.me.', 'Krok 2: 20 znaków, wszystkie klasy.', 'Krok 3: Wygeneruj. Lokalny CSPRNG.', 'Krok 4: Sprawdź siłę (zxcvbn).', 'Krok 5: Weryfikacja HIBP.', 'Krok 6: Skopiuj do menedżera haseł.'], bullets: ['Bez rejestracji', 'Konfigurowalne', 'Wskaźnik siły (zxcvbn)', 'Weryfikacja HIBP', 'Open source', '12 języków'] },
   ],
 };
 
@@ -453,7 +453,7 @@ export const vi: LocalizedArticleContent = {
         'Thước đo độ mạnh tích hợp (thư viện zxcvbn)',
         'Kiểm tra rò rỉ qua Have I Been Pwned (k-anonymity)',
         'Mã nguồn mở trên GitHub để kiểm chứng',
-        'Hỗ trợ 11 ngôn ngữ, gồm tiếng Việt và tiếng Anh',
+        'Hỗ trợ 12 ngôn ngữ, gồm tiếng Việt và tiếng Anh',
       ],
     },
     {

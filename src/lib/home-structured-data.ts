@@ -155,7 +155,7 @@ export function buildHomeJsonLdScripts(locale: string): JsonLdScript[] {
       'Multiple character sets: uppercase, lowercase, digits, symbols',
       'PCI DSS v4.0 password policy support',
       'Dark mode interface',
-      '11 languages supported',
+      '12 languages supported',
     ],
     screenshot: `${BASE_URL}/images/generate-password-preview.png`,
     isAccessibleForFree: true,
