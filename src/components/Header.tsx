@@ -20,11 +20,12 @@ const ListItem = lazy(() => import('@mui/material/ListItem'));
 const Box = lazy(() => import('@mui/material/Box'));
 const Select = lazy(() => import('@mui/material/Select'));
 const MenuItem = lazy(() => import('@mui/material/MenuItem'));
-const IconButton = lazy(() => import('@mui/material/IconButton'));
 const Flag = lazy(() => import('react-world-flags'));
 
-/* Theme icons are tiny — importing them directly avoids an empty Suspense
-   fallback that left a blank control in the header on first paint. */
+/* Theme icons and their button are tiny — importing them directly avoids an
+   empty Suspense fallback that left a blank control in the header on first
+   paint (and a reserved-but-invisible slot in the CLS entries). */
+import IconButton from '@mui/material/IconButton';
 import Brightness4 from '@mui/icons-material/Brightness4';
 import Brightness7 from '@mui/icons-material/Brightness7';
 
@@ -294,30 +295,33 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           </li>
         ))}
         <li className="ml-auto pl-4 xl:pl-8">
-          <Suspense fallback={<span className="w-10 h-10 inline-block" />}>
-            <IconButton
-              onClick={toggleMode}
-              color="inherit"
-              aria-label={isDarkMode ? a11y('a11y_theme_light') : a11y('a11y_theme_dark')}
-              className={
-                isHomePage
-                  ? 'transition-all duration-300 hover:scale-105'
-                  : 'rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#E5F6FF] dark:hover:bg-[#111827]'
-              }
-              sx={{
-                width: 44,
-                height: 44,
-                color: isDarkMode ? '#9ca3af' : '#071016',
-                '&:hover': {
-                  color: isDarkMode ? '#d7f2ff' : '#2A4E63',
-                  backgroundColor: isDarkMode ? 'rgba(155, 223, 255, 0.12)' : 'rgba(42, 78, 99, 0.08)',
-                  transform: 'scale(1.05)',
-                },
-              }}
-            >
-              {isDarkMode ? <Brightness7 /> : <Brightness4 />}
-            </IconButton>
-          </Suspense>
+          <IconButton
+            onClick={toggleMode}
+            color="inherit"
+            aria-label={isDarkMode ? a11y('a11y_theme_light') : a11y('a11y_theme_dark')}
+            className={
+              isHomePage
+                ? 'transition-all duration-300 hover:scale-105'
+                : 'rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#E5F6FF] dark:hover:bg-[#111827]'
+            }
+            sx={{
+              width: 44,
+              height: 44,
+              /* CSS-driven so the control is already legible in the first frame,
+                 before React has read the stored preference. */
+              color: 'var(--theme-toggle-icon)',
+              '&:hover': {
+                color: isDarkMode ? '#d7f2ff' : '#2A4E63',
+                backgroundColor: isDarkMode ? 'rgba(155, 223, 255, 0.12)' : 'rgba(42, 78, 99, 0.08)',
+                transform: 'scale(1.05)',
+              },
+            }}
+          >
+            {/* Both glyphs are in the DOM and swapped by CSS: `!` keeps the
+                hide rule ahead of MUI's own display:inline-block. */}
+            <Brightness4 className="dark:!hidden" />
+            <Brightness7 className="!hidden dark:!block" />
+          </IconButton>
         </li>
       </ul>
       <label htmlFor="eng" className="sr-only">{a11y('a11y_language')}</label>
