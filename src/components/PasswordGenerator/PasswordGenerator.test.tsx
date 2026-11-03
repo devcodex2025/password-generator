@@ -1,13 +1,13 @@
 import { StrictMode } from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import '@/components/i18n'; // real translations, so queries use the visible labels
 import PasswordGenerator from './PasswordGenerator';
 import { loadWordlist } from './generatorModes';
 
 // Heavy or browser-only pieces that are irrelevant to generation behavior.
 vi.mock('react-rewards', () => ({ useReward: () => ({ reward: () => {} }) }));
 vi.mock('next/image', () => ({ default: () => null }));
-vi.mock('@/components/i18n', () => ({ default: { language: 'en', changeLanguage: () => {} } }));
 vi.mock('@/components/affiliate/SavePasswordModal', () => ({ default: () => null, shouldShowSavePrompt: () => false }));
 vi.mock('./generatorModes', async (importOriginal) => ({
   ...(await importOriginal<typeof import('./generatorModes')>()),
@@ -21,7 +21,7 @@ const passwordInputs = () => screen.queryAllByLabelText('Generated password') as
 const firstPassword = () => passwordInputs()[0]?.value ?? '';
 const events = (name: string) => gtag.mock.calls.filter(([type, event]) => type === 'event' && event === name);
 const clickMode = (label: string) => fireEvent.click(screen.getByRole('button', { name: label }));
-const setQuantity = (value: string) => fireEvent.change(screen.getByLabelText('quantity'), { target: { value } });
+const setQuantity = (value: string) => fireEvent.change(screen.getByLabelText('Quantity'), { target: { value } });
 
 async function renderGenerator(strict = false) {
   const ui = <PasswordGenerator language="en" />;
@@ -75,9 +75,9 @@ describe('PasswordGenerator', () => {
     const before = firstPassword();
 
     vi.mocked(loadWordlist).mockRejectedValue(new Error('offline'));
-    fireEvent.click(screen.getAllByRole('button', { name: 'generate' })[0]);
+    fireEvent.click(screen.getAllByRole('button', { name: 'Generate' })[0]);
 
-    await screen.findByText('warning_wordlist_failed');
+    await screen.findByText(/Could not load the word list/);
     expect(firstPassword()).toBe(before);
   });
 
@@ -89,12 +89,26 @@ describe('PasswordGenerator', () => {
     expect(events('passwords_regenerated')).toHaveLength(0);
   });
 
+  it('recovers the row count after a failed append', async () => {
+    await renderGenerator();
+    clickMode('Words');
+    await waitFor(() => expect(firstPassword().split('-')).toHaveLength(4));
+
+    vi.mocked(loadWordlist).mockRejectedValueOnce(new Error('offline'));
+    setQuantity('2');
+    await screen.findByText(/Could not load the word list/);
+    expect(passwordInputs()).toHaveLength(1);
+
+    setQuantity('3');
+    await waitFor(() => expect(passwordInputs()).toHaveLength(3));
+  });
+
   it('clamps a negative quantity to 1', async () => {
     await renderGenerator();
     setQuantity('3');
     await waitFor(() => expect(passwordInputs()).toHaveLength(3));
     setQuantity('-5');
     await waitFor(() => expect(passwordInputs()).toHaveLength(1));
-    expect((screen.getByLabelText('quantity') as HTMLInputElement).value).toBe('1');
+    expect((screen.getByLabelText('Quantity') as HTMLInputElement).value).toBe('1');
   });
 });

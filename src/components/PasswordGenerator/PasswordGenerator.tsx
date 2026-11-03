@@ -108,9 +108,9 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   );
 
   // Values the generation effects read without re-running when they change.
-  const latest = useRef({ rules, quantity, language, t });
+  const latest = useRef({ rules, quantity, language, t, rowCount: passwords.length });
   useEffect(() => {
-    latest.current = { rules, quantity, language, t };
+    latest.current = { rules, quantity, language, t, rowCount: passwords.length };
   });
 
   // One snackbar per message: repeated failures while dragging do not stack.
@@ -127,6 +127,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         return;
       }
       const [password] = result.passwords;
+      if (index >= latest.current.rowCount) return; // row was removed meanwhile: no write, no event
       setPasswords((prev) => {
         if (index >= prev.length) return prev;
         const updated = [...prev];
@@ -167,20 +168,19 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
     };
   }, [rules, warn]);
 
-  // Quantity changed: append or trim, existing rows stay as they are.
-  const previousQuantity = useRef(quantity);
+  // Quantity changed: append or trim relative to the rows actually shown, so a failed or
+  // cancelled append is retried by the next change instead of leaving the list short.
   useEffect(() => {
-    const previous = previousQuantity.current;
-    previousQuantity.current = quantity;
-    if (quantity === previous || !hasGenerated.current) return;
-    if (quantity < previous) {
+    const shown = latest.current.rowCount;
+    if (quantity === shown || !hasGenerated.current) return;
+    if (quantity < shown) {
       setPasswords((current) => current.slice(0, quantity));
       return;
     }
     let cancelled = false;
     (async () => {
       const { rules: currentRules, language: lang } = latest.current;
-      const result = await generateList(currentRules, quantity - previous);
+      const result = await generateList(currentRules, quantity - shown);
       if (cancelled) return;
       if ('error' in result) {
         warn(result.error);
@@ -188,7 +188,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       }
       setPasswords((current) => [...current, ...result.passwords].slice(0, quantity));
       const event = planGenerationEvent({
-        previousQuantity: previous,
+        previousQuantity: shown,
         nextQuantity: quantity,
         generated: result.passwords,
         rules: currentRules,
