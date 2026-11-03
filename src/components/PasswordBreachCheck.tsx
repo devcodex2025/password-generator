@@ -317,7 +317,7 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center rounded-lg border px-3 py-1.5 text-[13px] font-medium transition-colors ${
+                className={`inline-flex min-h-11 items-center rounded-lg border px-3 py-2 text-[13px] font-medium transition-colors ${
                   isDarkMode
                     ? 'border-[#374151] !text-[#38beff] hover:bg-[#0f1b24] hover:!border-[#38beff]'
                     : 'border-[#D1E9FF] text-[#2A4E63] hover:bg-[#F0F8FF]'

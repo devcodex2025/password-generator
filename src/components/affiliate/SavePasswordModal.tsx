@@ -184,7 +184,7 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
             type="button"
             onClick={dismiss}
             aria-label={c.dismiss}
-            className="shrink-0 rounded-full p-1 text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] dark:text-[#9ca3af] dark:hover:bg-white/10 dark:hover:text-white"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] dark:text-[#9ca3af] dark:hover:bg-white/10 dark:hover:text-white"
           >
             <X className="h-5 w-5" aria-hidden="true" />
           </button>
@@ -214,12 +214,12 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
         <button
           type="button"
           onClick={dismiss}
-          className="mt-2 w-full rounded-full px-6 py-2.5 text-[14px] font-medium text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] dark:text-[#9ca3af] dark:hover:bg-white/5 dark:hover:text-white"
+          className="mt-2 inline-flex min-h-11 w-full items-center justify-center rounded-full px-6 text-[14px] font-medium text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] dark:text-[#9ca3af] dark:hover:bg-white/5 dark:hover:text-white"
         >
           {c.dismiss}
         </button>
 
-        <p className="mt-2 text-center text-[11px] italic text-[#6b7280] dark:text-[#9ca3af]">{c.ad}</p>
+        <p className="mt-2 text-center text-[12px] italic text-[#6b7280] dark:text-[#9ca3af]">{c.ad}</p>
       </div>
     </div>,
     document.body

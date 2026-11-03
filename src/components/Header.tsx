@@ -20,7 +20,6 @@ const ListItem = lazy(() => import('@mui/material/ListItem'));
 const Box = lazy(() => import('@mui/material/Box'));
 const Select = lazy(() => import('@mui/material/Select'));
 const MenuItem = lazy(() => import('@mui/material/MenuItem'));
-const InputLabel = lazy(() => import('@mui/material/InputLabel'));
 const IconButton = lazy(() => import('@mui/material/IconButton'));
 const Flag = lazy(() => import('react-world-flags'));
 
@@ -279,7 +278,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#38beff]"
+                className="flex min-h-11 items-center rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#38beff]"
               >
                 {item.label}
               </Link>
@@ -300,31 +299,35 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
                 }
           }
         >
-          <InputLabel id="language-select-label" sx={{ width: '100%' }}>
-            {getLanguageSelectionText(language)}
-          </InputLabel>
-          <Select
-            labelId="language-select-label"
-            id="language-select"
-            value={language}
-            onChange={handleLanguageChange as (event: SelectChangeEvent<unknown>, child: React.ReactNode) => void}
-            sx={{ width: '100%' }}
-          >
-            {languages.map((lang) => (
-              <MenuItem key={lang.value} value={lang.value}>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <span
-                    className={`flag-container flex align-center ${isAnimating ? 'language-change-animation' : ''
-                      }`}
-                    style={{ marginRight: 8 }}
-                  >
-                    <Flag code={lang.flagCode} width={32} />
-                  </span>
-                  <span>{lang.label}</span>
-                </div>
-              </MenuItem>
-            ))}
-          </Select>
+          <Box sx={{ width: '100%' }}>
+            {/* A single visible label and one control: the old InputLabel +
+                floating-label Select rendered the caption twice and left the
+                select without an accessible name. */}
+            <span className="mb-1 block text-sm font-medium text-slate-600 dark:text-slate-300">
+              {getLanguageSelectionText(language)}
+            </span>
+            <Select
+              value={language}
+              onChange={handleLanguageChange as (event: SelectChangeEvent<unknown>, child: React.ReactNode) => void}
+              aria-label={a11y('a11y_language')}
+              sx={{ width: '100%', minHeight: 44 }}
+            >
+              {languages.map((lang) => (
+                <MenuItem key={lang.value} value={lang.value}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <span
+                      className={`flag-container flex align-center ${isAnimating ? 'language-change-animation' : ''
+                        }`}
+                      style={{ marginRight: 8 }}
+                    >
+                      <Flag code={lang.flagCode} width={32} />
+                    </span>
+                    <span>{lang.label}</span>
+                  </div>
+                </MenuItem>
+              ))}
+            </Select>
+          </Box>
         </ListItem>
 
         {/* Theme Toggle */}
@@ -361,6 +364,8 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               color="inherit"
               aria-label={isDarkMode ? a11y('a11y_theme_light') : a11y('a11y_theme_dark')}
               sx={{
+                width: 44,
+                height: 44,
                 color: isDarkMode ? '#9ca3af' : '#071016',
                 '&:hover': {
                   color: isDarkMode ? '#d7f2ff' : '#2A4E63',
@@ -433,6 +438,8 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
                   : 'rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#E5F6FF] dark:hover:bg-[#111827]'
               }
               sx={{
+                width: 44,
+                height: 44,
                 color: isDarkMode ? '#9ca3af' : '#071016',
                 '&:hover': {
                   color: isDarkMode ? '#d7f2ff' : '#2A4E63',

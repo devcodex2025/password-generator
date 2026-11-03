@@ -123,7 +123,7 @@ export default function PasswordSettings({
                         type="button"
                         onClick={() => handleModeChange(m)}
                         aria-pressed={mode === m}
-                        className={`rounded-lg border-2 px-3 py-1.5 text-[13px] font-semibold transition-colors ${
+                        className={`min-h-11 rounded-lg border-2 px-4 py-2 text-[14px] font-semibold transition-colors ${
                             mode === m
                                 ? 'border-[#2A4E63] bg-[#e5f6ff] text-[#2A4E63] dark:border-[#05a9ff] dark:bg-[#05a9ff] dark:text-[#0a1e2a]'
                                 : 'border-gray-200 bg-white text-[#2A4E63] hover:border-[#2A4E63] dark:border-gray-600 dark:bg-[#374151] dark:text-[#e0e0e0]'
@@ -199,7 +199,7 @@ export default function PasswordSettings({
                                     }
                                 }}
                                 aria-label={t('a11y_length_preset', { length: preset })}
-                                className={`rounded-lg border-2 px-2.5 py-1 text-[13px] font-semibold transition-colors ${
+                                className={`min-h-11 min-w-11 rounded-lg border-2 px-3 text-[14px] font-semibold transition-colors ${
                                     passwordLength === preset
                                         ? 'border-[#2A4E63] bg-[#e5f6ff] text-[#2A4E63] dark:border-[#05a9ff] dark:bg-[#05a9ff] dark:text-[#0a1e2a]'
                                         : 'border-gray-200 bg-white text-[#2A4E63] hover:border-[#2A4E63] dark:border-gray-600 dark:bg-[#374151] dark:text-[#e0e0e0]'
@@ -219,7 +219,7 @@ export default function PasswordSettings({
                                     type="button"
                                     onClick={() => setSeparator(sep)}
                                     aria-label={t('a11y_separator', { separator: sep === ' ' ? t('a11y_space') : sep })}
-                                    className={`h-8 w-8 rounded-lg border-2 text-[14px] font-semibold transition-colors ${
+                                    className={`h-11 w-11 rounded-lg border-2 text-[16px] font-semibold transition-colors ${
                                         separator === sep
                                             ? 'border-[#2A4E63] bg-[#e5f6ff] text-[#2A4E63] dark:border-[#05a9ff] dark:bg-[#05a9ff] dark:text-[#0a1e2a]'
                                             : 'border-gray-200 bg-white text-[#2A4E63] hover:border-[#2A4E63] dark:border-gray-600 dark:bg-[#374151] dark:text-[#e0e0e0]'

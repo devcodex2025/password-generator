@@ -78,7 +78,7 @@ export default function AffiliateBanner({ placement, locale, className = '', pro
           decoding="async"
         />
       </span>
-      <span className="mt-1 block text-[10px] italic text-[#6b7280] dark:text-[#9ca3af]">Ad · affiliate link</span>
+      <span className="mt-1 block text-[12px] leading-4 italic text-[#6b7280] dark:text-[#9ca3af]">Ad · affiliate link</span>
     </a>
   );
 }
