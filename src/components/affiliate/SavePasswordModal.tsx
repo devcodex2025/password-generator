@@ -4,7 +4,9 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { localeFontClass } from '@/lib/locale-font';
 import { resolveAffiliateUrl } from '@/content/affiliate/links';
+import { announceModalOpen, subscribeModalOpen } from '@/lib/modal-coordination';
 import { useGeoCountry } from './useGeoCountry';
 
 /* ── Copy (kept local to avoid touching the shared lang.json) ── */
@@ -135,6 +137,16 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
   useEffect(() => {
     if (!open) return;
     track('save_modal_view', locale);
+
+    // Only one dialog at a time: announce this one and step aside if the
+    // bookmark instructions open on top of it.
+    announceModalOpen('save-password');
+    const unsubscribe = subscribeModalOpen((id) => {
+      if (id === 'save-password') return;
+      track('save_modal_dismiss', locale);
+      onClose();
+    });
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         track('save_modal_dismiss', locale);
@@ -142,7 +154,10 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
       }
     };
     document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
+    return () => {
+      unsubscribe();
+      document.removeEventListener('keydown', onKey);
+    };
   }, [open, locale, onClose]);
 
   if (!open) return null;
@@ -165,7 +180,10 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
       onClick={dismiss}
     >
       <div
-        className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-[#E5F6FF] bg-white p-6 shadow-2xl ring-1 ring-[#2A4E63]/5 dark:border-[#374151] dark:bg-[#1c1c1c] dark:ring-white/10"
+        className={cn(
+          localeFontClass(locale),
+          'max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-[#E5F6FF] bg-white p-6 shadow-2xl ring-1 ring-[#2A4E63]/5 dark:border-[#374151] dark:bg-[#1c1c1c] dark:ring-white/10'
+        )}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-4">
