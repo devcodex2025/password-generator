@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -54,10 +54,16 @@ const theme = createTheme({
    removal of the transition guard, short enough to be invisible. */
 const THEME_SWITCH_MS = 120;
 
+/* Keeps the pre-paint class in sync without touching storage — used on mount and
+   for OS-level preference changes. */
+function setDocumentDark(isDark: boolean) {
+  if (typeof document === 'undefined') return;
+  document.documentElement.classList.toggle('dark', isDark);
+}
+
 /**
- * Applies a theme without waiting for React: the class, the stored preference
- * and the transition guard all change in the same task as the click, so the
- * next paint is already the final one.
+ * Applies a stored user choice: class, storage and cookie change in the same
+ * task as the click, so the next paint is already the final one.
  */
 function applyTheme(isDark: boolean) {
   if (typeof document === 'undefined' || typeof window === 'undefined') return;
@@ -67,7 +73,7 @@ function applyTheme(isDark: boolean) {
   // speeds, producing frames with ~1:1 contrast. Hover/motion transitions are
   // untouched outside this short window.
   root.classList.add('theme-switching');
-  root.classList.toggle('dark', isDark);
+  setDocumentDark(isDark);
 
   try {
     window.localStorage.setItem('darkMode', JSON.stringify(isDark));
@@ -87,6 +93,11 @@ function readStoredDarkMode(): boolean | null {
     return null;
   }
 }
+
+/* `useLayoutEffect` on the client so a remounted root layout (client-side locale
+   switch) gets its theme class before the browser paints; rendering on the
+   server has no layout phase, hence the fallback. */
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 export const CustomThemeProvider = ({
   children,
@@ -108,19 +119,24 @@ export const CustomThemeProvider = ({
     setIsDarkMode(next);
   }, []);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // The pre-paint script already put the right class on <html>; this effect
-    // only mirrors that state into React so components can pick their icons.
     const saved = readStoredDarkMode();
     const mediaQuery = window.matchMedia?.('(prefers-color-scheme: dark)');
-    setIsDarkMode(saved !== null ? saved : mediaQuery?.matches || false);
+    const resolved = saved !== null ? saved : mediaQuery?.matches || false;
+
+    // On a cold load the pre-paint script already applied the class (no-op here).
+    // A client-side locale switch re-creates the root layout and with it the
+    // <html> element, so the class has to be re-asserted — otherwise the CSS
+    // goes light while the JS-driven colours stay dark (half-themed page).
+    setDocumentDark(resolved);
+    setIsDarkMode(resolved);
     setIsInitialized(true);
 
     const handleChange = (e: MediaQueryListEvent) => {
       if (readStoredDarkMode() !== null) return;
-      applyTheme(e.matches);
+      setDocumentDark(e.matches);
       setIsDarkMode(e.matches);
     };
 
