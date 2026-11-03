@@ -47,33 +47,11 @@ export function loadWordlist(): Promise<string[]> {
           .split(/\r?\n/)
           .map((line) => line.split('\t')[1]?.trim() || line.trim())
           .filter(Boolean)
-      );
+      )
+      .catch((error) => {
+        wordlistPromise = null; // let the next attempt retry instead of failing for the whole session
+        throw error;
+      });
   }
   return wordlistPromise;
-}
-
-export function generatePassphrase(
-  words: string[],
-  count: number,
-  separator: string,
-  capitalize: boolean,
-  randomIndex: (max: number) => number
-): string {
-  const picked: string[] = [];
-  for (let i = 0; i < count; i++) {
-    picked.push(words[randomIndex(words.length)]);
-  }
-  if (capitalize && picked.length > 0) {
-    const at = randomIndex(picked.length);
-    picked[at] = picked[at].charAt(0).toUpperCase() + picked[at].slice(1);
-  }
-  return picked.join(separator);
-}
-
-export function generatePin(length: number, randomIndex: (max: number) => number): string {
-  let pin = '';
-  for (let i = 0; i < length; i++) {
-    pin += String(randomIndex(10));
-  }
-  return pin;
 }

@@ -7,6 +7,7 @@ import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import { SnackbarMessage } from '@/app/types/SnackBar';
 import { GeneratorMode, getModeLabels } from './generatorModes';
+import { CHARACTER_SETS as characterSets, PASSWORD_STANDARDS as passwordStandards } from './generatorCore.mjs';
 
 interface PasswordSettingsProps {
     passwordLength: number;
@@ -26,19 +27,6 @@ interface PasswordSettingsProps {
     capitalize: boolean;
     setCapitalize: (capitalize: boolean) => void;
 }
-
-const characterSets: Record<string, string> = {
-    'A-Z': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    'a-z': 'abcdefghijklmnopqrstuvwxyz',
-    '0-9': '0123456789',
-    '#$%': '!@#$%^&*()',
-};
-
-const passwordStandards: Record<string, { minLength: number; requiredSets: string[] }> = {
-    nist: { minLength: 8, requiredSets: ['A-Z', 'a-z', '0-9', '#$%'] },
-    pci: { minLength: 12, requiredSets: ['A-Z', 'a-z', '0-9', '#$%'] },
-    custom: { minLength: 4, requiredSets: [] },
-};
 
 export default function PasswordSettings({
     passwordLength,
@@ -66,17 +54,10 @@ export default function PasswordSettings({
     const sliderMax = mode === 'chars' ? 100 : mode === 'pin' ? 12 : 8;
     const lengthLabel = mode === 'chars' ? t('password_length') : mode === 'pin' ? `${labels.pin}:` : `${labels.wordCount}:`;
 
-    const handleModeChange = (nextMode: GeneratorMode) => {
-        if (nextMode === 'words' && (passwordLength < 3 || passwordLength > 8)) setPasswordLength(4);
-        if (nextMode === 'pin' && (passwordLength < 4 || passwordLength > 12)) setPasswordLength(6);
-        onModeChange(nextMode);
-    };
-
     const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newQuantity = parseInt(event.target.value, 10);
-        if (!isNaN(newQuantity) && newQuantity <= maxQuantity) {
-            setQuantity(newQuantity);
-        }
+        if (Number.isNaN(newQuantity)) return;
+        setQuantity(Math.min(maxQuantity, Math.max(1, newQuantity)));
     };
 
     const handleCheckboxChange = (characterSet: string) => {
@@ -118,7 +99,7 @@ export default function PasswordSettings({
                     <button
                         key={m}
                         type="button"
-                        onClick={() => handleModeChange(m)}
+                        onClick={() => onModeChange(m)}
                         aria-pressed={mode === m}
                         className={`min-h-11 rounded-lg border-2 px-4 py-2 text-[14px] font-semibold transition-colors ${
                             mode === m

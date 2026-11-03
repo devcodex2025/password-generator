@@ -2,6 +2,7 @@
 
 import { useTranslation } from 'react-i18next';
 import Button from '@/components/ui/Button';
+import { PASSWORD_STANDARDS as passwordStandards } from './generatorCore.mjs';
 
 interface PasswordStandardsProps {
   selectedStandard: string;
@@ -10,24 +11,6 @@ interface PasswordStandardsProps {
   setPasswordLength: (length: number) => void;
   setSelectedCharacterSets: (sets: string[]) => void;
 }
-
-const passwordStandards: Record<string, { minLength: number; requiredSets: string[]; description: string }> = {
-  nist: {
-    minLength: 8,
-    requiredSets: ['A-Z', 'a-z', '0-9', '#$%'],
-    description: 'standard_nist_desc',
-  },
-  pci: {
-    minLength: 12,
-    requiredSets: ['A-Z', 'a-z', '0-9', '#$%'],
-    description: 'standard_pci_desc',
-  },
-  custom: {
-    minLength: 4,
-    requiredSets: [],
-    description: 'standard_custom_desc',
-  },
-};
 
 export default function PasswordStandards({
   selectedStandard,
@@ -72,7 +55,7 @@ export default function PasswordStandards({
         <span
           className="hero-muted-label mb-2 block text-[14px] sm:text-[17px] md:text-[20px] font-normal border-2 border-[#e5f6ff] dark:border-[#05a9ff] rounded-lg px-3 sm:px-4 py-2 mt-1"
         >
-          {t(passwordStandards[selectedStandard].description)}
+          {t(`standard_${selectedStandard}_desc`)}
         </span>
       </div>
     </div>

@@ -47,6 +47,13 @@ services:
       - path: .env
         required: false
 
+  # opt-in: `docker compose --profile test run --rm test` (plain `up` never starts it)
+  test:
+    profiles: [test]
+    build:
+      context: .
+      target: test
+
   caddy:
     image: caddy:2.10-alpine
     restart: unless-stopped

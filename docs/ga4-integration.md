@@ -56,8 +56,9 @@ left untouched; it never fires on this site.
 
 | Event | Parameters |
 |---|---|
-| `password_generated` | `mode`, `length`, `standard` (random/pin modes), `ui_language`, `surface` |
-| `passwords_generated_batch` | `count`, `length`, `mode`, `ui_language`, `surface` |
+| `password_generated` | explicit row re-roll: `mode`, `length`, `char_length`, `standard` (chars mode only), `ui_language`, `surface` |
+| `passwords_generated_batch` | initial load and quantity increase: `count` (rows added), `mode`, `length`, `char_length`, `standard` (chars mode only), `ui_language`, `surface` |
+| `passwords_regenerated` | rule change (mode, length, sets, standard, separator, capitalize), sent once after the settings settle (250 ms debounce): `count` (list size), same params as the batch event |
 | `password_copied` | `index`, `ui_language`, `surface` |
 | `passwords_copied_all` | `count`, `ui_language`, `surface` |
 | `passwords_downloaded` | `count`, `ui_language`, `surface` |
@@ -71,7 +72,14 @@ Server-side, `npm run affiliate:sync` sends a `purchase` event per approved conv
 Measurement Protocol: `transaction_id` = `aff-<conversion id>`, `value` = affiliate payout,
 `currency`, `items` with the offer name. GA4 deduplicates on `transaction_id`.
 
-`length` means characters for random/PIN modes and word count for passphrase mode.
+`length` is in slider units: characters for chars/PIN modes, word count for passphrase mode.
+`char_length` is always the generated password's character count. No event carries password content.
+
+Since rule changes regenerate automatically, most sessions no longer click a row's Generate
+button, so `password_generated` is now an explicit re-roll signal only. The `Generated` funnel
+step in `scripts/ga4-report.mjs` matches any of `password_generated`, `passwords_generated_batch`
+or `passwords_regenerated`. `password_generated` stays a key event; to keep conversion counts
+comparable, also mark `passwords_generated_batch` as a key event in GA4 admin.
 
 ## Usage
 
