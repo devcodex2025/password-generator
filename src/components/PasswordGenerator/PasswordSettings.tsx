@@ -137,9 +137,9 @@ export default function PasswordSettings({
                 <span className="hero-muted-label text-[16px] md:text-[22px]">
                     {lengthLabel} {passwordLength}
                 </span>
-                <div className="flex min-w-0 w-full max-w-full items-center gap-2 sm:gap-4">
-                      <RemoveCircleOutlineIcon
-                        aria-hidden={false}
+                <div className="flex min-w-0 w-full max-w-full items-center gap-1 sm:gap-3">
+                      <button
+                        type="button"
                         onClick={() => {
                             const newLength = Math.max(sliderMin, passwordLength - 1);
                             setPasswordLength(newLength);
@@ -147,18 +147,11 @@ export default function PasswordSettings({
                                 setSelectedStandard('custom');
                             }
                         }}
-                        role="button"
-                        tabIndex={0}
-                        aria-label="Decrease password length"
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                                e.preventDefault();
-                                e.currentTarget.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-                            }
-                        }}
-                        
-                        className="shrink-0 cursor-pointer"
-                    />
+                        aria-label={t('a11y_decrease_length')}
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#2A4E63] transition hover:bg-[#E5F6FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A4E63] dark:text-[#c7c7c7] dark:hover:bg-white/10 dark:focus-visible:ring-[#05a9ff]"
+                      >
+                        <RemoveCircleOutlineIcon aria-hidden="true" />
+                      </button>
                     <Slider
                         value={passwordLength}
                         min={sliderMin}
@@ -170,12 +163,16 @@ export default function PasswordSettings({
                                 setSelectedStandard('custom');
                             }
                         }}
-                        aria-label="Password length slider"
+                        aria-label={t('a11y_length_slider')}
                         valueLabelDisplay="auto"
-                        className="h-[15px] min-w-0 flex-1"
+                        className="h-6 min-w-0 flex-1"
+                        sx={{
+                            '& .MuiSlider-thumb': { width: 24, height: 24 },
+                            '& .MuiSlider-thumb input': { width: 24, height: 24 },
+                        }}
                     />
-                    <AddCircleOutlineIcon
-                        aria-hidden={false}
+                    <button
+                        type="button"
                         onClick={() => {
                             const newLength = Math.min(sliderMax, passwordLength + 1);
                             setPasswordLength(newLength);
@@ -183,18 +180,11 @@ export default function PasswordSettings({
                                 setSelectedStandard('custom');
                             }
                         }}
-                        role="button"
-                        tabIndex={0}
-                        aria-label="Increase password length"
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                                e.preventDefault();
-                                e.currentTarget.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-                            }
-                        }}
-                        
-                        className="shrink-0 cursor-pointer"
-                    />
+                        aria-label={t('a11y_increase_length')}
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#2A4E63] transition hover:bg-[#E5F6FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A4E63] dark:text-[#c7c7c7] dark:hover:bg-white/10 dark:focus-visible:ring-[#05a9ff]"
+                    >
+                        <AddCircleOutlineIcon aria-hidden="true" />
+                    </button>
                 </div>
                 {mode === 'chars' && (
                     <div className="flex flex-wrap items-center gap-2">
@@ -208,7 +198,7 @@ export default function PasswordSettings({
                                         setSelectedStandard('custom');
                                     }
                                 }}
-                                aria-label={`Set password length to ${preset}`}
+                                aria-label={t('a11y_length_preset', { length: preset })}
                                 className={`rounded-lg border-2 px-2.5 py-1 text-[13px] font-semibold transition-colors ${
                                     passwordLength === preset
                                         ? 'border-[#2A4E63] bg-[#e5f6ff] text-[#2A4E63] dark:border-[#05a9ff] dark:bg-[#05a9ff] dark:text-[#0a1e2a]'
@@ -228,7 +218,7 @@ export default function PasswordSettings({
                                     key={sep}
                                     type="button"
                                     onClick={() => setSeparator(sep)}
-                                    aria-label={`Separator ${sep === ' ' ? 'space' : sep}`}
+                                    aria-label={t('a11y_separator', { separator: sep === ' ' ? t('a11y_space') : sep })}
                                     className={`h-8 w-8 rounded-lg border-2 text-[14px] font-semibold transition-colors ${
                                         separator === sep
                                             ? 'border-[#2A4E63] bg-[#e5f6ff] text-[#2A4E63] dark:border-[#05a9ff] dark:bg-[#05a9ff] dark:text-[#0a1e2a]'

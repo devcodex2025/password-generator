@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useEffect, useId, useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import ShareIcon from '@mui/icons-material/Share'
@@ -483,7 +483,7 @@ export default function ShareBlock({
                 <MailGlyph />
                 {t.email}
               </a>
-              <span className="text-xs text-gray-400 dark:text-gray-500">generatepasswordto.me</span>
+              <span className="text-xs text-[#6b7280] dark:text-gray-400">generatepasswordto.me</span>
             </div>
 
             <span className="sr-only" role="status" aria-live="polite">

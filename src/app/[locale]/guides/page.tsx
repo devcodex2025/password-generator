@@ -163,6 +163,7 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
       />
       <section className="max-w-6xl mx-auto px-4 py-10">
         <Breadcrumbs
+          language={locale}
           items={[
             { label: labels.home, href: homeHref(locale) },
             { label: labels.guides },

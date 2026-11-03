@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useContext, useRef, Fragment, lazy, Suspense } from 'react';
 import { usePathname } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -111,6 +112,7 @@ interface HeaderProps {
 
 const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
   const pathname = usePathname();
+  const { t } = useTranslation();
   const isHomePage = pathname === '/' || /^\/[^/]+\/?$/.test(pathname || '');
   const availableLanguages = getAvailableLanguages();
   const [language, setLanguage] = useState<string>(() => {
@@ -122,6 +124,10 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
 
     return availableLanguages.includes(currentLanguage) ? currentLanguage : 'en';
   });
+
+  // Explicit locale: sub-pages render the header without changing the i18next
+  // language first, so `t()` alone could return English labels there.
+  const a11y = (key: string) => t(key, { lng: language });
 
   const localePrefix = `/${language}`;
   const homeHref = language === 'en' ? '/' : localePrefix;
@@ -353,7 +359,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             <IconButton
               onClick={toggleMode}
               color="inherit"
-              aria-label={isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
+              aria-label={isDarkMode ? a11y('a11y_theme_light') : a11y('a11y_theme_dark')}
               sx={{
                 color: isDarkMode ? '#9ca3af' : '#071016',
                 '&:hover': {
@@ -389,7 +395,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
         ) : (
           <Link
             href={homeHref}
-            aria-label="Go to homepage"
+            aria-label={a11y('a11y_go_home')}
             className="logo-link inline-flex transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
           >
             <Image
@@ -409,7 +415,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           <li key={item.href}>
             <Link
               href={item.href}
-              className="transition-all duration-200 text-slate-700 hover:text-sky-600 dark:text-slate-200 dark:hover:text-[#38beff]"
+              className="inline-flex min-h-6 items-center py-1 text-slate-700 transition-all duration-200 hover:text-sky-600 dark:text-slate-200 dark:hover:text-[#38beff]"
             >
               {item.label}
             </Link>
@@ -420,7 +426,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             <IconButton
               onClick={toggleMode}
               color="inherit"
-              aria-label={isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
+              aria-label={isDarkMode ? a11y('a11y_theme_light') : a11y('a11y_theme_dark')}
               className={
                 isHomePage
                   ? 'transition-all duration-300 hover:scale-105'
@@ -440,7 +446,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           </Suspense>
         </li>
       </ul>
-      <label htmlFor="eng" className="sr-only">Language</label>
+      <label htmlFor="eng" className="sr-only">{a11y('a11y_language')}</label>
       <select
         name="Language"
         value={language}
@@ -459,23 +465,25 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
       <div className="flex items-center lg:hidden">
         {(['top'] as Anchor[]).map((anchor) => (
           <Fragment key={anchor}>
-            <Image
-              src="/images/hamburger.png"
-              alt="Navigation menu toggle"
+            <button
+              type="button"
               onClick={toggleDrawer(anchor, true)}
-              className={`cursor-pointer transition-all duration-200 w-6 h-auto ${isHomePage ? '' : 'hover:scale-110'}${isDarkMode ? ' hamburger-dark' : ''}`}
-              loading="eager"
-              decoding="async"
-              width={24}
-              height={18}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  toggleDrawer(anchor, true)(e);
-                }
-              }}
-            />
+              aria-label={a11y('a11y_nav_menu')}
+              aria-expanded={state[anchor]}
+              aria-haspopup="dialog"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-[#E5F6FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A4E63] dark:hover:bg-white/10 dark:focus-visible:ring-[#05a9ff]"
+            >
+              <Image
+                src="/images/hamburger.png"
+                alt=""
+                aria-hidden="true"
+                className={`h-[18px] w-6 object-contain${isDarkMode ? ' hamburger-dark' : ''}`}
+                loading="eager"
+                decoding="async"
+                width={24}
+                height={18}
+              />
+            </button>
             {/* Lazy-mount on first open; keep mounted so MUI animates close */}
             {(state[anchor] || hasOpenedDrawer.current) && (
               <Suspense fallback={null}>

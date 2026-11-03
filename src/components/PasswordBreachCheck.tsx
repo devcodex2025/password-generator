@@ -184,7 +184,7 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
             className={`flex-1 px-4 py-3 rounded-xl border text-[16px] outline-none transition-colors ${
               isDarkMode
                 ? 'bg-[#2a2a2a] border-[#374151] text-[#e0e0e0] placeholder-[#6B7280] focus:border-[#05a9ff]'
-                : 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#2A4E63]'
+                : 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] placeholder-[#6B7280] focus:border-[#2A4E63]'
             }`}
             onKeyDown={(e) => {
               if (e.key === 'Enter') checkBreach();
@@ -283,7 +283,7 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
           </>
         )}
 
-        <p className={`mt-4 text-[13px] ${isDarkMode ? 'text-[#6B7280]' : 'text-[#9CA3AF]'}`}>
+        <p className={`mt-4 text-[13px] ${isDarkMode ? 'text-[#9CA3AF]' : 'text-[#6B7280]'}`}>
           {t('breach_privacy_note', language)}
         </p>
 
@@ -298,7 +298,7 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
               className="w-14 h-14 rounded-xl shrink-0"
             />
             <div className="min-w-0">
-              <p className={`text-[12px] font-semibold uppercase tracking-wide ${isDarkMode ? 'text-[#6B7280]' : 'text-[#9CA3AF]'}`}>
+              <p className={`text-[12px] font-semibold uppercase tracking-wide ${isDarkMode ? 'text-[#9CA3AF]' : 'text-[#6B7280]'}`}>
                 {SOURCE_LABEL[language] ?? SOURCE_LABEL.en}
               </p>
               <p className={`mt-1 text-[14px] ${isDarkMode ? 'text-[#b0b0b0]' : 'text-[#4B5563]'}`}>

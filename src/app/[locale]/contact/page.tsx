@@ -92,6 +92,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       />
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
+          language={locale}
           items={[
             { label: copy.home, href: homeHref(locale) },
             { label: copy.contact },

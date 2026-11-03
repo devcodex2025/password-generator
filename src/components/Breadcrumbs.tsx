@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import lang from './lang.json';
 
 interface BreadcrumbItem {
   label: string;
@@ -7,14 +8,24 @@ interface BreadcrumbItem {
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[];
+  /**
+   * Route locale. The landmark name must follow the page language, and this
+   * component stays a server component, so the label is read from lang.json
+   * instead of pulling i18next into the client bundle.
+   */
+  language?: string;
 }
 
-export default function Breadcrumbs({ items }: BreadcrumbsProps) {
+const BREADCRUMB_LABELS = lang.a11y_breadcrumb as Record<string, string>;
+
+export default function Breadcrumbs({ items, language = 'en' }: BreadcrumbsProps) {
+  const landmarkLabel = BREADCRUMB_LABELS[language] ?? BREADCRUMB_LABELS.en ?? 'Breadcrumb';
+
   // BreadcrumbList JSON-LD is emitted by the page itself, outside the client
   // shell. Rendering a <script> here (inside a client boundary) triggers a
   // hydration mismatch and the script is never executed.
   return (
-    <nav aria-label="Breadcrumb" className="text-sm !text-[#3a6077] dark:!text-[#9ca3af]">
+    <nav aria-label={landmarkLabel} className="text-sm !text-[#3a6077] dark:!text-[#9ca3af]">
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;

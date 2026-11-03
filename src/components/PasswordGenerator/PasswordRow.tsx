@@ -48,7 +48,7 @@ export default function PasswordRow({
       <div
         className={`flex h-16 w-full min-w-0 items-stretch border-2 border-solid border-[#E5F6FF] py-0 text-[12px] text-[#071016] dark:border-transparent dark:bg-[#000000] lg:w-[80%] lg:items-center lg:rounded-[120px] lg:px-4 md:text-[20px] rounded-[120px] bg-white`}
       >
-        <label htmlFor={`password-output-${index}`} className="sr-only">Generated password</label>
+        <label htmlFor={`password-output-${index}`} className="sr-only">{t('a11y_password_generated')}</label>
         <input
           id={`password-output-${index}`}
           type="text"
@@ -78,7 +78,7 @@ export default function PasswordRow({
           <Image
             onClick={() => onGenerate(index)}
             src="/images/share-paper-plane.svg"
-            alt="Regenerate password"
+            alt={t('a11y_regenerate_password')}
             className={`${isDarkMode ? 'invert brightness-0' : ''} mr-1 flex h-[15px] shrink-0 cursor-pointer md:hidden`}
             loading="lazy"
             decoding="async"
@@ -88,7 +88,7 @@ export default function PasswordRow({
           <Image
             onClick={() => onGenerate(index)}
             src="/images/refreash.png"
-            alt="refresh password"
+            alt={t('a11y_regenerate_password')}
             className={`${isDarkMode ? 'invert brightness-0' : ''} mr-1.5 hidden h-[18px] w-[18px] shrink-0 cursor-pointer object-contain md:mr-2 md:flex lg:hidden`}
             loading="lazy"
             decoding="async"
