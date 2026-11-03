@@ -51,10 +51,20 @@ const AccordionContent = React.forwardRef<
   <AccordionPrimitive.Content
     ref={ref}
     forceMount
-    className="overflow-hidden text-sm will-change-[height,opacity,transform] data-[state=closed]:hidden data-[state=closed]:pointer-events-none data-[state=open]:animate-accordion-down"
+    className={cn(
+      // Always mounted (SEO/SSR), so animate the grid row instead of a measured
+      // height. Radix only measures height on remount, which forceMount skips.
+      // Radix writes `transition-duration: 0s` inline when forceMount is used,
+      // so the duration must win with !important to keep the open animation.
+      "grid text-sm transition-[grid-template-rows] [transition-duration:300ms!important] ease-out motion-reduce:transition-none",
+      "data-[state=closed]:grid-rows-[0fr] data-[state=open]:grid-rows-[1fr]",
+      "data-[state=closed]:invisible data-[state=closed]:pointer-events-none"
+    )}
     {...props}
   >
-    <div className={cn("px-4 pb-5 pt-2", className)}>{children}</div>
+    <div className="overflow-hidden">
+      <div className={cn("px-4 pb-5 pt-2", className)}>{children}</div>
+    </div>
   </AccordionPrimitive.Content>
 ))
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
