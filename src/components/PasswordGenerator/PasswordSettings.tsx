@@ -1,12 +1,10 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { useContext } from 'react';
 import { Slider, FormControlLabel, Checkbox } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
-import { ThemeContext } from '../../context/ThemeContext';
 import { SnackbarMessage } from '@/app/types/SnackBar';
 import { GeneratorMode, getModeLabels } from './generatorModes';
 
@@ -62,7 +60,6 @@ export default function PasswordSettings({
 }: PasswordSettingsProps) {
     const { t, i18n } = useTranslation();
     const labels = getModeLabels(i18n.language);
-    const { isDarkMode } = useContext(ThemeContext);
 
     const standardMin = selectedStandard === 'custom' ? 4 : passwordStandards[selectedStandard].minLength;
     const sliderMin = mode === 'chars' ? standardMin : mode === 'pin' ? 4 : 3;
@@ -253,7 +250,7 @@ export default function PasswordSettings({
                     max={maxQuantity}
                     value={quantity}
                     onChange={handleQuantityChange}
-                    className={`w-full max-w-full min-w-0 rounded-[18px] border-2 border-[#E5F6FF] border-solid py-3 px-3 text-[18px] text-[#071016] outline-none md:py-5 md:text-[20px] ${isDarkMode ? 'border-none' : ''}`}
+                    className="quantity-input w-full max-w-full min-w-0 rounded-[18px] border-2 border-[#E5F6FF] border-solid py-3 px-3 text-[18px] text-[#071016] outline-none md:py-5 md:text-[20px]"
                 />
             </div>
             {mode === 'chars' && (

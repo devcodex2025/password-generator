@@ -287,9 +287,16 @@ html.theme-switching *::after {
   border-color: #1d2e48;
 }
 
+/* Inputs sit on the same surface as the cards around them (#000 read as a hole). */
 .dark input {
-  background-color: #000000 !important;
+  background-color: var(--dark-theme-card) !important;
   color: var(--dark-theme-white) !important;
+}
+
+/* The quantity field keeps the card surface; `.dark .border-2` would otherwise
+   repaint its border #1d2e48, which is invisible on that surface. */
+.dark .quantity-input {
+  border-color: var(--dark-theme-border);
 }
 
 .dark input::placeholder {
