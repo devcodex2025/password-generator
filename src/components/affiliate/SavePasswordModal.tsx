@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Button from '@/components/ui/Button';
 import { localeFontClass } from '@/lib/locale-font';
 import { resolveAffiliateUrl } from '@/content/affiliate/links';
 import { announceModalOpen, subscribeModalOpen } from '@/lib/modal-coordination';
@@ -198,14 +199,15 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
               {c.title}
             </h2>
           </div>
-          <button
-            type="button"
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={dismiss}
             aria-label={c.dismiss}
-            className="shrink-0 rounded-full p-1 text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] dark:text-[#9ca3af] dark:hover:bg-white/10 dark:hover:text-white"
+            className="shrink-0"
           >
             <X className="h-5 w-5" aria-hidden="true" />
-          </button>
+          </Button>
         </div>
 
         <p className="mt-4 text-[15px] leading-6 text-[#374151] dark:text-[#c7c7c7]">{c.body}</p>
@@ -229,15 +231,16 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
           {c.cta}
         </a>
 
-        <button
-          type="button"
+        <Button
+          variant="ghost"
+          size="md"
           onClick={dismiss}
-          className="mt-2 w-full rounded-full px-6 py-2.5 text-[14px] font-medium text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] dark:text-[#9ca3af] dark:hover:bg-white/5 dark:hover:text-white"
+          className="mt-2 w-full"
         >
           {c.dismiss}
-        </button>
+        </Button>
 
-        <p className="mt-2 text-center text-[11px] italic text-[#6b7280] dark:text-[#9ca3af]">{c.ad}</p>
+        <p className="mt-2 text-center text-[12px] italic text-[#6b7280] dark:text-[#9ca3af]">{c.ad}</p>
       </div>
     </div>,
     document.body

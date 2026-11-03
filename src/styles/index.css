@@ -70,6 +70,81 @@
   font-family: var(--font-varela-round), sans-serif !important;
 }
 
+/* Header language select, previously injected from Header.tsx at runtime. */
+.language-select {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A4E63' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.language-select:hover {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a3a4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(42, 78, 99, 0.3);
+}
+
+.language-select:focus {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(42, 78, 99, 0.4);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a3a4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,15 12,9 18,15'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+.flag-container {
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.flag-container:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.language-change-animation {
+  animation: languagePulse 0.6s ease-in-out;
+}
+
+.language-select.language-change-animation {
+  animation: languagePulse 0.6s ease-in-out;
+}
+
+.flag-container.language-change-animation {
+  animation: flagRotate 0.6s ease-in-out;
+}
+
+@keyframes languagePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes flagRotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.hamburger-dark {
+  filter: invert(1) brightness(2) grayscale(1);
+}
+
+.dark .language-select {
+  background-color: #121212 !important;
+  color: #fff !important;
+  border-color: #2A4E63 !important;
+}
+
+.dark .language-select option {
+  background-color: #121212 !important;
+  color: #fff !important;
+}
+
 /* Locale fonts for portaled dialogs, which render outside .container.<locale>.
    The global * font rule beats inheritance, so descendants must be targeted too. */
 .locale-font-ua,
@@ -820,5 +895,23 @@ ol {
   .rounded-xl {
     box-shadow: none !important;
     border-color: #dddddd !important;
+  }
+}
+
+/* Monospace roles must not inherit the global proportional font rule. */
+code, kbd, samp, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+/* Respect the OS-level motion preference for every animation, including
+   third-party ripples and the loading-skeleton pulse. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

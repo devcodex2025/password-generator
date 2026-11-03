@@ -62,6 +62,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
     <LocalizedPageShell locale={locale}>
       <section className="max-w-5xl mx-auto px-4 pt-10 pb-10">
         <Breadcrumbs
+          language={locale}
           items={[
             { label: shellCopy.home, href: homeHref(locale) },
             { label: copy.title },

@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useEffect, useId, useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import ShareIcon from '@mui/icons-material/Share'
@@ -477,13 +477,13 @@ export default function ShareBlock({
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
               <a
                 href={share.email}
-                className="inline-flex items-center gap-2 rounded-xl border border-[#DBEAFE] px-3.5 py-2 text-sm font-medium text-[#2A4E63] transition-colors hover:bg-[#E5F6FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#05a9ff] focus-visible:ring-offset-2 dark:border-[#374151] dark:text-[#7dd3fc] dark:hover:bg-[#23272f] dark:focus-visible:ring-offset-[#1c1c1c]"
+                className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-[#DBEAFE] px-3.5 py-2 text-sm font-medium text-[#2A4E63] transition-colors hover:bg-[#E5F6FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#05a9ff] focus-visible:ring-offset-2 dark:border-[#374151] dark:text-[#7dd3fc] dark:hover:bg-[#23272f] dark:focus-visible:ring-offset-[#1c1c1c]"
                 onClick={() => onShareClick('email')}
               >
                 <MailGlyph />
                 {t.email}
               </a>
-              <span className="text-xs text-gray-400 dark:text-gray-500">generatepasswordto.me</span>
+              <span className="text-xs text-[#6b7280] dark:text-gray-400">generatepasswordto.me</span>
             </div>
 
             <span className="sr-only" role="status" aria-live="polite">

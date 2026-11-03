@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useContext, useRef, Fragment, lazy, Suspense } from 'react';
 import { usePathname } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,7 +20,6 @@ const ListItem = lazy(() => import('@mui/material/ListItem'));
 const Box = lazy(() => import('@mui/material/Box'));
 const Select = lazy(() => import('@mui/material/Select'));
 const MenuItem = lazy(() => import('@mui/material/MenuItem'));
-const InputLabel = lazy(() => import('@mui/material/InputLabel'));
 const IconButton = lazy(() => import('@mui/material/IconButton'));
 const Flag = lazy(() => import('react-world-flags'));
 
@@ -28,82 +28,6 @@ const Flag = lazy(() => import('react-world-flags'));
 import Brightness4 from '@mui/icons-material/Brightness4';
 import Brightness7 from '@mui/icons-material/Brightness7';
 
-
-
-// CSS styles for animation
-const languageIconStyles = `
-  .language-flag {
-    transition: all 0.3s ease;
-    transform: scale(1);
-  }
-  
-  .language-flag:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .language-select {
-    transition: all 0.3s ease;
-    transform: scale(1);
-    position: relative;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A4E63' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 16px;
-    padding-right: 40px;
-  }
-  
-  .language-select:hover {
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a3a4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
-    transform: scale(1.05);
-    box-shadow: 0 2px 8px rgba(42, 78, 99, 0.3);
-  }
-  
-  .language-select:focus {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(42, 78, 99, 0.4);
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a3a4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,15 12,9 18,15'%3e%3c/polyline%3e%3c/svg%3e");
-  }
-  
-  .flag-container {
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  
-  .flag-container:hover {
-    transform: rotate(5deg) scale(1.1);
-  }
-  
-  .language-change-animation {
-    animation: languagePulse 0.6s ease-in-out;
-  }
-  
-  .language-select.language-change-animation {
-    animation: languagePulse 0.6s ease-in-out;
-  }
-  
-  @keyframes languagePulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-    100% { transform: scale(1); }
-  }
-  
-  .flag-container.language-change-animation {
-    animation: flagRotate 0.6s ease-in-out;
-  }
-  
-  @keyframes flagRotate {
-    0% { transform: rotate(0deg) scale(1); }
-    50% { transform: rotate(180deg) scale(1.2); }
-    100% { transform: rotate(360deg) scale(1); }
-  }
-  
-`;
-
 interface HeaderProps {
   onLanguageChange: (language: string) => void;
   currentLanguage: string;
@@ -111,6 +35,7 @@ interface HeaderProps {
 
 const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
   const pathname = usePathname();
+  const { t } = useTranslation();
   const isHomePage = pathname === '/' || /^\/[^/]+\/?$/.test(pathname || '');
   const availableLanguages = getAvailableLanguages();
   const [language, setLanguage] = useState<string>(() => {
@@ -122,6 +47,10 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
 
     return availableLanguages.includes(currentLanguage) ? currentLanguage : 'en';
   });
+
+  // Explicit locale: sub-pages render the header without changing the i18next
+  // language first, so `t()` alone could return English labels there.
+  const a11y = (key: string) => t(key, { lng: language });
 
   const localePrefix = `/${language}`;
   const homeHref = language === 'en' ? '/' : localePrefix;
@@ -156,7 +85,6 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
     onLanguageChange(lang);
   };
 
-
   const { isDarkMode, toggleMode } = useContext(ThemeContext); // Use toggleMode
 
   // Get available languages
@@ -167,61 +95,6 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
     if (!english) return all;
     return [english, ...all.filter((langItem) => langItem.value !== 'en')];
   })();
-
-  const [isAnimating] = useState(false);
-
-  // Add CSS styles for animation
-  useEffect(() => {
-    const styleElement = document.createElement('style');
-    styleElement.textContent = languageIconStyles;
-    document.head.appendChild(styleElement);
-    return () => {
-      document.head.removeChild(styleElement);
-    };
-  }, []);
-
-  // Add styles for hamburger-dark
-  useEffect(() => {
-    const styleElement = document.createElement('style');
-    styleElement.textContent = `
-      .hamburger-dark {
-        filter: invert(1) brightness(2) grayscale(1);
-      }
-    `;
-    document.head.appendChild(styleElement);
-    return () => {
-      document.head.removeChild(styleElement);
-    };
-  }, []);
-
-  // Add styles for select.language-select in dark mode
-  useEffect(() => {
-    const styleElement = document.createElement('style');
-    styleElement.textContent = `
-      .dark .language-select {
-        background-color: #121212 !important;
-        color: #fff !important;
-        border-color: #2A4E63 !important;
-      }
-      .dark .language-select option {
-        background-color: #121212 !important;
-        color: #fff !important;
-      }
-    `;
-    document.head.appendChild(styleElement);
-    return () => {
-      document.head.removeChild(styleElement);
-    };
-  }, []);
-
-  // const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-  //   const lang = event.target.value;
-  //   setIsAnimating(true);
-  //   setTimeout(() => setIsAnimating(false), 600);
-  //   if (lang !== language) {
-  //     onLanguageChange(lang); // основний контроль мови тут
-  //   }
-  // };
 
   const [state, setState] = useState<Record<Anchor, boolean>>({
     top: false,
@@ -273,7 +146,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#38beff]"
+                className="flex min-h-11 items-center rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-[#38beff]"
               >
                 {item.label}
               </Link>
@@ -294,31 +167,34 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
                 }
           }
         >
-          <InputLabel id="language-select-label" sx={{ width: '100%' }}>
-            {getLanguageSelectionText(language)}
-          </InputLabel>
-          <Select
-            labelId="language-select-label"
-            id="language-select"
-            value={language}
-            onChange={handleLanguageChange as (event: SelectChangeEvent<unknown>, child: React.ReactNode) => void}
-            sx={{ width: '100%' }}
-          >
-            {languages.map((lang) => (
-              <MenuItem key={lang.value} value={lang.value}>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <span
-                    className={`flag-container flex align-center ${isAnimating ? 'language-change-animation' : ''
-                      }`}
-                    style={{ marginRight: 8 }}
-                  >
-                    <Flag code={lang.flagCode} width={32} />
-                  </span>
-                  <span>{lang.label}</span>
-                </div>
-              </MenuItem>
-            ))}
-          </Select>
+          <Box sx={{ width: '100%' }}>
+            {/* A single visible label and one control: the old InputLabel +
+                floating-label Select rendered the caption twice and left the
+                select without an accessible name. */}
+            <span className="mb-1 block text-sm font-medium text-slate-600 dark:text-slate-300">
+              {getLanguageSelectionText(language)}
+            </span>
+            <Select
+              value={language}
+              onChange={handleLanguageChange as (event: SelectChangeEvent<unknown>, child: React.ReactNode) => void}
+              aria-label={a11y('a11y_language')}
+              sx={{ width: '100%', minHeight: 44 }}
+            >
+              {languages.map((lang) => (
+                <MenuItem key={lang.value} value={lang.value}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <span
+                      className="flag-container flex align-center"
+                      style={{ marginRight: 8 }}
+                    >
+                      <Flag code={lang.flagCode} width={32} />
+                    </span>
+                    <span>{lang.label}</span>
+                  </div>
+                </MenuItem>
+              ))}
+            </Select>
+          </Box>
         </ListItem>
 
         {/* Theme Toggle */}
@@ -353,8 +229,10 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             <IconButton
               onClick={toggleMode}
               color="inherit"
-              aria-label={isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
+              aria-label={isDarkMode ? a11y('a11y_theme_light') : a11y('a11y_theme_dark')}
               sx={{
+                width: 44,
+                height: 44,
                 color: isDarkMode ? '#9ca3af' : '#071016',
                 '&:hover': {
                   color: isDarkMode ? '#d7f2ff' : '#2A4E63',
@@ -389,7 +267,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
         ) : (
           <Link
             href={homeHref}
-            aria-label="Go to homepage"
+            aria-label={a11y('a11y_go_home')}
             className="logo-link inline-flex transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
           >
             <Image
@@ -409,7 +287,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           <li key={item.href}>
             <Link
               href={item.href}
-              className="transition-all duration-200 text-slate-700 hover:text-sky-600 dark:text-slate-200 dark:hover:text-[#38beff]"
+              className="inline-flex min-h-6 items-center py-1 text-slate-700 transition-all duration-200 hover:text-sky-600 dark:text-slate-200 dark:hover:text-[#38beff]"
             >
               {item.label}
             </Link>
@@ -420,13 +298,15 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
             <IconButton
               onClick={toggleMode}
               color="inherit"
-              aria-label={isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'}
+              aria-label={isDarkMode ? a11y('a11y_theme_light') : a11y('a11y_theme_dark')}
               className={
                 isHomePage
                   ? 'transition-all duration-300 hover:scale-105'
                   : 'rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#E5F6FF] dark:hover:bg-[#111827]'
               }
               sx={{
+                width: 44,
+                height: 44,
                 color: isDarkMode ? '#9ca3af' : '#071016',
                 '&:hover': {
                   color: isDarkMode ? '#d7f2ff' : '#2A4E63',
@@ -440,7 +320,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           </Suspense>
         </li>
       </ul>
-      <label htmlFor="eng" className="sr-only">Language</label>
+      <label htmlFor="eng" className="sr-only">{a11y('a11y_language')}</label>
       <select
         name="Language"
         value={language}
@@ -448,7 +328,7 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
           handleLanguageChange({ target: { value: e.target.value } } as SelectChangeEvent)
         }
         id="eng"
-        className={`language-select py-3 lg:flex hidden px-4 lg:ml-5 justify-center border-2 border-[#2A4E63] rounded-[60px] bg-transparent w-auto ${isAnimating ? 'language-change-animation' : ''} ${isHomePage ? '' : 'hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:border-[#1a3a4a]'}`}
+        className={`language-select py-3 lg:flex hidden px-4 lg:ml-5 justify-center border-2 border-[#2A4E63] rounded-[60px] bg-transparent w-auto  ${isHomePage ? '' : 'hover:bg-[#E5F6FF] dark:hover:bg-[#111827] hover:border-[#1a3a4a]'}`}
       >
         {languages.map((lang) => (
           <option key={lang.value} value={lang.value}>
@@ -459,23 +339,25 @@ const Header = ({ onLanguageChange, currentLanguage }: HeaderProps) => {
       <div className="flex items-center lg:hidden">
         {(['top'] as Anchor[]).map((anchor) => (
           <Fragment key={anchor}>
-            <Image
-              src="/images/hamburger.png"
-              alt="Navigation menu toggle"
+            <button
+              type="button"
               onClick={toggleDrawer(anchor, true)}
-              className={`cursor-pointer transition-all duration-200 w-6 h-auto ${isHomePage ? '' : 'hover:scale-110'}${isDarkMode ? ' hamburger-dark' : ''}`}
-              loading="eager"
-              decoding="async"
-              width={24}
-              height={18}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  toggleDrawer(anchor, true)(e);
-                }
-              }}
-            />
+              aria-label={a11y('a11y_nav_menu')}
+              aria-expanded={state[anchor]}
+              aria-haspopup="dialog"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-[#E5F6FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A4E63] dark:hover:bg-white/10 dark:focus-visible:ring-[#05a9ff]"
+            >
+              <Image
+                src="/images/hamburger.png"
+                alt=""
+                aria-hidden="true"
+                className={`h-[18px] w-6 object-contain${isDarkMode ? ' hamburger-dark' : ''}`}
+                loading="eager"
+                decoding="async"
+                width={24}
+                height={18}
+              />
+            </button>
             {/* Lazy-mount on first open; keep mounted so MUI animates close */}
             {(state[anchor] || hasOpenedDrawer.current) && (
               <Suspense fallback={null}>

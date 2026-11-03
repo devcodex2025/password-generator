@@ -267,6 +267,7 @@ export default async function GuideArticlePage({
         <AffiliateOutboundTracker />
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
+          language={locale}
           items={[
             { label: labels.home, href: homeHref(locale) },
             { label: labels.guides, href: `/${locale}/guides` },

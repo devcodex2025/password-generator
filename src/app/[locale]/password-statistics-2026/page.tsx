@@ -225,6 +225,7 @@ export default async function PasswordStatisticsPage({ params }: { params: Promi
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <section className="max-w-4xl mx-auto px-4 pt-10 pb-16">
         <Breadcrumbs
+          language={locale}
           items={[
             { label: locale === 'ua' ? 'Головна' : locale === 'vi' ? 'Trang chủ' : 'Home', href: homeHref(locale) },
             { label: copy.h1 },

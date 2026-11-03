@@ -7,6 +7,7 @@ import { parseHibpRange } from '../utils/parseHibpRange.mjs';
 import lang from './lang.json';
 import { resolveAffiliateUrl } from '@/content/affiliate/links';
 import { useGeoCountry } from './affiliate/useGeoCountry';
+import Button from '@/components/ui/Button';
 
 function t(key: string, language: string): string {
   const entry = (lang as unknown as Record<string, Record<string, string>>)[key];
@@ -184,27 +185,21 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
             className={`flex-1 px-4 py-3 rounded-xl border text-[16px] outline-none transition-colors ${
               isDarkMode
                 ? 'bg-[#2a2a2a] border-[#374151] text-[#e0e0e0] placeholder-[#6B7280] focus:border-[#05a9ff]'
-                : 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] placeholder-[#9CA3AF] focus:border-[#2A4E63]'
+                : 'bg-[#F9FAFB] border-[#D1D5DB] text-[#111827] placeholder-[#6B7280] focus:border-[#2A4E63]'
             }`}
             onKeyDown={(e) => {
               if (e.key === 'Enter') checkBreach();
             }}
           />
-          <button
+          <Button
+            variant="primary"
+            size="lg"
             onClick={checkBreach}
             disabled={loading || !inputPassword.trim()}
-            className={`px-6 py-3 rounded-xl font-semibold text-[16px] transition-all duration-200 cursor-pointer ${
-              loading || !inputPassword.trim()
-                ? 'opacity-50 cursor-not-allowed'
-                : ''
-            } ${
-              isDarkMode
-                ? 'bg-[#05a9ff] text-[#0a1929] hover:bg-[#38beff]'
-                : 'bg-[#2A4E63] text-white hover:bg-[#1f3b4c]'
-            }`}
+            className="rounded-xl"
           >
             {loading ? t('breach_checking', language) : t('breach_check_btn', language)}
-          </button>
+          </Button>
         </div>
 
         {error && (
@@ -283,7 +278,7 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
           </>
         )}
 
-        <p className={`mt-4 text-[13px] ${isDarkMode ? 'text-[#6B7280]' : 'text-[#9CA3AF]'}`}>
+        <p className={`mt-4 text-[13px] ${isDarkMode ? 'text-[#9CA3AF]' : 'text-[#6B7280]'}`}>
           {t('breach_privacy_note', language)}
         </p>
 
@@ -298,7 +293,7 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
               className="w-14 h-14 rounded-xl shrink-0"
             />
             <div className="min-w-0">
-              <p className={`text-[12px] font-semibold uppercase tracking-wide ${isDarkMode ? 'text-[#6B7280]' : 'text-[#9CA3AF]'}`}>
+              <p className={`text-[12px] font-semibold uppercase tracking-wide ${isDarkMode ? 'text-[#9CA3AF]' : 'text-[#6B7280]'}`}>
                 {SOURCE_LABEL[language] ?? SOURCE_LABEL.en}
               </p>
               <p className={`mt-1 text-[14px] ${isDarkMode ? 'text-[#b0b0b0]' : 'text-[#4B5563]'}`}>
@@ -317,7 +312,7 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center rounded-lg border px-3 py-1.5 text-[13px] font-medium transition-colors ${
+                className={`inline-flex min-h-11 items-center rounded-lg border px-3 py-2 text-[13px] font-medium transition-colors ${
                   isDarkMode
                     ? 'border-[#374151] !text-[#38beff] hover:bg-[#0f1b24] hover:!border-[#38beff]'
                     : 'border-[#D1E9FF] text-[#2A4E63] hover:bg-[#F0F8FF]'

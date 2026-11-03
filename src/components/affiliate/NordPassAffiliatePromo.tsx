@@ -72,7 +72,7 @@ export default function NordPassAffiliatePromo({ locale, className = '', placeme
   return (
     <section
       className={cn('mt-10 rounded-3xl border border-[#E5F6FF] dark:border-[#374151] bg-gradient-to-br from-white via-[#f7fbff] to-[#eef7ff] dark:from-[#171717] dark:via-[#1a1f2e] dark:to-[#171717] p-6 md:p-8 shadow-sm', className)}
-      aria-label="NordPass affiliate recommendation"
+      aria-label={t.heading}
     >
       {/* Heading */}
       <h2 className="text-2xl md:text-3xl font-bold text-[#071016] dark:text-[#e0e0e0]">
@@ -87,7 +87,12 @@ export default function NordPassAffiliatePromo({ locale, className = '', placeme
       </div>
 
       {/* Comparison table */}
-      <div className="nordpass-table-scroll mt-6 overflow-x-auto -mx-2 px-2 pb-3 md:pb-0">
+      <div
+        className="nordpass-table-scroll mt-6 overflow-x-auto -mx-2 px-2 pb-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2A4E63] dark:focus-visible:outline-[#05a9ff] md:pb-0"
+        role="region"
+        tabIndex={0}
+        aria-label={t.heading}
+      >
         <table className="w-full min-w-[480px] text-sm border-collapse">
           <thead>
             <tr className="border-b-2 border-[#E5F6FF] dark:border-[#374151]">

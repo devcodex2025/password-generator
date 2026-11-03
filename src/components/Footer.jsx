@@ -92,10 +92,10 @@ const Footer = ({ language }) => {
             </div>
           </div>
 
-          <div className="grid w-full grid-cols-1 justify-items-center gap-5 border-t border-[#E5F6FF] pt-6 text-sm text-[#b2b2b2] md:grid-cols-[1fr_auto_1fr] md:items-center dark:border-[#374151]">
+          <div className="grid w-full grid-cols-1 justify-items-center gap-5 border-t border-[#E5F6FF] pt-6 text-sm text-[#6b7280] dark:text-[#b2b2b2] md:grid-cols-[1fr_auto_1fr] md:items-center dark:border-[#374151]">
             <Link
               href={locale === 'en' ? '/' : `/${locale}`}
-              aria-label="Generate Password To Me - home"
+              aria-label={t('a11y_footer_home', locale)}
               className="inline-flex justify-self-center transition-opacity duration-200 hover:opacity-90 md:justify-self-start"
             >
               <Image
@@ -108,7 +108,7 @@ const Footer = ({ language }) => {
               />
             </Link>
             <p className="text-center">
-              {t('footer_copyright', language)} © <span className="font-bold text-[#05a9ff] dark:!text-[#7dd3fc]">GeneratePasswordTo.Me</span> {currentYear}
+              {t('footer_copyright', language)} © <span className="font-bold text-[#0b6ea8] dark:!text-[#7dd3fc]">GeneratePasswordTo.Me</span> {currentYear}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 md:justify-self-end">
               <Link href={githubLink.href} target="_blank" rel="noopener noreferrer" className={externalLinkClass}>
