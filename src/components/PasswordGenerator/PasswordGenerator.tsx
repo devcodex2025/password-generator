@@ -1,13 +1,21 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef, useContext } from 'react';
+import { useState, useEffect, useCallback, useRef, useContext, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useReward } from 'react-rewards';
 import PasswordRow from './PasswordRow';
 import PasswordSettings from './PasswordSettings';
 import PasswordStrength from './PasswordStrength';
 import PasswordStandards from './PasswordStandards';
-import { GeneratorMode, loadWordlist, generatePassphrase, generatePin } from './generatorModes';
+import { GeneratorMode, loadWordlist } from './generatorModes';
+import {
+  DEFAULT_LENGTHS,
+  type GeneratorRules,
+  buildPassword,
+  generationEventParams,
+  planGenerationEvent,
+  withModeLength,
+} from './generatorCore.mjs';
 import { ThemeContext } from '../../context/ThemeContext';
 import { rankColor } from '../../functions/RankColor';
 import { getStrengthWord } from '../../functions/GetStrengthWord';
@@ -21,36 +29,37 @@ import i18n from '@/components/i18n';
 import SavePasswordModal, { shouldShowSavePrompt } from '@/components/affiliate/SavePasswordModal';
 import BookmarkPrompt from '@/components/BookmarkPrompt/BookmarkPrompt';
 
-const characterSets: Record<string, string> = {
-  'A-Z': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  'a-z': 'abcdefghijklmnopqrstuvwxyz',
-  '0-9': '0123456789',
-  '#$%': '!@#$%^&*()',
-};
-
 function secureRandomIndex(max: number): number {
   const array = new Uint32Array(1);
   crypto.getRandomValues(array);
   return array[0] % max;
 }
 
-const passwordStandards: Record<string, { minLength: number; requiredSets: string[]; description: string }> = {
-  nist: {
-    minLength: 8,
-    requiredSets: ['A-Z', 'a-z', '0-9', '#$%'],
-    description: 'standard_nist_desc',
-  },
-  pci: {
-    minLength: 12,
-    requiredSets: ['A-Z', 'a-z', '0-9', '#$%'],
-    description: 'standard_pci_desc',
-  },
-  custom: {
-    minLength: 4,
-    requiredSets: [],
-    description: 'standard_custom_desc',
-  },
+const REGENERATE_DEBOUNCE_MS = 250;
+
+let snackbarSeq = 0;
+const nextSnackbarId = () => ++snackbarSeq;
+
+const ga = (event: string, params: Record<string, any> = {}) => {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', event, params);
+  }
 };
+
+type GenerationResult = { passwords: string[] } | { error: 'warning_no_characters' | 'warning_wordlist_failed' };
+
+async function generateList(rules: GeneratorRules, count: number): Promise<GenerationResult> {
+  let words: string[] | null = null;
+  if (rules.mode === 'words') {
+    try {
+      words = await loadWordlist();
+    } catch {
+      return { error: 'warning_wordlist_failed' };
+    }
+  }
+  const passwords = Array.from({ length: count }, () => buildPassword(rules, words, secureRandomIndex));
+  return passwords.some((p) => !p) ? { error: 'warning_no_characters' } : { passwords };
+}
 
 interface PasswordGeneratorProps {
   language: string;
@@ -67,9 +76,9 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const [selectedStandard, setSelectedStandard] = useState<string>('nist');
   const [mode, setMode] = useState<GeneratorMode>('chars');
   // each mode remembers its own slider value
-  const [lengths, setLengths] = useState<Record<GeneratorMode, number>>({ chars: 12, words: 4, pin: 6 });
+  const [lengths, setLengths] = useState<Record<GeneratorMode, number>>(DEFAULT_LENGTHS);
   const passwordLength = lengths[mode];
-  const setPasswordLength = useCallback((length: number) => setLengths((prev) => ({ ...prev, [mode]: length })), [mode]);
+  const setPasswordLength = useCallback((length: number) => setLengths((prev) => withModeLength(prev, mode, length)), [mode]);
   const [separator, setSeparator] = useState<string>('-');
   const [capitalize, setCapitalize] = useState<boolean>(true);
   const maxQuantity = 100;
@@ -86,13 +95,6 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const ANIMATION_DURATION = 250;
 
-  // GA helper
-  const ga = (event: string, params: Record<string, any> = {}) => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', event, params);
-    }
-  };
-
   // Клієнтська синхронізація (резервна)
   useEffect(() => {
     if (language && i18n.language !== language) {
@@ -100,103 +102,112 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
     }
   }, [language]);
 
-  // Builds one password from the current rules; '' means it could not be built.
-  const buildPassword = useCallback(async (): Promise<string> => {
-    if (mode === 'pin') {
-      return generatePin(Math.min(12, Math.max(4, passwordLength)), secureRandomIndex);
-    }
-    if (mode === 'words') {
-      try {
-        const words = await loadWordlist();
-        return generatePassphrase(words, Math.min(8, Math.max(3, passwordLength)), separator, capitalize, secureRandomIndex);
-      } catch {
-        return '';
-      }
-    }
-    const standardConfig = passwordStandards[selectedStandard];
-    const effectiveLength = Math.max(passwordLength, standardConfig.minLength);
-    let allCharacters = '';
-    selectedCharacterSets.forEach((set) => {
-      allCharacters += characterSets[set];
-    });
-    if (allCharacters.length === 0) return '';
+  const rules = useMemo<GeneratorRules>(
+    () => ({ mode, passwordLength, selectedCharacterSets, selectedStandard, separator, capitalize }),
+    [mode, passwordLength, selectedCharacterSets, selectedStandard, separator, capitalize]
+  );
 
-    let password = '';
-    standardConfig.requiredSets.forEach((set) => {
-      const chars = characterSets[set];
-      if (chars) password += chars.charAt(secureRandomIndex(chars.length));
-    });
-    for (let i = password.length; i < effectiveLength; i++) {
-      password += allCharacters.charAt(secureRandomIndex(allCharacters.length));
-    }
+  // Values the generation effects read without re-running when they change.
+  const latest = useRef({ rules, quantity, language, t });
+  useEffect(() => {
+    latest.current = { rules, quantity, language, t };
+  });
 
-    // Fisher-Yates shuffle using cryptographically secure random
-    const arr = password.split('');
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = secureRandomIndex(i + 1);
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr.join('');
-  }, [mode, passwordLength, selectedCharacterSets, selectedStandard, separator, capitalize]);
+  // One snackbar per message: repeated failures while dragging do not stack.
+  const warn = useCallback((key: string) => {
+    const message = latest.current.t(key);
+    setSnackbars((prev) => (prev.some((s) => s.message === message) ? prev : [...prev, { id: nextSnackbarId(), message }]));
+  }, []);
 
-  const warnNoPassword = useCallback(() => {
-    setSnackbars((prev) => [...prev, { id: Date.now(), message: t('warning_no_characters') }]);
-  }, [t]);
-
-  const generatePassword = useCallback(
+  const regenerateRow = useCallback(
     async (index: number) => {
-      const password = await buildPassword();
-      if (!password) warnNoPassword();
+      const result = await generateList(rules, 1);
+      if ('error' in result) {
+        warn(result.error); // keep the previous value
+        return;
+      }
+      const [password] = result.passwords;
       setPasswords((prev) => {
+        if (index >= prev.length) return prev;
         const updated = [...prev];
         updated[index] = password;
         return updated;
       });
-      if (password) {
-        ga('password_generated', { length: password.length, mode, standard: selectedStandard, ui_language: language, surface: 'home' });
-      }
+      ga('password_generated', generationEventParams(rules, password, language));
     },
-    [buildPassword, warnNoPassword, mode, selectedStandard, language]
+    [rules, warn, language]
   );
 
-  const lastQuantity = useRef(0);
-
-  // Regenerate the whole list whenever any rule (or the quantity) changes.
+  // Rules changed: regenerate the whole list once the user settles (no work or GA event per slider tick).
+  const hasGenerated = useRef(false);
   useEffect(() => {
     let cancelled = false;
-    (async () => {
-      const generated = await Promise.all(Array.from({ length: Math.max(0, quantity) }, () => buildPassword()));
+    const timer = window.setTimeout(async () => {
+      const { quantity: count, language: lang } = latest.current;
+      const result = await generateList(rules, count);
       if (cancelled) return;
-      setPasswords(generated);
-      if (generated.some((p) => !p)) warnNoPassword();
-      else if (generated.length > 0) {
-        const params = { length: generated[0].length, mode, ui_language: language, surface: 'home' };
-        if (quantity !== lastQuantity.current) {
-          // initial load or quantity change: same event/semantics as before (only newly added passwords count)
-          const added = quantity - lastQuantity.current;
-          if (added > 0) ga('passwords_generated_batch', { count: added, ...params });
-        } else {
-          // rules changed: tracked separately so passwords_generated_batch stays comparable
-          ga('passwords_regenerated', { count: generated.length, ...params });
-        }
+      if ('error' in result) {
+        warn(result.error);
+        return;
       }
-      lastQuantity.current = quantity;
+      setPasswords(result.passwords);
+      const event = planGenerationEvent({
+        previousQuantity: hasGenerated.current ? count : 0,
+        nextQuantity: count,
+        generated: result.passwords,
+        rules,
+        language: lang,
+      });
+      if (event) ga(event.name, event.params);
+      hasGenerated.current = true;
+    }, hasGenerated.current ? REGENERATE_DEBOUNCE_MS : 0);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [rules, warn]);
+
+  // Quantity changed: append or trim, existing rows stay as they are.
+  const previousQuantity = useRef(quantity);
+  useEffect(() => {
+    const previous = previousQuantity.current;
+    previousQuantity.current = quantity;
+    if (quantity === previous || !hasGenerated.current) return;
+    if (quantity < previous) {
+      setPasswords((current) => current.slice(0, quantity));
+      return;
+    }
+    let cancelled = false;
+    (async () => {
+      const { rules: currentRules, language: lang } = latest.current;
+      const result = await generateList(currentRules, quantity - previous);
+      if (cancelled) return;
+      if ('error' in result) {
+        warn(result.error);
+        return;
+      }
+      setPasswords((current) => [...current, ...result.passwords].slice(0, quantity));
+      const event = planGenerationEvent({
+        previousQuantity: previous,
+        nextQuantity: quantity,
+        generated: result.passwords,
+        rules: currentRules,
+        language: lang,
+      });
+      if (event) ga(event.name, event.params);
     })();
     return () => {
       cancelled = true;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [buildPassword, quantity]);
+  }, [quantity, warn]);
 
   const handleCopyClick = (index: number) => {
     if (index >= 0 && index < passwords.length && passwords[index]) {
       navigator.clipboard.writeText(passwords[index]);
-      setSnackbars((prev) => [
-        ...prev,
-        { id: Date.now(), message: t('snackbar_copied') },
-      ]);
+      const snackbarId = nextSnackbarId();
+      setSnackbars((prev) => [...prev, { id: snackbarId, message: t('snackbar_copied') }]);
       setTimeout(() => {
-        setSnackbars((prev) => prev.filter((s) => s.id !== Date.now()));
+        setSnackbars((prev) => prev.filter((s) => s.id !== snackbarId));
       }, 500);
       runReward('confetti');
       ga('password_copied', { index, ui_language: language, surface: 'home' });
@@ -212,12 +223,10 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const handleCopyAllClick = () => {
     if (passwords.length > 0) {
       navigator.clipboard.writeText(passwords.join('\n'));
-      setSnackbars((prev) => [
-        ...prev,
-        { id: Date.now(), message: t('snackbar_all_copied') },
-      ]);
+      const snackbarId = nextSnackbarId();
+      setSnackbars((prev) => [...prev, { id: snackbarId, message: t('snackbar_all_copied') }]);
       setTimeout(() => {
-        setSnackbars((prev) => prev.filter((s) => s.id !== Date.now()));
+        setSnackbars((prev) => prev.filter((s) => s.id !== snackbarId));
       }, 500);
       runReward('balloons');
       ga('passwords_copied_all', { count: passwords.length, ui_language: language, surface: 'home' });
@@ -351,7 +360,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           <PasswordRow
             password={passwords[0]}
             index={0}
-            onGenerate={generatePassword}
+            onGenerate={regenerateRow}
             onCopy={handleCopyClick}
             isAnimating={isAnimating}
             isDarkMode={isDarkMode}
@@ -397,7 +406,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
             key={index + 1}
             password={password}
             index={index + 1}
-            onGenerate={generatePassword}
+            onGenerate={regenerateRow}
             onCopy={handleCopyClick}
             isAnimating={isAnimating}
             isDarkMode={isDarkMode}

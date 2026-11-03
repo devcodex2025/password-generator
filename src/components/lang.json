@@ -2444,6 +2444,20 @@
     "pl": "Ostrzeżenie: Nie wybrano żadnego zestawu znaków. Wybierz co najmniej jeden zestaw znaków, aby wygenerować hasło.",
     "vi": "Cảnh báo: Chưa chọn bộ ký tự nào. Vui lòng chọn ít nhất một bộ ký tự để tạo mật khẩu."
   },
+  "warning_wordlist_failed": {
+    "ua": "Не вдалося завантажити список слів. Перевірте з'єднання та спробуйте ще раз.",
+    "en": "Could not load the word list. Check your connection and try again.",
+    "es": "No se pudo cargar la lista de palabras. Comprueba tu conexión e inténtalo de nuevo.",
+    "fr": "Impossible de charger la liste de mots. Vérifiez votre connexion et réessayez.",
+    "de": "Die Wortliste konnte nicht geladen werden. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "it": "Impossibile caricare l'elenco di parole. Controlla la connessione e riprova.",
+    "pt": "Não foi possível carregar a lista de palavras. Verifique sua conexão e tente novamente.",
+    "ru": "Не удалось загрузить список слов. Проверьте соединение и попробуйте ещё раз.",
+    "zh": "无法加载单词列表。请检查网络连接后重试。",
+    "ja": "単語リストを読み込めませんでした。接続を確認して、もう一度お試しください。",
+    "pl": "Nie udało się wczytać listy słów. Sprawdź połączenie i spróbuj ponownie.",
+    "vi": "Không thể tải danh sách từ. Vui lòng kiểm tra kết nối và thử lại."
+  },
   "warning_last_checkbox": {
     "ua": "Попередження: Не можна зняти останню галочку. Залиште хоча б один набір символів для генерації пароля.",
     "en": "Warning: Cannot uncheck the last checkbox. Please keep at least one character set for password generation.",

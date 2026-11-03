@@ -22,6 +22,11 @@ ARG NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 COPY . .
 RUN --mount=type=cache,target=/app/.next/cache npm run build
 
+# unit + component tests: `docker compose --profile test run --rm test`
+FROM deps AS test
+COPY . .
+CMD ["sh", "-c", "npm test && npm run test:components"]
+
 # runtime image: production deps + build output only (no sources, devDependencies or build cache)
 FROM base AS runner
 ENV NODE_ENV=production

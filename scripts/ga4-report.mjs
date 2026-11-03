@@ -161,7 +161,19 @@ async function buildFunnel(token, propertyId) {
       isOpenFunnel: false,
       steps: [
         { name: 'Landing', filterExpression: step('page_view') },
-        { name: 'Generated', filterExpression: step('password_generated') },
+        {
+          // rules regenerate automatically, so a row re-roll is no longer the only generation signal
+          name: 'Generated',
+          filterExpression: {
+            orGroup: {
+              expressions: [
+                step('password_generated'),
+                step('passwords_generated_batch'),
+                step('passwords_regenerated'),
+              ],
+            },
+          },
+        },
         { name: 'Copied', filterExpression: step('password_copied') },
         {
           name: 'Affiliate click',
