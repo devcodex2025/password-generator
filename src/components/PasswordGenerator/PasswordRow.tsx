@@ -46,7 +46,7 @@ export default function PasswordRow({
   return (
     <div className="relative my-5 flex h-auto w-full flex-row flex-wrap items-center gap-2 lg:my-1 lg:flex-nowrap">
       <div
-        className={`flex h-16 w-full min-w-0 items-stretch border-2 border-solid border-[#E5F6FF] py-0 text-[12px] text-[#071016] dark:border-transparent dark:bg-[#000000] lg:w-[80%] lg:items-center lg:rounded-[120px] lg:px-4 md:text-[20px] rounded-[120px] bg-white`}
+        className={`flex h-16 w-full min-w-0 items-stretch border-2 border-solid border-[#E5F6FF] py-0 text-[12px] text-[#071016] dark:border-[#374151] dark:bg-[#1c1c1c] lg:w-[80%] lg:items-center lg:rounded-[120px] lg:px-4 md:text-[20px] rounded-[120px] bg-white`}
       >
         <label htmlFor={`password-output-${index}`} className="sr-only">{t('a11y_password_generated')}</label>
         <input
@@ -56,7 +56,8 @@ export default function PasswordRow({
           className="ml-3 min-w-0 flex-1 self-center rounded-[40px] border-none bg-transparent py-2 pr-2 text-base outline-none dark:text-white md:ml-4 md:text-lg lg:h-full lg:py-1"
           readOnly
         />
-        {/* Tablet / small laptop: black pill — keep actions vertically centred with the field */}
+        {/* Tablet / small laptop: the actions sit inside the field pill — keep
+            them vertically centred with the password */}
         <div className="hidden min-h-0 shrink-0 items-center justify-end gap-1.5 self-stretch pr-1.5 md:flex lg:max-w-[300px] lg:gap-2 lg:rounded-[40px] lg:pr-2">
           <GenerateButton
             onClick={() => onGenerate(index)}
