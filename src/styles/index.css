@@ -791,11 +791,15 @@ ol {
   display: none;
 }
 
-/* AdSense container fixes */
+/* AdSense container fixes.
+   An empty slot must not reserve height: while the account is in review (or
+   when a request returns no ad) AdSense keeps a blank placeholder in the
+   viewport, and a forced min-height turns it into a visible empty banner.
+   SmartAdBanner renders the unit without reserved space, collapses the
+   processed placeholder, and expands it only when an ad appears. */
 .smart-ad-container {
-  min-width: 320px !important;
-  min-height: 90px !important;
-  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 .smart-ad-container:empty {
@@ -810,7 +814,6 @@ ol {
 
 /* Responsive ad adjustments */
 @media (max-width: 768px) {
-  .smart-ad-container,
   .ad-container {
     min-width: 300px !important;
     min-height: 60px !important;
@@ -818,7 +821,6 @@ ol {
 }
 
 @media (max-width: 480px) {
-  .smart-ad-container,
   .ad-container {
     min-width: 280px !important;
     min-height: 50px !important;

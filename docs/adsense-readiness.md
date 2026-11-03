@@ -22,6 +22,7 @@ action that only the site owner can perform.
 | Contact page | ✅ exists | `/{locale}/contact` |
 | About page | ✅ added 2026-11-02 | `/{locale}/about` |
 | Ad units in code | ⚠️ enabled via env flag | `AdSenseLoader` loads the tag after marketing consent when `NEXT_PUBLIC_ADSENSE_ENABLED=true` is set in Vercel. |
+| Unfilled slots | ✅ collapsed | `SmartAdBanner` collapses a processed unit that has no ad frame and expands it again once an ad appears, so an account in review no longer shows blank banner boxes. |
 | No prohibited content | ✅ tool site, no adult/violent/pirated content |
 | Core Web Vitals | ✅ Lighthouse 100/100/100 on the home page |
 | HTTPS + canonical + hreflang | ✅ |
