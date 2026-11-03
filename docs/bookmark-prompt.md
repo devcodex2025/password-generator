@@ -18,6 +18,7 @@ Created:
 | `src/components/BookmarkPrompt/bookmarkTypes.ts` | Shared TypeScript types. |
 | `src/components/BookmarkPrompt/bookmarkUtils.test.mjs` | 44 unit tests for detection, state and analytics. |
 | `src/components/BookmarkPrompt/bookmarkTranslations.test.mjs` | 6 tests validating all 12 locales (completeness, placeholders, CJK length). |
+| `src/lib/locale-font.ts` | Locale font classes for portaled dialogs (see below). |
 | `src/lib/modal-coordination.ts` | Tiny pub/sub so the bookmark dialog and the NordPass save modal never overlap. |
 | `docs/screenshots/bookmark-prompt/*.png` | Desktop / tablet / mobile screenshots (light and dark). |
 
@@ -26,8 +27,9 @@ Modified:
 | File | Change |
 | --- | --- |
 | `src/components/PasswordGenerator/PasswordGenerator.tsx` | Renders `<BookmarkPrompt>` directly under the generator card. No changes to generation, strength or HIBP logic. |
-| `src/components/affiliate/SavePasswordModal.tsx` | Announces itself and closes when the bookmark dialog opens (and vice versa). |
+| `src/components/affiliate/SavePasswordModal.tsx` | Announces itself and closes when the bookmark dialog opens (and vice versa); now uses the locale font like the page. |
 | `src/components/lang.json` | 34 new `bookmark_*` keys × 12 languages (408 strings). |
+| `src/styles/index.css` | `.locale-font-ua/ru/zh/ja` rules so portaled dialogs keep the locale font. |
 
 ## Architecture
 
@@ -129,6 +131,27 @@ translated. Placeholders (`{{shortcut}}`, `{{browser}}`, `{{menu}}`, `{{device}}
 `{{os}}`) are identical in every locale — enforced by
 `bookmarkTranslations.test.mjs`, which also checks that `ua`/`ru`/`zh`/`ja` never fall
 back to the English string and that CJK strings stay within 90 characters.
+
+## Typography, spacing and layout
+
+Measured in Chrome (1440 px desktop, 390 px phone):
+
+| Item | Before | After |
+| --- | --- | --- |
+| Body line length in the block | 113 chars/line (848 px) | 75 chars/line (`max-w-prose`, 65 ch) |
+| Type sizes in the dialog | 12, 13, 14, 16, 19 | 12, 14, 16, 18 |
+| Title → description gap | 4 px | 8 px |
+| Desktop block layout | single stacked column | 65 ch text column with actions on the right |
+| Primary/secondary touch targets | 40–41 px | 44 px |
+| Device chips | 34 px | 40 px |
+| Selects | 37 px | 44 px |
+| Dialog section spacing | 4–20 px, mixed | 8 / 12 / 16 / 20 / 24 rhythm |
+
+Font composition: both dialogs are portaled under `<body>`, outside
+`.container.<locale>`, and the global `* { font-family: … }` rule beats inheritance.
+`localeFontClass()` from `src/lib/locale-font.ts` plus the `.locale-font-*` rules in
+`src/styles/index.css` restore Arsenal for `ua`/`ru` and Noto Sans SC/JP for `zh`/`ja`;
+`en`/`pl` keep Varela Round. Verified with `getComputedStyle` for all five locales.
 
 ## Accessibility & theming
 

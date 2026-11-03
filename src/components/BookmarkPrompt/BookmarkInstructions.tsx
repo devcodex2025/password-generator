@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { Bookmark, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { localeFontClass } from '@/lib/locale-font';
 import { announceModalOpen, subscribeModalOpen } from '@/lib/modal-coordination';
 import {
   BOOKMARK_EVENTS,
@@ -232,7 +233,10 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
         aria-modal="true"
         aria-labelledby="bookmark-instructions-title"
         aria-describedby="bookmark-instructions-description"
-        className="max-h-[92vh] w-full max-w-lg animate-in overflow-y-auto rounded-t-3xl border border-[#E5F6FF] bg-white p-5 shadow-2xl fade-in duration-200 motion-reduce:animate-none dark:border-[#374151] dark:bg-[#1c1c1c] sm:rounded-3xl sm:p-6"
+        className={cn(
+          localeFontClass(locale),
+          'max-h-[92vh] w-full max-w-lg animate-in overflow-y-auto rounded-t-3xl border border-[#E5F6FF] bg-white p-5 shadow-2xl fade-in duration-200 motion-reduce:animate-none dark:border-[#374151] dark:bg-[#1c1c1c] sm:rounded-3xl sm:p-6'
+        )}
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-start gap-3">
@@ -244,7 +248,7 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
             </span>
             <h2
               id="bookmark-instructions-title"
-              className="mt-1 text-[18px] font-bold leading-snug text-[#071016] dark:text-[#e0e0e0] sm:text-[19px]"
+              className="mt-2 text-[18px] font-bold leading-snug text-[#071016] dark:text-[#e0e0e0]"
             >
               {t('bookmark_modal_title')}
             </h2>
@@ -254,7 +258,7 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
             type="button"
             onClick={() => onClose('close')}
             aria-label={t('bookmark_close')}
-            className="shrink-0 rounded-full p-1.5 text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/30 dark:text-[#9ca3af] dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:ring-[#05a9ff]/40"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/30 dark:text-[#9ca3af] dark:hover:bg-white/10 dark:hover:text-white dark:focus-visible:ring-[#05a9ff]/40"
           >
             <X className="h-5 w-5" aria-hidden="true" />
           </button>
@@ -262,12 +266,12 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
 
         <p
           id="bookmark-instructions-description"
-          className="mt-3 text-[14px] leading-6 text-[#374151] dark:text-[#c7c7c7]"
+          className="mt-3 max-w-prose text-[14px] leading-6 text-[#374151] dark:text-[#c7c7c7]"
         >
           {t('bookmark_modal_description')}
         </p>
 
-        <p className="mt-2 text-[12px] text-[#6b7280] dark:text-[#9ca3af]">
+        <p className="mt-2 text-[12px] leading-5 text-[#6b7280] dark:text-[#9ca3af]">
           {t('bookmark_detected', {
             device: t(`bookmark_platform_${deviceType}`),
             os: osLabel,
@@ -275,7 +279,7 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
           })}
         </p>
 
-        <div className="mt-4 rounded-2xl border border-[#E5F6FF] bg-[#F7FCFF] p-3 dark:border-[#374151] dark:bg-[#242424]">
+        <div className="mt-5 rounded-2xl border border-[#E5F6FF] bg-[#F7FCFF] p-4 dark:border-[#374151] dark:bg-[#242424]">
           <p className="text-[12px] font-semibold text-[#2A4E63] dark:text-[#9ed9ff]">
             {t('bookmark_manual_instructions')}
           </p>
@@ -284,7 +288,7 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
             <legend className="text-[12px] text-[#4b5563] dark:text-[#bdbdbd]">
               {t('bookmark_platform_select')}
             </legend>
-            <div className="mt-1 flex flex-wrap gap-2">
+            <div className="mt-1.5 flex flex-wrap gap-2">
               {DEVICE_OPTIONS.map((option) => (
                 <button
                   key={option}
@@ -292,7 +296,7 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
                   onClick={() => handleDeviceChange(option)}
                   aria-pressed={deviceType === option}
                   className={cn(
-                    'rounded-full border px-3 py-1.5 text-[13px] font-semibold transition',
+                    'inline-flex min-h-10 items-center rounded-full border px-3.5 text-[14px] font-semibold transition',
                     'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/30 dark:focus-visible:ring-[#05a9ff]/40',
                     deviceType === option
                       ? 'border-[#2A4E63] bg-[#2A4E63] text-white dark:border-[#05a9ff] dark:bg-[#05a9ff] dark:text-[#16394a]'
@@ -313,7 +317,7 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
               <select
                 value={os}
                 onChange={(event) => handleOsChange(event.target.value as OperatingSystem)}
-                className="mt-1 w-full rounded-full border border-[#c9e6f5] bg-white px-3 py-2 text-[14px] text-[#071016] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A4E63] dark:border-[#4b5563] dark:bg-[#1c1c1c] dark:text-[#e0e0e0] dark:focus-visible:ring-[#05a9ff]"
+                className="mt-1 h-11 w-full rounded-full border border-[#c9e6f5] bg-white px-3 text-[14px] text-[#071016] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A4E63] dark:border-[#4b5563] dark:bg-[#1c1c1c] dark:text-[#e0e0e0] dark:focus-visible:ring-[#05a9ff]"
               >
                 {OS_OPTIONS.map((option) => (
                   <option key={option} value={option}>
@@ -330,7 +334,7 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
               <select
                 value={browser}
                 onChange={(event) => setBrowser(event.target.value as BrowserId)}
-                className="mt-1 w-full rounded-full border border-[#c9e6f5] bg-white px-3 py-2 text-[14px] text-[#071016] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A4E63] dark:border-[#4b5563] dark:bg-[#1c1c1c] dark:text-[#e0e0e0] dark:focus-visible:ring-[#05a9ff]"
+                className="mt-1 h-11 w-full rounded-full border border-[#c9e6f5] bg-white px-3 text-[14px] text-[#071016] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A4E63] dark:border-[#4b5563] dark:bg-[#1c1c1c] dark:text-[#e0e0e0] dark:focus-visible:ring-[#05a9ff]"
               >
                 {BROWSER_OPTIONS.map((option) => (
                   <option key={option} value={option}>
@@ -342,7 +346,7 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
           </div>
         </div>
 
-        <ol className="mt-4 space-y-3">
+        <ol className="mt-5 space-y-3">
           {plan.steps.map((step, index) => (
             <li key={step} className="flex gap-3">
               <span
@@ -363,35 +367,35 @@ export default function BookmarkInstructions({ locale, platform, onClose }: Book
         {/* With a known desktop OS the OS hint already explains the shortcut,
             so the generic desktop summary would only repeat it. */}
         {plan.noteKey && !plan.osHintKey ? (
-          <p className="mt-3 text-[13px] leading-5 text-[#4b5563] dark:text-[#bdbdbd]">
+          <p className="mt-3 max-w-prose text-[14px] leading-6 text-[#4b5563] dark:text-[#bdbdbd]">
             {t(plan.noteKey, { shortcut: plan.shortcut ?? '', browser: browserLabel })}
           </p>
         ) : null}
 
         {plan.osHintKey ? (
-          <p className="mt-1 text-[13px] leading-5 text-[#4b5563] dark:text-[#bdbdbd]">
+          <p className="mt-3 max-w-prose text-[14px] leading-6 text-[#4b5563] dark:text-[#bdbdbd]">
             {t(plan.osHintKey)}
           </p>
         ) : null}
 
         {plan.menuAlternative ? (
-          <p className="mt-1 text-[13px] leading-5 text-[#4b5563] dark:text-[#bdbdbd]">
+          <p className="mt-2 max-w-prose text-[14px] leading-6 text-[#4b5563] dark:text-[#bdbdbd]">
             {t('bookmark_step_menu_alternative', { menu: t('bookmark_browser_menu') })}
           </p>
         ) : null}
 
-        <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:justify-end">
+        <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-end sm:gap-3">
           <button
             type="button"
             onClick={() => onClose('close')}
-            className="rounded-full px-5 py-3 text-[14px] font-medium text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/20 dark:text-[#9ca3af] dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:ring-[#05a9ff]/30"
+            className="inline-flex min-h-11 items-center justify-center rounded-full px-5 text-[14px] font-medium text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/20 dark:text-[#9ca3af] dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:ring-[#05a9ff]/30"
           >
             {t('bookmark_close')}
           </button>
           <button
             type="button"
             onClick={handleMarkedDone}
-            className="rounded-full bg-[#2A4E63] px-5 py-3 text-[14px] font-semibold text-white transition hover:bg-[#1f3b4c] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/30 dark:bg-[#05a9ff] dark:text-[#16394a] dark:hover:bg-[#38beff] dark:focus-visible:ring-[#05a9ff]/40"
+            className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#2A4E63] px-5 text-[14px] font-semibold text-white transition hover:bg-[#1f3b4c] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/30 dark:bg-[#05a9ff] dark:text-[#16394a] dark:hover:bg-[#38beff] dark:focus-visible:ring-[#05a9ff]/40"
           >
             {t('bookmark_marked_done')}
           </button>

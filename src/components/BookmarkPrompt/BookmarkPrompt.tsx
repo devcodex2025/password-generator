@@ -145,37 +145,41 @@ export default function BookmarkPrompt({ language, active }: BookmarkPromptProps
         aria-labelledby="bookmark-prompt-title"
         className="mx-3 mb-4 mt-4 w-[calc(100%-1.5rem)] max-w-2xl animate-in self-center rounded-3xl border border-[#c9e6f5] bg-white p-4 fade-in shadow-sm duration-200 motion-reduce:animate-none dark:border-[#374151] dark:bg-[#1c1c1c] sm:p-5 lg:mb-0 lg:w-9/12 lg:max-w-none"
       >
-        <div className="flex items-start gap-3">
+        <div className="flex items-start gap-3 sm:gap-4">
           <span
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EAF8FF] text-[#2A4E63] dark:bg-[#05a9ff]/15 dark:text-[#38beff]"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EAF8FF] text-[#2A4E63] dark:bg-[#05a9ff]/15 dark:text-[#38beff] sm:h-11 sm:w-11"
             aria-hidden="true"
           >
             <Bookmark className="h-5 w-5" />
           </span>
 
-          <div className="min-w-0 flex-1">
-            <h2
-              id="bookmark-prompt-title"
-              className="text-[16px] font-bold leading-snug text-[#071016] dark:text-[#e0e0e0] sm:text-[17px]"
-            >
-              {t('bookmark_title')}
-            </h2>
-            <p className="mt-1 text-[13px] leading-5 text-[#374151] dark:text-[#c7c7c7] sm:text-[14px]">
-              {t('bookmark_description')}
-            </p>
+          <div className="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between sm:gap-6">
+            {/* 65ch caps the line length on wide desktop cards: the card is
+                ~940px wide, so uncapped copy ran to ~113 characters per line. */}
+            <div className="min-w-0 sm:max-w-prose">
+              <h2
+                id="bookmark-prompt-title"
+                className="text-[16px] font-bold leading-snug text-[#071016] dark:text-[#e0e0e0] sm:text-[18px]"
+              >
+                {t('bookmark_title')}
+              </h2>
+              <p className="mt-2 text-[14px] leading-6 text-[#374151] dark:text-[#c7c7c7]">
+                {t('bookmark_description')}
+              </p>
+            </div>
 
-            <div className="mt-3 flex flex-wrap items-center gap-2">
+            <div className="mt-4 flex flex-wrap items-center gap-2 sm:mt-0 sm:shrink-0">
               <button
                 type="button"
                 onClick={handleOpenInstructions}
-                className="rounded-full bg-[#2A4E63] px-4 py-2.5 text-[14px] font-semibold text-white transition hover:bg-[#1f3b4c] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/30 dark:bg-[#05a9ff] dark:text-[#16394a] dark:hover:bg-[#38beff] dark:focus-visible:ring-[#05a9ff]/40"
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#2A4E63] px-5 text-[14px] font-semibold text-white transition hover:bg-[#1f3b4c] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/30 dark:bg-[#05a9ff] dark:text-[#16394a] dark:hover:bg-[#38beff] dark:focus-visible:ring-[#05a9ff]/40"
               >
                 {t('bookmark_cta')}
               </button>
               <button
                 type="button"
                 onClick={handleDismiss}
-                className="rounded-full px-3 py-2.5 text-[13px] font-medium text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/20 dark:text-[#9ca3af] dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:ring-[#05a9ff]/30"
+                className="inline-flex min-h-11 items-center justify-center rounded-full px-4 text-[14px] font-medium text-[#6b7280] transition hover:bg-[#EAF8FF] hover:text-[#2A4E63] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#2A4E63]/20 dark:text-[#9ca3af] dark:hover:bg-white/5 dark:hover:text-white dark:focus-visible:ring-[#05a9ff]/30"
               >
                 {t('bookmark_dismiss')}
               </button>

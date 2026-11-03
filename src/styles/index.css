@@ -70,6 +70,25 @@
   font-family: var(--font-varela-round), sans-serif !important;
 }
 
+/* Locale fonts for portaled dialogs, which render outside .container.<locale>.
+   The global * font rule beats inheritance, so descendants must be targeted too. */
+.locale-font-ua,
+.locale-font-ua *,
+.locale-font-ru,
+.locale-font-ru * {
+  font-family: var(--font-arsenal), sans-serif !important;
+}
+
+.locale-font-zh,
+.locale-font-zh * {
+  font-family: var(--font-noto-sans-sc), var(--font-noto-sans-jp), var(--font-noto-sans), sans-serif !important;
+}
+
+.locale-font-ja,
+.locale-font-ja * {
+  font-family: var(--font-noto-sans-jp), var(--font-noto-sans-sc), var(--font-noto-sans), sans-serif !important;
+}
+
 /* Dark mode styles */
 .dark {
   background-color: var(--dark-theme-bg);

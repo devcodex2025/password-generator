@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { localeFontClass } from '@/lib/locale-font';
 import { resolveAffiliateUrl } from '@/content/affiliate/links';
 import { announceModalOpen, subscribeModalOpen } from '@/lib/modal-coordination';
 import { useGeoCountry } from './useGeoCountry';
@@ -179,7 +180,10 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
       onClick={dismiss}
     >
       <div
-        className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-[#E5F6FF] bg-white p-6 shadow-2xl ring-1 ring-[#2A4E63]/5 dark:border-[#374151] dark:bg-[#1c1c1c] dark:ring-white/10"
+        className={cn(
+          localeFontClass(locale),
+          'max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-[#E5F6FF] bg-white p-6 shadow-2xl ring-1 ring-[#2A4E63]/5 dark:border-[#374151] dark:bg-[#1c1c1c] dark:ring-white/10'
+        )}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-4">
