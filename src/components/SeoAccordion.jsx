@@ -35,7 +35,7 @@ function getTrustFaq(language) {
 const SeoAccordion = ({ language }) => {
   return (
     <div className="w-full max-w-6xl mx-auto my-8 px-4 lg:px-8">
-      <Accordion type="single" collapsible className="flex flex-col gap-3 rounded-2xl border border-[#E5F6FF] dark:border-[#374151] bg-white dark:bg-[#1c1c1c] shadow p-4 lg:p-6">
+      <Accordion type="multiple" className="flex flex-col gap-3 rounded-2xl border border-[#E5F6FF] dark:border-[#374151] bg-white dark:bg-[#1c1c1c] shadow p-4 lg:p-6">
         {/* SEO Welcome Section */}
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-[20px] lg:text-[26px] text-[#071016] dark:text-[#e0e0e0] font-semibold">
