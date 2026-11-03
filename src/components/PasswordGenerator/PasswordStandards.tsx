@@ -1,8 +1,6 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
 import Button from '@/components/ui/Button';
 
 interface PasswordStandardsProps {
@@ -39,7 +37,6 @@ export default function PasswordStandards({
   setSelectedCharacterSets,
 }: PasswordStandardsProps) {
   const { t } = useTranslation();
-  const { isDarkMode } = useContext(ThemeContext);
 
   const handleStandardChange = (standard: string) => {
     setSelectedStandard(standard);
@@ -73,9 +70,7 @@ export default function PasswordStandards({
       </div>
       <div className="w-full mt-2">
         <span
-          className={`hero-muted-label mb-2 block text-[14px] sm:text-[17px] md:text-[20px] font-normal border-2 ${
-            isDarkMode ? 'border-[#05a9ff]' : 'border-[#e5f6ff]'
-          } rounded-lg px-3 sm:px-4 py-2 mt-1`}
+          className="hero-muted-label mb-2 block text-[14px] sm:text-[17px] md:text-[20px] font-normal border-2 border-[#e5f6ff] dark:border-[#05a9ff] rounded-lg px-3 sm:px-4 py-2 mt-1"
         >
           {t(passwordStandards[selectedStandard].description)}
         </span>

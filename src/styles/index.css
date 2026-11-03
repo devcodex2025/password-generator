@@ -216,6 +216,22 @@ html.theme-switching *::after {
   color: var(--dark-theme-white);
 }
 
+/* The generator hero used to pick these colours from isDarkMode in React, which
+   is `false` until hydration. On every reload the hero therefore painted the
+   light palette first and repainted itself afterwards. Class + CSS variable
+   keeps the first paint final; the values live in colors.css. */
+.surface-hero {
+  background-color: var(--hero-surface);
+}
+
+.surface-card {
+  background-color: var(--card-surface);
+}
+
+.text-title {
+  color: var(--title-color);
+}
+
 .dark header {
   background-color: var(--dark-theme-bg) !important;
   color: var(--dark-theme-text);

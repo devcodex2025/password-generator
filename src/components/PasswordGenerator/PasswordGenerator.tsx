@@ -375,10 +375,10 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
 
   return (
     <div
-      className={`flex flex-col justify-center items-center mb-2 w-full rounded-[72px] pt-3 md:pt-10 lg:pt-12 lg:pb-8 ${isDarkMode ? 'bg-[#1a1a1a]' : 'bg-[#E5F6FF]'} lg:bg-[url('/images/vector-bg.svg')] lg:bg-no-repeat lg:bg-center lg:bg-cover lg:bg-blend-overlay`}
+      className={`surface-hero flex flex-col justify-center items-center mb-2 w-full rounded-[72px] pt-3 md:pt-10 lg:pt-12 lg:pb-8 lg:bg-[url('/images/vector-bg.svg')] lg:bg-no-repeat lg:bg-center lg:bg-cover lg:bg-blend-overlay`}
     >
       <h1
-        className={`page-title mx-2 md:mb-1 text-[30px] lg:text-[44px] font-bold tracking-tight text-center ${isDarkMode ? 'text-[#e0e0e0]' : 'text-gray-900'}`}
+        className="page-title text-title mx-2 md:mb-1 text-[30px] lg:text-[44px] font-bold tracking-tight text-center"
       >
         {t('main_title')}
       </h1>
@@ -396,7 +396,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         />
       </div>
       <div
-        className={`relative flex w-full min-w-0 max-w-full flex-col overflow-visible rounded-[48px] shadow drop-shadow-lg p-[16px] md:p-[40px] lg:w-9/12 xl:w-9/12 2xl:w-9/12 ${isDarkMode ? 'bg-[#1c1c1c]' : 'bg-white'}`}
+        className={`surface-card relative flex w-full min-w-0 max-w-full flex-col overflow-visible rounded-[48px] shadow drop-shadow-lg p-[16px] md:p-[40px] lg:w-9/12 xl:w-9/12 2xl:w-9/12`}
       >
         {passwords.length > 0 ? (
           <PasswordRow
@@ -411,8 +411,8 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           /* Layout placeholder: keeps the hero height stable before the first
              password is generated on the client (avoids a visible content shift). */
           <div className="my-5 flex h-auto w-full animate-pulse flex-row flex-wrap items-center gap-2 lg:my-1 lg:flex-nowrap">
-            <div className={`h-16 w-full rounded-[120px] border-2 border-solid border-[#E5F6FF] dark:border-[#374151] dark:bg-[#1c1c1c] lg:w-[80%] ${isDarkMode ? 'bg-[#101010]' : 'bg-white'}`} />
-            <div className={`h-14 w-full rounded-[60px] lg:w-[20%] ${isDarkMode ? 'bg-[#1f2937]' : 'bg-[#c9dfeb]'}`} />
+            <div className={`surface-card h-16 w-full rounded-[120px] border-2 border-solid border-[#E5F6FF] dark:border-[#374151] lg:w-[80%]`} />
+            <div className={`h-14 w-full rounded-[60px] bg-[#c9dfeb] dark:bg-[#1f2937] lg:w-[20%]`} />
           </div>
         )}
         <PasswordStrength analysis={passwordStrengthAnalysis} />
@@ -476,7 +476,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
             </Button>
           </div>
         )}
-        <div className={`mt-4 flex items-center justify-center gap-2 text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+        <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400">
           <VerifiedUserIcon sx={{ fontSize: 16 }} />
           <span>{t('generated_locally')}</span>
         </div>

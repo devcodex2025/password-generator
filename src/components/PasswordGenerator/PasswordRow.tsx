@@ -110,7 +110,7 @@ export default function PasswordRow({
       <LongPressTip label={t('copy')} className="flex h-14 min-w-0 flex-1 basis-0 md:contents">
         <CopyButton
           disabled={!password || isAnimating}
-          className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} w-full h-14 lg:w-[20%] ${isDarkMode ? 'text-[#000000]' : 'text-white'} font-semibold text-[16px] md:text-[20px] rounded-[60px] py-0 ${!password || isAnimating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+          className={`bg-[#2A4E63] hover:bg-[#1f3b4c] dark:bg-[#05a9ff] dark:hover:bg-[#38beff] w-full h-14 lg:w-[20%] ${isDarkMode ? 'text-[#000000]' : 'text-white'} font-semibold text-[16px] md:text-[20px] rounded-[60px] py-0 ${!password || isAnimating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
           onClick={handleCopy}
         >
           <span className="flex md:hidden" aria-hidden="true">{copied ? <CheckIcon /> : <ContentCopyIcon />}</span>

@@ -14,6 +14,11 @@
   /* Header theme toggle icon; CSS-driven so it is already correct before
      hydration has read isDarkMode into React state. */
   --theme-toggle-icon: #071016;
+  /* Generator hero. Chosen in CSS (not in React) so a reload does not repaint
+     the hero after hydration. */
+  --hero-surface: #E5F6FF;
+  --card-surface: #ffffff;
+  --title-color: #111827;
 
   /* Dark Theme Colors */
   --dark-theme-bg: #121212;
@@ -74,6 +79,9 @@
   --text-2: #b0b0b0;
   --border-1: #374151;
   --theme-toggle-icon: #9ca3af;
+  --hero-surface: #1a1a1a;
+  --card-surface: #1c1c1c;
+  --title-color: #e0e0e0;
 
   --text-primary: #E0E0E0;
   --text-secondary: #b0b0b0;
