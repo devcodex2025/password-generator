@@ -303,8 +303,12 @@ html.theme-switching *::after {
   border-color: #1d2e48;
 }
 
-/* Inputs sit on the same surface as the cards around them (#000 read as a hole). */
-.dark input {
+/* Inputs sit on the same surface as the cards around them (#000 read as a hole).
+   Fields that bring their own surface (`bg-transparent`, e.g. the password
+   display inside its own pill) are left alone so the container stays the only
+   painted layer — otherwise the field turns into a lighter pill inside a black
+   one. */
+.dark input:not(.bg-transparent) {
   background-color: var(--dark-theme-card) !important;
   color: var(--dark-theme-white) !important;
 }

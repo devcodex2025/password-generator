@@ -46,7 +46,7 @@ export default function PasswordRow({
   return (
     <div className="relative my-5 flex h-auto w-full flex-row flex-wrap items-center gap-2 lg:my-1 lg:flex-nowrap">
       <div
-        className={`flex h-16 w-full min-w-0 items-stretch border-2 border-solid border-[#E5F6FF] py-0 text-[12px] text-[#071016] dark:border-[#374151] dark:bg-[#1c1c1c] lg:w-[80%] lg:items-center lg:rounded-[120px] lg:px-4 md:text-[20px] rounded-[120px] bg-white`}
+        className={`flex h-16 w-full min-w-0 items-stretch border-2 border-solid border-[#E5F6FF] py-0 text-[12px] text-[#071016] dark:border-transparent dark:bg-[#000000] lg:w-[80%] lg:items-center lg:rounded-[120px] lg:px-4 md:text-[20px] rounded-[120px] bg-white`}
       >
         <label htmlFor={`password-output-${index}`} className="sr-only">{t('a11y_password_generated')}</label>
         <input
