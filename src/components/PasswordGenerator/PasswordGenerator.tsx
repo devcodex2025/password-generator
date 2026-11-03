@@ -487,7 +487,12 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
             autoHideDuration={6000}
             onClose={() => setSnackbars((prev) => prev.filter((s) => s.id !== snackbar.id))}
             message={snackbar.message}
-            sx={{ bgcolor: '#2A4E63' }}
+            ContentProps={{
+              // Paint from the CSS variables: MUI's own background comes from
+              // emphasize(palette.background.default), which is the light mode
+              // value once the palette holds literal colours.
+              sx: { backgroundColor: 'var(--primary-color)', color: '#ffffff' },
+            }}
           />
         ))}
         <SavePasswordModal

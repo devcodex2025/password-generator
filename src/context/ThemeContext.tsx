@@ -28,8 +28,14 @@ export const useTheme = () => {
 /* One theme for both modes. Every mode-dependent colour is a CSS variable that
    `.dark` redefines, so switching the class repaints in a single frame instead
    of rebuilding the MUI theme (which cost 200–300 ms and a second paint wave).
-   Only surface/text/border go through variables: MUI derives other palette
-   entries with lighten()/darken()/alpha(), which cannot read var(). */
+
+   Two palette entries must stay literal colours even though the page paints
+   from variables: MUI parses them at render time and its helpers only accept
+   hex/rgb/hsl. SnackbarContent calls emphasize(palette.background.default) and
+   Button calls alpha(palette.text.primary) for its hover state; passing var()
+   there throws "MUI: Unsupported `var(--…)` color" and unmounts the tree.
+   `.dark body` and the `.dark .Mui*` rules in index.css repaint both in dark
+   mode, so the literal values below never reach the screen as light colours. */
 const theme = createTheme({
   palette: {
     primary: {
@@ -39,11 +45,11 @@ const theme = createTheme({
       main: '#E5F6FF',
     },
     background: {
-      default: 'var(--surface-1)',
+      default: '#ffffff',
       paper: 'var(--surface-2)',
     },
     text: {
-      primary: 'var(--text-1)',
+      primary: '#071016',
       secondary: 'var(--text-2)',
     },
     divider: 'var(--border-1)',
