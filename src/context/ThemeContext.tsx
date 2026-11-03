@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -25,13 +25,49 @@ export const useTheme = () => {
   return context;
 };
 
-/* The `dark` class lives on <html> only: it is set before the first paint by the
-   inline script in layout.tsx, so every theme change has to go through the same
-   root element to keep `.dark body` and `.dark *` selectors in sync. */
+/* One theme for both modes. Every mode-dependent colour is a CSS variable that
+   `.dark` redefines, so switching the class repaints in a single frame instead
+   of rebuilding the MUI theme (which cost 200–300 ms and a second paint wave).
+   Only surface/text/border go through variables: MUI derives other palette
+   entries with lighten()/darken()/alpha(), which cannot read var(). */
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#2A4E63',
+    },
+    secondary: {
+      main: '#E5F6FF',
+    },
+    background: {
+      default: 'var(--surface-1)',
+      paper: 'var(--surface-2)',
+    },
+    text: {
+      primary: 'var(--text-1)',
+      secondary: 'var(--text-2)',
+    },
+    divider: 'var(--border-1)',
+  },
+});
+
+/* Long enough to cover the frame(s) painted between the class change and the
+   removal of the transition guard, short enough to be invisible. */
+const THEME_SWITCH_MS = 120;
+
+/**
+ * Applies a theme without waiting for React: the class, the stored preference
+ * and the transition guard all change in the same task as the click, so the
+ * next paint is already the final one.
+ */
 function applyTheme(isDark: boolean) {
   if (typeof document === 'undefined' || typeof window === 'undefined') return;
 
-  document.documentElement.classList.toggle('dark', isDark);
+  const root = document.documentElement;
+  // Colour transitions would otherwise fade background and text at different
+  // speeds, producing frames with ~1:1 contrast. Hover/motion transitions are
+  // untouched outside this short window.
+  root.classList.add('theme-switching');
+  root.classList.toggle('dark', isDark);
 
   try {
     window.localStorage.setItem('darkMode', JSON.stringify(isDark));
@@ -39,6 +75,8 @@ function applyTheme(isDark: boolean) {
     // Storage can be blocked (private mode, quotas); the class change still works.
   }
   document.cookie = `theme=${isDark ? 'dark' : 'light'}; path=/; max-age=31536000; samesite=lax`;
+
+  window.setTimeout(() => root.classList.remove('theme-switching'), THEME_SWITCH_MS);
 }
 
 function readStoredDarkMode(): boolean | null {
@@ -61,8 +99,9 @@ export const CustomThemeProvider = ({
   const [isDarkMode, setIsDarkMode] = useState<boolean>(initialDarkMode);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // The class is toggled in the click handler instead of an effect so it lands
-  // in the same frame as the click.
+  // The `<html class="dark">` element is set by the inline script in layout.tsx,
+  // so the DOM is the source of truth here; reading it avoids a stale state and
+  // keeps the class change synchronous with the click.
   const toggleMode = useCallback(() => {
     const next = !document.documentElement.classList.contains('dark');
     applyTheme(next);
@@ -72,9 +111,8 @@ export const CustomThemeProvider = ({
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // <html class="dark"> is already correct: the pre-paint script in layout.tsx
-    // has applied the stored/system preference. This effect only mirrors it into
-    // React state, it must not repaint the document.
+    // The pre-paint script already put the right class on <html>; this effect
+    // only mirrors that state into React so components can pick their icons.
     const saved = readStoredDarkMode();
     const mediaQuery = window.matchMedia?.('(prefers-color-scheme: dark)');
     setIsDarkMode(saved !== null ? saved : mediaQuery?.matches || false);
@@ -91,29 +129,6 @@ export const CustomThemeProvider = ({
       mediaQuery?.removeEventListener('change', handleChange);
     };
   }, []);
-
-  const theme = useMemo(() => {
-    const mode = isDarkMode ? 'dark' : 'light';
-    return createTheme({
-      palette: {
-        mode,
-        primary: {
-          main: '#2A4E63',
-        },
-        secondary: {
-          main: '#E5F6FF',
-        },
-        background: {
-          default: mode === 'dark' ? '#1a1a1a' : '#ffffff',
-          paper: mode === 'dark' ? '#2d2d2d' : '#ffffff',
-        },
-        text: {
-          primary: mode === 'dark' ? '#e0e0e0' : '#071016',
-          secondary: mode === 'dark' ? '#b0b0b0' : '#2A4E63',
-        },
-      },
-    });
-  }, [isDarkMode]);
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, toggleMode, isInitialized }}>

@@ -170,6 +170,47 @@
   color: var(--dark-theme-white);
 }
 
+/* A theme change must land in one paint. `theme-switching` is set on <html> for
+   ~120 ms around the class flip and removes transition timing, so every colour
+   snaps together instead of background and text fading at different speeds. */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+
+/* vanilla-cookieconsent paints from --cc-* variables that default to its light
+   palette; without these overrides the card stayed white in the dark theme.
+   `:root.dark` outranks the library's plain `:root` block, which is injected
+   after this file and would otherwise win the tie. */
+:root.dark {
+  --cc-bg: #1c1c1c;
+  --cc-primary-color: #e0e0e0;
+  --cc-secondary-color: #b0b0b0;
+  --cc-btn-primary-bg: #05a9ff;
+  --cc-btn-primary-color: #071016;
+  --cc-btn-primary-border-color: #05a9ff;
+  --cc-btn-primary-hover-bg: #38beff;
+  --cc-btn-primary-hover-color: #071016;
+  --cc-btn-primary-hover-border-color: #38beff;
+  --cc-btn-secondary-bg: #2d2d2d;
+  --cc-btn-secondary-color: #e0e0e0;
+  --cc-btn-secondary-border-color: #2d2d2d;
+  --cc-btn-secondary-hover-bg: #374151;
+  --cc-btn-secondary-hover-color: #ffffff;
+  --cc-btn-secondary-hover-border-color: #374151;
+  --cc-separator-border-color: #374151;
+  --cc-cookie-category-block-bg: #242424;
+  --cc-cookie-category-block-border: #374151;
+  --cc-cookie-category-block-hover-bg: #2d2d2d;
+  --cc-cookie-category-block-hover-border: #4b5563;
+  --cc-footer-bg: #2d2d2d;
+  --cc-footer-color: #b0b0b0;
+  --cc-footer-border-color: #374151;
+  --cc-toggle-off-bg: #4b5563;
+}
+
 .dark body {
   background-color: var(--dark-theme-bg);
   color: var(--dark-theme-white);
