@@ -29,13 +29,27 @@ async function renderGenerator(strict = false) {
   await waitFor(() => expect(firstPassword()).not.toBe(''));
 }
 
+// jsdom has no layout: report a fixed field width so the row picks its density.
+let fieldWidth = 800;
+class FakeResizeObserver {
+  constructor(private cb: ResizeObserverCallback) {}
+  observe() {
+    this.cb([{ contentRect: { width: fieldWidth } } as ResizeObserverEntry], this as unknown as ResizeObserver);
+  }
+  unobserve() {}
+  disconnect() {}
+}
+
 beforeEach(() => {
+  fieldWidth = 800;
+  vi.stubGlobal('ResizeObserver', FakeResizeObserver);
   (window as unknown as { gtag: typeof gtag }).gtag = gtag;
   vi.mocked(loadWordlist).mockResolvedValue(FAKE_WORDS);
 });
 
 afterEach(() => {
   cleanup();
+  vi.unstubAllGlobals();
   gtag.mockReset();
 });
 
@@ -79,6 +93,29 @@ describe('PasswordGenerator', () => {
 
     await screen.findByText(/Could not load the word list/);
     expect(firstPassword()).toBe(before);
+  });
+
+  it('shows copy, share, generate as labelled buttons when the field is wide', async () => {
+    await renderGenerator();
+    const names = screen.getAllByRole('button').map((b) => b.textContent);
+    const [copy, share, generate] = ['Copy', 'Share password', 'Generate'].map((n) => names.indexOf(n));
+    expect(copy).toBeGreaterThan(-1);
+    expect(copy).toBeLessThan(share);
+    expect(share).toBeLessThan(generate);
+    expect(screen.queryByRole('button', { name: 'More actions' })).toBeNull();
+  });
+
+  it('collapses share and generate into a dropdown when the field is narrow', async () => {
+    fieldWidth = 300;
+    await renderGenerator();
+    expect(screen.getByRole('button', { name: 'Copy' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: 'Generate' })).toBeNull();
+
+    fireEvent.click(screen.getByRole('button', { name: 'More actions' }));
+    const before = firstPassword();
+    fireEvent.click(await screen.findByRole('menuitem', { name: 'Generate' }));
+    await waitFor(() => expect(firstPassword()).not.toBe(before));
+    expect(screen.queryByRole('menuitem', { name: 'Telegram' })).toBeNull();
   });
 
   it('sends a single initial generation event under StrictMode', async () => {

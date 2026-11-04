@@ -368,9 +368,8 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         ) : (
           /* Layout placeholder: keeps the hero height stable before the first
              password is generated on the client (avoids a visible content shift). */
-          <div className="my-5 flex h-auto w-full animate-pulse flex-row flex-wrap items-center gap-2 lg:my-1 lg:flex-nowrap">
-            <div className={`h-16 w-full rounded-[120px] border-2 border-solid border-[#E5F6FF] bg-[#ffffff] dark:border-transparent dark:bg-[#000000] lg:w-[80%]`} />
-            <div className={`h-14 w-full rounded-[60px] bg-[#c9dfeb] dark:bg-[#1f2937] lg:w-[20%]`} />
+          <div className="my-5 w-full animate-pulse lg:my-1">
+            <div className="h-16 w-full rounded-[120px] border-2 border-solid border-[#E5F6FF] bg-[#ffffff] dark:border-transparent dark:bg-[#000000]" />
           </div>
         )}
         <PasswordStrength analysis={passwordStrengthAnalysis} />
