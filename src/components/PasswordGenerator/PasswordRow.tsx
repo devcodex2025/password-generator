@@ -16,6 +16,7 @@ import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ActionBtn from './buttons/ActionBtn';
+import HoldMenuItem from './buttons/HoldMenuItem';
 
 interface PasswordRowProps {
   password: string;
@@ -155,10 +156,15 @@ export default function PasswordRow({
         }}
       >
         {menu?.kind === 'more' && [
-          <MenuItem key="generate" onClick={() => { generate(); closeMenu(); }}>
+          <HoldMenuItem
+            key="generate"
+            onClick={() => { generate(); closeMenu(); }}
+            onRepeat={generate}
+            onHoldEnd={closeMenu}
+          >
             <ListItemIcon sx={{ color: 'inherit' }}><RefreshIcon /></ListItemIcon>
             {t('generate')}
-          </MenuItem>,
+          </HoldMenuItem>,
           <Divider key="divider" />,
           <ListSubheader key="share" sx={{ bgcolor: 'transparent', color: 'inherit', lineHeight: '32px' }}>
             {t('share-password')}
