@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { vibrateTick } from '@/lib/haptics';
 import LongPressTip from './LongPressTip';
 
 interface ActionBtnProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'className' | 'type'> {
@@ -22,8 +23,19 @@ const VARIANT = {
 // (and the "more" trigger) share size, shape and focus styling at every density.
 const ActionBtn: React.FC<ActionBtnProps> = ({ label, icon, showLabel, variant = 'soft', onLongPress, ...rest }) => {
   const timer = useRef<ReturnType<typeof setInterval>>(undefined);
+  const ticked = useRef(false);
   const stop = () => clearInterval(timer.current);
   useEffect(() => stop, []);
+
+  // Hold-to-repeat. The first repeat (200ms in) gives one short haptic tick, so
+  // a plain tap stays silent and the phone confirms that the repeat has begun.
+  const repeat = () => {
+    if (!ticked.current) {
+      ticked.current = true;
+      vibrateTick();
+    }
+    onLongPress?.();
+  };
 
   const button = (
     <button
@@ -33,7 +45,8 @@ const ActionBtn: React.FC<ActionBtnProps> = ({ label, icon, showLabel, variant =
         onLongPress
           ? () => {
               stop();
-              timer.current = setInterval(onLongPress, 200);
+              ticked.current = false;
+              timer.current = setInterval(repeat, 200);
             }
           : undefined
       }
