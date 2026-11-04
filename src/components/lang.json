@@ -2892,6 +2892,20 @@
     "pl": "Udostępnij hasło",
     "vi": "Chia sẻ mật khẩu"
   },
+  "a11y_more_actions": {
+    "ua": "Більше дій",
+    "en": "More actions",
+    "es": "Más acciones",
+    "fr": "Plus d'actions",
+    "de": "Weitere Aktionen",
+    "it": "Altre azioni",
+    "pt": "Mais ações",
+    "ru": "Другие действия",
+    "zh": "更多操作",
+    "ja": "その他の操作",
+    "pl": "Więcej akcji",
+    "vi": "Thêm thao tác"
+  },
   "a11y_breadcrumb": {
     "ua": "Навігаційний ланцюжок",
     "en": "Breadcrumb",

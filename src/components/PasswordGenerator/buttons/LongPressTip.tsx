@@ -7,7 +7,7 @@ interface LongPressTipProps {
   children: React.ReactNode;
 }
 
-// Shows `label` above the wrapped icon-only button while it is held (mobile only).
+// Shows `label` above the wrapped icon-only button while it is held (touch long-press).
 const LongPressTip: React.FC<LongPressTipProps> = ({ label, className = '', disabled = false, children }) => {
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -59,7 +59,7 @@ const LongPressTip: React.FC<LongPressTipProps> = ({ label, className = '', disa
         <span
           id={tooltipId}
           role="tooltip"
-          className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-max max-w-[44vw] -translate-x-1/2 rounded-md bg-[#071016] px-2 py-1 text-center text-xs text-white shadow-lg md:hidden"
+          className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 w-max max-w-[44vw] -translate-x-1/2 rounded-md bg-[#071016] px-2 py-1 text-center text-xs text-white shadow-lg"
         >
           {label}
         </span>
