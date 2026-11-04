@@ -111,4 +111,49 @@ describe('PasswordGenerator', () => {
     await waitFor(() => expect(passwordInputs()).toHaveLength(1));
     expect((screen.getByLabelText('Quantity') as HTMLInputElement).value).toBe('1');
   });
+
+  describe('compliance presets', () => {
+    const preset = (name: string) => screen.getByRole('button', { name });
+    const lengthLabel = () => screen.getByText(/Password Length:/).textContent;
+
+    it('applies the preset minimum to the length and shows it in the label', async () => {
+      await renderGenerator();
+      fireEvent.click(screen.getByLabelText('Set password length to 8'));
+      expect(lengthLabel()).toMatch(/ 8\s*≥ 8/);
+
+      fireEvent.click(preset('PCI DSS'));
+      expect(lengthLabel()).toMatch(/ 12\s*≥ 12/);
+      await waitFor(() => expect(firstPassword()).toHaveLength(12));
+    });
+
+    it('falls back to custom when a character set is unchecked', async () => {
+      await renderGenerator();
+      expect(preset('NIST 800-63B').getAttribute('aria-pressed')).toBe('true');
+
+      fireEvent.click(preset('#$%'));
+      expect(preset('NIST 800-63B').getAttribute('aria-pressed')).toBe('false');
+      expect(preset('PCI DSS').getAttribute('aria-pressed')).toBe('false');
+      expect(screen.queryByText('Minimum 4 characters, custom character settings')).not.toBeNull();
+      expect(lengthLabel()).not.toContain('≥');
+    });
+
+    it('falls back to custom when the length drops below the preset minimum', async () => {
+      await renderGenerator();
+      fireEvent.click(screen.getByLabelText('Set password length to 8'));
+      fireEvent.click(screen.getByLabelText('Decrease password length'));
+      expect(preset('NIST 800-63B').getAttribute('aria-pressed')).toBe('false');
+      await waitFor(() => expect(firstPassword()).toHaveLength(7));
+    });
+
+    it('releases the active preset on click and restores its sets when picked again', async () => {
+      await renderGenerator();
+      fireEvent.click(preset('#$%'));
+      fireEvent.click(preset('NIST 800-63B'));
+      expect(preset('#$%').getAttribute('aria-pressed')).toBe('true');
+
+      fireEvent.click(preset('NIST 800-63B'));
+      expect(preset('NIST 800-63B').getAttribute('aria-pressed')).toBe('false');
+      expect(preset('#$%').getAttribute('aria-pressed')).toBe('true'); // settings are kept
+    });
+  });
 });

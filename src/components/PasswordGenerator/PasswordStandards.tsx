@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from '@/components/ui/Button';
 import { PASSWORD_STANDARDS as passwordStandards } from './generatorCore.mjs';
@@ -10,7 +11,12 @@ interface PasswordStandardsProps {
   passwordLength: number;
   setPasswordLength: (length: number) => void;
   setSelectedCharacterSets: (sets: string[]) => void;
+  /** Character-set toggles, rendered after the presets in the same row. */
+  children: ReactNode;
 }
+
+// 'custom' is not a choice: it is the state when the settings match no preset
+const PRESETS = Object.keys(passwordStandards).filter((standard) => standard !== 'custom');
 
 export default function PasswordStandards({
   selectedStandard,
@@ -18,45 +24,48 @@ export default function PasswordStandards({
   passwordLength,
   setPasswordLength,
   setSelectedCharacterSets,
+  children,
 }: PasswordStandardsProps) {
   const { t } = useTranslation();
 
   const handleStandardChange = (standard: string) => {
-    setSelectedStandard(standard);
-    const standardConfig = passwordStandards[standard];
-    if (standard !== 'custom') {
-      setPasswordLength(Math.max(passwordLength, standardConfig.minLength));
-      setSelectedCharacterSets(standardConfig.requiredSets);
+    // clicking the active preset releases it, keeping the current settings
+    if (standard === selectedStandard) {
+      setSelectedStandard('custom');
+      return;
     }
+    const standardConfig = passwordStandards[standard];
+    setSelectedStandard(standard);
+    setPasswordLength(Math.max(passwordLength, standardConfig.minLength));
+    setSelectedCharacterSets(standardConfig.requiredSets);
   };
 
   return (
-    <div className="flex flex-col gap-2 mt-6">
-      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full gap-4">
-        <label className="hero-muted-label text-[16px] md:text-[22px] whitespace-nowrap">
-          {t('password_standards_title')}
-        </label>
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full lg:w-auto">
-          {Object.keys(passwordStandards).map((standard) => (
-            <Button
-              key={standard}
-              variant="choice"
-              selected={selectedStandard === standard}
-              size="md"
-              className="w-full sm:w-auto"
-              onClick={() => handleStandardChange(standard)}
-            >
-              {t(`standard_${standard}`)}
-            </Button>
-          ))}
-        </div>
-      </div>
-      <div className="w-full mt-2">
-        <span
-          className="hero-muted-label mb-2 block text-[14px] sm:text-[17px] md:text-[20px] font-normal border-2 border-[#e5f6ff] dark:border-[#05a9ff] rounded-lg px-3 sm:px-4 py-2 mt-1"
-        >
+    <div className="flex flex-col gap-3">
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <span id="charsets-label" className="hero-muted-label text-[16px] md:text-[22px]">
+          {t('use_characters')}
+        </span>
+        <span className="hero-muted-label text-[13px] font-normal" aria-live="polite">
           {t(`standard_${selectedStandard}_desc`)}
         </span>
+      </div>
+      <div role="group" aria-labelledby="charsets-label" className="flex flex-wrap items-center gap-2">
+        {PRESETS.map((standard) => (
+          <Button
+            key={standard}
+            variant="choice"
+            size="md"
+            className="rounded-lg"
+            selected={selectedStandard === standard}
+            aria-pressed={selectedStandard === standard}
+            onClick={() => handleStandardChange(standard)}
+          >
+            {t(`standard_${standard}`)}
+          </Button>
+        ))}
+        <span className="mx-1 h-6 w-px bg-gray-300 dark:bg-gray-600" aria-hidden="true" />
+        {children}
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { Slider, FormControlLabel, Checkbox } from '@mui/material';
+import { Slider } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
+import Button from '@/components/ui/Button';
 import { SnackbarMessage } from '@/app/types/SnackBar';
+import PasswordStandards from './PasswordStandards';
 import { GeneratorMode, getModeLabels } from './generatorModes';
 import { CHARACTER_SETS as characterSets, PASSWORD_STANDARDS as passwordStandards } from './generatorCore.mjs';
 
@@ -50,7 +51,7 @@ export default function PasswordSettings({
     const labels = getModeLabels(i18n.language);
 
     const standardMin = selectedStandard === 'custom' ? 4 : passwordStandards[selectedStandard].minLength;
-    const sliderMin = mode === 'chars' ? standardMin : mode === 'pin' ? 4 : 3;
+    const sliderMin = mode === 'chars' ? 4 : mode === 'pin' ? 4 : 3;
     const sliderMax = mode === 'chars' ? 100 : mode === 'pin' ? 12 : 8;
     const lengthLabel = mode === 'chars' ? t('password_length') : mode === 'pin' ? `${labels.pin}:` : `${labels.wordCount}:`;
 
@@ -114,6 +115,9 @@ export default function PasswordSettings({
             <div className="mt-8 flex min-w-0 max-w-full flex-col gap-3 items-start lg:mt-6">
                 <span className="hero-muted-label text-[16px] md:text-[22px]">
                     {lengthLabel} {passwordLength}
+                    {mode === 'chars' && selectedStandard !== 'custom' && (
+                        <span className="ml-2 text-[14px] md:text-[16px] opacity-70">≥ {standardMin}</span>
+                    )}
                 </span>
                 <div className="flex min-w-0 w-full max-w-full items-center gap-1 sm:gap-3">
                       <button
@@ -235,26 +239,28 @@ export default function PasswordSettings({
                 />
             </div>
             {mode === 'chars' && (
-            <div className="password-settings-charsets col-span-1 mt-6 flex w-full min-w-0 max-w-full flex-col gap-3 sm:mt-9 md:col-span-2 lg:col-span-2">
-                <label className="hero-muted-label shrink-0 text-[16px] md:text-[22px]">{t('use_characters')}</label>
-                <div className="flex w-full min-w-0 flex-wrap items-center gap-x-3 gap-y-2 text-[10px] sm:gap-x-4 md:text-[20px]">
+            <div className="password-settings-charsets col-span-1 mt-4 w-full min-w-0 max-w-full md:col-span-2 lg:col-span-2">
+                <PasswordStandards
+                    selectedStandard={selectedStandard}
+                    setSelectedStandard={setSelectedStandard}
+                    passwordLength={passwordLength}
+                    setPasswordLength={setPasswordLength}
+                    setSelectedCharacterSets={setSelectedCharacterSets}
+                >
                     {Object.keys(characterSets).map((characterSet) => (
-                        <div key={characterSet} className="flex min-w-0 items-center gap-2">
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        checked={selectedCharacterSets.includes(characterSet)}
-                                        onChange={() => handleCheckboxChange(characterSet)}
-                                        checkedIcon={<CheckBoxOutlinedIcon />}
-                                        sx={{ color: '#2A4E63', '&.Mui-checked': { color: '#2A4E63' } }}
-                                        className="h-[24px] text-sm md:text-[22px]"
-                                    />
-                                }
-                                label={<span className="text-[18px] md:text-[16px]">{characterSet}</span>}
-                            />
-                        </div>
+                        <Button
+                            key={characterSet}
+                            variant="choice"
+                            size="md"
+                            className="rounded-lg"
+                            selected={selectedCharacterSets.includes(characterSet)}
+                            aria-pressed={selectedCharacterSets.includes(characterSet)}
+                            onClick={() => handleCheckboxChange(characterSet)}
+                        >
+                            {characterSet}
+                        </Button>
                     ))}
-                </div>
+                </PasswordStandards>
             </div>
             )}
         </div>

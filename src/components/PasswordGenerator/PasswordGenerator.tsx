@@ -6,7 +6,6 @@ import { useReward } from 'react-rewards';
 import PasswordRow from './PasswordRow';
 import PasswordSettings from './PasswordSettings';
 import PasswordStrength from './PasswordStrength';
-import PasswordStandards from './PasswordStandards';
 import { GeneratorMode, loadWordlist } from './generatorModes';
 import {
   DEFAULT_LENGTHS,
@@ -392,15 +391,6 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           capitalize={capitalize}
           setCapitalize={setCapitalize}
         />
-        {mode === 'chars' && (
-        <PasswordStandards
-          selectedStandard={selectedStandard}
-          setSelectedStandard={setSelectedStandard}
-          passwordLength={passwordLength}
-          setPasswordLength={setPasswordLength}
-          setSelectedCharacterSets={setSelectedCharacterSets}
-        />
-        )}
         {passwords.slice(1).map((password, index) => (
           <PasswordRow
             key={index + 1}

@@ -2318,20 +2318,6 @@
     "pl": "Zgodność ze standardami",
     "vi": "Tuân thủ tiêu chuẩn"
   },
-  "standard_basic": {
-    "ua": "Базовий стандарт",
-    "en": "Basic Standard",
-    "es": "Estándar básico",
-    "fr": "Standard de base",
-    "de": "Grundstandard",
-    "it": "Standard di base",
-    "pt": "Padrão básico",
-    "ru": "Базовый стандарт",
-    "zh": "基本标准",
-    "ja": "基本標準",
-    "pl": "Standard podstawowy",
-    "vi": "Tiêu chuẩn cơ bản"
-  },
   "standard_nist": {
     "ua": "NIST 800-63B",
     "en": "NIST 800-63B",
@@ -2359,20 +2345,6 @@
     "ja": "PCI DSS",
     "pl": "PCI DSS",
     "vi": "PCI DSS"
-  },
-  "standard_basic_desc": {
-    "ua": "Мінімум 8 символів, будь-які символи",
-    "en": "Minimum 8 characters, any characters",
-    "es": "Mínimo 8 caracteres, cualquier carácter",
-    "fr": "Minimum 8 caractères, caractères quelconques",
-    "de": "Mindestens 8 Zeichen, beliebige Zeichen",
-    "it": "Minimo 8 caratteri, caratteri qualsiasi",
-    "pt": "Mínimo 8 caracteres, caracteres quaisquer",
-    "ru": "Минимум 8 символов, любые символы",
-    "zh": "最少8个字符，任意字符",
-    "ja": "最小8文字、任意の文字",
-    "pl": "Minimum 8 znaków, dowolne znaki",
-    "vi": "Tối thiểu 8 ký tự, ký tự bất kỳ"
   },
   "standard_nist_desc": {
     "ua": "Мінімум 8 символів, 1 велика + 1 мала літера + 1 цифра + 1 символ",
