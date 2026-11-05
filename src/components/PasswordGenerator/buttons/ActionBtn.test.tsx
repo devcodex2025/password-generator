@@ -1,14 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import ActionBtn from './ActionBtn';
-import { HAPTIC_LEAD_MS, HOLD_MS } from './useHoldAction';
-import { TICK_MS } from '@/lib/haptics';
-
-const stubVibrate = () => {
-  const vibrate = vi.fn();
-  Object.defineProperty(navigator, 'vibrate', { value: vibrate, configurable: true });
-  return vibrate;
-};
+import { HOLD_MS } from './useHoldAction';
 
 const renderButton = (props: { onLongPress?: () => void; onClick?: () => void } = {}) => {
   render(<ActionBtn label="Generate" icon={<span />} showLabel={false} {...props} />);
@@ -18,7 +11,6 @@ const renderButton = (props: { onLongPress?: () => void; onClick?: () => void } 
 afterEach(() => {
   cleanup();
   vi.useRealTimers();
-  Reflect.deleteProperty(navigator, 'vibrate');
 });
 
 describe('ActionBtn hold feedback', () => {
@@ -33,59 +25,38 @@ describe('ActionBtn hold feedback', () => {
     expect(button.getAttribute('data-holding')).toBeNull();
   });
 
-  it('ticks first, then acts once, then stays quiet while still held', () => {
+  it('arms at the threshold and acts once on release', () => {
     vi.useFakeTimers();
-    const vibrate = stubVibrate();
     const onLongPress = vi.fn();
     const button = renderButton({ onLongPress });
 
     fireEvent.pointerDown(button);
-    expect(vibrate).not.toHaveBeenCalled(); // a tap is not a hold yet
+    expect(onLongPress).not.toHaveBeenCalled(); // a tap is not a hold yet
 
     vi.advanceTimersByTime(HOLD_MS);
-    expect(vibrate).toHaveBeenCalledTimes(1);
-    expect(vibrate).toHaveBeenCalledWith(TICK_MS);
-    expect(onLongPress).not.toHaveBeenCalled(); // the motor gets a head start
-
-    vi.advanceTimersByTime(HAPTIC_LEAD_MS);
-    expect(onLongPress).toHaveBeenCalledTimes(1);
-
-    vi.advanceTimersByTime(1000); // the finger is still down...
-    expect(onLongPress).toHaveBeenCalledTimes(1); // ...but the hold already acted
-    expect(vibrate).toHaveBeenCalledTimes(1);
+    expect(onLongPress).not.toHaveBeenCalled(); // armed, waiting for release
 
     fireEvent.pointerUp(button);
+    expect(onLongPress).toHaveBeenCalledTimes(1);
+
+    vi.advanceTimersByTime(1000);
+    expect(onLongPress).toHaveBeenCalledTimes(1);
   });
 
   it('ignores a duplicate pointerdown during the same press', () => {
     vi.useFakeTimers();
-    const vibrate = stubVibrate();
     const onLongPress = vi.fn();
     const button = renderButton({ onLongPress });
 
     fireEvent.pointerDown(button);
     fireEvent.pointerDown(button); // some browsers/assistive layers repeat it
-    vi.advanceTimersByTime(HOLD_MS + HAPTIC_LEAD_MS);
-
-    expect(vibrate).toHaveBeenCalledTimes(1);
-    expect(onLongPress).toHaveBeenCalledTimes(1);
-  });
-
-  it('still acts when the device has no Vibration API', () => {
-    vi.useFakeTimers();
-    const onLongPress = vi.fn();
-    const button = renderButton({ onLongPress });
-
-    expect(() => {
-      fireEvent.pointerDown(button);
-      vi.advanceTimersByTime(HOLD_MS + HAPTIC_LEAD_MS);
-    }).not.toThrow();
-    expect(onLongPress).toHaveBeenCalledTimes(1);
-
+    vi.advanceTimersByTime(HOLD_MS);
     fireEvent.pointerUp(button);
+
+    expect(onLongPress).toHaveBeenCalledTimes(1);
   });
 
-  it('cancels a hold released before the 200ms threshold', () => {
+  it('cancels a hold released before the threshold', () => {
     vi.useFakeTimers();
     const onLongPress = vi.fn();
     const onClick = vi.fn();
@@ -113,7 +84,6 @@ describe('ActionBtn hold feedback', () => {
     vi.advanceTimersByTime(HOLD_MS);
     fireEvent.pointerUp(button);
     fireEvent.click(button);
-    vi.advanceTimersByTime(HAPTIC_LEAD_MS);
 
     expect(onLongPress).toHaveBeenCalledTimes(1);
     expect(onClick).not.toHaveBeenCalled();
