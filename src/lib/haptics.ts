@@ -8,12 +8,14 @@
 
 /**
  * A "tick" has to survive the whole Android haptics stack. Android's own click
- * feedback is 10–20ms, but some OEM builds (notably Xiaomi/HyperOS with Z-axis
- * linear motors) ignore or barely render pulses at the short end of that range.
- * 30ms is still a tick and is reliably felt, while a tap stays silent because
- * the pulse only fires when the 200ms hold threshold is reached.
+ * feedback is 10–20ms, but some OEM builds (notably Xiaomi/HyperOS) ignore or
+ * barely render pulses at the short end of that range.
+ *
+ * 100ms is deliberately long while we measure the real minimum on the device;
+ * once the browser and HyperOS are confirmed to vibrate at all, lower this
+ * gradually (75 → 50 → 30 → 20) and keep the shortest pulse that is still felt.
  */
-export const TICK_MS = 30;
+export const TICK_MS = 100;
 
 /**
  * One short tick. Returns whether the browser accepted the request; `false`
