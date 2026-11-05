@@ -58,7 +58,10 @@ const AccordionContent = React.forwardRef<
       // so the duration must win with !important to keep the open animation.
       "grid text-sm transition-[grid-template-rows] [transition-duration:300ms!important] ease-out motion-reduce:transition-none",
       "data-[state=closed]:grid-rows-[0fr] data-[state=open]:grid-rows-[1fr]",
-      "data-[state=closed]:invisible data-[state=closed]:pointer-events-none"
+      // The panel stays mounted for SEO. Its closed content is taller than the
+      // 0fr row and otherwise leaks into the root scroll area, adding a large
+      // blank gap below the footer. Paint containment clips it out of layout.
+      "data-[state=closed]:invisible data-[state=closed]:pointer-events-none data-[state=closed]:[contain:paint]"
     )}
     {...props}
   >
