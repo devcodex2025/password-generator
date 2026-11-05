@@ -32,7 +32,7 @@ describe('ActionBtn hold feedback', () => {
     expect(button.getAttribute('data-holding')).toBeNull();
   });
 
-  it('ticks once when the repeat starts and stays silent until then', () => {
+  it('acts and ticks once at 200ms, then stays quiet while still held', () => {
     vi.useFakeTimers();
     const vibrate = stubVibrate();
     const onLongPress = vi.fn();
@@ -46,14 +46,14 @@ describe('ActionBtn hold feedback', () => {
     expect(vibrate).toHaveBeenCalledTimes(1);
     expect(vibrate).toHaveBeenCalledWith(TICK_MS);
 
-    vi.advanceTimersByTime(1000); // the repeat keeps generating...
-    expect(onLongPress).toHaveBeenCalledTimes(6);
-    expect(vibrate).toHaveBeenCalledTimes(1); // ...without buzzing again
+    vi.advanceTimersByTime(1000); // the finger is still down...
+    expect(onLongPress).toHaveBeenCalledTimes(1); // ...but the hold already acted
+    expect(vibrate).toHaveBeenCalledTimes(1);
 
     fireEvent.pointerUp(button);
   });
 
-  it('still repeats when the device has no Vibration API', () => {
+  it('still acts when the device has no Vibration API', () => {
     vi.useFakeTimers();
     const onLongPress = vi.fn();
     const button = renderButton({ onLongPress });
@@ -65,6 +65,24 @@ describe('ActionBtn hold feedback', () => {
     expect(onLongPress).toHaveBeenCalledTimes(1);
 
     fireEvent.pointerUp(button);
+  });
+
+  it('cancels a hold released before the 200ms threshold', () => {
+    vi.useFakeTimers();
+    const onLongPress = vi.fn();
+    const onClick = vi.fn();
+    const button = renderButton({ onLongPress, onClick });
+
+    fireEvent.pointerDown(button);
+    vi.advanceTimersByTime(199);
+    expect(onLongPress).not.toHaveBeenCalled();
+
+    fireEvent.pointerUp(button);
+    vi.advanceTimersByTime(1000);
+    expect(onLongPress).not.toHaveBeenCalled();
+
+    fireEvent.click(button);
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   it('does not generate again on the click that ends a hold', () => {

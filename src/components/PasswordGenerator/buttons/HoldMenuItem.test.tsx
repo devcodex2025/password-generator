@@ -9,9 +9,9 @@ const stubVibrate = () => {
   return vibrate;
 };
 
-const renderItem = (props: { onClick?: () => void; onRepeat?: () => void; onHoldEnd?: () => void } = {}) => {
+const renderItem = (props: { onClick?: () => void; onLongPress?: () => void; onHoldEnd?: () => void } = {}) => {
   render(
-    <HoldMenuItem onClick={props.onClick ?? vi.fn()} onRepeat={props.onRepeat ?? vi.fn()} onHoldEnd={props.onHoldEnd}>
+    <HoldMenuItem onClick={props.onClick ?? vi.fn()} onLongPress={props.onLongPress ?? vi.fn()} onHoldEnd={props.onHoldEnd}>
       Generate
     </HoldMenuItem>
   );
@@ -36,24 +36,25 @@ describe('HoldMenuItem hold feedback', () => {
     expect(item.getAttribute('data-holding')).toBeNull();
   });
 
-  it('repeats and ticks once at 200ms, then closes on release without a second action', () => {
+  it('acts and ticks once at 200ms, then stays quiet while still held', () => {
     vi.useFakeTimers();
     const vibrate = stubVibrate();
-    const onRepeat = vi.fn();
+    const onLongPress = vi.fn();
     const onClick = vi.fn();
     const onHoldEnd = vi.fn();
-    const item = renderItem({ onRepeat, onClick, onHoldEnd });
+    const item = renderItem({ onLongPress, onClick, onHoldEnd });
 
     fireEvent.pointerDown(item);
     expect(vibrate).not.toHaveBeenCalled();
+    expect(onLongPress).not.toHaveBeenCalled();
 
     vi.advanceTimersByTime(200);
-    expect(onRepeat).toHaveBeenCalledTimes(1);
+    expect(onLongPress).toHaveBeenCalledTimes(1);
     expect(vibrate).toHaveBeenCalledTimes(1);
     expect(vibrate).toHaveBeenCalledWith(TICK_MS);
 
-    vi.advanceTimersByTime(400);
-    expect(onRepeat).toHaveBeenCalledTimes(3);
+    vi.advanceTimersByTime(1000); // the finger is still down...
+    expect(onLongPress).toHaveBeenCalledTimes(1); // ...but the hold already acted
     expect(vibrate).toHaveBeenCalledTimes(1);
 
     fireEvent.pointerUp(item);
@@ -64,30 +65,30 @@ describe('HoldMenuItem hold feedback', () => {
   });
 
   it('still activates normally on a quick tap', () => {
-    const onRepeat = vi.fn();
+    const onLongPress = vi.fn();
     const onClick = vi.fn();
     const onHoldEnd = vi.fn();
-    const item = renderItem({ onRepeat, onClick, onHoldEnd });
+    const item = renderItem({ onLongPress, onClick, onHoldEnd });
 
     fireEvent.pointerDown(item);
     fireEvent.pointerUp(item);
     fireEvent.click(item);
 
     expect(onClick).toHaveBeenCalledTimes(1);
-    expect(onRepeat).not.toHaveBeenCalled();
+    expect(onLongPress).not.toHaveBeenCalled();
     expect(onHoldEnd).not.toHaveBeenCalled();
   });
 
-  it('still repeats when the device has no Vibration API', () => {
+  it('still acts when the device has no Vibration API', () => {
     vi.useFakeTimers();
-    const onRepeat = vi.fn();
-    const item = renderItem({ onRepeat });
+    const onLongPress = vi.fn();
+    const item = renderItem({ onLongPress });
 
     expect(() => {
       fireEvent.pointerDown(item);
       vi.advanceTimersByTime(200);
     }).not.toThrow();
-    expect(onRepeat).toHaveBeenCalledTimes(1);
+    expect(onLongPress).toHaveBeenCalledTimes(1);
 
     fireEvent.pointerUp(item);
   });

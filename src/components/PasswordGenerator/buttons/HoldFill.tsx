@@ -1,5 +1,5 @@
 /**
- * Visual half of hold-to-repeat: fills over the same 200ms delay that ends in
+ * Visual half of the hold action: fills over the same 200ms delay that ends in
  * the haptic tick. Renders behind the button content, so the parent must be
  * `group`, positioned and clipped (rounded-full / overflow-hidden).
  */
