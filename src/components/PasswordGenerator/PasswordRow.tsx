@@ -159,7 +159,7 @@ export default function PasswordRow({
           <HoldMenuItem
             key="generate"
             onClick={() => { generate(); closeMenu(); }}
-            onRepeat={generate}
+            onLongPress={generate}
             onHoldEnd={closeMenu}
           >
             <ListItemIcon sx={{ color: 'inherit' }}><RefreshIcon /></ListItemIcon>

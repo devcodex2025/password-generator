@@ -1,7 +1,7 @@
 'use client';
 
 import HoldFill from './HoldFill';
-import { useHoldRepeat } from './useHoldRepeat';
+import { useHoldAction } from './useHoldAction';
 import LongPressTip from './LongPressTip';
 
 interface ActionBtnProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'className' | 'type'> {
@@ -10,7 +10,7 @@ interface ActionBtnProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonEleme
   /** Render the label next to the icon; otherwise it is screen-reader only. */
   showLabel: boolean;
   variant?: 'primary' | 'soft';
-  /** Called every 200ms while the button is held down. */
+  /** Called once when the button has been held for 200ms. */
   onLongPress?: () => void;
 }
 
@@ -30,13 +30,13 @@ const VARIANT = {
 // (and the "more" trigger) share size, shape and focus styling at every density.
 const ActionBtn: React.FC<ActionBtnProps> = ({ label, icon, showLabel, variant = 'soft', onLongPress, ...rest }) => {
   const { onClick } = rest;
-  const hold = useHoldRepeat(onLongPress);
+  const hold = useHoldAction(onLongPress);
 
   // A hold already generated while the finger was down; the click that ends it
-  // must not add one more. Short taps never reach the repeat and still click.
+  // must not add one more. Short taps never reach the hold threshold and still click.
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
-    if (hold.hasRepeated()) {
-      hold.clearRepeated();
+    if (hold.hasFired()) {
+      hold.clearFired();
       event.preventDefault();
       return;
     }

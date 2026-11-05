@@ -2,34 +2,34 @@
 
 import MenuItem from '@mui/material/MenuItem';
 import HoldFill from './HoldFill';
-import { useHoldRepeat } from './useHoldRepeat';
+import { useHoldAction } from './useHoldAction';
 
 type HoldMenuItemProps = Omit<React.ComponentProps<typeof MenuItem>, 'onClick'> & {
   /** Tap or keyboard activation: the caller runs the action and closes the menu. */
   onClick: () => void;
-  /** Runs at 200ms and every 200ms after, for as long as the item is held. */
-  onRepeat: () => void;
+  /** Runs once when the item has been held for 200ms. */
+  onLongPress: () => void;
   /** Runs once when a hold ends, so the caller can close the menu. */
   onHoldEnd?: () => void;
 };
 
 /**
- * A menu item with the same press-and-hold repeat as the Generate button, for
+ * A menu item with the same press-and-hold action as the Generate button, for
  * the narrow layout where Generate lives in the "more actions" menu. A hold
  * keeps the menu open and regenerates above it; releasing closes the menu.
  */
-const HoldMenuItem: React.FC<HoldMenuItemProps> = ({ onClick, onRepeat, onHoldEnd, children, className, ...rest }) => {
-  const hold = useHoldRepeat(onRepeat);
+const HoldMenuItem: React.FC<HoldMenuItemProps> = ({ onClick, onLongPress, onHoldEnd, children, className, ...rest }) => {
+  const hold = useHoldAction(onLongPress);
 
   const release = () => {
-    const held = hold.hasRepeated();
+    const held = hold.hasFired();
     hold.stop();
     if (held) onHoldEnd?.();
   };
 
   const handleClick: React.MouseEventHandler<HTMLLIElement> = (event) => {
-    if (hold.hasRepeated()) {
-      hold.clearRepeated();
+    if (hold.hasFired()) {
+      hold.clearFired();
       event.preventDefault();
       return;
     }
