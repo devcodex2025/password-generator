@@ -10,7 +10,7 @@ interface ActionBtnProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonEleme
   /** Render the label next to the icon; otherwise it is screen-reader only. */
   showLabel: boolean;
   variant?: 'primary' | 'soft';
-  /** Called once when the button has been held for 200ms. */
+  /** Called once when a press held for 200ms is released. */
   onLongPress?: () => void;
 }
 
@@ -53,7 +53,7 @@ const ActionBtn: React.FC<ActionBtnProps> = ({ label, icon, showLabel, variant =
           if (event.button > 0) return; // right / middle click is not a hold
           hold.start();
         },
-        onPointerUp: hold.stop,
+        onPointerUp: hold.finish,
         onPointerLeave: hold.stop,
         onPointerCancel: hold.stop,
       })}

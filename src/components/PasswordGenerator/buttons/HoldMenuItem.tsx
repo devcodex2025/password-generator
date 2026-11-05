@@ -7,7 +7,7 @@ import { useHoldAction } from './useHoldAction';
 type HoldMenuItemProps = Omit<React.ComponentProps<typeof MenuItem>, 'onClick'> & {
   /** Tap or keyboard activation: the caller runs the action and closes the menu. */
   onClick: () => void;
-  /** Runs once when the item has been held for 200ms. */
+  /** Runs once when a press held for 200ms is released. */
   onLongPress: () => void;
   /** Runs once when a hold ends, so the caller can close the menu. */
   onHoldEnd?: () => void;
@@ -22,8 +22,7 @@ const HoldMenuItem: React.FC<HoldMenuItemProps> = ({ onClick, onLongPress, onHol
   const hold = useHoldAction(onLongPress);
 
   const release = () => {
-    const held = hold.hasFired();
-    hold.stop();
+    const held = hold.finish();
     if (held) onHoldEnd?.();
   };
 
