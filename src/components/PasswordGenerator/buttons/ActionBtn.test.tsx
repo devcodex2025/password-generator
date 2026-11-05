@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import ActionBtn from './ActionBtn';
+import { TICK_MS } from '@/lib/haptics';
 
 const stubVibrate = () => {
   const vibrate = vi.fn();
@@ -43,7 +44,7 @@ describe('ActionBtn hold feedback', () => {
     vi.advanceTimersByTime(200);
     expect(onLongPress).toHaveBeenCalledTimes(1);
     expect(vibrate).toHaveBeenCalledTimes(1);
-    expect(vibrate).toHaveBeenCalledWith(15);
+    expect(vibrate).toHaveBeenCalledWith(TICK_MS);
 
     vi.advanceTimersByTime(1000); // the repeat keeps generating...
     expect(onLongPress).toHaveBeenCalledTimes(6);
