@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import HoldMenuItem from './HoldMenuItem';
+import { TICK_MS } from '@/lib/haptics';
 
 const stubVibrate = () => {
   const vibrate = vi.fn();
@@ -49,7 +50,7 @@ describe('HoldMenuItem hold feedback', () => {
     vi.advanceTimersByTime(200);
     expect(onRepeat).toHaveBeenCalledTimes(1);
     expect(vibrate).toHaveBeenCalledTimes(1);
-    expect(vibrate).toHaveBeenCalledWith(15);
+    expect(vibrate).toHaveBeenCalledWith(TICK_MS);
 
     vi.advanceTimersByTime(400);
     expect(onRepeat).toHaveBeenCalledTimes(3);
