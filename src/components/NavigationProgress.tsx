@@ -86,6 +86,8 @@ export default function NavigationProgress() {
       }
 
       if (anchor.target && anchor.target !== '_self') return;
+      // a file download (e.g. a same-origin blob: URL) never changes the route
+      if (anchor.hasAttribute('download')) return;
 
       const destination = new URL(anchor.href, window.location.href);
       if (destination.origin !== window.location.origin) return;
