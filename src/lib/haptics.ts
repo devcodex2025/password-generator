@@ -11,11 +11,10 @@
  * feedback is 10–20ms, but some OEM builds (notably Xiaomi/HyperOS) ignore or
  * barely render pulses at the short end of that range.
  *
- * 100ms is deliberately long while we measure the real minimum on the device;
- * once the browser and HyperOS are confirmed to vibrate at all, lower this
- * gradually (75 → 50 → 30 → 20) and keep the shortest pulse that is still felt.
+ * 40ms was the value confirmed on the Redmi Note 13 Pro: clearly felt without
+ * turning the hold cue into a long buzz.
  */
-export const TICK_MS = 100;
+export const TICK_MS = 40;
 
 /**
  * One short tick. Returns whether the browser accepted the request; `false`
