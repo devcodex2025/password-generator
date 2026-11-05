@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import HoldMenuItem from './HoldMenuItem';
+import { HAPTIC_LEAD_MS, HOLD_MS } from './useHoldAction';
 import { TICK_MS } from '@/lib/haptics';
 
 const stubVibrate = () => {
@@ -36,7 +37,7 @@ describe('HoldMenuItem hold feedback', () => {
     expect(item.getAttribute('data-holding')).toBeNull();
   });
 
-  it('acts and ticks once at 200ms, then stays quiet while still held', () => {
+  it('ticks first, then acts once, then stays quiet while still held', () => {
     vi.useFakeTimers();
     const vibrate = stubVibrate();
     const onLongPress = vi.fn();
@@ -48,10 +49,13 @@ describe('HoldMenuItem hold feedback', () => {
     expect(vibrate).not.toHaveBeenCalled();
     expect(onLongPress).not.toHaveBeenCalled();
 
-    vi.advanceTimersByTime(200);
-    expect(onLongPress).toHaveBeenCalledTimes(1);
+    vi.advanceTimersByTime(HOLD_MS);
     expect(vibrate).toHaveBeenCalledTimes(1);
     expect(vibrate).toHaveBeenCalledWith(TICK_MS);
+    expect(onLongPress).not.toHaveBeenCalled(); // the motor gets a head start
+
+    vi.advanceTimersByTime(HAPTIC_LEAD_MS);
+    expect(onLongPress).toHaveBeenCalledTimes(1);
 
     vi.advanceTimersByTime(1000); // the finger is still down...
     expect(onLongPress).toHaveBeenCalledTimes(1); // ...but the hold already acted
@@ -62,6 +66,20 @@ describe('HoldMenuItem hold feedback', () => {
 
     fireEvent.click(item); // the click the browser sends after the release
     expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it('ignores a duplicate pointerdown during the same press', () => {
+    vi.useFakeTimers();
+    const vibrate = stubVibrate();
+    const onLongPress = vi.fn();
+    const item = renderItem({ onLongPress });
+
+    fireEvent.pointerDown(item);
+    fireEvent.pointerDown(item);
+    vi.advanceTimersByTime(HOLD_MS + HAPTIC_LEAD_MS);
+
+    expect(vibrate).toHaveBeenCalledTimes(1);
+    expect(onLongPress).toHaveBeenCalledTimes(1);
   });
 
   it('still activates normally on a quick tap', () => {
@@ -86,7 +104,7 @@ describe('HoldMenuItem hold feedback', () => {
 
     expect(() => {
       fireEvent.pointerDown(item);
-      vi.advanceTimersByTime(200);
+      vi.advanceTimersByTime(HOLD_MS + HAPTIC_LEAD_MS);
     }).not.toThrow();
     expect(onLongPress).toHaveBeenCalledTimes(1);
 
