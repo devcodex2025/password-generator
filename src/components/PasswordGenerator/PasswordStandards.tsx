@@ -46,7 +46,8 @@ export default function PasswordStandards({
         <span id="charsets-label" className="hero-muted-label text-[16px] md:text-[22px]">
           {t('use_characters')}
         </span>
-        <span className="hero-muted-label text-[13px] font-normal" aria-live="polite">
+        {/* xl: w-0 + min-w-full keeps this text from widening its auto-sized column; it wraps under the label */}
+        <span className="hero-muted-label text-[13px] font-normal xl:w-0 xl:min-w-full" aria-live="polite">
           {t(`standard_${selectedStandard}_desc`)}
         </span>
       </div>

@@ -1,9 +1,11 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
+import type { ReactNode } from 'react';
 import { Slider } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import Button from '@/components/ui/Button';
 import { SnackbarMessage } from '@/app/types/SnackBar';
 import PasswordStandards from './PasswordStandards';
@@ -11,13 +13,13 @@ import { GeneratorMode, getModeLabels } from './generatorModes';
 import { CHARACTER_SETS as characterSets, PASSWORD_STANDARDS as passwordStandards } from './generatorCore.mjs';
 
 interface PasswordSettingsProps {
+    /** Strength line, placed on the mode row from sm up (own line above it on mobile). */
+    strength: ReactNode;
     passwordLength: number;
     setPasswordLength: (length: number) => void;
-    quantity: number;
-    setQuantity: (quantity: number) => void;
+    onOpenBulk: () => void;
     selectedCharacterSets: string[];
     setSelectedCharacterSets: (sets: string[]) => void;
-    maxQuantity: number;
     selectedStandard: string;
     setSelectedStandard: (standard: string) => void;
     setSnackbars: React.Dispatch<React.SetStateAction<SnackbarMessage[]>>;
@@ -32,11 +34,9 @@ interface PasswordSettingsProps {
 export default function PasswordSettings({
     passwordLength,
     setPasswordLength,
-    quantity,
-    setQuantity,
+    onOpenBulk,
     selectedCharacterSets,
     setSelectedCharacterSets,
-    maxQuantity,
     selectedStandard,
     setSelectedStandard,
     setSnackbars,
@@ -46,6 +46,7 @@ export default function PasswordSettings({
     setSeparator,
     capitalize,
     setCapitalize,
+    strength,
 }: PasswordSettingsProps) {
     const { t, i18n } = useTranslation();
     const labels = getModeLabels(i18n.language);
@@ -54,12 +55,6 @@ export default function PasswordSettings({
     const sliderMin = mode === 'chars' ? 4 : mode === 'pin' ? 4 : 3;
     const sliderMax = mode === 'chars' ? 100 : mode === 'pin' ? 12 : 8;
     const lengthLabel = mode === 'chars' ? t('password_length') : mode === 'pin' ? `${labels.pin}:` : `${labels.wordCount}:`;
-
-    const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newQuantity = parseInt(event.target.value, 10);
-        if (Number.isNaN(newQuantity)) return;
-        setQuantity(Math.min(maxQuantity, Math.max(1, newQuantity)));
-    };
 
     const handleCheckboxChange = (characterSet: string) => {
         let newSelectedCharacterSets: string[];
@@ -94,32 +89,50 @@ export default function PasswordSettings({
     };
 
     return (
-        <div className="password-settings grid grid-cols-1 gap-4 md:gap-5 lg:grid-cols-2 lg:items-start lg:justify-between mt-1 lg:mt-3">
-            <div className="col-span-1 md:col-span-2 lg:col-span-2 flex flex-wrap items-center gap-2">
-                {(['chars', 'words', 'pin'] as GeneratorMode[]).map((m) => (
-                    <button
-                        key={m}
-                        type="button"
-                        onClick={() => onModeChange(m)}
-                        aria-pressed={mode === m}
-                        className={`min-h-11 rounded-lg border-2 px-4 py-2 text-[14px] font-semibold transition-colors ${
-                            mode === m
-                                ? 'border-[#2A4E63] bg-[#e5f6ff] text-[#2A4E63] dark:border-[#05a9ff] dark:bg-[#05a9ff] dark:text-[#0a1e2a]'
-                                : 'border-gray-200 bg-white text-[#2A4E63] hover:border-[#2A4E63] dark:border-gray-600 dark:bg-[#374151] dark:text-[#e0e0e0]'
-                        }`}
-                    >
-                        {labels[m]}
-                    </button>
-                ))}
+        <div className="password-settings grid grid-cols-1 gap-3 md:gap-4 lg:grid-cols-2 lg:items-start lg:justify-between mt-1 lg:mt-2 xl:grid-cols-[minmax(0,1fr)_auto] xl:gap-x-8">
+            {/* mobile: strength line, then modes + bulk; sm+: modes | strength | bulk on one row.
+                Modes wrap among themselves; the bulk action keeps the top-right slot.
+                BulkPasswords mirrors this row (and the mt-1/lg:mt-2 above it) to put Close where Bulk is. */}
+            <div className="col-span-1 grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-2 sm:grid-cols-[auto_1fr_auto] md:col-span-2 lg:col-span-2">
+                <div className="col-span-2 min-w-0 sm:col-span-1 sm:col-start-2 sm:row-start-1 sm:text-right">{strength}</div>
+                <div className="row-start-2 flex min-w-0 flex-wrap items-center gap-2 self-start sm:col-start-1 sm:row-start-1">
+                    {(['chars', 'words', 'pin'] as GeneratorMode[]).map((m) => (
+                        <button
+                            key={m}
+                            type="button"
+                            onClick={() => onModeChange(m)}
+                            aria-pressed={mode === m}
+                            className={`min-h-11 rounded-lg border-2 px-4 py-2 text-[14px] font-semibold transition-colors ${
+                                mode === m
+                                    ? 'border-[#2A4E63] bg-[#e5f6ff] text-[#2A4E63] dark:border-[#05a9ff] dark:bg-[#05a9ff] dark:text-[#0a1e2a]'
+                                    : 'border-gray-200 bg-white text-[#2A4E63] hover:border-[#2A4E63] dark:border-gray-600 dark:bg-[#374151] dark:text-[#e0e0e0]'
+                            }`}
+                        >
+                            {labels[m]}
+                        </button>
+                    ))}
+                </div>
+                {/* an action, not a mode: pushed apart and drawn as a pill with an icon */}
+                <Button
+                    variant="secondary"
+                    className="col-start-2 row-start-2 shrink-0 self-start sm:col-start-3 sm:row-start-1"
+                    onClick={onOpenBulk}
+                    title={t('bulk_generate')}
+                >
+                    <PlaylistAddIcon aria-hidden="true" fontSize="small" />
+                    {t('bulk')}
+                </Button>
             </div>
-            <div className="mt-8 flex min-w-0 max-w-full flex-col gap-3 items-start lg:mt-6">
-                <span className="hero-muted-label text-[16px] md:text-[22px]">
+            {/* sm+: label + slider on the left half, the mode's options beside them on the right; mobile: one column */}
+            {/* xl + chars mode: shares its row with the character settings */}
+            <div className={`col-span-1 mt-3 grid min-w-0 max-w-full grid-cols-1 items-center gap-3 sm:grid-cols-2 sm:gap-x-6 md:col-span-2 lg:col-span-2 ${mode === 'chars' ? 'xl:col-span-1 xl:grid-cols-[minmax(0,1fr)_auto] xl:gap-x-3' : ''}`}>
+                <span className={`hero-muted-label text-[16px] sm:col-start-1 sm:row-start-1 md:text-[22px] ${mode === 'words' ? '' : 'sm:col-span-2'}`}>
                     {lengthLabel} {passwordLength}
                     {mode === 'chars' && selectedStandard !== 'custom' && (
                         <span className="ml-2 text-[14px] md:text-[16px] opacity-70">≥ {standardMin}</span>
                     )}
                 </span>
-                <div className="flex min-w-0 w-full max-w-full items-center gap-1 sm:gap-3">
+                <div className="flex min-w-0 w-full max-w-full items-center gap-1 sm:col-start-1 sm:row-start-2 sm:gap-3">
                       <button
                         type="button"
                         onClick={() => {
@@ -169,7 +182,7 @@ export default function PasswordSettings({
                     </button>
                 </div>
                 {mode === 'chars' && (
-                    <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2 sm:col-start-2 sm:row-start-2">
                         {[8, 12, 16, 20].map((preset) => (
                             <button
                                 key={preset}
@@ -193,8 +206,8 @@ export default function PasswordSettings({
                     </div>
                 )}
                 {mode === 'words' && (
-                    <div className="flex flex-wrap items-center gap-3">
-                        <div className="flex items-center gap-1.5">
+                    <>
+                        <div className="flex items-center gap-1.5 sm:col-start-2 sm:row-start-2">
                             {['-', '_', '.', ' '].map((sep) => (
                                 <button
                                     key={sep}
@@ -211,7 +224,7 @@ export default function PasswordSettings({
                                 </button>
                             ))}
                         </div>
-                        <label className="flex items-center gap-2 text-[14px] text-[#2A4E63] dark:text-[#e0e0e0]">
+                        <label className="flex items-center gap-2 justify-self-start text-[14px] text-[#2A4E63] sm:col-start-2 sm:row-start-1 dark:text-[#e0e0e0]">
                             <input
                                 type="checkbox"
                                 checked={capitalize}
@@ -220,26 +233,11 @@ export default function PasswordSettings({
                             />
                             {labels.capitalize}
                         </label>
-                    </div>
+                    </>
                 )}
             </div>
-            <div className="flex min-w-0 w-full max-w-full flex-col gap-3 items-start">
-                <label htmlFor="quantity" className="hero-muted-label text-[16px] md:text-[22px]">
-                    {t('quantity')}
-                </label>
-                <input
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    min="1"
-                    max={maxQuantity}
-                    value={quantity}
-                    onChange={handleQuantityChange}
-                    className="quantity-input w-full max-w-full min-w-0 rounded-[18px] border-2 border-[#E5F6FF] border-solid py-3 px-3 text-[18px] text-[#071016] outline-none md:py-5 md:text-[20px]"
-                />
-            </div>
             {mode === 'chars' && (
-            <div className="password-settings-charsets col-span-1 mt-4 w-full min-w-0 max-w-full md:col-span-2 lg:col-span-2">
+            <div className="password-settings-charsets col-span-1 w-full min-w-0 max-w-full md:col-span-2 lg:col-span-2 xl:col-span-1 xl:mt-3">
                 <PasswordStandards
                     selectedStandard={selectedStandard}
                     setSelectedStandard={setSelectedStandard}

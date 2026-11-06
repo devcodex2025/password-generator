@@ -313,7 +313,7 @@ html.theme-switching *::after {
   color: var(--dark-theme-white) !important;
 }
 
-/* The quantity field keeps the card surface; `.dark .border-2` would otherwise
+/* The quantity field and bulk list keep the card surface; `.dark .border-2` would otherwise
    repaint its border #1d2e48, which is invisible on that surface. */
 .dark .quantity-input {
   border-color: var(--dark-theme-border);

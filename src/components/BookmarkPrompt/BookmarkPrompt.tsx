@@ -1,6 +1,7 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { Bookmark } from 'lucide-react';
 import BookmarkInstructions from './BookmarkInstructions';
@@ -25,9 +26,38 @@ interface BookmarkPromptProps {
 }
 
 /**
- * Compact "Bookmark this tool" block rendered directly under the generator.
+ * True once the visitor saved a cookie choice and the consent banner / preferences
+ * dialog is closed (vanilla-cookieconsent flags both with classes on <html>).
+ */
+function isConsentSettled(): boolean {
+  const html = document.documentElement.classList;
+  return /(?:^|;\s*)cc_cookie=/.test(document.cookie) && !html.contains('show--consent') && !html.contains('show--preferences');
+}
+
+function useConsentSettled(): boolean {
+  const [settled, setSettled] = useState(false);
+  useEffect(() => {
+    const sync = () => setSettled(isConsentSettled());
+    sync();
+    // the CMP toggles its classes when the banner or dialog opens/closes...
+    const observer = new MutationObserver(sync);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    // ...and fires this once the choice is stored
+    window.addEventListener('cc:onConsent', sync);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('cc:onConsent', sync);
+    };
+  }, []);
+  return settled;
+}
+
+/**
+ * Compact "Bookmark this tool" bar pinned to the bottom of the viewport.
  *
- * - appears after the first successful password generation, never as a pop-up;
+ * - appears only after the cookie choice is made and the consent UI is closed
+ *   (hides again while the cookie preferences are reopened);
+ * - appears after the first successful password generation;
  * - a dismissal is stored in localStorage and respected for 180 days;
  * - opening the instructions is always a manual action;
  * - renders nothing on the server / before hydration, so there is no
@@ -39,6 +69,34 @@ export default function BookmarkPrompt({ language, active }: BookmarkPromptProps
   const [isVisible, setIsVisible] = useState(false);
   const [instructionsOpen, setInstructionsOpen] = useState(false);
   const viewTrackedRef = useRef(false);
+  const barRef = useRef<HTMLElement>(null);
+  const consentSettled = useConsentSettled();
+  const shown = isVisible && !!detected && consentSettled;
+
+  // While the bar is up, reserve its height at the bottom of the page: the last content can
+  // scroll clear of it and focused elements are not hidden under it (WCAG 2.4.11).
+  useLayoutEffect(() => {
+    const bar = barRef.current;
+    if (!shown || !bar) return;
+    const html = document.documentElement;
+    const reserve = () => {
+      const space = `${Math.max(0, window.innerHeight - bar.getBoundingClientRect().top)}px`;
+      html.style.scrollPaddingBottom = space;
+      document.body.style.paddingBottom = space;
+    };
+    reserve();
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(reserve);
+    observer?.observe(bar);
+    window.addEventListener('resize', reserve);
+    bar.addEventListener('animationend', reserve); // the slide-in offsets the first measurement
+    return () => {
+      bar.removeEventListener('animationend', reserve);
+      observer?.disconnect();
+      window.removeEventListener('resize', reserve);
+      html.style.scrollPaddingBottom = '';
+      document.body.style.paddingBottom = '';
+    };
+  }, [shown]);
 
   // Device detection runs only in the browser: the server cannot know the
   // visitor's platform and guessing would cause a hydration mismatch.
@@ -72,12 +130,12 @@ export default function BookmarkPrompt({ language, active }: BookmarkPromptProps
   // Reveal on the next frame so the block never competes with the generator's
   // first paint, and only when the visitor has not dismissed it recently.
   useEffect(() => {
-    if (!active || !detected) return;
+    if (!active || !detected || !consentSettled) return;
     if (isBookmarkPromptHidden(readBookmarkState())) return;
 
     const frame = window.requestAnimationFrame(() => setIsVisible(true));
     return () => window.cancelAnimationFrame(frame);
-  }, [active, detected]);
+  }, [active, detected, consentSettled]);
 
   // Keep tabs consistent: dismissing in one tab hides the block in the others.
   useEffect(() => {
@@ -137,13 +195,15 @@ export default function BookmarkPrompt({ language, active }: BookmarkPromptProps
     [detected, language]
   );
 
-  if (!isVisible || !detected) return null;
+  if (!shown || !detected) return null;
 
-  return (
+  // portal: fixed positioning must not be trapped by a filtered/transformed ancestor
+  return createPortal(
     <>
       <section
+        ref={barRef}
         aria-labelledby="bookmark-prompt-title"
-        className="mx-3 mb-4 mt-4 w-[calc(100%-1.5rem)] max-w-2xl animate-in self-center rounded-3xl border border-[#c9e6f5] bg-white p-4 fade-in shadow-sm duration-200 motion-reduce:animate-none dark:border-[#374151] dark:bg-[#1c1c1c] sm:p-5 lg:mb-0 lg:w-9/12 lg:max-w-none"
+        className="fixed inset-x-0 bottom-0 z-[1000] mx-auto mb-[max(0.75rem,env(safe-area-inset-bottom))] w-[calc(100%-1.5rem)] max-w-3xl animate-in rounded-3xl border border-[#c9e6f5] bg-white p-4 fade-in slide-in-from-bottom-4 shadow-lg duration-200 motion-reduce:animate-none dark:border-[#374151] dark:bg-[#1c1c1c] sm:p-5"
       >
         <div className="flex items-start gap-3 sm:gap-4">
           <span
@@ -191,6 +251,7 @@ export default function BookmarkPrompt({ language, active }: BookmarkPromptProps
       {instructionsOpen ? (
         <BookmarkInstructions locale={language} platform={detected} onClose={handleCloseInstructions} />
       ) : null}
-    </>
+    </>,
+    document.body
   );
 }
