@@ -377,3 +377,29 @@ If you have questions or issues:
 ---
 
 Made with care to keep your accounts secure.
+
+## Optional subscription-access adapter
+
+For the billing foundation in #33/#34, `GET /api/billing/access` can read the
+current Longplay access entitlement of a Customer session. It is disabled (404)
+unless the server sets `LONGPLAY_ACCESS_FEATURE_ID`, `LONGPLAY_BASE_URL` (explicit
+HTTPS API origin), `LONGPLAY_APP_ID` and `LONGPLAY_ENVIRONMENT` (`sandbox`/`live`).
+The SDK release is pinned; no Server Key is used or accepted by this reader.
+
+Send the Customer access token only in `Authorization: Bearer ...`. The SDK binds
+the read to that Customer; requests cannot choose a Customer ID. Admin/content
+tokens, Server Keys and malformed credentials return 401. Results are `no-store`,
+with `Vary: Authorization`. Denial returns `active: false`; service/configuration
+errors return 503 rather than granting access. Credentials are disposed per request.
+
+This endpoint reports **billing facts only**. It does not authenticate an application
+account, associate or unlock/decrypt a vault, collect passwords, create checkout or
+select a payment-provider/tax model. The pending customer-account foundation must
+securely bind billing sessions to its own authenticated account before using this
+reader for paid storage. Password generation, strength checking and breach checking
+remain independent and send nothing to Longplay. A metered/credit Feature is refused:
+a balance observation cannot authorize concurrent consumption.
+
+Operators must supply the approved product, Customer-session issuance and purchase/
+management flow before enabling it. Never put tokens in URLs, logs or analytics.
+Offline adapter tests: `node --test src/lib/billing/longplay.test.mjs`.
