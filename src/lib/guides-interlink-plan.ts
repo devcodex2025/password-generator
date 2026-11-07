@@ -25,6 +25,7 @@ const GUIDE_INTERLINK_PLAN: Record<string, GuideInterlinkEntry[]> = {
     { kind: 'guide', target: 'secure-password-generator-guide', anchorKey: 'generator-mixes-randomness', placement: 'intro' },
     { kind: 'guide', target: 'common-password-mistakes', anchorKey: 'avoid-common-password-mistakes', placement: 'body' },
     { kind: 'guide', target: 'passphrase-vs-password-entropy', anchorKey: 'passphrases-beat-short-passwords', placement: 'body' },
+    { kind: 'guide', target: 'wifi-password-guide', anchorKey: 'secure-wifi-password', placement: 'body' },
     { kind: 'home', anchorKey: 'home-generator', placement: 'conclusion' },
     { kind: 'guides', anchorKey: 'visit-guide-hub', placement: 'conclusion' },
   ],
@@ -88,6 +89,13 @@ const GUIDE_INTERLINK_PLAN: Record<string, GuideInterlinkEntry[]> = {
     { kind: 'guide', target: 'what-to-do-after-password-breach', anchorKey: 'mfa-helps-breach-recovery', placement: 'intro' },
     { kind: 'guide', target: 'common-password-mistakes', anchorKey: 'pair-mfa-with-better-passwords', placement: 'body' },
     { kind: 'guide', target: 'team-password-policy-template', anchorKey: 'include-mfa-in-policy', placement: 'body' },
+    { kind: 'home', anchorKey: 'home-generator', placement: 'conclusion' },
+    { kind: 'guides', anchorKey: 'visit-guide-hub', placement: 'conclusion' },
+  ],
+  // English-only for now; outbound links target guides that exist in EN.
+  'wifi-password-guide': [
+    { kind: 'guide', target: 'how-to-create-strong-passwords', anchorKey: 'strong-password-method', placement: 'intro' },
+    { kind: 'guide', target: 'password-manager-vs-manual-storage', anchorKey: 'store-long-secrets-in-manager', placement: 'body' },
     { kind: 'home', anchorKey: 'home-generator', placement: 'conclusion' },
     { kind: 'guides', anchorKey: 'visit-guide-hub', placement: 'conclusion' },
   ],

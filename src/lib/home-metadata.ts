@@ -59,7 +59,7 @@ const localizedMetaTitles: Record<string, string> = {
   zh: '密码生成器 – 在线生成强密码',
   ja: 'パスワード自動生成 – 無料オンライン',
   pl: 'Generator silnych haseł online',
-  vi: 'Trình tạo mật khẩu mạnh',
+  vi: 'Tạo mật khẩu ngẫu nhiên mạnh',
 };
 
 const localizedMetaDescriptions: Record<string, string> = {

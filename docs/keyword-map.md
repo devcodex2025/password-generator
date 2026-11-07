@@ -1,6 +1,6 @@
 # Keyword map by locale
 
-Generated: 2026-11-02T15:37:27.893Z
+Generated: 2026-11-07T00:38:50.276Z
 
 Every cluster is mapped to the page that must rank for it. Status: `exists` (page exists,
 verify on-page), `partial` (page exists, needs sections), `gap-section` (content to add),
@@ -10,331 +10,388 @@ verify on-page), `partial` (page exists, needs sections), `gap-section` (content
 
 | Cluster | Locales with demand |
 |---|---|
-| core | 11/11 |
-| strength | 11/11 |
-| manager | 10/11 |
-| howto | 9/11 |
-| check | 8/11 |
-| length | 5/11 |
-| passphrase | 5/11 |
+| passphrase | 12/12 |
+| check | 12/12 |
+| manager | 11/12 |
+| strength | 11/12 |
+| core | 11/12 |
+| length | 11/12 |
+| howto | 10/12 |
 
-## en — 116 unique queries
+## en — 5798 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| core | 23 | `/en` | exists | home title/H1/meta |
-| manager | 20 | `/en/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
-| strength | 20 | `/en/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
-| length | 13 | `/en/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
-| passphrase | 12 | `/en/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
-| other | 10 | `/en` | review | manual review |
-| check | 10 | `/en/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
-| howto | 8 | `/en/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
+| other | 2271 | `/en` | review | manual review |
+| manager | 854 | `/en/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+| strength | 828 | `/en/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| core | 521 | `/en` | exists | home title/H1/meta |
+| passphrase | 485 | `/en/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
+| length | 387 | `/en/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| check | 276 | `/en/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| howto | 176 | `/en/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
 
 <details><summary>top keywords</summary>
 
-**core**: password generator · password generator free · password generator lastpass · strong password generator · strong password generator google · strong password generator free · strong password generator google free · strong password generator canada
+**other**: password ideas · password ideas list · password ideas for work · password examples list · password examples numbers · password ideas numbers · password ideas for iphone · password examples easy
 
-**manager**: password manager · password manager google · password manager chrome · password manager android · password manager google chrome · password manager app · password manager iphone · password manager google account
+**manager**: best password manager · best password manager for android · best password manager for iphone · best password manager reddit · best password manager app · best password manager for families · best password manager free · which is the best password manager
 
-**strength**: password strength tester · password strength test · password strength · password strength checker · password strength meter · password strength chart · password strength calculator · password strength check
+**strength**: strong password ideas example · strong password ideas for email · 3 ways to create a strong password · create a strong password example · which is the best way to create a strong password · learn how to create a strong password in hindi · learn how to create a strong password meaning in hindi · create a strong password 8 digit
 
-**length**: password generator 12 characters · password generator 15 characters · password generator 8 characters · password generator 16 characters · password generator 20 characters · password generator 14 characters · strong password generator 12 characters · random password generator 12 characters
+**core**: password ideas generator · japanese password ideas generator · password ideas generator free · anime password ideas generator · iphone password ideas generator · best password manager generator · best password manager and generator · password manager generator
 
-**passphrase**: password generator words · strong password generator words · strong password generator easy to remember · random password generator words · passphrase generator · passphrase generator free · passphrase generator words · passphrase generator 3 words
+**passphrase**: password ideas easy to remember · password ideas list words · password ideas that are easy to remember · password ideas words · password ideas list words pdf · password ideas list words funny · good password ideas easy to remember · password ideas list words for work
 
-**other**: random password · how long should a password be · how long should a password be to be secure · how long should a password be 2025 · how often should a password be changed · how long can a password be · how long must a password be · how long should a wifi password be
+**length**: password examples 15 characters · password examples 8 character · password ideas 12 character · password examples 12 characters · password ideas 14 character · password ideas 20 characters · password ideas 8 character · password examples 16 characters
 
-**check**: breach password checker · breach password check · password breach checker google · password breach checker online · password breach checker reddit · password breach checker api · data breach password check · data breach password checker
+**check**: password test examples · password sample test · password test sample paper · password test sample questions · password policy check · password policy check command · check password policy 365 · password complexity test
 
-**howto**: how to create a strong password · how to create a strong password that i can remember · how to create a strong password example · how to create a strong password with google password manager · how to create a strong password you can remember · how to create a strong password and remember it · how to create a strong password for sars · how to create a strong password for gmail
+**howto**: how to change password on ideas · how to create a strong password · how to create a strong password and remember it · how to create a strong password 2022 · how to create a strong password step by step · how to create a strong password reddit · how to create a strong password you can remember · how to create a strong password for kids
 
 </details>
 
-## ua — 65 unique queries
+## ua — 1039 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| howto | 17 | `/ua/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
-| strength | 11 | `/ua/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
-| manager | 11 | `/ua/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
-| core | 9 | `/ua` | exists | home title/H1/meta |
-| length | 5 | `/ua/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
-| passphrase | 4 | `/ua/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
-| check | 4 | `/ua/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
-| other | 4 | `/ua` | review | manual review |
+| other | 605 | `/ua` | review | manual review |
+| howto | 127 | `/ua/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
+| length | 81 | `/ua/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| core | 81 | `/ua` | exists | home title/H1/meta |
+| manager | 67 | `/ua/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+| strength | 47 | `/ua/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| check | 19 | `/ua/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| passphrase | 12 | `/ua/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
 
 <details><summary>top keywords</summary>
 
-**howto**: як створити пароль · як створити пароль до електронної пошти · як створити пароль для облікового запису · як створити пароль для логіна · як створити пароль для ощад 24 · як створити пароль смарт id приват24 · як створити пароль на ноутбуці · як створити пароль в ощадбанк
+**other**: згенерувати пароль · згенерувати пароль гугл · згенерувати пароль онлайн · google згенерувати пароль · згенерований пароль · згенерувати новий пароль · згенерувати складний пароль · пароль 7zip
 
-**strength**: надійний пароль · надійний пароль приклад · надійний пароль для приват24 · надійний пароль для облікового запису · надійний пароль це · надійний пароль для айклауда · надійний пароль повинен бути · надійний пароль гугл
+**howto**: як згенерувати надійний пароль · як згенерувати пароль в нових знаннях · як згенерувати пароль · как сделать менеджер паролей · як створити складний пароль · як придумати пароль приват24 · як правильно придумати пароль · як придумати пароль
 
-**manager**: менеджер паролів · менеджер паролів google · менеджер паролів на телефоні · менеджер паролів андроїд · менеджер паролів гугл на телефоні · менеджер паролів хром · менеджер паролів айфон · менеджер паролів це
+**length**: згенерувати пароль 12 символів · згенерувати пароль 8 символів · сгенерировать пароль 8 символов · генератор паролей онлайн 8 символов · придумать пароль из 8 символов · пароль 8 16 символов · придумать пароль от 8 до 20 символов · придумать пароль из 6 символов
 
-**core**: генератор паролів · генератор паролів онлайн · генератор паролів гугл · генератор паролів eset · генератор паролів україна · генератор паролів скачати · генератор паролів 1password · генератор паролів це
+**core**: генератор складних паролів · генератор складних паролей · генератор паролей онлайн украина · online генератор паролей · надійний пароль генератор · пароль онлайн генератор · генератор паролів гугл · генератор паролів google
 
-**length**: генератор паролів 12 символів · як створити пароль з 8 символів · як створити пароль з 6 символів · згенерувати пароль 8 символів · згенерувати пароль 12 символів
+**manager**: надійний менеджер паролів · парольний менеджер · парольный менеджер · менеджер паролів в телефоні · менеджер паролів на андроїд · менеджер паролів android · менеджер паролів хром · менеджер паролів
 
-**passphrase**: генератор паролів словами · парольна фраза · парольна фраза гугл · парольна фраза це
+**strength**: згенерувати безпечний пароль · згенерувати надійний пароль · сгенерировать надежный пароль google · придумати надійний пароль · щоб створити надійний пароль для онлайн · надійний пароль · надійний пароль приклад · надійний пароль гугл
 
-**check**: перевірити пароль · перевірити пароль на надійність · перевірити пароль кеп · перевірити пароль ецп
+**check**: перевірити пароль · перевірити пароль на надійність · перевірити пароль ецп · перевірити надійність паролю · перевірити надійність пароля · перевірка надійності паролів · перевірка надійності паролю · перевірки надійності паролів
 
-**other**: згенерувати пароль · згенерувати пароль онлайн · згенерувати пароль гугл · згенерувати складний пароль
+**passphrase**: парольна фраза · парольна фраза гугл · парольна фраза chrome · пароль фраза · парольная фраза · парольные фразы примеры · парольні фрази · парольна фраза це
 
 </details>
 
-## ru — 92 unique queries
+## ru — 1997 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| howto | 20 | `/ru/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
-| other | 16 | `/ru` | review | manual review |
-| manager | 12 | `/ru/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
-| passphrase | 10 | `/ru/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
-| check | 10 | `/ru/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
-| length | 9 | `/ru/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
-| core | 8 | `/ru` | exists | home title/H1/meta |
-| strength | 7 | `/ru/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| other | 1118 | `/ru` | review | manual review |
+| manager | 219 | `/ru/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+| core | 207 | `/ru` | exists | home title/H1/meta |
+| length | 162 | `/ru/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| strength | 105 | `/ru/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| howto | 97 | `/ru/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
+| check | 57 | `/ru/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| passphrase | 32 | `/ru/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
 
 <details><summary>top keywords</summary>
 
-**howto**: как создать пароль · как создать пароль пример · как создать пароль в роблоксе · как создать пароль для ржд · как создать пароль на госуслугах · как создать пароль на сайте ржд · как создать пароль к сертификату эп · как создать пароль на госуслугах для ребенка
+**other**: создать пароль при входе · создать пароль при включении · пароль при входе как сделать · создать пароль для входа · пароль при входе как убрать · запомнить пароль · запомнить пароль 1с · запомнить пароль в браузере
 
-**other**: сгенерировать пароль · сгенерировать пароль онлайн · сгенерировать пароль для ржд · сгенерировать пароль гугл · сгенерировать пароль для госуслуг · сгенерировать пароль бесплатно · пароль из букв и цифр · пароль из букв цифр и символов
+**manager**: безопасный менеджер паролей · сгенерировать пароль lastpass · сгенерировать пароль 1password · менеджер паролей · менеджер паролей password · менеджер паролей 4pda · менеджер паролей яндекс · менеджер паролей гугл
 
-**manager**: менеджер паролей · менеджер паролей гугл · менеджер паролей на телефоне · менеджер паролей гугл на телефоне · менеджер паролей андроид · менеджер паролей хром · менеджер паролей роблокс · менеджер паролей яндекс
+**core**: генератор 4 значных паролей · безопасный пароль генератор · хороший пароль генератор · надежный пароль генератор · случайный пароль генератор · случайный генератор пароля · генератор случайных паролей 1с · гугл пароль генератор
 
-**passphrase**: парольная фраза · парольная фраза это · парольная фраза vipnet · парольная фраза пример · парольная фраза генератор · парольная фраза ledger · парольная фраза опера · парольная фраза леджер
+**length**: пароль из 12 символов · пароль из 12 символов пример · сложный пароль из 12 символов · пароль из 13 символов · пароль из 14 символов · пароль из 15 символов · пароль из 11 символов · пароль из 8 символов включая цифры
 
-**check**: проверить пароль · проверить пароль на надежность · проверить пароль на утечку · проверить пароль гугл · проверить пароль на утечку google · проверить пароль от почты · проверить пароль эпл айди · проверить пароль айклауд
+**strength**: памятка как создать надежный пароль · надежный пароль проверить · надежный пароль проверка · надежный пароль сайт · надежный пароль сайт игра · надежный пароль тест · надежный пароль wifi · надежный пароль или нет
 
-**length**: генератор паролей 8 символов · генератор паролей 12 символов · генератор паролей 16 символов · надежный пароль из 8 символов · надежный пароль из 8 символов пример · сгенерировать пароль 8 символов · сгенерировать пароль 12 символов · сгенерировать пароль 15 символов
+**howto**: как создать надежный пароль · как создать надежный пароль вконтакте · как создать надежный пароль для айклауда · как создать надёжный пароль в гугле · как можно поменять пароль · как создать пароль на компьютере · как можно убрать пароль · как правильно создать надёжный пароль
 
-**core**: генератор паролей · генератор паролей онлайн · генератор паролей гугл · генератор паролей касперский · генератор паролей eset · генератор паролей яндекс · генератор паролей для ржд · надежный пароль генератор
+**check**: проверка на хороший пароль · надежность пароля проверить · проверить надежность пароля онлайн · проверка надежности пароля онлайн · проверка надежности пароля 2ip online · проверить пароль · проверить пароль на надежность · проверить пароль гугл
 
-**strength**: надежный пароль · надежный пароль пример · надежный пароль для макса · надежный пароль для айклауда пример · надежный пароль сайт · надежный пароль для айклауда · надежный пароль проверка
+**passphrase**: пароль из 12 слов · парольная фраза · парольная фраза генератор · парольная фраза опера · парольная фраза пример · парольная фраза это · opera парольная фраза · пароль или парольная фраза
 
 </details>
 
-## pl — 71 unique queries
+## pl — 3697 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| howto | 28 | `/pl/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
-| core | 19 | `/pl` | exists | home title/H1/meta |
-| other | 11 | `/pl` | review | manual review |
-| strength | 7 | `/pl/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
-| passphrase | 4 | `/pl/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
-| check | 2 | `/pl/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| other | 2223 | `/pl` | review | manual review |
+| howto | 852 | `/pl/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
+| check | 389 | `/pl/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| core | 143 | `/pl` | exists | home title/H1/meta |
+| strength | 58 | `/pl/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| length | 22 | `/pl/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| passphrase | 10 | `/pl/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
 
 <details><summary>top keywords</summary>
 
-**howto**: jak utworzyć hasło · jak stworzyć hasło w wikipedii · jak utworzyć hasło do logowania · jak utworzyć hasło do pliku zip · jak utworzyć hasło do folderu · jak utworzyć hasło do pliku pdf · jak utworzyć hasło do profilu zaufanego · jak utworzyć hasło na laptopie
+**other**: wygeneruj hasło · wygeneruj hasło google · wygenerowac haslo · wygenerować hasło · wygenerowane haslo · wygenerowane hasło · wygenerowanie hasla · wygeneruj bezpieczne hasło
 
-**core**: generator haseł · generator haseł online · generator haseł google · generator haseł kalambury · generator haseł losowych · generator haseł jednorazowych · generator haseł norton · silne hasło generator
+**howto**: jak wygenerować silne hasło · jak wygenerować hasło google · jak wygenerować hasło dla rodzica w librusie · jak wygenerować hasło dla ucznia w librusie · jak wygenerować hasło do librusa · jak wygenerować hasło do aplikacji · jak wygenerować hasło do aplikacji gmail · jak wygenerować mocne hasło
 
-**other**: menedżer haseł · menedżer haseł google · menedżer haseł w telefonie · menedżer haseł google na telefonie · menedżer haseł android · menedżer haseł google gdzie znaleźć · menedżer haseł chrome · menedżer haseł google android
+**check**: hasła 12 literowe test · siła hasła test · siła hasła sprawdzenie · siła hasła sprawdzenie hasła · siła hasła sprawdzenie 4g · siła hasła sprawdzenie 5g · siła hasła sprawdzenie 64 bit · siła hasła sprawdzenie 72
 
-**strength**: silne hasło przykłady · silne hasło · silne hasło sprawdzanie · silne hasło powinno zawierać · silne hasło test · silne hasło google · silne hasło ile znaków
+**core**: hasła 12 literowe generator · silne hasło generator · silne hasło generator google · silne hasła generator · silne hasła generator haseł · silne hasła generator 2024 · silne hasła generator 10 · silne hasła generator 3d
 
-**passphrase**: generator haseł łatwych do zapamiętania · generator haseł słownikowych · generator haseł z wyrazów · silne hasło łatwe do zapamiętania
+**strength**: wygeneruj mi silne hasło · silne hasło · silne hasło przykłady · silne hasło ile znaków · silne hasło definicja · silne hasło powinno · silne hasło powinno zawierać · silne hasło sprawdzanie
 
-**check**: sprawdzić hasło do konta google · sprawdzić hasło na facebooku
+**length**: wygeneruj hasło 12 znaków · wygeneruj hasło 10 znaków · wygeneruj hasło 20 znaków · wygeneruj hasło 16 znaków · wygeneruj hasło 8 znaków · wygeneruj hasło 15 znaków · hasło 12 znaków · haslo 12 znakow
+
+**passphrase**: hasła 12 literowe wyrazy · silne hasło łatwe do zapamiętania · silne haslo przykłady word · silne hasła generator word · silne uczucie głodu hasło dwuwyrazowe · hasla frazowe word · haslo frazowe word · haslo frazowe slownik
 
 </details>
 
-## de — 68 unique queries
+## de — 3181 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| core | 21 | `/de` | exists | home title/H1/meta |
-| other | 19 | `/de` | review | manual review |
-| strength | 17 | `/de/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
-| check | 11 | `/de/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| other | 1894 | `/de` | review | manual review |
+| strength | 339 | `/de/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| passphrase | 325 | `/de/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
+| core | 265 | `/de` | exists | home title/H1/meta |
+| check | 173 | `/de/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| length | 162 | `/de/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| manager | 23 | `/de/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
 
 <details><summary>top keywords</summary>
 
-**core**: passwort generator · passwort generator heise · passwort generator wörter · passwort generator online · passwort generator datenschutz · passwort generator eu · passwort generator google · passwort generator bitwarden
+**other**: passwort erstellen · passwort erstellen lassen · passwort erstellen online · passwort erstellen hilfe · passwort erstellen uni · starkes passwort erstellen lassen · passwort erstellen pdf · passwort erstellen google
 
-**other**: passwort manager · passwort manager google · passwort manager öffnen · passwort manager android · passwort manager chrome · passwort manager kostenlos · passwort manager iphone · passwort manager app
+**strength**: zufälliges sicheres passwort · sicheres passwort · sicheres passwort beispiel · sicheres passwort erstellen · sicheres passwort generieren · sicheres passwort testen · sicheres passwort vorschlagen · sicheres passwort erstellen beispiele
 
-**strength**: sicheres passwort generieren · sicheres passwort · sicheres passwort erstellen · sicheres passwort generieren kostenlos · sicheres passwort beispiel · sicheres passwort vorschlagen · sicheres passwort generieren google · sicheres passwort testen
+**passphrase**: passwort erstellen word · passwort word dokument erstellen · zufälliges passwort word · passphrase · passphrase generator · passphrase meaning · passphrase vs password · passphrase fritzbox 7590
 
-**check**: passwort manager test · passwort prüfen · passwort prüfen ob gehackt · passwort prüfen bsi · passwort prüfen datenleck · passwort prüfen gehackt · passwort prüfen schweiz · passwort prüfen google
+**core**: passwort erstellen generator · zufälliges passwort generator · sicheres passwort erstellen generator · sicheres passwort generator · passwort generator · passwort generator online · passwort generator 4 zahlen · passwort generator datenschutz
+
+**check**: passwort prüfen · passwort prüfen schweiz · passwort prüfen sicherheit · passwort prüfen ob gehackt · passwort prüfen bsi · passwort prüfen datenleck · passwort prüfen gehackt · passwort prüfen lassen
+
+**length**: passwort erstellen 12 zeichen · passwort erstellen 10 zeichen · passwort erstellen 16 zeichen · passwort erstellen 8 zeichen · passwort erstellen 20 zeichen · zufälliges passwort 12 zeichen · zufälliges passwort 8 zeichen · passwort 12 zeichen
+
+**manager**: nordpass passwort prüfen · bitwarden passwort prüfen · 1password passwort erstellen · bitwarden passwort erstellen · passwort erstellen lastpass · keepass passwort erstellen · passwort manager 1password · passwort manager bitwarden
 
 </details>
 
-## es — 73 unique queries
+## es — 3407 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| core | 21 | `/es` | exists | home title/H1/meta |
-| other | 19 | `/es` | review | manual review |
-| strength | 11 | `/es/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
-| manager | 10 | `/es/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
-| howto | 10 | `/es/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
-| length | 2 | `/es/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| other | 1755 | `/es` | review | manual review |
+| manager | 441 | `/es/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+| length | 281 | `/es/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| core | 238 | `/es` | exists | home title/H1/meta |
+| strength | 225 | `/es/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| check | 173 | `/es/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| passphrase | 156 | `/es/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
+| howto | 138 | `/es/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
 
 <details><summary>top keywords</summary>
 
-**core**: generador de contraseñas · generador de contraseñas seguras · generador de contraseñas seguras google · generador de contraseñas google · generador de contraseñas aleatorias · generador de contraseñas online · generador de contraseñas avast · generador de contraseñas - lastpass
+**other**: ejemplos de contraseñas · 5 ejemplos de contraseñas seguras · ejemplos de contraseñas inseguras · ejemplos de contraseñas poco seguras · ejemplos de contraseñas seguras · ejemplos de contraseñas fuertes · ejemplos de contraseñas seguras y no seguras · ejemplos de contraseñas con letras numeros y simbolos
 
-**other**: comprobar contraseñas · comprobar contraseña certificado digital · comprobar contraseñas google · comprobar contraseña dni electronico · comprobar contraseña gmail · comprobar contraseña clave permanente · comprobar contraseña homologación · comprobar contraseñas filtradas
+**manager**: ejemplos de gestores de contraseñas · contraseña aleatoria lastpass · crear contraseña 1password · crear contraseña lastpass · gestor de contraseñas · mejor gestor de contraseñas 2025 · gestor de contraseñas de google · gestor de contraseñas google
 
-**strength**: contraseña segura · contraseña segura google · contraseña segura ejemplo · contraseña segura aleatoria · contraseña segura comprobar · contraseña segura facil de recordar · contraseña segura avast · comprobar contraseña segura
+**length**: ejemplos de contraseñas de 8 caracteres · ejemplos de contraseñas de 12 caracteres · ejemplos de contraseñas de 10 caracteres · ejemplos de contraseñas de 8 caracteres alfanumericos · ejemplos de contraseñas de 6 a 12 caracteres · ejemplos de contraseñas 7 caracteres · ejemplos de contraseñas con 8 caracteres · ejemplos de contraseñas de 20 caracteres
 
-**manager**: gestor de contraseñas · gestor de contraseñas de google · gestor de contraseñas guardadas · gestor de contraseñas guardadas en google · gestor de contraseñas chrome · gestor de contraseñas android · gestor de contraseñas de google android · gestor de contraseñas gratuito
+**core**: contraseña aleatoria generador · generador de contraseñas · generador de contraseñas google · generador de contraseñas seguras · generador de contraseñas wifi · generador de contraseñas avast · generador de contraseñas seguras google · generador de contraseñas eset
 
-**howto**: como crear una contraseña segura · cómo crear una contraseña segura con letras números y símbolos combinados · cómo crear una contraseña segura de google · como crear una contraseña segura ejemplos · como crear una contraseña segura para wifi · como crear una contraseña segura y fácil de recordar · como crear una contraseña segura para instagram · como crear una contraseña segura para icloud
+**strength**: crear contraseña segura gratis · crear contraseña segura kaspersky · crear contraseña segura online · crear contraseña segura con chrome · crear una contraseña segura · contraseña segura · crear contraseña segura · contraseña segura ejemplo
 
-**length**: contraseña segura 8 caracteres · ejemplo de contraseña segura de 12 caracteres
+**check**: contraseña aleatoria test · buenas contraseñas test · contraseña wifi verificada · verificar contraseña · verificar contraseña e firma · verificar contraseña registraduria · verificar contraseña sat · verificar contraseña dni electronico
+
+**passphrase**: contraseña aleatoria word · generador de contraseñas frases español · generador de contraseñas frases · generador de contraseñas con frases · frase de contraseña · frase de contraseña google · frase de contraseña wpa no valida · frase de contraseña de chrome
+
+**howto**: como crear contraseña y firma electronica sat · como crear otra contraseña de gmail · cómo crear otra contraseña de google · como funciona un generador de contraseñas · como hacer un generador de contraseñas en excel · como hacer un generador de contraseñas en python · cómo se utiliza un gestor de contraseñas · como hacer una contraseña segura y larga
 
 </details>
 
-## fr — 65 unique queries
+## fr — 2772 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| other | 18 | `/fr` | review | manual review |
-| core | 13 | `/fr` | exists | home title/H1/meta |
-| strength | 10 | `/fr/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
-| manager | 10 | `/fr/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
-| howto | 8 | `/fr/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
-| check | 6 | `/fr/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| other | 1893 | `/fr` | review | manual review |
+| howto | 254 | `/fr/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
+| core | 241 | `/fr` | exists | home title/H1/meta |
+| manager | 175 | `/fr/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+| strength | 105 | `/fr/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| check | 62 | `/fr/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| length | 37 | `/fr/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| passphrase | 5 | `/fr/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
 
 <details><summary>top keywords</summary>
 
-**other**: vérifier mot de passe google · vérifier mot de passe · vérifier mot de passe compromis · vérifier mot de passe piraté · mémoriser mot de passe chrome · memoriser mot de passe · memoriser mot de passe android · memoriser mot de passe iphone
+**other**: mot de passe aléatoire · générer un mot de passe aléatoire · mot de passe aléatoire 12 caractères · mot de passe aléatoire sécurisé · donne moi un mot de passe aléatoire · mot de passe aléatoire avast · mot de passe aléatoire en ligne · mot de passe aléatoire gratuit
 
-**core**: générateur de mot de passe · générateur de mot de passe gratuit · générateur de mot de passe google · générateur de mot de passe sécurisé · générateur de mot de passe en ligne · générateur de mot de passe sécurisé gratuit · générateur de mot de passe aléatoire · générateur de mot de passe xyz
+**howto**: comment vérifier mot de passe google · comment vérifier le mot de passe d un compte gmail · comment vérifier le mot de passe d'un compte google · comment verifier son mot de passe tiktok · comment je peux vérifier mon mot de passe gmail · comment vérifier le mot de passe d'un wifi · comment verifier mot de passe facebook · comment verifier son mot de passe netflix
 
-**strength**: mot de passe sécurisé · mot de passe sécurisé google · mot de passe sécurisé exemple · mot de passe sécurisé aléatoire · mot de passe sécurisé 20 caractères · mot de passe sécurisé envoi · mot de passe sécurisé 12 caractères · mot de passe sécurisé samsung
+**core**: mot de passe aléatoire générateur · générateur de mot de passe aléatoire excel · mot de passe fort generator · mot de passe sécurisé générateur · générateur de mot de passe · générateur de mot de passe gratuit · générateur de mot de passe en ligne aléatoire et fort · générateur de mot de passe google
 
-**manager**: gestionnaire de mots de passe google · gestionnaire de mots de passe · gestionnaire de mots de passe gratuit · gestionnaire de mots de passe android · gestionnaire de mots de passe google chrome · gestionnaire de mots de passe google avis · gestionnaire de mots de passe apple · gestionnaire de mots de passe de google sur votre appareil
+**manager**: gestionnaire de mot de passe aléatoire · mot de passe aléatoire dashlane · mot de passe keepass perdu · generateur mot de passe fort dashlane · mot de passe fort dashlane · vérifier mot de passe bitwarden · tester mot de passe bitwarden · tester mot de passe nordpass
 
-**howto**: comment créer un mot de passe sécurisé · comment créer un mot de passe sécurisé sur google · comment créer un mot de passe sécurisé avec des lettres des chiffres et des symboles · comment mettre un mot de passe sécurisé · comment créer un mot de passe fort · comment créer un mot de passe fort et sécuritaire · comment generer un mot de passe fort · comment créer un mot de passe de sécurité
+**strength**: mot de passe sécurisé · mot de passe sécurisé exemple · mot de passe sécurisé 12 caractères · créer un mot de passe sécurisé · mot de passe sécurisé google · mot de passe sécurisé gratuit · mot de passe sécurisé test · mot de passe sécurisé cnil
 
-**check**: verifier mot de passe gmail · verifier mot de passe apple · verifier mot de passe fuite · verifier mot de passe icloud · verifier mot de passe outlook · verifier mot de passe messagerie orange
+**check**: mot de passe fort test · mot de passe sécurité test · verifier mot de passe wifi windows 10 · verifier mot de passe wifi · tester mot de passe wifi · verifier mot de passe messagerie orange · verifier mot de passe fuite · impossible de verifier mot de passe hotmail sur mac
+
+**length**: mot de passe aléatoire 20 caracteres · mot de passe aléatoire 8 caracteres · mot de passe aléatoire 10 caracteres · mot de passe aléatoire 15 caracteres · mot de passe sécurisé 7 caracteres · mot de passe sécurisé 4 caracteres · vérifier mot de passe 6 caracteres · vérifier mot de passe 8 caracteres
+
+**passphrase**: mot de passe aléatoire word · generateur de mot de passe passphrase · generateur mot de passe word · mot de passe fort word · mot de passe 12 caractères word
 
 </details>
 
-## it — 63 unique queries
+## it — 2734 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| core | 21 | `/it` | exists | home title/H1/meta |
-| strength | 10 | `/it/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
-| manager | 10 | `/it/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
-| check | 10 | `/it/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
-| howto | 8 | `/it/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
-| other | 4 | `/it` | review | manual review |
+| other | 1337 | `/it` | review | manual review |
+| passphrase | 326 | `/it/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
+| manager | 284 | `/it/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+| howto | 176 | `/it/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
+| strength | 173 | `/it/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| core | 171 | `/it` | exists | home title/H1/meta |
+| length | 151 | `/it/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| check | 116 | `/it/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
 
 <details><summary>top keywords</summary>
 
-**core**: generatore di password · generatore di password gratis · generatore di password casuali · generatore di password sicure · generatore di password online · generatore di password google · generatore di password - lastpass · generatore di password casuale roboform
+**other**: esempi di password · esempi di password sicure · esempi di password da mettere · esempi di password efficaci · esempi di password forti · esempi di password per lepida · esempi di password valide · esempi di password complesse
 
-**strength**: password sicura · password sicura libero · password sicura esempio · password sicura libero dimenticata · password sicura libero mail · password sicura quanti caratteri · password sicura virgilio · password sicura google
+**passphrase**: esempi di password wordwall · generatore di password word · password casuale word · passphrase · passphrase generator · passphrase adalah · passphrase examples · passphrase meaning
 
-**manager**: gestore di password · gestore di password google · gestore di password cosa fa · gestore di password gratuito · gestore di password open source · gestore di password sicuro · gestore di password e cassaforte digitale nordpass · gestore di password apple
+**manager**: miglior gestore di password · gestore di password · gestore di password google · gestore di password e cassaforte digitale nordpass · gestore di password free · gestore di password cosa fa · gestore di password open source · miglior gestore di password android
 
-**check**: verificare password google · verificare password compromesse · verificare password gmail · verificare password · verificare password id apple · verificare password wifi · verificare password spid · verificare password outlook
+**howto**: come funziona un gestore di password · come funziona un generatore di password · come creare una password sicura · come creare una password sicura 00 · come creare una password sicura 20to · come creare una password sicura 4 cifre · come creare una password sicura 64 bit · come creare una password sicura 8 ball pool
 
-**howto**: come creare una password sicura e facile da ricordare · come creare una password sicura · come ricordare password id apple · come ricordare password spid · come ricordare password icloud · come ricordare password instagram · come ricordare password dimenticata · come ricordare password account google
+**strength**: caratteristiche di una password sicura · crea password sicura online · password sicura · password sicura quanti caratteri · password sicura libero mail · password sicura libero · password sicura libero mail app · password sicura virgilio
 
-**other**: ricordare password google · ricordare password · ricordare password gmail · non ricordare password pc
+**core**: esempi di password generate · esempi di password generator · generatore di password · generatore di password casuale roboform · generatore di password casuali · generatore di password efficaci · generatore di password facili da ricordare · generatore di password free italiano
+
+**length**: esempi di password con 8 caratteri · esempio di password con 8 caratteri · generatore di password 12 caratteri · generatore di password 8 caratteri · generatore di password 8 characters · password casuale 12 caratteri · password casuale 8 caratteri · password casuale 10 caratteri
+
+**check**: esempi di password verificabili · password casuale verifica · verificare password · verificare password google · verificare password compromesse · verificare password facebook · verificare password outlook · verificare password spid
 
 </details>
 
-## pt — 80 unique queries
+## pt — 2918 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| core | 20 | `/pt` | exists | home title/H1/meta |
-| other | 17 | `/pt` | review | manual review |
-| manager | 10 | `/pt/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
-| howto | 10 | `/pt/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
-| check | 10 | `/pt/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
-| strength | 9 | `/pt/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
-| length | 4 | `/pt/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| other | 1575 | `/pt` | review | manual review |
+| manager | 362 | `/pt/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+| length | 252 | `/pt/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| check | 209 | `/pt/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| core | 202 | `/pt` | exists | home title/H1/meta |
+| strength | 164 | `/pt/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| howto | 150 | `/pt/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
+| passphrase | 4 | `/pt/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
 
 <details><summary>top keywords</summary>
 
-**core**: gerador de senhas · gerador de senhas google · gerador de senhas fortes · gerador de senhas - lastpass · gerador de senhas avast · gerador de senhas aleatórias · gerador de senhas 4devs · gerador de senhas online
+**other**: criar senha · criar senha de app gmail · criar senha forte · criar senha online · criar senha meu inss · criar senha aleatoria · criar senha gov.br · criar senha xbox 360
 
-**other**: lembrar senha gmail · lembrar senha google · lembrar senha icloud · lembrar senhas · lembrar senha instagram · lembrar senha facebook · lembrar senha apple · lembrar senha netflix
+**manager**: criar senha lastpass · criar senha 1password · gerenciador de senhas no google · gerenciador de senhas reddit · gerenciador de senhas · gerenciador de senhas google · melhor gerenciador de senhas 2026 · gerenciador de senhas microsoft
 
-**manager**: gerenciador de senhas · gerenciador de senhas google · gerenciador de senhas salvas · gerenciador de senhas facebook · gerenciador de senhas google chrome · gerenciador de senhas roblox · gerenciador de senhas no celular · gerenciador de senhas google no celular
+**length**: criar senha 32 caracteres · criar senha forte com 8 caracteres · criar senha 7 caracteres · criar senha 8 caracteres · criar senha com 6 caracteres · criar senha 12 caracteres · criar senha com 8 caracteres · criar senha 16 caracteres
 
-**howto**: como criar uma senha segura · como criar uma senha segura e forte · como criar uma senha segura na internet · como criar uma senha de segurança · como criar uma senha mais segura · como criar uma senha forte e segura para redes sociais · como criar senha de segurança bradesco · como criar uma pasta segura com senha
+**check**: senha aleatória teste · verificar força da senha · testar força da senha · teste de força da senha · exemplos de senhas teste · verificar senha · verificar senha wifi · verificar senha outlook
 
-**check**: verificar senhas google · verificar senhas salvas no google · verificar senhas · verificar senhas vazadas google · verificar senhas vazadas · verificar senha do gmail · verificar senhas salvas · verificar senhas salvas no celular
+**core**: gerador de senhas · gerador de senhas 4devs · gerador de senhas avast · gerador de senhas google · gerador de senhas hostgator · dispositivo gerador de senhas usado por bancos · gerador de senhas em massa · gerador de senhas online
 
-**strength**: senha segurança social · senha segurança social direta · senha segura · senha segura cofre de senha · senha segura pam · senha segurança · senha segura empresa · senha segura login
+**strength**: criar senha segura · qual dica para ter uma senha segura · oque e uma senha segura · dica de senha segura · força da senha segura · senha segura · senha segura avast · senha segura pam
 
-**length**: senha segura 8 caracteres · exemplo de senha forte com 8 caracteres · exemplo de senha forte 12 caracteres · exemplo de senha forte com 6 caracteres
+**howto**: como criar senha de 6 digitos santander · como criar senha 4 digitos nubank · como criar senha no youtube na tv · como criar senha de 4 dígitos do caixa tem · como criar senha no xiaomi · como criar senha de 4 dígitos no picpay · como criar senha de 8 dígitos com letras e números · como criar senha no jornada do estudante
+
+**passphrase**: gerador de senhas word · gerador de senhas frases · senha aleatória word · senha forte word
 
 </details>
 
-## ja — 52 unique queries
+## ja — 1933 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| other | 20 | `/ja` | review | manual review |
-| core | 11 | `/ja` | exists | home title/H1/meta |
-| manager | 10 | `/ja/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
-| strength | 8 | `/ja/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
-| howto | 3 | `/ja/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
+| other | 1172 | `/ja` | review | manual review |
+| manager | 306 | `/ja/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+| core | 236 | `/ja` | exists | home title/H1/meta |
+| howto | 86 | `/ja/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
+| length | 55 | `/ja/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
+| strength | 44 | `/ja/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| passphrase | 33 | `/ja/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
+| check | 1 | `/ja/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
 
 <details><summary>top keywords</summary>
 
-**other**: パスワード 忘れた · パスワード 忘れた google · パスワード 忘れた場合 · パスワード 忘れた iphone · パスワード 忘れたandroid · パスワード 忘れた gmail · パスワード 忘れた windows · パスワード 忘れた時の対処法
+**other**: パスワード 確認 · パスワード 確認 iphone · パスワード 確認 アプリ · パスワード 忘れた 確認 · パスワード 確認 android · パスワード 確認 スマホ · パスワード 確認 コード と は · d アカウント パスワード 確認 忘れ た
 
-**core**: パスワード 生成 · パスワード 生成 ランダム · パスワード 生成 google 確認 · パスワード 生成 方法 · パスワード 生成 4 桁 · パスワード 生成 google · パスワード 生成 おすすめ · パスワード 生成 ラッコ
+**manager**: ライン ワークス パスワード 確認 管理 者 · 管理 者 パスワード 確認 方法 windows11 · 管理 者 パスワード 確認 方法 · 管理 者 パスワード 確認 方法 windows10 · パスワード 管理 確認 方法 · パスワード 例 管理栄養士 · パスワード 作成 管理画面 · パスワード 自動 生成 管理
 
-**manager**: パスワード 管理 · パスワード 管理 アプリ · パスワード 管理 ノート · パスワード 管理 iphone · パスワード 管理方法 · パスワード 管理 google · パスワード 管理 おすすめ · パスワード 管理 どうしてる
+**core**: パスワード 生成 · パスワード 生成 ランダム · ランダム パスワード 生成 excel · ランダム パスワード 生成 ツール · パスワード 生成 確認 · 自動 生成 パスワード 確認 · パスワード 生成 例 · パスワード 生成 iphone
 
-**strength**: 強力なパスワード · 強力なパスワードを使用しますか · 強力なパスワード 確認 方法 · 強力なパスワード オフ · 強力なパスワードとは · 強力なパスワード 自動生成 · 強力なパスワード iphone · 安全なパスワード 例
+**howto**: パスワード 作成方法 · パスワード 生成 作り方 · パスワード 作り方 · パスワード 作り方 例 · パスワード 作り方 おすすめ · パスワード 作り方 アンドロイド · パスワード 作り方 コツ · 忘れ にくい パスワード 作り方
 
-**howto**: 強力なパスワード作り方 · 強力なパスワード 作り方 iphone · 安全なパスワード 作り方
+**length**: パスワード 例 の 3 文字 · パスワード 例 12文字 · パスワード 例 16文字 · パスワード 例の3文字 · ポイピク パスワード 例 の 3 文字 · パスワード 作成 12 文字 · パスワード 作成 8 文字 · パスワード 作成 10 文字
+
+**strength**: 安全なパスワード作成から進まない · 安全なパスワード · 安全なパスワード 例 · 安全なパスワード 忘れた · 安全なパスワード 確認方法 · 安全なパスワード 2024 · 安全なパスワード 文字数 · android 安全なパスワード
+
+**passphrase**: パスワード 確認 英語 · 確認 用 パスワード 英語 · パスワード 例 日本語 · パスワード 作成 英語 · パスワード 作成 日本語 · パスワード 生成 日本 語 · パスワード 生成 英語 · パスワード 作り方 日本語
+
+**check**: wifi パスワード 検索 アプリ
 
 </details>
 
-## zh — 36 unique queries
+## zh — 1315 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| other | 11 | `/zh` | review | manual review |
-| manager | 10 | `/zh/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
-| strength | 8 | `/zh/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
-| core | 7 | `/zh` | exists | home title/H1/meta |
+| other | 732 | `/zh` | review | manual review |
+| manager | 188 | `/zh/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+| passphrase | 92 | `/zh/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
+| core | 87 | `/zh` | exists | home title/H1/meta |
+| check | 79 | `/zh/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| howto | 70 | `/zh/guides/how-to-create-strong-passwords` | exists | align FAQ wording with query |
+| strength | 66 | `/zh/guides/how-to-create-strong-passwords` | exists | add "what makes a password strong" section + examples |
+| length | 1 | `/zh/guides/how-to-create-strong-passwords` | gap-section | FAQ + presets 8/12/16/20 + guide H2 |
 
 <details><summary>top keywords</summary>
 
-**other**: 忘记密码 · 忘记密码 google · 忘记密码如何重置手机 · 忘记密码怎么办 · 忘记密码忘记账号名免费注册 · 忘记密码重置iphone · 忘记密码锁怎么办 · 忘记密码手机
+**other**: 生成密码 · 生成密码 忘记密码 · 生成密码 例子 скачать · 生成密码 中文乱码 · 生成密码 了解 · 生成密码 修改器 · 生成密码 免费工具 · 生成密码 创建 telegram
 
-**manager**: 密码管理器 · 密码管理器推荐 · 密码管理器生成 · 密码管理器开源 · 密码管理器安全吗 · 密码管理器产生 · 密码管理器ptt · 密码管理器 github
+**manager**: 生成密码 管理器 · 生成密码 管理工具 · 12位密码 管理器 · 12位密码 管理软件 · 12位密码 管理员 · 12位密码 管理工具 · 密码强度 管理工具 · 密码强度 管理器
 
-**strength**: 强密码生成 · 强密码 · 强密码在线生成 · 强密码随机生成 · 强密码规则 · 强密码检查器 · 强密码产生 · 强密码 英文
+**passphrase**: 生成密码 短语录 · 生成密码 短语匹配 · 生成密码 短语搜索 · 密码短语 · 密码短语 12位元 · 密码短语 16位数 · 密码短语 8位数 · 密码短语 特殊字符
 
-**core**: 密码生成器 · 密码生成器 1password · 密码生成器chrome · 密码生成器批量 · 密码生成器github · 密码生成器、 · 强密码生成器
+**core**: 生成密码 生成器 · 12位密码 生成器 · 密码强度 生成器 · 强密码 8位生成器 · 强密码生成器 · 强密码生成器原理 · 密码生成器 · 密码生成器 1password
+
+**check**: 生成密码 检查工具 · 12位密码 检查工具 · 密码强度 检查工具 · 随机密码 检查器 · wifi密码 检查工具 · 手机 check wifi密码 · 忘记密码 检查 · 忘记密码 检查手机
+
+**howto**: 如何查iphone wifi密码 · 如何更改d link wifi密码 · 如何share wifi密码 · 如何 取得 wifi密码 · 如何更改iphone wifi密码 · 如何删除ig帐号 忘记密码 · 如何 检查 wifi 密码 · 如何 检查 密码
+
+**strength**: 强密码 · 强密码 英文 · 强密码规则 · 强密码生成 · 强密码 忘记了 · 强密码 12位元 · 强密码 16位数 · 强密码 中文字
+
+**length**: 12位密码 特殊字符
 
 </details>
 
-## vi — 69 unique queries
+## vi — 2765 unique queries
 
 | Cluster | Queries | Target | Status | Action |
 |---|---|---|---|---|
-| other | 65 | `/vi` | review | manual review |
-| passphrase | 2 | `/vi/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
-| manager | 2 | `/vi/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
+| other | 2746 | `/vi` | review | manual review |
+| passphrase | 11 | `/vi/guides/passphrase-vs-password-entropy` | gap-feature | add words-mode generator + landing section |
+| check | 5 | `/vi/guides/how-to-create-strong-passwords` | partial | strength-test wording; consider dedicated checker section |
+| manager | 3 | `/vi/best-password-managers-2026` | partial | platform sections (Android/iPhone/Chrome) |
 
 <details><summary>top keywords</summary>
 
-**other**: tạo mật khẩu chatgpt · tạo mật khẩu cho win 11 · tạo mật khẩu cho thư mục win 10 · tạo mật khẩu trên laptop · tạo mật khẩu đăng nhập máy tính · tạo mật khẩu viber · tạo mật khẩu steam · tạo mật khẩu file nén
+**other**: trình quản lý mật khẩu tốt nhất · trình quản lý mật khẩu · trình quản lý mật khẩu microsoft · khôi phục trình quản lý mật khẩu · trình quản lý mật khẩu android · trình quản lý mật khẩu của gmail · trình quản lý mật khẩu liên quân · trình quản lý mật khẩu trên điện thoại
 
-**passphrase**: tạo mật khẩu word · cụm mật khẩu passphrase là gì
+**passphrase**: tạo mật khẩu cho word · tạo mật khẩu word · tạo mật khẩu file word · mật khẩu ngẫu nhiên word · cách tạo mật khẩu mạnh word · tạo mật khẩu mới word · mật khẩu 12 ký tự word · cụm mật khẩu passphrase là gì
 
-**manager**: trình quản lý mật khẩu (password manager) · trình quản lý mật khẩu bitwarden
+**check**: test độ mạnh mật khẩu · web test độ mạnh mật khẩu · check độ mạnh mật khẩu · test mật khẩu mạnh · test độ mạnh của mật khẩu
+
+**manager**: trình quản lý mật khẩu password manager · trình quản lý mật khẩu bitwarden · trình quản lý mật khẩu (password manager)
 
 </details>

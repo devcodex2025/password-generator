@@ -1,4 +1,4 @@
-import { ARTICLE_CATALOG, ContentLanguage, getArticleBySlug, getLocalizedArticle } from '@/content/articles';
+import { ARTICLE_CATALOG, getArticleBySlug, getArticleContentLocale, getLocalizedArticle } from '@/content/articles';
 import { getMongoDb } from '@/lib/mongodb';
 import { getPostgresPool } from '@/lib/postgres';
 
@@ -79,10 +79,13 @@ function normalizeUpdatedAt(value: unknown): string {
 
 class JsonContentRepository implements ContentRepository {
   async listGuides(locale: string): Promise<GuideArticleDTO[]> {
-    return ARTICLE_CATALOG.map((article) => {
-      const localized = getLocalizedArticle(article, locale as ContentLanguage);
+    return ARTICLE_CATALOG.flatMap((article) => {
+      const contentLocale = getArticleContentLocale(article, locale);
+      if (!contentLocale) return [];
 
-      return {
+      const localized = getLocalizedArticle(article, contentLocale);
+
+      return [{
         slug: article.slug,
         locale,
         image: `/images/guides/${article.slug}.webp`,
@@ -100,7 +103,7 @@ class JsonContentRepository implements ContentRepository {
         seoDescription: localized.seoDescription,
         keywords: localized.keywords,
         sections: localized.sections,
-      };
+      }];
     });
   }
 
@@ -108,7 +111,10 @@ class JsonContentRepository implements ContentRepository {
     const article = getArticleBySlug(slug);
     if (!article) return null;
 
-    const localized = getLocalizedArticle(article, locale as ContentLanguage);
+    const contentLocale = getArticleContentLocale(article, locale);
+    if (!contentLocale) return null;
+
+    const localized = getLocalizedArticle(article, contentLocale);
     return {
       slug: article.slug,
       locale,

@@ -4,9 +4,9 @@ export const en: LocalizedArticleContent = {
   title: 'Two-Factor Authentication Basics: A Complete 2026 Guide',
   excerpt:
     'A clear guide to 2FA methods, setup priorities, and common mistakes to avoid. Covers TOTP, hardware keys, SMS risks, and how to protect your accounts beyond passwords.',
-  seoTitle: 'Two-Factor Authentication (2FA) Guide 2026 — Setup & Best Practices | generatepasswordto.me',
+  seoTitle: 'Two-Factor Authentication Basics: A Complete 2026 Guide',
   seoDescription:
-    'Complete 2FA guide covering TOTP apps, hardware security keys, SMS risks, setup priorities, backup codes, and enterprise deployment. Protect your accounts beyond passwords.',
+    'Complete 2FA guide covering TOTP apps, hardware security keys, SMS risks, setup priorities, backup codes, and enterprise deployment. Use the generator to.',
   keywords: [
     '2FA setup guide',
     'two-factor authentication basics',
@@ -95,9 +95,9 @@ export const ua: LocalizedArticleContent = {
   title: 'Основи двофакторної аутентифікації: повний гід 2026',
   excerpt:
     'Зрозумілий гід з методів 2FA, пріоритетів налаштування та поширених помилок. Охоплює TOTP, апаратні ключі, ризики SMS та захист акаунтів за межами паролів.',
-  seoTitle: 'Двофакторна аутентифікація (2FA) — гід з налаштування 2026 | generatepasswordto.me',
+  seoTitle: 'Основи двофакторної аутентифікації: повний гід 2026',
   seoDescription:
-    'Повний гід з 2FA: TOTP-застосунки, апаратні ключі безпеки, ризики SMS, пріоритети налаштування, резервні коди та корпоративне впровадження. Захистіть акаунти за межами паролів.',
+    'Повний гід з 2FA: TOTP-застосунки, апаратні ключі безпеки, ризики SMS, пріоритети налаштування, резервні коди та корпоративне впровадження. Створіть унікальний.',
   keywords: [
     'гід з налаштування 2FA',
     'основи двофакторної аутентифікації',
@@ -182,8 +182,8 @@ export const ua: LocalizedArticleContent = {
 export const es: LocalizedArticleContent = {
   title: 'Fundamentos de la autenticación de dos factores (2FA)',
   excerpt: 'Cómo funciona 2FA, por qué las contraseñas solas no son suficientes, y una guía práctica para elegir e implementar el método correcto: SMS, TOTP, FIDO2/WebAuthn y llaves de hardware.',
-  seoTitle: 'Fundamentos de 2FA — Guía práctica de autenticación de dos factores | generatepasswordto.me',
-  seoDescription: 'Guía completa de autenticación de dos factores. Compara SMS, TOTP, FIDO2/WebAuthn y llaves de hardware. Aprende a proteger tus cuentas más allá de las contraseñas.',
+  seoTitle: 'Fundamentos de la autenticación de dos factores (2FA)',
+  seoDescription: 'Guía completa de autenticación de dos factores. Compara SMS, TOTP, FIDO2/WebAuthn y llaves de hardware. Usa el generador para crear una contraseña única y.',
   keywords: ['autenticación dos factores', 'guía 2FA', 'TOTP vs SMS', 'llaves de seguridad FIDO2', 'WebAuthn explicado', 'autenticación multifactor'],
   sections: [
     { heading: 'Por qué las contraseñas solas no son suficientes', paragraphs: ['Incluso una contraseña perfecta de 20 caracteres puede ser capturada por phishing, malware o filtraciones en el servidor. 2FA añade una segunda capa que requiere algo que tienes físicamente.', 'Con 2FA habilitado, un atacante con tu contraseña aún necesita tu segundo factor. Esto frustra el phishing masivo, credential stuffing y muchos ataques dirigidos.', 'Los tres factores de autenticación son: algo que sabes (contraseña), algo que tienes (teléfono, llave hardware), algo que eres (biometría).'] },
@@ -198,8 +198,8 @@ export const es: LocalizedArticleContent = {
 export const fr: LocalizedArticleContent = {
   title: 'Les bases de l\'authentification à deux facteurs (2FA)',
   excerpt: 'Comment fonctionne le 2FA, pourquoi les mots de passe seuls ne suffisent pas, et guide pratique pour choisir et implémenter la bonne méthode : SMS, TOTP, FIDO2/WebAuthn.',
-  seoTitle: 'Bases du 2FA — Guide pratique d\'authentification à deux facteurs | generatepasswordto.me',
-  seoDescription: 'Guide complet du 2FA. Compare SMS, TOTP, FIDO2/WebAuthn et clés matérielles. Protégez vos comptes au-delà des mots de passe.',
+  seoTitle: 'Les bases de l\'authentification à deux facteurs (2FA)',
+  seoDescription: 'Guide complet du 2FA. Compare SMS, TOTP, FIDO2/WebAuthn et clés matérielles. Protégez vos comptes au-delà des mots de passe. Utilisez le générateur pour créer.',
   keywords: ['authentification deux facteurs', 'guide 2FA', 'TOTP vs SMS', 'clés sécurité FIDO2', 'WebAuthn expliqué', 'authentification multifacteur'],
   sections: [
     { heading: 'Pourquoi les mots de passe seuls ne suffisent pas', paragraphs: ['Même un mot de passe parfait peut être capturé par le phishing ou une fuite serveur. Le 2FA ajoute une couche nécessitant quelque chose de physique.', 'Avec le 2FA activé, un attaquant avec votre mot de passe a encore besoin du second facteur.', 'Les trois facteurs : connaissance (mot de passe), possession (téléphone, clé), inhérence (biométrie).'] },
@@ -214,8 +214,8 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'Grundlagen der Zwei-Faktor-Authentifizierung (2FA)',
   excerpt: 'Wie 2FA funktioniert, warum Passwörter allein nicht ausreichen, und ein praktischer Leitfaden zur Wahl der richtigen Methode: SMS, TOTP, FIDO2/WebAuthn.',
-  seoTitle: '2FA-Grundlagen — Praktischer Leitfaden zur Zwei-Faktor-Authentifizierung | generatepasswordto.me',
-  seoDescription: 'Vollständiger 2FA-Leitfaden. Vergleicht SMS, TOTP, FIDO2/WebAuthn und Hardware-Schlüssel. Schützen Sie Ihre Konten über Passwörter hinaus.',
+  seoTitle: 'Grundlagen der Zwei-Faktor-Authentifizierung (2FA)',
+  seoDescription: 'Wie 2FA funktioniert, warum Passwörter allein nicht ausreichen, und ein praktischer Leitfaden zur Wahl der richtigen Methode: SMS, TOTP, FIDO2/WebAuthn.',
   keywords: ['Zwei-Faktor-Authentifizierung', '2FA-Leitfaden', 'TOTP vs SMS', 'FIDO2 Sicherheitsschlüssel', 'WebAuthn erklärt', 'Multi-Faktor-Authentifizierung'],
   sections: [
     { heading: 'Warum Passwörter allein nicht ausreichen', paragraphs: ['Selbst ein perfektes Passwort kann durch Phishing oder Server-Leaks erfasst werden. 2FA fügt eine Ebene hinzu, die physischen Besitz erfordert.', 'Mit 2FA braucht ein Angreifer mit Ihrem Passwort noch den zweiten Faktor.', 'Die drei Faktoren: Wissen (Passwort), Besitz (Telefon, Schlüssel), Inhärenz (Biometrie).'] },
@@ -230,8 +230,8 @@ export const de: LocalizedArticleContent = {
 export const it: LocalizedArticleContent = {
   title: 'Fondamenti dell\'autenticazione a due fattori (2FA)',
   excerpt: 'Come funziona il 2FA, perché le password da sole non bastano, e guida pratica per scegliere il metodo giusto: SMS, TOTP, FIDO2/WebAuthn e chiavi hardware.',
-  seoTitle: 'Fondamenti 2FA — Guida pratica all\'autenticazione a due fattori | generatepasswordto.me',
-  seoDescription: 'Guida completa al 2FA. Confronto tra SMS, TOTP, FIDO2/WebAuthn e chiavi hardware. Proteggi i tuoi account oltre le password.',
+  seoTitle: 'Fondamenti dell\'autenticazione a due fattori (2FA)',
+  seoDescription: 'Come funziona il 2FA, perché le password da sole non bastano, e guida pratica per scegliere il metodo giusto: SMS, TOTP, FIDO2/WebAuthn e chiavi hardware.',
   keywords: ['autenticazione due fattori', 'guida 2FA', 'TOTP vs SMS', 'chiavi sicurezza FIDO2', 'WebAuthn spiegato', 'autenticazione multifattore'],
   sections: [
     { heading: 'Perché le password da sole non bastano', paragraphs: ['Anche una password perfetta può essere catturata dal phishing o da fughe server. Il 2FA aggiunge un livello che richiede possesso fisico.', 'Con il 2FA abilitato, un attaccante con la tua password ha ancora bisogno del secondo fattore.', 'I tre fattori: conoscenza (password), possesso (telefono, chiave), inerenza (biometria).'] },
@@ -246,8 +246,8 @@ export const it: LocalizedArticleContent = {
 export const pt: LocalizedArticleContent = {
   title: 'Fundamentos da autenticação de dois fatores (2FA)',
   excerpt: 'Como o 2FA funciona, por que senhas sozinhas não bastam, e guia prático para escolher o método certo: SMS, TOTP, FIDO2/WebAuthn e chaves de hardware.',
-  seoTitle: 'Fundamentos do 2FA — Guia prático de autenticação de dois fatores | generatepasswordto.me',
-  seoDescription: 'Guia completo de 2FA. Compara SMS, TOTP, FIDO2/WebAuthn e chaves de hardware. Proteja suas contas além das senhas.',
+  seoTitle: 'Fundamentos da autenticação de dois fatores (2FA) — guia 2FA',
+  seoDescription: 'Como o 2FA funciona, por que senhas sozinhas não bastam, e guia prático para escolher o método certo: SMS, TOTP, FIDO2/WebAuthn e chaves de hardware.',
   keywords: ['autenticação dois fatores', 'guia 2FA', 'TOTP vs SMS', 'chaves segurança FIDO2', 'WebAuthn explicado', 'autenticação multifator'],
   sections: [
     { heading: 'Por que senhas sozinhas não bastam', paragraphs: ['Mesmo uma senha perfeita pode ser capturada por phishing ou vazamento de servidor. O 2FA adiciona uma camada que requer posse física.', 'Com 2FA habilitado, um atacante com sua senha ainda precisa do segundo fator.', 'Os três fatores: conhecimento (senha), posse (telefone, chave), inerência (biometria).'] },
@@ -262,8 +262,8 @@ export const pt: LocalizedArticleContent = {
 export const ru: LocalizedArticleContent = {
   title: 'Основы двухфакторной аутентификации (2FA)',
   excerpt: 'Как работает 2FA, почему одних паролей недостаточно, и практическое руководство по выбору метода: SMS, TOTP, FIDO2/WebAuthn и аппаратные ключи.',
-  seoTitle: 'Основы 2FA — Практическое руководство по двухфакторной аутентификации | generatepasswordto.me',
-  seoDescription: 'Полное руководство по 2FA. Сравнение SMS, TOTP, FIDO2/WebAuthn и аппаратных ключей. Защитите аккаунты помимо паролей.',
+  seoTitle: 'Основы двухфакторной аутентификации (2FA) — руководство 2FA',
+  seoDescription: 'Как работает 2FA, почему одних паролей недостаточно, и практическое руководство по выбору метода: SMS, TOTP, FIDO2/WebAuthn и аппаратные ключи.',
   keywords: ['двухфакторная аутентификация', 'руководство 2FA', 'TOTP vs SMS', 'ключи безопасности FIDO2', 'WebAuthn объяснение', 'многофакторная аутентификация'],
   sections: [
     { heading: 'Почему одних паролей недостаточно', paragraphs: ['Даже идеальный пароль может быть перехвачен фишингом или утечкой с сервера. 2FA добавляет уровень, требующий физического владения.', 'С включённым 2FA злоумышленнику с вашим паролем всё ещё нужен второй фактор.', 'Три фактора: знание (пароль), владение (телефон, ключ), биометрия.'] },
@@ -279,7 +279,7 @@ export const zh: LocalizedArticleContent = {
   title: '双因素认证(2FA)基础知识',
   excerpt: '2FA如何工作，为什么仅密码不够，以及选择正确方法的实用指南：SMS、TOTP、FIDO2/WebAuthn和硬件密钥。',
   seoTitle: '2FA基础 — 双因素认证实用指南 | generatepasswordto.me',
-  seoDescription: '完整的2FA指南。比较SMS、TOTP、FIDO2/WebAuthn和硬件密钥。保护您的账户超越密码。',
+  seoDescription: '2FA如何工作，为什么仅密码不够，以及选择正确方法的实用指南：SMS、TOTP、FIDO2/WebAuthn和硬件密钥。',
   keywords: ['双因素认证', '2FA指南', 'TOTP对比SMS', 'FIDO2安全密钥', 'WebAuthn详解', '多因素认证'],
   sections: [
     { heading: '为什么仅密码不够', paragraphs: ['即使足够强的密码也可能被钓鱼或服务器泄露捕获。2FA添加了需要物理持有的第二层。', '启用2FA后，拥有您密码的攻击者仍需要第二因素。', '三个认证因素：知识（密码）、持有（手机、密钥）、固有（生物特征）。'] },
@@ -295,7 +295,7 @@ export const ja: LocalizedArticleContent = {
   title: '二要素認証(2FA)の基礎知識',
   excerpt: '2FAの仕組み、パスワードだけでは不十分な理由、正しい方法の選び方：SMS、TOTP、FIDO2/WebAuthnとハードウェアキー。',
   seoTitle: '2FA基礎 — 二要素認証実践ガイド | generatepasswordto.me',
-  seoDescription: '完全な2FAガイド。SMS、TOTP、FIDO2/WebAuthn、ハードウェアキーを比較。パスワード以上のアカウント保護を。',
+  seoDescription: '完全な2FAガイド。 SMS、TOTP、FIDO2/WebAuthn、ハードウェアキーを比較。 パスワード以上のアカウント保護を。',
   keywords: ['二要素認証', '2FAガイド', 'TOTP対SMS', 'FIDO2セキュリティキー', 'WebAuthn解説', '多要素認証'],
   sections: [
     { heading: 'なぜパスワードだけでは不十分か', paragraphs: ['どんなに強いパスワードでもフィッシングやサーバー漏洩で捕捉されます。2FAは物理的な所持を必要とする層を追加します。', '2FA有効時、パスワードを持つ攻撃者はまだ第二要素が必要です。', '3つの要素：知識（パスワード）、所持（電話、キー）、固有性（生体認証）。'] },
@@ -309,9 +309,9 @@ export const ja: LocalizedArticleContent = {
 
 export const pl: LocalizedArticleContent = {
   title: 'Podstawy uwierzytelniania dwuskładnikowego (2FA)',
-  excerpt: 'Jak działa 2FA, dlaczego same hasła nie wystarczą, i praktyczny przewodnik wyboru metody: SMS, TOTP, FIDO2/WebAuthn i klucze sprzętowe.',
-  seoTitle: 'Podstawy 2FA — Praktyczny przewodnik uwierzytelniania dwuskładnikowego | generatepasswordto.me',
-  seoDescription: 'Kompletny przewodnik 2FA. Porównanie SMS, TOTP, FIDO2/WebAuthn i kluczy sprzętowych. Chroń konta wykraczając poza hasła.',
+  excerpt: 'Jak działa 2FA, dlaczego same hasła nie wystarczą, i praktyczny przewodnik wyboru metody: SMS, TOTP, FIDO2/WebAuthn i klucze sprzętowe. Nawet idealne hasło może zostać przechwycone przez phishing lub wyciek serwera.',
+  seoTitle: 'Podstawy uwierzytelniania dwuskładnikowego (2FA) — przewodnik 2FA',
+  seoDescription: 'Jak działa 2FA, dlaczego same hasła nie wystarczą, i praktyczny przewodnik wyboru metody: SMS, TOTP, FIDO2/WebAuthn i klucze sprzętowe. Utwórz unikalne hasło w.',
   keywords: ['uwierzytelnianie dwuskładnikowe', 'przewodnik 2FA', 'TOTP vs SMS', 'klucze bezpieczeństwa FIDO2', 'WebAuthn wyjaśnione', 'uwierzytelnianie wieloskładnikowe'],
   sections: [
     { heading: 'Dlaczego same hasła nie wystarczą', paragraphs: ['Nawet idealne hasło może zostać przechwycone przez phishing lub wyciek serwera. 2FA dodaje warstwę wymagającą fizycznego posiadania.', 'Z włączonym 2FA atakujący z Twoim hasłem wciąż potrzebuje drugiego czynnika.', 'Trzy czynniki: wiedza (hasło), posiadanie (telefon, klucz), cecha (biometria).'] },
@@ -327,9 +327,9 @@ export const vi: LocalizedArticleContent = {
   title: 'Kiến thức cơ bản về xác thực hai yếu tố: hướng dẫn 2026',
   excerpt:
     'Hướng dẫn rõ ràng về các phương thức 2FA, thứ tự thiết lập và lỗi cần tránh. Gồm TOTP, khóa phần cứng, rủi ro SMS và cách bảo vệ tài khoản ngoài mật khẩu.',
-  seoTitle: 'Xác thực hai yếu tố: bảo vệ mật khẩu và tài khoản 2026',
+  seoTitle: 'Kiến thức cơ bản về xác thực hai yếu tố: hướng dẫn 2026',
   seoDescription:
-    'Hướng dẫn 2FA đầy đủ: ứng dụng TOTP, khóa phần cứng, rủi ro SMS, thứ tự thiết lập, mã dự phòng và cách tạo mật khẩu mạnh.',
+    'Hướng dẫn rõ ràng về các phương thức 2FA, thứ tự thiết lập và lỗi cần tránh. Gồm TOTP, khóa phần cứng, rủi ro SMS và cách bảo vệ tài khoản ngoài mật khẩu.',
   keywords: [
     'trình quản lý mật khẩu là gì',
     'mật khẩu mạnh là gì',

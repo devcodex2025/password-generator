@@ -4,9 +4,9 @@ export const en: LocalizedArticleContent = {
   title: 'What to Do After a Password Breach: Step-by-Step Recovery',
   excerpt:
     'Your credentials were leaked in a data breach. Here is a step-by-step response plan covering password resets, monitoring, MFA setup, and long-term protection strategies.',
-  seoTitle: 'What to Do After a Password Breach — Recovery Checklist 2026 | generatepasswordto.me',
+  seoTitle: 'What to Do After a Password Breach: Step-by-Step Recovery',
   seoDescription:
-    'Complete response plan after a password breach. Step-by-step guide covering immediate actions, password resets, monitoring for identity theft, MFA setup, and prevention strategies.',
+    'Complete response plan after a password breach. Your credentials were leaked in a data breach. Use the generator to create a unique password and store it.',
   keywords: [
     'password breach recovery',
     'data breach response plan',
@@ -92,9 +92,9 @@ export const ua: LocalizedArticleContent = {
   title: 'Що робити після витоку пароля: покрокове відновлення',
   excerpt:
     'Ваші облікові дані потрапили у витік даних. Ось покроковий план реагування: зміна паролів, моніторинг, налаштування MFA та стратегії довгострокового захисту.',
-  seoTitle: 'Що робити після витоку пароля — чеклист відновлення 2026 | generatepasswordto.me',
+  seoTitle: 'Що робити після витоку пароля: покрокове відновлення',
   seoDescription:
-    'Повний план реагування після витоку пароля. Покрокова інструкція: негайні дії, зміна паролів, моніторинг крадіжки особистості, налаштування MFA та стратегії запобігання.',
+    'Повний план реагування після витоку пароля. Ваші облікові дані потрапили у витік даних. Створіть унікальний пароль у генераторі та збережіть його безпечно.',
   keywords: [
     'відновлення після витоку пароля',
     'план реагування на витік даних',
@@ -178,7 +178,7 @@ export const ua: LocalizedArticleContent = {
 export const es: LocalizedArticleContent = {
   title: 'Qué hacer tras una filtración de contraseñas: guía paso a paso',
   excerpt: 'Una guía de respuesta a incidentes para cuando tus contraseñas se ven comprometidas. Priorización, recuperación de cuentas, prevención y pasos legales.',
-  seoTitle: 'Qué hacer tras una filtración de contraseñas — Guía de respuesta 2026 | generatepasswordto.me',
+  seoTitle: 'Qué hacer tras una filtración de contraseñas: guía paso a paso',
   seoDescription: 'Guía paso a paso para responder a una filtración de contraseñas. Cubre verificación, priorización de cuentas, recuperación, prevención futura y pasos legales.',
   keywords: ['filtración de contraseñas qué hacer', 'respuesta a violación de contraseñas', 'contraseña comprometida', 'recuperación cuenta hackeada', 'guía respuesta incidente contraseñas', 'verificar filtración datos'],
   sections: [
@@ -194,7 +194,7 @@ export const es: LocalizedArticleContent = {
 export const fr: LocalizedArticleContent = {
   title: 'Que faire après une fuite de mots de passe : guide étape par étape',
   excerpt: 'Guide de réponse aux incidents lorsque vos mots de passe sont compromis. Priorisation, récupération de comptes, prévention et démarches légales.',
-  seoTitle: 'Que faire après une fuite de mots de passe — Guide de réponse 2026 | generatepasswordto.me',
+  seoTitle: 'Que faire après une fuite de mots de passe : guide étape par',
   seoDescription: 'Guide étape par étape pour répondre à une fuite de mots de passe. Vérification, priorisation, récupération, prévention et démarches légales.',
   keywords: ['fuite mots de passe que faire', 'réponse violation mots de passe', 'mot de passe compromis', 'récupération compte piraté', 'guide réponse incident', 'vérifier fuite données'],
   sections: [
@@ -210,7 +210,7 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'Was tun nach einem Passwort-Leak: Schritt-für-Schritt-Anleitung',
   excerpt: 'Incident-Response-Leitfaden wenn Ihre Passwörter kompromittiert wurden. Priorisierung, Kontowiederherstellung, Prävention und rechtliche Schritte.',
-  seoTitle: 'Was tun nach Passwort-Leak — Reaktionsleitfaden 2026 | generatepasswordto.me',
+  seoTitle: 'Was tun nach einem Passwort-Leak: Schritt-für-Schritt-Anleitung',
   seoDescription: 'Schritt-für-Schritt-Anleitung nach einem Passwort-Leak. Verifizierung, Priorisierung, Wiederherstellung, Prävention und rechtliche Schritte.',
   keywords: ['Passwort-Leak was tun', 'Passwort-Verletzung Reaktion', 'Passwort kompromittiert', 'gehacktes Konto wiederherstellen', 'Incident-Response Passwörter', 'Datenleck überprüfen'],
   sections: [
@@ -226,8 +226,8 @@ export const de: LocalizedArticleContent = {
 export const it: LocalizedArticleContent = {
   title: 'Cosa fare dopo una violazione delle password: guida passo-passo',
   excerpt: 'Guida di risposta agli incidenti quando le tue password vengono compromesse. Prioritizzazione, recupero account, prevenzione e passi legali.',
-  seoTitle: 'Cosa fare dopo una violazione password — Guida di risposta 2026 | generatepasswordto.me',
-  seoDescription: 'Guida passo-passo per rispondere a una violazione delle password. Verifica, prioritizzazione, recupero, prevenzione e passi legali.',
+  seoTitle: 'Cosa fare dopo una violazione delle password: guida passo-passo',
+  seoDescription: 'Guida di risposta agli incidenti quando le tue password vengono compromesse. Prioritizzazione, recupero account, prevenzione e passi legali.',
   keywords: ['violazione password cosa fare', 'risposta violazione password', 'password compromessa', 'recupero account hackerato', 'guida risposta incidente', 'verificare violazione dati'],
   sections: [
     { heading: 'Come verificare se le tue password sono state violate', paragraphs: ['Visita haveibeenpwned.com e inserisci la tua email. Troy Hunt mantiene oltre 13 miliardi di account compromessi.', 'Segnali di allarme: email di reset non richieste, accessi da località sconosciute, transazioni non riconosciute.', 'Se usi un gestore come 1Password con Watchtower o Bitwarden, attiva il monitoraggio.'] },
@@ -241,9 +241,9 @@ export const it: LocalizedArticleContent = {
 
 export const pt: LocalizedArticleContent = {
   title: 'O que fazer após um vazamento de senhas: guia passo a passo',
-  excerpt: 'Guia de resposta a incidentes quando suas senhas são comprometidas. Priorização, recuperação de contas, prevenção e passos legais.',
-  seoTitle: 'O que fazer após vazamento de senhas — Guia de resposta 2026 | generatepasswordto.me',
-  seoDescription: 'Guia passo a passo para responder a um vazamento de senhas. Verificação, priorização, recuperação, prevenção e passos legais.',
+  excerpt: 'Guia de resposta a incidentes quando suas senhas são comprometidas. Priorização, recuperação de contas, prevenção e passos legais. Visite haveibeenpwned.',
+  seoTitle: 'O que fazer após um vazamento de senhas: guia passo a passo',
+  seoDescription: 'Guia de resposta a incidentes quando suas senhas são comprometidas. Priorização, recuperação de contas, prevenção e passos legais. Use o gerador para criar uma.',
   keywords: ['vazamento senhas o que fazer', 'resposta violação senhas', 'senha comprometida', 'recuperação conta hackeada', 'guia resposta incidente', 'verificar vazamento dados'],
   sections: [
     { heading: 'Como verificar se suas senhas vazaram', paragraphs: ['Visite haveibeenpwned.com e insira seu email. Troy Hunt mantém mais de 13 bilhões de contas comprometidas.', 'Sinais de alerta: emails de reset não solicitados, logins de locais desconhecidos, transações não reconhecidas.', 'Se usa um gerenciador como 1Password com Watchtower ou Bitwarden, ative o monitoramento.'] },
@@ -258,8 +258,8 @@ export const pt: LocalizedArticleContent = {
 export const ru: LocalizedArticleContent = {
   title: 'Что делать после утечки паролей: пошаговое руководство',
   excerpt: 'Руководство по реагированию на инциденты при компрометации паролей. Приоритизация, восстановление аккаунтов, предотвращение и юридические шаги.',
-  seoTitle: 'Что делать после утечки паролей — Руководство по реагированию 2026 | generatepasswordto.me',
-  seoDescription: 'Пошаговое руководство по реагированию на утечку паролей. Проверка, приоритизация, восстановление, предотвращение и юридические шаги.',
+  seoTitle: 'Что делать после утечки паролей: пошаговое руководство',
+  seoDescription: 'Руководство по реагированию на инциденты при компрометации паролей. Приоритизация, восстановление аккаунтов, предотвращение и юридические шаги.',
   keywords: ['утечка паролей что делать', 'реагирование на взлом паролей', 'пароль скомпрометирован', 'восстановление взломанного аккаунта', 'руководство реагирование на инцидент', 'проверить утечку данных'],
   sections: [
     { heading: 'Как проверить, были ли ваши пароли скомпрометированы', paragraphs: ['Посетите haveibeenpwned.com и введите email. Трой Хант поддерживает базу из более чем 13 миллиардов скомпрометированных аккаунтов.', 'Тревожные сигналы: незапрошенные письма о сбросе пароля, входы из неизвестных мест, непризнанные транзакции.', 'Если вы используете менеджер паролей с мониторингом (1Password Watchtower, Bitwarden), включите отслеживание.'] },
@@ -273,9 +273,9 @@ export const ru: LocalizedArticleContent = {
 
 export const zh: LocalizedArticleContent = {
   title: '密码泄露后该怎么办：分步指南',
-  excerpt: '密码被泄露时的事件响应指南。账户优先级、恢复步骤、预防措施和法律步骤。',
+  excerpt: '密码被泄露时的事件响应指南。 账户优先级、恢复步骤、预防措施和法律步骤。 访问haveibeenpwned. com输入邮箱。',
   seoTitle: '密码泄露后该怎么办 — 2026年响应指南 | generatepasswordto.me',
-  seoDescription: '密码泄露后的分步响应指南。涵盖验证、账户优先级、恢复、预防和法律步骤。',
+  seoDescription: '密码被泄露时的事件响应指南。 账户优先级、恢复步骤、预防措施和法律步骤。 密码泄露后的分步响应指南。 涵盖验证、账户优先级、恢复、预防和法律步骤。',
   keywords: ['密码泄露怎么办', '密码泄露响应', '密码被盗', '被黑账户恢复', '事件响应指南', '检查数据泄露'],
   sections: [
     { heading: '如何验证密码是否已泄露', paragraphs: ['访问haveibeenpwned.com输入邮箱。Troy Hunt维护着超过130亿个泄露账户的数据库。', '警告信号：未请求的重置邮件、来自未知位置的登录、未识别的交易。', '如果使用1Password的Watchtower或Bitwarden的泄露报告，请启用监控功能。'] },
@@ -289,9 +289,9 @@ export const zh: LocalizedArticleContent = {
 
 export const ja: LocalizedArticleContent = {
   title: 'パスワード漏洩後にすべきこと：ステップバイステップガイド',
-  excerpt: 'パスワードが侵害された場合のインシデント対応ガイド。優先順位付け、アカウント復旧、予防、法的手順を解説。',
+  excerpt: 'パスワードが侵害された場合のインシデント対応ガイド。 優先順位付け、アカウント復旧、予防、法的手順を解説。 haveibeenpwned.',
   seoTitle: 'パスワード漏洩後の対処法 — 2026年対応ガイド | generatepasswordto.me',
-  seoDescription: 'パスワード漏洩への段階的対応ガイド。検証、優先順位付け、復旧、予防、法的手順を網羅。',
+  seoDescription: 'パスワードが侵害された場合のインシデント対応ガイド。 優先順位付け、アカウント復旧、予防、法的手順を解説。 パスワード漏洩への段階的対応ガイド。',
   keywords: ['パスワード漏洩対処法', 'パスワード侵害対応', 'パスワード流出', 'ハッキングされたアカウント復旧', 'インシデント対応ガイド', 'データ漏洩確認'],
   sections: [
     { heading: 'パスワードが漏洩したか確認する方法', paragraphs: ['haveibeenpwned.comでメールアドレスを入力。Troy Huntが130億以上の漏洩アカウントを管理しています。', '警告サイン：未承認のリセットメール、不明な場所からのログイン、不明な取引。', '1PasswordのWatchtowerやBitwardenの漏洩レポートを使用している場合は監視を有効にしてください。'] },
@@ -305,9 +305,9 @@ export const ja: LocalizedArticleContent = {
 
 export const pl: LocalizedArticleContent = {
   title: 'Co robić po wycieku haseł: przewodnik krok po kroku',
-  excerpt: 'Przewodnik reagowania na incydenty gdy hasła zostały skompromitowane. Priorytetyzacja, odzyskiwanie kont, zapobieganie i kroki prawne.',
-  seoTitle: 'Co robić po wycieku haseł — Przewodnik reagowania 2026 | generatepasswordto.me',
-  seoDescription: 'Przewodnik krok po kroku reagowania na wyciek haseł. Weryfikacja, priorytetyzacja, odzyskiwanie, zapobieganie i kroki prawne.',
+  excerpt: 'Przewodnik reagowania na incydenty gdy hasła zostały skompromitowane. Priorytetyzacja, odzyskiwanie kont, zapobieganie i kroki prawne. Odwiedź haveibeenpwned.',
+  seoTitle: 'Co robić po wycieku haseł: przewodnik krok po kroku',
+  seoDescription: 'Przewodnik reagowania na incydenty gdy hasła zostały skompromitowane. Priorytetyzacja, odzyskiwanie kont, zapobieganie i kroki prawne. Utwórz unikalne hasło w.',
   keywords: ['wyciek haseł co robić', 'reakcja na naruszenie haseł', 'hasło skompromitowane', 'odzyskiwanie zhakowanego konta', 'przewodnik reagowania na incydent', 'sprawdzić wyciek danych'],
   sections: [
     { heading: 'Jak sprawdzić czy hasła wyciekły', paragraphs: ['Odwiedź haveibeenpwned.com i wpisz email. Troy Hunt utrzymuje bazę ponad 13 miliardów skompromitowanych kont.', 'Sygnały ostrzegawcze: niechciane emaile resetujące, logowania z nieznanych lokalizacji, nierozpoznane transakcje.', 'Jeśli używasz menedżera jak 1Password z Watchtower lub Bitwarden, włącz monitoring.'] },
@@ -323,7 +323,7 @@ export const vi: LocalizedArticleContent = {
   title: 'Cần làm gì sau khi mật khẩu bị rò rỉ: phục hồi từng bước',
   excerpt:
     'Thông tin đăng nhập của bạn bị lộ trong một vụ rò rỉ dữ liệu. Đây là kế hoạch ứng phó từng bước: đặt lại mật khẩu, giám sát, bật MFA và bảo vệ lâu dài.',
-  seoTitle: 'Sau rò rỉ mật khẩu: tạo mật khẩu mạnh, bảo vệ tài khoản',
+  seoTitle: 'Cần làm gì sau khi mật khẩu bị rò rỉ: phục hồi từng bước',
   seoDescription:
     'Kế hoạch ứng phó sau rò rỉ mật khẩu: việc cần làm ngay, giám sát đánh cắp danh tính, bật MFA, dùng trình quản lý mật khẩu và tạo mật khẩu mạnh.',
   keywords: [

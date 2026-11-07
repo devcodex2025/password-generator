@@ -9,6 +9,7 @@ import * as commonPasswordMistakes from './articles/common-password-mistakes';
 import * as teamPasswordPolicyTemplate from './articles/team-password-policy-template';
 import * as securePasswordGeneratorGuide from './articles/secure-password-generator-guide';
 import * as vpnSecurityPrivacyGuide from './articles/vpn-security-privacy-guide';
+import * as wifiPasswordGuide from './articles/wifi-password-guide';
 
 export const SUPPORTED_CONTENT_LANGUAGES = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl', 'vi'] as const;
 
@@ -270,10 +271,50 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
       vi: vpnSecurityPrivacyGuide.vi,
     },
   },
+  {
+    // The guide ships in locales with a reviewed translation. The routes,
+    // guide hub and sitemap read `content` keys, so adding a locale here makes
+    // its URL and hreflang appear automatically.
+    slug: 'wifi-password-guide',
+    category: 'security-basics',
+    readingMinutes: 11,
+    updatedAt: '2026-11-07',
+    author: 'GeneratePasswordTo Editorial Team',
+    content: {
+      en: wifiPasswordGuide.en,
+      ua: wifiPasswordGuide.ua,
+      es: wifiPasswordGuide.es,
+      fr: wifiPasswordGuide.fr,
+      de: wifiPasswordGuide.de,
+      it: wifiPasswordGuide.it,
+      pt: wifiPasswordGuide.pt,
+      ru: wifiPasswordGuide.ru,
+      zh: wifiPasswordGuide.zh,
+      ja: wifiPasswordGuide.ja,
+      pl: wifiPasswordGuide.pl,
+      vi: wifiPasswordGuide.vi,
+    },
+  },
 ];
 
 export function getArticleBySlug(slug: string): ArticleEntry | undefined {
   return ARTICLE_CATALOG.find((article) => article.slug === slug);
+}
+
+/**
+ * Returns the content key that should serve `locale`, or null when the article
+ * has not been translated into that locale. Callers use this to avoid
+ * publishing an English copy under a localized URL.
+ */
+export function getArticleContentLocale(article: ArticleEntry, locale: string): ContentLanguage | null {
+  const normalized = String(locale || 'en').toLowerCase().split(/[-_]/)[0];
+  const candidate = normalized === 'uk' ? 'ua' : normalized;
+  return article.content[candidate as ContentLanguage] ? (candidate as ContentLanguage) : null;
+}
+
+/** Locales with a reviewed translation for this article. */
+export function getArticleLocales(article: ArticleEntry): ContentLanguage[] {
+  return SUPPORTED_CONTENT_LANGUAGES.filter((locale) => Boolean(article.content[locale]));
 }
 
 export function getLocalizedArticle(article: ArticleEntry, locale: string): LocalizedArticleContent {

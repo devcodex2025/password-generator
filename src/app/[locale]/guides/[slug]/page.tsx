@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles';
+import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES, getArticleBySlug, getArticleContentLocale, getArticleLocales } from '@/content/articles';
 import { getCachedGuide, getCachedGuides } from '@/lib/cached-content';
 import { getGuideCategoryLabel, getGuidesUiLabels } from '@/lib/guides-i18n';
 import { formatGuideDate, getGuidesUiCopy } from '@/lib/guides-ui';
@@ -60,8 +60,10 @@ export const runtime = 'nodejs';
 export const revalidate = 3600;
 
 export function generateStaticParams() {
-  return SUPPORTED_CONTENT_LANGUAGES.flatMap((locale) =>
-    ARTICLE_CATALOG.map((article) => ({ locale, slug: article.slug })),
+  // Only generate URLs for locales with a reviewed translation. An English
+  // fallback at a localized URL is a duplicate page, not coverage.
+  return ARTICLE_CATALOG.flatMap((article) =>
+    getArticleLocales(article).map((locale) => ({ locale, slug: article.slug })),
   );
 }
 
@@ -80,17 +82,21 @@ export async function generateMetadata({
     return {};
   }
 
-  // Vietnamese guides are indexable only once that article has a real `vi`
-  // translation. The catalog says what is bundled; `guide.locale` stays `en`
-  // when a database-backed deployment has no stored `vi` row and falls back.
+  // A guide is indexable under a locale only when the catalog has a reviewed
+  // translation for it. `guide.locale` stays `en` when a database-backed
+  // deployment has no stored localized row and falls back.
   const catalogEntry = ARTICLE_CATALOG.find((article) => article.slug === slug);
-  const catalogHasVi = Boolean(catalogEntry?.content.vi);
+  const catalogHasLocale = catalogEntry ? Boolean(getArticleContentLocale(catalogEntry, locale)) : true;
   const servedLocale = guide.locale.toLowerCase().split(/[-_]/)[0];
-  const hasVi = catalogHasVi && servedLocale === 'vi';
-  const isFallbackLocale = locale === 'vi' && !hasVi;
+  const hasLocale = catalogHasLocale && servedLocale === locale;
+  const isFallbackLocale = !hasLocale;
   const canonical = isFallbackLocale
     ? `${baseUrl}/en/guides/${slug}`
     : `${baseUrl}/${locale}/guides/${slug}`;
+
+  const alternateLocales = catalogEntry
+    ? SUPPORTED_CONTENT_LANGUAGES.filter((lang) => Boolean(getArticleContentLocale(catalogEntry, lang)))
+    : SUPPORTED_CONTENT_LANGUAGES;
 
   return {
     title: guide.seoTitle,
@@ -100,7 +106,7 @@ export async function generateMetadata({
       canonical,
       languages: {
         ...Object.fromEntries(
-          SUPPORTED_CONTENT_LANGUAGES.filter((lang) => lang !== 'vi' || catalogHasVi).map((lang) => [
+          alternateLocales.map((lang) => [
             hreflangMap[lang] || lang,
             `${baseUrl}/${lang}/guides/${slug}`,
           ])
@@ -180,6 +186,14 @@ export default async function GuideArticlePage({
   const uiCopy = getGuidesUiCopy(locale);
   const guide = await getCachedGuide(slug, locale);
   const allGuides = await getCachedGuides(locale);
+
+  // A database-backed deployment may return an English fallback row for a
+  // locale that has no reviewed translation. Do not render it as a localized
+  // guide.
+  const catalogEntry = getArticleBySlug(slug);
+  if (catalogEntry && !getArticleContentLocale(catalogEntry, locale)) {
+    notFound();
+  }
 
   if (!guide) {
     notFound();

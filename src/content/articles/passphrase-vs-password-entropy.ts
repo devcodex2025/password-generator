@@ -4,9 +4,9 @@ export const en: LocalizedArticleContent = {
   title: 'Passphrase vs Password: Entropy and Security Explained',
   excerpt:
     'Understand the mathematics behind password entropy and learn when passphrases outperform traditional passwords. Includes entropy calculations, Diceware methodology, and practical recommendations.',
-  seoTitle: 'Passphrase vs Password Entropy — Which Is More Secure? | generatepasswordto.me',
+  seoTitle: 'Passphrase vs Password: Entropy and Security Explained',
   seoDescription:
-    'Deep dive into passphrase vs password security. Covers entropy math, Diceware word lists, brute-force resistance, memorability trade-offs, and when to use each approach for maximum protection.',
+    'Deep dive into passphrase vs password security. Understand the mathematics behind password entropy and learn when passphrases outperform traditional passwords.',
   keywords: [
     'passphrase vs password',
     'password entropy explained',
@@ -38,6 +38,22 @@ export const en: LocalizedArticleContent = {
         '6 Diceware words: log₂(7776^6) ≈ 77.5 bits',
         '16 random characters (full ASCII): log₂(95^16) ≈ 105 bits',
         '8 Diceware words: log₂(7776^8) ≈ 103.4 bits',
+      ],
+    },
+    {
+      heading: 'How the words-mode generator builds a passphrase',
+      paragraphs: [
+        'The generator\'s Words mode selects each word independently from the EFF large word list of 7,776 entries. At that list size every word contributes about 12.9 bits of entropy, regardless of how familiar the word looks. You choose the number of words, the separator and whether one word is capitalized.',
+        'Word count is the only setting that changes the security margin in a meaningful way. Four words give about 52 bits, five about 65 bits, six about 78 bits and seven about 90 bits. Use five words for everyday personal accounts, six for email and finance, and seven for a master password or a device you cannot recover easily.',
+        'A generated example is monarch-fabric-eleven-radar-canopy-walrus — six random words, about 78 bits. The built-in list is English. A passphrase in another language is only comparable if its word list also has at least 7,776 entries; a short hand-picked list gives far less entropy.',
+        'Generate the phrase; do not compose it from a quote, song lyric or a sentence you invented. Attackers test those patterns first. Store the master passphrase offline until you memorize it, and keep a recovery copy somewhere physically secure.',
+      ],
+      bullets: [
+        '4 words: ~52 bits — low-risk accounts and quick device unlocks',
+        '5 words: ~65 bits — most personal accounts',
+        '6 words: ~78 bits — email, banking and work accounts',
+        '7 words: ~90 bits — password-manager master password',
+        '8 words: ~103 bits — long-term offline backups',
       ],
     },
     {
@@ -96,9 +112,9 @@ export const ua: LocalizedArticleContent = {
   title: 'Парольна фраза vs пароль: ентропія та безпека',
   excerpt:
     'Зрозумійте математику ентропії паролів та дізнайтеся, коли парольні фрази переважають традиційні паролі. Включає розрахунки ентропії, методологію Diceware та практичні рекомендації.',
-  seoTitle: 'Парольна фраза vs пароль — що безпечніше? Ентропія | generatepasswordto.me',
+  seoTitle: 'Парольна фраза vs пароль: ентропія та безпека',
   seoDescription:
-    'Глибоке занурення в безпеку парольних фраз проти паролів. Математика ентропії, списки слів Diceware, стійкість до brute-force, компроміси запам\'ятовуваності та коли використовувати кожен підхід.',
+    'Глибоке занурення в безпеку парольних фраз проти паролів. Створіть унікальний пароль у генераторі та збережіть його безпечно.',
   keywords: [
     'парольна фраза vs пароль',
     'ентропія пароля пояснення',
@@ -130,6 +146,22 @@ export const ua: LocalizedArticleContent = {
         '6 слів Diceware: log₂(7776^6) ≈ 77,5 біта',
         '16 випадкових символів (повний ASCII): log₂(95^16) ≈ 105 бітів',
         '8 слів Diceware: log₂(7776^8) ≈ 103,4 біта',
+      ],
+    },
+    {
+      heading: 'Як режим слів у генераторі створює парольну фразу',
+      paragraphs: [
+        'Режим «Слова» вибирає кожне слово незалежно з великого списку EFF із 7 776 слів. За такого розміру списку кожне слово додає близько 12,9 біта ентропії, незалежно від того, наскільки звичним воно виглядає. Ви обираєте кількість слів, роздільник і те, чи писати одне слово з великої літери.',
+        'Кількість слів — єдине налаштування, яке справді змінює запас міцності. Чотири слова дають близько 52 бітів, п\'ять — 65, шість — 78, сім — 90. Для повсякденних особистих акаунтів достатньо п\'яти слів, для пошти й фінансів — шести, для мастер-пароля або пристрою, який складно відновити, — семи.',
+        'Приклад згенерованої фрази: monarch-fabric-eleven-radar-canopy-walrus — шість випадкових слів, приблизно 78 бітів. Вбудований список англійський. Парольна фраза іншою мовою буде порівнянною лише за умови, що її словник також містить щонайменше 7 776 слів; короткий список, підібраний вручну, дає значно менше ентропії.',
+        'Фразу треба генерувати, а не складати з цитати, рядка пісні чи вигаданого речення: саме такі шаблони атакують першими. Зберігайте мастер-фразу офлайн, доки не запам\'ятаєте, і тримайте резервну копію у фізично безпечному місці.',
+      ],
+      bullets: [
+        '4 слова: ~52 біти — маловажливі акаунти й швидке розблокування пристрою',
+        '5 слів: ~65 бітів — більшість особистих акаунтів',
+        '6 слів: ~78 бітів — пошта, банкінг і робочі акаунти',
+        '7 слів: ~90 бітів — мастер-пароль менеджера паролів',
+        '8 слів: ~103 біти — довгострокові офлайн-резервні копії',
       ],
     },
     {
@@ -186,13 +218,29 @@ export const ua: LocalizedArticleContent = {
 
 export const es: LocalizedArticleContent = {
   title: 'Frase de contraseña vs contraseña: entropía y seguridad explicadas',
-  excerpt: 'Comprende las matemáticas detrás de la entropía de contraseñas y aprende cuándo las frases de contraseña superan a las contraseñas tradicionales. Incluye cálculos de entropía, metodología Diceware y recomendaciones prácticas.',
-  seoTitle: 'Frase de contraseña vs contraseña — ¿Cuál es más segura? | generatepasswordto.me',
+  excerpt: 'Comprende las matemáticas detrás de la entropía de contraseñas y aprende cuándo las frases de contraseña superan a las contraseñas tradicionales.',
+  seoTitle: 'Frase de contraseña vs contraseña: entropía y seguridad',
   seoDescription: 'Análisis profundo de frases de contraseña vs contraseñas. Cubre matemáticas de entropía, listas Diceware, resistencia a fuerza bruta y cuándo usar cada enfoque.',
   keywords: ['frase de contraseña vs contraseña', 'entropía de contraseña explicada', 'frase diceware', 'seguridad de frase de contraseña', 'cálculo bits entropía', 'matemáticas fortaleza contraseña'],
   sections: [
     { heading: 'El problema de la entropía: por qué la mayoría de contraseñas fallan', paragraphs: ['Cada contraseña tiene una propiedad medible llamada entropía — el número de bits de aleatoriedad que contiene. Mayor entropía significa más combinaciones posibles que un atacante debe probar. Una contraseña con 50 bits de entropía tiene 2^50 (aproximadamente 1,1 cuatrillones) posibilidades. A mil millones de intentos por segundo, eso toma unos 13 días. A 80 bits, incluso un billón de intentos por segundo tomaría 38.000 años.', 'La idea clave es que la entropía depende de cómo se generó la contraseña, no de cómo se ve. "Tr0ub4dor&3" parece compleja pero tiene solo unos 28 bits de entropía porque sigue un patrón predecible. Mientras tanto, "correct horse battery staple" — cuatro palabras aleatorias — proporciona aproximadamente 44 bits de una lista de 2.048 palabras o 52 bits de la lista EFF de 7.776 palabras.', 'La mayoría de políticas de contraseñas se centran en la composición de caracteres en lugar de la entropía real. Esto crea una falsa sensación de seguridad: "Summer2026!" satisface cada requisito de complejidad pero cae ante un ataque de diccionario en segundos.'] },
     { heading: 'Cómo se calcula la entropía de contraseñas', paragraphs: ['Para una contraseña verdaderamente aleatoria, la entropía es log₂(C^L), donde C es el tamaño del conjunto de caracteres y L es la longitud. Una contraseña de 12 caracteres de un conjunto de 95 caracteres tiene ≈ 79 bits. Una de 16 caracteres alcanza unos 105 bits.', 'Para frases de contraseña, la entropía es log₂(W^N), donde W es el tamaño de la lista y N es el número de palabras. Con la lista EFF (7.776 palabras): 4 palabras dan ≈ 51,7 bits; 5 palabras ≈ 64,6 bits; 6 palabras ≈ 77,5 bits; 7 palabras ≈ 90,5 bits.', 'Este cálculo asume que el atacante conoce tu método de generación. Si un atacante sabe que usaste una frase Diceware de 4 palabras, enfrenta 7.776^4 ≈ 3,7 billones de combinaciones.'], bullets: ['8 caracteres aleatorios (a-z): log₂(26^8) ≈ 37,6 bits', '12 caracteres aleatorios (a-z, A-Z, 0-9, símbolos): log₂(95^12) ≈ 78,8 bits', '4 palabras Diceware: log₂(7776^4) ≈ 51,7 bits', '6 palabras Diceware: log₂(7776^6) ≈ 77,5 bits', '16 caracteres aleatorios (ASCII completo): log₂(95^16) ≈ 105 bits', '8 palabras Diceware: log₂(7776^8) ≈ 103,4 bits'] },
+    {
+      heading: 'Cómo genera una frase de contraseña el modo de palabras',
+      paragraphs: [
+        'El modo Palabras del generador elige cada palabra de forma independiente de la lista grande EFF de 7.776 entradas. Con ese tamaño, cada palabra aporta unos 12,9 bits de entropía, por muy familiar que parezca. Tú eliges el número de palabras, el separador y si una palabra va en mayúscula.',
+        'El número de palabras es el único ajuste que cambia de verdad el margen de seguridad. Cuatro palabras dan unos 52 bits, cinco unos 65, seis unos 78 y siete unos 90. Usa cinco para cuentas personales cotidianas, seis para correo y finanzas, y siete para una contraseña maestra o un dispositivo que no puedas recuperar fácilmente.',
+        'Un ejemplo generado es monarch-fabric-eleven-radar-canopy-walrus: seis palabras aleatorias, unos 78 bits. La lista integrada es en inglés. Una frase en otro idioma solo es comparable si su lista también tiene al menos 7.776 palabras; una lista corta elegida a mano ofrece mucha menos entropía.',
+        'Genera la frase; no la compongas con una cita, la letra de una canción ni una oración inventada. Los atacantes prueban esos patrones primero. Guarda la frase maestra fuera de línea hasta memorizarla y conserva una copia de recuperación en un lugar físicamente seguro.',
+      ],
+      bullets: [
+        '4 palabras: ~52 bits — cuentas de bajo riesgo y desbloqueos rápidos',
+        '5 palabras: ~65 bits — la mayoría de cuentas personales',
+        '6 palabras: ~78 bits — correo, banca y cuentas de trabajo',
+        '7 palabras: ~90 bits — contraseña maestra del gestor',
+        '8 palabras: ~103 bits — copias de seguridad offline a largo plazo',
+      ],
+    },
     { heading: 'El caso a favor de las frases de contraseña', paragraphs: ['Las frases ofrecen una ventaja única: cambian complejidad de caracteres por longitud, logrando alta entropía mientras permanecen memorables y fáciles de teclear. Una frase de seis palabras como "monarch-fabric-eleven-radar-canopy-walrus" tiene aproximadamente 78 bits de entropía — igualando una contraseña aleatoria de 12 caracteres — pero es mucho más fácil de recordar.', 'El factor de memorabilidad no es solo conveniencia — es una ventaja de seguridad. Cuando las contraseñas son difíciles de recordar, los usuarios las anotan de forma insegura, las reutilizan o crean patrones predecibles.', 'Las frases también resisten mejor la observación por encima del hombro que las contraseñas de caracteres. Un observador que te ve teclear "k9$mP#2xLw" puede memorizar los caracteres, pero ver a alguien teclear "correct horse battery staple" es mucho más difícil de retener.', 'El método Diceware, originalmente desarrollado por Arnold Reinhold en 1995, usa dados físicos para seleccionar palabras de una lista numerada. Cada tirada de dado es verdaderamente aleatoria. La EFF actualizó la lista en 2016 para usar solo palabras inglesas comunes y fáciles de deletrear.'] },
     { heading: 'El caso a favor de las contraseñas aleatorias', paragraphs: ['Las contraseñas aleatorias logran mayor entropía por carácter que las frases por palabra. Una contraseña aleatoria de 16 caracteres del conjunto ASCII proporciona unos 105 bits — necesitarías 8 palabras Diceware para igualar eso.', 'Para cuentas gestionadas por un gestor de contraseñas (donde nunca tecleas la contraseña manualmente), las contraseñas aleatorias son estrictamente superiores. El gestor maneja la generación, almacenamiento y auto-rellenado, así que la memorabilidad es irrelevante.', 'Las contraseñas aleatorias también son más compactas, lo que importa en sistemas con límites bajos de longitud máxima. Algunos sistemas antiguos limitan a 16 o incluso 8 caracteres.', 'La desventaja clave es que son esencialmente imposibles de memorizar. Si pierdes acceso a tu gestor, la recuperación depende completamente de tu estrategia de respaldo.'] },
     { heading: 'Cuándo usar cada enfoque', paragraphs: ['Usa frases de contraseña para: tu contraseña maestra del gestor; contraseñas de inicio de sesión del ordenador; PINs de teléfono; contraseñas de cifrado de disco completo; y cualquier credencial donde no puedas depender del auto-rellenado.', 'Usa contraseñas aleatorias para: todas las cuentas en tu gestor; claves API y tokens; cuentas de servicio; contraseñas de bases de datos; y cualquier credencial que será copiada-pegada o auto-rellenada.', 'Para máxima seguridad, combina ambos enfoques: una frase fuerte como contraseña maestra y contraseñas aleatorias únicas para cada cuenta individual.'] },
@@ -203,13 +251,29 @@ export const es: LocalizedArticleContent = {
 
 export const fr: LocalizedArticleContent = {
   title: 'Phrase secrète vs mot de passe : entropie et sécurité expliquées',
-  excerpt: 'Comprenez les mathématiques derrière l\'entropie des mots de passe et apprenez quand les phrases secrètes surpassent les mots de passe traditionnels. Inclut calculs d\'entropie, méthodologie Diceware et recommandations pratiques.',
-  seoTitle: 'Phrase secrète vs mot de passe — Lequel est plus sécurisé ? | generatepasswordto.me',
-  seoDescription: 'Analyse approfondie des phrases secrètes vs mots de passe. Couvre les maths de l\'entropie, les listes Diceware, la résistance à la force brute et quand utiliser chaque approche.',
+  excerpt: 'Comprenez les mathématiques derrière l\'entropie des mots de passe et apprenez quand les phrases secrètes surpassent les mots de passe traditionnels.',
+  seoTitle: 'Phrase secrète vs mot de passe : entropie et sécurité expliquées',
+  seoDescription: 'Analyse approfondie des phrases secrètes vs mots de passe. Utilisez le générateur pour créer un mot de passe unique et conservez-le en sécurité.',
   keywords: ['phrase secrète vs mot de passe', 'entropie mot de passe expliquée', 'phrase diceware', 'sécurité phrase secrète', 'calcul bits entropie', 'mathématiques force mot de passe'],
   sections: [
     { heading: 'Le problème de l\'entropie : pourquoi la plupart des mots de passe échouent', paragraphs: ['Chaque mot de passe possède une propriété mesurable appelée entropie — le nombre de bits d\'aléatoire qu\'il contient. Plus d\'entropie signifie plus de combinaisons possibles qu\'un attaquant doit essayer. Un mot de passe avec 50 bits d\'entropie a 2^50 possibilités. À un milliard d\'essais par seconde, cela prend environ 13 jours. À 80 bits, même un billion d\'essais par seconde prendrait 38 000 ans.', 'L\'idée clé est que l\'entropie dépend de la façon dont le mot de passe a été généré, pas de son apparence. "Tr0ub4dor&3" semble complexe mais n\'a qu\'environ 28 bits d\'entropie. Pendant ce temps, "correct horse battery staple" fournit environ 52 bits avec la liste EFF de 7 776 mots.', 'La plupart des politiques se concentrent sur la composition des caractères plutôt que l\'entropie réelle. Cela crée un faux sentiment de sécurité : "Summer2026!" satisfait toutes les exigences mais tombe face à une attaque par dictionnaire en secondes.'] },
     { heading: 'Comment l\'entropie des mots de passe est calculée', paragraphs: ['Pour un mot de passe vraiment aléatoire, l\'entropie = log₂(C^L), où C est la taille du jeu de caractères et L la longueur. Un mot de passe de 12 caractères d\'un ensemble de 95 a ≈ 79 bits.', 'Pour les phrases, l\'entropie = log₂(W^N), où W est la taille de la liste et N le nombre de mots. Avec la liste EFF (7 776 mots) : 4 mots ≈ 51,7 bits ; 5 mots ≈ 64,6 bits ; 6 mots ≈ 77,5 bits ; 7 mots ≈ 90,5 bits.', 'Ce calcul suppose que l\'attaquant connaît votre méthode de génération. C\'est la mesure de sécurité conservative et réaliste.'], bullets: ['8 caractères aléatoires (a-z) : log₂(26^8) ≈ 37,6 bits', '12 caractères aléatoires (a-z, A-Z, 0-9, symboles) : log₂(95^12) ≈ 78,8 bits', '4 mots Diceware : log₂(7776^4) ≈ 51,7 bits', '6 mots Diceware : log₂(7776^6) ≈ 77,5 bits', '16 caractères aléatoires (ASCII complet) : log₂(95^16) ≈ 105 bits', '8 mots Diceware : log₂(7776^8) ≈ 103,4 bits'] },
+    {
+      heading: 'Comment le mode mots génère une phrase secrète',
+      paragraphs: [
+        'Le mode Mots du générateur choisit chaque mot indépendamment dans la grande liste EFF de 7 776 entrées. Avec cette taille, chaque mot apporte environ 12,9 bits d\'entropie, quelle que soit sa familiarité. Vous choisissez le nombre de mots, le séparateur et la mise en majuscule éventuelle d\'un mot.',
+        'Le nombre de mots est le seul réglage qui modifie réellement la marge de sécurité. Quatre mots donnent environ 52 bits, cinq environ 65, six environ 78 et sept environ 90. Utilisez cinq mots pour les comptes personnels courants, six pour le courriel et les finances, et sept pour un mot de passe maître ou un appareil difficile à récupérer.',
+        'Un exemple généré : monarch-fabric-eleven-radar-canopy-walrus — six mots aléatoires, environ 78 bits. La liste intégrée est en anglais. Une phrase dans une autre langue n\'est comparable que si sa liste contient aussi au moins 7 776 mots ; une courte liste choisie à la main offre bien moins d\'entropie.',
+        'Générez la phrase ; ne la composez pas à partir d\'une citation, de paroles de chanson ou d\'une phrase inventée. Les attaquants testent ces schémas en premier. Conservez la phrase maîtresse hors ligne jusqu\'à la mémoriser et gardez une copie de secours dans un lieu physiquement sûr.',
+      ],
+      bullets: [
+        '4 mots : ~52 bits — comptes à faible risque et déverrouillages rapides',
+        '5 mots : ~65 bits — la plupart des comptes personnels',
+        '6 mots : ~78 bits — courriel, banque et comptes professionnels',
+        '7 mots : ~90 bits — mot de passe maître du gestionnaire',
+        '8 mots : ~103 bits — sauvegardes hors ligne à long terme',
+      ],
+    },
     { heading: 'L\'argument en faveur des phrases secrètes', paragraphs: ['Les phrases offrent un avantage unique : elles échangent la complexité de caractères contre la longueur, atteignant une haute entropie tout en restant mémorables. Une phrase de six mots a environ 78 bits d\'entropie — égalant un mot de passe aléatoire de 12 caractères — mais est bien plus facile à retenir.', 'Le facteur de mémorabilité n\'est pas qu\'une commodité — c\'est un avantage de sécurité. Quand les mots de passe sont difficiles à retenir, les utilisateurs les notent de façon non sécurisée ou les réutilisent.', 'Les phrases résistent aussi mieux à l\'observation par-dessus l\'épaule que les mots de passe en caractères.', 'La méthode Diceware, développée par Arnold Reinhold en 1995, utilise des dés physiques pour sélectionner des mots d\'une liste numérotée. L\'EFF a mis à jour la liste en 2016 pour utiliser uniquement des mots anglais courants.'] },
     { heading: 'L\'argument en faveur des mots de passe aléatoires', paragraphs: ['Les mots de passe aléatoires atteignent une entropie plus élevée par caractère. Un mot de passe de 16 caractères fournit environ 105 bits — il faudrait 8 mots Diceware pour égaler cela.', 'Pour les comptes gérés par un gestionnaire, les mots de passe aléatoires sont strictement supérieurs. Le gestionnaire gère tout, donc la mémorabilité est sans importance.', 'Les mots de passe aléatoires sont aussi plus compacts, ce qui compte dans les systèmes avec des limites de longueur basses.', 'L\'inconvénient clé est qu\'ils sont impossibles à mémoriser. Si vous perdez l\'accès à votre gestionnaire, la récupération dépend de votre stratégie de sauvegarde.'] },
     { heading: 'Quand utiliser chaque approche', paragraphs: ['Utilisez des phrases pour : votre mot de passe maître ; les connexions ordinateur ; les PINs de téléphone ; les mots de passe de chiffrement de disque ; et tout identifiant où vous ne pouvez pas compter sur le remplissage automatique.', 'Utilisez des mots de passe aléatoires pour : tous les comptes dans votre gestionnaire ; les clés API ; les comptes de service ; les mots de passe de base de données.', 'Pour une sécurité maximale, combinez les deux approches : une phrase forte comme mot de passe maître et des mots de passe aléatoires uniques pour chaque compte individuel.'] },
@@ -221,12 +285,28 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'Passphrase vs Passwort: Entropie und Sicherheit erklärt',
   excerpt: 'Verstehen Sie die Mathematik hinter der Passwort-Entropie und lernen Sie, wann Passphrasen traditionelle Passwörter übertreffen. Enthält Entropie-Berechnungen, Diceware-Methodik und praktische Empfehlungen.',
-  seoTitle: 'Passphrase vs Passwort-Entropie — Was ist sicherer? | generatepasswordto.me',
-  seoDescription: 'Tiefgehende Analyse von Passphrase vs Passwort-Sicherheit. Behandelt Entropie-Mathematik, Diceware-Wortlisten, Brute-Force-Widerstand und wann jeder Ansatz zu verwenden ist.',
+  seoTitle: 'Passphrase vs Passwort: Entropie und Sicherheit erklärt',
+  seoDescription: 'Tiefgehende Analyse von Passphrase vs Passwort-Sicherheit. Erzeugen Sie im Generator ein einzigartiges Passwort und speichern Sie es sicher.',
   keywords: ['Passphrase vs Passwort', 'Passwort-Entropie erklärt', 'Diceware-Passphrase', 'Passphrase-Sicherheit', 'Entropie-Bits-Berechnung', 'Passwortstärke-Mathematik'],
   sections: [
     { heading: 'Das Entropie-Problem: Warum die meisten Passwörter versagen', paragraphs: ['Jedes Passwort hat eine messbare Eigenschaft namens Entropie — die Anzahl der Zufälligkeitsbits. Höhere Entropie bedeutet mehr mögliche Kombinationen. Ein Passwort mit 50 Bits hat 2^50 Möglichkeiten. Bei einer Milliarde Versuche pro Sekunde dauert das etwa 13 Tage. Bei 80 Bits würde selbst eine Billion Versuche pro Sekunde 38.000 Jahre dauern.', 'Die entscheidende Erkenntnis ist, dass Entropie davon abhängt, wie das Passwort generiert wurde, nicht wie es aussieht. "Tr0ub4dor&3" hat nur etwa 28 Bits Entropie. Hingegen bieten "correct horse battery staple" etwa 52 Bits mit der EFF-Wortliste.', 'Die meisten Passwort-Richtlinien konzentrieren sich auf Zeichenkomposition statt auf tatsächliche Entropie. "Summer2026!" erfüllt jede Komplexitätsanforderung, fällt aber in Sekunden einem Wörterbuchangriff zum Opfer.'] },
     { heading: 'Wie Passwort-Entropie berechnet wird', paragraphs: ['Für ein wirklich zufälliges Passwort: Entropie = log₂(C^L). Ein 12-Zeichen-Passwort aus einem 95-Zeichen-Satz hat ≈ 79 Bits.', 'Für Passphrasen: Entropie = log₂(W^N). Mit der EFF-Liste (7.776 Wörter): 4 Wörter ≈ 51,7 Bits; 5 Wörter ≈ 64,6 Bits; 6 Wörter ≈ 77,5 Bits; 7 Wörter ≈ 90,5 Bits.', 'Diese Berechnung nimmt an, dass der Angreifer Ihre Generierungsmethode kennt — die konservative, realistische Sicherheitsmessung.'], bullets: ['8 zufällige Zeichen (a-z): log₂(26^8) ≈ 37,6 Bits', '12 zufällige Zeichen (a-z, A-Z, 0-9, Symbole): log₂(95^12) ≈ 78,8 Bits', '4 Diceware-Wörter: log₂(7776^4) ≈ 51,7 Bits', '6 Diceware-Wörter: log₂(7776^6) ≈ 77,5 Bits', '16 zufällige Zeichen (volles ASCII): log₂(95^16) ≈ 105 Bits', '8 Diceware-Wörter: log₂(7776^8) ≈ 103,4 Bits'] },
+    {
+      heading: 'So erzeugt der Wortmodus eine Passphrase',
+      paragraphs: [
+        'Der Wortmodus des Generators wählt jedes Wort unabhängig aus der großen EFF-Liste mit 7.776 Einträgen. Bei dieser Größe trägt jedes Wort etwa 12,9 Bit Entropie bei, egal wie vertraut es wirkt. Sie legen die Wortzahl, das Trennzeichen und die Großschreibung eines Wortes fest.',
+        'Die Wortzahl ist die einzige Einstellung, die die Sicherheitsmarge wirklich verändert. Vier Wörter ergeben etwa 52 Bit, fünf etwa 65, sechs etwa 78 und sieben etwa 90. Nehmen Sie fünf Wörter für alltägliche private Konten, sechs für E-Mail und Finanzen und sieben für ein Master-Passwort oder ein Gerät, das sich schwer wiederherstellen lässt.',
+        'Ein generiertes Beispiel ist monarch-fabric-eleven-radar-canopy-walrus — sechs zufällige Wörter, rund 78 Bit. Die integrierte Liste ist englisch. Eine Passphrase in einer anderen Sprache ist nur vergleichbar, wenn ihre Wortliste ebenfalls mindestens 7.776 Einträge hat; eine kurze, selbst gewählte Liste liefert deutlich weniger Entropie.',
+        'Lassen Sie die Phrase generieren; setzen Sie sie nicht aus einem Zitat, Songtext oder selbst erfundenen Satz zusammen. Angreifer testen genau solche Muster zuerst. Bewahren Sie die Master-Passphrase offline auf, bis Sie sie auswendig können, und halten Sie eine Wiederherstellungskopie an einem physisch sicheren Ort.',
+      ],
+      bullets: [
+        '4 Wörter: ~52 Bit — Konten mit geringem Risiko und schnelles Entsperren',
+        '5 Wörter: ~65 Bit — die meisten privaten Konten',
+        '6 Wörter: ~78 Bit — E-Mail, Banking und Arbeitskonten',
+        '7 Wörter: ~90 Bit — Master-Passwort des Passwortmanagers',
+        '8 Wörter: ~103 Bit — langfristige Offline-Backups',
+      ],
+    },
     { heading: 'Das Argument für Passphrasen', paragraphs: ['Passphrasen bieten einen einzigartigen Vorteil: Sie tauschen Zeichenkomplexität gegen Länge und erreichen hohe Entropie bei gleichzeitiger Merkbarkeit. Eine Sechs-Wort-Phrase hat etwa 78 Bits Entropie — vergleichbar mit einem zufälligen 12-Zeichen-Passwort.', 'Der Merkbarkeitsfaktor ist nicht nur Komfort — er ist ein Sicherheitsvorteil. Wenn Passwörter schwer zu merken sind, notieren Benutzer sie unsicher oder verwenden sie wieder.', 'Passphrasen widerstehen auch dem Schulter-Surfen besser als Zeichenpasswörter.', 'Die Diceware-Methode, ursprünglich 1995 von Arnold Reinhold entwickelt, verwendet physische Würfel zur Wortauswahl. Die EFF aktualisierte die Wortliste 2016 mit nur gebräuchlichen, leicht zu buchstabierenden englischen Wörtern.'] },
     { heading: 'Das Argument für zufällige Passwörter', paragraphs: ['Zufällige Passwörter erreichen höhere Entropie pro Zeichen. Ein 16-Zeichen-Passwort bietet etwa 105 Bits — man bräuchte 8 Diceware-Wörter, um das zu erreichen.', 'Für vom Passwort-Manager verwaltete Konten sind zufällige Passwörter streng überlegen, da die Merkbarkeit irrelevant ist.', 'Zufällige Passwörter sind auch kompakter, was bei Systemen mit niedrigen Längenbegrenzungen wichtig ist.', 'Der Hauptnachteil ist, dass sie unmöglich zu merken sind. Wenn Sie den Zugang zum Manager verlieren, hängt die Wiederherstellung von Ihrer Backup-Strategie ab.'] },
     { heading: 'Wann welcher Ansatz verwendet werden sollte', paragraphs: ['Verwenden Sie Passphrasen für: Ihr Master-Passwort; Computer-Anmeldung; Telefon-PINs; Festplattenverschlüsselung; und jede Anmeldung, bei der Sie nicht auf Auto-Fill vertrauen können.', 'Verwenden Sie zufällige Passwörter für: alle Konten im Manager; API-Schlüssel; Service-Konten; Datenbank-Passwörter.', 'Für maximale Sicherheit kombinieren Sie beide Ansätze: eine starke Passphrase als Master-Passwort und einzigartige zufällige Passwörter für jedes einzelne Konto.'] },
@@ -238,12 +318,28 @@ export const de: LocalizedArticleContent = {
 export const it: LocalizedArticleContent = {
   title: 'Passphrase vs password: entropia e sicurezza spiegate',
   excerpt: 'Comprendete la matematica dietro l\'entropia delle password e scoprite quando le passphrase superano le password tradizionali. Include calcoli di entropia, metodologia Diceware e raccomandazioni pratiche.',
-  seoTitle: 'Passphrase vs password — Quale è più sicura? | generatepasswordto.me',
-  seoDescription: 'Analisi approfondita di passphrase vs password. Copre la matematica dell\'entropia, le liste Diceware, la resistenza alla forza bruta e quando usare ciascun approccio.',
+  seoTitle: 'Passphrase vs password: entropia e sicurezza spiegate',
+  seoDescription: 'Analisi approfondita di passphrase vs password. Usa il generatore per creare una password unica e conservala in modo sicuro.',
   keywords: ['passphrase vs password', 'entropia password spiegata', 'passphrase diceware', 'sicurezza passphrase', 'calcolo bit entropia', 'matematica forza password'],
   sections: [
     { heading: 'Il problema dell\'entropia: perché la maggior parte delle password fallisce', paragraphs: ['Ogni password ha una proprietà misurabile chiamata entropia — il numero di bit di casualità che contiene. Maggiore entropia significa più combinazioni possibili. Una password con 50 bit di entropia ha 2^50 possibilità. A un miliardo di tentativi al secondo, servono circa 13 giorni. A 80 bit, anche un trilione di tentativi al secondo richiederebbe 38.000 anni.', 'L\'intuizione fondamentale è che l\'entropia dipende da come la password è stata generata, non da come appare. "Tr0ub4dor&3" ha solo circa 28 bit di entropia. Invece, "correct horse battery staple" fornisce circa 52 bit con la lista EFF.', 'La maggior parte delle politiche si concentra sulla composizione dei caratteri piuttosto che sull\'entropia reale. "Summer2026!" soddisfa ogni requisito ma cade in secondi a un attacco dizionario.'] },
     { heading: 'Come si calcola l\'entropia delle password', paragraphs: ['Per una password veramente casuale: entropia = log₂(C^L). Una password di 12 caratteri da un insieme di 95 ha ≈ 79 bit.', 'Per le passphrase: entropia = log₂(W^N). Con la lista EFF (7.776 parole): 4 parole ≈ 51,7 bit; 5 parole ≈ 64,6 bit; 6 parole ≈ 77,5 bit; 7 parole ≈ 90,5 bit.', 'Questo calcolo presuppone che l\'attaccante conosca il vostro metodo di generazione.'], bullets: ['8 caratteri casuali (a-z): log₂(26^8) ≈ 37,6 bit', '12 caratteri casuali (a-z, A-Z, 0-9, simboli): log₂(95^12) ≈ 78,8 bit', '4 parole Diceware: log₂(7776^4) ≈ 51,7 bit', '6 parole Diceware: log₂(7776^6) ≈ 77,5 bit', '16 caratteri casuali (ASCII completo): log₂(95^16) ≈ 105 bit', '8 parole Diceware: log₂(7776^8) ≈ 103,4 bit'] },
+    {
+      heading: 'Come il modo parole genera una passphrase',
+      paragraphs: [
+        'La modalità Parole del generatore sceglie ogni parola in modo indipendente dalla grande lista EFF di 7.776 voci. Con questa dimensione, ogni parola aggiunge circa 12,9 bit di entropia, indipendentemente da quanto sembri familiare. Scegli il numero di parole, il separatore e se scrivere una parola in maiuscolo.',
+        'Il numero di parole è l\'unica impostazione che cambia davvero il margine di sicurezza. Quattro parole danno circa 52 bit, cinque circa 65, sei circa 78 e sette circa 90. Usa cinque parole per gli account personali quotidiani, sei per email e finanze, sette per una password master o un dispositivo difficile da recuperare.',
+        'Un esempio generato è monarch-fabric-eleven-radar-canopy-walrus: sei parole casuali, circa 78 bit. La lista integrata è in inglese. Una passphrase in un\'altra lingua è confrontabile solo se anche la sua lista contiene almeno 7.776 parole; una lista breve scelta a mano offre molta meno entropia.',
+        'Genera la frase; non comporla con una citazione, il testo di una canzone o una frase inventata. Gli attaccanti provano prima proprio questi schemi. Conserva la passphrase master offline finché non la memorizzi e tieni una copia di recupero in un luogo fisicamente sicuro.',
+      ],
+      bullets: [
+        '4 parole: ~52 bit — account a basso rischio e sblocchi rapidi',
+        '5 parole: ~65 bit — la maggior parte degli account personali',
+        '6 parole: ~78 bit — email, banca e account di lavoro',
+        '7 parole: ~90 bit — password master del gestore',
+        '8 parole: ~103 bit — backup offline a lungo termine',
+      ],
+    },
     { heading: 'L\'argomento a favore delle passphrase', paragraphs: ['Le passphrase offrono un vantaggio unico: scambiano complessità di caratteri con lunghezza, raggiungendo alta entropia rimanendo memorizzabili. Una frase di sei parole ha circa 78 bit di entropia — equivalente a una password casuale di 12 caratteri.', 'Il fattore memorizzabilità non è solo comodità — è un vantaggio di sicurezza. Quando le password sono difficili da ricordare, gli utenti le annotano in modo insicuro o le riutilizzano.', 'Le passphrase resistono meglio anche all\'osservazione alle spalle.', 'Il metodo Diceware, sviluppato da Arnold Reinhold nel 1995, usa dadi fisici per selezionare parole da una lista numerata. L\'EFF ha aggiornato la lista nel 2016.'] },
     { heading: 'L\'argomento a favore delle password casuali', paragraphs: ['Le password casuali raggiungono maggiore entropia per carattere. Una di 16 caratteri fornisce circa 105 bit — servirebbero 8 parole Diceware per eguagliarla.', 'Per account gestiti da un gestore, le password casuali sono strettamente superiori poiché la memorizzabilità è irrilevante.', 'Le password casuali sono anche più compatte, importante in sistemi con limiti di lunghezza bassi.', 'Lo svantaggio principale è che sono impossibili da memorizzare.'] },
     { heading: 'Quando usare ciascun approccio', paragraphs: ['Usate passphrase per: la password master del gestore; accessi al computer; PIN del telefono; crittografia del disco; e qualsiasi credenziale dove non potete affidarvi al riempimento automatico.', 'Usate password casuali per: tutti gli account nel gestore; chiavi API; account di servizio; password di database.', 'Per massima sicurezza, combinate entrambi: una passphrase forte come master e password casuali uniche per ogni account.'] },
@@ -255,12 +351,28 @@ export const it: LocalizedArticleContent = {
 export const pt: LocalizedArticleContent = {
   title: 'Frase-senha vs senha: entropia e segurança explicadas',
   excerpt: 'Entenda a matemática por trás da entropia de senhas e aprenda quando frases-senha superam senhas tradicionais. Inclui cálculos de entropia, metodologia Diceware e recomendações práticas.',
-  seoTitle: 'Frase-senha vs senha — Qual é mais segura? | generatepasswordto.me',
+  seoTitle: 'Frase-senha vs senha: entropia e segurança explicadas',
   seoDescription: 'Análise profunda de frase-senha vs senha. Cobre matemática de entropia, listas Diceware, resistência a força bruta e quando usar cada abordagem.',
   keywords: ['frase-senha vs senha', 'entropia senha explicada', 'frase diceware', 'segurança frase-senha', 'cálculo bits entropia', 'matemática força senha'],
   sections: [
     { heading: 'O problema da entropia: por que a maioria das senhas falha', paragraphs: ['Toda senha possui uma propriedade mensurável chamada entropia — o número de bits de aleatoriedade que contém. Maior entropia significa mais combinações possíveis. Uma senha com 50 bits tem 2^50 possibilidades. A um bilhão de tentativas por segundo, leva cerca de 13 dias. A 80 bits, mesmo um trilhão de tentativas levaria 38.000 anos.', 'A percepção crítica é que a entropia depende de como a senha foi gerada, não de como ela parece. "Tr0ub4dor&3" tem apenas cerca de 28 bits. Enquanto isso, "correct horse battery staple" fornece aproximadamente 52 bits com a lista EFF.', 'A maioria das políticas foca na composição de caracteres em vez da entropia real. "Summer2026!" satisfaz todos os requisitos mas cai em segundos a um ataque de dicionário.'] },
     { heading: 'Como a entropia de senhas é calculada', paragraphs: ['Para uma senha verdadeiramente aleatória: entropia = log₂(C^L). Uma senha de 12 caracteres de um conjunto de 95 tem ≈ 79 bits.', 'Para frases-senha: entropia = log₂(W^N). Com a lista EFF (7.776 palavras): 4 palavras ≈ 51,7 bits; 5 palavras ≈ 64,6 bits; 6 palavras ≈ 77,5 bits; 7 palavras ≈ 90,5 bits.', 'Este cálculo assume que o atacante conhece seu método de geração.'], bullets: ['8 caracteres aleatórios (a-z): log₂(26^8) ≈ 37,6 bits', '12 caracteres aleatórios (a-z, A-Z, 0-9, símbolos): log₂(95^12) ≈ 78,8 bits', '4 palavras Diceware: log₂(7776^4) ≈ 51,7 bits', '6 palavras Diceware: log₂(7776^6) ≈ 77,5 bits', '16 caracteres aleatórios (ASCII completo): log₂(95^16) ≈ 105 bits', '8 palavras Diceware: log₂(7776^8) ≈ 103,4 bits'] },
+    {
+      heading: 'Como o modo de palavras gera uma frase-senha',
+      paragraphs: [
+        'O modo Palavras do gerador escolhe cada palavra de forma independente na grande lista EFF de 7.776 entradas. Com esse tamanho, cada palavra acrescenta cerca de 12,9 bits de entropia, por mais familiar que pareça. Você escolhe o número de palavras, o separador e se uma palavra fica em maiúscula.',
+        'O número de palavras é o único ajuste que muda de fato a margem de segurança. Quatro palavras dão cerca de 52 bits, cinco cerca de 65, seis cerca de 78 e sete cerca de 90. Use cinco para contas pessoais do dia a dia, seis para email e finanças, e sete para uma senha mestra ou um dispositivo difícil de recuperar.',
+        'Um exemplo gerado é monarch-fabric-eleven-radar-canopy-walrus: seis palavras aleatórias, cerca de 78 bits. A lista integrada é em inglês. Uma frase em outro idioma só é comparável se a lista também tiver pelo menos 7.776 palavras; uma lista curta escolhida à mão oferece muito menos entropia.',
+        'Gere a frase; não a monte com uma citação, trecho de música ou frase inventada. Atacantes testam esses padrões primeiro. Guarde a frase mestra offline até memorizá-la e mantenha uma cópia de recuperação em um local fisicamente seguro.',
+      ],
+      bullets: [
+        '4 palavras: ~52 bits — contas de baixo risco e desbloqueios rápidos',
+        '5 palavras: ~65 bits — a maioria das contas pessoais',
+        '6 palavras: ~78 bits — email, banco e contas de trabalho',
+        '7 palavras: ~90 bits — senha mestra do gerenciador',
+        '8 palavras: ~103 bits — backups offline de longo prazo',
+      ],
+    },
     { heading: 'O argumento a favor das frases-senha', paragraphs: ['Frases-senha oferecem uma vantagem única: trocam complexidade de caracteres por comprimento, alcançando alta entropia enquanto permanecem memoráveis. Uma frase de seis palavras tem aproximadamente 78 bits de entropia — equivalente a uma senha aleatória de 12 caracteres.', 'O fator memorabilidade não é apenas conveniência — é uma vantagem de segurança. Quando senhas são difíceis de lembrar, usuários as anotam de forma insegura ou as reutilizam.', 'Frases-senha também resistem melhor à espionagem por cima do ombro.', 'O método Diceware, desenvolvido por Arnold Reinhold em 1995, usa dados físicos para selecionar palavras. A EFF atualizou a lista em 2016.'] },
     { heading: 'O argumento a favor das senhas aleatórias', paragraphs: ['Senhas aleatórias alcançam maior entropia por caractere. Uma de 16 caracteres fornece cerca de 105 bits — seriam necessárias 8 palavras Diceware para igualar.', 'Para contas gerenciadas por um gerenciador, senhas aleatórias são estritamente superiores, pois a memorabilidade é irrelevante.', 'Senhas aleatórias são também mais compactas, importante em sistemas com limites baixos de comprimento.', 'A principal desvantagem é que são impossíveis de memorizar.'] },
     { heading: 'Quando usar cada abordagem', paragraphs: ['Use frases-senha para: sua senha mestra; login do computador; PINs de telefone; criptografia de disco; e qualquer credencial onde não possa confiar no preenchimento automático.', 'Use senhas aleatórias para: todas as contas no gerenciador; chaves API; contas de serviço; senhas de banco de dados.', 'Para máxima segurança, combine ambas: uma frase-senha forte como mestra e senhas aleatórias únicas para cada conta.'] },
@@ -272,12 +384,28 @@ export const pt: LocalizedArticleContent = {
 export const ru: LocalizedArticleContent = {
   title: 'Парольная фраза vs пароль: энтропия и безопасность',
   excerpt: 'Поймите математику энтропии паролей и узнайте, когда парольные фразы превосходят традиционные пароли. Включает расчёты энтропии, методологию Diceware и практические рекомендации.',
-  seoTitle: 'Парольная фраза vs пароль — Что безопаснее? | generatepasswordto.me',
+  seoTitle: 'Парольная фраза vs пароль: энтропия и безопасность',
   seoDescription: 'Глубокий анализ парольных фраз vs паролей. Математика энтропии, списки Diceware, устойчивость к brute-force и когда использовать каждый подход.',
   keywords: ['парольная фраза vs пароль', 'энтропия пароля объяснение', 'фраза diceware', 'безопасность парольной фразы', 'расчёт битов энтропии', 'математика стойкости паролей'],
   sections: [
     { heading: 'Проблема энтропии: почему большинство паролей уязвимы', paragraphs: ['Каждый пароль имеет измеримое свойство — энтропию — количество бит случайности. Пароль с 50 битами энтропии имеет 2^50 возможностей. При миллиарде попыток в секунду это займёт около 13 дней. При 80 битах даже триллион попыток в секунду потребует 38 000 лет.', 'Ключевой вывод: энтропия зависит от того, как пароль был создан, а не от того, как он выглядит. "Tr0ub4dor&3" имеет только ~28 бит энтропии. А "correct horse battery staple" обеспечивает ~52 бита со списком EFF.', 'Большинство политик фокусируются на составе символов, а не на реальной энтропии. "Summer2026!" удовлетворяет все требования, но падёт перед словарной атакой за секунды.'] },
     { heading: 'Как рассчитывается энтропия', paragraphs: ['Для по-настоящему случайного пароля: энтропия = log₂(C^L). 12-символьный пароль из набора 95 символов имеет ≈ 79 бит.', 'Для парольных фраз: энтропия = log₂(W^N). С EFF-списком (7 776 слов): 4 слова ≈ 51,7 бит; 5 слов ≈ 64,6 бит; 6 слов ≈ 77,5 бит; 7 слов ≈ 90,5 бит.', 'Расчёт предполагает, что атакующий знает ваш метод генерации — это консервативная, реалистичная оценка безопасности.'], bullets: ['8 случайных символов (a-z): log₂(26^8) ≈ 37,6 бит', '12 случайных символов (a-z, A-Z, 0-9, символы): log₂(95^12) ≈ 78,8 бит', '4 слова Diceware: log₂(7776^4) ≈ 51,7 бит', '6 слов Diceware: log₂(7776^6) ≈ 77,5 бит', '16 случайных символов (полный ASCII): log₂(95^16) ≈ 105 бит', '8 слов Diceware: log₂(7776^8) ≈ 103,4 бит'] },
+    {
+      heading: 'Как режим слов в генераторе создаёт парольную фразу',
+      paragraphs: [
+        'Режим «Слова» выбирает каждое слово независимо из большого списка EFF из 7 776 слов. При таком размере списка каждое слово добавляет около 12,9 бита энтропии, независимо от того, насколько привычно оно выглядит. Вы выбираете количество слов, разделитель и написание одного слова с заглавной буквы.',
+        'Количество слов — единственная настройка, которая действительно меняет запас прочности. Четыре слова дают около 52 бит, пять — 65, шесть — 78, семь — 90. Для повседневных личных аккаунтов достаточно пяти слов, для почты и финансов — шести, для мастер-пароля или устройства, которое сложно восстановить, — семи.',
+        'Пример сгенерированной фразы: monarch-fabric-eleven-radar-canopy-walrus — шесть случайных слов, примерно 78 бит. Встроенный список английский. Парольная фраза на другом языке сопоставима только при условии, что её словарь также содержит не менее 7 776 слов; короткий список, подобранный вручную, даёт значительно меньше энтропии.',
+        'Фразу нужно генерировать, а не составлять из цитаты, строки песни или придуманного предложения: именно такие шаблоны атакуют первыми. Храните мастер-фразу офлайн, пока не запомните, и держите резервную копию в физически безопасном месте.',
+      ],
+      bullets: [
+        '4 слова: ~52 бита — малозначимые аккаунты и быстрое разблокирование',
+        '5 слов: ~65 бит — большинство личных аккаунтов',
+        '6 слов: ~78 бит — почта, банкинг и рабочие аккаунты',
+        '7 слов: ~90 бит — мастер-пароль менеджера паролей',
+        '8 слов: ~103 бита — долгосрочные офлайн-резервные копии',
+      ],
+    },
     { heading: 'Аргументы в пользу парольных фраз', paragraphs: ['Парольные фразы обменивают сложность символов на длину, достигая высокой энтропии при сохранении запоминаемости. Фраза из шести слов имеет ~78 бит — сопоставимо с 12-символьным случайным паролем, но гораздо проще для запоминания.', 'Запоминаемость — это не просто удобство, это преимущество безопасности. Когда пароли трудно запомнить, пользователи записывают их небезопасно или используют повторно.', 'Парольные фразы также лучше противостоят подглядыванию через плечо.', 'Метод Diceware, разработанный Арнольдом Рейнхольдом в 1995 году, использует физические кубики для выбора слов. EFF обновила список в 2016 году.'] },
     { heading: 'Аргументы в пользу случайных паролей', paragraphs: ['Случайные пароли достигают более высокой энтропии на символ. 16-символьный пароль обеспечивает ~105 бит — нужно 8 слов Diceware для сравнения.', 'Для аккаунтов, управляемых менеджером паролей, случайные пароли строго превосходят, поскольку запоминаемость не важна.', 'Случайные пароли также более компактны, что важно в системах с низкими ограничениями длины.', 'Главный недостаток — их невозможно запомнить.'] },
     { heading: 'Когда использовать каждый подход', paragraphs: ['Используйте фразы для: мастер-пароля менеджера; входа в компьютер; PIN телефона; шифрования диска; и любых учётных данных без автозаполнения.', 'Используйте случайные пароли для: всех аккаунтов в менеджере; API-ключей; сервисных аккаунтов; паролей баз данных.', 'Для максимальной безопасности комбинируйте оба подхода: надёжная фраза как мастер-пароль и уникальные случайные пароли для каждого аккаунта.'] },
@@ -288,13 +416,29 @@ export const ru: LocalizedArticleContent = {
 
 export const zh: LocalizedArticleContent = {
   title: '密码短语vs密码：熵值与安全性解析',
-  excerpt: '了解密码熵值背后的数学原理，学习何时密码短语优于传统密码。包含熵值计算、Diceware方法论和实用建议。',
+  excerpt: '了解密码熵值背后的数学原理，学习何时密码短语优于传统密码。 包含熵值计算、Diceware方法论和实用建议。 每个密码都有一个可测量的属性叫熵值——它包含的随机性位数。',
   seoTitle: '密码短语vs密码熵值 — 哪个更安全？ | generatepasswordto.me',
-  seoDescription: '深入分析密码短语与密码的安全性。涵盖熵值数学、Diceware词表、暴力破解抵抗力及何时使用各种方法。',
+  seoDescription: '了解密码熵值背后的数学原理，学习何时密码短语优于传统密码。 包含熵值计算、Diceware方法论和实用建议。 深入分析密码短语与密码的安全性。',
   keywords: ['密码短语vs密码', '密码熵值解释', 'diceware密码短语', '密码短语安全', '熵值位数计算', '密码强度数学'],
   sections: [
     { heading: '熵值问题：为什么大多数密码失败', paragraphs: ['每个密码都有一个可测量的属性叫熵值——它包含的随机性位数。更高的熵值意味着攻击者必须尝试更多组合。50位熵值的密码有2^50种可能。每秒10亿次猜测需要约13天。80位时，即使每秒一万亿次也需要38,000年。', '关键洞察是：熵值取决于密码的生成方式，而非外观。"Tr0ub4dor&3"仅有约28位熵值。而"correct horse battery staple"用EFF 7,776词表提供约52位。', '大多数密码策略关注字符组成而非实际熵值。"Summer2026!"满足所有复杂性要求但几秒钟就被字典攻击破解。'] },
     { heading: '密码熵值如何计算', paragraphs: ['对于真正随机的密码：熵值 = log₂(C^L)。95字符集的12字符密码有≈79位。', '对于密码短语：熵值 = log₂(W^N)。EFF列表(7,776词)：4词≈51.7位；5词≈64.6位；6词≈77.5位；7词≈90.5位。', '此计算假设攻击者知道你的生成方法——这是保守、现实的安全度量。'], bullets: ['8个随机字符(a-z)：log₂(26^8) ≈ 37.6位', '12个随机字符(含符号)：log₂(95^12) ≈ 78.8位', '4个Diceware词：log₂(7776^4) ≈ 51.7位', '6个Diceware词：log₂(7776^6) ≈ 77.5位', '16个随机字符(完整ASCII)：log₂(95^16) ≈ 105位', '8个Diceware词：log₂(7776^8) ≈ 103.4位'] },
+    {
+      heading: '单词模式如何生成密码短语',
+      paragraphs: [
+        '生成器的“单词”模式会从 EFF 的 7,776 词大列表中独立抽取每个单词。按这个列表规模，每个单词约贡献 12.9 位熵，无论它看起来多熟悉。你可以选择单词数量、分隔符以及是否将一个单词首字母大写。',
+        '单词数量是唯一会明显改变安全余量的设置。4 个单词约 52 位，5 个约 65 位，6 个约 78 位，7 个约 90 位。日常个人账户用 5 个单词，邮箱和金融账户用 6 个，主密码或难以恢复的设备用 7 个。',
+        '生成示例：monarch-fabric-eleven-radar-canopy-walrus，包含 6 个随机单词，约 78 位熵。内置列表是英文的。其他语言的密码短语只有在词表也至少有 7,776 个词时才具有可比强度；手工挑选的短词表熵值会低得多。',
+        '密码短语应当生成，而不是用名言、歌词或自己编的句子拼出来。攻击者会优先尝试这些模式。请将主密码短语离线保存直到记住，并把恢复副本放在物理安全的地方。',
+      ],
+      bullets: [
+        '4 个单词：约 52 位 — 低风险账户和快速解锁',
+        '5 个单词：约 65 位 — 大多数个人账户',
+        '6 个单词：约 78 位 — 邮箱、银行和工作账户',
+        '7 个单词：约 90 位 — 密码管理器主密码',
+        '8 个单词：约 103 位 — 长期离线备份',
+      ],
+    },
     { heading: '密码短语的优势', paragraphs: ['密码短语用长度换取字符复杂性，在保持易记的同时实现高熵值。六词短语约有78位熵值——与12字符随机密码相当，但更容易记忆。', '易记性不仅是便利——它是安全优势。当密码难以记忆时，用户会不安全地记录或重复使用。', '密码短语也比字符密码更能抵抗偷窥。', 'Diceware方法由Arnold Reinhold于1995年开发，使用物理骰子从编号列表中选词。EFF于2016年更新了词表。'] },
     { heading: '随机密码的优势', paragraphs: ['随机字符密码每个字符的熵值更高。16字符随机密码提供约105位——需要8个Diceware词才能匹配。', '对于密码管理器管理的账户，随机密码严格优越，因为记忆性无关紧要。', '随机密码也更紧凑，在有长度限制的系统中很重要。', '主要缺点是基本无法记忆。'] },
     { heading: '何时使用哪种方法', paragraphs: ['使用密码短语：主密码；电脑登录密码；手机PIN；磁盘加密密码；以及任何不能依赖自动填充的凭证。', '使用随机密码：管理器中的所有账户；API密钥和令牌；服务账户；数据库密码。', '为获得最大安全性，两种方法结合使用：强密码短语作为主密码，每个账户使用唯一的随机密码。'] },
@@ -305,13 +449,29 @@ export const zh: LocalizedArticleContent = {
 
 export const ja: LocalizedArticleContent = {
   title: 'パスフレーズvsパスワード：エントロピーとセキュリティの解説',
-  excerpt: 'パスワードエントロピーの背後にある数学を理解し、パスフレーズが従来のパスワードを上回る場面を学びましょう。エントロピー計算、Diceware方法論、実践的な推奨事項を含みます。',
+  excerpt: 'パスワードエントロピーの背後にある数学を理解し、パスフレーズが従来のパスワードを上回る場面を学びましょう。 エントロピー計算、Diceware方法論、実践的な推奨事項を含みます。',
   seoTitle: 'パスフレーズvsパスワードエントロピー — どちらが安全？ | generatepasswordto.me',
-  seoDescription: 'パスフレーズvsパスワードの深い分析。エントロピー数学、Dicewareワードリスト、ブルートフォース耐性、各アプローチの使い分けを解説。',
+  seoDescription: 'パスフレーズvsパスワードの深い分析。 エントロピー数学、Dicewareワードリスト、ブルートフォース耐性、各アプローチの使い分けを解説。',
   keywords: ['パスフレーズvsパスワード', 'パスワードエントロピー解説', 'dicewareパスフレーズ', 'パスフレーズセキュリティ', 'エントロピービット計算', 'パスワード強度数学'],
   sections: [
     { heading: 'エントロピー問題：なぜほとんどのパスワードは失敗するか', paragraphs: ['すべてのパスワードにはエントロピーという測定可能な特性があります——含まれるランダムネスのビット数です。50ビットのパスワードは2^50の可能性を持ちます。毎秒10億回の推測で約13日かかります。80ビットでは毎秒1兆回でも38,000年かかります。', '重要な洞察は、エントロピーはパスワードの生成方法に依存し、見た目ではないということです。「Tr0ub4dor&3」は約28ビットしかありません。一方「correct horse battery staple」はEFFリストで約52ビットを提供します。', 'ほとんどのパスワードポリシーは実際のエントロピーではなく文字構成に焦点を当てています。「Summer2026!」はすべての複雑性要件を満たしますが、辞書攻撃で数秒で破られます。'] },
     { heading: 'パスワードエントロピーの計算方法', paragraphs: ['真にランダムなパスワードの場合：エントロピー = log₂(C^L)。95文字セットの12文字パスワードは≈79ビットです。', 'パスフレーズの場合：エントロピー = log₂(W^N)。EFFリスト(7,776語)で：4語≈51.7ビット、5語≈64.6ビット、6語≈77.5ビット、7語≈90.5ビット。', 'この計算は攻撃者があなたの生成方法を知っていると仮定します——保守的で現実的なセキュリティ測定です。'], bullets: ['8ランダム文字(a-z)：log₂(26^8) ≈ 37.6ビット', '12ランダム文字(記号含む)：log₂(95^12) ≈ 78.8ビット', '4 Diceware語：log₂(7776^4) ≈ 51.7ビット', '6 Diceware語：log₂(7776^6) ≈ 77.5ビット', '16ランダム文字(完全ASCII)：log₂(95^16) ≈ 105ビット', '8 Diceware語：log₂(7776^8) ≈ 103.4ビット'] },
+    {
+      heading: '単語モードでパスフレーズを作る仕組み',
+      paragraphs: [
+        'ジェネレーターの「単語」モードは、EFF の 7,776 語の大規模リストから各単語を独立に選びます。このリスト規模では、単語がどれほど見慣れていても、1語あたり約12.9ビットのエントロピーが加わります。単語数、区切り文字、1語を大文字にするかどうかを選べます。',
+        '安全性の余裕を実質的に変える設定は単語数だけです。4語で約52ビット、5語で約65ビット、6語で約78ビット、7語で約90ビットになります。日常の個人アカウントは5語、メールや金融は6語、マスターパスワードや復旧が難しい端末は7語を目安にしてください。',
+        '生成例は monarch-fabric-eleven-radar-canopy-walrus — ランダムな6語で約78ビットです。内蔵リストは英語です。別の言語のパスフレーズを同等の強度にするには、その単語リストにも少なくとも7,776語が必要です。手で選んだ短いリストではエントロピーが大幅に下がります。',
+        'フレーズは生成するもので、名言・歌詞・自分で考えた文章をつなげて作るものではありません。攻撃者はそうしたパターンを最初に試します。マスターパスフレーズは覚えるまでオフラインで保管し、復旧用のコピーを物理的に安全な場所に置いてください。',
+      ],
+      bullets: [
+        '4語：約52ビット — 低リスクのアカウントと素早いロック解除',
+        '5語：約65ビット — ほとんどの個人アカウント',
+        '6語：約78ビット — メール、銀行、仕事のアカウント',
+        '7語：約90ビット — パスワードマネージャーのマスターパスワード',
+        '8語：約103ビット — 長期的なオフラインバックアップ',
+      ],
+    },
     { heading: 'パスフレーズの利点', paragraphs: ['パスフレーズは文字の複雑さを長さと交換し、記憶可能なまま高いエントロピーを達成します。6語のフレーズは約78ビット——ランダムな12文字パスワードに匹敵しますが、はるかに覚えやすいです。', '記憶しやすさは利便性だけでなく、セキュリティ上の利点です。パスワードが覚えにくいと、ユーザーは不安全にメモしたり再利用したりします。', 'パスフレーズは肩越しの覗き見にも強いです。', 'Diceware方式は1995年にArnold Reinholdが開発し、物理的なサイコロで番号付きリストから単語を選びます。EFFは2016年にリストを更新しました。'] },
     { heading: 'ランダムパスワードの利点', paragraphs: ['ランダム文字パスワードは1文字あたりより高いエントロピーを達成します。16文字のランダムパスワードは約105ビット——8個のDiceware語が必要です。', 'パスワードマネージャーで管理するアカウントでは、記憶性が無関係なのでランダムパスワードが厳密に優れています。', 'ランダムパスワードはよりコンパクトで、長さ制限の低いシステムで重要です。', '主な欠点は基本的に暗記不可能なことです。'] },
     { heading: '各アプローチの使い分け', paragraphs: ['パスフレーズを使う場面：マスターパスワード、PCログイン、電話PIN、ディスク暗号化、自動入力に頼れない認証情報。', 'ランダムパスワードを使う場面：マネージャー内のすべてのアカウント、APIキー、サービスアカウント、データベースパスワード。', '最大のセキュリティには両方を組み合わせ：強力なパスフレーズをマスターパスワードに、各アカウントにユニークなランダムパスワードを使用。'] },
@@ -323,12 +483,28 @@ export const ja: LocalizedArticleContent = {
 export const pl: LocalizedArticleContent = {
   title: 'Fraza hasłowa vs hasło: entropia i bezpieczeństwo wyjaśnione',
   excerpt: 'Zrozum matematykę stojącą za entropią haseł i dowiedz się, kiedy frazy hasłowe przewyższają tradycyjne hasła. Zawiera obliczenia entropii, metodologię Diceware i praktyczne zalecenia.',
-  seoTitle: 'Fraza hasłowa vs hasło — Co jest bezpieczniejsze? | generatepasswordto.me',
+  seoTitle: 'Fraza hasłowa vs hasło: entropia i bezpieczeństwo wyjaśnione',
   seoDescription: 'Dogłębna analiza fraz hasłowych vs haseł. Obejmuje matematykę entropii, listy Diceware, odporność na brute-force i kiedy stosować każde podejście.',
   keywords: ['fraza hasłowa vs hasło', 'entropia hasła wyjaśniona', 'fraza diceware', 'bezpieczeństwo frazy hasłowej', 'obliczanie bitów entropii', 'matematyka siły hasła'],
   sections: [
     { heading: 'Problem entropii: dlaczego większość haseł zawodzi', paragraphs: ['Każde hasło ma mierzalną właściwość zwaną entropią — liczbę bitów losowości. Hasło z 50 bitami entropii ma 2^50 możliwości. Przy miliardzie prób na sekundę to około 13 dni. Przy 80 bitach nawet bilion prób na sekundę wymagałby 38 000 lat.', 'Kluczowy wniosek: entropia zależy od tego, jak hasło zostało wygenerowane, nie jak wygląda. "Tr0ub4dor&3" ma tylko ~28 bitów entropii. Natomiast "correct horse battery staple" daje ~52 bity z listy EFF.', 'Większość polityk koncentruje się na składzie znaków zamiast na rzeczywistej entropii. "Summer2026!" spełnia wszystkie wymagania, ale pada przy ataku słownikowym w sekundy.'] },
     { heading: 'Jak oblicza się entropię haseł', paragraphs: ['Dla naprawdę losowego hasła: entropia = log₂(C^L). 12-znakowe hasło z zestawu 95 znaków ma ≈ 79 bitów.', 'Dla fraz: entropia = log₂(W^N). Z listą EFF (7 776 słów): 4 słowa ≈ 51,7 bitów; 5 słów ≈ 64,6 bitów; 6 słów ≈ 77,5 bitów; 7 słów ≈ 90,5 bitów.', 'Obliczenie zakłada, że atakujący zna twoją metodę generowania — to konserwatywna, realistyczna miara bezpieczeństwa.'], bullets: ['8 losowych znaków (a-z): log₂(26^8) ≈ 37,6 bitów', '12 losowych znaków (z symbolami): log₂(95^12) ≈ 78,8 bitów', '4 słowa Diceware: log₂(7776^4) ≈ 51,7 bitów', '6 słów Diceware: log₂(7776^6) ≈ 77,5 bitów', '16 losowych znaków (pełne ASCII): log₂(95^16) ≈ 105 bitów', '8 słów Diceware: log₂(7776^8) ≈ 103,4 bitów'] },
+    {
+      heading: 'Jak tryb słów tworzy frazę hasłową',
+      paragraphs: [
+        'Tryb Słowa wybiera każde słowo niezależnie z dużej listy EFF liczącej 7 776 pozycji. Przy takim rozmiarze każde słowo wnosi około 12,9 bita entropii, niezależnie od tego, jak znajomo wygląda. Ustawiasz liczbę słów, separator oraz wielką literę w jednym słowie.',
+        'Liczba słów to jedyne ustawienie, które naprawdę zmienia margines bezpieczeństwa. Cztery słowa dają około 52 bitów, pięć około 65, sześć około 78, a siedem około 90. Pięć słów wystarczy do codziennych kont osobistych, sześć do poczty i finansów, siedem do hasła głównego lub urządzenia, którego trudno odzyskać.',
+        'Przykład wygenerowanej frazy: monarch-fabric-eleven-radar-canopy-walrus — sześć losowych słów, około 78 bitów. Wbudowana lista jest angielska. Fraza w innym języku jest porównywalna tylko wtedy, gdy jej lista też ma co najmniej 7 776 słów; krótka lista ułożona ręcznie daje znacznie mniej entropii.',
+        'Generuj frazę, nie składaj jej z cytatu, tekstu piosenki ani wymyślonego zdania. Atakujący sprawdzają takie wzorce w pierwszej kolejności. Przechowuj frazę główną offline, aż ją zapamiętasz, i trzymaj kopię zapasową w fizycznie bezpiecznym miejscu.',
+      ],
+      bullets: [
+        '4 słowa: ~52 bity — konta o niskim ryzyku i szybkie odblokowanie',
+        '5 słów: ~65 bitów — większość kont osobistych',
+        '6 słów: ~78 bitów — poczta, bankowość i konta służbowe',
+        '7 słów: ~90 bitów — hasło główne menedżera haseł',
+        '8 słów: ~103 bity — długoterminowe kopie zapasowe offline',
+      ],
+    },
     { heading: 'Argumenty za frazami hasłowymi', paragraphs: ['Frazy hasłowe oferują unikalną zaletę: zamieniają złożoność znaków na długość, osiągając wysoką entropię przy zachowaniu zapamiętywalności. Sześciowyrazowa fraza ma ~78 bitów entropii — równowartość 12-znakowego losowego hasła, ale znacznie łatwiejsza do zapamiętania.', 'Zapamiętywalność to nie tylko wygoda — to zaleta bezpieczeństwa. Gdy hasła są trudne do zapamiętania, użytkownicy zapisują je niebezpiecznie lub je powtarzają.', 'Frazy hasłowe lepiej też opierają się podglądaniu przez ramię.', 'Metoda Diceware, opracowana przez Arnolda Reinholda w 1995, używa fizycznych kostek do wyboru słów. EFF zaktualizowała listę w 2016.'] },
     { heading: 'Argumenty za losowymi hasłami', paragraphs: ['Losowe hasła osiągają wyższą entropię na znak. 16-znakowe hasło daje ~105 bitów — potrzebujesz 8 słów Diceware, żeby to dorównać.', 'Dla kont zarządzanych przez menedżer losowe hasła są ściśle lepsze, bo zapamiętywalność nie ma znaczenia.', 'Losowe hasła są też bardziej kompaktowe, co jest ważne w systemach z niskimi limitami długości.', 'Główna wada to niemożność zapamiętania.'] },
     { heading: 'Kiedy używać którego podejścia', paragraphs: ['Używaj fraz dla: hasła głównego menedżera; logowania do komputera; PIN-ów telefonu; szyfrowania dysku; i każdych poświadczeń, gdzie nie możesz polegać na auto-wypełnianiu.', 'Używaj losowych haseł dla: wszystkich kont w menedżerze; kluczy API; kont serwisowych; haseł baz danych.', 'Dla maksymalnego bezpieczeństwa łącz oba podejścia: silna fraza jako hasło główne i unikalne losowe hasła dla każdego konta.'] },
@@ -341,9 +517,9 @@ export const vi: LocalizedArticleContent = {
   title: 'Cụm mật khẩu và mật khẩu: entropy và bảo mật',
   excerpt:
     'Hiểu phép toán đằng sau entropy mật khẩu và khi nào cụm mật khẩu vượt trội mật khẩu thường. Gồm cách tính entropy, phương pháp Diceware và khuyến nghị thực tế.',
-  seoTitle: 'Cụm mật khẩu và mật khẩu: entropy, độ mạnh thực sự',
+  seoTitle: 'Cụm mật khẩu và mật khẩu: entropy và bảo mật — mật khẩu mạnh nhất',
   seoDescription:
-    'So sánh cụm mật khẩu và mật khẩu: entropy, danh sách từ Diceware, khả năng chống bẻ khóa và khi nào nên dùng cách nào để tạo mật khẩu mạnh.',
+    'Hiểu phép toán đằng sau entropy mật khẩu và khi nào cụm mật khẩu vượt trội mật khẩu thường. Gồm cách tính entropy, phương pháp Diceware và khuyến nghị thực tế.',
   keywords: [
     'cụm mật khẩu passphrase là gì',
     'mật khẩu mạnh ngẫu nhiên',
@@ -375,6 +551,22 @@ export const vi: LocalizedArticleContent = {
         '6 từ Diceware: log₂(7776^6) ≈ 77,5 bit',
         '16 ký tự ngẫu nhiên (ASCII đầy đủ): log₂(95^16) ≈ 105 bit',
         '8 từ Diceware: log₂(7776^8) ≈ 103,4 bit',
+      ],
+    },
+    {
+      heading: 'Chế độ từ tạo cụm mật khẩu như thế nào',
+      paragraphs: [
+        'Chế độ Từ của trình tạo chọn từng từ độc lập từ danh sách lớn EFF gồm 7.776 từ. Với quy mô đó, mỗi từ đóng góp khoảng 12,9 bit entropy, bất kể từ đó quen thuộc đến đâu. Bạn chọn số từ, dấu phân cách và có viết hoa một từ hay không.',
+        'Số từ là cài đặt duy nhất thay đổi đáng kể biên an toàn. Bốn từ cho khoảng 52 bit, năm từ khoảng 65 bit, sáu từ khoảng 78 bit và bảy từ khoảng 90 bit. Dùng năm từ cho tài khoản cá nhân hằng ngày, sáu từ cho email và tài chính, bảy từ cho mật khẩu chính hoặc thiết bị khó khôi phục.',
+        'Ví dụ được tạo: monarch-fabric-eleven-radar-canopy-walrus — sáu từ ngẫu nhiên, khoảng 78 bit. Danh sách tích hợp là tiếng Anh. Cụm mật khẩu bằng ngôn ngữ khác chỉ tương đương khi danh sách từ của nó cũng có ít nhất 7.776 mục; một danh sách ngắn tự chọn sẽ có entropy thấp hơn nhiều.',
+        'Hãy tạo cụm mật khẩu bằng trình tạo, đừng ghép từ câu nói nổi tiếng, lời bài hát hay câu bạn tự nghĩ ra. Kẻ tấn công thử những mẫu đó trước tiên. Lưu cụm mật khẩu chính ngoại tuyến cho đến khi nhớ, và giữ bản sao khôi phục ở nơi an toàn về mặt vật lý.',
+      ],
+      bullets: [
+        '4 từ: ~52 bit — tài khoản ít rủi ro và mở khóa nhanh',
+        '5 từ: ~65 bit — hầu hết tài khoản cá nhân',
+        '6 từ: ~78 bit — email, ngân hàng và tài khoản công việc',
+        '7 từ: ~90 bit — mật khẩu chính của trình quản lý',
+        '8 từ: ~103 bit — bản sao lưu ngoại tuyến dài hạn',
       ],
     },
     {

@@ -3,10 +3,10 @@ import type { LocalizedArticleContent } from '../articles';
 export const en: LocalizedArticleContent = {
   title: 'PCI DSS Password Requirements for Teams in 2026',
   excerpt:
-    'What PCI DSS v4.0 expects from password controls and how to align your team workflow without harming UX. Covers authentication requirements, password policies, and practical implementation strategies.',
-  seoTitle: 'PCI DSS Password Requirements 2026 — Team Compliance Guide | generatepasswordto.me',
+    'What PCI DSS v4. 0 expects from password controls and how to align your team workflow without harming UX. Covers authentication requirements, password policies, and practical implementation strategies.',
+  seoTitle: 'PCI DSS Password Requirements for Teams in 2026',
   seoDescription:
-    'Complete guide to PCI DSS v4.0 password requirements. Covers minimum length, MFA mandates, service account controls, password rotation policies, and team implementation strategies.',
+    'Complete guide to PCI DSS v4. 0 password requirements. What PCI DSS v4. 0 expects from password controls and how to align your team workflow without harming UX.',
   keywords: [
     'PCI DSS password requirements',
     'PCI compliance password policy',
@@ -90,10 +90,10 @@ export const en: LocalizedArticleContent = {
 export const ua: LocalizedArticleContent = {
   title: 'Вимоги PCI DSS до паролів для команд у 2026 році',
   excerpt:
-    'Що PCI DSS v4.0 вимагає від контролю паролів та як привести робочий процес команди у відповідність без шкоди для зручності. Вимоги до аутентифікації, політики паролів та практичні стратегії впровадження.',
-  seoTitle: 'Вимоги PCI DSS до паролів 2026 — гід для команд | generatepasswordto.me',
+    'Що PCI DSS v4. 0 вимагає від контролю паролів та як привести робочий процес команди у відповідність без шкоди для зручності. Вимоги до аутентифікації, політики паролів та практичні стратегії впровадження.',
+  seoTitle: 'Вимоги PCI DSS до паролів для команд у 2026 році',
   seoDescription:
-    'Повний гід з вимог PCI DSS v4.0 до паролів. Мінімальна довжина, вимоги MFA, контроль сервісних акаунтів, ротація паролів та стратегії впровадження для команд.',
+    'Повний гід з вимог PCI DSS v4. 0 до паролів. Мінімальна довжина, вимоги MFA, контроль сервісних акаунтів, ротація паролів та стратегії впровадження для команд.',
   keywords: [
     'вимоги PCI DSS до паролів',
     'PCI відповідність політика паролів',
@@ -175,9 +175,9 @@ export const ua: LocalizedArticleContent = {
 
 export const es: LocalizedArticleContent = {
   title: 'Requisitos de contraseñas PCI DSS para equipos en 2026',
-  excerpt: 'Lo que PCI DSS v4.0 espera de los controles de contraseñas y cómo alinear el flujo de trabajo de tu equipo sin dañar la UX. Cubre requisitos de autenticación, políticas y estrategias de implementación.',
-  seoTitle: 'Requisitos de contraseñas PCI DSS 2026 — Guía de cumplimiento | generatepasswordto.me',
-  seoDescription: 'Guía completa de requisitos de contraseñas PCI DSS v4.0. Longitud mínima, MFA obligatorio, cuentas de servicio, rotación y estrategias para equipos.',
+  excerpt: 'Lo que PCI DSS v4. 0 espera de los controles de contraseñas y cómo alinear el flujo de trabajo de tu equipo sin dañar la UX. Cubre requisitos de autenticación, políticas y estrategias de implementación.',
+  seoTitle: 'Requisitos de contraseñas PCI DSS para equipos en 2026',
+  seoDescription: 'Guía completa de requisitos de contraseñas PCI DSS v4. 0. Longitud mínima, MFA obligatorio, cuentas de servicio, rotación y estrategias para equipos.',
   keywords: ['requisitos contraseñas PCI DSS', 'cumplimiento PCI contraseñas', 'autenticación PCI DSS v4.0', 'seguridad pagos contraseñas', 'longitud contraseña PCI', 'guía cumplimiento contraseñas'],
   sections: [
     { heading: 'Entendiendo PCI DSS y por qué importa', paragraphs: ['PCI DSS es un conjunto de requisitos de seguridad diseñados para proteger datos de tarjetahabientes. La versión 4.0 introduce cambios significativos en requisitos de autenticación, con fecha límite de cumplimiento en marzo 2026.', 'El incumplimiento puede resultar en multas de $5.000 a $100.000 mensuales, pérdida de la capacidad de procesar pagos y responsabilidad por pérdidas de fraude.', 'PCI DSS v4.0 se alinea más con prácticas modernas como NIST 800-63B, ofreciendo más flexibilidad en cómo se cumplen los requisitos.'] },
@@ -192,9 +192,9 @@ export const es: LocalizedArticleContent = {
 
 export const fr: LocalizedArticleContent = {
   title: 'Exigences PCI DSS pour les mots de passe d\'équipe en 2026',
-  excerpt: 'Ce que PCI DSS v4.0 attend des contrôles de mots de passe et comment aligner votre flux de travail d\'équipe. Couvre les exigences d\'authentification, les politiques et les stratégies d\'implémentation.',
-  seoTitle: 'Exigences PCI DSS mots de passe 2026 — Guide de conformité | generatepasswordto.me',
-  seoDescription: 'Guide complet des exigences PCI DSS v4.0 pour les mots de passe. Longueur minimale, MFA obligatoire, comptes de service, rotation et stratégies d\'équipe.',
+  excerpt: 'Ce que PCI DSS v4. 0 attend des contrôles de mots de passe et comment aligner votre flux de travail d\'équipe. Couvre les exigences d\'authentification, les politiques et les stratégies d\'implémentation.',
+  seoTitle: 'Exigences PCI DSS pour les mots de passe d\'équipe en 2026',
+  seoDescription: 'Guide complet des exigences PCI DSS v4. 0 pour les mots de passe. Longueur minimale, MFA obligatoire, comptes de service, rotation et stratégies d\'équipe.',
   keywords: ['exigences mots de passe PCI DSS', 'conformité PCI mots de passe', 'authentification PCI DSS v4.0', 'sécurité paiements mots de passe', 'longueur mot de passe PCI', 'guide conformité mots de passe'],
   sections: [
     { heading: 'Comprendre PCI DSS et son importance', paragraphs: ['PCI DSS est un ensemble d\'exigences de sécurité pour protéger les données des titulaires de cartes. La version 4.0 introduit des changements majeurs, avec une date limite de conformité en mars 2026.', 'La non-conformité peut entraîner des amendes de 5 000 à 100 000 $ par mois et la perte de la capacité de traiter les paiements.', 'PCI DSS v4.0 s\'aligne davantage sur les pratiques modernes comme NIST 800-63B.'] },
@@ -209,9 +209,9 @@ export const fr: LocalizedArticleContent = {
 
 export const de: LocalizedArticleContent = {
   title: 'PCI DSS Passwortanforderungen für Teams 2026',
-  excerpt: 'Was PCI DSS v4.0 von Passwortkontrollen erwartet und wie Sie den Team-Workflow anpassen. Authentifizierungsanforderungen, Passwortrichtlinien und Implementierungsstrategien.',
-  seoTitle: 'PCI DSS Passwortanforderungen 2026 — Team-Compliance-Leitfaden | generatepasswordto.me',
-  seoDescription: 'Vollständiger Leitfaden zu PCI DSS v4.0 Passwortanforderungen. Mindestlänge, MFA-Pflicht, Service-Konten, Rotation und Team-Strategien.',
+  excerpt: 'Was PCI DSS v4. 0 von Passwortkontrollen erwartet und wie Sie den Team-Workflow anpassen. Authentifizierungsanforderungen, Passwortrichtlinien und Implementierungsstrategien.',
+  seoTitle: 'PCI DSS Passwortanforderungen für Teams 2026 — PCI Passwortlänge',
+  seoDescription: 'Was PCI DSS v4. 0 von Passwortkontrollen erwartet und wie Sie den Team-Workflow anpassen. Vollständiger Leitfaden zu PCI DSS v4. 0 Passwortanforderungen.',
   keywords: ['PCI DSS Passwortanforderungen', 'PCI Compliance Passwortrichtlinie', 'PCI DSS v4.0 Authentifizierung', 'Zahlungssicherheit Passwörter', 'PCI Passwortlänge', 'Compliance Passwort-Leitfaden'],
   sections: [
     { heading: 'PCI DSS verstehen und warum es wichtig ist', paragraphs: ['PCI DSS ist ein Sicherheitsstandard zum Schutz von Karteninhaberdaten. Version 4.0 bringt wesentliche Änderungen bei Authentifizierungsanforderungen mit Frist März 2026.', 'Nichtkonformität kann Strafen von $5.000 bis $100.000 monatlich und Verlust der Zahlungsverarbeitung bedeuten.', 'PCI DSS v4.0 orientiert sich stärker an modernen Praktiken wie NIST 800-63B.'] },
@@ -226,9 +226,9 @@ export const de: LocalizedArticleContent = {
 
 export const it: LocalizedArticleContent = {
   title: 'Requisiti password PCI DSS per team nel 2026',
-  excerpt: 'Cosa richiede PCI DSS v4.0 per i controlli password e come allineare il workflow del team. Copre requisiti di autenticazione, politiche e strategie di implementazione.',
-  seoTitle: 'Requisiti password PCI DSS 2026 — Guida alla conformità | generatepasswordto.me',
-  seoDescription: 'Guida completa ai requisiti password PCI DSS v4.0. Lunghezza minima, MFA obbligatorio, account di servizio, rotazione e strategie per team.',
+  excerpt: 'Cosa richiede PCI DSS v4. 0 per i controlli password e come allineare il workflow del team. Copre requisiti di autenticazione, politiche e strategie di implementazione.',
+  seoTitle: 'Requisiti password PCI DSS per team nel 2026',
+  seoDescription: 'Cosa richiede PCI DSS v4. 0 per i controlli password e come allineare il workflow del team. Guida completa ai requisiti password PCI DSS v4.',
   keywords: ['requisiti password PCI DSS', 'conformità PCI password', 'autenticazione PCI DSS v4.0', 'sicurezza pagamenti password', 'lunghezza password PCI', 'guida conformità password'],
   sections: [
     { heading: 'Capire PCI DSS e perché è importante', paragraphs: ['PCI DSS è un insieme di requisiti di sicurezza per proteggere i dati dei titolari di carta. La versione 4.0 introduce cambiamenti significativi nell\'autenticazione, con scadenza marzo 2026.', 'La non conformità può comportare multe da $5.000 a $100.000 mensili e perdita della capacità di elaborare pagamenti.', 'PCI DSS v4.0 si allinea maggiormente con le pratiche moderne come NIST 800-63B.'] },
@@ -243,9 +243,9 @@ export const it: LocalizedArticleContent = {
 
 export const pt: LocalizedArticleContent = {
   title: 'Requisitos de senhas PCI DSS para equipes em 2026',
-  excerpt: 'O que o PCI DSS v4.0 espera dos controles de senhas e como alinhar o fluxo de trabalho da equipe. Cobre requisitos de autenticação, políticas e estratégias de implementação.',
-  seoTitle: 'Requisitos de senhas PCI DSS 2026 — Guia de conformidade | generatepasswordto.me',
-  seoDescription: 'Guia completo dos requisitos de senhas PCI DSS v4.0. Comprimento mínimo, MFA obrigatório, contas de serviço, rotação e estratégias para equipes.',
+  excerpt: 'O que o PCI DSS v4. 0 espera dos controles de senhas e como alinhar o fluxo de trabalho da equipe. Cobre requisitos de autenticação, políticas e estratégias de implementação.',
+  seoTitle: 'Requisitos de senhas PCI DSS para equipes em 2026',
+  seoDescription: 'Guia completo dos requisitos de senhas PCI DSS v4. 0. Comprimento mínimo, MFA obrigatório, contas de serviço, rotação e estratégias para equipes.',
   keywords: ['requisitos senhas PCI DSS', 'conformidade PCI senhas', 'autenticação PCI DSS v4.0', 'segurança pagamentos senhas', 'comprimento senha PCI', 'guia conformidade senhas'],
   sections: [
     { heading: 'Entendendo PCI DSS e por que importa', paragraphs: ['PCI DSS é um conjunto de requisitos de segurança para proteger dados de titulares de cartão. A versão 4.0 introduz mudanças significativas, com prazo de conformidade em março 2026.', 'O não cumprimento pode resultar em multas de $5.000 a $100.000 mensais e perda da capacidade de processar pagamentos.', 'PCI DSS v4.0 se alinha mais com práticas modernas como NIST 800-63B.'] },
@@ -260,9 +260,9 @@ export const pt: LocalizedArticleContent = {
 
 export const ru: LocalizedArticleContent = {
   title: 'Требования PCI DSS к паролям для команд в 2026',
-  excerpt: 'Что PCI DSS v4.0 ожидает от контроля паролей и как настроить рабочий процесс команды. Требования аутентификации, политики и стратегии внедрения.',
-  seoTitle: 'Требования PCI DSS к паролям 2026 — Руководство по соответствию | generatepasswordto.me',
-  seoDescription: 'Полное руководство по требованиям PCI DSS v4.0 к паролям. Минимальная длина, обязательный MFA, сервисные аккаунты, ротация и стратегии для команд.',
+  excerpt: 'Что PCI DSS v4. 0 ожидает от контроля паролей и как настроить рабочий процесс команды. Требования аутентификации, политики и стратегии внедрения.',
+  seoTitle: 'Требования PCI DSS к паролям для команд в 2026 — длина пароля PCI',
+  seoDescription: 'Полное руководство по требованиям PCI DSS v4. 0 к паролям. Минимальная длина, обязательный MFA, сервисные аккаунты, ротация и стратегии для команд.',
   keywords: ['требования PCI DSS к паролям', 'соответствие PCI пароли', 'аутентификация PCI DSS v4.0', 'безопасность платежей пароли', 'длина пароля PCI', 'руководство соответствие паролей'],
   sections: [
     { heading: 'Понимание PCI DSS и почему это важно', paragraphs: ['PCI DSS — набор требований безопасности для защиты данных держателей карт. Версия 4.0 вводит значительные изменения, крайний срок соответствия — март 2026.', 'Несоответствие может привести к штрафам от $5 000 до $100 000 в месяц и потере возможности обрабатывать платежи.', 'PCI DSS v4.0 больше соответствует современным практикам, включая NIST 800-63B.'] },
@@ -277,9 +277,9 @@ export const ru: LocalizedArticleContent = {
 
 export const zh: LocalizedArticleContent = {
   title: '2026年团队PCI DSS密码要求',
-  excerpt: 'PCI DSS v4.0对密码控制的要求以及如何调整团队工作流程。涵盖认证要求、密码策略和实施策略。',
+  excerpt: 'PCI DSS v4. 0对密码控制的要求以及如何调整团队工作流程。 涵盖认证要求、密码策略和实施策略。 PCI DSS是保护持卡人数据的安全要求集。',
   seoTitle: 'PCI DSS密码要求2026 — 团队合规指南 | generatepasswordto.me',
-  seoDescription: 'PCI DSS v4.0密码要求完整指南。最小长度、MFA强制、服务账户、轮换和团队策略。',
+  seoDescription: 'PCI DSS v4. 0对密码控制的要求以及如何调整团队工作流程。 涵盖认证要求、密码策略和实施策略。 PCI DSS v4.',
   keywords: ['PCI DSS密码要求', 'PCI合规密码策略', 'PCI DSS v4.0认证', '支付安全密码', 'PCI密码长度', '合规密码指南'],
   sections: [
     { heading: '理解PCI DSS及其重要性', paragraphs: ['PCI DSS是保护持卡人数据的安全要求集。4.0版本在认证方面引入重大变化，合规截止日期为2026年3月。', '不合规可导致每月$5,000至$100,000的罚款和丧失处理支付的能力。', 'PCI DSS v4.0更接近NIST 800-63B等现代安全实践。'] },
@@ -294,9 +294,9 @@ export const zh: LocalizedArticleContent = {
 
 export const ja: LocalizedArticleContent = {
   title: '2026年チーム向けPCI DSSパスワード要件',
-  excerpt: 'PCI DSS v4.0がパスワード管理に求めること、UXを損なわずにチームワークフローを適合させる方法。認証要件、ポリシー、実装戦略を解説。',
+  excerpt: 'PCI DSS v4. 0がパスワード管理に求めること、UXを損なわずにチームワークフローを適合させる方法。 認証要件、ポリシー、実装戦略を解説。',
   seoTitle: 'PCI DSSパスワード要件2026 — チームコンプライアンスガイド | generatepasswordto.me',
-  seoDescription: 'PCI DSS v4.0パスワード要件の完全ガイド。最小長、MFA義務化、サービスアカウント、ローテーション、チーム戦略。',
+  seoDescription: 'PCI DSS v4. 0パスワード要件の完全ガイド。 最小長、MFA義務化、サービスアカウント、ローテーション、チーム戦略。',
   keywords: ['PCI DSSパスワード要件', 'PCIコンプライアンスパスワード', 'PCI DSS v4.0認証', '決済セキュリティパスワード', 'PCIパスワード長', 'コンプライアンスパスワードガイド'],
   sections: [
     { heading: 'PCI DSSの理解とその重要性', paragraphs: ['PCI DSSはカード会員データを保護するためのセキュリティ要件です。v4.0は認証要件に大きな変更を導入し、コンプライアンス期限は2026年3月です。', '非準拠は月$5,000〜$100,000の罰金と決済処理能力の喪失につながります。', 'PCI DSS v4.0はNIST 800-63Bなどの最新プラクティスにより適合しています。'] },
@@ -311,9 +311,9 @@ export const ja: LocalizedArticleContent = {
 
 export const pl: LocalizedArticleContent = {
   title: 'Wymagania PCI DSS dotyczące haseł dla zespołów w 2026',
-  excerpt: 'Czego PCI DSS v4.0 oczekuje od kontroli haseł i jak dostosować workflow zespołu. Wymagania uwierzytelniania, polityki i strategie wdrożenia.',
-  seoTitle: 'Wymagania PCI DSS dotyczące haseł 2026 — Przewodnik zgodności | generatepasswordto.me',
-  seoDescription: 'Kompletny przewodnik po wymaganiach PCI DSS v4.0 dotyczących haseł. Minimalna długość, obowiązkowe MFA, konta serwisowe, rotacja i strategie zespołowe.',
+  excerpt: 'Czego PCI DSS v4. 0 oczekuje od kontroli haseł i jak dostosować workflow zespołu. Wymagania uwierzytelniania, polityki i strategie wdrożenia.',
+  seoTitle: 'Wymagania PCI DSS dotyczące haseł dla zespołów w 2026',
+  seoDescription: 'Kompletny przewodnik po wymaganiach PCI DSS v4. 0 dotyczących haseł. Minimalna długość, obowiązkowe MFA, konta serwisowe, rotacja i strategie zespołowe.',
   keywords: ['wymagania PCI DSS hasła', 'zgodność PCI hasła', 'uwierzytelnianie PCI DSS v4.0', 'bezpieczeństwo płatności hasła', 'długość hasła PCI', 'przewodnik zgodności haseł'],
   sections: [
     { heading: 'Zrozumienie PCI DSS i dlaczego jest ważne', paragraphs: ['PCI DSS to zestaw wymagań bezpieczeństwa chroniących dane posiadaczy kart. Wersja 4.0 wprowadza istotne zmiany, z terminem zgodności w marcu 2026.', 'Niezgodność może skutkować karami od $5 000 do $100 000 miesięcznie i utratą możliwości przetwarzania płatności.', 'PCI DSS v4.0 lepiej jest zgodny z nowoczesnymi praktykami jak NIST 800-63B.'] },
@@ -329,10 +329,10 @@ export const pl: LocalizedArticleContent = {
 export const vi: LocalizedArticleContent = {
   title: 'Yêu cầu mật khẩu PCI DSS cho nhóm năm 2026',
   excerpt:
-    'PCI DSS v4.0 yêu cầu gì với kiểm soát mật khẩu và cách căn chỉnh quy trình nhóm mà không hại trải nghiệm. Gồm xác thực, chính sách và cách triển khai thực tế.',
-  seoTitle: 'Yêu cầu mật khẩu PCI DSS 2026: tạo mật khẩu mạnh cho nhóm',
+    'PCI DSS v4. 0 yêu cầu gì với kiểm soát mật khẩu và cách căn chỉnh quy trình nhóm mà không hại trải nghiệm. Gồm xác thực, chính sách và cách triển khai thực tế.',
+  seoTitle: 'Yêu cầu mật khẩu PCI DSS cho nhóm năm 2026 — mật khẩu mạnh là gì',
   seoDescription:
-    'Hướng dẫn PCI DSS v4.0 về mật khẩu: độ dài tối thiểu, MFA bắt buộc, kiểm soát tài khoản dịch vụ, đổi mật khẩu định kỳ và cách tạo mật khẩu mạnh cho nhóm.',
+    'Hướng dẫn PCI DSS v4. 0 về mật khẩu: độ dài tối thiểu, MFA bắt buộc, kiểm soát tài khoản dịch vụ, đổi mật khẩu định kỳ và cách tạo mật khẩu mạnh cho nhóm.',
   keywords: [
     'trình quản lý mật khẩu là gì',
     'mật khẩu mạnh là gì',

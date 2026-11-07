@@ -283,6 +283,21 @@ export default function ShareBlock({
         copyMarkdown: 'Kopiuj Markdown',
         email: 'Udostępnij e-mailem',
       },
+      vi: {
+        share: 'Chia sẻ',
+        help: 'Giúp người khác tìm mật khẩu mạnh',
+        snippet: 'Tạo mật khẩu mạnh và an toàn ngay lập tức.',
+        twitter: 'Twitter',
+        facebook: 'Facebook',
+        linkedin: 'LinkedIn',
+        reddit: 'Reddit',
+        telegram: 'Telegram',
+        copyUrl: 'Sao chép URL',
+        copied: 'Đã sao chép',
+        copyBBCode: 'Sao chép BBCode',
+        copyMarkdown: 'Sao chép Markdown',
+        email: 'Chia sẻ qua email',
+      },
     }
 
     return dict[language] || dict.en

@@ -4,9 +4,9 @@ export const en: LocalizedArticleContent = {
   title: 'How to Create Strong Passwords in 2026: A Complete Guide',
   excerpt:
     'Learn how to create truly secure passwords using modern techniques recommended by NIST, OWASP, and cybersecurity experts. This guide covers entropy, password managers, passphrases, and common pitfalls to avoid.',
-  seoTitle: 'How to Create Strong Passwords in 2026 — NIST Guidelines | generatepasswordto.me',
+  seoTitle: 'How to Create Strong Passwords in 2026: A Complete Guide',
   seoDescription:
-    'A practical 2026 guide to creating strong passwords. Covers NIST 800-63B guidelines, entropy calculations, passphrases, password managers, and step-by-step instructions for maximum account security.',
+    'A practical 2026 guide to creating strong passwords. Use the generator to create a unique password and store it safely.',
   keywords: [
     'how to create strong password',
     'strong password guide 2026',
@@ -14,6 +14,10 @@ export const en: LocalizedArticleContent = {
     'secure password tips',
     'password entropy',
     'password best practices',
+    '12 character password examples',
+    'password examples',
+    'password checker',
+    'passphrase',
   ],
   sections: [
     {
@@ -43,12 +47,31 @@ export const en: LocalizedArticleContent = {
       paragraphs: [
         'Length is the single most effective lever on password strength. With a 94-character pool (letters, digits, symbols), each additional character adds about 6.5 bits of entropy, so the search space doubles roughly every 1.1 characters.',
         'Here is what that means in practice for a randomly generated password (entropy values assume a cryptographically secure generator and no reused patterns):',
+        'The examples below are random strings generated only for illustration. Never copy one into an account: what matters is the pattern, not the specific characters. A 12-character password is strong because every character was chosen at random, not because it happens to contain a symbol.',
+        'Use the generator length presets as a starting point: 12 characters for everyday accounts, 16 for anything stored in a password manager, and 20 for a master password or admin console. Eight characters is a fallback only for legacy systems that reject longer values; pair it with multi-factor authentication.',
       ],
       bullets: [
-        '8 characters — ~52 bits — brute force takes minutes to hours on a GPU rig; acceptable only for low-value accounts',
-        '12 characters — ~79 bits — the practical minimum for email, work and shopping accounts',
-        '16 characters — ~105 bits — the recommended default for password-manager-generated passwords',
-        '20 characters — ~131 bits — suitable for master passwords, crypto wallets and admin access',
+        '8 characters — ~52 bits — example: N7#vQ2!a — low-value or legacy accounts only',
+        '12 characters — ~79 bits — example: K9$pL2@xQ4!m — practical minimum for email, work and shopping',
+        '16 characters — ~105 bits — example: R4#tY8!kL2@pW6$z — default for password-manager-generated passwords',
+        '20 characters — ~131 bits — example: H3$nB7@vC1!xZ5#qM9% — master passwords, crypto wallets and admin access',
+      ],
+    },
+    {
+      heading: 'FAQ: 12-character passwords, examples and strength checks',
+      paragraphs: [
+        '**What does a good 12-character password look like?** A random example is K9$pL2@xQ4!m. It mixes upper- and lowercase letters, digits and symbols, but the decisive part is that it was generated randomly. Do not reuse this exact string; generate a new password for every account.',
+        '**Is a 12-character password strong enough?** For most personal accounts, 12 random characters (about 79 bits) is the practical minimum. Use 16 characters for passwords stored in a manager and 20 for master passwords, crypto wallets and administrator access. Eight characters is not enough for email or banking in 2026.',
+        '**What is a good 8-character password?** An 8-character random string such as N7#vQ2!a is far better than a memorable word, but modern hardware still cracks it in minutes to hours. If a system caps passwords at 8 characters, use a unique random value and enable two-factor authentication.',
+        '**How can I check password strength without exposing the password?** Use the strength meter in the generator on this page — it runs locally in your browser. Do not paste real passwords into random checker sites. For breach checks, use a service that supports k-anonymity, such as Have I Been Pwned, and change the password if it appears there.',
+        '**Should I use a passphrase or a random password?** Use a 5–7 word passphrase for the one password you must memorize, such as your password-manager master password or computer login. Use a 16–20 character random password for everything stored in a manager. The passphrase guide explains the entropy trade-off in detail.',
+        '**Does this apply to Wi-Fi passwords?** Yes. Your router password should be a unique random string of 16–20 characters, not your email password. The Wi-Fi password guide covers changing it on the router and finding saved networks on Windows, Android and iPhone.',
+      ],
+      bullets: [
+        '12 characters: everyday accounts',
+        '16 characters: password-manager-generated passwords',
+        '20 characters: master password and admin access',
+        '8 characters: legacy systems only, always with MFA',
       ],
     },
     {
@@ -135,10 +158,10 @@ export const en: LocalizedArticleContent = {
 export const ua: LocalizedArticleContent = {
   title: 'Як створити надійний пароль у 2026 році: повний гід',
   excerpt:
-    'Дізнайтеся, як створювати по-справжньому безпечні паролі за допомогою сучасних методів, рекомендованих NIST, OWASP та експертами з кібербезпеки. Цей гід охоплює ентропію, менеджери паролів, парольні фрази та поширені помилки.',
-  seoTitle: 'Як створити надійний пароль у 2026 — гайд за стандартами NIST | generatepasswordto.me',
+    'Дізнайтеся, як створювати по-справжньому безпечні паролі за допомогою сучасних методів, рекомендованих NIST, OWASP та експертами з кібербезпеки.',
+  seoTitle: 'Як створити надійний пароль у 2026 році: повний гід',
   seoDescription:
-    'Практичний гід 2026 року зі створення надійних паролів. Рекомендації NIST 800-63B, розрахунок ентропії, парольні фрази, менеджери паролів та покрокові інструкції для максимальної безпеки акаунтів.',
+    'Практичний гід 2026 року зі створення надійних паролів. Створіть унікальний пароль у генераторі та збережіть його безпечно.',
   keywords: [
     'як створити надійний пароль',
     'гід зі створення паролів 2026',
@@ -146,6 +169,10 @@ export const ua: LocalizedArticleContent = {
     'безпечний пароль поради',
     'ентропія пароля',
     'найкращі практики паролів',
+    'пароль з 12 символів',
+    'приклади паролів',
+    'перевірити пароль',
+    'парольна фраза',
   ],
   sections: [
     {
@@ -175,12 +202,31 @@ export const ua: LocalizedArticleContent = {
       paragraphs: [
         'Довжина — найефективніший важіль впливу на надійність пароля. За набору з 94 символів (літери, цифри, символи) кожен додатковий символ додає близько 6,5 біта ентропії, тобто простір перебору подвоюється приблизно кожні 1,1 символу.',
         'Що це означає на практиці для випадково згенерованого пароля (значення ентропії припускають криптографічно стійкий генератор і відсутність шаблонів):',
+        'Наведені нижче приклади — випадкові рядки лише для ілюстрації. Не використовуйте їх у своїх акаунтах: важливий сам принцип, а не конкретні символи. Пароль на 12 символів надійний тому, що кожен знак обрано випадково, а не тому, що в ньому є символ.',
+        'У генераторі обирайте пресет довжини: 12 символів — для повсякденних акаунтів, 16 — для паролів у менеджері, 20 — для мастер-пароля та адмін-доступу. Вісім символів — лише запасний варіант для старих систем, які не приймають довші паролі; у такому разі ввімкніть двофакторну автентифікацію.',
       ],
       bullets: [
-        '8 символів — ~52 біти — перебір на GPU-фермі займає від хвилин до годин; прийнятно лише для маловажливих акаунтів',
-        '12 символів — ~79 бітів — практичний мінімум для пошти, роботи й покупок',
-        '16 символів — ~105 бітів — рекомендований стандарт для паролів із менеджера паролів',
-        '20 символів — ~131 біт — для мастер-пароля, криптогаманців і адмін-доступу',
+        '8 символів — ~52 біти — приклад: N7#vQ2!a — лише для маловажливих або старих систем',
+        '12 символів — ~79 бітів — приклад: K9$pL2@xQ4!m — практичний мінімум для пошти, роботи й покупок',
+        '16 символів — ~105 бітів — приклад: R4#tY8!kL2@pW6$z — стандарт для паролів із менеджера паролів',
+        '20 символів — ~131 біт — приклад: H3$nB7@vC1!xZ5#qM9% — мастер-пароль, криптогаманці й адмін-доступ',
+      ],
+    },
+    {
+      heading: 'Часті запитання: пароль на 12 символів, приклади й перевірка надійності',
+      paragraphs: [
+        '**Як виглядає надійний пароль із 12 символів?** Ось випадковий приклад: K9$pL2@xQ4!m. У ньому є великі й малі літери, цифри та символи, але головне — його згенеровано випадково. Не повторюйте цей рядок: для кожного акаунта створюйте новий пароль.',
+        '**Чи достатньо 12 символів?** Для більшості особистих акаунтів 12 випадкових символів (приблизно 79 бітів) — практичний мінімум. Для паролів у менеджері беріть 16 символів, а для мастер-пароля, криптогаманця й адмін-доступу — 20. Восьми символів у 2026 році недостатньо для пошти чи банкінгу.',
+        '**Який пароль із 8 символів можна вважати надійним?** Випадковий рядок на кшталт N7#vQ2!a значно кращий за слово, яке легко запам\'ятати, але сучасне обладнання все одно перебере його за хвилини або години. Якщо система обмежує довжину вісьмома символами, створіть унікальний випадковий пароль і ввімкніть двофакторну автентифікацію.',
+        '**Як перевірити пароль, не передаючи його третім сторонам?** Скористайтеся індикатором надійності в генераторі на цій сторінці: він працює локально у браузері. Не вставляйте справжні паролі на випадкові сайти перевірки. Для перевірки витоків використовуйте сервіс із підтримкою k-анонімності, наприклад Have I Been Pwned, і змініть пароль, якщо він там є.',
+        '**Що краще: парольна фраза чи випадковий пароль?** Парольну фразу з 5–7 слів використовуйте там, де пароль треба пам\'ятати: мастер-пароль менеджера або вхід до комп\'ютера. Для решти акаунтів беріть випадковий пароль із 16–20 символів. Детальніше про компроміс ентропії — у гіді про парольні фрази.',
+        '**Чи стосується це паролів Wi-Fi?** Так. Пароль роутера має бути унікальним випадковим рядком на 16–20 символів, а не паролем від пошти. Як змінити його на роутері та знайти збережені мережі у Windows, Android чи iPhone, описано в гіді про паролі Wi-Fi.',
+      ],
+      bullets: [
+        '12 символів: повсякденні акаунти',
+        '16 символів: паролі, створені менеджером',
+        '20 символів: мастер-пароль і адмін-доступ',
+        '8 символів: лише старі системи, обов\'язково з MFA',
       ],
     },
     {
@@ -267,10 +313,10 @@ export const ua: LocalizedArticleContent = {
 export const es: LocalizedArticleContent = {
   title: 'Cómo crear contraseñas seguras en 2026: guía completa',
   excerpt:
-    'Aprende a crear contraseñas verdaderamente seguras con técnicas modernas recomendadas por NIST, OWASP y expertos en ciberseguridad. Esta guía cubre entropía, gestores de contraseñas, frases de contraseña y errores comunes.',
-  seoTitle: 'Cómo crear contraseñas seguras en 2026 — Directrices NIST | generatepasswordto.me',
+    'Aprende a crear contraseñas verdaderamente seguras con técnicas modernas recomendadas por NIST, OWASP y expertos en ciberseguridad. Usa el generador para crear una contraseña única y guárdala de forma segura.',
+  seoTitle: 'Cómo crear contraseñas seguras en 2026: guía completa',
   seoDescription:
-    'Guía práctica 2026 para crear contraseñas seguras. Cubre directrices NIST 800-63B, cálculos de entropía, frases de contraseña, gestores y pasos detallados para máxima seguridad.',
+    'Guía práctica 2026 para crear contraseñas seguras. Usa el generador para crear una contraseña única y guárdala de forma segura.',
   keywords: [
     'cómo crear contraseña segura',
     'guía contraseñas seguras 2026',
@@ -278,6 +324,10 @@ export const es: LocalizedArticleContent = {
     'consejos contraseña segura',
     'entropía contraseña',
     'mejores prácticas contraseñas',
+    'contraseña de 12 caracteres',
+    'ejemplos de contraseñas',
+    'verificar contraseña',
+    'frase de contraseña',
   ],
   sections: [
     {
@@ -307,12 +357,31 @@ export const es: LocalizedArticleContent = {
       paragraphs: [
         'La longitud es el factor más eficaz para reforzar una contraseña. Con un conjunto de 94 caracteres (letras, dígitos y símbolos), cada carácter adicional añade unos 6,5 bits de entropía, de modo que el espacio de búsqueda se duplica aproximadamente cada 1,1 caracteres.',
         'Esto es lo que significa en la práctica para una contraseña generada al azar (los valores suponen un generador criptográficamente seguro y ningún patrón reutilizado):',
+        'Los ejemplos siguientes son cadenas aleatorias con fines ilustrativos; no las uses en ninguna cuenta. Lo que importa es el patrón, no los caracteres concretos. Una contraseña de 12 caracteres es fuerte porque cada carácter se eligió al azar, no porque incluya un símbolo.',
+        'En el generador, elige el ajuste de longitud: 12 caracteres para cuentas cotidianas, 16 para contraseñas guardadas en un gestor y 20 para la contraseña maestra o el acceso de administrador. Ocho caracteres es solo un recurso para sistemas antiguos que rechazan valores más largos; en ese caso activa la autenticación de dos factores.',
       ],
       bullets: [
-        '8 caracteres — ~52 bits — la fuerza bruta tarda de minutos a horas en una granja de GPU; aceptable solo para cuentas de bajo valor',
-        '12 caracteres — ~79 bits — el mínimo práctico para correo, trabajo y compras',
-        '16 caracteres — ~105 bits — valor recomendado para contraseñas creadas por un gestor',
-        '20 caracteres — ~131 bits — adecuado para contraseñas maestras, carteras cripto y acceso de administrador',
+        '8 caracteres — ~52 bits — ejemplo: N7#vQ2!a — solo cuentas de bajo valor o sistemas antiguos',
+        '12 caracteres — ~79 bits — ejemplo: K9$pL2@xQ4!m — mínimo práctico para correo, trabajo y compras',
+        '16 caracteres — ~105 bits — ejemplo: R4#tY8!kL2@pW6$z — valor recomendado para contraseñas creadas por un gestor',
+        '20 caracteres — ~131 bits — ejemplo: H3$nB7@vC1!xZ5#qM9% — contraseñas maestras, carteras cripto y acceso de administrador',
+      ],
+    },
+    {
+      heading: 'Preguntas frecuentes: contraseñas de 12 caracteres, ejemplos y verificación',
+      paragraphs: [
+        '**¿Cómo se ve una buena contraseña de 12 caracteres?** Un ejemplo aleatorio es K9$pL2@xQ4!m. Combina mayúsculas, minúsculas, números y símbolos, pero lo decisivo es que se generó al azar. No reutilices esta cadena: crea una nueva para cada cuenta.',
+        '**¿Son suficientes 12 caracteres?** Para la mayoría de cuentas personales, 12 caracteres aleatorios (unos 79 bits) son el mínimo práctico. Usa 16 para contraseñas guardadas en un gestor y 20 para la contraseña maestra, carteras cripto y acceso de administrador. Ocho caracteres no bastan para correo o banca en 2026.',
+        '**¿Cuál es una buena contraseña de 8 caracteres?** Una cadena aleatoria como N7#vQ2!a es mucho mejor que una palabra fácil de recordar, pero el hardware actual aún la rompe en minutos u horas. Si un sistema limita la contraseña a 8 caracteres, usa un valor aleatorio único y activa la autenticación de dos factores.',
+        '**¿Cómo verifico la seguridad sin exponer la contraseña?** Usa el medidor de fuerza del generador de esta página: funciona localmente en tu navegador. No pegues contraseñas reales en sitios de verificación aleatorios. Para comprobar filtraciones, usa un servicio con k-anonimato, como Have I Been Pwned, y cambia la contraseña si aparece.',
+        '**¿Frase de contraseña o contraseña aleatoria?** Usa una frase de 5 a 7 palabras para lo que debes memorizar: la contraseña maestra del gestor o el inicio de sesión del equipo. Para todo lo demás, usa una contraseña aleatoria de 16 a 20 caracteres. La guía sobre frases de contraseña explica el equilibrio de entropía.',
+        '**¿También se aplica a la contraseña del Wi-Fi?** Sí. La clave del router debe ser una cadena aleatoria única de 16 a 20 caracteres, no la contraseña de tu correo. La guía de contraseñas Wi-Fi explica cómo cambiarla en el router y encontrar redes guardadas en Windows, Android e iPhone.',
+      ],
+      bullets: [
+        '12 caracteres: cuentas cotidianas',
+        '16 caracteres: contraseñas creadas por un gestor',
+        '20 caracteres: contraseña maestra y acceso de administrador',
+        '8 caracteres: solo sistemas antiguos, siempre con MFA',
       ],
     },
     {
@@ -399,10 +468,10 @@ export const es: LocalizedArticleContent = {
 export const fr: LocalizedArticleContent = {
   title: 'Comment créer des mots de passe forts en 2026 : guide complet',
   excerpt:
-    'Apprenez à créer des mots de passe véritablement sécurisés grâce aux techniques modernes recommandées par le NIST, l\'OWASP et les experts en cybersécurité. Ce guide couvre l\'entropie, les gestionnaires de mots de passe, les phrases secrètes et les erreurs courantes.',
-  seoTitle: 'Comment créer des mots de passe forts en 2026 — Directives NIST | generatepasswordto.me',
+    'Apprenez à créer des mots de passe véritablement sécurisés grâce aux techniques modernes recommandées par le NIST, l\'OWASP et les experts en cybersécurité.',
+  seoTitle: 'Comment créer des mots de passe forts en 2026 : guide complet',
   seoDescription:
-    'Guide pratique 2026 pour créer des mots de passe forts. Couvre les directives NIST 800-63B, les calculs d\'entropie, les phrases secrètes, les gestionnaires et les étapes détaillées pour une sécurité maximale.',
+    'Guide pratique 2026 pour créer des mots de passe forts. Utilisez le générateur pour créer un mot de passe unique et conservez-le en sécurité.',
   keywords: [
     'comment créer mot de passe fort',
     'guide mots de passe sécurisés 2026',
@@ -410,6 +479,10 @@ export const fr: LocalizedArticleContent = {
     'conseils mot de passe sécurisé',
     'entropie mot de passe',
     'meilleures pratiques mots de passe',
+    'mot de passe 12 caractères',
+    'exemple de mot de passe sécurisé',
+    'vérifier mot de passe',
+    'phrase secrète',
   ],
   sections: [
     {
@@ -439,12 +512,31 @@ export const fr: LocalizedArticleContent = {
       paragraphs: [
         'La longueur est le levier le plus efficace pour renforcer un mot de passe. Avec un jeu de 94 caractères (lettres, chiffres, symboles), chaque caractère supplémentaire apporte environ 6,5 bits d\'entropie : l\'espace de recherche double tous les 1,1 caractère environ.',
         'Voici ce que cela signifie en pratique pour un mot de passe généré aléatoirement (les valeurs supposent un générateur cryptographiquement sûr et aucun motif réutilisé) :',
+        'Les exemples ci-dessous sont des chaînes aléatoires fournies à titre d\'illustration : ne les réutilisez jamais dans un compte. Ce qui compte est le modèle, pas les caractères précis. Un mot de passe de 12 caractères est solide parce que chaque caractère a été tiré au hasard, pas parce qu\'il contient un symbole.',
+        'Dans le générateur, choisissez le préréglage de longueur : 12 caractères pour les comptes du quotidien, 16 pour les mots de passe conservés dans un gestionnaire et 20 pour le mot de passe maître ou l\'accès administrateur. Huit caractères ne sont qu\'un repli pour les systèmes anciens qui refusent les valeurs plus longues ; activez alors la double authentification.',
       ],
       bullets: [
-        '8 caractères — ~52 bits — la force brute prend de quelques minutes à quelques heures sur une ferme de GPU ; acceptable uniquement pour des comptes sans enjeu',
-        '12 caractères — ~79 bits — le minimum pratique pour le courriel, le travail et les achats',
-        '16 caractères — ~105 bits — valeur recommandée pour les mots de passe générés par un gestionnaire',
-        '20 caractères — ~131 bits — adapté aux mots de passe maîtres, portefeuilles crypto et accès administrateur',
+        '8 caractères — ~52 bits — exemple : N7#vQ2!a — comptes sans enjeu ou systèmes anciens uniquement',
+        '12 caractères — ~79 bits — exemple : K9$pL2@xQ4!m — minimum pratique pour le courriel, le travail et les achats',
+        '16 caractères — ~105 bits — exemple : R4#tY8!kL2@pW6$z — valeur recommandée pour les mots de passe générés par un gestionnaire',
+        '20 caractères — ~131 bits — exemple : H3$nB7@vC1!xZ5#qM9% — mots de passe maîtres, portefeuilles crypto et accès administrateur',
+      ],
+    },
+    {
+      heading: 'FAQ : mot de passe de 12 caractères, exemples et vérification',
+      paragraphs: [
+        '**À quoi ressemble un bon mot de passe de 12 caractères ?** Un exemple aléatoire est K9$pL2@xQ4!m. Il mélange majuscules, minuscules, chiffres et symboles, mais l\'essentiel est qu\'il ait été généré au hasard. Ne réutilisez pas cette chaîne : créez-en une nouvelle pour chaque compte.',
+        '**12 caractères suffisent-ils ?** Pour la plupart des comptes personnels, 12 caractères aléatoires (environ 79 bits) constituent le minimum pratique. Utilisez 16 caractères pour les mots de passe stockés dans un gestionnaire et 20 pour le mot de passe maître, les portefeuilles crypto et l\'accès administrateur. Huit caractères ne suffisent pas pour le courriel ou la banque en 2026.',
+        '**Quel est un bon mot de passe de 8 caractères ?** Une chaîne aléatoire comme N7#vQ2!a vaut bien mieux qu\'un mot facile à retenir, mais le matériel actuel la casse encore en quelques minutes ou heures. Si un système impose 8 caractères, utilisez une valeur aléatoire unique et activez la double authentification.',
+        '**Comment vérifier la solidité sans exposer le mot de passe ?** Utilisez l\'indicateur de force du générateur de cette page : il s\'exécute localement dans votre navigateur. Ne collez pas de vrais mots de passe sur des sites de vérification quelconques. Pour les fuites, utilisez un service qui prend en charge le k-anonymat, comme Have I Been Pwned, et changez le mot de passe s\'il apparaît.',
+        '**Phrase secrète ou mot de passe aléatoire ?** Réservez une phrase de 5 à 7 mots à ce que vous devez mémoriser : le mot de passe maître du gestionnaire ou la connexion à l\'ordinateur. Pour tout le reste, utilisez un mot de passe aléatoire de 16 à 20 caractères. Le guide sur les phrases secrètes détaille le compromis d\'entropie.',
+        '**Cela vaut-il aussi pour le mot de passe Wi-Fi ?** Oui. La clé du routeur doit être une chaîne aléatoire unique de 16 à 20 caractères, pas le mot de passe de votre messagerie. Le guide des mots de passe Wi-Fi explique comment la changer sur le routeur et retrouver les réseaux enregistrés sous Windows, Android et iPhone.',
+      ],
+      bullets: [
+        '12 caractères : comptes du quotidien',
+        '16 caractères : mots de passe générés par un gestionnaire',
+        '20 caractères : mot de passe maître et accès administrateur',
+        '8 caractères : systèmes anciens uniquement, toujours avec MFA',
       ],
     },
     {
@@ -531,10 +623,10 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'Sichere Passwörter erstellen 2026: vollständiger Leitfaden',
   excerpt:
-    'Lernen Sie, wie Sie mit modernen Techniken, die von NIST, OWASP und Cybersicherheitsexperten empfohlen werden, wirklich sichere Passwörter erstellen. Dieser Leitfaden behandelt Entropie, Passwort-Manager, Passphrasen und häufige Fehler.',
-  seoTitle: 'Sichere Passwörter erstellen 2026 — NIST-Richtlinien | generatepasswordto.me',
+    'Lernen Sie, wie Sie mit modernen Techniken, die von NIST, OWASP und Cybersicherheitsexperten empfohlen werden, wirklich sichere Passwörter erstellen.',
+  seoTitle: 'Sichere Passwörter erstellen 2026: vollständiger Leitfaden',
   seoDescription:
-    'Praktischer Leitfaden 2026 zur Erstellung sicherer Passwörter. Behandelt NIST 800-63B-Richtlinien, Entropie-Berechnungen, Passphrasen, Passwort-Manager und Schritt-für-Schritt-Anleitungen für maximale Sicherheit.',
+    'Praktischer Leitfaden 2026 zur Erstellung sicherer Passwörter. Erzeugen Sie im Generator ein einzigartiges Passwort und speichern Sie es sicher.',
   keywords: [
     'sicheres Passwort erstellen',
     'Passwort-Leitfaden 2026',
@@ -542,6 +634,10 @@ export const de: LocalizedArticleContent = {
     'sichere Passwort-Tipps',
     'Passwort-Entropie',
     'Passwort Best Practices',
+    'Passwort 12 Zeichen',
+    'Passwort Beispiele',
+    'Passwort prüfen',
+    'Passphrase',
   ],
   sections: [
     {
@@ -571,12 +667,31 @@ export const de: LocalizedArticleContent = {
       paragraphs: [
         'Die Länge ist der wirksamste Hebel für die Passwortstärke. Bei einem Zeichenvorrat von 94 Zeichen (Buchstaben, Ziffern, Sonderzeichen) bringt jedes zusätzliche Zeichen etwa 6,5 Bit Entropie — der Suchraum verdoppelt sich also ungefähr alle 1,1 Zeichen.',
         'Was das für ein zufällig erzeugtes Passwort praktisch bedeutet (die Werte setzen einen kryptografisch sicheren Generator und keine wiederverwendeten Muster voraus):',
+        'Die folgenden Beispiele sind zufällige Zeichenfolgen nur zur Veranschaulichung. Verwenden Sie sie nie in einem Konto. Entscheidend ist das Muster, nicht die konkreten Zeichen. Ein Passwort mit 12 Zeichen ist stark, weil jedes Zeichen zufällig gewählt wurde, nicht weil zufällig ein Sonderzeichen enthalten ist.',
+        'Wählen Sie im Generator die Längenvorgabe: 12 Zeichen für Alltagskonten, 16 für Passwörter im Passwortmanager und 20 für das Master-Passwort oder den Admin-Zugang. Acht Zeichen sind nur ein Notbehelf für alte Systeme, die längere Werte ablehnen; aktivieren Sie dann die Zwei-Faktor-Authentifizierung.',
       ],
       bullets: [
-        '8 Zeichen — ~52 Bit — Brute-Force dauert auf einer GPU-Farm Minuten bis Stunden; nur für Konten mit geringem Wert akzeptabel',
-        '12 Zeichen — ~79 Bit — das praktische Minimum für E-Mail, Arbeit und Einkäufe',
-        '16 Zeichen — ~105 Bit — empfohlener Standard für Passwörter aus einem Passwortmanager',
-        '20 Zeichen — ~131 Bit — geeignet für Master-Passwörter, Krypto-Wallets und Admin-Zugänge',
+        '8 Zeichen — ~52 Bit — Beispiel: N7#vQ2!a — nur Konten mit geringem Wert oder Altsysteme',
+        '12 Zeichen — ~79 Bit — Beispiel: K9$pL2@xQ4!m — praktisches Minimum für E-Mail, Arbeit und Einkäufe',
+        '16 Zeichen — ~105 Bit — Beispiel: R4#tY8!kL2@pW6$z — Standard für Passwörter aus einem Passwortmanager',
+        '20 Zeichen — ~131 Bit — Beispiel: H3$nB7@vC1!xZ5#qM9% — Master-Passwörter, Krypto-Wallets und Admin-Zugänge',
+      ],
+    },
+    {
+      heading: 'FAQ: Passwort mit 12 Zeichen, Beispiele und Passwortprüfung',
+      paragraphs: [
+        '**Wie sieht ein gutes Passwort mit 12 Zeichen aus?** Ein zufälliges Beispiel ist K9$pL2@xQ4!m. Es enthält Groß- und Kleinbuchstaben, Ziffern und Sonderzeichen; entscheidend ist jedoch, dass es zufällig erzeugt wurde. Verwenden Sie diese Zeichenfolge nicht erneut, sondern generieren Sie für jedes Konto ein neues Passwort.',
+        '**Reichen 12 Zeichen aus?** Für die meisten privaten Konten sind 12 zufällige Zeichen (rund 79 Bit) das praktische Minimum. Für Passwörter im Manager sollten es 16 Zeichen sein, für Master-Passwort, Krypto-Wallets und Admin-Zugang 20. Acht Zeichen reichen 2026 weder für E-Mail noch für Online-Banking.',
+        '**Was ist ein gutes Passwort mit 8 Zeichen?** Eine zufällige Zeichenfolge wie N7#vQ2!a ist deutlich besser als ein merkbares Wort, aber moderne Hardware knackt sie noch in Minuten bis Stunden. Wenn ein System nur 8 Zeichen zulässt, verwenden Sie einen einzigartigen Zufallswert und aktivieren Sie die Zwei-Faktor-Authentifizierung.',
+        '**Wie prüfe ich die Passwortstärke, ohne das Passwort preiszugeben?** Nutzen Sie die Stärkeanzeige im Generator auf dieser Seite; sie läuft lokal im Browser. Geben Sie echte Passwörter nicht auf beliebigen Prüfseiten ein. Für Leak-Prüfungen verwenden Sie einen Dienst mit k-Anonymität, etwa Have I Been Pwned, und ändern Sie das Passwort, wenn es dort auftaucht.',
+        '**Passphrase oder zufälliges Passwort?** Eine Passphrase mit 5 bis 7 Wörtern eignet sich für alles, was Sie auswendig können müssen: das Master-Passwort des Managers oder die Anmeldung am Computer. Für alle anderen Konten verwenden Sie ein zufälliges Passwort mit 16 bis 20 Zeichen. Der Leitfaden zu Passphrasen erklärt den Entropie-Kompromiss.',
+        '**Gilt das auch für WLAN-Passwörter?** Ja. Das Router-Passwort sollte eine einzigartige Zufallsfolge mit 16 bis 20 Zeichen sein, nicht Ihr E-Mail-Passwort. Der Leitfaden zum WLAN-Passwort zeigt, wie Sie es am Router ändern und gespeicherte Netzwerke unter Windows, Android und iPhone finden.',
+      ],
+      bullets: [
+        '12 Zeichen: Alltagskonten',
+        '16 Zeichen: vom Passwortmanager erzeugte Passwörter',
+        '20 Zeichen: Master-Passwort und Admin-Zugang',
+        '8 Zeichen: nur Altsysteme, immer mit MFA',
       ],
     },
     {
@@ -664,9 +779,9 @@ export const it: LocalizedArticleContent = {
   title: 'Come creare password sicure nel 2026: guida completa',
   excerpt:
     'Scopri come creare password veramente sicure con tecniche moderne raccomandate da NIST, OWASP ed esperti di cybersicurezza. Questa guida copre entropia, gestori di password, passphrase e gli errori comuni da evitare.',
-  seoTitle: 'Come creare password sicure nel 2026 — Linee guida NIST | generatepasswordto.me',
+  seoTitle: 'Come creare password sicure nel 2026: guida completa',
   seoDescription:
-    'Guida pratica 2026 per creare password sicure. Copre le linee guida NIST 800-63B, calcoli di entropia, passphrase, gestori di password e istruzioni passo-passo per la massima sicurezza.',
+    'Guida pratica 2026 per creare password sicure. Usa il generatore per creare una password unica e conservala in modo sicuro.',
   keywords: [
     'come creare password sicura',
     'guida password sicure 2026',
@@ -674,6 +789,10 @@ export const it: LocalizedArticleContent = {
     'consigli password sicura',
     'entropia password',
     'migliori pratiche password',
+    'password di 12 caratteri',
+    'esempi di password',
+    'verificare password',
+    'passphrase',
   ],
   sections: [
     {
@@ -703,12 +822,31 @@ export const it: LocalizedArticleContent = {
       paragraphs: [
         'La lunghezza è la leva più efficace per rafforzare una password. Con un insieme di 94 caratteri (lettere, cifre, simboli), ogni carattere aggiuntivo apporta circa 6,5 bit di entropia: lo spazio di ricerca raddoppia ogni 1,1 caratteri circa.',
         'Ecco cosa significa in pratica per una password generata casualmente (i valori presuppongono un generatore crittograficamente sicuro e nessun pattern riutilizzato):',
+        'Gli esempi seguenti sono stringhe casuali solo a scopo illustrativo: non usarle in nessun account. Conta il modello, non i caratteri specifici. Una password di 12 caratteri è forte perché ogni carattere è stato scelto a caso, non perché contiene un simbolo.',
+        'Nel generatore scegli la lunghezza predefinita: 12 caratteri per gli account quotidiani, 16 per le password salvate in un gestore e 20 per la password master o l\'accesso amministratore. Otto caratteri sono solo un ripiego per i sistemi vecchi che rifiutano valori più lunghi; in quel caso attiva l\'autenticazione a due fattori.',
       ],
       bullets: [
-        '8 caratteri — ~52 bit — la forza bruta richiede da minuti a ore su una farm di GPU; accettabile solo per account di scarso valore',
-        '12 caratteri — ~79 bit — il minimo pratico per email, lavoro e acquisti',
-        '16 caratteri — ~105 bit — valore consigliato per password generate da un gestore',
-        '20 caratteri — ~131 bit — adatta a password master, wallet crypto e accesso amministratore',
+        '8 caratteri — ~52 bit — esempio: N7#vQ2!a — solo account di scarso valore o sistemi legacy',
+        '12 caratteri — ~79 bit — esempio: K9$pL2@xQ4!m — minimo pratico per email, lavoro e acquisti',
+        '16 caratteri — ~105 bit — esempio: R4#tY8!kL2@pW6$z — valore consigliato per password generate da un gestore',
+        '20 caratteri — ~131 bit — esempio: H3$nB7@vC1!xZ5#qM9% — password master, wallet crypto e accesso amministratore',
+      ],
+    },
+    {
+      heading: 'Domande frequenti: password di 12 caratteri, esempi e verifica',
+      paragraphs: [
+        '**Come appare una buona password di 12 caratteri?** Un esempio casuale è K9$pL2@xQ4!m. Contiene maiuscole, minuscole, numeri e simboli, ma l\'aspetto decisivo è che sia stata generata a caso. Non riutilizzare questa stringa: crea una password nuova per ogni account.',
+        '**Bastano 12 caratteri?** Per la maggior parte degli account personali, 12 caratteri casuali (circa 79 bit) sono il minimo pratico. Usa 16 caratteri per le password salvate in un gestore e 20 per la password master, i wallet crypto e l\'accesso amministratore. Otto caratteri non bastano per email o banca nel 2026.',
+        '**Qual è una buona password di 8 caratteri?** Una stringa casuale come N7#vQ2!a è molto meglio di una parola facile da ricordare, ma l\'hardware attuale la viola ancora in minuti o ore. Se un sistema limita la password a 8 caratteri, usa un valore casuale unico e attiva l\'autenticazione a due fattori.',
+        '**Come verificare la forza senza esporre la password?** Usa l\'indicatore di forza nel generatore di questa pagina: funziona localmente nel browser. Non incollare password reali su siti di verifica sconosciuti. Per controllare le violazioni, usa un servizio con k-anonimato, come Have I Been Pwned, e cambia la password se compare.',
+        '**Passphrase o password casuale?** Usa una passphrase di 5–7 parole per ciò che devi memorizzare: la password master del gestore o l\'accesso al computer. Per tutto il resto, usa una password casuale di 16–20 caratteri. La guida sulle passphrase spiega il compromesso dell\'entropia.',
+        '**Vale anche per la password Wi-Fi?** Sì. La chiave del router deve essere una stringa casuale unica di 16–20 caratteri, non la password della tua email. La guida alle password Wi-Fi spiega come cambiarla sul router e trovare le reti salvate su Windows, Android e iPhone.',
+      ],
+      bullets: [
+        '12 caratteri: account quotidiani',
+        '16 caratteri: password generate da un gestore',
+        '20 caratteri: password master e accesso amministratore',
+        '8 caratteri: solo sistemi legacy, sempre con MFA',
       ],
     },
     {
@@ -795,10 +933,10 @@ export const it: LocalizedArticleContent = {
 export const pt: LocalizedArticleContent = {
   title: 'Como criar senhas fortes em 2026: guia completo',
   excerpt:
-    'Aprenda a criar senhas verdadeiramente seguras usando técnicas modernas recomendadas pelo NIST, OWASP e especialistas em cibersegurança. Este guia cobre entropia, gerenciadores de senhas, frases-senha e erros comuns a evitar.',
-  seoTitle: 'Como criar senhas fortes em 2026 — Diretrizes NIST | generatepasswordto.me',
+    'Aprenda a criar senhas verdadeiramente seguras usando técnicas modernas recomendadas pelo NIST, OWASP e especialistas em cibersegurança. Use o gerador para criar uma senha única e guarde-a com segurança.',
+  seoTitle: 'Como criar senhas fortes em 2026: guia completo',
   seoDescription:
-    'Guia prático 2026 para criar senhas fortes. Cobre diretrizes NIST 800-63B, cálculos de entropia, frases-senha, gerenciadores e instruções passo a passo para segurança máxima.',
+    'Guia prático 2026 para criar senhas fortes. Use o gerador para criar uma senha única e guarde-a com segurança.',
   keywords: [
     'como criar senha forte',
     'guia senhas seguras 2026',
@@ -806,6 +944,10 @@ export const pt: LocalizedArticleContent = {
     'dicas senha segura',
     'entropia de senha',
     'melhores práticas senhas',
+    'senha de 12 caracteres',
+    'exemplos de senhas',
+    'verificar senha',
+    'frase-senha',
   ],
   sections: [
     {
@@ -835,12 +977,31 @@ export const pt: LocalizedArticleContent = {
       paragraphs: [
         'O comprimento é a alavanca mais eficaz para reforçar uma senha. Com um conjunto de 94 caracteres (letras, dígitos e símbolos), cada caractere adicional acrescenta cerca de 6,5 bits de entropia, pelo que o espaço de pesquisa duplica aproximadamente a cada 1,1 caracteres.',
         'Eis o que isso significa na prática para uma senha gerada aleatoriamente (os valores pressupõem um gerador criptograficamente seguro e nenhum padrão reutilizado):',
+        'Os exemplos abaixo são sequências aleatórias apenas para ilustração; nunca as use em uma conta. O que importa é o padrão, não os caracteres exatos. Uma senha de 12 caracteres é forte porque cada caractere foi escolhido aleatoriamente, não porque inclui um símbolo.',
+        'No gerador, escolha a predefinição de comprimento: 12 caracteres para contas do dia a dia, 16 para senhas guardadas em um gerenciador e 20 para a senha mestra ou acesso de administrador. Oito caracteres são apenas um recurso para sistemas antigos que recusam valores maiores; nesse caso, ative a autenticação de dois fatores.',
       ],
       bullets: [
-        '8 caracteres — ~52 bits — a força bruta leva de minutos a horas numa farm de GPU; aceitável apenas para contas de baixo valor',
-        '12 caracteres — ~79 bits — o mínimo prático para email, trabalho e compras',
-        '16 caracteres — ~105 bits — valor recomendado para senhas criadas por um gestor',
-        '20 caracteres — ~131 bits — adequado para senhas mestras, carteiras cripto e acesso de administrador',
+        '8 caracteres — ~52 bits — exemplo: N7#vQ2!a — apenas contas de baixo valor ou sistemas antigos',
+        '12 caracteres — ~79 bits — exemplo: K9$pL2@xQ4!m — mínimo prático para email, trabalho e compras',
+        '16 caracteres — ~105 bits — exemplo: R4#tY8!kL2@pW6$z — valor recomendado para senhas criadas por um gerenciador',
+        '20 caracteres — ~131 bits — exemplo: H3$nB7@vC1!xZ5#qM9% — senhas mestras, carteiras cripto e acesso de administrador',
+      ],
+    },
+    {
+      heading: 'Perguntas frequentes: senha de 12 caracteres, exemplos e verificação',
+      paragraphs: [
+        '**Como é uma boa senha de 12 caracteres?** Um exemplo aleatório é K9$pL2@xQ4!m. Ele mistura maiúsculas, minúsculas, números e símbolos, mas o essencial é ter sido gerado aleatoriamente. Não reutilize essa sequência: crie uma nova para cada conta.',
+        '**12 caracteres são suficientes?** Para a maioria das contas pessoais, 12 caracteres aleatórios (cerca de 79 bits) são o mínimo prático. Use 16 para senhas guardadas em um gerenciador e 20 para a senha mestra, carteiras cripto e acesso de administrador. Oito caracteres não bastam para e-mail ou banco em 2026.',
+        '**Qual é uma boa senha de 8 caracteres?** Uma sequência aleatória como N7#vQ2!a é muito melhor que uma palavra fácil de lembrar, mas o hardware atual ainda a quebra em minutos ou horas. Se um sistema limita a senha a 8 caracteres, use um valor aleatório único e ative a autenticação de dois fatores.',
+        '**Como verificar a força sem expor a senha?** Use o medidor de força do gerador desta página: ele funciona localmente no navegador. Não cole senhas reais em sites de verificação desconhecidos. Para checar vazamentos, use um serviço com k-anonimato, como o Have I Been Pwned, e troque a senha se ela aparecer.',
+        '**Frase-senha ou senha aleatória?** Use uma frase de 5 a 7 palavras no que você precisa memorizar: a senha mestra do gerenciador ou o login do computador. Para todo o resto, use uma senha aleatória de 16 a 20 caracteres. O guia sobre frases-senha explica o equilíbrio de entropia.',
+        '**Isso vale também para a senha do Wi-Fi?** Vale. A senha do roteador deve ser uma sequência aleatória única de 16 a 20 caracteres, não a senha do seu e-mail. O guia de senhas Wi-Fi mostra como alterá-la no roteador e encontrar redes salvas no Windows, Android e iPhone.',
+      ],
+      bullets: [
+        '12 caracteres: contas do dia a dia',
+        '16 caracteres: senhas criadas por um gerenciador',
+        '20 caracteres: senha mestra e acesso de administrador',
+        '8 caracteres: apenas sistemas antigos, sempre com MFA',
       ],
     },
     {
@@ -927,10 +1088,10 @@ export const pt: LocalizedArticleContent = {
 export const ru: LocalizedArticleContent = {
   title: 'Как создать надёжный пароль в 2026 году: полное руководство',
   excerpt:
-    'Узнайте, как создавать по-настоящему безопасные пароли с помощью современных методов, рекомендованных NIST, OWASP и экспертами по кибербезопасности. Это руководство охватывает энтропию, менеджеры паролей, парольные фразы и распространённые ошибки.',
-  seoTitle: 'Как создать надёжный пароль в 2026 — рекомендации NIST | generatepasswordto.me',
+    'Узнайте, как создавать по-настоящему безопасные пароли с помощью современных методов, рекомендованных NIST, OWASP и экспертами по кибербезопасности.',
+  seoTitle: 'Как создать надёжный пароль в 2026 году: полное руководство',
   seoDescription:
-    'Практическое руководство 2026 года по созданию надёжных паролей. Рекомендации NIST 800-63B, расчёт энтропии, парольные фразы, менеджеры паролей и пошаговые инструкции для максимальной безопасности.',
+    'Практическое руководство 2026 года по созданию надёжных паролей. Создайте уникальный пароль в генераторе и сохраните его безопасно.',
   keywords: [
     'как создать надёжный пароль',
     'руководство по паролям 2026',
@@ -938,6 +1099,10 @@ export const ru: LocalizedArticleContent = {
     'советы по безопасным паролям',
     'энтропия пароля',
     'лучшие практики паролей',
+    'пароль из 12 символов',
+    'примеры паролей',
+    'проверить пароль',
+    'парольная фраза',
   ],
   sections: [
     {
@@ -967,12 +1132,31 @@ export const ru: LocalizedArticleContent = {
       paragraphs: [
         'Длина — самый эффективный рычаг для усиления пароля. При наборе из 94 символов (буквы, цифры, символы) каждый дополнительный символ добавляет около 6,5 бит энтропии, то есть пространство перебора удваивается примерно каждые 1,1 символа.',
         'Вот что это значит на практике для случайно сгенерированного пароля (значения предполагают криптографически стойкий генератор и отсутствие шаблонов):',
+        'Примеры ниже — случайные строки только для иллюстрации. Никогда не используйте их в своих аккаунтах: важен сам принцип, а не конкретные символы. Пароль из 12 символов надёжен потому, что каждый знак выбран случайно, а не потому, что в нём есть символ.',
+        'В генераторе выбирайте предустановленную длину: 12 символов — для повседневных аккаунтов, 16 — для паролей в менеджере, 20 — для мастер-пароля и админ-доступа. Восемь символов — лишь запасной вариант для старых систем, которые не принимают более длинные значения; в этом случае включите двухфакторную аутентификацию.',
       ],
       bullets: [
-        '8 символов — ~52 бита — перебор на GPU-ферме занимает от минут до часов; допустимо только для малозначимых аккаунтов',
-        '12 символов — ~79 бит — практический минимум для почты, работы и покупок',
-        '16 символов — ~105 бит — рекомендуемый стандарт для паролей из менеджера паролей',
-        '20 символов — ~131 бит — подходит для мастер-пароля, криптокошельков и админ-доступа',
+        '8 символов — ~52 бита — пример: N7#vQ2!a — только малозначимые аккаунты или старые системы',
+        '12 символов — ~79 бит — пример: K9$pL2@xQ4!m — практический минимум для почты, работы и покупок',
+        '16 символов — ~105 бит — пример: R4#tY8!kL2@pW6$z — стандарт для паролей из менеджера паролей',
+        '20 символов — ~131 бит — пример: H3$nB7@vC1!xZ5#qM9% — мастер-пароль, криптокошельки и админ-доступ',
+      ],
+    },
+    {
+      heading: 'Частые вопросы: пароль из 12 символов, примеры и проверка надёжности',
+      paragraphs: [
+        '**Как выглядит надёжный пароль из 12 символов?** Случайный пример: K9$pL2@xQ4!m. В нём есть заглавные и строчные буквы, цифры и символы, но главное — он сгенерирован случайно. Не повторяйте эту строку: для каждого аккаунта создавайте новый пароль.',
+        '**Достаточно ли 12 символов?** Для большинства личных аккаунтов 12 случайных символов (около 79 бит) — практический минимум. Для паролей в менеджере берите 16 символов, а для мастер-пароля, криптокошелька и админ-доступа — 20. Восьми символов в 2026 году недостаточно для почты или банка.',
+        '**Какой пароль из 8 символов можно считать надёжным?** Случайная строка вроде N7#vQ2!a намного лучше запоминающегося слова, но современное оборудование всё равно перебирает её за минуты или часы. Если система ограничивает пароль восемью символами, создайте уникальный случайный пароль и включите двухфакторную аутентификацию.',
+        '**Как проверить пароль, не передавая его третьим сторонам?** Используйте индикатор надёжности в генераторе на этой странице: он работает локально в браузере. Не вставляйте настоящие пароли на случайные сайты проверки. Для проверки утечек используйте сервис с поддержкой k-анонимности, например Have I Been Pwned, и смените пароль, если он там есть.',
+        '**Что лучше: парольная фраза или случайный пароль?** Парольную фразу из 5–7 слов используйте там, где пароль нужно запоминать: мастер-пароль менеджера или вход в компьютер. Для остальных аккаунтов берите случайный пароль из 16–20 символов. Подробнее о компромиссе энтропии — в руководстве о парольных фразах.',
+        '**Относится ли это к паролям Wi-Fi?** Да. Пароль роутера должен быть уникальной случайной строкой из 16–20 символов, а не паролем от почты. Как сменить его на роутере и найти сохранённые сети в Windows, Android и iPhone, описано в руководстве по паролям Wi-Fi.',
+      ],
+      bullets: [
+        '12 символов: повседневные аккаунты',
+        '16 символов: пароли, созданные менеджером',
+        '20 символов: мастер-пароль и админ-доступ',
+        '8 символов: только старые системы, обязательно с MFA',
       ],
     },
     {
@@ -1059,10 +1243,10 @@ export const ru: LocalizedArticleContent = {
 export const zh: LocalizedArticleContent = {
   title: '2026年如何创建强密码：完整指南',
   excerpt:
-    '了解如何使用NIST、OWASP和网络安全专家推荐的现代技术创建真正安全的密码。本指南涵盖熵值、密码管理器、密码短语和常见错误。',
+    '了解如何使用NIST、OWASP和网络安全专家推荐的现代技术创建真正安全的密码。 本指南涵盖熵值、密码管理器、密码短语和常见错误。',
   seoTitle: '2026年如何创建强密码 — NIST指南 | generatepasswordto.me',
   seoDescription:
-    '2026年创建强密码的实用指南。涵盖NIST 800-63B指南、熵值计算、密码短语、密码管理器以及最大安全性的分步说明。',
+    '2026年创建强密码的实用指南。 涵盖NIST 800-63B指南、熵值计算、密码短语、密码管理器以及最大安全性的分步说明。',
   keywords: [
     '如何创建强密码',
     '2026密码安全指南',
@@ -1070,6 +1254,10 @@ export const zh: LocalizedArticleContent = {
     '安全密码技巧',
     '密码熵值',
     '密码最佳实践',
+    '12位密码',
+    '密码示例',
+    '检查密码强度',
+    '密码短语',
   ],
   sections: [
     {
@@ -1099,12 +1287,31 @@ export const zh: LocalizedArticleContent = {
       paragraphs: [
         '长度是提升密码强度最有效的手段。在 94 个字符的字符集（大小写字母、数字和符号）下，每增加一个字符大约增加 6.5 位熵，搜索空间约每 1.1 个字符翻一倍。',
         '以下是对随机生成密码的实际意义（数值假设使用密码学安全的生成器且没有重复模式）：',
+        '下面的示例只是随机字符串，仅用于说明，切勿在任何账户中使用。关键在于生成方式，而不是具体字符。12 位密码之所以强，是因为每个字符都随机选取，而不是因为它碰巧包含符号。',
+        '在生成器中选择长度预设：12 位用于日常账户，16 位用于密码管理器保存的密码，20 位用于主密码或管理员访问。8 位只适合拒绝更长密码的旧系统；这种情况下请同时开启双重身份验证。',
       ],
       bullets: [
-        '8 个字符 — 约 52 位 — 在 GPU 集群上暴力破解只需几分钟到几小时；仅适用于低价值账户',
-        '12 个字符 — 约 79 位 — 邮箱、工作与购物账户的实用最低标准',
-        '16 个字符 — 约 105 位 — 密码管理器生成密码的推荐默认值',
-        '20 个字符 — 约 131 位 — 适合主密码、加密钱包和管理员访问',
+        '8 个字符 — 约 52 位 — 示例：N7#vQ2!a — 仅限低价值账户或旧系统',
+        '12 个字符 — 约 79 位 — 示例：K9$pL2@xQ4!m — 邮箱、工作与购物账户的实用最低标准',
+        '16 个字符 — 约 105 位 — 示例：R4#tY8!kL2@pW6$z — 密码管理器生成密码的推荐默认值',
+        '20 个字符 — 约 131 位 — 示例：H3$nB7@vC1!xZ5#qM9% — 主密码、加密钱包和管理员访问',
+      ],
+    },
+    {
+      heading: '常见问题：12 位密码、示例与强度检查',
+      paragraphs: [
+        '**12 位强密码是什么样子？** 一个随机示例是 K9$pL2@xQ4!m。它包含大小写字母、数字和符号，但关键在于它是随机生成的。不要重复使用这个字符串，每个账户都应生成新密码。',
+        '**12 位密码够强吗？** 对大多数个人账户来说，12 个随机字符（约 79 位熵）是实用最低标准。密码管理器中的密码建议用 16 位，主密码、加密钱包和管理员访问建议用 20 位。2026 年，8 位密码不足以保护邮箱或银行账户。',
+        '**8 位的好密码是什么样的？** 像 N7#vQ2!a 这样的随机字符串远胜于容易记住的单词，但现代硬件仍能在几分钟到几小时内破解。如果系统最多只允许 8 位，请使用唯一的随机值，并开启双重身份验证。',
+        '**如何在不泄露密码的情况下检查强度？** 使用本页生成器中的强度指示器，它在浏览器本地运行。不要把真实密码粘贴到陌生的检查网站。检查泄露时，请使用支持 k-匿名性的服务（例如 Have I Been Pwned），如果发现泄露就立即更换密码。',
+        '**用密码短语还是随机密码？** 需要记住的密码（密码管理器主密码或电脑登录）用 5–7 个单词的密码短语；其他账户用 16–20 位的随机密码。密码短语指南详细解释了两者的熵值取舍。',
+        '**这也适用于 Wi-Fi 密码吗？** 适用。路由器密码应是 16–20 位的唯一随机字符串，而不是邮箱密码。Wi-Fi 密码指南介绍了如何在路由器上修改密码，以及在 Windows、Android 和 iPhone 上查找已保存的网络。',
+      ],
+      bullets: [
+        '12 位：日常账户',
+        '16 位：密码管理器生成的密码',
+        '20 位：主密码和管理员访问',
+        '8 位：仅限旧系统，并且必须配合 MFA',
       ],
     },
     {
@@ -1191,10 +1398,10 @@ export const zh: LocalizedArticleContent = {
 export const ja: LocalizedArticleContent = {
   title: '2026年に強力なパスワードを作成する方法：完全ガイド',
   excerpt:
-    'NIST、OWASP、サイバーセキュリティ専門家が推奨する最新技術を使用して、本当に安全なパスワードを作成する方法を学びましょう。このガイドではエントロピー、パスワードマネージャー、パスフレーズ、よくある間違いについて解説します。',
+    'NIST、OWASP、サイバーセキュリティ専門家が推奨する最新技術を使用して、本当に安全なパスワードを作成する方法を学びましょう。 このガイドではエントロピー、パスワードマネージャー、パスフレーズ、よくある間違いについて解説します。',
   seoTitle: '2026年に強力なパスワードを作成する方法 — NISTガイドライン | generatepasswordto.me',
   seoDescription:
-    '2026年版の強力なパスワード作成実践ガイド。NIST 800-63Bガイドライン、エントロピー計算、パスフレーズ、パスワードマネージャー、最大限のセキュリティのためのステップバイステップ手順を網羅。',
+    '2026年版の強力なパスワード作成実践ガイド。 NIST 800-63Bガイドライン、エントロピー計算、パスフレーズ、パスワードマネージャー、最大限のセキュリティのためのステップバイステップ手順を網羅。',
   keywords: [
     '強力なパスワードの作り方',
     'パスワードガイド2026',
@@ -1202,6 +1409,10 @@ export const ja: LocalizedArticleContent = {
     '安全なパスワードのコツ',
     'パスワードエントロピー',
     'パスワードベストプラクティス',
+    '12文字 パスワード',
+    'パスワード 例',
+    'パスワード 強度 チェック',
+    'パスフレーズ',
   ],
   sections: [
     {
@@ -1231,12 +1442,31 @@ export const ja: LocalizedArticleContent = {
       paragraphs: [
         '長さはパスワード強度を高める最も効果的な要素です。94文字の文字セット（英字・数字・記号）では、1文字増えるごとに約6.5ビットのエントロピーが加わり、探索空間はおよそ1.1文字ごとに倍になります。',
         'ランダムに生成されたパスワードでの実際の意味は次のとおりです（値は暗号学的に安全な生成器とパターンの再利用がないことを前提とします）。',
+        '以下の例は説明用のランダムな文字列です。どのアカウントにも使わないでください。重要なのは具体的な文字ではなく、生成方法です。12文字のパスワードが強いのは、記号がたまたま入っているからではなく、すべての文字がランダムに選ばれているからです。',
+        'ジェネレーターでは長さのプリセットを選びます。日常的なアカウントは12文字、パスワードマネージャーに保存するものは16文字、マスターパスワードや管理者アクセスは20文字が目安です。8文字は長い値を受け付けない古いシステム向けの最後の手段で、その場合は二要素認証も有効にしてください。',
       ],
       bullets: [
-        '8文字 — 約52ビット — GPUファームでの総当たりは数分〜数時間。価値の低いアカウントのみ許容',
-        '12文字 — 約79ビット — メール・仕事・ショッピングの実用的な最低ライン',
-        '16文字 — 約105ビット — パスワードマネージャー生成パスワードの推奨値',
-        '20文字 — 約131ビット — マスターパスワード、暗号資産ウォレット、管理者アクセスに適する',
+        '8文字 — 約52ビット — 例：N7#vQ2!a — 価値の低いアカウントまたは旧システムのみ',
+        '12文字 — 約79ビット — 例：K9$pL2@xQ4!m — メール・仕事・ショッピングの実用的な最低ライン',
+        '16文字 — 約105ビット — 例：R4#tY8!kL2@pW6$z — パスワードマネージャー生成パスワードの推奨値',
+        '20文字 — 約131ビット — 例：H3$nB7@vC1!xZ5#qM9% — マスターパスワード、暗号資産ウォレット、管理者アクセス',
+      ],
+    },
+    {
+      heading: 'よくある質問：12文字のパスワード、例、強度チェック',
+      paragraphs: [
+        '**12文字の強いパスワードはどんな形ですか？** ランダムな例は K9$pL2@xQ4!m です。大文字・小文字・数字・記号を含みますが、重要なのはランダムに生成されたことです。この文字列を再利用せず、アカウントごとに新しいパスワードを作ってください。',
+        '**12文字で十分ですか？** ほとんどの個人アカウントでは、12文字のランダムな文字列（約79ビット）が実用的な最低ラインです。マネージャーに保存するパスワードは16文字、マスターパスワード・暗号資産ウォレット・管理者アクセスは20文字にしてください。2026年では、メールや銀行に8文字は足りません。',
+        '**8文字の良いパスワードは？** N7#vQ2!a のようなランダムな文字列は覚えやすい単語よりはるかに優れていますが、現在のハードウェアなら数分から数時間で破られます。システムが8文字までしか許さない場合は、一意のランダム値を使って二要素認証を有効にしてください。',
+        '**パスワードを漏らさずに強度を確認するには？** このページのジェネレーターの強度メーターを使ってください。ブラウザ内でローカルに動作します。本物のパスワードを無作為な確認サイトに貼り付けないでください。漏えい確認には k-匿名性に対応したサービス（Have I Been Pwned など）を使い、見つかったらすぐ変更してください。',
+        '**パスフレーズとランダムパスワード、どちらを使うべきですか？** 覚える必要があるもの（マネージャーのマスターパスワードやPCログイン）には5〜7語のパスフレーズを使います。それ以外のアカウントには16〜20文字のランダムパスワードを使ってください。エントロピーのトレードオフはパスフレーズのガイドで詳しく説明しています。',
+        '**Wi-Fiパスワードにも当てはまりますか？** はい。ルーターのパスワードは16〜20文字の一意なランダム文字列にし、メールのパスワードを使い回さないでください。Wi-Fiパスワードのガイドでは、ルーターでの変更方法と、Windows・Android・iPhoneで保存済みネットワークを確認する方法を説明しています。',
+      ],
+      bullets: [
+        '12文字：日常的なアカウント',
+        '16文字：パスワードマネージャーで生成したパスワード',
+        '20文字：マスターパスワードと管理者アクセス',
+        '8文字：旧システムのみ、必ずMFAと併用',
       ],
     },
     {
@@ -1323,10 +1553,10 @@ export const ja: LocalizedArticleContent = {
 export const pl: LocalizedArticleContent = {
   title: 'Jak tworzyć silne hasła w 2026 roku: kompletny przewodnik',
   excerpt:
-    'Dowiedz się, jak tworzyć naprawdę bezpieczne hasła, korzystając z nowoczesnych technik zalecanych przez NIST, OWASP i ekspertów ds. cyberbezpieczeństwa. Ten przewodnik obejmuje entropię, menedżery haseł, frazy hasłowe i typowe błędy.',
-  seoTitle: 'Jak tworzyć silne hasła w 2026 — wytyczne NIST | generatepasswordto.me',
+    'Dowiedz się, jak tworzyć naprawdę bezpieczne hasła, korzystając z nowoczesnych technik zalecanych przez NIST, OWASP i ekspertów ds. cyberbezpieczeństwa.',
+  seoTitle: 'Jak tworzyć silne hasła w 2026 roku: kompletny przewodnik',
   seoDescription:
-    'Praktyczny przewodnik 2026 po tworzeniu silnych haseł. Obejmuje wytyczne NIST 800-63B, obliczenia entropii, frazy hasłowe, menedżery haseł i instrukcje krok po kroku dla maksymalnego bezpieczeństwa.',
+    'Praktyczny przewodnik 2026 po tworzeniu silnych haseł. Utwórz unikalne hasło w generatorze i zapisz je bezpiecznie.',
   keywords: [
     'jak stworzyć silne hasło',
     'przewodnik po hasłach 2026',
@@ -1334,6 +1564,10 @@ export const pl: LocalizedArticleContent = {
     'wskazówki bezpieczne hasło',
     'entropia hasła',
     'najlepsze praktyki haseł',
+    'hasło 12 znaków',
+    'przykłady haseł',
+    'sprawdź hasło',
+    'fraza hasłowa',
   ],
   sections: [
     {
@@ -1363,12 +1597,31 @@ export const pl: LocalizedArticleContent = {
       paragraphs: [
         'Długość to najskuteczniejsza dźwignia wzmacniania hasła. Przy zestawie 94 znaków (litery, cyfry, symbole) każdy dodatkowy znak dodaje około 6,5 bitu entropii, czyli przestrzeń poszukiwań podwaja się mniej więcej co 1,1 znaku.',
         'Co to oznacza w praktyce dla losowo wygenerowanego hasła (wartości zakładają kryptograficznie bezpieczny generator i brak powtarzanych wzorców):',
+        'Poniższe przykłady to losowe ciągi wyłącznie ilustracyjne — nigdy nie używaj ich w żadnym koncie. Liczy się wzorzec, a nie konkretne znaki. Hasło 12-znakowe jest silne, bo każdy znak wybrano losowo, a nie dlatego, że zawiera symbol.',
+        'W generatorze wybierz ustawienie długości: 12 znaków dla codziennych kont, 16 dla haseł przechowywanych w menedżerze i 20 dla hasła głównego lub dostępu administratora. Osiem znaków to tylko rozwiązanie awaryjne dla starych systemów, które odrzucają dłuższe wartości; wtedy włącz uwierzytelnianie dwuskładnikowe.',
       ],
       bullets: [
-        '8 znaków — ~52 bity — łamanie siłowe na farmie GPU zajmuje od minut do godzin; dopuszczalne tylko dla kont o niskiej wartości',
-        '12 znaków — ~79 bitów — praktyczne minimum dla poczty, pracy i zakupów',
-        '16 znaków — ~105 bitów — zalecana wartość dla haseł z menedżera haseł',
-        '20 znaków — ~131 bitów — odpowiednie dla hasła głównego, portfeli krypto i dostępu administratora',
+        '8 znaków — ~52 bity — przykład: N7#vQ2!a — tylko konta o niskiej wartości lub stare systemy',
+        '12 znaków — ~79 bitów — przykład: K9$pL2@xQ4!m — praktyczne minimum dla poczty, pracy i zakupów',
+        '16 znaków — ~105 bitów — przykład: R4#tY8!kL2@pW6$z — zalecana wartość dla haseł z menedżera haseł',
+        '20 znaków — ~131 bitów — przykład: H3$nB7@vC1!xZ5#qM9% — hasła główne, portfele krypto i dostęp administratora',
+      ],
+    },
+    {
+      heading: 'Najczęstsze pytania: hasło 12 znaków, przykłady i sprawdzanie siły',
+      paragraphs: [
+        '**Jak wygląda dobre hasło 12-znakowe?** Losowy przykład to K9$pL2@xQ4!m. Zawiera wielkie i małe litery, cyfry oraz symbole, ale najważniejsze jest to, że powstało losowo. Nie używaj tego ciągu ponownie — dla każdego konta wygeneruj nowe hasło.',
+        '**Czy 12 znaków wystarczy?** Dla większości kont osobistych 12 losowych znaków (około 79 bitów) to praktyczne minimum. Do haseł w menedżerze używaj 16 znaków, a do hasła głównego, portfeli krypto i dostępu administratora — 20. Osiem znaków nie wystarcza w 2026 roku do poczty ani bankowości.',
+        '**Jakie hasło 8-znakowe jest dobre?** Losowy ciąg taki jak N7#vQ2!a jest znacznie lepszy od słowa łatwego do zapamiętania, ale współczesny sprzęt złamie go w minuty lub godziny. Jeśli system ogranicza hasło do 8 znaków, użyj unikalnej losowej wartości i włącz uwierzytelnianie dwuskładnikowe.',
+        '**Jak sprawdzić siłę hasła bez ujawniania go?** Skorzystaj ze wskaźnika siły w generatorze na tej stronie — działa lokalnie w przeglądarce. Nie wklejaj prawdziwych haseł do przypadkowych serwisów sprawdzających. Do sprawdzania wycieków użyj usługi obsługującej k-anonimowość, np. Have I Been Pwned, i zmień hasło, jeśli się tam pojawi.',
+        '**Fraza hasłowa czy losowe hasło?** Frazy złożonej z 5–7 słów używaj tam, gdzie hasło trzeba zapamiętać: hasło główne menedżera lub logowanie do komputera. Do pozostałych kont wybierz losowe hasło 16–20 znaków. Poradnik o frazach hasłowych wyjaśnia kompromis entropii.',
+        '**Czy dotyczy to również hasła Wi-Fi?** Tak. Hasło routera powinno być unikalnym losowym ciągiem 16–20 znaków, a nie hasłem do poczty. Poradnik o hasłach Wi-Fi pokazuje, jak je zmienić w routerze i odnaleźć zapisane sieci w Windows, Androidzie i iPhone.',
+      ],
+      bullets: [
+        '12 znaków: codzienne konta',
+        '16 znaków: hasła tworzone przez menedżer',
+        '20 znaków: hasło główne i dostęp administratora',
+        '8 znaków: tylko stare systemy, zawsze z MFA',
       ],
     },
     {
@@ -1456,9 +1709,9 @@ export const vi: LocalizedArticleContent = {
   title: 'Cách tạo mật khẩu mạnh năm 2026: hướng dẫn đầy đủ',
   excerpt:
     'Học cách tạo mật khẩu an toàn bằng kỹ thuật hiện đại mà NIST, OWASP và chuyên gia khuyến nghị. Hướng dẫn tính entropy, dùng trình quản lý mật khẩu, cụm mật khẩu và tránh sai lầm phổ biến.',
-  seoTitle: 'Cách tạo mật khẩu mạnh 2026: hướng dẫn NIST',
+  seoTitle: 'Cách tạo mật khẩu mạnh năm 2026: hướng dẫn đầy đủ',
   seoDescription:
-    'Hướng dẫn tạo mật khẩu mạnh 2026: tiêu chuẩn NIST SP 800-63B, cách tính entropy, trình quản lý mật khẩu và mẹo bảo vệ tài khoản.',
+    'Học cách tạo mật khẩu an toàn bằng kỹ thuật hiện đại mà NIST, OWASP và chuyên gia khuyến nghị. Dùng trình tạo để tạo mật khẩu duy nhất và lưu an toàn.',
   keywords: [
     'mật khẩu mạnh ngẫu nhiên',
     'mật khẩu mạnh là gì',
@@ -1466,6 +1719,10 @@ export const vi: LocalizedArticleContent = {
     'mật khẩu mạnh 8 ký tự',
     'trình quản lý mật khẩu là gì',
     'cụm mật khẩu passphrase là gì',
+    'mật khẩu 12 ký tự',
+    'ví dụ mật khẩu',
+    'kiểm tra mật khẩu',
+    'cụm mật khẩu',
   ],
   sections: [
     {
@@ -1495,12 +1752,31 @@ export const vi: LocalizedArticleContent = {
       paragraphs: [
         'Độ dài ảnh hưởng mạnh nhất đến độ mạnh mật khẩu. Với nhóm 94 ký tự, mỗi ký tự thêm khoảng 6,5 bit entropy, nên không gian tìm kiếm tăng gấp đôi sau mỗi 1,1 ký tự.',
         'Với mật khẩu tạo ngẫu nhiên (trình tạo an toàn bằng mật mã, không lặp khuôn mẫu):',
+        'Các ví dụ dưới đây là chuỗi ngẫu nhiên chỉ để minh họa; tuyệt đối không dùng chúng cho bất kỳ tài khoản nào. Điều quan trọng là cách tạo, không phải ký tự cụ thể. Mật khẩu 12 ký tự mạnh vì mọi ký tự đều được chọn ngẫu nhiên, không phải vì tình cờ có ký tự đặc biệt.',
+        'Trong trình tạo, hãy chọn độ dài: 12 ký tự cho tài khoản hằng ngày, 16 ký tự cho mật khẩu lưu trong trình quản lý và 20 ký tự cho mật khẩu chính hoặc quyền quản trị. Tám ký tự chỉ là phương án dự phòng cho hệ thống cũ không nhận giá trị dài hơn; khi đó hãy bật xác thực hai yếu tố.',
       ],
       bullets: [
-        '8 ký tự — ~52 bit — vét cạn mất vài phút đến vài giờ trên GPU; chỉ hợp tài khoản ít giá trị',
-        '12 ký tự — ~79 bit — tối thiểu thực tế cho email, công việc, mua sắm',
-        '16 ký tự — ~105 bit — mặc định cho mật khẩu do trình quản lý tạo',
-        '20 ký tự — ~131 bit — hợp mật khẩu chính, ví tiền mã hóa, quyền quản trị',
+        '8 ký tự — ~52 bit — ví dụ: N7#vQ2!a — chỉ tài khoản ít giá trị hoặc hệ thống cũ',
+        '12 ký tự — ~79 bit — ví dụ: K9$pL2@xQ4!m — tối thiểu thực tế cho email, công việc, mua sắm',
+        '16 ký tự — ~105 bit — ví dụ: R4#tY8!kL2@pW6$z — mặc định cho mật khẩu do trình quản lý tạo',
+        '20 ký tự — ~131 bit — ví dụ: H3$nB7@vC1!xZ5#qM9% — mật khẩu chính, ví tiền mã hóa, quyền quản trị',
+      ],
+    },
+    {
+      heading: 'Câu hỏi thường gặp: mật khẩu 12 ký tự, ví dụ và kiểm tra độ mạnh',
+      paragraphs: [
+        '**Mật khẩu 12 ký tự mạnh trông như thế nào?** Một ví dụ ngẫu nhiên là K9$pL2@xQ4!m. Chuỗi này có chữ hoa, chữ thường, số và ký tự đặc biệt, nhưng điểm quan trọng là nó được tạo ngẫu nhiên. Đừng dùng lại chuỗi này; hãy tạo mật khẩu mới cho từng tài khoản.',
+        '**12 ký tự có đủ mạnh không?** Với hầu hết tài khoản cá nhân, 12 ký tự ngẫu nhiên (khoảng 79 bit) là mức tối thiểu thực tế. Mật khẩu lưu trong trình quản lý nên dài 16 ký tự; mật khẩu chính, ví tiền mã hóa và quyền quản trị nên dùng 20 ký tự. Năm 2026, 8 ký tự không đủ cho email hay ngân hàng.',
+        '**Mật khẩu 8 ký tự tốt là gì?** Một chuỗi ngẫu nhiên như N7#vQ2!a tốt hơn nhiều so với một từ dễ nhớ, nhưng phần cứng hiện nay vẫn bẻ khóa trong vài phút đến vài giờ. Nếu hệ thống chỉ cho phép 8 ký tự, hãy dùng một giá trị ngẫu nhiên duy nhất và bật xác thực hai yếu tố.',
+        '**Làm sao kiểm tra độ mạnh mà không lộ mật khẩu?** Dùng thanh đo độ mạnh trong trình tạo trên trang này; nó chạy cục bộ trong trình duyệt. Không dán mật khẩu thật vào các trang kiểm tra lạ. Để kiểm tra rò rỉ, hãy dùng dịch vụ hỗ trợ k-anonymity như Have I Been Pwned và đổi mật khẩu nếu thấy xuất hiện.',
+        '**Nên dùng cụm mật khẩu hay mật khẩu ngẫu nhiên?** Dùng cụm 5–7 từ cho những gì bạn phải ghi nhớ: mật khẩu chính của trình quản lý hoặc đăng nhập máy tính. Với các tài khoản còn lại, dùng mật khẩu ngẫu nhiên 16–20 ký tự. Hướng dẫn về cụm mật khẩu giải thích rõ sự đánh đổi entropy.',
+        '**Điều này có áp dụng cho mật khẩu Wi-Fi không?** Có. Mật khẩu router nên là chuỗi ngẫu nhiên duy nhất dài 16–20 ký tự, không phải mật khẩu email. Hướng dẫn mật khẩu Wi-Fi chỉ cách đổi mật khẩu trên router và tìm mạng đã lưu trên Windows, Android và iPhone.',
+      ],
+      bullets: [
+        '12 ký tự: tài khoản hằng ngày',
+        '16 ký tự: mật khẩu do trình quản lý tạo',
+        '20 ký tự: mật khẩu chính và quyền quản trị',
+        '8 ký tự: chỉ hệ thống cũ, luôn kèm MFA',
       ],
     },
     {

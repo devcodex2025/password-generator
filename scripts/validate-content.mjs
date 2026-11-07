@@ -18,8 +18,25 @@ function normalizeText(text) {
 }
 
 function tokenize(text) {
-  const matches = normalizeText(text).match(/[\p{L}\p{N}]{2,}/gu);
-  return matches || [];
+  const matches = normalizeText(text).match(/[\p{L}\p{N}]+/gu);
+  if (!matches) return [];
+
+  const cjkPattern = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u;
+  const tokens = [];
+  for (const match of matches) {
+    let latin = '';
+    for (const char of match) {
+      if (cjkPattern.test(char)) {
+        if (latin.length >= 2) tokens.push(latin);
+        latin = '';
+        tokens.push(char);
+      } else {
+        latin += char;
+      }
+    }
+    if (latin.length >= 2) tokens.push(latin);
+  }
+  return tokens;
 }
 
 function wordCount(text) {
@@ -60,15 +77,19 @@ function parseArgs(argv) {
     content: 'docs/content-agent-output.sample.json',
     brief: 'docs/content-agent-brief.json',
     semantic: 'docs/semantic-core.json',
+    profile: 'agent',
   };
 
   for (let i = 2; i < argv.length; i += 1) {
     const key = argv[i];
-    const value = argv[i + 1];
+    const inline = key.startsWith('--') && key.includes('=');
+    const value = inline ? key.slice(key.indexOf('=') + 1) : argv[i + 1];
+    const name = inline ? key.slice(0, key.indexOf('=')) : key;
     if (!value) continue;
-    if (key === '--content') args.content = value;
-    if (key === '--brief') args.brief = value;
-    if (key === '--semantic') args.semantic = value;
+    if (name === '--content') args.content = value;
+    if (name === '--brief') args.brief = value;
+    if (name === '--semantic') args.semantic = value;
+    if (name === '--profile') args.profile = value;
   }
   return args;
 }
@@ -89,10 +110,13 @@ function includesKeyword(text, keyword) {
 }
 
 function validate() {
-  const { content, brief, semantic } = parseArgs(process.argv);
+  const { content, brief, semantic, profile } = parseArgs(process.argv);
+  const isSiteProfile = profile === 'site';
   const briefJson = readJson(brief);
   const payload = ensureArrayPayload(readJson(content));
   const semanticJson = fs.existsSync(path.resolve(process.cwd(), semantic)) ? readJson(semantic) : null;
+  const langJson = isSiteProfile ? readJson('src/components/lang.json') : null;
+  const faqKeys = langJson ? Object.keys(langJson).filter((key) => key.startsWith('faq_')) : [];
 
   const expectedLocales = new Set(briefJson.languages || []);
   const articleBySlug = new Map((briefJson.articles || []).map((a) => [a.slug, a]));
@@ -104,9 +128,12 @@ function validate() {
   }
 
   const semanticKeywordsByLocale = getSemanticKeywordsByLocale(semanticJson);
+  const siteTextByLocale = new Map();
 
   const errors = [];
   const warnings = [];
+  const addQuality = (message) => (isSiteProfile ? warnings : errors).push(message);
+  const minWords = isSiteProfile ? 200 : 900;
   const seenPairs = new Set();
   const localeBuckets = new Map();
   const exactFingerprints = new Map();
@@ -139,25 +166,35 @@ function validate() {
 
     const text = buildArticleText(item);
     const wc = wordCount(text);
-    if (wc < 900) {
-      errors.push(`[word-count] ${pairKey} has ${wc}, required >= 900`);
+    if (wc < minWords) {
+      addQuality(`[word-count] ${pairKey} has ${wc}, required >= ${minWords}`);
     }
 
     const excerptLen = String(item.excerpt || '').length;
     const seoTitleLen = String(item.seoTitle || '').length;
     const seoDescLen = String(item.seoDescription || '').length;
-    if (excerptLen < 140 || excerptLen > 220) {
-      errors.push(`[excerpt-length] ${pairKey} has ${excerptLen}, required 140-220`);
+    const isCjkLocale = item.locale === 'zh' || item.locale === 'ja';
+    const excerptMin = isSiteProfile ? (isCjkLocale ? 60 : 100) : 140;
+    const titleMin = isSiteProfile ? (isCjkLocale ? 20 : 40) : 50;
+    const descMin = isSiteProfile ? (isCjkLocale ? 60 : 100) : 140;
+    if (excerptLen < excerptMin || excerptLen > 220) {
+      addQuality(`[excerpt-length] ${pairKey} has ${excerptLen}, required ${excerptMin}-220`);
     }
-    if (seoTitleLen < 50 || seoTitleLen > 65) {
-      errors.push(`[seo-title-length] ${pairKey} has ${seoTitleLen}, required 50-65`);
+    if (seoTitleLen < titleMin || seoTitleLen > 65) {
+      addQuality(`[seo-title-length] ${pairKey} has ${seoTitleLen}, required ${titleMin}-65`);
     }
-    if (seoDescLen < 140 || seoDescLen > 160) {
-      errors.push(`[seo-description-length] ${pairKey} has ${seoDescLen}, required 140-160`);
+    if (seoDescLen < descMin || seoDescLen > 160) {
+      addQuality(`[seo-description-length] ${pairKey} has ${seoDescLen}, required ${descMin}-160`);
     }
 
     const briefArticle = articleBySlug.get(item.slug);
-    const primaryKeywords = Array.isArray(briefArticle?.primary_keywords) ? briefArticle.primary_keywords : [];
+    // Primary-keyword checks describe new agent output. Site content already
+    // ships its own localized keyword sets, so the site profile skips them.
+    const primaryKeywords = isSiteProfile
+      ? []
+      : Array.isArray(briefArticle?.primary_keywords)
+        ? briefArticle.primary_keywords
+        : [];
     const loweredKeywordsArray = (item.keywords || []).map((k) => normalizeText(k));
 
     for (const kw of primaryKeywords) {
@@ -165,27 +202,34 @@ function validate() {
       const inKeywordsArray = loweredKeywordsArray.includes(kwNorm);
       const inText = includesKeyword(text, kw);
       if (!inKeywordsArray) {
-        errors.push(`[missing-primary-keyword-array] ${pairKey} missing "${kw}" in keywords[]`);
+        addQuality(`[missing-primary-keyword-array] ${pairKey} missing "${kw}" in keywords[]`);
       }
       if (!inText) {
-        errors.push(`[missing-primary-keyword-text] ${pairKey} missing "${kw}" in article text`);
+        addQuality(`[missing-primary-keyword-text] ${pairKey} missing "${kw}" in article text`);
       }
     }
 
-    const localeCloud = semanticKeywordsByLocale[item.locale];
-    if (localeCloud && typeof localeCloud === 'object') {
-      const high = Array.isArray(localeCloud.high) ? localeCloud.high : [];
-      const medium = Array.isArray(localeCloud.medium) ? localeCloud.medium : [];
-      const highInText = high.filter((kw) => includesKeyword(text, kw)).length;
-      const mediumInText = medium.filter((kw) => includesKeyword(text, kw)).length;
-      if (high.length > 0 && highInText < 2) {
-        warnings.push(`[keyword-cloud-high] ${pairKey} has ${highInText} high keywords in text (recommended >= 2)`);
+    if (isSiteProfile) {
+      const localeText = siteTextByLocale.get(item.locale) || '';
+      siteTextByLocale.set(item.locale, `${localeText} ${text}`);
+    }
+
+    if (!isSiteProfile) {
+      const localeCloud = semanticKeywordsByLocale[item.locale];
+      if (localeCloud && typeof localeCloud === 'object') {
+        const high = Array.isArray(localeCloud.high) ? localeCloud.high : [];
+        const medium = Array.isArray(localeCloud.medium) ? localeCloud.medium : [];
+        const highInText = high.filter((kw) => includesKeyword(text, kw)).length;
+        const mediumInText = medium.filter((kw) => includesKeyword(text, kw)).length;
+        if (high.length > 0 && highInText < 2) {
+          warnings.push(`[keyword-cloud-high] ${pairKey} has ${highInText} high keywords in text (recommended >= 2)`);
+        }
+        if (medium.length > 0 && mediumInText < 1) {
+          warnings.push(`[keyword-cloud-medium] ${pairKey} has ${mediumInText} medium keywords in text (recommended >= 1)`);
+        }
+      } else {
+        warnings.push(`[keyword-cloud-missing-locale] ${pairKey} no keyword cloud for locale "${item.locale}"`);
       }
-      if (medium.length > 0 && mediumInText < 1) {
-        warnings.push(`[keyword-cloud-medium] ${pairKey} has ${mediumInText} medium keywords in text (recommended >= 1)`);
-      }
-    } else {
-      warnings.push(`[keyword-cloud-missing-locale] ${pairKey} no keyword cloud for locale "${item.locale}"`);
     }
 
     const fingerprint = normalizeText(text);
@@ -210,6 +254,26 @@ function validate() {
     }
   }
 
+  const keywordCoverage = [];
+  if (isSiteProfile && semanticJson) {
+    for (const locale of expectedLocales) {
+      const faqText = faqKeys.map((key) => langJson?.[key]?.[locale] || '').join(' ');
+      const corpus = normalizeText(`${siteTextByLocale.get(locale) || ''} ${faqText}`);
+      const cloud = semanticKeywordsByLocale[locale] || {};
+      const row = { locale, high: 0, medium: 0, low: 0 };
+      for (const tier of ['high', 'medium', 'low']) {
+        const terms = Array.isArray(cloud[tier]) ? cloud[tier] : [];
+        row[tier] = terms.filter((keyword) => includesKeyword(corpus, keyword)).length;
+      }
+      keywordCoverage.push(row);
+      if (row.high < 2 || row.medium < 1 || row.low < 1) {
+        errors.push(
+          `[keyword-coverage] ${locale}: high=${row.high}, medium=${row.medium}, low=${row.low} (require high>=2, medium>=1, low>=1 site-wide)`,
+        );
+      }
+    }
+  }
+
   for (const [locale, items] of localeBuckets.entries()) {
     for (let i = 0; i < items.length; i += 1) {
       for (let j = i + 1; j < items.length; j += 1) {
@@ -224,13 +288,25 @@ function validate() {
   }
 
   console.log('Content validation summary');
+  console.log(`- Profile: ${profile}`);
   console.log(`- Records: ${payload.length}`);
   console.log(`- Errors: ${errors.length}`);
   console.log(`- Warnings: ${warnings.length}`);
 
+  if (keywordCoverage.length) {
+    console.log('\nKeyword coverage (high/medium/low, site-wide):');
+    for (const row of keywordCoverage) {
+      console.log(`- ${row.locale}: ${row.high} / ${row.medium} / ${row.low}`);
+    }
+  }
+
   if (warnings.length) {
     console.log('\nWarnings:');
-    for (const w of warnings) console.log(`- ${w}`);
+    const shown = isSiteProfile ? warnings.slice(0, 10) : warnings;
+    for (const w of shown) console.log(`- ${w}`);
+    if (isSiteProfile && warnings.length > shown.length) {
+      console.log(`- ... and ${warnings.length - shown.length} more`);
+    }
   }
 
   if (errors.length) {

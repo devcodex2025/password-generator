@@ -25,6 +25,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: '生成器',
     ja: 'ジェネレーター',
     pl: 'Generator',
+    vi: 'Trình tạo',
   },
   guides: {
     ua: 'Гайди',
@@ -38,6 +39,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: '指南',
     ja: 'ガイド',
     pl: 'Poradniki',
+    vi: 'Hướng dẫn',
   },
   bestManagers: {
     ua: 'Менеджери паролів',
@@ -51,6 +53,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: '密码管理器',
     ja: 'パスワード管理',
     pl: 'Menedżery haseł',
+    vi: 'Trình quản lý mật khẩu',
   },
   vpn: {
     ua: 'VPN',
@@ -64,6 +67,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: 'VPN',
     ja: 'VPN',
     pl: 'VPN',
+    vi: 'VPN',
   },
   nist: {
     ua: 'NIST',
@@ -77,6 +81,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: 'NIST',
     ja: 'NIST',
     pl: 'NIST',
+    vi: 'NIST',
   },
   pci: {
     ua: 'PCI DSS',
@@ -90,6 +95,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: 'PCI DSS',
     ja: 'PCI DSS',
     pl: 'PCI DSS',
+    vi: 'PCI DSS',
   },
   afterBreach: {
     ua: 'Після витоку пароля',
@@ -103,6 +109,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: '密码泄露后',
     ja: '漏えい後',
     pl: 'Po wycieku hasła',
+    vi: 'Sau khi lộ mật khẩu',
   },
   sitemap: {
     ua: 'Карта сайту',
@@ -116,6 +123,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: '站点地图',
     ja: 'サイトマップ',
     pl: 'Mapa strony',
+    vi: 'Sơ đồ trang',
   },
   github: {
     ua: 'GitHub',
@@ -129,6 +137,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: 'GitHub',
     ja: 'GitHub',
     pl: 'GitHub',
+    vi: 'GitHub',
   },
   privacyPolicy: {
     ua: 'Політика конфіденційності',
@@ -142,6 +151,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: '隐私政策',
     ja: 'プライバシーポリシー',
     pl: 'Polityka Prywatności',
+    vi: 'Chính sách quyền riêng tư',
   },
   termsOfService: {
     ua: 'Умови використання',
@@ -155,6 +165,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: '服务条款',
     ja: '利用規約',
     pl: 'Warunki Korzystania',
+    vi: 'Điều khoản dịch vụ',
   },
   contact: {
     ua: 'Контакти',
@@ -168,6 +179,7 @@ export const linkTranslations: Record<LinkLabelKey, Record<string, string>> = {
     zh: '联系我们',
     ja: 'お問い合わせ',
     pl: 'Kontakt',
+    vi: 'Liên hệ',
   },
 };
 

@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og';
-import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES, getArticleBySlug, getLocalizedArticle } from '@/content/articles';
+import { ARTICLE_CATALOG, getArticleBySlug, getArticleLocales, getLocalizedArticle } from '@/content/articles';
 import type { ContentLanguage } from '@/content/articles';
 
 export const runtime = 'nodejs';
@@ -23,8 +23,8 @@ const categoryIcons: Record<string, string> = {
 };
 
 export function generateStaticParams() {
-  return SUPPORTED_CONTENT_LANGUAGES.flatMap((locale) =>
-    ARTICLE_CATALOG.map((article) => ({ locale, slug: article.slug })),
+  return ARTICLE_CATALOG.flatMap((article) =>
+    getArticleLocales(article).map((locale) => ({ locale, slug: article.slug })),
   );
 }
 

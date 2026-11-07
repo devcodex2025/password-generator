@@ -21,6 +21,7 @@ const MODE_LABELS: Record<string, ModeLabels> = {
   pt: { chars: 'Caracteres', words: 'Palavras', pin: 'PIN', wordCount: 'Palavras', separator: 'Separador', capitalize: 'Uma palavra em maiúscula' },
   ja: { chars: '文字', words: '単語', pin: 'PIN', wordCount: '単語数', separator: '区切り文字', capitalize: '1語を大文字に' },
   zh: { chars: '字符', words: '单词', pin: 'PIN', wordCount: '单词数', separator: '分隔符', capitalize: '一个单词大写' },
+  vi: { chars: 'Ký tự', words: 'Từ', pin: 'PIN', wordCount: 'Số từ', separator: 'Dấu phân cách', capitalize: 'Viết hoa một từ' },
 };
 
 export function getModeLabels(language: string | undefined): ModeLabels {
