@@ -62,6 +62,7 @@
     "indexnow": "node scripts/indexnow.mjs",
     "backlinks": "node scripts/backlink-queue.mjs",
     "gsc": "node scripts/gsc-report.mjs",
+    "gsc:baseline": "node scripts/gsc-locale-baseline.mjs",
     "ga4": "node scripts/ga4-report.mjs",
     "affiliate": "node scripts/affiliate-report.mjs",
     "affiliate:sync": "node scripts/affiliate-sync.mjs",
