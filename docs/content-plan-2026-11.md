@@ -37,6 +37,59 @@ relevant terms; it does not insert every keyword into every article.
 | `zh` | Chinese (Simplified) | 5 | 16 | 20 | 26 |
 | `vi` | Vietnamese | 4 | 20 | 20 | 21 |
 
+## Execution update — 2026-11-07
+
+Closed in this cycle for all 12 locales:
+
+| Locale | Length presets 8/12/16/20 + examples | FAQ (12-char, 8-char, checker, Wi-Fi) | Words-mode passphrase section | Review status |
+|---|:---:|:---:|:---:|---|
+| `en` | done | done | done | native-review-pending |
+| `ua` | done | done | done | native-review-pending |
+| `es` | done | done | done | native-review-pending |
+| `de` | done | done | done | native-review-pending |
+| `fr` | done | done | done | native-review-pending |
+| `pt` | done | done | done | native-review-pending |
+| `ru` | done | done | done | native-review-pending |
+| `pl` | done | done | done | native-review-pending |
+| `it` | done | done | done | native-review-pending |
+| `ja` | done | done | done | native-review-pending |
+| `zh` | done | done | done | native-review-pending |
+| `vi` | done | done | done | native-review-pending |
+
+- `how-to-create-strong-passwords` now owns the length/example/checker intent:
+  concrete 8/12/16/20 examples, generator presets, a visible FAQ and a
+  Wi-Fi cross-link. This closes the `gap-section` rows for
+  `12 character password examples`, `password examples`, `password checker`,
+  `hasło 12 znaków`, `contraseña de 12 caracteres`, `mot de passe 12 caractères`,
+  `passwort 12 zeichen`, `senha de 12 caracteres`, `пароль из 12 символов`,
+  `password di 12 caratteri`, `12文字 パスワード`, `12位密码` and
+  `mật khẩu 12 ký tự`.
+- `passphrase-vs-password-entropy` now documents the words mode that already
+  ships in the generator: word counts 4-8, entropy per word, examples and a
+  warning against hand-picked word lists. This closes the `gap-feature` rows for
+  `passphrase`, `passphrase generator` and the localized equivalents.
+- The Wi-Fi guide, home FAQ and manager platform sections were already
+  published before this cycle; their CSV rows remain useful as intent labels but
+  are no longer content gaps.
+- No new URL was created. Every closed gap has a canonical page: length,
+  examples and checker intent → `how-to-create-strong-passwords`; words mode →
+  `passphrase-vs-password-entropy`; Wi-Fi → `wifi-password-guide`; manager-year
+  queries → `best-password-managers-2026`.
+
+Remaining after this cycle:
+
+- Native review of the two edited guides is still required; the brief marks both
+  `review_status: native-review-pending`.
+- `password policy windows server 2008-2022` (ru) is policy intent, not a
+  how-to intent. The canonical page is `team-password-policy-template`; do not
+  add a server-version doorway page.
+- `mejor gestor de contraseñas 2025/2026` (es) and
+  `melhor gerenciador de senhas 2026` (pt) are manager comparison queries, not
+  length queries, even though the CSV clusters them under `length`. They belong
+  to `best-password-managers-2026`.
+- GSC still has no query-level rows for the baseline window. Re-run
+  `npm run gsc:baseline` after 2-4 weeks before promoting any new query.
+
 ## Per-locale plan
 
 ### `en` — English

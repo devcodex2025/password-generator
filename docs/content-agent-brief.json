@@ -59,7 +59,8 @@
       "primary_keywords": [
         "strong password tips",
         "create secure password"
-      ]
+      ],
+      "review_status": "native-review-pending"
     },
     {
       "slug": "password-manager-vs-manual-storage",
@@ -75,7 +76,8 @@
       "primary_keywords": [
         "passphrase entropy",
         "password entropy explained"
-      ]
+      ],
+      "review_status": "native-review-pending"
     },
     {
       "slug": "nist-800-63b-password-rules",
