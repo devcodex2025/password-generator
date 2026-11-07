@@ -4,9 +4,9 @@ export const en: LocalizedArticleContent = {
   title: 'NIST 800-63B Password Rules: A Practical 2026 Summary',
   excerpt:
     'A plain-language summary of NIST SP 800-63B password guidelines. Learn what changed, why complexity rules were dropped, and how to implement compliant password policies in your organization.',
-  seoTitle: 'NIST 800-63B Password Rules Explained — 2026 Practical Guide | generatepasswordto.me',
+  seoTitle: 'NIST 800-63B Password Rules: A Practical 2026 Summary',
   seoDescription:
-    'Plain-language guide to NIST 800-63B password requirements. Covers minimum length, banned passwords, MFA, storage hashing, and step-by-step implementation for modern organizations.',
+    'Plain-language guide to NIST 800-63B password requirements. A plain-language summary of NIST SP 800-63B password guidelines. Use the generator to create a.',
   keywords: [
     'NIST 800-63B password rules',
     'NIST password guidelines 2026',
@@ -100,7 +100,7 @@ export const ua: LocalizedArticleContent = {
   title: 'Правила паролів NIST 800-63B: практичний гід 2026',
   excerpt:
     'Зрозумілий виклад рекомендацій NIST SP 800-63B щодо паролів. Що змінилось, чому скасовані правила складності та як впровадити відповідну політику паролів у вашій організації.',
-  seoTitle: 'Правила паролів NIST 800-63B — практичний гід 2026 | generatepasswordto.me',
+  seoTitle: 'Правила паролів NIST 800-63B: практичний гід 2026',
   seoDescription:
     'Зрозумілий гід з вимог NIST 800-63B до паролів. Мінімальна довжина, заборонені паролі, MFA, хешування, покрокове впровадження для сучасних організацій.',
   keywords: [
@@ -195,7 +195,7 @@ export const ua: LocalizedArticleContent = {
 export const es: LocalizedArticleContent = {
   title: 'Reglas de contraseñas NIST 800-63B: resumen práctico 2026',
   excerpt: 'Resumen en lenguaje sencillo de las directrices NIST SP 800-63B. Qué cambió, por qué se eliminaron las reglas de complejidad y cómo implementar políticas de contraseñas conformes.',
-  seoTitle: 'Reglas NIST 800-63B explicadas — Guía práctica 2026 | generatepasswordto.me',
+  seoTitle: 'Reglas de contraseñas NIST 800-63B: resumen práctico 2026',
   seoDescription: 'Guía práctica de requisitos NIST 800-63B. Longitud mínima, contraseñas prohibidas, MFA, hashing y pasos de implementación para organizaciones modernas.',
   keywords: ['reglas contraseñas NIST 800-63B', 'directrices NIST contraseñas 2026', 'política contraseñas NIST', 'requisitos modernos contraseñas', 'identidad digital NIST', 'cumplimiento contraseñas'],
   sections: [
@@ -212,8 +212,8 @@ export const es: LocalizedArticleContent = {
 export const fr: LocalizedArticleContent = {
   title: 'Règles de mots de passe NIST 800-63B : résumé pratique 2026',
   excerpt: 'Résumé en langage clair des directives NIST SP 800-63B. Ce qui a changé, pourquoi les règles de complexité ont été abandonnées et comment implémenter des politiques conformes.',
-  seoTitle: 'Règles NIST 800-63B expliquées — Guide pratique 2026 | generatepasswordto.me',
-  seoDescription: 'Guide pratique des exigences NIST 800-63B. Longueur minimale, mots de passe interdits, MFA, hachage et implémentation étape par étape.',
+  seoTitle: 'Règles de mots de passe NIST 800-63B : résumé pratique 2026',
+  seoDescription: 'Résumé en langage clair des directives NIST SP 800-63B. Guide pratique des exigences NIST 800-63B. Utilisez le générateur pour créer un mot de passe unique et.',
   keywords: ['règles mots de passe NIST 800-63B', 'directives NIST mots de passe 2026', 'politique mots de passe NIST', 'exigences modernes mots de passe', 'identité numérique NIST', 'conformité mots de passe'],
   sections: [
     { heading: 'Qu\'est-ce que NIST SP 800-63B ?', paragraphs: ['Le NIST SP 800-63B fait partie des Directives d\'Identité Numérique émises par le National Institute of Standards and Technology. Bien qu\'obligatoires pour les agences fédérales américaines, ces normes sont devenues la référence mondiale.', 'La révision la plus récente a fondamentalement changé la façon dont la communauté pense les mots de passe. Elle a rejeté des décennies de sagesse conventionnelle au profit de pratiques fondées sur des preuves.', 'Comprendre ces directives est essentiel que vous soyez développeur, administrateur IT ou utilisateur individuel.'] },
@@ -229,7 +229,7 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'NIST 800-63B Passwortregeln: Praktische Zusammenfassung 2026',
   excerpt: 'Verständliche Zusammenfassung der NIST SP 800-63B Passwort-Richtlinien. Was sich geändert hat, warum Komplexitätsregeln abgeschafft wurden und wie Sie konforme Passwortrichtlinien umsetzen.',
-  seoTitle: 'NIST 800-63B Passwortregeln erklärt — Praktischer Leitfaden 2026 | generatepasswordto.me',
+  seoTitle: 'NIST 800-63B Passwortregeln: Praktische Zusammenfassung 2026',
   seoDescription: 'Verständlicher Leitfaden zu NIST 800-63B Passwortanforderungen. Mindestlänge, verbotene Passwörter, MFA, Hashing und schrittweise Implementierung.',
   keywords: ['NIST 800-63B Passwortregeln', 'NIST Passwort-Richtlinien 2026', 'Passwortrichtlinie NIST', 'moderne Passwortanforderungen', 'NIST digitale Identität', 'Passwort-Compliance'],
   sections: [
@@ -246,7 +246,7 @@ export const de: LocalizedArticleContent = {
 export const it: LocalizedArticleContent = {
   title: 'Regole password NIST 800-63B: riepilogo pratico 2026',
   excerpt: 'Riepilogo in linguaggio semplice delle linee guida NIST SP 800-63B. Cosa è cambiato, perché le regole di complessità sono state eliminate e come implementare politiche conformi.',
-  seoTitle: 'Regole NIST 800-63B spiegate — Guida pratica 2026 | generatepasswordto.me',
+  seoTitle: 'Regole password NIST 800-63B: riepilogo pratico 2026',
   seoDescription: 'Guida pratica ai requisiti NIST 800-63B. Lunghezza minima, password vietate, MFA, hashing e implementazione passo-passo per organizzazioni moderne.',
   keywords: ['regole password NIST 800-63B', 'linee guida NIST password 2026', 'politica password NIST', 'requisiti moderni password', 'identità digitale NIST', 'conformità password'],
   sections: [
@@ -263,7 +263,7 @@ export const it: LocalizedArticleContent = {
 export const pt: LocalizedArticleContent = {
   title: 'Regras de senhas NIST 800-63B: resumo prático 2026',
   excerpt: 'Resumo em linguagem simples das diretrizes NIST SP 800-63B. O que mudou, por que as regras de complexidade foram eliminadas e como implementar políticas conformes.',
-  seoTitle: 'Regras NIST 800-63B explicadas — Guia prático 2026 | generatepasswordto.me',
+  seoTitle: 'Regras de senhas NIST 800-63B: resumo prático 2026',
   seoDescription: 'Guia prático dos requisitos NIST 800-63B. Comprimento mínimo, senhas proibidas, MFA, hashing e implementação passo a passo para organizações modernas.',
   keywords: ['regras senhas NIST 800-63B', 'diretrizes NIST senhas 2026', 'política senhas NIST', 'requisitos modernos senhas', 'identidade digital NIST', 'conformidade senhas'],
   sections: [
@@ -280,8 +280,8 @@ export const pt: LocalizedArticleContent = {
 export const ru: LocalizedArticleContent = {
   title: 'Правила паролей NIST 800-63B: практическое руководство 2026',
   excerpt: 'Понятное изложение рекомендаций NIST SP 800-63B по паролям. Что изменилось, почему отменены правила сложности и как внедрить соответствующие политики.',
-  seoTitle: 'Правила паролей NIST 800-63B — Практическое руководство 2026 | generatepasswordto.me',
-  seoDescription: 'Понятное руководство по требованиям NIST 800-63B. Минимальная длина, запрещённые пароли, MFA, хеширование и пошаговое внедрение.',
+  seoTitle: 'Правила паролей NIST 800-63B: практическое руководство 2026',
+  seoDescription: 'Понятное изложение рекомендаций NIST SP 800-63B по паролям. Что изменилось, почему отменены правила сложности и как внедрить соответствующие политики.',
   keywords: ['правила паролей NIST 800-63B', 'рекомендации NIST пароли 2026', 'политика паролей NIST', 'современные требования к паролям', 'цифровая идентичность NIST', 'соответствие требованиям паролей'],
   sections: [
     { heading: 'Что такое NIST SP 800-63B?', paragraphs: ['NIST SP 800-63B — часть Руководства по цифровой идентичности Национального института стандартов и технологий США. Хотя стандарты обязательны для федеральных агентств, они стали глобальным эталоном.', 'Последняя редакция фундаментально изменила взгляд на пароли, отвергнув десятилетия конвенциональной мудрости в пользу практик, основанных на доказательствах.', 'Понимание этих рекомендаций критически важно для разработчиков, IT-администраторов и обычных пользователей.'] },
@@ -296,9 +296,9 @@ export const ru: LocalizedArticleContent = {
 
 export const zh: LocalizedArticleContent = {
   title: 'NIST 800-63B密码规则：2026年实用总结',
-  excerpt: '通俗易懂的NIST SP 800-63B密码指南总结。了解哪些变化，为什么取消复杂性规则，以及如何实施合规的密码策略。',
+  excerpt: '通俗易懂的NIST SP 800-63B密码指南总结。 了解哪些变化，为什么取消复杂性规则，以及如何实施合规的密码策略。',
   seoTitle: 'NIST 800-63B密码规则详解 — 2026年实用指南 | generatepasswordto.me',
-  seoDescription: 'NIST 800-63B密码要求实用指南。涵盖最小长度、禁用密码、MFA、哈希和现代组织的逐步实施。',
+  seoDescription: '通俗易懂的NIST SP 800-63B密码指南总结。 了解哪些变化，为什么取消复杂性规则，以及如何实施合规的密码策略。',
   keywords: ['NIST 800-63B密码规则', 'NIST密码指南2026', '密码策略NIST', '现代密码要求', 'NIST数字身份', '密码合规'],
   sections: [
     { heading: '什么是NIST SP 800-63B？', paragraphs: ['NIST SP 800-63B是美国国家标准与技术研究院发布的数字身份指南的一部分。虽然对美国联邦机构是强制性的，但已成为全球密码安全基准。', '最新修订从根本上改变了安全社区对密码的看法，否定了数十年的传统智慧，转向基于证据的实践。', '无论您是开发者、IT管理员还是普通用户，理解这些指南都至关重要。'] },
@@ -313,9 +313,9 @@ export const zh: LocalizedArticleContent = {
 
 export const ja: LocalizedArticleContent = {
   title: 'NIST 800-63Bパスワードルール：2026年実践サマリー',
-  excerpt: 'NIST SP 800-63Bパスワードガイドラインの平易な要約。何が変わったか、なぜ複雑性ルールが廃止されたか、準拠ポリシーの実装方法を解説。',
+  excerpt: 'NIST SP 800-63Bパスワードガイドラインの平易な要約。 何が変わったか、なぜ複雑性ルールが廃止されたか、準拠ポリシーの実装方法を解説。',
   seoTitle: 'NIST 800-63Bパスワードルール解説 — 2026年実践ガイド | generatepasswordto.me',
-  seoDescription: 'NIST 800-63Bパスワード要件の実践ガイド。最小長、禁止パスワード、MFA、ハッシュ、現代組織向けステップバイステップ実装。',
+  seoDescription: 'NIST 800-63Bパスワード要件の実践ガイド。 最小長、禁止パスワード、MFA、ハッシュ、現代組織向けステップバイステップ実装。',
   keywords: ['NIST 800-63Bパスワードルール', 'NISTパスワードガイドライン2026', 'パスワードポリシーNIST', '最新パスワード要件', 'NISTデジタルアイデンティティ', 'パスワードコンプライアンス'],
   sections: [
     { heading: 'NIST SP 800-63Bとは？', paragraphs: ['NIST SP 800-63Bは米国国立標準技術研究所が発行するデジタルアイデンティティガイドラインの一部です。米国連邦機関には義務ですが、グローバル標準となっています。', '最新の改訂はセキュリティコミュニティのパスワードに対する考え方を根本的に変え、数十年の従来の知恵を否定しました。', '開発者、IT管理者、個人ユーザーのいずれにとっても、これらのガイドラインの理解は不可欠です。'] },
@@ -331,8 +331,8 @@ export const ja: LocalizedArticleContent = {
 export const pl: LocalizedArticleContent = {
   title: 'Zasady haseł NIST 800-63B: praktyczne podsumowanie 2026',
   excerpt: 'Zrozumiałe podsumowanie wytycznych NIST SP 800-63B dotyczących haseł. Co się zmieniło, dlaczego zniesiono zasady złożoności i jak wdrożyć zgodne polityki.',
-  seoTitle: 'Zasady NIST 800-63B wyjaśnione — Praktyczny przewodnik 2026 | generatepasswordto.me',
-  seoDescription: 'Praktyczny przewodnik po wymaganiach NIST 800-63B. Minimalna długość, zakazane hasła, MFA, hashowanie i wdrożenie krok po kroku.',
+  seoTitle: 'Zasady haseł NIST 800-63B: praktyczne podsumowanie 2026',
+  seoDescription: 'Zrozumiałe podsumowanie wytycznych NIST SP 800-63B dotyczących haseł. Co się zmieniło, dlaczego zniesiono zasady złożoności i jak wdrożyć zgodne polityki.',
   keywords: ['zasady haseł NIST 800-63B', 'wytyczne NIST hasła 2026', 'polityka haseł NIST', 'nowoczesne wymagania haseł', 'tożsamość cyfrowa NIST', 'zgodność haseł'],
   sections: [
     { heading: 'Czym jest NIST SP 800-63B?', paragraphs: ['NIST SP 800-63B jest częścią Wytycznych Tożsamości Cyfrowej wydanych przez National Institute of Standards and Technology. Choć obowiązkowe dla agencji federalnych USA, stały się globalnym standardem.', 'Najnowsza rewizja fundamentalnie zmieniła podejście do haseł, odrzucając dekady konwencjonalnej mądrości na rzecz praktyk opartych na dowodach.', 'Zrozumienie tych wytycznych jest kluczowe dla programistów, administratorów IT i użytkowników indywidualnych.'] },
@@ -349,9 +349,9 @@ export const vi: LocalizedArticleContent = {
   title: 'Quy tắc mật khẩu NIST 800-63B: tóm tắt thực hành 2026',
   excerpt:
     'Tóm tắt dễ hiểu về hướng dẫn mật khẩu NIST SP 800-63B: điều gì đã thay đổi, vì sao bỏ quy tắc phức tạp và cách triển khai chính sách mật khẩu tuân thủ trong tổ chức.',
-  seoTitle: 'Quy tắc mật khẩu NIST 800-63B: tạo mật khẩu mạnh 2026',
+  seoTitle: 'Quy tắc mật khẩu NIST 800-63B: tóm tắt thực hành 2026',
   seoDescription:
-    'Hướng dẫn NIST 800-63B: cách tạo mật khẩu mạnh, độ dài tối thiểu, danh sách mật khẩu bị cấm, MFA, băm lưu trữ và triển khai cho tổ chức.',
+    'Hướng dẫn NIST 800-63B: cách tạo mật khẩu mạnh, độ dài tối thiểu, danh sách mật khẩu bị cấm, MFA, băm lưu trữ và triển khai cho tổ chức. Dùng trình tạo để tạo.',
   keywords: [
     'mật khẩu mạnh là gì',
     'mật khẩu mạnh nhất',

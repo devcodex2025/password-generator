@@ -4,9 +4,9 @@ export const en: LocalizedArticleContent = {
   title: 'Most Common Password Mistakes and How to Fix Them',
   excerpt:
     'Review the highest-risk password habits affecting millions of users and learn practical, step-by-step ways to replace them with secure routines that actually stick.',
-  seoTitle: 'Common Password Mistakes & Fixes — Why 12 Characters Is Not Enough | generatepasswordto.me',
+  seoTitle: 'Most Common Password Mistakes and How to Fix Them',
   seoDescription:
-    'The most dangerous password habits in 2026 and how to fix them. Covers why 12-character passwords may be insufficient, reuse risks, pattern predictability, and actionable security improvements.',
+    'The most dangerous password habits in 2026 and how to fix them. Use the generator to create a unique password and store it safely.',
   keywords: [
     'common password mistakes',
     'weak password examples',
@@ -108,9 +108,9 @@ export const ua: LocalizedArticleContent = {
   title: 'Найпоширеніші помилки з паролями та як їх виправити',
   excerpt:
     'Огляд найнебезпечніших звичок з паролями, що впливають на мільйони користувачів, та практичні покрокові способи замінити їх безпечними рутинами, які дійсно працюють.',
-  seoTitle: 'Поширені помилки з паролями — чому 12 символів недостатньо | generatepasswordto.me',
+  seoTitle: 'Найпоширеніші помилки з паролями та як їх виправити',
   seoDescription:
-    'Найнебезпечніші звички з паролями у 2026 та як їх виправити. Чому 12-символьних паролів може бути мало, ризики повторного використання, передбачуваність шаблонів та покращення безпеки.',
+    'Найнебезпечніші звички з паролями у 2026 та як їх виправити. Створіть унікальний пароль у генераторі та збережіть його безпечно.',
   keywords: [
     'поширені помилки з паролями',
     'приклади слабких паролів',
@@ -210,7 +210,7 @@ export const ua: LocalizedArticleContent = {
 export const es: LocalizedArticleContent = {
   title: 'Los 6 errores más comunes con contraseñas y cómo corregirlos',
   excerpt: 'Errores reales de seguridad de contraseñas que exponen millones de cuentas. Contraseñas cortas, reutilización, patrones predecibles, información personal y almacenamiento inseguro.',
-  seoTitle: 'Errores comunes con contraseñas — Guía de seguridad 2026 | generatepasswordto.me',
+  seoTitle: 'Los 6 errores más comunes con contraseñas y cómo corregirlos',
   seoDescription: 'Los 6 errores más peligrosos con contraseñas y correcciones prácticas. Cubre longitud, reutilización, patrones, información personal, almacenamiento y MFA.',
   keywords: ['errores comunes contraseñas', 'seguridad contraseñas', 'reutilización contraseñas', 'contraseñas débiles', 'mejores prácticas contraseñas', 'errores seguridad contraseñas'],
   sections: [
@@ -227,8 +227,8 @@ export const es: LocalizedArticleContent = {
 export const fr: LocalizedArticleContent = {
   title: 'Les 6 erreurs de mots de passe les plus courantes et comment les corriger',
   excerpt: 'Erreurs réelles de sécurité des mots de passe qui exposent des millions de comptes. Mots de passe courts, réutilisation, modèles prévisibles et stockage non sécurisé.',
-  seoTitle: 'Erreurs courantes de mots de passe — Guide de sécurité 2026 | generatepasswordto.me',
-  seoDescription: 'Les 6 erreurs les plus dangereuses et corrections pratiques. Longueur, réutilisation, modèles, informations personnelles, stockage et MFA.',
+  seoTitle: 'Les 6 erreurs de mots de passe les plus courantes et comment les',
+  seoDescription: 'Erreurs réelles de sécurité des mots de passe qui exposent des millions de comptes. Les 6 erreurs les plus dangereuses et corrections pratiques.',
   keywords: ['erreurs mots de passe courantes', 'sécurité mots de passe', 'réutilisation mots de passe', 'mots de passe faibles', 'bonnes pratiques mots de passe', 'erreurs sécurité'],
   sections: [
     { heading: 'Erreur #1 : Mots de passe trop courts', paragraphs: ['Les mots de passe de 8 caractères ne sont plus sûrs. Avec les GPU modernes, un attaquant peut essayer toutes les combinaisons en heures. NIST recommande 12 comme minimum pratique.', 'Le temps de craquage augmente exponentiellement avec la longueur.'], bullets: ['8 caractères : craquable en heures', '12 caractères (modèle) : jours en attaque dictionnaire', '12 caractères (aléatoires) : résistant', '16+ caractères (aléatoires) : pratiquement inviolable', '5+ mots phrase de passe : alternative sûre et mémorable'] },
@@ -244,8 +244,8 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'Die 6 häufigsten Passwort-Fehler und wie man sie behebt',
   excerpt: 'Echte Passwort-Sicherheitsfehler, die Millionen von Konten gefährden. Kurze Passwörter, Wiederverwendung, vorhersagbare Muster und unsichere Speicherung.',
-  seoTitle: 'Häufige Passwort-Fehler — Sicherheitsleitfaden 2026 | generatepasswordto.me',
-  seoDescription: 'Die 6 gefährlichsten Passwort-Fehler und praktische Korrekturen. Länge, Wiederverwendung, Muster, persönliche Infos, Speicherung und MFA.',
+  seoTitle: 'Die 6 häufigsten Passwort-Fehler und wie man sie behebt',
+  seoDescription: 'Echte Passwort-Sicherheitsfehler, die Millionen von Konten gefährden. Kurze Passwörter, Wiederverwendung, vorhersagbare Muster und unsichere Speicherung.',
   keywords: ['häufige Passwort-Fehler', 'Passwortsicherheit', 'Passwort-Wiederverwendung', 'schwache Passwörter', 'Passwort Best Practices', 'Sicherheitsfehler Passwörter'],
   sections: [
     { heading: 'Fehler #1: Zu kurze Passwörter', paragraphs: ['8-Zeichen-Passwörter sind nicht mehr sicher. Mit modernen GPUs kann ein Angreifer alle Kombinationen in Stunden durchprobieren. NIST empfiehlt 12 als praktisches Minimum.', 'Die Knackzeit wächst exponentiell mit der Länge.'], bullets: ['8 Zeichen: in Stunden knackbar', '12 Zeichen (Muster): Tage bei Wörterbuchangriff', '12 Zeichen (zufällig): widerstandsfähig', '16+ Zeichen (zufällig): praktisch unknackbar', '5+ Wort-Passphrase: sichere und merkbare Alternative'] },
@@ -261,8 +261,8 @@ export const de: LocalizedArticleContent = {
 export const it: LocalizedArticleContent = {
   title: 'I 6 errori più comuni con le password e come correggerli',
   excerpt: 'Errori reali di sicurezza delle password che espongono milioni di account. Password corte, riutilizzo, pattern prevedibili e archiviazione insicura.',
-  seoTitle: 'Errori comuni con le password — Guida sicurezza 2026 | generatepasswordto.me',
-  seoDescription: 'I 6 errori più pericolosi e correzioni pratiche. Lunghezza, riutilizzo, pattern, info personali, archiviazione e MFA.',
+  seoTitle: 'I 6 errori più comuni con le password e come correggerli',
+  seoDescription: 'Errori reali di sicurezza delle password che espongono milioni di account. Password corte, riutilizzo, pattern prevedibili e archiviazione insicura.',
   keywords: ['errori comuni password', 'sicurezza password', 'riutilizzo password', 'password deboli', 'migliori pratiche password', 'errori sicurezza password'],
   sections: [
     { heading: 'Errore #1: Password troppo corte', paragraphs: ['Le password di 8 caratteri non sono più sicure. Con GPU moderne, un attaccante può provare tutte le combinazioni in ore. NIST raccomanda 12 come minimo pratico.', 'Il tempo di cracking cresce esponenzialmente con la lunghezza.'], bullets: ['8 caratteri: crackabile in ore', '12 caratteri (pattern): giorni con attacco dizionario', '12 caratteri (casuali): resistente', '16+ caratteri (casuali): praticamente inviolabile', '5+ parole passphrase: alternativa sicura e memorabile'] },
@@ -277,9 +277,9 @@ export const it: LocalizedArticleContent = {
 
 export const pt: LocalizedArticleContent = {
   title: 'Os 6 erros mais comuns com senhas e como corrigi-los',
-  excerpt: 'Erros reais de segurança de senhas que expõem milhões de contas. Senhas curtas, reutilização, padrões previsíveis e armazenamento inseguro.',
-  seoTitle: 'Erros comuns com senhas — Guia de segurança 2026 | generatepasswordto.me',
-  seoDescription: 'Os 6 erros mais perigosos com senhas e correções práticas. Comprimento, reutilização, padrões, informações pessoais, armazenamento e MFA.',
+  excerpt: 'Erros reais de segurança de senhas que expõem milhões de contas. Senhas curtas, reutilização, padrões previsíveis e armazenamento inseguro. Senhas de 8 caracteres não são mais seguras.',
+  seoTitle: 'Os 6 erros mais comuns com senhas e como corrigi-los',
+  seoDescription: 'Erros reais de segurança de senhas que expõem milhões de contas. Senhas curtas, reutilização, padrões previsíveis e armazenamento inseguro. Use o gerador para.',
   keywords: ['erros comuns senhas', 'segurança senhas', 'reutilização senhas', 'senhas fracas', 'melhores práticas senhas', 'erros segurança senhas'],
   sections: [
     { heading: 'Erro #1: Senhas muito curtas', paragraphs: ['Senhas de 8 caracteres não são mais seguras. Com GPUs modernas, um atacante pode testar todas as combinações em horas. NIST recomenda 12 como mínimo prático.', 'O tempo de quebra cresce exponencialmente com o comprimento.'], bullets: ['8 caracteres: quebrável em horas', '12 caracteres (padrão): dias com ataque de dicionário', '12 caracteres (aleatórios): resistente', '16+ caracteres (aleatórios): praticamente inquebrável', '5+ palavras frase-senha: alternativa segura e memorável'] },
@@ -295,8 +295,8 @@ export const pt: LocalizedArticleContent = {
 export const ru: LocalizedArticleContent = {
   title: '6 самых распространённых ошибок с паролями и как их исправить',
   excerpt: 'Реальные ошибки безопасности паролей, из-за которых страдают миллионы аккаунтов. Короткие пароли, повторное использование, предсказуемые шаблоны и небезопасное хранение.',
-  seoTitle: 'Распространённые ошибки с паролями — Руководство 2026 | generatepasswordto.me',
-  seoDescription: '6 самых опасных ошибок с паролями и практические исправления. Длина, повторное использование, шаблоны, личная информация, хранение и MFA.',
+  seoTitle: '6 самых распространённых ошибок с паролями и как их исправить',
+  seoDescription: 'Реальные ошибки безопасности паролей, из-за которых страдают миллионы аккаунтов. 6 самых опасных ошибок с паролями и практические исправления.',
   keywords: ['распространённые ошибки паролей', 'безопасность паролей', 'повторное использование паролей', 'слабые пароли', 'лучшие практики паролей', 'ошибки безопасности паролей'],
   sections: [
     { heading: 'Ошибка №1: Слишком короткие пароли', paragraphs: ['8-символьные пароли больше не безопасны. С современными GPU атакующий может перебрать все комбинации за часы. NIST рекомендует 12 как практический минимум.', 'Время взлома растёт экспоненциально с длиной.'], bullets: ['8 символов: взламывается за часы', '12 символов (шаблонные): дни при словарной атаке', '12 символов (случайные): устойчивы', '16+ символов (случайные): практически невзламываемые', '5+ слов парольная фраза: надёжная и запоминаемая'] },
@@ -311,9 +311,9 @@ export const ru: LocalizedArticleContent = {
 
 export const zh: LocalizedArticleContent = {
   title: '6个最常见的密码错误及修复方法',
-  excerpt: '暴露数百万账户的真实密码安全错误。短密码、重复使用、可预测模式、个人信息和不安全存储。',
+  excerpt: '暴露数百万账户的真实密码安全错误。 短密码、重复使用、可预测模式、个人信息和不安全存储。 8字符密码已不再安全。 现代GPU可在数小时内尝试所有组合。',
   seoTitle: '常见密码错误 — 2026年安全指南 | generatepasswordto.me',
-  seoDescription: '6个最危险的密码错误和实用修复。长度、重复使用、模式、个人信息、存储和MFA。',
+  seoDescription: '暴露数百万账户的真实密码安全错误。 短密码、重复使用、可预测模式、个人信息和不安全存储。 6个最危险的密码错误和实用修复。',
   keywords: ['常见密码错误', '密码安全', '密码重复使用', '弱密码', '密码最佳实践', '密码安全错误'],
   sections: [
     { heading: '错误#1：密码太短', paragraphs: ['8字符密码已不再安全。现代GPU可在数小时内尝试所有组合。NIST推荐12字符为实际最低值。', '破解时间随长度呈指数增长。'], bullets: ['8字符：数小时可破', '12字符（模式化）：字典攻击数天', '12字符（随机）：能抵御多数攻击', '16+字符（随机）：实际上无法破解', '5+词密码短语：安全且易记'] },
@@ -328,9 +328,9 @@ export const zh: LocalizedArticleContent = {
 
 export const ja: LocalizedArticleContent = {
   title: 'パスワードの6つの最も一般的な間違いとその修正方法',
-  excerpt: '数百万のアカウントを危険にさらす実際のパスワードセキュリティの間違い。短いパスワード、再利用、予測可能なパターン、個人情報、安全でない保存。',
+  excerpt: '数百万のアカウントを危険にさらす実際のパスワードセキュリティの間違い。 短いパスワード、再利用、予測可能なパターン、個人情報、安全でない保存。',
   seoTitle: '一般的なパスワードの間違い — 2026年セキュリティガイド | generatepasswordto.me',
-  seoDescription: '最も危険なパスワードの間違い6つと実践的な修正。長さ、再利用、パターン、個人情報、保存、MFA。',
+  seoDescription: '数百万のアカウントを危険にさらす実際のパスワードセキュリティの間違い。 短いパスワード、再利用、予測可能なパターン、個人情報、安全でない保存。',
   keywords: ['一般的なパスワードの間違い', 'パスワードセキュリティ', 'パスワード再利用', '弱いパスワード', 'パスワードベストプラクティス', 'セキュリティ間違い'],
   sections: [
     { heading: '間違い#1：短すぎるパスワード', paragraphs: ['8文字パスワードはもう安全ではありません。現代のGPUで数時間で全組み合わせを試行可能。NISTは12文字を実用最小値として推奨。', '解読時間は長さに対して指数関数的に増加。'], bullets: ['8文字：数時間で解読可能', '12文字（パターン）：辞書攻撃で数日', '12文字（ランダム）：大半の攻撃に耐性', '16+文字（ランダム）：実質的に解読不能', '5+語パスフレーズ：安全で記憶可能'] },
@@ -346,8 +346,8 @@ export const ja: LocalizedArticleContent = {
 export const pl: LocalizedArticleContent = {
   title: '6 najczęstszych błędów z hasłami i jak je naprawić',
   excerpt: 'Prawdziwe błędy bezpieczeństwa haseł narażające miliony kont. Krótkie hasła, powtarzanie, przewidywalne wzorce i niebezpieczne przechowywanie.',
-  seoTitle: 'Częste błędy z hasłami — Przewodnik bezpieczeństwa 2026 | generatepasswordto.me',
-  seoDescription: '6 najniebezpieczniejszych błędów z hasłami i praktyczne poprawki. Długość, powtarzanie, wzorce, dane osobowe, przechowywanie i MFA.',
+  seoTitle: '6 najczęstszych błędów z hasłami i jak je naprawić',
+  seoDescription: 'Prawdziwe błędy bezpieczeństwa haseł narażające miliony kont. Krótkie hasła, powtarzanie, przewidywalne wzorce i niebezpieczne przechowywanie.',
   keywords: ['częste błędy haseł', 'bezpieczeństwo haseł', 'powtarzanie haseł', 'słabe hasła', 'najlepsze praktyki haseł', 'błędy bezpieczeństwa haseł'],
   sections: [
     { heading: 'Błąd #1: Za krótkie hasła', paragraphs: ['Hasła 8-znakowe nie są już bezpieczne. Z nowoczesnym GPU atakujący może sprawdzić wszystkie kombinacje w godzinach. NIST zaleca 12 jako minimum praktyczne.', 'Czas łamania rośnie wykładniczo z długością.'], bullets: ['8 znaków: łamalne w godzinach', '12 znaków (wzorzec): dni przy ataku słownikowym', '12 znaków (losowe): odporne', '16+ znaków (losowe): praktycznie niełamalne', '5+ słów fraza hasłowa: bezpieczna i zapamiętywalna'] },
@@ -364,7 +364,7 @@ export const vi: LocalizedArticleContent = {
   title: 'Những lỗi mật khẩu phổ biến và cách khắc phục',
   excerpt:
     'Xem lại những thói quen mật khẩu rủi ro nhất ảnh hưởng tới hàng triệu người, cùng cách thay thế từng bước bằng quy trình an toàn dễ duy trì.',
-  seoTitle: 'Lỗi mật khẩu phổ biến: cách tạo mật khẩu mạnh hơn',
+  seoTitle: 'Những lỗi mật khẩu phổ biến và cách khắc phục',
   seoDescription:
     'Những lỗi mật khẩu nguy hiểm nhất 2026 và cách khắc phục: rủi ro dùng lại, mẫu dễ đoán, cùng cách tạo mật khẩu mạnh bằng trình quản lý mật khẩu.',
   keywords: [

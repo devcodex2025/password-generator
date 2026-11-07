@@ -4,7 +4,7 @@ export const en: LocalizedArticleContent = {
   title: 'Wi-Fi Password Guide: Creating and Changing a Strong Network Password',
   excerpt:
     'A practical guide to choosing a strong Wi-Fi password, changing it safely on your router, and keeping guests and smart devices on a separate network.',
-  seoTitle: 'Wi-Fi Password Guide: Create and Change a Strong Password',
+  seoTitle: 'Wi-Fi Password Guide: Creating and Changing a Strong Network',
   seoDescription:
     'Learn how to create a strong Wi-Fi password, change it on your router, disable WPS, and separate guest devices without breaking your smart home.',
   keywords: [
@@ -123,8 +123,8 @@ export const en: LocalizedArticleContent = {
 export const ua: LocalizedArticleContent = {
   title: 'Wi-Fi пароль: як створити та змінити надійний пароль мережі',
   excerpt:
-    'Практичний гід: як вибрати надійний пароль Wi-Fi, змінити його на роутері та відокремити гостьові й розумні пристрої в окрему мережу.',
-  seoTitle: 'Пароль Wi-Fi: як створити та змінити надійний ключ',
+    'Практичний гід: як вибрати надійний пароль Wi-Fi, змінити його на роутері та відокремити гостьові й розумні пристрої в окрему мережу. Пароль Wi-Fi захищає не лише інтернет.',
+  seoTitle: 'Wi-Fi пароль: як створити та змінити надійний пароль мережі',
   seoDescription:
     'Дізнайтеся, як створити надійний пароль Wi-Fi, змінити його на роутері, вимкнути WPS і захистити гостьові пристрої без шкоди для розумного дому.',
   keywords: [
@@ -244,7 +244,7 @@ export const es: LocalizedArticleContent = {
   title: 'Contraseña wifi: cómo crear y cambiar una clave segura',
   excerpt:
     'Guía práctica para elegir una contraseña wifi segura, cambiarla en el router y separar invitados y dispositivos inteligentes en una red aparte.',
-  seoTitle: 'Contraseña wifi: crear y cambiar una clave segura',
+  seoTitle: 'Contraseña wifi: cómo crear y cambiar una clave segura',
   seoDescription:
     'Aprende a crear una contraseña wifi segura, cambiarla en el router, desactivar WPS y aislar invitados y dispositivos inteligentes sin romper tu hogar conectado.',
   keywords: [
@@ -363,10 +363,10 @@ export const es: LocalizedArticleContent = {
 export const fr: LocalizedArticleContent = {
   title: "Mot de passe Wi-Fi : créer et changer une clé sécurisée",
   excerpt:
-    "Guide pratique pour choisir un mot de passe Wi-Fi solide, le changer sur le routeur et isoler les invités et objets connectés sur un réseau séparé.",
-  seoTitle: "Mot de passe Wi-Fi : créer et changer une clé sécurisée",
+    'Guide pratique pour choisir un mot de passe Wi-Fi solide, le changer sur le routeur et isoler les invités et objets connectés sur un réseau séparé.',
+  seoTitle: 'Mot de passe Wi-Fi : créer et changer une clé sécurisée',
   seoDescription:
-    "Apprenez à créer un mot de passe Wi-Fi sécurisé, à le changer sur le routeur, à désactiver WPS et à isoler les invités sans casser votre maison connectée.",
+    'Apprenez à créer un mot de passe Wi-Fi sécurisé, à le changer sur le routeur, à désactiver WPS et à isoler les invités sans casser votre maison connectée.',
   keywords: [
     "mot de passe wifi",
     "changer mot de passe wifi",
@@ -483,8 +483,8 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'WLAN-Passwort: starkes Passwort erstellen und ändern',
   excerpt:
-    'Praktischer Ratgeber: ein starkes WLAN-Passwort wählen, im Router ändern und Gäste sowie smarte Geräte in einem getrennten Netz isolieren.',
-  seoTitle: 'WLAN-Passwort: stark erstellen und sicher ändern',
+    'Praktischer Ratgeber: ein starkes WLAN-Passwort wählen, im Router ändern und Gäste sowie smarte Geräte in einem getrennten Netz isolieren. Das WLAN-Passwort schützt mehr als den Internetzugang.',
+  seoTitle: 'WLAN-Passwort: starkes Passwort erstellen und ändern',
   seoDescription:
     'So erstellen Sie ein starkes WLAN-Passwort, ändern es im Router, deaktivieren WPS und trennen Gäste und smarte Geräte, ohne Ihr Zuhause zu lahmzulegen.',
   keywords: [
@@ -603,10 +603,10 @@ export const de: LocalizedArticleContent = {
 export const it: LocalizedArticleContent = {
   title: "Password Wi-Fi: come creare e cambiare una chiave sicura",
   excerpt:
-    "Guida pratica per scegliere una password Wi-Fi solida, cambiarla sul router e isolare ospiti e dispositivi smart su una rete separata.",
-  seoTitle: "Password Wi-Fi: creare e cambiare una chiave sicura",
+    'Guida pratica per scegliere una password Wi-Fi solida, cambiarla sul router e isolare ospiti e dispositivi smart su una rete separata. La password Wi-Fi protegge più dell\'accesso a internet.',
+  seoTitle: 'Password Wi-Fi: come creare e cambiare una chiave sicura',
   seoDescription:
-    "Scopri come creare una password Wi-Fi sicura, cambiarla sul router, disattivare WPS e isolare ospiti e dispositivi smart senza fermare la casa connessa.",
+    'Scopri come creare una password Wi-Fi sicura, cambiarla sul router, disattivare WPS e isolare ospiti e dispositivi smart senza fermare la casa connessa.',
   keywords: [
     "password wifi",
     "cambiare password wifi",
@@ -724,7 +724,7 @@ export const pt: LocalizedArticleContent = {
   title: 'Senha Wi-Fi: como criar e trocar uma senha segura',
   excerpt:
     'Guia prático para escolher uma senha Wi-Fi forte, trocá-la no roteador e manter visitantes e dispositivos inteligentes em uma rede separada.',
-  seoTitle: 'Senha Wi-Fi: como criar e trocar uma senha forte',
+  seoTitle: 'Senha Wi-Fi: como criar e trocar uma senha segura — senha wifi',
   seoDescription:
     'Aprenda a criar uma senha Wi-Fi segura, trocá-la no roteador, desativar o WPS e isolar visitantes e dispositivos inteligentes sem parar a casa conectada.',
   keywords: [
@@ -844,9 +844,9 @@ export const ru: LocalizedArticleContent = {
   title: 'Пароль Wi-Fi: как создать и сменить надёжный пароль',
   excerpt:
     'Практическое руководство: как выбрать надёжный пароль Wi-Fi, сменить его на роутере и изолировать гостей и умные устройства в отдельной сети.',
-  seoTitle: 'Пароль Wi-Fi: как создать и сменить надёжный ключ',
+  seoTitle: 'Пароль Wi-Fi: как создать и сменить надёжный пароль',
   seoDescription:
-    'Узнайте, как создать надёжный пароль Wi-Fi, сменить его на роутере, отключить WPS и защитить гостевые устройства без вреда для умного дома.',
+    'Практическое руководство: как выбрать надёжный пароль Wi-Fi, сменить его на роутере и изолировать гостей и умные устройства в отдельной сети.',
   keywords: [
     'пароль wifi',
     'пароль вай фай',
@@ -963,10 +963,10 @@ export const ru: LocalizedArticleContent = {
 export const zh: LocalizedArticleContent = {
   title: 'Wi-Fi 密码：如何创建和修改安全密码',
   excerpt:
-    '实用指南：如何选择强 Wi-Fi 密码、在路由器上修改密码，并把访客和智能设备隔离到独立网络。',
+    '实用指南：如何选择强 Wi-Fi 密码、在路由器上修改密码，并把访客和智能设备隔离到独立网络。 Wi-Fi 密码保护的不只是上网权限。',
   seoTitle: 'Wi-Fi 密码：创建和修改安全密码的实用指南',
   seoDescription:
-    '了解如何创建安全的 Wi-Fi 密码、在路由器上修改密码、关闭 WPS，并在不影响智能家居的情况下隔离访客设备。',
+    '实用指南：如何选择强 Wi-Fi 密码、在路由器上修改密码，并把访客和智能设备隔离到独立网络。 了解如何创建安全的 Wi-Fi 密码、在路由器上修改密码、关闭 WPS，并在不影响智能家居的情况下隔离访客设备。',
   keywords: [
     'wifi 密码',
     '修改 wifi 密码',
@@ -1202,7 +1202,7 @@ export const ja: LocalizedArticleContent = {
 export const pl: LocalizedArticleContent = {
   title: 'Hasło Wi-Fi: jak stworzyć i zmienić bezpieczne hasło',
   excerpt:
-    'Praktyczny przewodnik: jak wybrać silne hasło Wi-Fi, zmienić je w routerze i oddzielić gości oraz urządzenia inteligentne w osobnej sieci.',
+    'Praktyczny przewodnik: jak wybrać silne hasło Wi-Fi, zmienić je w routerze i oddzielić gości oraz urządzenia inteligentne w osobnej sieci. Hasło Wi-Fi chroni więcej niż dostęp do internetu.',
   seoTitle: 'Hasło Wi-Fi: jak stworzyć i zmienić bezpieczne hasło',
   seoDescription:
     'Dowiedz się, jak stworzyć bezpieczne hasło Wi-Fi, zmienić je w routerze, wyłączyć WPS i odizolować gości oraz urządzenia inteligentne bez zatrzymywania domu.',
@@ -1322,10 +1322,10 @@ export const pl: LocalizedArticleContent = {
 export const vi: LocalizedArticleContent = {
   title: 'Mật khẩu Wi-Fi: cách tạo và đổi mật khẩu mạng an toàn',
   excerpt:
-    'Hướng dẫn thực tế: chọn mật khẩu Wi-Fi mạnh, đổi trên router và tách khách cùng thiết bị thông minh sang mạng riêng.',
-  seoTitle: 'Mật khẩu Wi-Fi: cách tạo và đổi mật khẩu an toàn',
+    'Hướng dẫn thực tế: chọn mật khẩu Wi-Fi mạnh, đổi trên router và tách khách cùng thiết bị thông minh sang mạng riêng. Mật khẩu Wi-Fi bảo vệ nhiều hơn quyền truy cập internet.',
+  seoTitle: 'Mật khẩu Wi-Fi: cách tạo và đổi mật khẩu mạng an toàn',
   seoDescription:
-    'Tìm hiểu cách tạo mật khẩu Wi-Fi an toàn, đổi trên router, tắt WPS và tách khách cùng thiết bị thông minh mà không làm gián đoạn ngôi nhà.',
+    'Hướng dẫn thực tế: chọn mật khẩu Wi-Fi mạnh, đổi trên router và tách khách cùng thiết bị thông minh sang mạng riêng. Dùng trình tạo để tạo mật khẩu duy nhất và.',
   keywords: [
     'mật khẩu wifi',
     'đổi mật khẩu wifi',

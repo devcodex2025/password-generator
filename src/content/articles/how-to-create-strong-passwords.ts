@@ -4,9 +4,9 @@ export const en: LocalizedArticleContent = {
   title: 'How to Create Strong Passwords in 2026: A Complete Guide',
   excerpt:
     'Learn how to create truly secure passwords using modern techniques recommended by NIST, OWASP, and cybersecurity experts. This guide covers entropy, password managers, passphrases, and common pitfalls to avoid.',
-  seoTitle: 'How to Create Strong Passwords in 2026 — NIST Guidelines | generatepasswordto.me',
+  seoTitle: 'How to Create Strong Passwords in 2026: A Complete Guide',
   seoDescription:
-    'A practical 2026 guide to creating strong passwords. Covers NIST 800-63B guidelines, entropy calculations, passphrases, password managers, and step-by-step instructions for maximum account security.',
+    'A practical 2026 guide to creating strong passwords. Use the generator to create a unique password and store it safely.',
   keywords: [
     'how to create strong password',
     'strong password guide 2026',
@@ -135,10 +135,10 @@ export const en: LocalizedArticleContent = {
 export const ua: LocalizedArticleContent = {
   title: 'Як створити надійний пароль у 2026 році: повний гід',
   excerpt:
-    'Дізнайтеся, як створювати по-справжньому безпечні паролі за допомогою сучасних методів, рекомендованих NIST, OWASP та експертами з кібербезпеки. Цей гід охоплює ентропію, менеджери паролів, парольні фрази та поширені помилки.',
-  seoTitle: 'Як створити надійний пароль у 2026 — гайд за стандартами NIST | generatepasswordto.me',
+    'Дізнайтеся, як створювати по-справжньому безпечні паролі за допомогою сучасних методів, рекомендованих NIST, OWASP та експертами з кібербезпеки.',
+  seoTitle: 'Як створити надійний пароль у 2026 році: повний гід',
   seoDescription:
-    'Практичний гід 2026 року зі створення надійних паролів. Рекомендації NIST 800-63B, розрахунок ентропії, парольні фрази, менеджери паролів та покрокові інструкції для максимальної безпеки акаунтів.',
+    'Практичний гід 2026 року зі створення надійних паролів. Створіть унікальний пароль у генераторі та збережіть його безпечно.',
   keywords: [
     'як створити надійний пароль',
     'гід зі створення паролів 2026',
@@ -267,10 +267,10 @@ export const ua: LocalizedArticleContent = {
 export const es: LocalizedArticleContent = {
   title: 'Cómo crear contraseñas seguras en 2026: guía completa',
   excerpt:
-    'Aprende a crear contraseñas verdaderamente seguras con técnicas modernas recomendadas por NIST, OWASP y expertos en ciberseguridad. Esta guía cubre entropía, gestores de contraseñas, frases de contraseña y errores comunes.',
-  seoTitle: 'Cómo crear contraseñas seguras en 2026 — Directrices NIST | generatepasswordto.me',
+    'Aprende a crear contraseñas verdaderamente seguras con técnicas modernas recomendadas por NIST, OWASP y expertos en ciberseguridad. Usa el generador para crear una contraseña única y guárdala de forma segura.',
+  seoTitle: 'Cómo crear contraseñas seguras en 2026: guía completa',
   seoDescription:
-    'Guía práctica 2026 para crear contraseñas seguras. Cubre directrices NIST 800-63B, cálculos de entropía, frases de contraseña, gestores y pasos detallados para máxima seguridad.',
+    'Guía práctica 2026 para crear contraseñas seguras. Usa el generador para crear una contraseña única y guárdala de forma segura.',
   keywords: [
     'cómo crear contraseña segura',
     'guía contraseñas seguras 2026',
@@ -399,10 +399,10 @@ export const es: LocalizedArticleContent = {
 export const fr: LocalizedArticleContent = {
   title: 'Comment créer des mots de passe forts en 2026 : guide complet',
   excerpt:
-    'Apprenez à créer des mots de passe véritablement sécurisés grâce aux techniques modernes recommandées par le NIST, l\'OWASP et les experts en cybersécurité. Ce guide couvre l\'entropie, les gestionnaires de mots de passe, les phrases secrètes et les erreurs courantes.',
-  seoTitle: 'Comment créer des mots de passe forts en 2026 — Directives NIST | generatepasswordto.me',
+    'Apprenez à créer des mots de passe véritablement sécurisés grâce aux techniques modernes recommandées par le NIST, l\'OWASP et les experts en cybersécurité.',
+  seoTitle: 'Comment créer des mots de passe forts en 2026 : guide complet',
   seoDescription:
-    'Guide pratique 2026 pour créer des mots de passe forts. Couvre les directives NIST 800-63B, les calculs d\'entropie, les phrases secrètes, les gestionnaires et les étapes détaillées pour une sécurité maximale.',
+    'Guide pratique 2026 pour créer des mots de passe forts. Utilisez le générateur pour créer un mot de passe unique et conservez-le en sécurité.',
   keywords: [
     'comment créer mot de passe fort',
     'guide mots de passe sécurisés 2026',
@@ -531,10 +531,10 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'Sichere Passwörter erstellen 2026: vollständiger Leitfaden',
   excerpt:
-    'Lernen Sie, wie Sie mit modernen Techniken, die von NIST, OWASP und Cybersicherheitsexperten empfohlen werden, wirklich sichere Passwörter erstellen. Dieser Leitfaden behandelt Entropie, Passwort-Manager, Passphrasen und häufige Fehler.',
-  seoTitle: 'Sichere Passwörter erstellen 2026 — NIST-Richtlinien | generatepasswordto.me',
+    'Lernen Sie, wie Sie mit modernen Techniken, die von NIST, OWASP und Cybersicherheitsexperten empfohlen werden, wirklich sichere Passwörter erstellen.',
+  seoTitle: 'Sichere Passwörter erstellen 2026: vollständiger Leitfaden',
   seoDescription:
-    'Praktischer Leitfaden 2026 zur Erstellung sicherer Passwörter. Behandelt NIST 800-63B-Richtlinien, Entropie-Berechnungen, Passphrasen, Passwort-Manager und Schritt-für-Schritt-Anleitungen für maximale Sicherheit.',
+    'Praktischer Leitfaden 2026 zur Erstellung sicherer Passwörter. Erzeugen Sie im Generator ein einzigartiges Passwort und speichern Sie es sicher.',
   keywords: [
     'sicheres Passwort erstellen',
     'Passwort-Leitfaden 2026',
@@ -664,9 +664,9 @@ export const it: LocalizedArticleContent = {
   title: 'Come creare password sicure nel 2026: guida completa',
   excerpt:
     'Scopri come creare password veramente sicure con tecniche moderne raccomandate da NIST, OWASP ed esperti di cybersicurezza. Questa guida copre entropia, gestori di password, passphrase e gli errori comuni da evitare.',
-  seoTitle: 'Come creare password sicure nel 2026 — Linee guida NIST | generatepasswordto.me',
+  seoTitle: 'Come creare password sicure nel 2026: guida completa',
   seoDescription:
-    'Guida pratica 2026 per creare password sicure. Copre le linee guida NIST 800-63B, calcoli di entropia, passphrase, gestori di password e istruzioni passo-passo per la massima sicurezza.',
+    'Guida pratica 2026 per creare password sicure. Usa il generatore per creare una password unica e conservala in modo sicuro.',
   keywords: [
     'come creare password sicura',
     'guida password sicure 2026',
@@ -795,10 +795,10 @@ export const it: LocalizedArticleContent = {
 export const pt: LocalizedArticleContent = {
   title: 'Como criar senhas fortes em 2026: guia completo',
   excerpt:
-    'Aprenda a criar senhas verdadeiramente seguras usando técnicas modernas recomendadas pelo NIST, OWASP e especialistas em cibersegurança. Este guia cobre entropia, gerenciadores de senhas, frases-senha e erros comuns a evitar.',
-  seoTitle: 'Como criar senhas fortes em 2026 — Diretrizes NIST | generatepasswordto.me',
+    'Aprenda a criar senhas verdadeiramente seguras usando técnicas modernas recomendadas pelo NIST, OWASP e especialistas em cibersegurança. Use o gerador para criar uma senha única e guarde-a com segurança.',
+  seoTitle: 'Como criar senhas fortes em 2026: guia completo',
   seoDescription:
-    'Guia prático 2026 para criar senhas fortes. Cobre diretrizes NIST 800-63B, cálculos de entropia, frases-senha, gerenciadores e instruções passo a passo para segurança máxima.',
+    'Guia prático 2026 para criar senhas fortes. Use o gerador para criar uma senha única e guarde-a com segurança.',
   keywords: [
     'como criar senha forte',
     'guia senhas seguras 2026',
@@ -927,10 +927,10 @@ export const pt: LocalizedArticleContent = {
 export const ru: LocalizedArticleContent = {
   title: 'Как создать надёжный пароль в 2026 году: полное руководство',
   excerpt:
-    'Узнайте, как создавать по-настоящему безопасные пароли с помощью современных методов, рекомендованных NIST, OWASP и экспертами по кибербезопасности. Это руководство охватывает энтропию, менеджеры паролей, парольные фразы и распространённые ошибки.',
-  seoTitle: 'Как создать надёжный пароль в 2026 — рекомендации NIST | generatepasswordto.me',
+    'Узнайте, как создавать по-настоящему безопасные пароли с помощью современных методов, рекомендованных NIST, OWASP и экспертами по кибербезопасности.',
+  seoTitle: 'Как создать надёжный пароль в 2026 году: полное руководство',
   seoDescription:
-    'Практическое руководство 2026 года по созданию надёжных паролей. Рекомендации NIST 800-63B, расчёт энтропии, парольные фразы, менеджеры паролей и пошаговые инструкции для максимальной безопасности.',
+    'Практическое руководство 2026 года по созданию надёжных паролей. Создайте уникальный пароль в генераторе и сохраните его безопасно.',
   keywords: [
     'как создать надёжный пароль',
     'руководство по паролям 2026',
@@ -1059,10 +1059,10 @@ export const ru: LocalizedArticleContent = {
 export const zh: LocalizedArticleContent = {
   title: '2026年如何创建强密码：完整指南',
   excerpt:
-    '了解如何使用NIST、OWASP和网络安全专家推荐的现代技术创建真正安全的密码。本指南涵盖熵值、密码管理器、密码短语和常见错误。',
+    '了解如何使用NIST、OWASP和网络安全专家推荐的现代技术创建真正安全的密码。 本指南涵盖熵值、密码管理器、密码短语和常见错误。',
   seoTitle: '2026年如何创建强密码 — NIST指南 | generatepasswordto.me',
   seoDescription:
-    '2026年创建强密码的实用指南。涵盖NIST 800-63B指南、熵值计算、密码短语、密码管理器以及最大安全性的分步说明。',
+    '2026年创建强密码的实用指南。 涵盖NIST 800-63B指南、熵值计算、密码短语、密码管理器以及最大安全性的分步说明。',
   keywords: [
     '如何创建强密码',
     '2026密码安全指南',
@@ -1191,10 +1191,10 @@ export const zh: LocalizedArticleContent = {
 export const ja: LocalizedArticleContent = {
   title: '2026年に強力なパスワードを作成する方法：完全ガイド',
   excerpt:
-    'NIST、OWASP、サイバーセキュリティ専門家が推奨する最新技術を使用して、本当に安全なパスワードを作成する方法を学びましょう。このガイドではエントロピー、パスワードマネージャー、パスフレーズ、よくある間違いについて解説します。',
+    'NIST、OWASP、サイバーセキュリティ専門家が推奨する最新技術を使用して、本当に安全なパスワードを作成する方法を学びましょう。 このガイドではエントロピー、パスワードマネージャー、パスフレーズ、よくある間違いについて解説します。',
   seoTitle: '2026年に強力なパスワードを作成する方法 — NISTガイドライン | generatepasswordto.me',
   seoDescription:
-    '2026年版の強力なパスワード作成実践ガイド。NIST 800-63Bガイドライン、エントロピー計算、パスフレーズ、パスワードマネージャー、最大限のセキュリティのためのステップバイステップ手順を網羅。',
+    '2026年版の強力なパスワード作成実践ガイド。 NIST 800-63Bガイドライン、エントロピー計算、パスフレーズ、パスワードマネージャー、最大限のセキュリティのためのステップバイステップ手順を網羅。',
   keywords: [
     '強力なパスワードの作り方',
     'パスワードガイド2026',
@@ -1323,10 +1323,10 @@ export const ja: LocalizedArticleContent = {
 export const pl: LocalizedArticleContent = {
   title: 'Jak tworzyć silne hasła w 2026 roku: kompletny przewodnik',
   excerpt:
-    'Dowiedz się, jak tworzyć naprawdę bezpieczne hasła, korzystając z nowoczesnych technik zalecanych przez NIST, OWASP i ekspertów ds. cyberbezpieczeństwa. Ten przewodnik obejmuje entropię, menedżery haseł, frazy hasłowe i typowe błędy.',
-  seoTitle: 'Jak tworzyć silne hasła w 2026 — wytyczne NIST | generatepasswordto.me',
+    'Dowiedz się, jak tworzyć naprawdę bezpieczne hasła, korzystając z nowoczesnych technik zalecanych przez NIST, OWASP i ekspertów ds. cyberbezpieczeństwa.',
+  seoTitle: 'Jak tworzyć silne hasła w 2026 roku: kompletny przewodnik',
   seoDescription:
-    'Praktyczny przewodnik 2026 po tworzeniu silnych haseł. Obejmuje wytyczne NIST 800-63B, obliczenia entropii, frazy hasłowe, menedżery haseł i instrukcje krok po kroku dla maksymalnego bezpieczeństwa.',
+    'Praktyczny przewodnik 2026 po tworzeniu silnych haseł. Utwórz unikalne hasło w generatorze i zapisz je bezpiecznie.',
   keywords: [
     'jak stworzyć silne hasło',
     'przewodnik po hasłach 2026',
@@ -1456,9 +1456,9 @@ export const vi: LocalizedArticleContent = {
   title: 'Cách tạo mật khẩu mạnh năm 2026: hướng dẫn đầy đủ',
   excerpt:
     'Học cách tạo mật khẩu an toàn bằng kỹ thuật hiện đại mà NIST, OWASP và chuyên gia khuyến nghị. Hướng dẫn tính entropy, dùng trình quản lý mật khẩu, cụm mật khẩu và tránh sai lầm phổ biến.',
-  seoTitle: 'Cách tạo mật khẩu mạnh 2026: hướng dẫn NIST',
+  seoTitle: 'Cách tạo mật khẩu mạnh năm 2026: hướng dẫn đầy đủ',
   seoDescription:
-    'Hướng dẫn tạo mật khẩu mạnh 2026: tiêu chuẩn NIST SP 800-63B, cách tính entropy, trình quản lý mật khẩu và mẹo bảo vệ tài khoản.',
+    'Học cách tạo mật khẩu an toàn bằng kỹ thuật hiện đại mà NIST, OWASP và chuyên gia khuyến nghị. Dùng trình tạo để tạo mật khẩu duy nhất và lưu an toàn.',
   keywords: [
     'mật khẩu mạnh ngẫu nhiên',
     'mật khẩu mạnh là gì',

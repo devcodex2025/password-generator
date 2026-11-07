@@ -4,9 +4,9 @@ export const en: LocalizedArticleContent = {
   title: 'Passphrase vs Password: Entropy and Security Explained',
   excerpt:
     'Understand the mathematics behind password entropy and learn when passphrases outperform traditional passwords. Includes entropy calculations, Diceware methodology, and practical recommendations.',
-  seoTitle: 'Passphrase vs Password Entropy — Which Is More Secure? | generatepasswordto.me',
+  seoTitle: 'Passphrase vs Password: Entropy and Security Explained',
   seoDescription:
-    'Deep dive into passphrase vs password security. Covers entropy math, Diceware word lists, brute-force resistance, memorability trade-offs, and when to use each approach for maximum protection.',
+    'Deep dive into passphrase vs password security. Understand the mathematics behind password entropy and learn when passphrases outperform traditional passwords.',
   keywords: [
     'passphrase vs password',
     'password entropy explained',
@@ -96,9 +96,9 @@ export const ua: LocalizedArticleContent = {
   title: 'Парольна фраза vs пароль: ентропія та безпека',
   excerpt:
     'Зрозумійте математику ентропії паролів та дізнайтеся, коли парольні фрази переважають традиційні паролі. Включає розрахунки ентропії, методологію Diceware та практичні рекомендації.',
-  seoTitle: 'Парольна фраза vs пароль — що безпечніше? Ентропія | generatepasswordto.me',
+  seoTitle: 'Парольна фраза vs пароль: ентропія та безпека',
   seoDescription:
-    'Глибоке занурення в безпеку парольних фраз проти паролів. Математика ентропії, списки слів Diceware, стійкість до brute-force, компроміси запам\'ятовуваності та коли використовувати кожен підхід.',
+    'Глибоке занурення в безпеку парольних фраз проти паролів. Створіть унікальний пароль у генераторі та збережіть його безпечно.',
   keywords: [
     'парольна фраза vs пароль',
     'ентропія пароля пояснення',
@@ -186,8 +186,8 @@ export const ua: LocalizedArticleContent = {
 
 export const es: LocalizedArticleContent = {
   title: 'Frase de contraseña vs contraseña: entropía y seguridad explicadas',
-  excerpt: 'Comprende las matemáticas detrás de la entropía de contraseñas y aprende cuándo las frases de contraseña superan a las contraseñas tradicionales. Incluye cálculos de entropía, metodología Diceware y recomendaciones prácticas.',
-  seoTitle: 'Frase de contraseña vs contraseña — ¿Cuál es más segura? | generatepasswordto.me',
+  excerpt: 'Comprende las matemáticas detrás de la entropía de contraseñas y aprende cuándo las frases de contraseña superan a las contraseñas tradicionales.',
+  seoTitle: 'Frase de contraseña vs contraseña: entropía y seguridad',
   seoDescription: 'Análisis profundo de frases de contraseña vs contraseñas. Cubre matemáticas de entropía, listas Diceware, resistencia a fuerza bruta y cuándo usar cada enfoque.',
   keywords: ['frase de contraseña vs contraseña', 'entropía de contraseña explicada', 'frase diceware', 'seguridad de frase de contraseña', 'cálculo bits entropía', 'matemáticas fortaleza contraseña'],
   sections: [
@@ -203,9 +203,9 @@ export const es: LocalizedArticleContent = {
 
 export const fr: LocalizedArticleContent = {
   title: 'Phrase secrète vs mot de passe : entropie et sécurité expliquées',
-  excerpt: 'Comprenez les mathématiques derrière l\'entropie des mots de passe et apprenez quand les phrases secrètes surpassent les mots de passe traditionnels. Inclut calculs d\'entropie, méthodologie Diceware et recommandations pratiques.',
-  seoTitle: 'Phrase secrète vs mot de passe — Lequel est plus sécurisé ? | generatepasswordto.me',
-  seoDescription: 'Analyse approfondie des phrases secrètes vs mots de passe. Couvre les maths de l\'entropie, les listes Diceware, la résistance à la force brute et quand utiliser chaque approche.',
+  excerpt: 'Comprenez les mathématiques derrière l\'entropie des mots de passe et apprenez quand les phrases secrètes surpassent les mots de passe traditionnels.',
+  seoTitle: 'Phrase secrète vs mot de passe : entropie et sécurité expliquées',
+  seoDescription: 'Analyse approfondie des phrases secrètes vs mots de passe. Utilisez le générateur pour créer un mot de passe unique et conservez-le en sécurité.',
   keywords: ['phrase secrète vs mot de passe', 'entropie mot de passe expliquée', 'phrase diceware', 'sécurité phrase secrète', 'calcul bits entropie', 'mathématiques force mot de passe'],
   sections: [
     { heading: 'Le problème de l\'entropie : pourquoi la plupart des mots de passe échouent', paragraphs: ['Chaque mot de passe possède une propriété mesurable appelée entropie — le nombre de bits d\'aléatoire qu\'il contient. Plus d\'entropie signifie plus de combinaisons possibles qu\'un attaquant doit essayer. Un mot de passe avec 50 bits d\'entropie a 2^50 possibilités. À un milliard d\'essais par seconde, cela prend environ 13 jours. À 80 bits, même un billion d\'essais par seconde prendrait 38 000 ans.', 'L\'idée clé est que l\'entropie dépend de la façon dont le mot de passe a été généré, pas de son apparence. "Tr0ub4dor&3" semble complexe mais n\'a qu\'environ 28 bits d\'entropie. Pendant ce temps, "correct horse battery staple" fournit environ 52 bits avec la liste EFF de 7 776 mots.', 'La plupart des politiques se concentrent sur la composition des caractères plutôt que l\'entropie réelle. Cela crée un faux sentiment de sécurité : "Summer2026!" satisfait toutes les exigences mais tombe face à une attaque par dictionnaire en secondes.'] },
@@ -221,8 +221,8 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'Passphrase vs Passwort: Entropie und Sicherheit erklärt',
   excerpt: 'Verstehen Sie die Mathematik hinter der Passwort-Entropie und lernen Sie, wann Passphrasen traditionelle Passwörter übertreffen. Enthält Entropie-Berechnungen, Diceware-Methodik und praktische Empfehlungen.',
-  seoTitle: 'Passphrase vs Passwort-Entropie — Was ist sicherer? | generatepasswordto.me',
-  seoDescription: 'Tiefgehende Analyse von Passphrase vs Passwort-Sicherheit. Behandelt Entropie-Mathematik, Diceware-Wortlisten, Brute-Force-Widerstand und wann jeder Ansatz zu verwenden ist.',
+  seoTitle: 'Passphrase vs Passwort: Entropie und Sicherheit erklärt',
+  seoDescription: 'Tiefgehende Analyse von Passphrase vs Passwort-Sicherheit. Erzeugen Sie im Generator ein einzigartiges Passwort und speichern Sie es sicher.',
   keywords: ['Passphrase vs Passwort', 'Passwort-Entropie erklärt', 'Diceware-Passphrase', 'Passphrase-Sicherheit', 'Entropie-Bits-Berechnung', 'Passwortstärke-Mathematik'],
   sections: [
     { heading: 'Das Entropie-Problem: Warum die meisten Passwörter versagen', paragraphs: ['Jedes Passwort hat eine messbare Eigenschaft namens Entropie — die Anzahl der Zufälligkeitsbits. Höhere Entropie bedeutet mehr mögliche Kombinationen. Ein Passwort mit 50 Bits hat 2^50 Möglichkeiten. Bei einer Milliarde Versuche pro Sekunde dauert das etwa 13 Tage. Bei 80 Bits würde selbst eine Billion Versuche pro Sekunde 38.000 Jahre dauern.', 'Die entscheidende Erkenntnis ist, dass Entropie davon abhängt, wie das Passwort generiert wurde, nicht wie es aussieht. "Tr0ub4dor&3" hat nur etwa 28 Bits Entropie. Hingegen bieten "correct horse battery staple" etwa 52 Bits mit der EFF-Wortliste.', 'Die meisten Passwort-Richtlinien konzentrieren sich auf Zeichenkomposition statt auf tatsächliche Entropie. "Summer2026!" erfüllt jede Komplexitätsanforderung, fällt aber in Sekunden einem Wörterbuchangriff zum Opfer.'] },
@@ -238,8 +238,8 @@ export const de: LocalizedArticleContent = {
 export const it: LocalizedArticleContent = {
   title: 'Passphrase vs password: entropia e sicurezza spiegate',
   excerpt: 'Comprendete la matematica dietro l\'entropia delle password e scoprite quando le passphrase superano le password tradizionali. Include calcoli di entropia, metodologia Diceware e raccomandazioni pratiche.',
-  seoTitle: 'Passphrase vs password — Quale è più sicura? | generatepasswordto.me',
-  seoDescription: 'Analisi approfondita di passphrase vs password. Copre la matematica dell\'entropia, le liste Diceware, la resistenza alla forza bruta e quando usare ciascun approccio.',
+  seoTitle: 'Passphrase vs password: entropia e sicurezza spiegate',
+  seoDescription: 'Analisi approfondita di passphrase vs password. Usa il generatore per creare una password unica e conservala in modo sicuro.',
   keywords: ['passphrase vs password', 'entropia password spiegata', 'passphrase diceware', 'sicurezza passphrase', 'calcolo bit entropia', 'matematica forza password'],
   sections: [
     { heading: 'Il problema dell\'entropia: perché la maggior parte delle password fallisce', paragraphs: ['Ogni password ha una proprietà misurabile chiamata entropia — il numero di bit di casualità che contiene. Maggiore entropia significa più combinazioni possibili. Una password con 50 bit di entropia ha 2^50 possibilità. A un miliardo di tentativi al secondo, servono circa 13 giorni. A 80 bit, anche un trilione di tentativi al secondo richiederebbe 38.000 anni.', 'L\'intuizione fondamentale è che l\'entropia dipende da come la password è stata generata, non da come appare. "Tr0ub4dor&3" ha solo circa 28 bit di entropia. Invece, "correct horse battery staple" fornisce circa 52 bit con la lista EFF.', 'La maggior parte delle politiche si concentra sulla composizione dei caratteri piuttosto che sull\'entropia reale. "Summer2026!" soddisfa ogni requisito ma cade in secondi a un attacco dizionario.'] },
@@ -255,7 +255,7 @@ export const it: LocalizedArticleContent = {
 export const pt: LocalizedArticleContent = {
   title: 'Frase-senha vs senha: entropia e segurança explicadas',
   excerpt: 'Entenda a matemática por trás da entropia de senhas e aprenda quando frases-senha superam senhas tradicionais. Inclui cálculos de entropia, metodologia Diceware e recomendações práticas.',
-  seoTitle: 'Frase-senha vs senha — Qual é mais segura? | generatepasswordto.me',
+  seoTitle: 'Frase-senha vs senha: entropia e segurança explicadas',
   seoDescription: 'Análise profunda de frase-senha vs senha. Cobre matemática de entropia, listas Diceware, resistência a força bruta e quando usar cada abordagem.',
   keywords: ['frase-senha vs senha', 'entropia senha explicada', 'frase diceware', 'segurança frase-senha', 'cálculo bits entropia', 'matemática força senha'],
   sections: [
@@ -272,7 +272,7 @@ export const pt: LocalizedArticleContent = {
 export const ru: LocalizedArticleContent = {
   title: 'Парольная фраза vs пароль: энтропия и безопасность',
   excerpt: 'Поймите математику энтропии паролей и узнайте, когда парольные фразы превосходят традиционные пароли. Включает расчёты энтропии, методологию Diceware и практические рекомендации.',
-  seoTitle: 'Парольная фраза vs пароль — Что безопаснее? | generatepasswordto.me',
+  seoTitle: 'Парольная фраза vs пароль: энтропия и безопасность',
   seoDescription: 'Глубокий анализ парольных фраз vs паролей. Математика энтропии, списки Diceware, устойчивость к brute-force и когда использовать каждый подход.',
   keywords: ['парольная фраза vs пароль', 'энтропия пароля объяснение', 'фраза diceware', 'безопасность парольной фразы', 'расчёт битов энтропии', 'математика стойкости паролей'],
   sections: [
@@ -288,9 +288,9 @@ export const ru: LocalizedArticleContent = {
 
 export const zh: LocalizedArticleContent = {
   title: '密码短语vs密码：熵值与安全性解析',
-  excerpt: '了解密码熵值背后的数学原理，学习何时密码短语优于传统密码。包含熵值计算、Diceware方法论和实用建议。',
+  excerpt: '了解密码熵值背后的数学原理，学习何时密码短语优于传统密码。 包含熵值计算、Diceware方法论和实用建议。 每个密码都有一个可测量的属性叫熵值——它包含的随机性位数。',
   seoTitle: '密码短语vs密码熵值 — 哪个更安全？ | generatepasswordto.me',
-  seoDescription: '深入分析密码短语与密码的安全性。涵盖熵值数学、Diceware词表、暴力破解抵抗力及何时使用各种方法。',
+  seoDescription: '了解密码熵值背后的数学原理，学习何时密码短语优于传统密码。 包含熵值计算、Diceware方法论和实用建议。 深入分析密码短语与密码的安全性。',
   keywords: ['密码短语vs密码', '密码熵值解释', 'diceware密码短语', '密码短语安全', '熵值位数计算', '密码强度数学'],
   sections: [
     { heading: '熵值问题：为什么大多数密码失败', paragraphs: ['每个密码都有一个可测量的属性叫熵值——它包含的随机性位数。更高的熵值意味着攻击者必须尝试更多组合。50位熵值的密码有2^50种可能。每秒10亿次猜测需要约13天。80位时，即使每秒一万亿次也需要38,000年。', '关键洞察是：熵值取决于密码的生成方式，而非外观。"Tr0ub4dor&3"仅有约28位熵值。而"correct horse battery staple"用EFF 7,776词表提供约52位。', '大多数密码策略关注字符组成而非实际熵值。"Summer2026!"满足所有复杂性要求但几秒钟就被字典攻击破解。'] },
@@ -305,9 +305,9 @@ export const zh: LocalizedArticleContent = {
 
 export const ja: LocalizedArticleContent = {
   title: 'パスフレーズvsパスワード：エントロピーとセキュリティの解説',
-  excerpt: 'パスワードエントロピーの背後にある数学を理解し、パスフレーズが従来のパスワードを上回る場面を学びましょう。エントロピー計算、Diceware方法論、実践的な推奨事項を含みます。',
+  excerpt: 'パスワードエントロピーの背後にある数学を理解し、パスフレーズが従来のパスワードを上回る場面を学びましょう。 エントロピー計算、Diceware方法論、実践的な推奨事項を含みます。',
   seoTitle: 'パスフレーズvsパスワードエントロピー — どちらが安全？ | generatepasswordto.me',
-  seoDescription: 'パスフレーズvsパスワードの深い分析。エントロピー数学、Dicewareワードリスト、ブルートフォース耐性、各アプローチの使い分けを解説。',
+  seoDescription: 'パスフレーズvsパスワードの深い分析。 エントロピー数学、Dicewareワードリスト、ブルートフォース耐性、各アプローチの使い分けを解説。',
   keywords: ['パスフレーズvsパスワード', 'パスワードエントロピー解説', 'dicewareパスフレーズ', 'パスフレーズセキュリティ', 'エントロピービット計算', 'パスワード強度数学'],
   sections: [
     { heading: 'エントロピー問題：なぜほとんどのパスワードは失敗するか', paragraphs: ['すべてのパスワードにはエントロピーという測定可能な特性があります——含まれるランダムネスのビット数です。50ビットのパスワードは2^50の可能性を持ちます。毎秒10億回の推測で約13日かかります。80ビットでは毎秒1兆回でも38,000年かかります。', '重要な洞察は、エントロピーはパスワードの生成方法に依存し、見た目ではないということです。「Tr0ub4dor&3」は約28ビットしかありません。一方「correct horse battery staple」はEFFリストで約52ビットを提供します。', 'ほとんどのパスワードポリシーは実際のエントロピーではなく文字構成に焦点を当てています。「Summer2026!」はすべての複雑性要件を満たしますが、辞書攻撃で数秒で破られます。'] },
@@ -323,7 +323,7 @@ export const ja: LocalizedArticleContent = {
 export const pl: LocalizedArticleContent = {
   title: 'Fraza hasłowa vs hasło: entropia i bezpieczeństwo wyjaśnione',
   excerpt: 'Zrozum matematykę stojącą za entropią haseł i dowiedz się, kiedy frazy hasłowe przewyższają tradycyjne hasła. Zawiera obliczenia entropii, metodologię Diceware i praktyczne zalecenia.',
-  seoTitle: 'Fraza hasłowa vs hasło — Co jest bezpieczniejsze? | generatepasswordto.me',
+  seoTitle: 'Fraza hasłowa vs hasło: entropia i bezpieczeństwo wyjaśnione',
   seoDescription: 'Dogłębna analiza fraz hasłowych vs haseł. Obejmuje matematykę entropii, listy Diceware, odporność na brute-force i kiedy stosować każde podejście.',
   keywords: ['fraza hasłowa vs hasło', 'entropia hasła wyjaśniona', 'fraza diceware', 'bezpieczeństwo frazy hasłowej', 'obliczanie bitów entropii', 'matematyka siły hasła'],
   sections: [
@@ -341,9 +341,9 @@ export const vi: LocalizedArticleContent = {
   title: 'Cụm mật khẩu và mật khẩu: entropy và bảo mật',
   excerpt:
     'Hiểu phép toán đằng sau entropy mật khẩu và khi nào cụm mật khẩu vượt trội mật khẩu thường. Gồm cách tính entropy, phương pháp Diceware và khuyến nghị thực tế.',
-  seoTitle: 'Cụm mật khẩu và mật khẩu: entropy, độ mạnh thực sự',
+  seoTitle: 'Cụm mật khẩu và mật khẩu: entropy và bảo mật — mật khẩu mạnh nhất',
   seoDescription:
-    'So sánh cụm mật khẩu và mật khẩu: entropy, danh sách từ Diceware, khả năng chống bẻ khóa và khi nào nên dùng cách nào để tạo mật khẩu mạnh.',
+    'Hiểu phép toán đằng sau entropy mật khẩu và khi nào cụm mật khẩu vượt trội mật khẩu thường. Gồm cách tính entropy, phương pháp Diceware và khuyến nghị thực tế.',
   keywords: [
     'cụm mật khẩu passphrase là gì',
     'mật khẩu mạnh ngẫu nhiên',

@@ -115,6 +115,8 @@ function validate() {
   const briefJson = readJson(brief);
   const payload = ensureArrayPayload(readJson(content));
   const semanticJson = fs.existsSync(path.resolve(process.cwd(), semantic)) ? readJson(semantic) : null;
+  const langJson = isSiteProfile ? readJson('src/components/lang.json') : null;
+  const faqKeys = langJson ? Object.keys(langJson).filter((key) => key.startsWith('faq_')) : [];
 
   const expectedLocales = new Set(briefJson.languages || []);
   const articleBySlug = new Map((briefJson.articles || []).map((a) => [a.slug, a]));
@@ -126,6 +128,7 @@ function validate() {
   }
 
   const semanticKeywordsByLocale = getSemanticKeywordsByLocale(semanticJson);
+  const siteTextByLocale = new Map();
 
   const errors = [];
   const warnings = [];
@@ -170,14 +173,18 @@ function validate() {
     const excerptLen = String(item.excerpt || '').length;
     const seoTitleLen = String(item.seoTitle || '').length;
     const seoDescLen = String(item.seoDescription || '').length;
-    if (excerptLen < 140 || excerptLen > 220) {
-      addQuality(`[excerpt-length] ${pairKey} has ${excerptLen}, required 140-220`);
+    const isCjkLocale = item.locale === 'zh' || item.locale === 'ja';
+    const excerptMin = isSiteProfile ? (isCjkLocale ? 60 : 100) : 140;
+    const titleMin = isSiteProfile ? (isCjkLocale ? 20 : 40) : 50;
+    const descMin = isSiteProfile ? (isCjkLocale ? 60 : 100) : 140;
+    if (excerptLen < excerptMin || excerptLen > 220) {
+      addQuality(`[excerpt-length] ${pairKey} has ${excerptLen}, required ${excerptMin}-220`);
     }
-    if (seoTitleLen < 50 || seoTitleLen > 65) {
-      addQuality(`[seo-title-length] ${pairKey} has ${seoTitleLen}, required 50-65`);
+    if (seoTitleLen < titleMin || seoTitleLen > 65) {
+      addQuality(`[seo-title-length] ${pairKey} has ${seoTitleLen}, required ${titleMin}-65`);
     }
-    if (seoDescLen < 140 || seoDescLen > 160) {
-      addQuality(`[seo-description-length] ${pairKey} has ${seoDescLen}, required 140-160`);
+    if (seoDescLen < descMin || seoDescLen > 160) {
+      addQuality(`[seo-description-length] ${pairKey} has ${seoDescLen}, required ${descMin}-160`);
     }
 
     const briefArticle = articleBySlug.get(item.slug);
@@ -202,20 +209,27 @@ function validate() {
       }
     }
 
-    const localeCloud = semanticKeywordsByLocale[item.locale];
-    if (localeCloud && typeof localeCloud === 'object') {
-      const high = Array.isArray(localeCloud.high) ? localeCloud.high : [];
-      const medium = Array.isArray(localeCloud.medium) ? localeCloud.medium : [];
-      const highInText = high.filter((kw) => includesKeyword(text, kw)).length;
-      const mediumInText = medium.filter((kw) => includesKeyword(text, kw)).length;
-      if (high.length > 0 && highInText < 2) {
-        warnings.push(`[keyword-cloud-high] ${pairKey} has ${highInText} high keywords in text (recommended >= 2)`);
+    if (isSiteProfile) {
+      const localeText = siteTextByLocale.get(item.locale) || '';
+      siteTextByLocale.set(item.locale, `${localeText} ${text}`);
+    }
+
+    if (!isSiteProfile) {
+      const localeCloud = semanticKeywordsByLocale[item.locale];
+      if (localeCloud && typeof localeCloud === 'object') {
+        const high = Array.isArray(localeCloud.high) ? localeCloud.high : [];
+        const medium = Array.isArray(localeCloud.medium) ? localeCloud.medium : [];
+        const highInText = high.filter((kw) => includesKeyword(text, kw)).length;
+        const mediumInText = medium.filter((kw) => includesKeyword(text, kw)).length;
+        if (high.length > 0 && highInText < 2) {
+          warnings.push(`[keyword-cloud-high] ${pairKey} has ${highInText} high keywords in text (recommended >= 2)`);
+        }
+        if (medium.length > 0 && mediumInText < 1) {
+          warnings.push(`[keyword-cloud-medium] ${pairKey} has ${mediumInText} medium keywords in text (recommended >= 1)`);
+        }
+      } else {
+        warnings.push(`[keyword-cloud-missing-locale] ${pairKey} no keyword cloud for locale "${item.locale}"`);
       }
-      if (medium.length > 0 && mediumInText < 1) {
-        warnings.push(`[keyword-cloud-medium] ${pairKey} has ${mediumInText} medium keywords in text (recommended >= 1)`);
-      }
-    } else {
-      warnings.push(`[keyword-cloud-missing-locale] ${pairKey} no keyword cloud for locale "${item.locale}"`);
     }
 
     const fingerprint = normalizeText(text);
@@ -240,6 +254,26 @@ function validate() {
     }
   }
 
+  const keywordCoverage = [];
+  if (isSiteProfile && semanticJson) {
+    for (const locale of expectedLocales) {
+      const faqText = faqKeys.map((key) => langJson?.[key]?.[locale] || '').join(' ');
+      const corpus = normalizeText(`${siteTextByLocale.get(locale) || ''} ${faqText}`);
+      const cloud = semanticKeywordsByLocale[locale] || {};
+      const row = { locale, high: 0, medium: 0, low: 0 };
+      for (const tier of ['high', 'medium', 'low']) {
+        const terms = Array.isArray(cloud[tier]) ? cloud[tier] : [];
+        row[tier] = terms.filter((keyword) => includesKeyword(corpus, keyword)).length;
+      }
+      keywordCoverage.push(row);
+      if (row.high < 2 || row.medium < 1 || row.low < 1) {
+        errors.push(
+          `[keyword-coverage] ${locale}: high=${row.high}, medium=${row.medium}, low=${row.low} (require high>=2, medium>=1, low>=1 site-wide)`,
+        );
+      }
+    }
+  }
+
   for (const [locale, items] of localeBuckets.entries()) {
     for (let i = 0; i < items.length; i += 1) {
       for (let j = i + 1; j < items.length; j += 1) {
@@ -258,6 +292,13 @@ function validate() {
   console.log(`- Records: ${payload.length}`);
   console.log(`- Errors: ${errors.length}`);
   console.log(`- Warnings: ${warnings.length}`);
+
+  if (keywordCoverage.length) {
+    console.log('\nKeyword coverage (high/medium/low, site-wide):');
+    for (const row of keywordCoverage) {
+      console.log(`- ${row.locale}: ${row.high} / ${row.medium} / ${row.low}`);
+    }
+  }
 
   if (warnings.length) {
     console.log('\nWarnings:');

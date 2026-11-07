@@ -3621,17 +3621,17 @@
     "vi": "Cụm mật khẩu có an toàn hơn mật khẩu ngắn không?"
   },
   "faq_passphrase_answer": {
-    "en": "A passphrase of five or six random words is easier to type and usually stronger than a short password with symbols. Switch the generator to Words mode to create one.",
-    "ua": "Парольна фраза з п’яти-шести випадкових слів легша для введення і зазвичай надійніша за короткий пароль із символами. Увімкніть режим «Слова» в генераторі, щоб створити її.",
-    "es": "Una frase de cinco o seis palabras aleatorias es más fácil de escribir y suele ser más segura que una contraseña corta con símbolos. Cambia el generador al modo Palabras para crearla.",
-    "fr": "Une phrase de cinq ou six mots aléatoires se tape plus facilement et résiste mieux qu’un mot de passe court avec des symboles. Passez le générateur en mode Mots pour en créer une.",
-    "de": "Eine Passphrase aus fünf oder sechs zufälligen Wörtern tippt sich leichter und ist meist stärker als ein kurzes Passwort mit Sonderzeichen. Wechseln Sie im Generator in den Modus Wörter.",
-    "it": "Una passphrase di cinque o sei parole casuali si digita più facilmente ed è di solito più solida di una password corta con simboli. Passa alla modalità Parole nel generatore.",
-    "pt": "Uma frase de cinco ou seis palavras aleatórias é mais fácil de digitar e costuma ser mais forte que uma senha curta com símbolos. Mude o gerador para o modo Palavras.",
-    "ru": "Парольная фраза из пяти-шести случайных слов легче вводится и обычно надёжнее короткого пароля с символами. Переключите генератор в режим «Слова».",
-    "zh": "由五到六个随机词组成的密码短语更容易输入，通常也比带符号的短密码更强。把生成器切换到“单词”模式即可创建。",
-    "ja": "ランダムな5〜6語のパスフレーズは入力しやすく、記号入りの短いパスワードより強いことが多いです。生成器を「単語」モードに切り替えて作成してください。",
-    "pl": "Fraza z pięciu lub sześciu losowych słów jest łatwiejsza do wpisania i zwykle silniejsza niż krótkie hasło ze znakami specjalnymi. Przełącz generator w tryb Słowa.",
+    "en": "A passphrase of five or six random words is easier to type and usually stronger than a short password with symbols. Switch the generator to Words mode; it works as a passphrase generator.",
+    "ua": "Парольна фраза з п’яти-шести випадкових слів легша для введення і зазвичай надійніша за короткий пароль із символами. Увімкніть режим «Слова»: він працює як генератор парольних фраз.",
+    "es": "Una frase de cinco o seis palabras aleatorias es más fácil de escribir y suele ser más segura que una contraseña corta con símbolos. Cambia el generador al modo Palabras, que funciona como generador de frases de paso.",
+    "fr": "Une phrase de cinq ou six mots aléatoires se tape plus facilement et résiste mieux qu’un mot de passe court avec des symboles. Passez le générateur en mode Mots, qui fonctionne comme générateur de phrase secrète.",
+    "de": "Eine Passphrase aus fünf oder sechs zufälligen Wörtern tippt sich leichter und ist meist stärker als ein kurzes Passwort mit Sonderzeichen. Wechseln Sie im Generator in den Modus Wörter; er arbeitet als Passphrase Generator.",
+    "it": "Una passphrase di cinque o sei parole casuali si digita più facilmente ed è di solito più solida di una password corta con simboli. Passa alla modalità Parole, che funziona come generatore di passphrase.",
+    "pt": "Uma frase de cinco ou seis palavras aleatórias é mais fácil de digitar e costuma ser mais forte que uma senha curta com símbolos. Mude o gerador para o modo Palavras, que funciona como gerador de passphrase.",
+    "ru": "Парольная фраза из пяти-шести случайных слов легче вводится и обычно надёжнее короткого пароля с символами. Переключите генератор в режим «Слова»: он работает как генератор парольных фраз.",
+    "zh": "由五到六个随机词组成的密码短语更容易输入，通常也比带符号的短密码更强。把生成器切换到“单词”模式，它就是口令短语生成器。",
+    "ja": "ランダムな5〜6語のパスフレーズは入力しやすく、記号入りの短いパスワードより強いことが多いです。生成器を「単語」モードに切り替えてください。パスフレーズジェネレーターとして機能します。",
+    "pl": "Fraza z pięciu lub sześciu losowych słów jest łatwiejsza do wpisania i zwykle silniejsza niż krótkie hasło ze znakami specjalnymi. Przełącz generator w tryb Słowa; działa jak generator fraz haseł.",
     "vi": "Cụm mật khẩu gồm năm hoặc sáu từ ngẫu nhiên dễ nhập hơn và thường mạnh hơn mật khẩu ngắn có ký tự đặc biệt. Chuyển trình tạo sang chế độ Từ để tạo cụm mật khẩu."
   },
   "faq_wifi_question": {

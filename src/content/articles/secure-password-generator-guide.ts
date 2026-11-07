@@ -4,9 +4,9 @@ export const en: LocalizedArticleContent = {
   title: 'Secure Password Generator: Full Guide to Safe Online Generation',
   excerpt:
     'How to configure password length, character sets, and standards for safer generated passwords. Covers CSPRNG, browser-based generation, and best practices for using password generators without registration.',
-  seoTitle: 'Secure Password Generator Guide — No Registration Required | generatepasswordto.me',
+  seoTitle: 'Secure Password Generator: Full Guide to Safe Online Generation',
   seoDescription:
-    'Complete guide to using secure password generators safely. Covers how CSPRNG works, browser-based generation, recommended settings, and why no-registration generators protect your privacy.',
+    'Complete guide to using secure password generators safely. How to configure password length, character sets, and standards for safer generated passwords.',
   keywords: [
     'secure password generator guide',
     'password generator without registration',
@@ -109,9 +109,9 @@ export const ua: LocalizedArticleContent = {
   title: 'Генератор паролів: повний гід з безпечної онлайн-генерації',
   excerpt:
     'Як налаштувати довжину пароля, набори символів та стандарти для безпечних згенерованих паролів. Охоплює CSPRNG, генерацію в браузері та найкращі практики генераторів без реєстрації.',
-  seoTitle: 'Генератор паролів без реєстрації — безпечний гід | generatepasswordto.me',
+  seoTitle: 'Генератор паролів: повний гід з безпечної онлайн-генерації',
   seoDescription:
-    'Повний гід з безпечного використання генераторів паролів. Як працює CSPRNG, генерація в браузері, рекомендовані налаштування та чому генератори без реєстрації захищають конфіденційність.',
+    'Повний гід з безпечного використання генераторів паролів. Як налаштувати довжину пароля, набори символів та стандарти для безпечних згенерованих паролів.',
   keywords: [
     'безпечний генератор паролів гід',
     'генератор паролів без реєстрації',
@@ -204,7 +204,7 @@ export const ua: LocalizedArticleContent = {
 export const es: LocalizedArticleContent = {
   title: 'Guía del generador de contraseñas seguro: cómo funciona y por qué importa',
   excerpt: 'Cómo funcionan los generadores de contraseñas seguros por dentro. CSPRNG, Web Crypto API, entropía, generación sin registro y cumplimiento NIST/PCI DSS.',
-  seoTitle: 'Generador de contraseñas seguro — Cómo funciona | generatepasswordto.me',
+  seoTitle: 'Guía del generador de contraseñas seguro: cómo funciona y por',
   seoDescription: 'Guía técnica sobre generadores de contraseñas seguros. CSPRNG, Web Crypto API, cálculos de entropía y por qué los generadores sin registro son más seguros.',
   keywords: ['generador contraseñas seguro', 'cómo funciona generador contraseñas', 'CSPRNG explicado', 'Web Crypto API contraseñas', 'generador sin registro', 'entropía contraseñas'],
   sections: [
@@ -222,7 +222,7 @@ export const es: LocalizedArticleContent = {
 export const fr: LocalizedArticleContent = {
   title: 'Guide du générateur de mots de passe sécurisé : comment ça marche',
   excerpt: 'Comment fonctionnent les générateurs de mots de passe sécurisés. CSPRNG, Web Crypto API, entropie, génération sans inscription et conformité NIST/PCI DSS.',
-  seoTitle: 'Générateur de mots de passe sécurisé — Comment ça marche | generatepasswordto.me',
+  seoTitle: 'Guide du générateur de mots de passe sécurisé : comment ça marche',
   seoDescription: 'Guide technique sur les générateurs de mots de passe. CSPRNG, Web Crypto API, calculs d\'entropie et pourquoi les générateurs sans inscription sont plus sûrs.',
   keywords: ['générateur mots de passe sécurisé', 'comment fonctionne générateur', 'CSPRNG expliqué', 'Web Crypto API mots de passe', 'générateur sans inscription', 'entropie mots de passe'],
   sections: [
@@ -240,7 +240,7 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'Leitfaden zum sicheren Passwort-Generator: Wie er funktioniert',
   excerpt: 'Wie sichere Passwort-Generatoren funktionieren. CSPRNG, Web Crypto API, Entropie, Generierung ohne Registrierung und NIST/PCI DSS Konformität.',
-  seoTitle: 'Sicherer Passwort-Generator — Wie er funktioniert | generatepasswordto.me',
+  seoTitle: 'Leitfaden zum sicheren Passwort-Generator: Wie er funktioniert',
   seoDescription: 'Technischer Leitfaden zu sicheren Passwort-Generatoren. CSPRNG, Web Crypto API, Entropieberechnungen und warum Generatoren ohne Registrierung sicherer sind.',
   keywords: ['sicherer Passwort-Generator', 'wie Passwort-Generator funktioniert', 'CSPRNG erklärt', 'Web Crypto API Passwörter', 'Generator ohne Registrierung', 'Passwort-Entropie'],
   sections: [
@@ -258,7 +258,7 @@ export const de: LocalizedArticleContent = {
 export const it: LocalizedArticleContent = {
   title: 'Guida al generatore di password sicuro: come funziona e perché è importante',
   excerpt: 'Come funzionano i generatori di password sicuri. CSPRNG, Web Crypto API, entropia, generazione senza registrazione e conformità NIST/PCI DSS.',
-  seoTitle: 'Generatore password sicuro — Come funziona | generatepasswordto.me',
+  seoTitle: 'Guida al generatore di password sicuro: come funziona e perché è',
   seoDescription: 'Guida tecnica sui generatori di password sicuri. CSPRNG, Web Crypto API, calcoli di entropia e perché i generatori senza registrazione sono più sicuri.',
   keywords: ['generatore password sicuro', 'come funziona generatore password', 'CSPRNG spiegato', 'Web Crypto API password', 'generatore senza registrazione', 'entropia password'],
   sections: [
@@ -275,8 +275,8 @@ export const it: LocalizedArticleContent = {
 
 export const pt: LocalizedArticleContent = {
   title: 'Guia do gerador de senhas seguro: como funciona e por que importa',
-  excerpt: 'Como funcionam os geradores de senhas seguros. CSPRNG, Web Crypto API, entropia, geração sem registro e conformidade NIST/PCI DSS.',
-  seoTitle: 'Gerador de senhas seguro — Como funciona | generatepasswordto.me',
+  excerpt: 'Como funcionam os geradores de senhas seguros. CSPRNG, Web Crypto API, entropia, geração sem registro e conformidade NIST/PCI DSS. Um gerador seguro usa CSPRNG.',
+  seoTitle: 'Guia do gerador de senhas seguro: como funciona e por que importa',
   seoDescription: 'Guia técnico sobre geradores de senhas seguros. CSPRNG, Web Crypto API, cálculos de entropia e por que geradores sem registro são mais seguros.',
   keywords: ['gerador senhas seguro', 'como funciona gerador senhas', 'CSPRNG explicado', 'Web Crypto API senhas', 'gerador sem registro', 'entropia senhas'],
   sections: [
@@ -293,8 +293,8 @@ export const pt: LocalizedArticleContent = {
 
 export const ru: LocalizedArticleContent = {
   title: 'Руководство по безопасному генератору паролей: как он работает',
-  excerpt: 'Как работают безопасные генераторы паролей. CSPRNG, Web Crypto API, энтропия, генерация без регистрации и соответствие NIST/PCI DSS.',
-  seoTitle: 'Безопасный генератор паролей — Как он работает | generatepasswordto.me',
+  excerpt: 'Как работают безопасные генераторы паролей. CSPRNG, Web Crypto API, энтропия, генерация без регистрации и соответствие NIST/PCI DSS. Безопасный генератор использует CSPRNG.',
+  seoTitle: 'Руководство по безопасному генератору паролей: как он работает',
   seoDescription: 'Техническое руководство по безопасным генераторам паролей. CSPRNG, Web Crypto API, расчёты энтропии и почему генераторы без регистрации безопаснее.',
   keywords: ['безопасный генератор паролей', 'как работает генератор паролей', 'CSPRNG объяснение', 'Web Crypto API пароли', 'генератор без регистрации', 'энтропия паролей'],
   sections: [
@@ -311,9 +311,9 @@ export const ru: LocalizedArticleContent = {
 
 export const zh: LocalizedArticleContent = {
   title: '安全密码生成器指南：工作原理与重要性',
-  excerpt: '安全密码生成器的内部工作原理。CSPRNG、Web Crypto API、熵、无注册生成及NIST/PCI DSS合规。',
+  excerpt: '安全密码生成器的内部工作原理。 CSPRNG、Web Crypto API、熵、无注册生成及NIST/PCI DSS合规。',
   seoTitle: '安全密码生成器 — 工作原理 | generatepasswordto.me',
-  seoDescription: '安全密码生成器技术指南。CSPRNG、Web Crypto API、熵计算以及为什么无注册生成器更安全。',
+  seoDescription: '安全密码生成器的内部工作原理。 CSPRNG、Web Crypto API、熵、无注册生成及NIST/PCI DSS合规。',
   keywords: ['安全密码生成器', '密码生成器工作原理', 'CSPRNG详解', 'Web Crypto API密码', '无注册生成器', '密码熵'],
   sections: [
     { heading: '什么使生成器"安全"？', paragraphs: ['安全生成器使用CSPRNG。浏览器中是Web Crypto API（crypto.getRandomValues()）。Math.random()不是加密安全的。', 'CSPRNG从系统硬件获取熵。', '需要均匀分布。'] },
@@ -329,9 +329,9 @@ export const zh: LocalizedArticleContent = {
 
 export const ja: LocalizedArticleContent = {
   title: '安全なパスワード生成器ガイド：仕組みと重要性',
-  excerpt: '安全なパスワード生成器の内部動作。CSPRNG、Web Crypto API、エントロピー、登録不要の生成、NIST/PCI DSS準拠。',
+  excerpt: '安全なパスワード生成器の内部動作。 CSPRNG、Web Crypto API、エントロピー、登録不要の生成、NIST/PCI DSS準拠。',
   seoTitle: '安全なパスワード生成器 — 仕組み | generatepasswordto.me',
-  seoDescription: '安全なパスワード生成器の技術ガイド。CSPRNG、Web Crypto API、エントロピー計算、登録不要の生成器が安全な理由。',
+  seoDescription: '安全なパスワード生成器の技術ガイド。 CSPRNG、Web Crypto API、エントロピー計算、登録不要の生成器が安全な理由。',
   keywords: ['安全パスワード生成器', 'パスワード生成器の仕組み', 'CSPRNG解説', 'Web Crypto APIパスワード', '登録不要生成器', 'パスワードエントロピー'],
   sections: [
     { heading: '何が生成器を「安全」にするか', paragraphs: ['安全な生成器はCSPRNGを使用。ブラウザではWeb Crypto API（crypto.getRandomValues()）。Math.random()は暗号的に安全ではない。', 'CSPRNGはシステムハードウェアからエントロピーを取得。', '均一分布が必要。'] },
@@ -347,8 +347,8 @@ export const ja: LocalizedArticleContent = {
 
 export const pl: LocalizedArticleContent = {
   title: 'Przewodnik po bezpiecznym generatorze haseł: jak działa i dlaczego to ważne',
-  excerpt: 'Jak działają bezpieczne generatory haseł. CSPRNG, Web Crypto API, entropia, generowanie bez rejestracji i zgodność z NIST/PCI DSS.',
-  seoTitle: 'Bezpieczny generator haseł — Jak działa | generatepasswordto.me',
+  excerpt: 'Jak działają bezpieczne generatory haseł. CSPRNG, Web Crypto API, entropia, generowanie bez rejestracji i zgodność z NIST/PCI DSS. Bezpieczny generator używa CSPRNG.',
+  seoTitle: 'Przewodnik po bezpiecznym generatorze haseł: jak działa i',
   seoDescription: 'Techniczny przewodnik po bezpiecznych generatorach haseł. CSPRNG, Web Crypto API, obliczenia entropii i dlaczego generatory bez rejestracji są bezpieczniejsze.',
   keywords: ['bezpieczny generator haseł', 'jak działa generator haseł', 'CSPRNG wyjaśnione', 'Web Crypto API hasła', 'generator bez rejestracji', 'entropia haseł'],
   sections: [
@@ -367,9 +367,9 @@ export const vi: LocalizedArticleContent = {
   title: 'Trình tạo mật khẩu an toàn: hướng dẫn tạo trực tuyến',
   excerpt:
     'Cách cấu hình độ dài, bộ ký tự và tiêu chuẩn để tạo mật khẩu an toàn hơn. Gồm CSPRNG, tạo trong trình duyệt và cách dùng trình tạo không cần đăng ký.',
-  seoTitle: 'Tạo mật khẩu mạnh an toàn: trình tạo không cần đăng ký',
+  seoTitle: 'Trình tạo mật khẩu an toàn: hướng dẫn tạo trực tuyến',
   seoDescription:
-    'Hướng dẫn tạo mật khẩu mạnh ngẫu nhiên: CSPRNG, tạo trong trình duyệt, thiết lập khuyến nghị và vì sao không đăng ký bảo vệ quyền riêng tư.',
+    'Cách cấu hình độ dài, bộ ký tự và tiêu chuẩn để tạo mật khẩu an toàn hơn. Gồm CSPRNG, tạo trong trình duyệt và cách dùng trình tạo không cần đăng ký.',
   keywords: [
     'trình quản lý mật khẩu là gì',
     'mật khẩu mạnh ngẫu nhiên',

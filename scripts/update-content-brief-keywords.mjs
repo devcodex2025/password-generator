@@ -83,7 +83,7 @@ function loadLocaleCodes() {
   return rows.map((row) => row[codeIndex]).filter(Boolean);
 }
 
-function topKeywords(file, limit) {
+function loadKeywords(file) {
   const [header, ...rows] = parseCsv(read(file));
   const columns = new Map(header.map((name, index) => [name, index]));
   const required = ['keyword', 'demandScore', 'queryHits', 'bestRank'];
@@ -108,9 +108,18 @@ function topKeywords(file, limit) {
         b.queryHits - a.queryHits ||
         a.bestRank - b.bestRank ||
         a.keyword.localeCompare(b.keyword),
-    )
-    .slice(0, limit)
-    .map((entry) => entry.keyword);
+    );
+}
+
+function buildTiers(all) {
+  return {
+    high: all.filter((entry) => entry.demandScore >= 80).slice(0, 20).map((entry) => entry.keyword),
+    medium: all
+      .filter((entry) => entry.demandScore >= 60 && entry.demandScore < 80)
+      .slice(0, 20)
+      .map((entry) => entry.keyword),
+    low: all.filter((entry) => entry.demandScore < 60).slice(0, 20).map((entry) => entry.keyword),
+  };
 }
 
 function main() {
@@ -119,27 +128,33 @@ function main() {
   }
 
   const targets = {};
+  const tiersByLocale = {};
   const summary = [];
   for (const code of loadLocaleCodes()) {
     const file = path.join(LOCALES_DIR, `${code}.csv`);
     if (!fs.existsSync(file)) {
       throw new Error(`Missing keyword file for locale "${code}": ${file}`);
     }
-    const keywords = topKeywords(file, LIMIT);
+    const all = loadKeywords(file);
+    const keywords = all.slice(0, LIMIT).map((entry) => entry.keyword);
     if (keywords.length === 0) {
       throw new Error(`No keywords found for locale "${code}"`);
     }
     targets[code] = keywords;
-    summary.push(`${code}:${keywords.length}`);
+    tiersByLocale[code] = buildTiers(all);
+    summary.push(
+      `${code}:${keywords.length} (tiers ${tiersByLocale[code].high.length}/${tiersByLocale[code].medium.length}/${tiersByLocale[code].low.length})`,
+    );
   }
 
   const brief = JSON.parse(read(BRIEF_PATH));
   brief.keyword_targets = targets;
+  brief.keyword_tiers = tiersByLocale;
   brief.keyword_targets_note =
-    `Top ${LIMIT} queries per locale by demandScore from docs/keyword-map/locales/<code>.csv. Refresh with "npm run keywords:brief" after "npm run keywords:map".`;
+    `Top ${LIMIT} queries per locale by demandScore from docs/keyword-map/locales/<code>.csv, plus high/medium/low tier samples. Refresh with "npm run keywords:brief" after "npm run keywords:map".`;
   fs.writeFileSync(BRIEF_PATH, `${JSON.stringify(brief, null, 2)}\n`, 'utf8');
 
-  console.log(`Updated ${path.relative(ROOT, BRIEF_PATH)} with top ${LIMIT} keywords for ${summary.length} locales.`);
+  console.log(`Updated ${path.relative(ROOT, BRIEF_PATH)} with top ${LIMIT} keywords and tiers for ${summary.length} locales.`);
   console.log(summary.join(', '));
 }
 

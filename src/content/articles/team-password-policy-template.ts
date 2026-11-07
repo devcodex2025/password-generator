@@ -3,10 +3,10 @@ import type { LocalizedArticleContent } from '../articles';
 export const en: LocalizedArticleContent = {
   title: 'Team Password Policy Template: A Ready-to-Use Framework',
   excerpt:
-    'Use this comprehensive policy framework to standardize password security across your organization. Includes ready-to-adopt templates aligned with NIST 800-63B and PCI DSS v4.0.',
-  seoTitle: 'Team Password Policy Template 2026 — NIST & PCI DSS Compliant | generatepasswordto.me',
+    'Use this comprehensive policy framework to standardize password security across your organization. Includes ready-to-adopt templates aligned with NIST 800-63B and PCI DSS v4. 0.',
+  seoTitle: 'Team Password Policy Template: A Ready-to-Use Framework',
   seoDescription:
-    'Ready-to-use team password policy template aligned with NIST 800-63B and PCI DSS v4.0. Covers password creation, storage, rotation, MFA, incident response, and employee training requirements.',
+    'Ready-to-use team password policy template aligned with NIST 800-63B and PCI DSS v4. 0. Use the generator to create a unique password and store it safely.',
   keywords: [
     'password policy template',
     'company password policy',
@@ -109,10 +109,10 @@ export const en: LocalizedArticleContent = {
 export const ua: LocalizedArticleContent = {
   title: 'Шаблон політики паролів для команд: готовий фреймворк',
   excerpt:
-    'Використовуйте цей комплексний фреймворк політики для стандартизації безпеки паролів у вашій організації. Включає готові шаблони, узгоджені з NIST 800-63B та PCI DSS v4.0.',
-  seoTitle: 'Шаблон політики паролів для команд 2026 — NIST та PCI DSS | generatepasswordto.me',
+    'Використовуйте цей комплексний фреймворк політики для стандартизації безпеки паролів у вашій організації. Включає готові шаблони, узгоджені з NIST 800-63B та PCI DSS v4. 0.',
+  seoTitle: 'Шаблон політики паролів для команд: готовий фреймворк',
   seoDescription:
-    'Готовий шаблон політики паролів для команд, узгоджений з NIST 800-63B та PCI DSS v4.0. Створення, зберігання, ротація, MFA, реагування на інциденти та навчання співробітників.',
+    'Готовий шаблон політики паролів для команд, узгоджений з NIST 800-63B та PCI DSS v4. 0. Створіть унікальний пароль у генераторі та збережіть його безпечно.',
   keywords: [
     'шаблон політики паролів',
     'корпоративна політика паролів',
@@ -214,9 +214,9 @@ export const ua: LocalizedArticleContent = {
 
 export const es: LocalizedArticleContent = {
   title: 'Plantilla de política de contraseñas para equipos: marco listo para usar',
-  excerpt: 'Una plantilla de política de contraseñas lista para copiar basada en NIST 800-63B y PCI DSS v4.0. Cubre gestores de contraseñas, MFA, rotación, respuesta a incidentes y capacitación.',
-  seoTitle: 'Plantilla de política de contraseñas para equipos — Marco NIST/PCI DSS | generatepasswordto.me',
-  seoDescription: 'Plantilla de política de contraseñas descargable para equipos. Basada en NIST 800-63B y PCI DSS v4.0 con secciones sobre gestores, MFA, rotación e incidentes.',
+  excerpt: 'Una plantilla de política de contraseñas lista para copiar basada en NIST 800-63B y PCI DSS v4. 0. Cubre gestores de contraseñas, MFA, rotación, respuesta a incidentes y capacitación.',
+  seoTitle: 'Plantilla de política de contraseñas para equipos: marco listo',
+  seoDescription: 'Plantilla de política de contraseñas descargable para equipos. Basada en NIST 800-63B y PCI DSS v4. 0 con secciones sobre gestores, MFA, rotación e incidentes.',
   keywords: ['plantilla política contraseñas', 'política contraseñas equipo', 'plantilla seguridad contraseñas', 'política contraseñas NIST', 'plantilla contraseñas PCI DSS', 'política seguridad corporativa'],
   sections: [
     { heading: 'Por qué tu equipo necesita una política de contraseñas formal', paragraphs: ['El costo promedio de una brecha por credenciales comprometidas es de $4.88 millones (IBM 2024). Una política formal reduce este riesgo con expectativas claras.', 'Esta plantilla se basa en NIST 800-63B y PCI DSS v4.0.', 'Está diseñada para equipos de 5 a 500 personas con acceso a datos de clientes, financieros o propiedad intelectual.'] },
@@ -232,9 +232,9 @@ export const es: LocalizedArticleContent = {
 
 export const fr: LocalizedArticleContent = {
   title: 'Modèle de politique de mots de passe d\'équipe : cadre prêt à l\'emploi',
-  excerpt: 'Un modèle de politique de mots de passe basé sur NIST 800-63B et PCI DSS v4.0. Couvre gestionnaires, MFA, rotation, réponse aux incidents et formation.',
-  seoTitle: 'Modèle politique mots de passe équipe — Cadre NIST/PCI DSS | generatepasswordto.me',
-  seoDescription: 'Modèle téléchargeable de politique mots de passe. Basé sur NIST 800-63B et PCI DSS v4.0 avec sections gestionnaires, MFA, rotation et incidents.',
+  excerpt: 'Un modèle de politique de mots de passe basé sur NIST 800-63B et PCI DSS v4. 0. Couvre gestionnaires, MFA, rotation, réponse aux incidents et formation.',
+  seoTitle: 'Modèle de politique de mots de passe d\'équipe : cadre prêt à',
+  seoDescription: 'Modèle téléchargeable de politique mots de passe. Basé sur NIST 800-63B et PCI DSS v4. 0 avec sections gestionnaires, MFA, rotation et incidents.',
   keywords: ['modèle politique mots de passe', 'politique mots de passe équipe', 'modèle sécurité mots de passe', 'politique NIST mots de passe', 'modèle PCI DSS', 'politique sécurité entreprise'],
   sections: [
     { heading: 'Pourquoi votre équipe a besoin d\'une politique formelle', paragraphs: ['Le coût moyen d\'une brèche par identifiants compromis est de 4,88 M$ (IBM 2024).', 'Ce modèle est basé sur NIST 800-63B et PCI DSS v4.0.', 'Conçu pour des équipes de 5 à 500 personnes.'] },
@@ -250,9 +250,9 @@ export const fr: LocalizedArticleContent = {
 
 export const de: LocalizedArticleContent = {
   title: 'Team-Passwortrichtlinie: einsatzbereites Framework',
-  excerpt: 'Eine kopierfähige Passwortrichtlinie basierend auf NIST 800-63B und PCI DSS v4.0. Umfasst Passwort-Manager, MFA, Rotation, Incident Response und Schulung.',
-  seoTitle: 'Team-Passwortrichtlinie — NIST/PCI DSS Framework | generatepasswordto.me',
-  seoDescription: 'Herunterladbare Passwortrichtlinie für Teams. Basierend auf NIST 800-63B und PCI DSS v4.0.',
+  excerpt: 'Eine kopierfähige Passwortrichtlinie basierend auf NIST 800-63B und PCI DSS v4. 0. Umfasst Passwort-Manager, MFA, Rotation, Incident Response und Schulung.',
+  seoTitle: 'Team-Passwortrichtlinie: einsatzbereites Framework',
+  seoDescription: 'Eine kopierfähige Passwortrichtlinie basierend auf NIST 800-63B und PCI DSS v4. 0. Umfasst Passwort-Manager, MFA, Rotation, Incident Response und Schulung.',
   keywords: ['Passwortrichtlinie Vorlage', 'Team Passwortrichtlinie', 'Passwort-Sicherheitsvorlage', 'NIST Passwortrichtlinie', 'PCI DSS Vorlage', 'Unternehmenssicherheitsrichtlinie'],
   sections: [
     { heading: 'Warum Ihr Team eine formale Richtlinie braucht', paragraphs: ['Durchschnittliche Kosten eines Credential-Breaches: $4,88 Mio. (IBM 2024).', 'Diese Vorlage basiert auf NIST 800-63B und PCI DSS v4.0.', 'Für Teams von 5-500 Personen.'] },
@@ -268,9 +268,9 @@ export const de: LocalizedArticleContent = {
 
 export const it: LocalizedArticleContent = {
   title: 'Template di politica password per team: framework pronto all\'uso',
-  excerpt: 'Un template di politica password basato su NIST 800-63B e PCI DSS v4.0. Copre gestori, MFA, rotazione, risposta agli incidenti e formazione.',
-  seoTitle: 'Template politica password team — Framework NIST/PCI DSS | generatepasswordto.me',
-  seoDescription: 'Template scaricabile di politica password per team basato su NIST 800-63B e PCI DSS v4.0.',
+  excerpt: 'Un template di politica password basato su NIST 800-63B e PCI DSS v4. 0. Copre gestori, MFA, rotazione, risposta agli incidenti e formazione.',
+  seoTitle: 'Template di politica password per team: framework pronto all\'uso',
+  seoDescription: 'Un template di politica password basato su NIST 800-63B e PCI DSS v4. 0. Copre gestori, MFA, rotazione, risposta agli incidenti e formazione.',
   keywords: ['template politica password', 'politica password team', 'template sicurezza password', 'politica NIST password', 'template PCI DSS', 'politica sicurezza aziendale'],
   sections: [
     { heading: 'Perché il tuo team ha bisogno di una politica formale', paragraphs: ['Costo medio di una violazione per credenziali compromesse: $4,88M (IBM 2024).', 'Questo template è basato su NIST 800-63B e PCI DSS v4.0.', 'Per team da 5 a 500 persone.'] },
@@ -286,9 +286,9 @@ export const it: LocalizedArticleContent = {
 
 export const pt: LocalizedArticleContent = {
   title: 'Template de política de senhas para equipes: framework pronto para uso',
-  excerpt: 'Template de política de senhas baseado em NIST 800-63B e PCI DSS v4.0. Cobre gerenciadores, MFA, rotação, resposta a incidentes e treinamento.',
-  seoTitle: 'Template política de senhas para equipes — Framework NIST/PCI DSS | generatepasswordto.me',
-  seoDescription: 'Template de política de senhas para equipes baseado em NIST 800-63B e PCI DSS v4.0.',
+  excerpt: 'Template de política de senhas baseado em NIST 800-63B e PCI DSS v4. 0. Cobre gerenciadores, MFA, rotação, resposta a incidentes e treinamento.',
+  seoTitle: 'Template de política de senhas para equipes: framework pronto',
+  seoDescription: 'Template de política de senhas baseado em NIST 800-63B e PCI DSS v4. 0. Cobre gerenciadores, MFA, rotação, resposta a incidentes e treinamento.',
   keywords: ['template política senhas', 'política senhas equipe', 'template segurança senhas', 'política NIST senhas', 'template PCI DSS', 'política segurança corporativa'],
   sections: [
     { heading: 'Por que sua equipe precisa de uma política formal', paragraphs: ['Custo médio de vazamento por credenciais: $4,88M (IBM 2024).', 'Este template é baseado em NIST 800-63B e PCI DSS v4.0.', 'Para equipes de 5 a 500 pessoas.'] },
@@ -304,9 +304,9 @@ export const pt: LocalizedArticleContent = {
 
 export const ru: LocalizedArticleContent = {
   title: 'Шаблон политики паролей для команд: готовый фреймворк',
-  excerpt: 'Готовый шаблон политики паролей на основе NIST 800-63B и PCI DSS v4.0. Менеджеры паролей, MFA, ротация, реагирование на инциденты и обучение.',
-  seoTitle: 'Шаблон политики паролей для команд — Фреймворк NIST/PCI DSS | generatepasswordto.me',
-  seoDescription: 'Шаблон политики паролей для команд на основе NIST 800-63B и PCI DSS v4.0.',
+  excerpt: 'Готовый шаблон политики паролей на основе NIST 800-63B и PCI DSS v4. 0. Менеджеры паролей, MFA, ротация, реагирование на инциденты и обучение.',
+  seoTitle: 'Шаблон политики паролей для команд: готовый фреймворк',
+  seoDescription: 'Готовый шаблон политики паролей на основе NIST 800-63B и PCI DSS v4. 0. Менеджеры паролей, MFA, ротация, реагирование на инциденты и обучение.',
   keywords: ['шаблон политики паролей', 'политика паролей команды', 'шаблон безопасности паролей', 'политика NIST пароли', 'шаблон PCI DSS', 'корпоративная политика безопасности'],
   sections: [
     { heading: 'Зачем команде формальная политика', paragraphs: ['Средняя стоимость утечки через учётные данные: $4,88M (IBM 2024).', 'Этот шаблон основан на NIST 800-63B и PCI DSS v4.0.', 'Для команд от 5 до 500 человек.'] },
@@ -322,9 +322,9 @@ export const ru: LocalizedArticleContent = {
 
 export const zh: LocalizedArticleContent = {
   title: '团队密码策略模板：即用型框架',
-  excerpt: '基于NIST 800-63B和PCI DSS v4.0的密码策略模板。涵盖密码管理器、MFA、轮换、事件响应和培训。',
+  excerpt: '基于NIST 800-63B和PCI DSS v4. 0的密码策略模板。 涵盖密码管理器、MFA、轮换、事件响应和培训。',
   seoTitle: '团队密码策略模板 — NIST/PCI DSS框架 | generatepasswordto.me',
-  seoDescription: '基于NIST 800-63B和PCI DSS v4.0的团队密码策略模板。',
+  seoDescription: '基于NIST 800-63B和PCI DSS v4. 0的密码策略模板。 涵盖密码管理器、MFA、轮换、事件响应和培训。',
   keywords: ['密码策略模板', '团队密码策略', '密码安全模板', 'NIST密码策略', 'PCI DSS模板', '企业安全策略'],
   sections: [
     { heading: '为什么团队需要正式的密码策略', paragraphs: ['凭证泄露的平均成本：$488万（IBM 2024）。', '本模板基于NIST 800-63B和PCI DSS v4.0。', '适用于5-500人的团队。'] },
@@ -340,9 +340,9 @@ export const zh: LocalizedArticleContent = {
 
 export const ja: LocalizedArticleContent = {
   title: 'チームパスワードポリシーテンプレート：すぐに使えるフレームワーク',
-  excerpt: 'NIST 800-63BとPCI DSS v4.0に基づくパスワードポリシーテンプレート。パスワードマネージャー、MFA、ローテーション、インシデント対応、トレーニングを網羅。',
+  excerpt: 'NIST 800-63BとPCI DSS v4. 0に基づくパスワードポリシーテンプレート。 パスワードマネージャー、MFA、ローテーション、インシデント対応、トレーニングを網羅。',
   seoTitle: 'チームパスワードポリシーテンプレート — NIST/PCI DSSフレームワーク | generatepasswordto.me',
-  seoDescription: 'NIST 800-63BとPCI DSS v4.0に基づくチームパスワードポリシーテンプレート。',
+  seoDescription: 'NIST 800-63BとPCI DSS v4. 0に基づくパスワードポリシーテンプレート。 パスワードマネージャー、MFA、ローテーション、インシデント対応、トレーニングを網羅。',
   keywords: ['パスワードポリシーテンプレート', 'チームパスワードポリシー', 'パスワードセキュリティテンプレート', 'NISTパスワードポリシー', 'PCI DSSテンプレート', '企業セキュリティポリシー'],
   sections: [
     { heading: 'なぜチームに正式なポリシーが必要か', paragraphs: ['資格情報侵害の平均コスト：$488万（IBM 2024）。', 'このテンプレートはNIST 800-63BとPCI DSS v4.0に基づいています。', '5〜500人のチーム向け。'] },
@@ -358,9 +358,9 @@ export const ja: LocalizedArticleContent = {
 
 export const pl: LocalizedArticleContent = {
   title: 'Szablon polityki haseł dla zespołów: gotowy framework',
-  excerpt: 'Szablon polityki haseł oparty na NIST 800-63B i PCI DSS v4.0. Menedżery haseł, MFA, rotacja, reagowanie na incydenty i szkolenia.',
-  seoTitle: 'Szablon polityki haseł dla zespołów — Framework NIST/PCI DSS | generatepasswordto.me',
-  seoDescription: 'Szablon polityki haseł dla zespołów oparty na NIST 800-63B i PCI DSS v4.0.',
+  excerpt: 'Szablon polityki haseł oparty na NIST 800-63B i PCI DSS v4. 0. Menedżery haseł, MFA, rotacja, reagowanie na incydenty i szkolenia. Średni koszt wycieku danych uwierzytelniających: $4,88M (IBM 2024).',
+  seoTitle: 'Szablon polityki haseł dla zespołów: gotowy framework',
+  seoDescription: 'Szablon polityki haseł oparty na NIST 800-63B i PCI DSS v4. 0. Menedżery haseł, MFA, rotacja, reagowanie na incydenty i szkolenia. Utwórz unikalne hasło w.',
   keywords: ['szablon polityki haseł', 'polityka haseł zespołu', 'szablon bezpieczeństwa haseł', 'polityka NIST hasła', 'szablon PCI DSS', 'korporacyjna polityka bezpieczeństwa'],
   sections: [
     { heading: 'Dlaczego zespół potrzebuje formalnej polityki', paragraphs: ['Średni koszt wycieku danych uwierzytelniających: $4,88M (IBM 2024).', 'Ten szablon oparty jest na NIST 800-63B i PCI DSS v4.0.', 'Dla zespołów 5-500 osób.'] },
@@ -377,10 +377,10 @@ export const pl: LocalizedArticleContent = {
 export const vi: LocalizedArticleContent = {
   title: 'Mẫu chính sách mật khẩu nhóm: khung sẵn dùng',
   excerpt:
-    'Dùng khung chính sách toàn diện này để chuẩn hóa bảo mật mật khẩu trong tổ chức. Gồm mẫu sẵn dùng theo NIST 800-63B, PCI DSS v4.0 và đào tạo nhân viên.',
-  seoTitle: 'Mẫu chính sách mật khẩu nhóm 2026: tạo mật khẩu mạnh',
+    'Dùng khung chính sách toàn diện này để chuẩn hóa bảo mật mật khẩu trong tổ chức. Gồm mẫu sẵn dùng theo NIST 800-63B, PCI DSS v4. 0 và đào tạo nhân viên.',
+  seoTitle: 'Mẫu chính sách mật khẩu nhóm: khung sẵn dùng — mật khẩu mạnh nhất',
   seoDescription:
-    'Mẫu chính sách mật khẩu nhóm sẵn dùng theo NIST 800-63B và PCI DSS v4.0: tạo mật khẩu mạnh, lưu trữ, xoay vòng, MFA, ứng phó sự cố và đào tạo nhân viên.',
+    'Mẫu chính sách mật khẩu nhóm sẵn dùng theo NIST 800-63B và PCI DSS v4. 0: tạo mật khẩu mạnh, lưu trữ, xoay vòng, MFA, ứng phó sự cố và đào tạo nhân viên.',
   keywords: [
     'trình quản lý mật khẩu là gì',
     'mật khẩu mạnh là gì',
