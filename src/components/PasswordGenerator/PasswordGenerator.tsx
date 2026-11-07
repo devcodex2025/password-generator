@@ -6,6 +6,7 @@ import { useReward } from 'react-rewards';
 import PasswordRow from './PasswordRow';
 import PasswordSettings from './PasswordSettings';
 import PasswordStrength from './PasswordStrength';
+import BulkPasswords, { type BulkGenerationEvent } from './BulkPasswords';
 import { GeneratorMode, loadWordlist } from './generatorModes';
 import {
   DEFAULT_LENGTHS,
@@ -19,9 +20,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 import { rankColor } from '../../functions/RankColor';
 import { getStrengthWord } from '../../functions/GetStrengthWord';
 import { formatCrackTime } from '@/functions/formatCrackTime';
-import { Button, Snackbar } from '@mui/material';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+import { Snackbar } from '@mui/material';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import { SnackbarMessage } from '@/app/types/SnackBar';
 import i18n from '@/components/i18n';
@@ -70,7 +69,8 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const [snackbars, setSnackbars] = useState<SnackbarMessage[]>([]);
   const [saveModalOpen, setSaveModalOpen] = useState(false);
   const [selectedCharacterSets, setSelectedCharacterSets] = useState<string[]>(['A-Z', 'a-z', '0-9', '#$%']);
-  const [quantity, setQuantity] = useState<number>(1);
+  const [bulkOpen, setBulkOpen] = useState(false);
+  const formRef = useRef<HTMLDivElement | null>(null);
   const [passwords, setPasswords] = useState<string[]>([]);
   const [selectedStandard, setSelectedStandard] = useState<string>('nist');
   const [mode, setMode] = useState<GeneratorMode>('chars');
@@ -107,10 +107,16 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   );
 
   // Values the generation effects read without re-running when they change.
-  const latest = useRef({ rules, quantity, language, t, rowCount: passwords.length });
+  const latest = useRef({ language, t });
   useEffect(() => {
-    latest.current = { rules, quantity, language, t, rowCount: passwords.length };
+    latest.current = { language, t };
   });
+
+  // The bulk layer covers the form: keep keyboard and screen readers out of what is underneath.
+  // ponytail: set through the DOM because @types/react 18 has no `inert` prop
+  useEffect(() => {
+    formRef.current?.toggleAttribute('inert', bulkOpen);
+  }, [bulkOpen]);
 
   // One snackbar per message: repeated failures while dragging do not stack.
   const warn = useCallback((key: string) => {
@@ -118,33 +124,24 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
     setSnackbars((prev) => (prev.some((s) => s.message === message) ? prev : [...prev, { id: nextSnackbarId(), message }]));
   }, []);
 
-  const regenerateRow = useCallback(
-    async (index: number) => {
-      const result = await generateList(rules, 1);
-      if ('error' in result) {
-        warn(result.error); // keep the previous value
-        return;
-      }
-      const [password] = result.passwords;
-      if (index >= latest.current.rowCount) return; // row was removed meanwhile: no write, no event
-      setPasswords((prev) => {
-        if (index >= prev.length) return prev;
-        const updated = [...prev];
-        updated[index] = password;
-        return updated;
-      });
-      ga('password_generated', generationEventParams(rules, password, language));
-    },
-    [rules, warn, language]
-  );
+  // The form shows a single password; lists live in the bulk view.
+  const regenerateRow = useCallback(async () => {
+    const result = await generateList(rules, 1);
+    if ('error' in result) {
+      warn(result.error); // keep the previous value
+      return;
+    }
+    setPasswords(result.passwords);
+    ga('password_generated', generationEventParams(rules, result.passwords[0], language));
+  }, [rules, warn, language]);
 
-  // Rules changed: regenerate the whole list once the user settles (no work or GA event per slider tick).
+  // Rules changed: regenerate the password once the user settles (no work or GA event per slider tick).
   const hasGenerated = useRef(false);
   useEffect(() => {
     let cancelled = false;
     const timer = window.setTimeout(async () => {
-      const { quantity: count, language: lang } = latest.current;
-      const result = await generateList(rules, count);
+      const { language: lang } = latest.current;
+      const result = await generateList(rules, 1);
       if (cancelled) return;
       if ('error' in result) {
         warn(result.error);
@@ -152,8 +149,8 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       }
       setPasswords(result.passwords);
       const event = planGenerationEvent({
-        previousQuantity: hasGenerated.current ? count : 0,
-        nextQuantity: count,
+        previousQuantity: hasGenerated.current ? 1 : 0,
+        nextQuantity: 1,
         generated: result.passwords,
         rules,
         language: lang,
@@ -167,38 +164,30 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
     };
   }, [rules, warn]);
 
-  // Quantity changed: append or trim relative to the rows actually shown, so a failed or
-  // cancelled append is retried by the next change instead of leaving the list short.
-  useEffect(() => {
-    const shown = latest.current.rowCount;
-    if (quantity === shown || !hasGenerated.current) return;
-    if (quantity < shown) {
-      setPasswords((current) => current.slice(0, quantity));
-      return;
-    }
-    let cancelled = false;
-    (async () => {
-      const { rules: currentRules, language: lang } = latest.current;
-      const result = await generateList(currentRules, quantity - shown);
-      if (cancelled) return;
+  // Bulk events share the main generator's names; surface: 'bulk' tells them apart.
+  const generateBulk = useCallback(
+    async (count: number, event: BulkGenerationEvent) => {
+      const result = await generateList(rules, count);
       if ('error' in result) {
         warn(result.error);
-        return;
+        return null;
       }
-      setPasswords((current) => [...current, ...result.passwords].slice(0, quantity));
-      const event = planGenerationEvent({
-        previousQuantity: shown,
-        nextQuantity: quantity,
-        generated: result.passwords,
-        rules: currentRules,
-        language: lang,
-      });
-      if (event) ga(event.name, event.params);
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [quantity, warn]);
+      const params = { ...generationEventParams(rules, result.passwords[0], language), surface: 'bulk' };
+      ga(event, event === 'password_generated' ? params : { count, ...params });
+      return result.passwords;
+    },
+    [rules, warn, language]
+  );
+
+  const trackBulk = useCallback(
+    (event: string, params: Record<string, string | number> = {}) => ga(event, { ui_language: language, surface: 'bulk', ...params }),
+    [language]
+  );
+
+  const openBulk = () => {
+    setBulkOpen(true);
+    ga('bulk_opened', { ui_language: language, surface: 'home' });
+  };
 
   const handleCopyClick = (index: number) => {
     if (index >= 0 && index < passwords.length && passwords[index]) {
@@ -219,32 +208,28 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
     }
   };
 
-  const handleCopyAllClick = () => {
-    if (passwords.length > 0) {
-      navigator.clipboard.writeText(passwords.join('\n'));
-      const snackbarId = nextSnackbarId();
-      setSnackbars((prev) => [...prev, { id: snackbarId, message: t('snackbar_all_copied') }]);
-      setTimeout(() => {
-        setSnackbars((prev) => prev.filter((s) => s.id !== snackbarId));
-      }, 500);
-      runReward('balloons');
-      ga('passwords_copied_all', { count: passwords.length, ui_language: language, surface: 'home' });
-    }
+  const handleCopyAll = (list: string[]) => {
+    if (list.length === 0) return;
+    navigator.clipboard.writeText(list.join('\n'));
+    const snackbarId = nextSnackbarId();
+    setSnackbars((prev) => [...prev, { id: snackbarId, message: t('snackbar_all_copied') }]);
+    setTimeout(() => {
+      setSnackbars((prev) => prev.filter((s) => s.id !== snackbarId));
+    }, 500);
+    runReward('balloons');
+    ga('passwords_copied_all', { count: list.length, ui_language: language, surface: 'bulk' });
   };
 
-  const handleDownloadAllClick = () => {
-    if (passwords.length > 0) {
-      const allPasswords = passwords.join('\n');
-      const blob = new Blob([allPasswords], { type: 'text/plain' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'passwords.txt';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      runReward('emoji');
-      ga('passwords_downloaded', { count: passwords.length, ui_language: language, surface: 'home' });
-    }
+  const handleDownloadAll = (list: string[]) => {
+    if (list.length === 0) return;
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(new Blob([list.join('\n')], { type: 'text/plain' }));
+    link.download = 'passwords.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    runReward('emoji');
+    ga('passwords_downloaded', { count: list.length, ui_language: language, surface: 'bulk' });
   };
 
   const runReward = (type: string) => {
@@ -353,80 +338,58 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
         />
       </div>
       <div
-        className={`surface-card relative flex w-full min-w-0 max-w-full flex-col overflow-visible rounded-[48px] shadow drop-shadow-lg p-[16px] md:p-[40px] lg:w-9/12 xl:w-9/12 2xl:w-9/12`}
+        className={`surface-card relative flex w-full min-w-0 max-w-full flex-col overflow-visible rounded-[48px] shadow drop-shadow-lg p-[16px] md:p-8 lg:w-[calc(100%-4rem)] lg:max-w-[68rem]`}
       >
-        {passwords.length > 0 ? (
-          <PasswordRow
-            password={passwords[0]}
-            index={0}
-            onGenerate={regenerateRow}
-            onCopy={handleCopyClick}
-            isAnimating={isAnimating}
-            isDarkMode={isDarkMode}
+        <div ref={formRef} className="contents">
+          {passwords.length > 0 ? (
+            <PasswordRow
+              password={passwords[0]}
+              index={0}
+              onGenerate={regenerateRow}
+              onCopy={handleCopyClick}
+              onShare={(target) => ga('password_shared', { target, count: 1, ui_language: language, surface: 'home' })}
+              isAnimating={isAnimating}
+              isDarkMode={isDarkMode}
+            />
+          ) : (
+            /* Layout placeholder: keeps the hero height stable before the first
+               password is generated on the client (avoids a visible content shift). */
+            <div className="my-3 w-full animate-pulse lg:my-1">
+              <div className="h-16 w-full rounded-[120px] border-2 border-solid border-[#E5F6FF] bg-[#ffffff] dark:border-transparent dark:bg-[#000000]" />
+            </div>
+          )}
+          <PasswordSettings
+            strength={<PasswordStrength analysis={passwordStrengthAnalysis} />}
+            passwordLength={passwordLength}
+            setPasswordLength={setPasswordLength}
+            onOpenBulk={openBulk}
+            selectedCharacterSets={selectedCharacterSets}
+            setSelectedCharacterSets={setSelectedCharacterSets}
+            selectedStandard={selectedStandard}
+            setSelectedStandard={setSelectedStandard}
+            setSnackbars={setSnackbars}
+            mode={mode}
+            onModeChange={setMode}
+            separator={separator}
+            setSeparator={setSeparator}
+            capitalize={capitalize}
+            setCapitalize={setCapitalize}
           />
-        ) : (
-          /* Layout placeholder: keeps the hero height stable before the first
-             password is generated on the client (avoids a visible content shift). */
-          <div className="my-5 w-full animate-pulse lg:my-1">
-            <div className="h-16 w-full rounded-[120px] border-2 border-solid border-[#E5F6FF] bg-[#ffffff] dark:border-transparent dark:bg-[#000000]" />
+          <div className="mt-3 flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+            <VerifiedUserIcon sx={{ fontSize: 16 }} />
+            <span>{t('generated_locally')}</span>
           </div>
-        )}
-        <PasswordStrength analysis={passwordStrengthAnalysis} />
-        <PasswordSettings
-          passwordLength={passwordLength}
-          setPasswordLength={setPasswordLength}
-          quantity={quantity}
-          setQuantity={setQuantity}
-          selectedCharacterSets={selectedCharacterSets}
-          setSelectedCharacterSets={setSelectedCharacterSets}
-          maxQuantity={maxQuantity}
-          selectedStandard={selectedStandard}
-          setSelectedStandard={setSelectedStandard}
-          setSnackbars={setSnackbars}
-          mode={mode}
-          onModeChange={setMode}
-          separator={separator}
-          setSeparator={setSeparator}
-          capitalize={capitalize}
-          setCapitalize={setCapitalize}
-        />
-        {passwords.slice(1).map((password, index) => (
-          <PasswordRow
-            key={index + 1}
-            password={password}
-            index={index + 1}
-            onGenerate={regenerateRow}
-            onCopy={handleCopyClick}
-            isAnimating={isAnimating}
-            isDarkMode={isDarkMode}
-          />
-        ))}
-        {passwords.length >= 2 && (
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-2">
-            <Button
-              className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} ${isDarkMode ? 'text-[#16394a]' : 'text-white'} font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto transition-all duration-200 hover:opacity-90`}
-              onClick={handleCopyAllClick}
-              disabled={isAnimating}
-              style={isAnimating ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
-            >
-              <FileCopyIcon sx={{ marginRight: 1, fontSize: { xs: '18px', sm: '20px' } }} />
-              {t('copy_all')}
-            </Button>
-            <Button
-              className={`${isDarkMode ? 'bg-[#05a9ff] hover:bg-[#38beff]' : 'bg-[#2A4E63] hover:bg-[#1f3b4c]'} ${isDarkMode ? 'text-[#16394a]' : 'text-white'} font-semibold text-[14px] sm:text-[16px] md:text-[20px] rounded-[60px] px-[12px] sm:px-[16px] py-[10px] sm:py-[12px] cursor-pointer w-full sm:w-auto transition-all duration-200 hover:opacity-90`}
-              onClick={handleDownloadAllClick}
-              disabled={isAnimating}
-              style={isAnimating ? { opacity: 0.5, cursor: 'not-allowed' } : {}}
-            >
-              <CloudDownloadIcon sx={{ marginRight: 1, fontSize: { xs: '18px', sm: '20px' } }} />
-              {t('download_all')}
-            </Button>
-          </div>
-        )}
-        <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-          <VerifiedUserIcon sx={{ fontSize: 16 }} />
-          <span>{t('generated_locally')}</span>
         </div>
+        {bulkOpen && (
+          <BulkPasswords
+            generate={generateBulk}
+            maxQuantity={maxQuantity}
+            onClose={() => setBulkOpen(false)}
+            onCopy={handleCopyAll}
+            onDownload={handleDownloadAll}
+            track={trackBulk}
+          />
+        )}
         {snackbars.map((snackbar) => (
           <Snackbar
             key={snackbar.id}
@@ -448,7 +411,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
           onClose={() => setSaveModalOpen(false)}
         />
       </div>
-      {/* Sits directly under the generator and appears after the first password. */}
+      {/* Pinned to the viewport bottom (portal) once a password exists and cookie consent is settled. */}
       <BookmarkPrompt
         language={language}
         active={passwords.length > 0 && Boolean(passwords[0])}
