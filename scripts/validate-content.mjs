@@ -18,8 +18,25 @@ function normalizeText(text) {
 }
 
 function tokenize(text) {
-  const matches = normalizeText(text).match(/[\p{L}\p{N}]{2,}/gu);
-  return matches || [];
+  const matches = normalizeText(text).match(/[\p{L}\p{N}]+/gu);
+  if (!matches) return [];
+
+  const cjkPattern = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u;
+  const tokens = [];
+  for (const match of matches) {
+    let latin = '';
+    for (const char of match) {
+      if (cjkPattern.test(char)) {
+        if (latin.length >= 2) tokens.push(latin);
+        latin = '';
+        tokens.push(char);
+      } else {
+        latin += char;
+      }
+    }
+    if (latin.length >= 2) tokens.push(latin);
+  }
+  return tokens;
 }
 
 function wordCount(text) {
@@ -60,15 +77,19 @@ function parseArgs(argv) {
     content: 'docs/content-agent-output.sample.json',
     brief: 'docs/content-agent-brief.json',
     semantic: 'docs/semantic-core.json',
+    profile: 'agent',
   };
 
   for (let i = 2; i < argv.length; i += 1) {
     const key = argv[i];
-    const value = argv[i + 1];
+    const inline = key.startsWith('--') && key.includes('=');
+    const value = inline ? key.slice(key.indexOf('=') + 1) : argv[i + 1];
+    const name = inline ? key.slice(0, key.indexOf('=')) : key;
     if (!value) continue;
-    if (key === '--content') args.content = value;
-    if (key === '--brief') args.brief = value;
-    if (key === '--semantic') args.semantic = value;
+    if (name === '--content') args.content = value;
+    if (name === '--brief') args.brief = value;
+    if (name === '--semantic') args.semantic = value;
+    if (name === '--profile') args.profile = value;
   }
   return args;
 }
@@ -89,7 +110,8 @@ function includesKeyword(text, keyword) {
 }
 
 function validate() {
-  const { content, brief, semantic } = parseArgs(process.argv);
+  const { content, brief, semantic, profile } = parseArgs(process.argv);
+  const isSiteProfile = profile === 'site';
   const briefJson = readJson(brief);
   const payload = ensureArrayPayload(readJson(content));
   const semanticJson = fs.existsSync(path.resolve(process.cwd(), semantic)) ? readJson(semantic) : null;
@@ -107,6 +129,8 @@ function validate() {
 
   const errors = [];
   const warnings = [];
+  const addQuality = (message) => (isSiteProfile ? warnings : errors).push(message);
+  const minWords = isSiteProfile ? 200 : 900;
   const seenPairs = new Set();
   const localeBuckets = new Map();
   const exactFingerprints = new Map();
@@ -139,25 +163,31 @@ function validate() {
 
     const text = buildArticleText(item);
     const wc = wordCount(text);
-    if (wc < 900) {
-      errors.push(`[word-count] ${pairKey} has ${wc}, required >= 900`);
+    if (wc < minWords) {
+      addQuality(`[word-count] ${pairKey} has ${wc}, required >= ${minWords}`);
     }
 
     const excerptLen = String(item.excerpt || '').length;
     const seoTitleLen = String(item.seoTitle || '').length;
     const seoDescLen = String(item.seoDescription || '').length;
     if (excerptLen < 140 || excerptLen > 220) {
-      errors.push(`[excerpt-length] ${pairKey} has ${excerptLen}, required 140-220`);
+      addQuality(`[excerpt-length] ${pairKey} has ${excerptLen}, required 140-220`);
     }
     if (seoTitleLen < 50 || seoTitleLen > 65) {
-      errors.push(`[seo-title-length] ${pairKey} has ${seoTitleLen}, required 50-65`);
+      addQuality(`[seo-title-length] ${pairKey} has ${seoTitleLen}, required 50-65`);
     }
     if (seoDescLen < 140 || seoDescLen > 160) {
-      errors.push(`[seo-description-length] ${pairKey} has ${seoDescLen}, required 140-160`);
+      addQuality(`[seo-description-length] ${pairKey} has ${seoDescLen}, required 140-160`);
     }
 
     const briefArticle = articleBySlug.get(item.slug);
-    const primaryKeywords = Array.isArray(briefArticle?.primary_keywords) ? briefArticle.primary_keywords : [];
+    // Primary-keyword checks describe new agent output. Site content already
+    // ships its own localized keyword sets, so the site profile skips them.
+    const primaryKeywords = isSiteProfile
+      ? []
+      : Array.isArray(briefArticle?.primary_keywords)
+        ? briefArticle.primary_keywords
+        : [];
     const loweredKeywordsArray = (item.keywords || []).map((k) => normalizeText(k));
 
     for (const kw of primaryKeywords) {
@@ -165,10 +195,10 @@ function validate() {
       const inKeywordsArray = loweredKeywordsArray.includes(kwNorm);
       const inText = includesKeyword(text, kw);
       if (!inKeywordsArray) {
-        errors.push(`[missing-primary-keyword-array] ${pairKey} missing "${kw}" in keywords[]`);
+        addQuality(`[missing-primary-keyword-array] ${pairKey} missing "${kw}" in keywords[]`);
       }
       if (!inText) {
-        errors.push(`[missing-primary-keyword-text] ${pairKey} missing "${kw}" in article text`);
+        addQuality(`[missing-primary-keyword-text] ${pairKey} missing "${kw}" in article text`);
       }
     }
 
@@ -224,13 +254,18 @@ function validate() {
   }
 
   console.log('Content validation summary');
+  console.log(`- Profile: ${profile}`);
   console.log(`- Records: ${payload.length}`);
   console.log(`- Errors: ${errors.length}`);
   console.log(`- Warnings: ${warnings.length}`);
 
   if (warnings.length) {
     console.log('\nWarnings:');
-    for (const w of warnings) console.log(`- ${w}`);
+    const shown = isSiteProfile ? warnings.slice(0, 10) : warnings;
+    for (const w of shown) console.log(`- ${w}`);
+    if (isSiteProfile && warnings.length > shown.length) {
+      console.log(`- ... and ${warnings.length - shown.length} more`);
+    }
   }
 
   if (errors.length) {

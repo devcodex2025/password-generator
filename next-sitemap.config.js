@@ -33,7 +33,7 @@ const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'about
  * and from that guide's hreflang alternates.
  */
 const guideLocaleAvailability = {
-  'wifi-password-guide': ['en'],
+  'wifi-password-guide': ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl', 'vi'],
 };
 const guideAvailableIn = (slug, langCode) =>
   (guideLocaleAvailability[slug] || SITEMAP_LANGUAGES).includes(langCode);
@@ -56,6 +56,7 @@ const viTranslatedGuideSlugs = [
   'pci-dss-password-requirements',
   'team-password-policy-template',
   'vpn-security-privacy-guide',
+  'wifi-password-guide',
 ];
 
 /* Map locale codes to hreflang values (ua → uk for Ukrainian) */

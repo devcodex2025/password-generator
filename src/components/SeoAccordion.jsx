@@ -12,6 +12,30 @@ function t(key, language) {
 function getTrustFaq(language) {
   return [
     {
+      question: t('faq_length_question', language),
+      answer: t('faq_length_answer', language),
+    },
+    {
+      question: t('faq_passphrase_question', language),
+      answer: t('faq_passphrase_answer', language),
+    },
+    {
+      question: t('faq_wifi_question', language),
+      answer: t('faq_wifi_answer', language),
+    },
+    {
+      question: t('faq_ideas_question', language),
+      answer: t('faq_ideas_answer', language),
+    },
+    {
+      question: t('faq_create_question', language),
+      answer: t('faq_create_answer', language),
+    },
+    {
+      question: t('faq_manager_question', language),
+      answer: t('faq_manager_answer', language),
+    },
+    {
       question: t('faq_storage_question', language),
       answer: t('faq_storage_answer', language),
     },

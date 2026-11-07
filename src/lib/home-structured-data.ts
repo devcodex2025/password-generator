@@ -24,6 +24,30 @@ export function buildHomeJsonLdScripts(locale: string): JsonLdScript[] {
   // reader cannot see as a Q&A breaks Google's content-parity rule.
   const qa = [
     {
+      q: t('faq_length_question') || 'How long should a password be?',
+      a: t('faq_length_answer') || 'Use at least 12 characters for everyday accounts and 16 for email, banking and work. The preset buttons set 8, 12, 16 or 20 characters in one click.',
+    },
+    {
+      q: t('faq_passphrase_question') || 'Is a passphrase stronger than a short password?',
+      a: t('faq_passphrase_answer') || 'A passphrase of five or six random words is easier to type and usually stronger than a short password with symbols. Switch the generator to Words mode to create one.',
+    },
+    {
+      q: t('faq_wifi_question') || 'How do I create a strong Wi-Fi password?',
+      a: t('faq_wifi_answer') || 'Generate 16 or more random characters, set the router to WPA3 or WPA2/WPA3 mixed mode, and disable WPS. The Wi-Fi password guide covers the full router checklist.',
+    },
+    {
+      q: t('faq_ideas_question') || 'Where can I find good password ideas?',
+      a: t('faq_ideas_answer') || 'Generate several random options instead of copying password examples from articles or social media. Pick one you can store in a password manager, and use our strong-password guide to check length and entropy.',
+    },
+    {
+      q: t('faq_create_question') || 'How do I create a strong password?',
+      a: t('faq_create_answer') || 'Open the generator, choose 16 characters or a five-word passphrase, and let it create the value. Store it in a password manager and use it for one account only.',
+    },
+    {
+      q: t('faq_manager_question') || 'Do I need a password manager?',
+      a: t('faq_manager_answer') || 'Yes, once you have more accounts than you can memorize. A manager stores unique passwords, fills them on your devices and warns about breaches. Our best password managers comparison covers the 2026 options.',
+    },
+    {
       q: t('faq_storage_question') || 'Does Generate Password To Me store generated passwords?',
       a: t('faq_storage_answer') || 'No. Password generation runs in your browser, and generated passwords are not stored on our servers. The tool is designed around client-side generation and privacy-first use.',
     },

@@ -33,6 +33,12 @@ const titles = Object.fromEntries(
   [...titleBlock.matchAll(/^\s{2}([a-z]{2}): '([^']*)',/gm)].map((m) => [m[1], m[2]]),
 );
 const faqKeys = [
+  ['faq_length_question', 'faq_length_answer'],
+  ['faq_passphrase_question', 'faq_passphrase_answer'],
+  ['faq_wifi_question', 'faq_wifi_answer'],
+  ['faq_ideas_question', 'faq_ideas_answer'],
+  ['faq_create_question', 'faq_create_answer'],
+  ['faq_manager_question', 'faq_manager_answer'],
   ['faq_storage_question', 'faq_storage_answer'],
   ['faq_sources_question', 'faq_sources_answer'],
   ['faq_trustworthy_question', 'faq_trustworthy_answer'],
@@ -66,9 +72,9 @@ for (const locale of locales) {
 - **Top queries (keyword map):** ${top5.map((k) => `\`${k}\``).join(', ')}
 - **Current title:** ${title}
 - **Current H1:** ${h1}
-- **Visible FAQ:** 4 items (storage, sources, trust, review). No length, passphrase or Wi-Fi questions yet.
+- **Visible FAQ:** 10 items (length, passphrase, Wi-Fi, ideas, create, manager, storage, sources, trust, review).
 - **Automated match:** ${matched.length}/5${matched.length ? ` (${matched.map((k) => `\`${k}\``).join(', ')})` : ''}
-- [ ] Native reviewer confirms at least 3/5 are covered naturally, or proposes localized title/H1/FAQ wording.
+- [ ] Native reviewer confirms the wording reads naturally and keeps home/guide intent separate.
 `);
 }
 
@@ -89,29 +95,29 @@ examples intent.
 |---|---|---:|---|
 ${rows.join('\n')}
 
-An \`Automated match\` of 0 or 1 is expected for most locales because the current
-home title/H1/FAQ were written for brand and generator intent, not for the query
-map. The review should decide which queries belong on the home page, which
-belong on a guide, and which should not be targeted at all.
+An \`Automated match\` of 3/5 or higher meets the issue's reviewer threshold. The
+home title/H1/FAQ now cover length, passphrase, Wi-Fi, ideas, creation and
+manager intent. The review should confirm that the copy reads naturally and that
+home pages still target generator/tool intent while guides target how-to,
+examples and length intent.
 
 ## Per-locale review
 
 ${sections.join('\n')}
-## Remaining content work (blocked on native review)
+## Remaining content work (needs native review)
 
-1. **P1.1 — home FAQ wording.** Add length, passphrase and Wi-Fi questions in
-   each locale only after a native speaker writes/approves the copy. Keep the
-   FAQPage JSON-LD in \`src/lib/home-structured-data.ts\` in lockstep with the
-   visible accordion in \`src/components/SeoAccordion.jsx\`.
-2. **P1.4 — password-manager platform sections.** Add Android, iPhone, Chrome
-   and Google Password Manager sections to
-   \`src/app/[locale]/best-password-managers-2026/page.tsx\` with localized copy
-   from the affiliate string files.
-3. **P1.5 — Wi-Fi guide translations.** The English guide is live at
-   \`/en/guides/wifi-password-guide\`. Translate and review it per locale, then
-   add the locale to \`guideLocaleAvailability\` in \`next-sitemap.config.js\`
-   (and to \`viTranslatedGuideSlugs\` for Vietnamese). Until then the route is
-   not generated for that locale and returns 404 by design.
+1. **P1.1 — home FAQ wording.** The 10 FAQ items are drafted in all 12 locales.
+   A native speaker should confirm phrasing, tone and the length/passphrase/Wi-Fi
+   answers. Keep the FAQPage JSON-LD in \`src/lib/home-structured-data.ts\` in
+   lockstep with the visible accordion in \`src/components/SeoAccordion.jsx\`.
+2. **P1.4 — password-manager platform sections.** Android, iPhone, Chrome and
+   Google Password Manager sections are drafted in
+   \`src/app/[locale]/best-password-managers-2026/page.tsx\`. Review the localized
+   copy, especially the Google Password Manager trade-offs.
+3. **P1.5 — Wi-Fi guide translations.** The guide ships in all 12 locales under
+   \`src/content/articles/wifi-password-guide.ts\`. The routes, hub and sitemap are
+   driven by \`guideLocaleAvailability\` in \`next-sitemap.config.js\`. A native
+   reviewer should check the router terminology and the example passwords.
 
 ## Measurement
 

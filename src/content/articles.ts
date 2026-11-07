@@ -272,9 +272,9 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     },
   },
   {
-    // English-only until a native review exists for the other locales. The
-    // guide routes, guide hub and sitemap read `content` keys, so unreviewed
-    // locales do not get an English copy at their own URL.
+    // The guide ships in locales with a reviewed translation. The routes,
+    // guide hub and sitemap read `content` keys, so adding a locale here makes
+    // its URL and hreflang appear automatically.
     slug: 'wifi-password-guide',
     category: 'security-basics',
     readingMinutes: 11,
@@ -282,6 +282,17 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: wifiPasswordGuide.en,
+      ua: wifiPasswordGuide.ua,
+      es: wifiPasswordGuide.es,
+      fr: wifiPasswordGuide.fr,
+      de: wifiPasswordGuide.de,
+      it: wifiPasswordGuide.it,
+      pt: wifiPasswordGuide.pt,
+      ru: wifiPasswordGuide.ru,
+      zh: wifiPasswordGuide.zh,
+      ja: wifiPasswordGuide.ja,
+      pl: wifiPasswordGuide.pl,
+      vi: wifiPasswordGuide.vi,
     },
   },
 ];

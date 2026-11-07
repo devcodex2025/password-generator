@@ -56,7 +56,7 @@
     "db:apply-schema": "node scripts/apply-content-schema.mjs",
     "db:seed-content": "node scripts/seed-content.mjs",
     "db:seed-content:mongo": "node scripts/seed-content-mongo.mjs",
-    "content:validate": "node scripts/validate-content.mjs",
+    "content:validate": "node scripts/validate-content.mjs --content docs/content-agent-output.sample.json --profile=site",
     "seo:locales": "node scripts/validate-seo-locales.mjs",
     "seo:review": "node scripts/seo-locale-review-report.mjs",
     "cdn:check": "node scripts/check-cdn.mjs",
