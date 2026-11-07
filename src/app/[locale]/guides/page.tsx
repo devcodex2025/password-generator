@@ -5,6 +5,7 @@ import { getCachedGuides } from '@/lib/cached-content';
 import { homeHref } from '@/lib/locale-links';
 import { getGuideCategoryLabel, getGuidesUiLabels } from '@/lib/guides-i18n';
 import { formatGuideDate, getGuidesUiCopy } from '@/lib/guides-ui';
+import { getStatisticsLinkCopy, hasStatisticsPage } from '@/lib/statistics-link';
 import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES, getArticleContentLocale } from '@/content/articles';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -223,6 +224,24 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
             );
           })}
         </div>
+
+        {/* Data page — only locales that actually publish it get a link, so no 404 anchors. */}
+        {hasStatisticsPage(locale) && (
+          <aside className="mt-8 rounded-24 border border-[#E5F6FF] dark:border-[#374151] bg-[#F7FCFF] dark:bg-[#111827] p-6">
+            <h2 className="text-xl font-semibold text-[#071016] dark:text-[#e0e0e0]">
+              {getStatisticsLinkCopy(locale).heading}
+            </h2>
+            <p className="mt-2 text-sm text-[#374151] dark:text-[#c7c7c7]">
+              {getStatisticsLinkCopy(locale).description}
+            </p>
+            <Link
+              href={`/${locale}/password-statistics-2026`}
+              className="mt-4 inline-flex items-center rounded-lg bg-[#2A4E63] px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-[#1d3a4a] dark:bg-[#38beff] dark:text-[#071016] dark:hover:bg-[#7dd3fc]"
+            >
+              {getStatisticsLinkCopy(locale).label}
+            </Link>
+          </aside>
+        )}
 
         {/* Affiliate recommendation */}
         <NordPassAffiliatePromo

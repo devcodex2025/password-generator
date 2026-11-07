@@ -9,6 +9,7 @@ import lang from './lang.json';
 import seoData from './SeoData';
 import { getLinkLabel } from '@/utils/linkTranslations';
 import { getGuideTitle } from '@/utils/guideTitles';
+import { getStatisticsLinkCopy, hasStatisticsPage } from '@/lib/statistics-link';
 
 function t(key, language) {
   return lang[key] && lang[key][language] ? lang[key][language] : key;
@@ -75,6 +76,13 @@ const Footer = ({ language }) => {
                     {linkLabel('bestManagers')}
                   </Link>
                 </li>
+                {hasStatisticsPage(locale) && (
+                  <li className="w-full">
+                    <Link href={`/${locale}/password-statistics-2026`} className={linkClass}>
+                      {getStatisticsLinkCopy(locale).label}
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
 
