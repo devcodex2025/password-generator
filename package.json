@@ -57,6 +57,7 @@
     "db:seed-content": "node scripts/seed-content.mjs",
     "db:seed-content:mongo": "node scripts/seed-content-mongo.mjs",
     "content:validate": "node scripts/validate-content.mjs",
+    "seo:locales": "node scripts/validate-seo-locales.mjs",
     "cdn:check": "node scripts/check-cdn.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "backlinks": "node scripts/backlink-queue.mjs",
@@ -69,6 +70,7 @@
     "secrets:scan": "gitleaks git . --config .gitleaks.toml --redact -v",
     "hooks:install": "git config core.hooksPath .githooks",
     "keywords": "node scripts/keyword-research.mjs",
+    "keywords:deep": "node scripts/keyword-research-deep.mjs",
     "keywords:map": "node scripts/keyword-map.mjs",
     "keywords:cloud": "node scripts/keyword-cloud.mjs"
   },

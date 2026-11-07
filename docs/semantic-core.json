@@ -1,6 +1,6 @@
 {
   "topic": "password generator / генератор паролів / генератор паролей / generatore di password / générateur de mots de passe / password generator (de, pt, pl) / generador de contraseñas / 密码生成器 / パスワードジェネレーター",
-  "languages": ["en", "ua", "es", "fr", "de", "it", "pt", "ru", "zh", "ja", "pl"],
+  "languages": ["en", "ua", "es", "fr", "de", "it", "pt", "ru", "zh", "ja", "pl", "vi"],
   "keywords": {
     "en": {
       "high": [
@@ -264,6 +264,30 @@
         "kalkulator entropii",
         "najlepsze praktyki polityki haseł",
         "unikaj popularnych haseł"
+      ]
+    },
+    "vi": {
+      "high": [
+        "tạo mật khẩu",
+        "mật khẩu mạnh",
+        "mật khẩu ngẫu nhiên",
+        "trình quản lý mật khẩu",
+        "kiểm tra mật khẩu"
+      ],
+      "medium": [
+        "tạo mật khẩu online",
+        "mật khẩu an toàn",
+        "cụm mật khẩu",
+        "chính sách mật khẩu",
+        "cách tạo mật khẩu mạnh",
+        "mật khẩu 12 ký tự"
+      ],
+      "low": [
+        "mật khẩu wifi",
+        "quên mật khẩu",
+        "mật khẩu tốt nhất",
+        "độ mạnh mật khẩu",
+        "ví dụ mật khẩu"
       ]
     }
   }

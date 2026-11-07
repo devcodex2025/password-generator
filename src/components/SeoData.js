@@ -17,6 +17,7 @@ const LONG_TAIL_BY_LANG = {
   zh: ['免费密码生成器', '在线密码生成器', '安全密码生成器'],
   ja: ['無料 パスワード 生成', 'オンライン パスワード 生成', '安全な パスワード 生成'],
   pl: ['darmowy generator haseł', 'generator haseł online', 'generator silnych haseł'],
+  vi: ['tạo mật khẩu miễn phí', 'tạo mật khẩu online', 'trình tạo mật khẩu mạnh'],
 };
 
 function getK(lang, tier, index) {

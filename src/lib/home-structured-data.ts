@@ -19,19 +19,10 @@ export interface JsonLdScript {
 export function buildHomeJsonLdScripts(locale: string): JsonLdScript[] {
   const t = (key: string) => translate(key, locale);
 
+  // Keep this list in lockstep with the visible FAQ accordion in
+  // `src/components/SeoAccordion.jsx` (`getTrustFaq`). Marking up anything the
+  // reader cannot see as a Q&A breaks Google's content-parity rule.
   const qa = [
-    {
-      q: t('howtouse_title') || 'How to use the password generator?',
-      a: [t('howtouse_intro'), t('howtouse_step1'), t('howtouse_step2'), t('howtouse_step3')].filter(Boolean).join(' '),
-    },
-    {
-      q: t('seotext_why_title') || 'Why use this password generator?',
-      a: [t('seotext_why1'), t('seotext_why2')].filter(Boolean).join(' '),
-    },
-    {
-      q: t('security_standards_title') || 'Security standards compliance',
-      a: [t('nist_compliance_desc'), t('pci_dss_compliance_desc')].filter(Boolean).join(' '),
-    },
     {
       q: t('faq_storage_question') || 'Does Generate Password To Me store generated passwords?',
       a: t('faq_storage_answer') || 'No. Password generation runs in your browser, and generated passwords are not stored on our servers. The tool is designed around client-side generation and privacy-first use.',
@@ -39,6 +30,10 @@ export function buildHomeJsonLdScripts(locale: string): JsonLdScript[] {
     {
       q: t('faq_sources_question') || 'Which security sources guide the recommendations?',
       a: t('faq_sources_answer') || 'The guidance is reviewed against NIST SP 800-63B password recommendations, PCI DSS v4.0 password requirements, and Have I Been Pwned k-anonymity breach-checking practices where breach checks are used.',
+    },
+    {
+      q: t('faq_trustworthy_question') || 'How do you keep the FAQ trustworthy?',
+      a: t('faq_trustworthy_answer') || 'We keep answers short, separate general security education from guarantees, cite primary sources, and review the FAQ when major password standards, browser APIs, or breach-checking practices change.',
     },
     {
       q: t('faq_review_question') || 'When was this FAQ reviewed?',

@@ -15,6 +15,7 @@ const naturalTextByLang: Record<string, string> = {
   zh: '我们的生成器使用加密随机性创建能够抵御暴力攻击的密码。每个密码完全在您的浏览器中生成——不会发送到服务器。',
   ja: '当ジェネレーターは暗号学的乱数を使用し、総当たり攻撃に耐えるパスワードを作成します。すべてのパスワードはブラウザ内で生成され、サーバーには送信されません。',
   pl: 'Nasz generator wykorzystuje kryptograficzną losowość do tworzenia haseł odpornych na ataki brute-force. Każde hasło jest generowane w Twojej przeglądarce — nic nie jest wysyłane na serwer.',
+  vi: 'Trình tạo của chúng tôi sử dụng tính ngẫu nhiên mật mã để tạo mật khẩu chống lại các cuộc tấn công brute-force. Mỗi mật khẩu được tạo hoàn toàn trong trình duyệt của bạn — không có gì được gửi đến máy chủ.',
 };
 
 const SEOKeywords: React.FC<SEOKeywordsProps> = ({ language, className }) => {
