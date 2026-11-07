@@ -106,6 +106,12 @@ examples and length intent.
 ${sections.join('\n')}
 ## Remaining content work (needs native review)
 
+The 2026-11 content cycle added language-specific length/example/checker FAQ
+sections to how-to-create-strong-passwords and a words-mode passphrase section
+to passphrase-vs-password-entropy in all 12 locales. Both guides are marked
+review_status: native-review-pending in docs/content-agent-brief.json until a
+native speaker signs off.
+
 1. **P1.1 — home FAQ wording.** The 10 FAQ items are drafted in all 12 locales.
    A native speaker should confirm phrasing, tone and the length/passphrase/Wi-Fi
    answers. Keep the FAQPage JSON-LD in \`src/lib/home-structured-data.ts\` in
