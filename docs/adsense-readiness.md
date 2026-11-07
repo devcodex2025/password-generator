@@ -39,7 +39,7 @@ action that only the site owner can perform.
 
 - Thin/duplicate content: we have 11 localized guides + FAQ sections; keep growing them.
 - Missing privacy policy or cookie disclosure: covered above.
-- Site under construction / no navigation: covered (205 pages, guides, legal pages).
+- Site under construction / no navigation: covered (231 sitemap URLs, guides, legal pages).
 - Traffic that looks artificial: never buy traffic or clicks; IndexNow is fine, click farms are not.
 
 ## After approval

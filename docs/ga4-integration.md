@@ -12,9 +12,10 @@ Status: **read access verified 2026-11-02**, funnel instrumentation updated same
 | Time zone / currency | Europe/Kiev / USD |
 | Data retention | **14 months** (was 2 months until 2026-11-02) |
 
-`NEXT_PUBLIC_GA_ID` is set in Vercel: events land in this property. The `G-22LZX0XFLM` tag in
-`public/index.html` is a leftover from the static export and points at a different property; that
-file is not used by the Next app router.
+`NEXT_PUBLIC_GA_ID` is set in Vercel: events land in this property. A `G-22LZX0XFLM` tag used to
+live in `public/index.html`, a leftover from the static export that pointed at a different
+property. That file was deleted on 2026-11-07 (it was also being served as a duplicate of the home
+page at `/index.html`), so no stray tag remains.
 
 ## Access model
 

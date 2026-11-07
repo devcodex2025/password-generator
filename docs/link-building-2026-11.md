@@ -1,7 +1,8 @@
 # Link building kit — generatepasswordto.me (November 2026)
 
-What is already done in the codebase: internal linking is complete (205 pages, 0 orphans),
-IndexNow and sitemap submission work, structured data is in place.
+What is already done in the codebase: internal linking covers all 231 sitemap URLs (0 orphans as of
+2026-11-07 — the statistics pages previously had no inbound links and now do), IndexNow and sitemap
+submission work, structured data is in place.
 
 What cannot be automated from this repository: every item below requires **your accounts**
 (Product Hunt, Reddit, directory profiles, email). This file is the ready-to-use kit so the
