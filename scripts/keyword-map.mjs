@@ -117,9 +117,10 @@ for (const data of Object.values(out.locales)) {
 lines.push('## Coverage across locales', '');
 lines.push('| Cluster | Locales with demand |');
 lines.push('|---|---|');
+const localeCount = Object.keys(out.locales).length;
 Object.entries(clusterTotals)
   .sort((a, b) => b[1] - a[1])
-  .forEach(([n, c]) => lines.push(`| ${n} | ${c}/11 |`));
+  .forEach(([n, c]) => lines.push(`| ${n} | ${c}/${localeCount} |`));
 lines.push('');
 
 for (const [code, data] of Object.entries(out.locales)) {
