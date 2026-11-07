@@ -5,7 +5,7 @@ const GUIDES_REVALIDATE_SECONDS = 3600;
 
 // Cache key version. Bump when bundled guide content changes so an incremental
 // deploy does not keep serving articles from the previous build's data cache.
-const GUIDES_CACHE_VERSION = 'v3';
+const GUIDES_CACHE_VERSION = 'v4';
 
 export const getCachedGuides = unstable_cache(
   async (locale: string) => contentRepository.listGuides(locale),

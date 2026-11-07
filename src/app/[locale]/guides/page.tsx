@@ -5,7 +5,7 @@ import { getCachedGuides } from '@/lib/cached-content';
 import { homeHref } from '@/lib/locale-links';
 import { getGuideCategoryLabel, getGuidesUiLabels } from '@/lib/guides-i18n';
 import { formatGuideDate, getGuidesUiCopy } from '@/lib/guides-ui';
-import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES } from '@/content/articles';
+import { ARTICLE_CATALOG, SUPPORTED_CONTENT_LANGUAGES, getArticleContentLocale } from '@/content/articles';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import GuideReadButton from '@/components/GuideReadButton';
@@ -69,11 +69,16 @@ const guidesMetaI18n: Record<string, { title: string; description: string }> = {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  // The VI guide index can be indexed once every catalog guide has a vi body.
-  const hasVi = ARTICLE_CATALOG.every((article) => Boolean(article.content.vi));
-  const isFallbackLocale = locale === 'vi' && !hasVi;
+  // The index only lists guides with a reviewed translation for this locale,
+  // so it is indexable as soon as at least one localized guide exists. An
+  // English-only guide must not make the whole localized hub look untranslated.
+  const hasLocaleGuides = ARTICLE_CATALOG.some((article) => Boolean(getArticleContentLocale(article, locale)));
+  const isFallbackLocale = !hasLocaleGuides;
   const canonical = isFallbackLocale ? `${baseUrl}/en/guides` : `${baseUrl}/${locale}/guides`;
   const meta = guidesMetaI18n[locale] || guidesMetaI18n.en;
+  const localesWithGuides = SUPPORTED_CONTENT_LANGUAGES.filter((lang) =>
+    ARTICLE_CATALOG.some((article) => Boolean(getArticleContentLocale(article, lang))),
+  );
 
   return {
     title: meta.title,
@@ -82,7 +87,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       canonical,
       languages: {
         ...Object.fromEntries(
-          SUPPORTED_CONTENT_LANGUAGES.filter((lang) => lang !== 'vi' || hasVi).map((lang) => [
+          localesWithGuides.map((lang) => [
             hreflangMap[lang] || lang,
             `${baseUrl}/${lang}/guides`,
           ])

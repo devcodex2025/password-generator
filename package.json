@@ -72,7 +72,8 @@
     "keywords": "node scripts/keyword-research.mjs",
     "keywords:deep": "node scripts/keyword-research-deep.mjs",
     "keywords:map": "node scripts/keyword-map.mjs",
-    "keywords:cloud": "node scripts/keyword-cloud.mjs"
+    "keywords:cloud": "node scripts/keyword-cloud.mjs",
+    "keywords:brief": "node scripts/update-content-brief-keywords.mjs"
   },
   "eslintConfig": {
     "extends": [

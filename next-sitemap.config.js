@@ -23,8 +23,20 @@ const guideSlugs = [
   'team-password-policy-template',
   'secure-password-generator-guide',
   'vpn-security-privacy-guide',
+  'wifi-password-guide',
 ];
 const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'about', 'best-password-managers-2026'];
+
+/**
+ * Guides that exist in a subset of locales. A guide is published only where a
+ * reviewed translation exists; missing locales are excluded from the sitemap
+ * and from that guide's hreflang alternates.
+ */
+const guideLocaleAvailability = {
+  'wifi-password-guide': ['en'],
+};
+const guideAvailableIn = (slug, langCode) =>
+  (guideLocaleAvailability[slug] || SITEMAP_LANGUAGES).includes(langCode);
 
 /**
  * Guides that have a Vietnamese `vi` export in src/content/articles/<slug>.ts.
@@ -54,8 +66,8 @@ const toHreflang = (code) => hreflangMap[code] || code;
  * Build xhtml:link alternateRefs for a given path suffix.
  * e.g. suffix = '/guides' → alternates for /en/guides, /ua/guides, …
  */
-function buildAlternateRefs(pathSuffix) {
-  return availableLanguages.map((langCode) => ({
+function buildAlternateRefs(pathSuffix, langs = availableLanguages) {
+  return langs.map((langCode) => ({
     // The English home lives at `/`; its `/en` alias is redirected.
     href:
       langCode === 'en' && pathSuffix === ''
@@ -137,13 +149,18 @@ module.exports = {
     };
 
     const guideArticlePages = availableLanguages.flatMap((langCode) =>
-      guideSlugs.map((slug) => ({
-        loc: `/${langCode}/guides/${slug}`,
-        changefreq: 'monthly',
-        priority: 0.7,
-        lastmod: new Date().toISOString(),
-        alternateRefs: buildAlternateRefs(`/guides/${slug}`),
-      }))
+      guideSlugs
+        .filter((slug) => guideAvailableIn(slug, langCode))
+        .map((slug) => ({
+          loc: `/${langCode}/guides/${slug}`,
+          changefreq: 'monthly',
+          priority: 0.7,
+          lastmod: new Date().toISOString(),
+          alternateRefs: buildAlternateRefs(
+            `/guides/${slug}`,
+            availableLanguages.filter((lang) => guideAvailableIn(slug, lang)),
+          ),
+        }))
     );
 
     const staticPages = availableLanguages.flatMap((langCode) =>

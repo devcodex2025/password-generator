@@ -91,6 +91,13 @@ const GUIDE_INTERLINK_PLAN: Record<string, GuideInterlinkEntry[]> = {
     { kind: 'home', anchorKey: 'home-generator', placement: 'conclusion' },
     { kind: 'guides', anchorKey: 'visit-guide-hub', placement: 'conclusion' },
   ],
+  // English-only for now; outbound links target guides that exist in EN.
+  'wifi-password-guide': [
+    { kind: 'guide', target: 'how-to-create-strong-passwords', anchorKey: 'strong-password-method', placement: 'intro' },
+    { kind: 'guide', target: 'password-manager-vs-manual-storage', anchorKey: 'store-long-secrets-in-manager', placement: 'body' },
+    { kind: 'home', anchorKey: 'home-generator', placement: 'conclusion' },
+    { kind: 'guides', anchorKey: 'visit-guide-hub', placement: 'conclusion' },
+  ],
 };
 
 export function getGuideInterlinkEntries(slug: string): GuideInterlinkEntry[] {
