@@ -1,16 +1,18 @@
 const lang = require('./src/components/lang.json');
+const { lastmodForPath } = require('./sitemap-lastmod.js');
 
 /**
- * Locales that have fully translated routes and content. `vi` is handled
- * separately below: its home/legal pages are always listed, while guide pages
- * are listed only for slugs with a Vietnamese translation.
+ * Locales with fully translated routes and content. `vi` is part of the same
+ * set as the others: every page it exists for is listed, and every hreflang
+ * cluster that points at a `vi` URL lists it back. Asymmetric clusters (a page
+ * declaring `vi` as an alternate while the `vi` page does not declare it) are
+ * one of the things Search Console flags and Google resolves by ignoring the
+ * cluster.
  */
 const SITEMAP_LANGUAGES = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl'];
-
-const getAvailableLanguages = () => SITEMAP_LANGUAGES;
+const ALL_LANGUAGES = [...SITEMAP_LANGUAGES, 'vi'];
 
 const siteUrl = 'https://www.generatepasswordto.me';
-const availableLanguages = getAvailableLanguages();
 const guideSlugs = [
   'how-to-create-strong-passwords',
   'password-manager-vs-manual-storage',
@@ -33,10 +35,10 @@ const staticPageSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'about
  * and from that guide's hreflang alternates.
  */
 const guideLocaleAvailability = {
-  'wifi-password-guide': ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'ja', 'pl', 'vi'],
+  'wifi-password-guide': ALL_LANGUAGES,
 };
 const guideAvailableIn = (slug, langCode) =>
-  (guideLocaleAvailability[slug] || SITEMAP_LANGUAGES).includes(langCode);
+  (guideLocaleAvailability[slug] || ALL_LANGUAGES).includes(langCode);
 
 /**
  * Guides that have a Vietnamese `vi` export in src/content/articles/<slug>.ts.
@@ -63,12 +65,27 @@ const viTranslatedGuideSlugs = [
 const hreflangMap = { ua: 'uk' };
 const toHreflang = (code) => hreflangMap[code] || code;
 
+/** Locales a specific page exists in. Everything except the data page is 12/12. */
+const DATA_PAGE_LANGUAGES = ['en', 'ua', 'vi'];
+const languagesForPage = (pathSuffix) =>
+  pathSuffix === '/password-statistics-2026' ? DATA_PAGE_LANGUAGES : ALL_LANGUAGES;
+
+/** Locales a guide article exists in: reviewed translation required. */
+const languagesForGuide = (slug) =>
+  ALL_LANGUAGES.filter(
+    (langCode) =>
+      guideAvailableIn(slug, langCode) &&
+      (langCode !== 'vi' || viTranslatedGuideSlugs.includes(slug)),
+  );
+
 /**
  * Build xhtml:link alternateRefs for a given path suffix.
  * e.g. suffix = '/guides' → alternates for /en/guides, /ua/guides, …
+ *
+ * `x-default` always points at the English URL (the root for the home page).
  */
-function buildAlternateRefs(pathSuffix, langs = availableLanguages) {
-  return langs.map((langCode) => ({
+function buildAlternateRefs(pathSuffix, langs) {
+  const refs = langs.map((langCode) => ({
     // The English home lives at `/`; its `/en` alias is redirected.
     href:
       langCode === 'en' && pathSuffix === ''
@@ -77,6 +94,12 @@ function buildAlternateRefs(pathSuffix, langs = availableLanguages) {
     hreflang: toHreflang(langCode),
     hrefIsAbsolute: true,
   }));
+  refs.push({
+    href: pathSuffix === '' ? siteUrl : `${siteUrl}/en${pathSuffix}`,
+    hreflang: 'x-default',
+    hrefIsAbsolute: true,
+  });
+  return refs;
 }
 
 module.exports = {
@@ -114,102 +137,56 @@ module.exports = {
     ],
   },
   additionalPaths: async (config) => {
-    // `vi` has routes and translated home/legal pages. Vietnamese guide articles
-    // are listed only for slugs that have a translated `vi` export.
-    const allLanguages = [...availableLanguages, 'vi'];
-    const viStaticSlugs = ['privacy-policy', 'terms-of-service', 'contact', 'about', 'best-password-managers-2026'];
-
-    const localePages = allLanguages
+    const localePages = ALL_LANGUAGES
       .filter((langCode) => langCode !== 'en')
       .map((langCode) => ({
         loc: `/${langCode}`,
         changefreq: 'weekly',
         priority: 0.9,
-        lastmod: new Date().toISOString(),
-        alternateRefs: buildAlternateRefs(''),
+        lastmod: lastmodForPath('/'),
+        alternateRefs: buildAlternateRefs('', languagesForPage('')),
       }));
 
-    const guideIndexPages = availableLanguages.map((langCode) => ({
+    const guideIndexPages = ALL_LANGUAGES.map((langCode) => ({
       loc: `/${langCode}/guides`,
       changefreq: 'weekly',
       priority: 0.8,
-      lastmod: new Date().toISOString(),
-      alternateRefs: buildAlternateRefs('/guides'),
+      lastmod: lastmodForPath('/guides'),
+      alternateRefs: buildAlternateRefs('/guides', languagesForPage('/guides')),
     }));
 
-    const viGuideIndexPage = {
-      loc: '/vi/guides',
-      changefreq: 'weekly',
-      priority: 0.8,
-      lastmod: new Date().toISOString(),
-      alternateRefs: [
-        ...buildAlternateRefs('/guides'),
-        { href: `${siteUrl}/vi/guides`, hreflang: 'vi', hrefIsAbsolute: true },
-        { href: `${siteUrl}/en/guides`, hreflang: 'x-default', hrefIsAbsolute: true },
-      ],
-    };
-
-    const guideArticlePages = availableLanguages.flatMap((langCode) =>
+    const guideArticlePages = ALL_LANGUAGES.flatMap((langCode) =>
       guideSlugs
-        .filter((slug) => guideAvailableIn(slug, langCode))
+        .filter((slug) => languagesForGuide(slug).includes(langCode))
         .map((slug) => ({
           loc: `/${langCode}/guides/${slug}`,
           changefreq: 'monthly',
           priority: 0.7,
-          lastmod: new Date().toISOString(),
-          alternateRefs: buildAlternateRefs(
-            `/guides/${slug}`,
-            availableLanguages.filter((lang) => guideAvailableIn(slug, lang)),
-          ),
+          lastmod: lastmodForPath(`/guides/${slug}`),
+          alternateRefs: buildAlternateRefs(`/guides/${slug}`, languagesForGuide(slug)),
         }))
     );
 
-    const staticPages = availableLanguages.flatMap((langCode) =>
+    const staticPages = ALL_LANGUAGES.flatMap((langCode) =>
       staticPageSlugs.map((slug) => ({
         loc: `/${langCode}/${slug}`,
         changefreq: 'monthly',
         priority: 0.6,
-        lastmod: new Date().toISOString(),
-        alternateRefs: buildAlternateRefs(`/${slug}`),
+        lastmod: lastmodForPath(`/${slug}`),
+        alternateRefs: buildAlternateRefs(`/${slug}`, languagesForPage(`/${slug}`)),
       }))
     );
 
-    const viStaticPages = viStaticSlugs.map((slug) => ({
-      loc: `/vi/${slug}`,
-      changefreq: 'monthly',
-      priority: 0.6,
-      lastmod: new Date().toISOString(),
-      alternateRefs: [
-        ...buildAlternateRefs(`/${slug}`),
-        { href: `${siteUrl}/vi/${slug}`, hreflang: 'vi', hrefIsAbsolute: true },
-        { href: `${siteUrl}/en/${slug}`, hreflang: 'x-default', hrefIsAbsolute: true },
-      ],
-    }));
-
-    const viGuideArticlePages = viTranslatedGuideSlugs.map((slug) => ({
-      loc: `/vi/guides/${slug}`,
-      changefreq: 'monthly',
-      priority: 0.7,
-      lastmod: new Date().toISOString(),
-      alternateRefs: [
-        ...buildAlternateRefs(`/guides/${slug}`),
-        { href: `${siteUrl}/vi/guides/${slug}`, hreflang: 'vi', hrefIsAbsolute: true },
-        { href: `${siteUrl}/en/guides/${slug}`, hreflang: 'x-default', hrefIsAbsolute: true },
-      ],
-    }));
-
     // Link-worthy data page (published in EN, UA and VI).
-    const dataPages = ['en', 'ua', 'vi'].map((langCode) => ({
+    const dataPages = DATA_PAGE_LANGUAGES.map((langCode) => ({
       loc: `/${langCode}/password-statistics-2026`,
       changefreq: 'monthly',
       priority: 0.7,
-      lastmod: new Date().toISOString(),
-      alternateRefs: [
-        { href: `${siteUrl}/en/password-statistics-2026`, hreflang: 'en', hrefIsAbsolute: true },
-        { href: `${siteUrl}/ua/password-statistics-2026`, hreflang: 'uk', hrefIsAbsolute: true },
-        { href: `${siteUrl}/vi/password-statistics-2026`, hreflang: 'vi', hrefIsAbsolute: true },
-        { href: `${siteUrl}/en/password-statistics-2026`, hreflang: 'x-default', hrefIsAbsolute: true },
-      ],
+      lastmod: lastmodForPath('/password-statistics-2026'),
+      alternateRefs: buildAlternateRefs(
+        '/password-statistics-2026',
+        languagesForPage('/password-statistics-2026'),
+      ),
     }));
 
     // Root URL (English home, served via middleware rewrite) — no page.tsx generates it anymore.
@@ -217,21 +194,11 @@ module.exports = {
       loc: '/',
       changefreq: 'weekly',
       priority: 1.0,
-      lastmod: new Date().toISOString(),
-      alternateRefs: [
-        { href: siteUrl, hreflang: 'en', hrefIsAbsolute: true },
-        ...availableLanguages
-          .filter((langCode) => langCode !== 'en')
-          .map((langCode) => ({
-            href: `${siteUrl}/${langCode}`,
-            hreflang: toHreflang(langCode),
-            hrefIsAbsolute: true,
-          })),
-        { href: siteUrl, hreflang: 'x-default', hrefIsAbsolute: true },
-      ],
+      lastmod: lastmodForPath('/'),
+      alternateRefs: buildAlternateRefs('', languagesForPage('')),
     };
 
-    return [rootPage, ...localePages, ...guideIndexPages, viGuideIndexPage, ...guideArticlePages, ...staticPages, ...viStaticPages, ...viGuideArticlePages, ...dataPages];
+    return [rootPage, ...localePages, ...guideIndexPages, ...guideArticlePages, ...staticPages, ...dataPages];
   },
   transform: async (config, path) => {
     // `/en` redirects to `/`; only the canonical URL belongs in the sitemap.
@@ -250,7 +217,7 @@ module.exports = {
       loc: path,
       changefreq: 'weekly',
       priority: locale ? 0.9 : 0.8,
-      lastmod: new Date().toISOString(),
+      lastmod: lastmodForPath(path),
     };
   },
 };

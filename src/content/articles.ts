@@ -44,7 +44,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'how-to-create-strong-passwords',
     category: 'security-basics',
     readingMinutes: 14,
-    updatedAt: '2026-10-31',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: howToCreateStrongPasswords.en,
@@ -65,7 +65,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'password-manager-vs-manual-storage',
     category: 'security-basics',
     readingMinutes: 14,
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: passwordManagerVsManualStorage.en,
@@ -86,7 +86,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'passphrase-vs-password-entropy',
     category: 'implementation',
     readingMinutes: 11,
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: passphraseVsPasswordEntropy.en,
@@ -107,7 +107,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'nist-800-63b-password-rules',
     category: 'policy',
     readingMinutes: 13,
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: nist80063bPasswordRules.en,
@@ -128,7 +128,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'pci-dss-password-requirements',
     category: 'policy',
     readingMinutes: 12,
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: pciDssPasswordRequirements.en,
@@ -149,7 +149,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'what-to-do-after-password-breach',
     category: 'incident-response',
     readingMinutes: 12,
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: whatToDoAfterPasswordBreach.en,
@@ -170,7 +170,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'two-factor-authentication-basics',
     category: 'security-basics',
     readingMinutes: 11,
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: twoFactorAuthenticationBasics.en,
@@ -191,7 +191,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'common-password-mistakes',
     category: 'security-basics',
     readingMinutes: 13,
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: commonPasswordMistakes.en,
@@ -212,7 +212,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'team-password-policy-template',
     category: 'implementation',
     readingMinutes: 14,
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: teamPasswordPolicyTemplate.en,
@@ -233,7 +233,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'secure-password-generator-guide',
     category: 'implementation',
     readingMinutes: 12,
-    updatedAt: '2026-04-15',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: securePasswordGeneratorGuide.en,
@@ -254,7 +254,7 @@ export const ARTICLE_CATALOG: ArticleEntry[] = [
     slug: 'vpn-security-privacy-guide',
     category: 'security-basics',
     readingMinutes: 16,
-    updatedAt: '2026-04-29',
+    updatedAt: '2026-11-07',
     author: 'GeneratePasswordTo Editorial Team',
     content: {
       en: vpnSecurityPrivacyGuide.en,
