@@ -12,7 +12,8 @@
     "ru",
     "zh",
     "ja",
-    "pl"
+    "pl",
+    "vi"
   ],
   "content_format": {
     "type": "json",
@@ -130,6 +131,22 @@
       "primary_keywords": [
         "secure password generator guide",
         "password generator settings"
+      ]
+    },
+    {
+      "slug": "vpn-security-privacy-guide",
+      "intent": "Educational",
+      "primary_keywords": [
+        "vpn security",
+        "vpn privacy guide"
+      ]
+    },
+    {
+      "slug": "wifi-password-guide",
+      "intent": "Practical guide",
+      "primary_keywords": [
+        "wifi password",
+        "strong wifi password"
       ]
     }
   ],
