@@ -25,6 +25,7 @@ const GUIDE_INTERLINK_PLAN: Record<string, GuideInterlinkEntry[]> = {
     { kind: 'guide', target: 'secure-password-generator-guide', anchorKey: 'generator-mixes-randomness', placement: 'intro' },
     { kind: 'guide', target: 'common-password-mistakes', anchorKey: 'avoid-common-password-mistakes', placement: 'body' },
     { kind: 'guide', target: 'passphrase-vs-password-entropy', anchorKey: 'passphrases-beat-short-passwords', placement: 'body' },
+    { kind: 'guide', target: 'wifi-password-guide', anchorKey: 'secure-wifi-password', placement: 'body' },
     { kind: 'home', anchorKey: 'home-generator', placement: 'conclusion' },
     { kind: 'guides', anchorKey: 'visit-guide-hub', placement: 'conclusion' },
   ],
