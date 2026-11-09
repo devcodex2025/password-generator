@@ -1,5 +1,30 @@
 /** @type {import('next').NextConfig} */
+const isProduction = process.env.NODE_ENV === 'production';
+
+// Baseline CSP. Inline scripts are required by the consent bootstrap and
+// Next.js hydration, and the ad/GTM tags can use eval, so `'unsafe-inline'`
+// and `'unsafe-eval'` remain until a nonce pipeline and a provider audit are
+// in place. The allowlists still block arbitrary third-party script/connect
+// origins. Update them when adding a new analytics or advertising provider.
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'none'",
+  "form-action 'self'",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.googlesyndication.com https://*.doubleclick.net https://*.googleadservices.com https://*.google.com https://*.gstatic.com https://*.adtrafficquality.google https://*.vercel-scripts.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data:",
+  "connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.googletagmanager.com https://*.googlesyndication.com https://*.doubleclick.net https://*.googleadservices.com https://*.google.com https://*.gstatic.com https://*.adtrafficquality.google https://api.pwnedpasswords.com https://*.vercel-insights.com https://*.vercel-scripts.com",
+  "frame-src 'self' https://*.googlesyndication.com https://*.doubleclick.net https://www.google.com https://*.google.com https://*.adtrafficquality.google",
+  "worker-src 'self' blob:",
+  "manifest-src 'self'",
+  ...(isProduction ? ["upgrade-insecure-requests"] : []),
+].join('; ');
+
 const securityHeaders = [
+  { key: 'Content-Security-Policy', value: contentSecurityPolicy },
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'X-Frame-Options', value: 'DENY' },
   { key: 'X-DNS-Prefetch-Control', value: 'on' },

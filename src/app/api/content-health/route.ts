@@ -1,11 +1,15 @@
 import { NextResponse } from 'next/server';
+import { checkRequestToken } from '@/lib/api-auth';
 import { contentRepository } from '@/lib/content-repository';
+import { resolvePostgresSsl } from '@/lib/postgres-ssl';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 type HealthStatus = 'ok' | 'error' | 'disabled';
+
+const NO_STORE = { 'Cache-Control': 'no-store' };
 
 function resolveSource() {
   const explicitSource = process.env.CONTENT_SOURCE?.toLowerCase();
@@ -18,110 +22,34 @@ function resolveSource() {
   return { source, explicitSource: explicitSource || null, autoDetectedSource };
 }
 
-function safeMongoHost(uri: string | undefined): string | null {
-  if (!uri) return null;
-  try {
-    const parsed = new URL(uri);
-    return parsed.host || null;
-  } catch {
-    return null;
-  }
-}
-
-function parseBool(value: string | null): boolean | null {
-  if (value == null) return null;
+function parseBool(value: string | undefined): boolean | undefined {
+  if (value == null) return undefined;
   const normalized = value.trim().toLowerCase();
   if (normalized === 'true' || normalized === '1' || normalized === 'yes') return true;
   if (normalized === 'false' || normalized === '0' || normalized === 'no') return false;
-  return null;
+  return undefined;
 }
 
-function getMongoTlsDiagnostics(mongoUri: string | undefined) {
-  const base = {
-    nodeVersion: process.version,
-    opensslVersion: process.versions?.openssl || null,
-    env: {
-      NODE_TLS_REJECT_UNAUTHORIZED: process.env.NODE_TLS_REJECT_UNAUTHORIZED || null,
-      MONGODB_SERVER_SELECTION_TIMEOUT_MS: process.env.MONGODB_SERVER_SELECTION_TIMEOUT_MS || null,
-      MONGODB_TLS: process.env.MONGODB_TLS || null,
-      MONGODB_SSL: process.env.MONGODB_SSL || null,
-      MONGODB_TLS_ALLOW_INVALID_CERTIFICATES: process.env.MONGODB_TLS_ALLOW_INVALID_CERTIFICATES || null,
-      MONGODB_TLS_ALLOW_INVALID_HOSTNAMES: process.env.MONGODB_TLS_ALLOW_INVALID_HOSTNAMES || null,
-      MONGODB_TLS_INSECURE: process.env.MONGODB_TLS_INSECURE || null,
-    },
-  };
-
-  if (!mongoUri) {
-    return { ...base, uriParsed: false };
-  }
-
-  try {
-    const url = new URL(mongoUri);
-    return {
-      ...base,
-      uriParsed: true,
-      uriScheme: url.protocol.replace(':', ''),
-      host: url.host || null,
-      query: {
-        tls: parseBool(url.searchParams.get('tls')),
-        ssl: parseBool(url.searchParams.get('ssl')),
-        tlsAllowInvalidCertificates: parseBool(url.searchParams.get('tlsAllowInvalidCertificates')),
-        tlsAllowInvalidHostnames: parseBool(url.searchParams.get('tlsAllowInvalidHostnames')),
-        tlsInsecure: parseBool(url.searchParams.get('tlsInsecure')),
-        authMechanism: url.searchParams.get('authMechanism'),
-        retryWrites: parseBool(url.searchParams.get('retryWrites')),
-      },
-    };
-  } catch {
-    return {
-      ...base,
-      uriParsed: false,
-      uriScheme: mongoUri.startsWith('mongodb+srv://')
-        ? 'mongodb+srv'
-        : mongoUri.startsWith('mongodb://')
-          ? 'mongodb'
-          : 'unknown',
-      host: safeMongoHost(mongoUri),
-    };
-  }
-}
-
-function formatMongoError(error: unknown) {
-  if (!error) return null;
-  if (error instanceof Error) {
-    const e = error as Error & { code?: string | number; cause?: unknown };
-    const cause = e.cause instanceof Error
-      ? { name: e.cause.name, message: e.cause.message }
-      : e.cause
-        ? String(e.cause)
-        : null;
-    return {
-      name: e.name,
-      code: e.code ?? null,
-      message: e.message,
-      cause,
-    };
-  }
-  return { name: 'UnknownError', code: null, message: String(error), cause: null };
+function logProbeFailure(probe: string, error: unknown) {
+  const name = error instanceof Error ? error.name : typeof error;
+  const code =
+    error && typeof error === 'object' && 'code' in error
+      ? String((error as { code?: unknown }).code)
+      : null;
+  // Never log connection strings or raw provider errors: they can contain hosts
+  // and credentials. Name + code are enough to triage.
+  console.error(`[content-health] ${probe} probe failed`, { name, code });
 }
 
 async function checkMongo() {
   const mongoUri = process.env.MONGODB_URI;
+  if (!mongoUri) {
+    return { status: 'disabled' as HealthStatus, hasMongoUri: false };
+  }
+
   const dbName = process.env.MONGODB_DB_NAME || 'generatepassword';
   const collectionName = process.env.MONGODB_COLLECTION || 'content_guides';
   const timeout = Number.parseInt(process.env.MONGODB_SERVER_SELECTION_TIMEOUT_MS || '3000', 10);
-  const tlsDiagnostics = getMongoTlsDiagnostics(mongoUri);
-
-  if (!mongoUri) {
-    return {
-      status: 'disabled' as HealthStatus,
-      hasMongoUri: false,
-      host: null,
-      dbName,
-      collectionName,
-      tlsDiagnostics,
-    };
-  }
 
   const nodeRequire = eval('require') as NodeRequire;
   const { MongoClient } = nodeRequire('mongodb') as {
@@ -141,18 +69,9 @@ async function checkMongo() {
       db: (name: string) => {
         collection: (name: string) => {
           countDocuments: (query: Record<string, unknown>) => Promise<number>;
-          aggregate: <T>(pipeline: Array<Record<string, unknown>>) => { toArray: () => Promise<T[]> };
         };
       };
     };
-  };
-
-  const parseBool = (value: string | undefined): boolean | undefined => {
-    if (value == null) return undefined;
-    const normalized = value.trim().toLowerCase();
-    if (normalized === 'true' || normalized === '1' || normalized === 'yes') return true;
-    if (normalized === 'false' || normalized === '0' || normalized === 'no') return false;
-    return undefined;
   };
 
   const client = new MongoClient(mongoUri, {
@@ -167,41 +86,16 @@ async function checkMongo() {
   try {
     await client.connect();
     const collection = client.db(dbName).collection(collectionName);
-    const total = await collection.countDocuments({});
-    const localeBuckets = await collection
-      .aggregate<{ _id: string; n: number }>([
-        { $group: { _id: '$locale', n: { $sum: 1 } } },
-        { $sort: { n: -1 } },
-      ])
-      .toArray();
-
-    return {
-      status: 'ok' as HealthStatus,
-      hasMongoUri: true,
-      host: safeMongoHost(mongoUri),
-      dbName,
-      collectionName,
-      totalDocuments: total,
-      locales: localeBuckets,
-      tlsDiagnostics,
-    };
+    await collection.countDocuments({});
+    return { status: 'ok' as HealthStatus, hasMongoUri: true };
   } catch (error) {
-    const formatted = formatMongoError(error);
-    return {
-      status: 'error' as HealthStatus,
-      hasMongoUri: true,
-      host: safeMongoHost(mongoUri),
-      dbName,
-      collectionName,
-      error: formatted?.message || String(error),
-      errorDetails: formatted,
-      tlsDiagnostics,
-    };
+    logProbeFailure('mongodb', error);
+    return { status: 'error' as HealthStatus, hasMongoUri: true };
   } finally {
     try {
       await client.close();
     } catch {
-      // Ignore close errors in diagnostics endpoint.
+      // Ignore close errors in the diagnostics endpoint.
     }
   }
 }
@@ -212,38 +106,34 @@ async function checkPostgres() {
     return { status: 'disabled' as HealthStatus, hasDatabaseUrl: false };
   }
 
+  let pool: { query: (sql: string) => Promise<unknown>; end: () => Promise<void> } | null = null;
+
   try {
     const nodeRequire = eval('require') as NodeRequire;
     const { Pool } = nodeRequire('pg') as {
-      Pool: new (options: { connectionString: string; ssl?: { rejectUnauthorized: false } }) => {
-        query: (sql: string) => Promise<{ rows: Array<{ now: string }> }>;
-        end: () => Promise<void>;
-      };
+      Pool: new (options: {
+        connectionString: string;
+        ssl?: { rejectUnauthorized: boolean; ca?: string };
+      }) => { query: (sql: string) => Promise<unknown>; end: () => Promise<void> };
     };
 
-    const useSsl = process.env.DATABASE_SSL
-      ? process.env.DATABASE_SSL === 'true'
-      : databaseUrl.includes('supabase.co');
-
-    const pool = new Pool({
+    pool = new Pool({
       connectionString: databaseUrl,
-      ssl: useSsl ? { rejectUnauthorized: false } : undefined,
+      ssl: resolvePostgresSsl(databaseUrl),
     });
-    const ping = await pool.query('select now()::text as now');
-    await pool.end();
-
-    return {
-      status: 'ok' as HealthStatus,
-      hasDatabaseUrl: true,
-      serverTime: ping.rows[0]?.now || null,
-    };
+    await pool.query('select 1');
+    return { status: 'ok' as HealthStatus, hasDatabaseUrl: true };
   } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
-    return {
-      status: 'error' as HealthStatus,
-      hasDatabaseUrl: true,
-      error: message,
-    };
+    logProbeFailure('postgres', error);
+    return { status: 'error' as HealthStatus, hasDatabaseUrl: true };
+  } finally {
+    if (pool) {
+      try {
+        await pool.end();
+      } catch {
+        // Ignore close errors in the diagnostics endpoint.
+      }
+    }
   }
 }
 
@@ -258,13 +148,15 @@ function detectJsonFallback(guide: Awaited<ReturnType<typeof contentRepository.g
 }
 
 export async function GET(request: Request) {
-  const token = process.env.CONTENT_HEALTH_TOKEN;
-  if (token) {
-    const url = new URL(request.url);
-    const provided = url.searchParams.get('token') ?? request.headers.get('x-health-token');
-    if (provided !== token) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+  const auth = checkRequestToken(request, process.env.CONTENT_HEALTH_TOKEN);
+  if (auth === 'not-configured') {
+    return NextResponse.json(
+      { ok: false, error: 'CONTENT_HEALTH_TOKEN is not configured' },
+      { status: 503, headers: NO_STORE },
+    );
+  }
+  if (auth !== 'authorized') {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401, headers: NO_STORE });
   }
 
   try {
@@ -290,27 +182,27 @@ export async function GET(request: Request) {
           title: guide?.title || null,
           jsonShellFallbackDetected: detectJsonFallback(guide),
         },
-        mongo,
-        postgres,
+        // Only coarse status is exposed. Hosts, database/collection names,
+        // document counts and raw provider errors stay server-side.
+        mongo: { status: mongo.status, configured: mongo.hasMongoUri },
+        postgres: { status: postgres.status, configured: postgres.hasDatabaseUrl },
         envSummary: {
           hasContentSource: Boolean(process.env.CONTENT_SOURCE),
           hasMongoUri: Boolean(process.env.MONGODB_URI),
           hasDatabaseUrl: Boolean(process.env.DATABASE_URL || process.env.SUPABASE_DB_URL),
-          mongoDbName: process.env.MONGODB_DB_NAME || 'generatepassword',
-          mongoCollection: process.env.MONGODB_COLLECTION || 'content_guides',
         },
       },
-      { status: 200 },
+      { status: 200, headers: NO_STORE },
     );
   } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
+    logProbeFailure('content', error);
     return NextResponse.json(
       {
         ok: false,
         timestamp: new Date().toISOString(),
-        fatalError: message,
+        error: 'Content health probe failed',
       },
-      { status: 200 },
+      { status: 500, headers: NO_STORE },
     );
   }
 }

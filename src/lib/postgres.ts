@@ -1,3 +1,5 @@
+import { resolvePostgresSsl } from './postgres-ssl';
+
 type QueryResult<T = unknown> = { rows: T[] };
 type PgPool = {
   query: <T = unknown>(text: string, params?: unknown[]) => Promise<QueryResult<T>>;
@@ -17,19 +19,18 @@ export function getPostgresPool(): PgPool {
     );
   }
 
-  const useSsl = process.env.DATABASE_SSL
-    ? process.env.DATABASE_SSL === 'true'
-    : connectionString.includes('supabase.co');
-
   // Runtime load avoids Turbopack symlink panic on Windows in this project setup.
   const nodeRequire = eval('require') as NodeRequire;
   const { Pool } = nodeRequire('pg') as {
-    Pool: new (options: { connectionString: string; ssl?: { rejectUnauthorized: false } }) => PgPool;
+    Pool: new (options: {
+      connectionString: string;
+      ssl?: { rejectUnauthorized: boolean; ca?: string };
+    }) => PgPool;
   };
 
   pool = new Pool({
     connectionString,
-    ssl: useSsl ? { rejectUnauthorized: false } : undefined,
+    ssl: resolvePostgresSsl(connectionString),
   });
 
   return pool;

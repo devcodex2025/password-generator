@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { revalidatePath, revalidateTag } from 'next/cache';
+import { checkRequestToken } from '@/lib/api-auth';
 import {
   ARTICLE_CATALOG,
   SUPPORTED_CONTENT_LANGUAGES,
@@ -19,10 +20,10 @@ export const maxDuration = 60;
  * improved translations that live in the codebase to the production
  * database after a deployment.
  *
- * Protection: requires `CONTENT_HEALTH_TOKEN` as Bearer token or
- * `?token=` query param (same token used by /api/content-health).
- * If the env-var is unset, the endpoint is open (same policy as
- * content-health).
+ * Protection: requires `CONTENT_HEALTH_TOKEN` in the `Authorization: Bearer`
+ * header (or the legacy `x-health-token` header). Query-string tokens are not
+ * accepted because they leak into logs and browser history.
+ * If the env-var is unset, the endpoint fails closed with 503.
  *
  * Query params:
  *   ?dryRun=true  – validate without writing (default: false)
@@ -30,17 +31,16 @@ export const maxDuration = 60;
  *   ?slug=...     – sync only one article (default: all)
  */
 export async function POST(request: Request) {
-  // ── Auth ──────────────────────────────────────────────────────────
-  const token = process.env.CONTENT_HEALTH_TOKEN;
-  if (token) {
-    const url = new URL(request.url);
-    const provided =
-      url.searchParams.get('token') ??
-      request.headers.get('authorization')?.replace(/^Bearer\s+/i, '') ??
-      request.headers.get('x-health-token');
-    if (provided !== token) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+  // ── Auth (fail closed) ────────────────────────────────────────────
+  const auth = checkRequestToken(request, process.env.CONTENT_HEALTH_TOKEN);
+  if (auth === 'not-configured') {
+    return NextResponse.json(
+      { error: 'CONTENT_HEALTH_TOKEN is not configured' },
+      { status: 503 },
+    );
+  }
+  if (auth !== 'authorized') {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   // ── Parse options ─────────────────────────────────────────────────
@@ -63,6 +63,7 @@ export async function POST(request: Request) {
 
   const dbName = process.env.MONGODB_DB_NAME || 'generatepassword';
   const collectionName = process.env.MONGODB_COLLECTION || 'content_guides';
+  let client: { close: () => Promise<void> } | null = null;
 
   try {
     // ── Connect to MongoDB ────────────────────────────────────────────
@@ -90,12 +91,13 @@ export async function POST(request: Request) {
       };
     };
 
-    const client = new MongoClient(mongoUri, {
+    const mongoClient = new MongoClient(mongoUri, {
       serverSelectionTimeoutMS: 10_000,
     });
-    await client.connect();
+    client = mongoClient;
+    await mongoClient.connect();
 
-    const db = client.db(dbName);
+    const db = mongoClient.db(dbName);
     const collection = db.collection(collectionName);
 
     // Ensure indexes exist
@@ -170,8 +172,6 @@ export async function POST(request: Request) {
       }
     }
 
-    await client.close();
-
     // ── Bust ISR cache so pages serve fresh content immediately ────
     if (!dryRun && (upserted > 0 || modified > 0)) {
       for (const locale of locales) {
@@ -189,7 +189,6 @@ export async function POST(request: Request) {
         dryRun,
         timestamp: new Date().toISOString(),
         source: 'ARTICLE_CATALOG (TypeScript)',
-        target: `mongodb://${dbName}.${collectionName}`,
         cacheRevalidated: !dryRun && (upserted > 0 || modified > 0),
         summary: {
           totalArticles: articles.length,
@@ -214,6 +213,14 @@ export async function POST(request: Request) {
       },
       { status: 500 },
     );
+  } finally {
+    if (client) {
+      try {
+        await client.close();
+      } catch {
+        // The sync result is more useful than a close error; do not mask it.
+      }
+    }
   }
 }
 
@@ -225,17 +232,16 @@ export async function POST(request: Request) {
  * whether CJK content survives the Vercel build/minification step.
  */
 export async function GET(request: Request) {
-  // ── Auth (same policy as POST & content-health) ──────────────────
-  const token = process.env.CONTENT_HEALTH_TOKEN;
-  if (token) {
-    const url = new URL(request.url);
-    const provided =
-      url.searchParams.get('token') ??
-      request.headers.get('authorization')?.replace(/^Bearer\s+/i, '') ??
-      request.headers.get('x-health-token');
-    if (provided !== token) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+  // ── Auth (fail closed, header only) ──────────────────────────────
+  const auth = checkRequestToken(request, process.env.CONTENT_HEALTH_TOKEN);
+  if (auth === 'not-configured') {
+    return NextResponse.json(
+      { error: 'CONTENT_HEALTH_TOKEN is not configured' },
+      { status: 503 },
+    );
+  }
+  if (auth !== 'authorized') {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   const url = new URL(request.url);

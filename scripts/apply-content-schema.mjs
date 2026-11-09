@@ -2,18 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import pg from 'pg';
+import { resolvePostgresSsl } from './lib/postgres-ssl.mjs';
 
 const { Pool } = pg;
 
 function getDatabaseUrl() {
   return process.env.DATABASE_URL || process.env.SUPABASE_DB_URL;
-}
-
-function shouldUseSsl(connectionString) {
-  if (process.env.DATABASE_SSL) {
-    return process.env.DATABASE_SSL === 'true';
-  }
-  return connectionString.includes('supabase.co');
 }
 
 async function main() {
@@ -37,7 +31,7 @@ async function main() {
 
   const pool = new Pool({
     connectionString: databaseUrl,
-    ssl: shouldUseSsl(databaseUrl) ? { rejectUnauthorized: false } : undefined,
+    ssl: resolvePostgresSsl(databaseUrl),
   });
 
   const client = await pool.connect();

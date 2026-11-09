@@ -31,6 +31,9 @@
    - `DATABASE_URL=...` (or `SUPABASE_DB_URL=...`)
    - `DATABASE_SSL=true` only if you need explicit override
    - For Supabase hostnames, SSL is auto-enabled by default
+   - Certificate verification is always on. Supply a provider CA with
+     `DATABASE_SSL_CA` (PEM), `DATABASE_SSL_CA_BASE64`, or `DATABASE_SSL_CA_PATH`
+     if the system trust store is not enough.
 
 ## Notes
 - `DatabaseContentRepository` is implemented and used when `CONTENT_SOURCE=database`.
