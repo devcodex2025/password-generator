@@ -72,7 +72,7 @@ To add a new language:
 
 1. Add the new language code to every translation entry in `src/components/lang.json`.
 2. Add the language name and flag mapping in `src/utils/languageUtils.js`.
-3. Add localized route metadata in `src/app/[locale]/layout.tsx` if the new locale needs custom SEO title, description, or Open Graph text.
+3. Add localized route metadata in `src/components/LocaleDocument.tsx` (and `src/lib/home-metadata.ts`) if the new locale needs custom SEO title, description, or Open Graph text. zh and ja routes live in `src/app/(cjk)/cjk/[locale]` and every other locale in `src/app/(latin)/[locale]`.
 4. Add translated guide/static-page content where relevant.
 5. Run `npm run build` to verify localized routes and generated metadata.
 
@@ -164,7 +164,8 @@ docker compose up --watch
 ```text
 src/
 ├── app/
-│   ├── [locale]/                 # Localized app routes and metadata
+│   ├── (latin)/[locale]/         # Localized routes for Latin-script locales
+│   ├── (cjk)/cjk/[locale]/       # zh and ja routes (reached via proxy rewrite from /zh, /ja)
 │   └── api/                      # Content and sync API routes
 ├── components/
 │   ├── Advertising/              # AdSense banners and fallbacks
