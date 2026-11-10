@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server';
+import { isCjkLocale } from '@/lib/cjk-locales';
 
 const COUNTRY_CODE = /^[A-Z]{2}$/;
 
@@ -55,13 +56,27 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(canonical, 301);
   }
 
+  // /cjk is the internal home of the zh and ja tree (see src/lib/cjk-locales.ts).
+  // Send direct requests to the public locale URL so each page has one address.
+  if (pathname === '/cjk' || pathname.startsWith('/cjk/')) {
+    const canonical = request.nextUrl.clone();
+    canonical.pathname = pathname.slice('/cjk'.length) || '/';
+    return NextResponse.redirect(canonical, 301);
+  }
+
   // Root URL renders the English locale without changing the URL (the canonical
-  // home stays https://www.generatepasswordto.me). [locale] is the root layout now,
-  // so `/` must be mapped onto it explicitly.
-  const isRoot = pathname === '/';
-  const response = isRoot
-    ? NextResponse.rewrite(new URL('/en', request.url))
-    : NextResponse.next();
+  // home stays https://www.generatepasswordto.me), so `/` is rewritten to `/en`.
+  // zh and ja keep their URLs and are rewritten onto the CJK root layout under /cjk.
+  let response: NextResponse;
+  if (pathname === '/') {
+    response = NextResponse.rewrite(new URL('/en', request.url));
+  } else if (isCjkLocale(pathname.split('/')[1])) {
+    const internal = request.nextUrl.clone();
+    internal.pathname = `/cjk${pathname}`;
+    response = NextResponse.rewrite(internal);
+  } else {
+    response = NextResponse.next();
+  }
 
   if (!request.cookies.get('geo')) {
     const country = readCountry(request);

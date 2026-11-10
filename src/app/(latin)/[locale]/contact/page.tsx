@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { forParentLocale } from '@/lib/cjk-locales';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import ContactCaptcha from '@/components/ContactCaptcha';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
@@ -14,8 +15,8 @@ const hreflangMap: Record<string, string> = { ua: 'uk' };
 export const runtime = 'nodejs';
 export const revalidate = 3600;
 
-export function generateStaticParams() {
-  return STATIC_PAGE_LOCALES.map((locale) => ({ locale }));
+export function generateStaticParams({ params }: { params?: { locale?: string } } = {}) {
+  return forParentLocale(STATIC_PAGE_LOCALES, params).map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

@@ -8,7 +8,7 @@ import PasswordGenerator from '@/components/PasswordGenerator/PasswordGenerator'
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Analytics } from '@vercel/analytics/react';
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 import { useRouter, usePathname } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 

@@ -1,52 +1,21 @@
+import '@/styles/index.css';
 import type { Metadata, Viewport } from 'next';
 import { CustomThemeProvider } from '@/context/ThemeContext';
-import '@/styles/index.css';
 import Script from 'next/script';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import NavigationProgress from '@/components/NavigationProgress';
-import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
-import { buildHomeMetadata, SUPPORTED_LANGS, HTML_LANG_MAP } from '@/lib/home-metadata';
+import { buildHomeMetadata, HTML_LANG_MAP } from '@/lib/home-metadata';
 import HomeStructuredData from '@/components/seo/HomeStructuredData';
 import AdSenseLoader from '@/components/Advertising/AdSenseLoader';
 import CookieConsentMount from '@/components/CookieConsent/CookieConsentMount';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-const arsenal = Arsenal({ 
-  subsets: ['cyrillic', 'latin'], 
-  weight: ['400', '700'], 
-  variable: '--font-arsenal',
-  display: 'swap',
-});
-
-const varelaRound = Varela_Round({ 
-  subsets: ['latin'], 
-  weight: ['400'], 
-  variable: '--font-varela-round',
-  display: 'swap',
-});
-
-const notoSans = Noto_Sans({ 
-  subsets: ['latin'], 
-  weight: ['400', '700'], 
-  variable: '--font-noto-sans',
-  display: 'swap',
-});
-
-const notoSansJP = Noto_Sans_JP({ 
-  subsets: ['latin'], 
-  weight: ['400', '700'], 
-  variable: '--font-noto-sans-jp',
-  display: 'swap',
-});
-
-const notoSansSC = Noto_Sans_SC({ 
-  subsets: ['latin'], 
-  weight: ['400', '700'], 
-  variable: '--font-noto-sans-sc',
-  display: 'swap',
-});
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+/*
+  Shared <html> document for every locale tree. The Latin tree (src/app/(latin)) and the
+  CJK tree (src/app/(cjk)/cjk) each have their own root layout so only the CJK tree loads
+  the Noto Sans JP/SC stylesheets; both render this document with their own font classes.
+*/
+export async function localeMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const base = buildHomeMetadata(locale);
   const htmlLang = HTML_LANG_MAP[locale] || 'en';
@@ -66,15 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export function generateStaticParams() {
-  return SUPPORTED_LANGS.map((locale) => ({ locale }));
-}
-
-// Unknown values in the [locale] segment must 404 instead of rendering a page
-// (prevents soft-404 garbage URLs such as /{search_term_string} or /$ from being indexed).
-export const dynamicParams = false;
-
-export const viewport: Viewport = {
+export const localeViewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
@@ -104,15 +65,15 @@ const THEME_INIT_SCRIPT = `
   })();
 `;
 
-export default async function LocaleLayout({
+export function LocaleDocument({
+  locale,
+  fontClassName,
   children,
-  params,
 }: {
+  locale: string;
+  fontClassName: string;
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-
   const htmlLang = HTML_LANG_MAP[locale] || 'en';
 
   return (
@@ -124,7 +85,7 @@ export default async function LocaleLayout({
         />
         <style media="print">{`body{background:#fff!important;color:#000!important}header,footer,aside,.smart-ad-container,#cc-main{display:none!important}a{color:#000!important;text-decoration:underline}`}</style>
       </head>
-      <body className={`${arsenal.variable} ${varelaRound.variable} ${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable}`}>
+      <body className={fontClassName}>
         {/*
           Consent Mode v2 defaults must be set before any Google tag (AdSense,
           GA) runs, regardless of whether GA is configured.
@@ -204,5 +165,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-
-

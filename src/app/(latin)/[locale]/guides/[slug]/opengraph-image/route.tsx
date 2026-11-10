@@ -1,12 +1,11 @@
 import { ImageResponse } from 'next/og';
+import { forParentLocale } from '@/lib/cjk-locales';
 import { ARTICLE_CATALOG, getArticleBySlug, getArticleLocales, getLocalizedArticle } from '@/content/articles';
 import type { ContentLanguage } from '@/content/articles';
 
 export const runtime = 'nodejs';
 
-export const alt = 'Guide article preview';
-export const size = { width: 1200, height: 630 };
-export const contentType = 'image/png';
+const size = { width: 1200, height: 630 };
 
 const categoryColors: Record<string, { bg: string; text: string; accent: string }> = {
   'security-basics': { bg: '#0c2d48', text: '#e0f4ff', accent: '#38bdf8' },
@@ -22,13 +21,13 @@ const categoryIcons: Record<string, string> = {
   'incident-response': '\u{1F6A8}',
 };
 
-export function generateStaticParams() {
+export function generateStaticParams({ params }: { params?: { locale?: string } } = {}) {
   return ARTICLE_CATALOG.flatMap((article) =>
-    getArticleLocales(article).map((locale) => ({ locale, slug: article.slug })),
+    forParentLocale(getArticleLocales(article), params).map((locale) => ({ locale, slug: article.slug })),
   );
 }
 
-export default async function OgImage({
+async function renderOgImage({
   params,
 }: {
   params: Promise<{ locale: string; slug: string }>;
@@ -236,4 +235,10 @@ export default async function OgImage({
     ),
     { ...size },
   );
+}
+
+// Public URL: /<locale>/guides/<slug>/opengraph-image. The guide metadata points og:image and
+// twitter:image here explicitly, so zh and ja previews use a public path (proxy.ts rewrites it).
+export function GET(_request: Request, context: { params: Promise<{ locale: string; slug: string }> }) {
+  return renderOgImage({ params: context.params });
 }
