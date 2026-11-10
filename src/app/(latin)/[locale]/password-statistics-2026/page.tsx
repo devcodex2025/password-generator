@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { forParentLocale } from '@/lib/cjk-locales';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import { homeHref } from '@/lib/locale-links';
@@ -171,8 +172,8 @@ export const runtime = 'nodejs';
 export const revalidate = 86400;
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return LOCALES.map((locale) => ({ locale }));
+export function generateStaticParams({ params }: { params?: { locale?: string } } = {}) {
+  return forParentLocale(LOCALES, params).map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { forParentLocale } from '@/lib/cjk-locales';
 import { getAffiliateStrings } from '@/components/affiliate/affiliate-i18n';
 import { homeHref } from '@/lib/locale-links';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
@@ -11,8 +12,8 @@ const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'j
 
 export const runtime = 'nodejs';
 
-export function generateStaticParams() {
-  return supportedLangs.map((locale) => ({ locale }));
+export function generateStaticParams({ params }: { params?: { locale?: string } } = {}) {
+  return forParentLocale(supportedLangs, params).map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
