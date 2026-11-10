@@ -19,51 +19,51 @@ export const revalidate = 3600;
 
 const guidesMetaI18n: Record<string, { title: string; description: string }> = {
   en: {
-    title: 'Password Security Guides — Expert Articles & Best Practices',
+    title: 'Password Security Guides: Expert Articles & Best Practices',
     description: 'In-depth guides about password security, compliance standards (NIST, PCI DSS), breach recovery, 2FA setup, and account protection best practices.',
   },
   ua: {
-    title: 'Гайди з безпеки паролів — експертні статті та найкращі практики',
+    title: 'Гайди з безпеки паролів: експертні статті та найкращі практики',
     description: 'Детальні гайди з безпеки паролів, стандартів відповідності (NIST, PCI DSS), відновлення після витоків, налаштування 2FA та захисту акаунтів.',
   },
   es: {
-    title: 'Guías de seguridad de contraseñas — Artículos y buenas prácticas',
+    title: 'Guías de seguridad de contraseñas: artículos y buenas prácticas',
     description: 'Guías detalladas sobre seguridad de contraseñas, estándares de cumplimiento (NIST, PCI DSS), recuperación tras brechas, configuración de 2FA y protección de cuentas.',
   },
   fr: {
-    title: 'Guides de sécurité des mots de passe — Articles experts et bonnes pratiques',
+    title: 'Guides de sécurité des mots de passe : articles experts et bonnes pratiques',
     description: 'Guides approfondis sur la sécurité des mots de passe, les normes de conformité (NIST, PCI DSS), la récupération après violation, la configuration 2FA et la protection des comptes.',
   },
   de: {
-    title: 'Passwortsicherheits-Ratgeber — Fachartikel und Best Practices',
+    title: 'Passwortsicherheits-Ratgeber: Fachartikel und Best Practices',
     description: 'Ausführliche Ratgeber zu Passwortsicherheit, Compliance-Standards (NIST, PCI DSS), Wiederherstellung nach Datenlecks, 2FA-Einrichtung und Kontoschutz.',
   },
   it: {
-    title: 'Guide alla sicurezza delle password — Articoli e best practice',
+    title: 'Guide alla sicurezza delle password: articoli e best practice',
     description: 'Guide approfondite sulla sicurezza delle password, standard di conformità (NIST, PCI DSS), recupero dopo violazioni, configurazione 2FA e protezione degli account.',
   },
   pt: {
-    title: 'Guias de segurança de senhas — Artigos e boas práticas',
+    title: 'Guias de segurança de senhas: artigos e boas práticas',
     description: 'Guias detalhados sobre segurança de senhas, padrões de conformidade (NIST, PCI DSS), recuperação após violações, configuração de 2FA e proteção de contas.',
   },
   ru: {
-    title: 'Руководства по безопасности паролей — экспертные статьи и лучшие практики',
+    title: 'Руководства по безопасности паролей: экспертные статьи и лучшие практики',
     description: 'Подробные руководства по безопасности паролей, стандартам соответствия (NIST, PCI DSS), восстановлению после утечек, настройке 2FA и защите аккаунтов.',
   },
   zh: {
-    title: '密码安全指南 — 专家文章与最佳实践',
+    title: '密码安全指南：专家文章与最佳实践',
     description: '深入了解密码安全、合规标准（NIST、PCI DSS）、泄露恢复、2FA设置及账户保护的最佳实践指南。',
   },
   ja: {
-    title: 'パスワードセキュリティガイド — 専門記事とベストプラクティス',
+    title: 'パスワードセキュリティガイド：専門記事とベストプラクティス',
     description: 'パスワードセキュリティ、コンプライアンス基準（NIST、PCI DSS）、漏洩後の復旧、2FA設定、アカウント保護に関する詳細ガイド。',
   },
   pl: {
-    title: 'Przewodniki bezpieczeństwa haseł — artykuły eksperckie i najlepsze praktyki',
+    title: 'Przewodniki bezpieczeństwa haseł: artykuły eksperckie i najlepsze praktyki',
     description: 'Szczegółowe przewodniki dotyczące bezpieczeństwa haseł, standardów zgodności (NIST, PCI DSS), odzyskiwania po wycieku danych, konfiguracji 2FA i ochrony kont.',
   },
   vi: {
-    title: 'Hướng dẫn bảo mật mật khẩu — bài viết chuyên sâu và thực hành tốt',
+    title: 'Hướng dẫn bảo mật mật khẩu: bài viết chuyên sâu và thực hành tốt',
     description: 'Hướng dẫn chuyên sâu về bảo mật mật khẩu, tiêu chuẩn tuân thủ (NIST, PCI DSS), khắc phục sau rò rỉ dữ liệu, thiết lập 2FA và bảo vệ tài khoản.',
   },
 };
@@ -188,7 +188,7 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
                   <div className="relative w-full overflow-hidden aspect-[16/7] bg-[#E5F6FF] dark:bg-[#111827]">
                     <Image
                       src={guide.image}
-                      alt={`${guide.title} — ${getGuideCategoryLabel(locale, guide.category)}`}
+                      alt={`${guide.title}: ${getGuideCategoryLabel(locale, guide.category)}`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       priority={index < 2}
@@ -225,7 +225,7 @@ export default async function GuidesIndexPage({ params }: { params: Promise<{ lo
           })}
         </div>
 
-        {/* Data page — only locales that actually publish it get a link, so no 404 anchors. */}
+        {/* Data page: only locales that actually publish it get a link, so no 404 anchors. */}
         {hasStatisticsPage(locale) && (
           <aside className="mt-8 rounded-24 border border-[#E5F6FF] dark:border-[#374151] bg-[#F7FCFF] dark:bg-[#111827] p-6">
             <h2 className="text-xl font-semibold text-[#071016] dark:text-[#e0e0e0]">

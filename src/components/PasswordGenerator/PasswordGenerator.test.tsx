@@ -101,6 +101,28 @@ describe('PasswordGenerator', () => {
     expect(events('password_shared').slice(-1)[0]?.[2]).toMatchObject({ target: 'whatsapp', count: 1, surface: 'home' });
   });
 
+  it('confirms a successful copy and reports it', async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    vi.stubGlobal('navigator', { ...navigator, clipboard: { writeText } });
+    await renderGenerator();
+    const password = firstPassword();
+    fireEvent.click(screen.getByRole('button', { name: 'Copy' }));
+
+    await screen.findByText('Password copied successfully');
+    expect(writeText).toHaveBeenCalledWith(password);
+    expect(events('password_copied').slice(-1)[0]?.[2]).toMatchObject({ index: 0, surface: 'home' });
+  });
+
+  it('reports a refused copy and never claims success', async () => {
+    vi.stubGlobal('navigator', { ...navigator, clipboard: { writeText: vi.fn().mockRejectedValue(new Error('denied')) } });
+    await renderGenerator();
+    fireEvent.click(screen.getByRole('button', { name: 'Copy' }));
+
+    await screen.findByText(/Copy failed/);
+    expect(screen.queryByText('Password copied successfully')).toBeNull();
+    expect(events('password_copied')).toHaveLength(0);
+  });
+
   it('shows copy, share, generate as labelled buttons when the field is wide', async () => {
     await renderGenerator();
     const names = screen.getAllByRole('button').map((b) => b.textContent);
@@ -201,8 +223,8 @@ describe('PasswordGenerator', () => {
       expect(names.slice(0, 5)).toEqual(['Copy', 'Share', 'Generate', 'Download', 'Close']);
 
       fireEvent.click(toolbarBtn('Copy'));
-      expect(writeText).toHaveBeenCalledWith(list.join('\n'));
-      expect(lastEvent('passwords_copied_all')).toMatchObject({ count: 10, surface: 'bulk' });
+      await waitFor(() => expect(writeText).toHaveBeenCalledWith(list.join('\n')));
+      await waitFor(() => expect(lastEvent('passwords_copied_all')).toMatchObject({ count: 10, surface: 'bulk' }));
 
       fireEvent.click(toolbarBtn('Generate'));
       await waitFor(() => expect(bulkList()).not.toEqual(list));

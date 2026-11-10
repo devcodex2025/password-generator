@@ -296,7 +296,7 @@ export default async function GuideArticlePage({
           <div className="mt-5 relative w-full overflow-hidden rounded-16 aspect-[40/21] bg-[#E5F6FF] dark:bg-[#111827]">
             <Image
               src={guide.image}
-              alt={`${guide.title} — ${getGuideCategoryLabel(locale, guide.category)}`}
+              alt={`${guide.title}: ${getGuideCategoryLabel(locale, guide.category)}`}
               fill
               sizes="(max-width: 1024px) 100vw, 896px"
               priority

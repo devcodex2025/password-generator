@@ -3,7 +3,7 @@ import type { CookieConsentConfig } from 'vanilla-cookieconsent';
 type ConsentCookie = { categories?: string[] };
 
 /**
- * Google Consent Mode v2 — mirror the CMP categories into gtag consent signals.
+ * Google Consent Mode v2: mirror the CMP categories into gtag consent signals.
  * Default state (denied) is set inline in the layout before gtag('config').
  */
 function syncConsentSignals(cookie: ConsentCookie | undefined) {

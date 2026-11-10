@@ -115,6 +115,7 @@ export default function PasswordSettings({
                 {/* an action, not a mode: pushed apart and drawn as a pill with an icon */}
                 <Button
                     variant="secondary"
+                    data-bulk-opener
                     className="col-start-2 row-start-2 shrink-0 self-start sm:col-start-3 sm:row-start-1"
                     onClick={onOpenBulk}
                     title={t('bulk_generate')}

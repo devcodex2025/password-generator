@@ -1,7 +1,7 @@
 {
   "version": 2,
   "updatedAt": "2026-10-31",
-  "_comment": "Tracking links for the Nord affiliate network (HasOffers). Source: Affiliate_Offer / Affiliate_OfferUrl via scripts/nord-affiliate-sync.mjs. A locale entry without url_id means 'offer default landing' — Nord picks the geo/language itself, which is the correct choice where no localised landing exists.",
+  "_comment": "Tracking links for the Nord affiliate network (HasOffers). Source: Affiliate_Offer / Affiliate_OfferUrl via scripts/nord-affiliate-sync.mjs. A locale entry without url_id means 'offer default landing', and Nord picks the geo/language itself, which is the correct choice where no localised landing exists.",
   "_payouts": {
     "nordvpn": "40%",
     "nordpass": "30%",

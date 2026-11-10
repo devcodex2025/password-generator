@@ -29,6 +29,8 @@ interface AffiliateBannerProps {
   product?: AffiliateProduct;
   /** Rendered when this placement has no creative for the locale. */
   fallback?: React.ReactNode;
+  /** The creative is in the first viewport, so it must not be lazy-loaded. */
+  priority?: boolean;
 }
 
 /**
@@ -36,7 +38,7 @@ interface AffiliateBannerProps {
  * Falls back to `fallback` (or nothing) otherwise, so an empty manifest never
  * breaks the layout.
  */
-export default function AffiliateBanner({ placement, locale, className = '', product = 'nordpass', fallback = null }: AffiliateBannerProps) {
+export default function AffiliateBanner({ placement, locale, className = '', product = 'nordpass', fallback = null, priority = false }: AffiliateBannerProps) {
   const geo = useGeoCountry();
   const config = PLACEMENTS[placement];
   if (!config) return <>{fallback}</>;
@@ -56,7 +58,7 @@ export default function AffiliateBanner({ placement, locale, className = '', pro
       data-affiliate={entry.product ?? product}
       data-placement={placement}
       className={`block w-full ${className}`}
-      aria-label={entry.alt}
+      aria-label={`${entry.alt}. Ad · affiliate link`}
     >
       {/*
         Fixed-ratio box + fill keeps every 728x90 (and any future) creative in
@@ -74,7 +76,8 @@ export default function AffiliateBanner({ placement, locale, className = '', pro
           fill
           sizes="(max-width: 768px) 100vw, 728px"
           className="object-contain"
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'auto'}
           decoding="async"
         />
       </span>

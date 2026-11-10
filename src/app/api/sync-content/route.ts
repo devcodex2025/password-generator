@@ -31,7 +31,7 @@ export const maxDuration = 60;
  *   ?slug=...     – sync only one article (default: all)
  */
 export async function POST(request: Request) {
-  // ── Auth (fail closed) ────────────────────────────────────────────
+  // Auth (fail closed).
   const auth = checkRequestToken(request, process.env.CONTENT_HEALTH_TOKEN);
   if (auth === 'not-configured') {
     return NextResponse.json(
@@ -43,13 +43,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  // ── Parse options ─────────────────────────────────────────────────
+  // Parse options.
   const url = new URL(request.url);
   const dryRun = url.searchParams.get('dryRun') === 'true';
   const filterLocale = url.searchParams.get('locale') || null;
   const filterSlug = url.searchParams.get('slug') || null;
 
-  // ── Check MongoDB availability ────────────────────────────────────
+  // Check MongoDB availability.
   const mongoUri = process.env.MONGODB_URI;
   if (!mongoUri) {
     return NextResponse.json(
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
   let client: { close: () => Promise<void> } | null = null;
 
   try {
-    // ── Connect to MongoDB ────────────────────────────────────────────
+    // Connect to MongoDB.
     const nodeRequire = eval('require') as NodeRequire;
     const { MongoClient } = nodeRequire('mongodb') as {
       MongoClient: new (
@@ -104,7 +104,7 @@ export async function POST(request: Request) {
     await collection.createIndex({ slug: 1, locale: 1 }, { unique: true });
     await collection.createIndex({ locale: 1, updatedAt: -1 });
 
-    // ── Build records from TS catalog ─────────────────────────────────
+    // Build records from the TS catalog.
     const articles = filterSlug
       ? ARTICLE_CATALOG.filter((a) => a.slug === filterSlug)
       : ARTICLE_CATALOG;
@@ -172,7 +172,7 @@ export async function POST(request: Request) {
       }
     }
 
-    // ── Bust ISR cache so pages serve fresh content immediately ────
+    // Bust the ISR cache so pages serve fresh content immediately.
     if (!dryRun && (upserted > 0 || modified > 0)) {
       for (const locale of locales) {
         revalidatePath(`/${locale}/guides`, 'page');
@@ -232,7 +232,7 @@ export async function POST(request: Request) {
  * whether CJK content survives the Vercel build/minification step.
  */
 export async function GET(request: Request) {
-  // ── Auth (fail closed, header only) ──────────────────────────────
+  // Auth (fail closed, header only).
   const auth = checkRequestToken(request, process.env.CONTENT_HEALTH_TOKEN);
   if (auth === 'not-configured') {
     return NextResponse.json(

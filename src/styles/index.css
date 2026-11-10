@@ -3,6 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Every enabled control shows that it can be used; disabled ones show they cannot. */
+a[href],
+button:not(:disabled),
+summary,
+select,
+label[for],
+input[type="checkbox"],
+input[type="radio"],
+[role="button"] {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
 @media (max-width: 767px) {
   .nordpass-table-scroll {
     scrollbar-color: #05a9ff #e8f6ff;
@@ -45,7 +62,7 @@
   font-style: normal;
 }
 
-/* Шрифти для різних мов */
+/* Per-language font families. */
 .container.ua *,
 .container.ru * {
   font-family: var(--font-arsenal), sans-serif !important;
@@ -56,18 +73,13 @@
   font-family: var(--font-noto-sans-sc), var(--font-noto-sans-jp), var(--font-noto-sans), sans-serif !important;
 }
 
-/* Специфічні шрифти для китайської та японської */
+/* Chinese and Japanese need their own glyph coverage. */
 .container.zh {
   font-family: var(--font-noto-sans-sc), sans-serif !important;
 }
 
 .container.ja {
   font-family: var(--font-noto-sans-jp), sans-serif !important;
-}
-
-/* Польська мова використовує латинський алфавіт, тому Varela Round */
-.container.pl * {
-  font-family: var(--font-varela-round), sans-serif !important;
 }
 
 /* Header language select, previously injected from Header.tsx at runtime. */
@@ -306,7 +318,7 @@ html.theme-switching *::after {
 /* Inputs sit on the same surface as the cards around them (#000 read as a hole).
    Fields that bring their own surface (`bg-transparent`, e.g. the password
    display inside its own pill) are left alone so the container stays the only
-   painted layer — otherwise the field turns into a lighter pill inside a black
+   painted layer; otherwise the field turns into a lighter pill inside a black
    one. */
 .dark input:not(.bg-transparent) {
   background-color: var(--dark-theme-card) !important;
@@ -335,42 +347,42 @@ html.theme-switching *::after {
   background-color: var(--success-color) !important;
 }
 
-/* Прибирання бордера зі слайдера у чорній темі */
+/* Slider surfaces stay flat; the thumb keeps a visible keyboard focus ring. */
 .dark .MuiSlider-rail {
   border: none !important;
-  outline: none !important;
 }
 
 .dark .css-14pt78w-MuiSlider-rail {
   border: none !important;
-  outline: none !important;
 }
 
-/* Прибирання всіх меж та контурів слайдера у чорній темі */
 .dark .MuiSlider-root {
-  outline: none !important;
   border: none !important;
 }
 
 .dark .MuiSlider-root * {
-  outline: none !important;
   border: none !important;
 }
 
 .dark .MuiSlider-track {
-  outline: none !important;
   border: none !important;
 }
 
 .dark .MuiSlider-thumb {
-  outline: none !important;
   border: none !important;
 }
 
 .dark .css-1gv0vcd-MuiSlider-track,
 .dark .css-1t2bqnt {
-  outline: none !important;
   border: none !important;
+}
+
+.MuiSlider-thumb.Mui-focusVisible {
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #2A4E63 !important;
+}
+
+.dark .MuiSlider-thumb.Mui-focusVisible {
+  box-shadow: 0 0 0 3px #121212, 0 0 0 6px var(--accent-hover) !important;
 }
 
 .dark .MuiCheckbox-root {
@@ -396,7 +408,7 @@ html.theme-switching *::after {
   color: var(--dark-theme-white) !important;
 }
 
-/* Мобільне меню - обмеження ширини */
+/* Mobile menu width cap. */
 @media (max-width: 600px) {
   .MuiDrawer-paper {
     width: 100vw !important;
@@ -404,7 +416,7 @@ html.theme-switching *::after {
   }
 }
 
-/* Запобігання зміні розміру контейнера при відкритті модальних вікон */
+/* Keep the container from resizing when a modal opens. */
 @media (min-width: 768px) {
   .container {
     width: 100% !important;
@@ -414,7 +426,7 @@ html.theme-switching *::after {
   }
 }
 
-/* Обмеження максимальної ширини контейнера для ПК */
+/* Desktop container width cap. */
 @media (min-width: 1024px) {
   .container {
     max-width: 1280px !important;
@@ -433,7 +445,7 @@ html.theme-switching *::after {
   }
 }
 
-/* Відновлення скролу після закриття модальних вікон */
+/* Restore scrolling after a modal closes. */
 body {
   overflow-y: auto !important;
 }
@@ -523,7 +535,6 @@ button {
 }
 
 .container.pl button {
-  font-family: var(--font-varela-round), sans-serif !important;
   font-weight: 400;
 }
 
@@ -541,10 +552,6 @@ h2 {
 .container.zh h2,
 .container.ja h2 {
   font-family: var(--font-noto-sans-sc), var(--font-noto-sans-jp), var(--font-noto-sans), sans-serif !important;
-}
-
-.container.pl h2 {
-  font-family: var(--font-varela-round), sans-serif !important;
 }
 
 header a,
@@ -565,11 +572,6 @@ footer a {
 .container.ja header a,
 .container.ja footer a {
   font-family: var(--font-noto-sans-sc), var(--font-noto-sans-jp), var(--font-noto-sans), sans-serif !important;
-}
-
-.container.pl header a,
-.container.pl footer a {
-  font-family: var(--font-varela-round), sans-serif !important;
 }
 
 #eng {
@@ -624,7 +626,7 @@ header {
   /* color: black; */
   border: 3px solid #2A4E63 !important;
   padding: 8px 30px !important;
-  border-radius: 60px !important;
+  border-radius: 12px !important;
 }
 
 .css-eg0mwd-MuiSlider-thumb::after,
@@ -720,7 +722,7 @@ ol {
   list-style: decimal;
 }
 
-/* Додаткові стилі для різних мов */
+/* Additional per-language styles. */
 .container.ua,
 .container.ru {
   font-family: var(--font-arsenal), sans-serif !important;
@@ -734,7 +736,7 @@ ol {
   font-family: var(--font-noto-sans-jp), sans-serif !important;
 }
 
-/* Стилі для всіх інших латинських мов */
+/* Other Latin-script locales. */
 .container.en,
 .container.es,
 .container.fr,
@@ -744,7 +746,7 @@ ol {
   font-family: var(--font-varela-round), sans-serif !important;
 }
 
-/* Стилі для заголовків та тексту в різних мовах */
+/* Headings and body text per language. */
 .container.ua h1,
 .container.ua h2,
 .container.ua h3,

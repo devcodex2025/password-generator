@@ -2,6 +2,10 @@
 
 This repository allows AI coding agents and automation assistants to contribute changes, including their own commits, when the task clearly requires it.
 
+## UI work
+
+For any UI change, read `DESIGN.md` for direction first, then apply the antislop rules as the filter.
+
 ## Scope
 
 Agents may make commits for:

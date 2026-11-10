@@ -10,7 +10,7 @@ export const HOLD_MS = 200;
  *
  * Holding for less than `HOLD_MS` does nothing, so a tap stays a tap. Once the
  * threshold is reached the press is armed and the action runs when the finger
- * is released — after the browser/system has delivered its own tap or
+ * is released, after the browser/system has delivered its own tap or
  * long-press vibration. `holding` drives the pressed styling; `hasFired` lets
  * the click that follows the release be swallowed; the timer is cleared on
  * release and on unmount.

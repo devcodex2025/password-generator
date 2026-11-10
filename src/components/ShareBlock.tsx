@@ -426,7 +426,7 @@ export default function ShareBlock({
       >
         <div ref={contentRef} className="overflow-hidden">
           <div className="border-t border-[#E5F6FF] p-4 dark:border-[#2f343d] sm:p-5">
-            <div className="mb-4 flex items-center gap-3 rounded-2xl border border-[#E5F6FF] bg-gradient-to-r from-[#F8FBFF] to-white p-3 dark:border-[#2f343d] dark:from-[#111418] dark:to-[#16181c]">
+            <div className="mb-4 flex items-center gap-3 rounded-2xl border border-[#E5F6FF] bg-[#F8FBFF] p-3 dark:border-[#2f343d] dark:bg-[#111418]">
               <div className="flex h-11 w-16 shrink-0 items-center justify-center rounded-xl bg-white ring-1 ring-black/5 dark:bg-[#1a1f24] dark:ring-white/10">
                 <Image
                   src="/images/logo.svg"

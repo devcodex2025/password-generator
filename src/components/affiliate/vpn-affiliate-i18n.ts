@@ -30,7 +30,7 @@ export interface VpnAffiliateStrings {
 const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
   en: {
     heading: 'Pair Your Strong Password with a Reliable VPN',
-    intro: 'A secure password protects your accounts — but what about the connection itself? On public Wi-Fi or unsecured networks, attackers can intercept traffic before it even reaches the login page.',
+    intro: 'A secure password protects your accounts, but what about the connection itself? On public Wi-Fi or unsecured networks, attackers can intercept traffic before it even reaches the login page.',
     introLine2: 'A VPN encrypts your entire internet connection, hiding your real IP address and shielding your data from eavesdroppers, ISPs, and man-in-the-middle attacks.',
     introLine3: 'We tested top VPN providers in 2026 and NordVPN consistently delivered the best mix of speed, privacy, and no-log policy verification.',
     tableFeature: 'Feature',
@@ -49,7 +49,7 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: 'Limited',
     ctaGetNordVpn: 'Get NordVPN Now',
     ctaLearnMore: 'Learn More About NordVPN',
-    disclosure: 'This is an affiliate link. If you subscribe through this link, we may earn a commission at no extra cost to you — it helps keep this site free.',
+    disclosure: 'This is an affiliate link. If you subscribe through this link, we may earn a commission at no extra cost to you, and it helps keep this site free.',
   },
   ua: {
     heading: 'Доповніть надійний пароль перевіреним VPN',
@@ -72,7 +72,7 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: 'Обмежено',
     ctaGetNordVpn: 'Отримати NordVPN',
     ctaLearnMore: 'Дізнатися більше про NordVPN',
-    disclosure: 'Це партнерське посилання. Якщо ви підпишетесь за цим посиланням, ми можемо отримати комісію без додаткових витрат для вас — це допомагає підтримувати сайт безкоштовним.',
+    disclosure: 'Це партнерське посилання. Якщо ви підпишетесь за цим посиланням, ми можемо отримати комісію без додаткових витрат для вас, і це допомагає підтримувати сайт безкоштовним.',
   },
   es: {
     heading: 'Complementa tu contraseña segura con un VPN confiable',
@@ -95,7 +95,7 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: 'Limitado',
     ctaGetNordVpn: 'Obtener NordVPN',
     ctaLearnMore: 'Más sobre NordVPN',
-    disclosure: 'Este es un enlace de afiliado. Si te suscribes a través de este enlace, podemos recibir una comisión sin costo adicional para ti — esto ayuda a mantener el sitio gratuito.',
+    disclosure: 'Este es un enlace de afiliado. Si te suscribes a través de este enlace, podemos recibir una comisión sin costo adicional para ti, y esto ayuda a mantener el sitio gratuito.',
   },
   fr: {
     heading: 'Associez votre mot de passe fort à un VPN fiable',
@@ -118,11 +118,11 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: 'Limité',
     ctaGetNordVpn: 'Obtenir NordVPN',
     ctaLearnMore: 'En savoir plus sur NordVPN',
-    disclosure: 'Ceci est un lien d\'affiliation. Si vous vous abonnez via ce lien, nous pouvons recevoir une commission sans frais supplémentaires pour vous — cela aide à maintenir ce site gratuit.',
+    disclosure: 'Ceci est un lien d\'affiliation. Si vous vous abonnez via ce lien, nous pouvons recevoir une commission sans frais supplémentaires pour vous, et cela aide à maintenir ce site gratuit.',
   },
   de: {
     heading: 'Ergänzen Sie Ihr starkes Passwort mit einem zuverlässigen VPN',
-    intro: 'Ein sicheres Passwort schützt Ihre Konten — aber was ist mit der Verbindung selbst? In öffentlichen WLANs oder ungesicherten Netzwerken können Angreifer den Datenverkehr abfangen, bevor er die Anmeldeseite erreicht.',
+    intro: 'Ein sicheres Passwort schützt Ihre Konten, aber was ist mit der Verbindung selbst? In öffentlichen WLANs oder ungesicherten Netzwerken können Angreifer den Datenverkehr abfangen, bevor er die Anmeldeseite erreicht.',
     introLine2: 'Ein VPN verschlüsselt Ihre gesamte Internetverbindung, verbirgt Ihre echte IP-Adresse und schützt Ihre Daten vor Lauschangriffen, ISPs und Man-in-the-Middle-Angriffen.',
     introLine3: 'Wir haben 2026 die führenden VPN-Anbieter getestet und NordVPN lieferte durchgehend die beste Mischung aus Geschwindigkeit, Datenschutz und geprüfter No-Log-Policy.',
     tableFeature: 'Funktion',
@@ -141,7 +141,7 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: 'Begrenzt',
     ctaGetNordVpn: 'NordVPN holen',
     ctaLearnMore: 'Mehr über NordVPN erfahren',
-    disclosure: 'Dies ist ein Affiliate-Link. Wenn Sie sich über diesen Link anmelden, erhalten wir möglicherweise eine Provision ohne zusätzliche Kosten für Sie — das hilft, diese Seite kostenlos zu betreiben.',
+    disclosure: 'Dies ist ein Affiliate-Link. Wenn Sie sich über diesen Link anmelden, erhalten wir möglicherweise eine Provision ohne zusätzliche Kosten für Sie, und das hilft, diese Seite kostenlos zu betreiben.',
   },
   it: {
     heading: 'Abbina la tua password forte a una VPN affidabile',
@@ -164,7 +164,7 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: 'Limitato',
     ctaGetNordVpn: 'Ottieni NordVPN',
     ctaLearnMore: 'Scopri di più su NordVPN',
-    disclosure: 'Questo è un link di affiliazione. Se ti abboni tramite questo link, potremmo ricevere una commissione senza costi aggiuntivi per te — questo aiuta a mantenere il sito gratuito.',
+    disclosure: 'Questo è un link di affiliazione. Se ti abboni tramite questo link, potremmo ricevere una commissione senza costi aggiuntivi per te, e questo aiuta a mantenere il sito gratuito.',
   },
   pt: {
     heading: 'Combine sua senha forte com uma VPN confiável',
@@ -187,7 +187,7 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: 'Limitado',
     ctaGetNordVpn: 'Obter NordVPN',
     ctaLearnMore: 'Saiba mais sobre NordVPN',
-    disclosure: 'Este é um link de afiliado. Se você assinar através deste link, podemos receber uma comissão sem custos adicionais para você — isso ajuda a manter o site gratuito.',
+    disclosure: 'Este é um link de afiliado. Se você assinar através deste link, podemos receber uma comissão sem custos adicionais para você, e isso ajuda a manter o site gratuito.',
   },
   ru: {
     heading: 'Дополните надёжный пароль проверенным VPN',
@@ -210,11 +210,11 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: 'Ограничено',
     ctaGetNordVpn: 'Получить NordVPN',
     ctaLearnMore: 'Узнать больше о NordVPN',
-    disclosure: 'Это партнёрская ссылка. Если вы подпишетесь по этой ссылке, мы можем получить комиссию без дополнительных расходов для вас — это помогает поддерживать сайт бесплатным.',
+    disclosure: 'Это партнёрская ссылка. Если вы подпишетесь по этой ссылке, мы можем получить комиссию без дополнительных расходов для вас, и это помогает поддерживать сайт бесплатным.',
   },
   zh: {
     heading: '用可靠的VPN配合您的强密码',
-    intro: '安全密码保护您的账户——但连接本身呢？在公共Wi-Fi或不安全的网络上，攻击者可以在流量到达登录页面之前就拦截它。',
+    intro: '安全密码保护您的账户，但连接本身呢？在公共Wi-Fi或不安全的网络上，攻击者可以在流量到达登录页面之前就拦截它。',
     introLine2: 'VPN加密您的整个互联网连接，隐藏您的真实IP地址，保护您的数据免受窃听者、ISP和中间人攻击。',
     introLine3: '我们在2026年测试了顶级VPN提供商，NordVPN在速度、隐私和经审计的无日志政策方面始终表现最佳。',
     tableFeature: '功能',
@@ -233,7 +233,7 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: '有限',
     ctaGetNordVpn: '获取NordVPN',
     ctaLearnMore: '了解更多NordVPN',
-    disclosure: '这是联盟链接。如果您通过此链接订阅，我们可能会收到佣金，不会增加您的费用——这有助于保持网站免费。',
+    disclosure: '这是联盟链接。如果您通过此链接订阅，我们可能会收到佣金，不会增加您的费用，这有助于保持网站免费。',
   },
   ja: {
     heading: '強力なパスワードに信頼できるVPNを組み合わせましょう',
@@ -256,7 +256,7 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: '制限あり',
     ctaGetNordVpn: 'NordVPNを入手',
     ctaLearnMore: 'NordVPNについて詳しく',
-    disclosure: 'これはアフィリエイトリンクです。このリンクを通じてサブスクリプションを購入された場合、追加費用なしでコミッションを受け取る可能性があります — これによりサイトを無料で維持できます。',
+    disclosure: 'これはアフィリエイトリンクです。このリンクを通じてサブスクリプションを購入された場合、追加費用なしでコミッションを受け取る可能性があります。これによりサイトを無料で維持できます。',
   },
   pl: {
     heading: 'Uzupełnij silne hasło niezawodnym VPN',
@@ -279,7 +279,7 @@ const vpnAffiliateI18n: Record<string, VpnAffiliateStrings> = {
     limited: 'Ograniczone',
     ctaGetNordVpn: 'Pobierz NordVPN',
     ctaLearnMore: 'Dowiedz się więcej o NordVPN',
-    disclosure: 'To jest link partnerski. Jeśli subskrybujesz za pośrednictwem tego linku, możemy otrzymać prowizję bez dodatkowych kosztów dla Ciebie — to pomaga utrzymać stronę za darmo.',
+    disclosure: 'To jest link partnerski. Jeśli subskrybujesz za pośrednictwem tego linku, możemy otrzymać prowizję bez dodatkowych kosztów dla Ciebie, a to pomaga utrzymać stronę za darmo.',
   },
 };
 

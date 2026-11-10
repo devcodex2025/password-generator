@@ -4,12 +4,12 @@ import linksData from '@/content/affiliate/links.json';
  * Affiliate link registry.
  *
  * One source of truth for every outbound monetised link. Resolution order:
- *   1. byGeo[country]      — ISO-3166 alpha-2 (from the `geo` cookie, set in middleware)
- *   2. byLocale[locale]    — UI locale of the page
- *   3. byLocale.en         — English fallback
- *   4. env                 — global override / legacy value
- *   5. fallback            — hard-coded tracking link (if present)
- *   6. internal            — internal page when no affiliate link exists
+ *   1. byGeo[country]      ISO-3166 alpha-2 (from the `geo` cookie, set in middleware)
+ *   2. byLocale[locale]    UI locale of the page
+ *   3. byLocale.en         English fallback
+ *   4. env                 global override / legacy value
+ *   5. fallback            hard-coded tracking link (if present)
+ *   6. internal            internal page when no affiliate link exists
  *
  * Rule: never send a visitor to the merchant with a non-attributed URL.
  * If we have nothing to earn from, keep them on our own page instead.
@@ -45,7 +45,7 @@ export interface ResolvedLink {
   href: string;
   /** true when the URL is a real affiliate link (i.e. can earn commission). */
   isAffiliate: boolean;
-  /** which rule produced the URL — useful for analytics and debugging */
+  /** which rule produced the URL, useful for analytics and debugging */
   source: 'geo' | 'locale' | 'locale-en' | 'env' | 'fallback' | 'internal';
 }
 
@@ -105,7 +105,7 @@ export function resolveAffiliateUrl(product: AffiliateProduct, options: ResolveO
   return { href: decorate(config.internal, locale, placement), isAffiliate: false, source: 'internal' };
 }
 
-/** Locales that still have no dedicated tracking link — used by scripts and docs. */
+/** Locales that still have no dedicated tracking link, used by scripts and docs. */
 export function localesMissingLinks(product: AffiliateProduct): string[] {
   const config = PRODUCTS[product];
   if (!config) return [...SUPPORTED_LOCALES];

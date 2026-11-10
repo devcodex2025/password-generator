@@ -2,7 +2,7 @@
  * Phase 2: send affiliate conversions into GA4 as `purchase` events.
  *
  * The click tracker writes the GA4 client id into `aff_sub2`, the network returns it back as
- * `Stat.affiliate_info2` on every conversion. That is the whole join — no database required.
+ * `Stat.affiliate_info2` on every conversion. That is the whole join, so no database is required.
  */
 
 const OFFER_NAMES: Record<string, string> = {

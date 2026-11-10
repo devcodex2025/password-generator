@@ -1,6 +1,7 @@
 'use client';
 
-import { Crown, UsersRound } from 'lucide-react';
+import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined';
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import { getAffiliateStrings } from './affiliate-i18n';
 import { cn } from '@/lib/utils';
 import { resolveAffiliateUrl } from '@/content/affiliate/links';
@@ -10,11 +11,11 @@ interface NordPassAffiliatePromoProps {
   locale: string;
   /** Optional extra Tailwind classes on the outer wrapper */
   className?: string;
-  /** Where this block is rendered — used for analytics and sub-id attribution */
+  /** Where this block is rendered, used for analytics and sub-id attribution */
   placement?: string;
 }
 
-/* ── Analytics helper ── */
+/* Analytics helper. */
 
 function trackClick(label: string, locale: string, placement: string) {
   try {
@@ -39,7 +40,7 @@ function trackClick(label: string, locale: string, placement: string) {
   }
 }
 
-/* ── Comparison data ── */
+/* Comparison data. */
 
 interface ComparisonRow {
   featureKey: keyof ReturnType<typeof getAffiliateStrings>;
@@ -50,7 +51,6 @@ interface ComparisonRow {
 
 function getRows(t: ReturnType<typeof getAffiliateStrings>): ComparisonRow[] {
   return [
-    { featureKey: 'featurePrice', nordpass: '$1.49/mo', onepassword: '$2.99/mo', bitwarden: '$0' },
     { featureKey: 'featureDevices', nordpass: t.unlimited, onepassword: t.unlimited, bitwarden: t.unlimited },
     { featureKey: 'featurePasskeys', nordpass: t.yes, onepassword: t.yes, bitwarden: t.yes },
     { featureKey: 'featureBreachScan', nordpass: t.yes, onepassword: t.yes, bitwarden: t.yes },
@@ -60,7 +60,7 @@ function getRows(t: ReturnType<typeof getAffiliateStrings>): ComparisonRow[] {
   ];
 }
 
-/* ── Component ── */
+/* Component. */
 
 export default function NordPassAffiliatePromo({ locale, className = '', placement = 'inline' }: NordPassAffiliatePromoProps) {
   const t = getAffiliateStrings(locale);
@@ -71,7 +71,7 @@ export default function NordPassAffiliatePromo({ locale, className = '', placeme
 
   return (
     <section
-      className={cn('mt-10 rounded-3xl border border-[#E5F6FF] dark:border-[#374151] bg-gradient-to-br from-white via-[#f7fbff] to-[#eef7ff] dark:from-[#171717] dark:via-[#1a1f2e] dark:to-[#171717] p-6 md:p-8 shadow-sm', className)}
+      className={cn('mt-10 rounded-3xl border border-[#E5F6FF] dark:border-[#374151] bg-[#f7fbff] dark:bg-[#171717] p-6 md:p-8 shadow-sm', className)}
       aria-label={t.heading}
     >
       {/* Heading */}
@@ -132,6 +132,13 @@ export default function NordPassAffiliatePromo({ locale, className = '', placeme
             ))}
           </tbody>
         </table>
+        {/*
+          Competitor prices change constantly and we cannot verify them from the
+          vendor pages at build time, so the table compares features only.
+        */}
+        <p className="mt-3 text-xs text-[#6b7280] dark:text-[#9ca3af]">
+          {t.pricingNote}
+        </p>
       </div>
 
       {/* CTA buttons */}
@@ -145,7 +152,7 @@ export default function NordPassAffiliatePromo({ locale, className = '', placeme
           data-placement={placement}
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#05a9ff] hover:bg-[#38beff] !text-[#0a1e2a] font-semibold py-3 px-6 transition-all duration-200 shadow-md hover:shadow-lg"
         >
-          <Crown className="w-5 h-5" aria-hidden="true" />
+          <WorkspacePremiumOutlinedIcon sx={{ fontSize: 20 }} aria-hidden="true" />
           {t.ctaPremium}
         </a>
         <a
@@ -157,7 +164,7 @@ export default function NordPassAffiliatePromo({ locale, className = '', placeme
           data-placement={placement}
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#05a9ff] !text-[#38beff] hover:bg-[#05a9ff] hover:!text-[#0a1e2a] font-semibold py-3 px-6 transition-all duration-200"
         >
-          <UsersRound className="w-5 h-5" aria-hidden="true" />
+          <GroupsOutlinedIcon sx={{ fontSize: 20 }} aria-hidden="true" />
           {t.ctaFamily}
         </a>
       </div>

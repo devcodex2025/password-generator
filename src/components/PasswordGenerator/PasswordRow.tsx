@@ -20,7 +20,7 @@ interface PasswordRowProps {
   password: string;
   index: number;
   onGenerate: (index: number) => void;
-  onCopy: (index: number) => void;
+  onCopy: (index: number) => Promise<boolean>;
   /** Called with the share target key when a share link is opened. */
   onShare?: (target: string) => void;
   isAnimating: boolean;
@@ -47,8 +47,9 @@ export default function PasswordRow({
   // the menu's anchor button disappears when the density changes
   useEffect(() => setMenu(null), [density]);
 
-  const handleCopy = () => {
-    onCopy(index);
+  const handleCopy = async () => {
+    const copiedOk = await onCopy(index);
+    if (!copiedOk) return;
     setCopied(true);
     setTimeout(() => setCopied(false), 1000);
   };
@@ -79,7 +80,7 @@ export default function PasswordRow({
           id={`password-output-${index}`}
           type="text"
           value={password || ''}
-          className="min-w-0 flex-1 border-none bg-transparent py-2 text-base outline-none dark:text-white md:text-lg"
+          className="min-w-0 flex-1 border-none bg-transparent py-2 text-base outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2A4E63] dark:text-white dark:focus-visible:outline-[#38beff] md:text-lg"
           readOnly
         />
         {/* order: copy, share, generate */}

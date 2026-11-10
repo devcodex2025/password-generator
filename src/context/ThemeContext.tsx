@@ -60,7 +60,7 @@ const theme = createTheme({
    removal of the transition guard, short enough to be invisible. */
 const THEME_SWITCH_MS = 120;
 
-/* Keeps the pre-paint class in sync without touching storage — used on mount and
+/* Keeps the pre-paint class in sync without touching storage, used on mount and
    for OS-level preference changes. */
 function setDocumentDark(isDark: boolean) {
   if (typeof document === 'undefined') return;
@@ -134,7 +134,7 @@ export const CustomThemeProvider = ({
 
     // On a cold load the pre-paint script already applied the class (no-op here).
     // A client-side locale switch re-creates the root layout and with it the
-    // <html> element, so the class has to be re-asserted — otherwise the CSS
+    // <html> element, so the class has to be re-asserted; otherwise the CSS
     // goes light while the JS-driven colours stay dark (half-themed page).
     setDocumentDark(resolved);
     setIsDarkMode(resolved);

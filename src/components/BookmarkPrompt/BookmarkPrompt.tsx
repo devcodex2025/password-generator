@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
-import { Bookmark } from 'lucide-react';
+import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
 import BookmarkInstructions from './BookmarkInstructions';
 import {
   BOOKMARK_EVENTS,
@@ -178,7 +178,7 @@ export default function BookmarkPrompt({ language, active }: BookmarkPromptProps
       setInstructionsOpen(false);
 
       if (method === 'marked_done') {
-        // The visitor confirmed they saved the page themselves — we store that
+        // The visitor confirmed they saved the page themselves, so we store that
         // acknowledgement and stop asking, without claiming a verified success.
         dismissBookmarkPrompt({ markedDone: true });
         setIsVisible(false);
@@ -210,7 +210,7 @@ export default function BookmarkPrompt({ language, active }: BookmarkPromptProps
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EAF8FF] text-[#2A4E63] dark:bg-[#05a9ff]/15 dark:text-[#38beff] sm:h-11 sm:w-11"
             aria-hidden="true"
           >
-            <Bookmark className="h-5 w-5" />
+            <BookmarkBorderOutlinedIcon sx={{ fontSize: 20 }} />
           </span>
 
           <div className="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between sm:gap-6">

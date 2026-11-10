@@ -81,7 +81,6 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const [separator, setSeparator] = useState<string>('-');
   const [capitalize, setCapitalize] = useState<boolean>(true);
   const maxQuantity = 100;
-  const rewardQueue = useRef<string[]>([]);
   const rewardAnchorRef = useRef<HTMLDivElement | null>(null);
   const rewardConfig = {
     elementCount: 180,
@@ -94,7 +93,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const ANIMATION_DURATION = 250;
 
-  // Клієнтська синхронізація (резервна)
+  // Client-side language sync (fallback).
   useEffect(() => {
     if (language && i18n.language !== language) {
       i18n.changeLanguage(language);
@@ -113,9 +112,15 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
   });
 
   // The bulk layer covers the form: keep keyboard and screen readers out of what is underneath.
+  // On close the covered form becomes reachable again, so focus returns to the Bulk button.
   // ponytail: set through the DOM because @types/react 18 has no `inert` prop
+  const bulkWasOpen = useRef(false);
   useEffect(() => {
     formRef.current?.toggleAttribute('inert', bulkOpen);
+    if (bulkWasOpen.current && !bulkOpen) {
+      formRef.current?.querySelector<HTMLElement>('[data-bulk-opener]')?.focus();
+    }
+    bulkWasOpen.current = bulkOpen;
   }, [bulkOpen]);
 
   // One snackbar per message: repeated failures while dragging do not stack.
@@ -189,15 +194,20 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
     ga('bulk_opened', { ui_language: language, surface: 'home' });
   };
 
-  const handleCopyClick = (index: number) => {
+  const handleCopyClick = async (index: number): Promise<boolean> => {
     if (index >= 0 && index < passwords.length && passwords[index]) {
-      navigator.clipboard.writeText(passwords[index]);
+      try {
+        await navigator.clipboard.writeText(passwords[index]);
+      } catch {
+        warn('snackbar_copy_failed');
+        return false;
+      }
       const snackbarId = nextSnackbarId();
       setSnackbars((prev) => [...prev, { id: snackbarId, message: t('snackbar_copied') }]);
       setTimeout(() => {
         setSnackbars((prev) => prev.filter((s) => s.id !== snackbarId));
       }, 500);
-      runReward('confetti');
+      runReward();
       ga('password_copied', { index, ui_language: language, surface: 'home' });
 
       // Highest-intent moment: offer to store the password. This runs on every
@@ -205,19 +215,27 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       if (shouldShowSavePrompt()) {
         window.setTimeout(() => setSaveModalOpen(true), 400);
       }
+      return true;
     }
+    return false;
   };
 
-  const handleCopyAll = (list: string[]) => {
-    if (list.length === 0) return;
-    navigator.clipboard.writeText(list.join('\n'));
+  const handleCopyAll = async (list: string[]): Promise<boolean> => {
+    if (list.length === 0) return false;
+    try {
+      await navigator.clipboard.writeText(list.join('\n'));
+    } catch {
+      warn('snackbar_copy_failed');
+      return false;
+    }
     const snackbarId = nextSnackbarId();
     setSnackbars((prev) => [...prev, { id: snackbarId, message: t('snackbar_all_copied') }]);
     setTimeout(() => {
       setSnackbars((prev) => prev.filter((s) => s.id !== snackbarId));
     }, 500);
-    runReward('balloons');
+    runReward();
     ga('passwords_copied_all', { count: list.length, ui_language: language, surface: 'bulk' });
+    return true;
   };
 
   const handleDownloadAll = (list: string[]) => {
@@ -228,32 +246,23 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    runReward('emoji');
     ga('passwords_downloaded', { count: list.length, ui_language: language, surface: 'bulk' });
   };
 
-  const runReward = (type: string) => {
-    // Confetti is driven by JS, so the global reduced-motion CSS cannot stop
-    // it; skip the reward entirely when the visitor asked for less motion.
+  const runReward = () => {
+    // Confetti is the one reward, reserved for a successful copy: it tells the
+    // visitor the password left the page. It is JS-driven, so the global
+    // reduced-motion CSS cannot stop it; skip it when motion is not wanted.
     if (
       typeof window !== 'undefined' &&
       window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches
     ) {
       return;
     }
-    if (isAnimating) {
-      rewardQueue.current.push(type);
-      return;
-    }
+    if (isAnimating) return;
     setIsAnimating(true);
     reward();
-    setTimeout(() => {
-      setIsAnimating(false);
-      if (rewardQueue.current.length > 0) {
-        const nextType = rewardQueue.current.shift();
-        if (nextType) runReward(nextType);
-      }
-    }, ANIMATION_DURATION);
+    setTimeout(() => setIsAnimating(false), ANIMATION_DURATION);
   };
 
   const [passwordStrengthAnalysis, setPasswordStrengthAnalysis] = useState({
@@ -302,7 +311,7 @@ export default function PasswordGenerator({ language }: PasswordGeneratorProps) 
       }
     };
 
-    // zxcvbn ships ~800 KB of dictionaries — load and run it when the browser is
+    // zxcvbn ships ~800 KB of dictionaries, so load and run it when the browser is
     // idle so it never competes with LCP/TBT on first paint.
     const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback;
     const cic = (window as unknown as { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback;

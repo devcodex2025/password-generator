@@ -19,7 +19,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: 'Answer',
     placeholder: 'Enter number',
     submit: 'Verify',
-    success: 'Verified — contact email unlocked.',
+    success: 'Verified: contact email unlocked.',
     error: 'Captcha answer is incorrect. Please try again.',
   },
   ua: {
@@ -28,7 +28,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: 'Відповідь',
     placeholder: 'Введіть число',
     submit: 'Перевірити',
-    success: 'Перевірено — електронну адресу розблоковано.',
+    success: 'Перевірено: електронну адресу розблоковано.',
     error: 'Неправильна відповідь на капчу. Спробуйте ще раз.',
   },
   es: {
@@ -37,7 +37,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: 'Respuesta',
     placeholder: 'Introduce un número',
     submit: 'Verificar',
-    success: 'Verificado — correo desbloqueado.',
+    success: 'Verificado: correo desbloqueado.',
     error: 'Respuesta incorrecta. Inténtalo de nuevo.',
   },
   fr: {
@@ -46,7 +46,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: 'Réponse',
     placeholder: 'Entrez un nombre',
     submit: 'Vérifier',
-    success: 'Vérifié — e-mail déverrouillé.',
+    success: 'Vérifié : e-mail déverrouillé.',
     error: 'Réponse incorrecte. Veuillez réessayer.',
   },
   de: {
@@ -55,7 +55,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: 'Antwort',
     placeholder: 'Geben Sie eine Zahl ein',
     submit: 'Überprüfen',
-    success: 'Überprüft — E-Mail freigeschaltet.',
+    success: 'Überprüft: E-Mail freigeschaltet.',
     error: 'Falsche Antwort. Bitte versuchen Sie es erneut.',
   },
   it: {
@@ -64,7 +64,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: 'Risposta',
     placeholder: 'Inserisci un numero',
     submit: 'Verifica',
-    success: 'Verificato — email sbloccata.',
+    success: 'Verificato: email sbloccata.',
     error: 'Risposta errata. Riprova.',
   },
   pt: {
@@ -73,7 +73,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: 'Resposta',
     placeholder: 'Digite um número',
     submit: 'Verificar',
-    success: 'Verificado — e-mail desbloqueado.',
+    success: 'Verificado: e-mail desbloqueado.',
     error: 'Resposta incorreta. Tente novamente.',
   },
   ru: {
@@ -82,7 +82,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: 'Ответ',
     placeholder: 'Введите число',
     submit: 'Проверить',
-    success: 'Проверено — адрес электронной почты разблокирован.',
+    success: 'Проверено: адрес электронной почты разблокирован.',
     error: 'Неправильный ответ. Попробуйте ещё раз.',
   },
   zh: {
@@ -91,7 +91,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: '答案',
     placeholder: '请输入一个数字',
     submit: '验证',
-    success: '验证成功 — 电子邮件已解锁。',
+    success: '验证成功：电子邮件已解锁。',
     error: '答案不正确。请再试一次。',
   },
   ja: {
@@ -100,7 +100,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: '答え',
     placeholder: '数字を入力してください',
     submit: '確認',
-    success: '確認済み — メールが表示されました。',
+    success: '確認済み：メールが表示されました。',
     error: '答えが正しくありません。もう一度試してください。',
   },
   pl: {
@@ -109,7 +109,7 @@ const CAPTCHA_COPY: Record<string, CaptchaCopy> = {
     label: 'Odpowiedź',
     placeholder: 'Wpisz liczbę',
     submit: 'Sprawdź',
-    success: 'Zweryfikowano — e-mail odblokowany.',
+    success: 'Zweryfikowano: e-mail odblokowany.',
     error: 'Nieprawidłowa odpowiedź. Spróbuj ponownie.',
   },
 };

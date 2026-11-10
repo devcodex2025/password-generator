@@ -1,10 +1,10 @@
 'use client';
 
-import { ArrowRight, ShieldCheck } from 'lucide-react';
+import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import { resolveAffiliateUrl } from '@/content/affiliate/links';
 import { useGeoCountry } from './useGeoCountry';
 
-/* ── Copy (local, so the shared lang.json stays untouched) ── */
+/* Copy (local, so the shared lang.json stays untouched). */
 
 type StripCopy = { text: string; cta: string };
 
@@ -47,12 +47,11 @@ export default function OfferStrip({ locale, className = '' }: OfferStripProps) 
         className="flex items-center justify-between gap-3 rounded-2xl border border-[#E5F6FF] bg-white px-4 py-3 shadow-sm transition hover:border-[#05a9ff] dark:border-[#374151] dark:bg-[#1c1c1c]"
       >
         <span className="flex min-w-0 items-center gap-2">
-          <ShieldCheck className="h-5 w-5 shrink-0 text-[#05a9ff]" aria-hidden="true" />
+          <ShieldOutlinedIcon sx={{ fontSize: 20 }} className="shrink-0 text-[#05a9ff]" aria-hidden="true" />
           <span className="truncate text-[14px] text-[#374151] dark:text-[#c7c7c7]">{copy.text}</span>
         </span>
         <span className="flex shrink-0 items-center gap-1 rounded-full bg-[#05a9ff] px-3 py-1.5 text-[13px] font-semibold !text-[#0a1e2a]">
           {copy.cta}
-          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
         </span>
       </a>
     </div>

@@ -12,7 +12,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { useRouter, usePathname } from 'next/navigation';
 import { getAvailableLanguages } from '@/utils/languageUtils';
 
-/* ── Below-fold components: lazy-loaded to reduce initial JS bundle ── */
+/* Below-fold components are lazy-loaded to reduce the initial JS bundle. */
 import WhyChooseUsDirect from '@/components/WhyChooseUs';
 import PasswordBreachCheckDirect from '@/components/PasswordBreachCheck';
 import GuideLinksSectionDirect from '@/components/GuideLinksSection';
@@ -90,6 +90,7 @@ export default function Page({ params }: PageProps) {
           <AffiliateBanner
             placement="home-under-tool"
             locale={locale}
+            priority
             className="mx-auto mt-4 max-w-3xl px-4"
             fallback={<OfferStrip locale={locale} />}
           />

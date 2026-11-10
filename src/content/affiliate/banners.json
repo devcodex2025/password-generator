@@ -1,7 +1,7 @@
 {
   "version": 2,
   "updatedAt": "2026-10-31",
-  "_comment": "Official Nord creatives. Source: https://nordvpn.com/affiliate-assets/ and https://nordpass.com/affiliate-assets/ (Google Drive folders, Generic/728x90). Files live in public/affiliate/. Tracking URLs never go here — they come from links.json.",
+  "_comment": "Official Nord creatives. Source: https://nordvpn.com/affiliate-assets/ and https://nordpass.com/affiliate-assets/ (Google Drive folders, Generic/728x90). Files live in public/affiliate/. Tracking URLs never go here; they come from links.json.",
   "placements": {
     "home-under-tool": {
       "byLocale": {

@@ -21,14 +21,14 @@ export const en: LocalizedArticleContent = {
       paragraphs: [
         'The average person manages over 100 online accounts in 2026. From banking and email to streaming services and food delivery, each account ideally requires a unique, complex password. Without a deliberate strategy, most people fall into dangerous habits: reusing the same password everywhere, using simple variations, or writing passwords on sticky notes.',
         'A 2025 study by NordPass found that "123456" remains the most commonly used password worldwide, appearing in over 4.5 million breached credential sets. The second most common was "password." These weak credentials are tested by automated bots within minutes of any data breach.',
-        'The question is not whether you need to manage passwords — it is how. This guide compares dedicated password managers with manual approaches so you can make an informed decision based on your security needs, technical comfort level, and budget.',
+        'The question is not whether you need to manage passwords: it is how. This guide compares dedicated password managers with manual approaches so you can make an informed decision based on your security needs, technical comfort level, and budget.',
       ],
     },
     {
       heading: 'Top 7 Password Managers in 2026',
       paragraphs: [
         '1Password stands as the gold standard for personal and family use. It offers a polished interface across all platforms, Watchtower breach monitoring, Travel Mode for crossing borders without sensitive data, and strong sharing features. Pricing starts at $2.99/month for individuals. It has passed multiple independent security audits and uses a unique Secret Key alongside your master password for additional protection.',
-        'Bitwarden is the best open-source option and the top choice for budget-conscious users. The free tier includes unlimited passwords across unlimited devices — a rarity in 2026. The premium tier ($10/year) adds TOTP authentication, emergency access, and vault health reports. All code is publicly auditable on GitHub, and the platform has completed SOC 2 Type II and third-party penetration testing.',
+        'Bitwarden is the best open-source option and the top choice for budget-conscious users. The free tier includes unlimited passwords across unlimited devices, a rarity in 2026. The premium tier ($10/year) adds TOTP authentication, emergency access, and vault health reports. All code is publicly auditable on GitHub, and the platform has completed SOC 2 Type II and third-party penetration testing.',
         'KeePass remains the preferred option for users who want complete offline control. As a local-only solution, your encrypted database never touches a cloud server. It supports plugins for browser integration and syncing via your own cloud storage (Dropbox, OneDrive, Syncthing). The trade-off is a less polished UI and manual sync setup.',
         'Dashlane has pivoted to a web-first approach and offers excellent phishing detection through its built-in VPN and dark web monitoring. It automatically changes passwords on supported sites and provides a comprehensive security dashboard. Pricing is higher at $4.99/month but includes VPN access.',
         'NordPass, built by the team behind NordVPN, uses the XChaCha20 encryption algorithm instead of the more common AES-256. It offers a clean interface, biometric unlock, and data breach scanning. The free tier allows unlimited passwords on one device at a time.',
@@ -39,18 +39,18 @@ export const en: LocalizedArticleContent = {
     {
       heading: 'Manual Storage Methods: Risks and Realities',
       paragraphs: [
-        'Writing passwords in a physical notebook is actually more secure than many people assume — it cannot be hacked remotely. However, it fails at scale: you cannot generate truly random passwords by hand, searching through pages is slow, and the notebook can be lost, stolen, or destroyed by fire or water. It also encourages password reuse because creating and recording unique complex passwords manually is tedious.',
+        'Writing passwords in a physical notebook is actually more secure than many people assume: it cannot be hacked remotely. However, it fails at scale: you cannot generate truly random passwords by hand, searching through pages is slow, and the notebook can be lost, stolen, or destroyed by fire or water. It also encourages password reuse because creating and recording unique complex passwords manually is tedious.',
         'Spreadsheets and text files (even if encrypted with a password) provide searchability but introduce serious risks. An unencrypted file on your desktop is accessible to any malware. Even encrypted spreadsheets typically use weaker encryption than dedicated password managers and lack features like auto-fill, breach monitoring, and secure sharing.',
         'Browser built-in password saving (Chrome, Firefox, Safari) is a step up from manual methods. Modern browsers encrypt stored passwords and can generate random passwords. However, they are vulnerable if someone gains access to your device session, lack cross-browser support, and typically do not offer the advanced features (secure notes, document storage, emergency access) that dedicated managers provide.',
-        'The "memory palace" or mental algorithm approach — where you derive passwords from a personal formula applied to each site — seems clever but fails in practice. Once an attacker sees two or three of your passwords from different breaches, the pattern becomes obvious and all your accounts are compromised simultaneously.',
+        'The "memory palace" or mental algorithm approach (where you derive passwords from a personal formula applied to each site) seems clever but fails in practice. Once an attacker sees two or three of your passwords from different breaches, the pattern becomes obvious and all your accounts are compromised simultaneously.',
       ],
     },
     {
       heading: 'Security Comparison: What Actually Protects You',
       paragraphs: [
-        'Dedicated password managers use AES-256 or XChaCha20 encryption with zero-knowledge architecture — the company cannot read your passwords even if compelled by law. They derive encryption keys from your master password using slow key-derivation functions (PBKDF2 with 600,000+ iterations, or better yet, Argon2id) that make brute-force attacks computationally infeasible.',
+        'Dedicated password managers use AES-256 or XChaCha20 encryption with zero-knowledge architecture, so the company cannot read your passwords even if compelled by law. They derive encryption keys from your master password using slow key-derivation functions (PBKDF2 with 600,000+ iterations, or better yet, Argon2id) that make brute-force attacks computationally infeasible.',
         'In 2023, LastPass suffered a major breach where encrypted vaults were stolen. While no passwords were decrypted (assuming users had strong master passwords), the incident highlighted the importance of choosing a manager with strong key derivation and keeping your master password genuinely strong (15+ characters or a 5+ word passphrase).',
-        'Manual methods have no encryption by default, no breach monitoring, no automatic generation, and no protection against shoulder-surfing or physical theft. The one advantage — offline-only storage cannot be breached remotely — is negated by the practical impossibility of maintaining unique complex passwords manually across 100+ accounts.',
+        'Manual methods have no encryption by default, no breach monitoring, no automatic generation, and no protection against shoulder-surfing or physical theft. The one advantage (offline-only storage cannot be breached remotely) is negated by the practical impossibility of maintaining unique complex passwords manually across 100+ accounts.',
       ],
       bullets: [
         'AES-256 / XChaCha20 encryption: password managers only',
@@ -64,7 +64,7 @@ export const en: LocalizedArticleContent = {
     {
       heading: 'Migration Guide: Moving to a Password Manager',
       paragraphs: [
-        'Step 1: Choose your password manager and create your account. Set a strong master password using the passphrase method (5+ random words). Enable two-factor authentication on the manager account itself — this is your most critical account.',
+        'Step 1: Choose your password manager and create your account. Set a strong master password using the passphrase method (5+ random words). Enable two-factor authentication on the manager account itself: this is your most critical account.',
         'Step 2: Install the browser extension and mobile app. Most managers offer one-click import from browsers (Chrome, Firefox, Safari) and other managers. This import captures your existing saved passwords as a starting point.',
         'Step 3: Prioritize changing passwords for your most sensitive accounts first: email, banking, cloud storage, and social media. Use the password generator to create 20+ character random passwords. This is also the perfect time to enable MFA on these accounts.',
         'Step 4: Over the next few weeks, update remaining passwords as you naturally log into each site. Your manager will flag weak, reused, or breached passwords. Aim to eliminate all reused passwords within 30 days.',
@@ -74,7 +74,7 @@ export const en: LocalizedArticleContent = {
     {
       heading: 'Pricing Overview',
       paragraphs: [
-        'Bitwarden Free provides unlimited passwords on unlimited devices — the best free option available. Bitwarden Premium at $10/year adds TOTP, emergency access, and vault health reports. 1Password at $2.99/month offers the most polished experience with Watchtower and Travel Mode. Dashlane at $4.99/month includes a VPN. NordPass Premium is $1.99/month. Proton Pass Plus is $3.99/month with email aliases.',
+        'Bitwarden Free provides unlimited passwords on unlimited devices, the best free option available. Bitwarden Premium at $10/year adds TOTP, emergency access, and vault health reports. 1Password at $2.99/month offers the most polished experience with Watchtower and Travel Mode. Dashlane at $4.99/month includes a VPN. NordPass Premium is $1.99/month. Proton Pass Plus is $3.99/month with email aliases.',
         'For families, 1Password Families ($4.99/month for 5 users) and Bitwarden Families ($3.33/month for 6 users) offer the best value. Both include shared vaults and individual private vaults for each family member.',
         'Free built-in options (Apple Keychain, Google Password Manager, Firefox Lockwise) cost nothing but lock you into a single ecosystem. If you use both iOS and Windows, or Android and macOS, you will need a cross-platform dedicated manager.',
       ],
@@ -109,38 +109,38 @@ export const ua: LocalizedArticleContent = {
     {
       heading: 'Чому вам потрібна стратегія управління паролями',
       paragraphs: [
-        'Середньостатистична людина у 2026 році керує понад 100 онлайн-акаунтами. Від банкінгу та електронної пошти до стримінгових сервісів і доставки їжі — кожен акаунт ідеально потребує унікального складного пароля. Без продуманої стратегії більшість людей потрапляють у небезпечні звички: повторне використання одного пароля скрізь, прості варіації або записування паролів на стікерах.',
+        'Середньостатистична людина у 2026 році керує понад 100 онлайн-акаунтами. Від банкінгу та електронної пошти до стримінгових сервісів і доставки їжі: кожен акаунт ідеально потребує унікального складного пароля. Без продуманої стратегії більшість людей потрапляють у небезпечні звички: повторне використання одного пароля скрізь, прості варіації або записування паролів на стікерах.',
         'Дослідження NordPass 2025 року показало, що "123456" залишається найпоширенішим паролем у світі, з\'являючись у понад 4,5 мільйона наборів скомпрометованих облікових даних. Другим за поширеністю був "password." Ці слабкі облікові дані перевіряються автоматизованими ботами протягом хвилин після будь-якого витоку даних.',
-        'Питання не в тому, чи потрібно вам управляти паролями — а в тому, як. Цей гід порівнює спеціалізовані менеджери паролів з ручними підходами, щоб ви могли прийняти обґрунтоване рішення на основі ваших потреб безпеки, технічного рівня комфорту та бюджету.',
+        'Питання не в тому, чи потрібно вам управляти паролями, а в тому, як. Цей гід порівнює спеціалізовані менеджери паролів з ручними підходами, щоб ви могли прийняти обґрунтоване рішення на основі ваших потреб безпеки, технічного рівня комфорту та бюджету.',
       ],
     },
     {
       heading: 'ТОП-7 менеджерів паролів у 2026 році',
       paragraphs: [
-        '1Password — золотий стандарт для персонального та сімейного використання. Він пропонує відшліфований інтерфейс на всіх платформах, моніторинг витоків Watchtower, Travel Mode для перетину кордонів без конфіденційних даних та потужні функції обміну. Ціни починаються від $2.99/місяць для індивідуального використання. Він пройшов численні незалежні аудити безпеки і використовує унікальний Secret Key поряд з вашим мастер-паролем для додаткового захисту.',
-        'Bitwarden — найкращий варіант з відкритим кодом і топ-вибір для бюджетних користувачів. Безкоштовний рівень включає необмежені паролі на необмежених пристроях — рідкість у 2026 році. Преміум-рівень ($10/рік) додає TOTP-аутентифікацію, екстрений доступ та звіти про стан сховища. Весь код публічно доступний для аудиту на GitHub, і платформа пройшла SOC 2 Type II та стороннє тестування на проникнення.',
-        'KeePass залишається улюбленим варіантом для користувачів, які хочуть повного офлайн-контролю. Як локальне рішення, ваша зашифрована база даних ніколи не потрапляє на хмарний сервер. Він підтримує плагіни для інтеграції з браузерами та синхронізації через ваше власне хмарне сховище (Dropbox, OneDrive, Syncthing). Компроміс — менш відшліфований інтерфейс та ручне налаштування синхронізації.',
-        'Dashlane перейшов на web-first підхід і пропонує відмінне виявлення фішингу через вбудований VPN та моніторинг даркнету. Він автоматично змінює паролі на підтримуваних сайтах і надає комплексну панель безпеки. Ціна вища — $4.99/місяць, але включає доступ до VPN.',
+        '1Password це золотий стандарт для персонального та сімейного використання. Він пропонує відшліфований інтерфейс на всіх платформах, моніторинг витоків Watchtower, Travel Mode для перетину кордонів без конфіденційних даних та потужні функції обміну. Ціни починаються від $2.99/місяць для індивідуального використання. Він пройшов численні незалежні аудити безпеки і використовує унікальний Secret Key поряд з вашим мастер-паролем для додаткового захисту.',
+        'Bitwarden це найкращий варіант з відкритим кодом і топ-вибір для бюджетних користувачів. Безкоштовний рівень включає необмежені паролі на необмежених пристроях, рідкість у 2026 році. Преміум-рівень ($10/рік) додає TOTP-аутентифікацію, екстрений доступ та звіти про стан сховища. Весь код публічно доступний для аудиту на GitHub, і платформа пройшла SOC 2 Type II та стороннє тестування на проникнення.',
+        'KeePass залишається улюбленим варіантом для користувачів, які хочуть повного офлайн-контролю. Як локальне рішення, ваша зашифрована база даних ніколи не потрапляє на хмарний сервер. Він підтримує плагіни для інтеграції з браузерами та синхронізації через ваше власне хмарне сховище (Dropbox, OneDrive, Syncthing). Компроміс: менш відшліфований інтерфейс та ручне налаштування синхронізації.',
+        'Dashlane перейшов на web-first підхід і пропонує відмінне виявлення фішингу через вбудований VPN та моніторинг даркнету. Він автоматично змінює паролі на підтримуваних сайтах і надає комплексну панель безпеки. Ціна вища: $4.99/місяць, але включає доступ до VPN.',
         'NordPass, створений командою NordVPN, використовує алгоритм шифрування XChaCha20 замість більш поширеного AES-256. Він пропонує чистий інтерфейс, біометричне розблокування та сканування витоків даних. Безкоштовний рівень дозволяє необмежені паролі на одному пристрої одночасно.',
-        'Proton Pass — найновіший серйозний конкурент від творців ProtonMail. Він наголошує на наскрізному шифруванні з архітектурою zero-knowledge та включає вбудований генератор email-аліасів (hide-my-email). Безкоштовний рівень щедрий, і він природно інтегрується з екосистемою Proton.',
-        'Apple Keychain та Google Password Manager — вбудовані опції, що бездоганно працюють у відповідних екосистемах. Вони безкоштовні та безперешкодні, але обмежені платформами Apple або Google, пропонують менше просунутих функцій і не мають кросплатформної гнучкості спеціалізованих менеджерів.',
+        'Proton Pass це найновіший серйозний конкурент від творців ProtonMail. Він наголошує на наскрізному шифруванні з архітектурою zero-knowledge та включає вбудований генератор email-аліасів (hide-my-email). Безкоштовний рівень щедрий, і він природно інтегрується з екосистемою Proton.',
+        'Apple Keychain та Google Password Manager це вбудовані опції, що бездоганно працюють у відповідних екосистемах. Вони безкоштовні та безперешкодні, але обмежені платформами Apple або Google, пропонують менше просунутих функцій і не мають кросплатформної гнучкості спеціалізованих менеджерів.',
       ],
     },
     {
       heading: 'Ручні методи зберігання: ризики та реальність',
       paragraphs: [
-        'Записування паролів у фізичний блокнот насправді безпечніше, ніж багато хто вважає — його неможливо зламати дистанційно. Однак він не витримує масштабування: ви не можете генерувати дійсно випадкові паролі вручну, пошук по сторінках повільний, а блокнот може бути загублений, вкрадений або знищений вогнем чи водою. Він також заохочує повторне використання паролів, оскільки створення та записування унікальних складних паролів вручну — нудне заняття.',
+        'Записування паролів у фізичний блокнот насправді безпечніше, ніж багато хто вважає: його неможливо зламати дистанційно. Однак він не витримує масштабування: ви не можете генерувати дійсно випадкові паролі вручну, пошук по сторінках повільний, а блокнот може бути загублений, вкрадений або знищений вогнем чи водою. Він також заохочує повторне використання паролів, оскільки створення та записування унікальних складних паролів вручну це нудне заняття.',
         'Таблиці та текстові файли (навіть якщо зашифровані паролем) забезпечують можливість пошуку, але створюють серйозні ризики. Незашифрований файл на робочому столі доступний будь-якому шкідливому ПЗ. Навіть зашифровані таблиці зазвичай використовують слабше шифрування, ніж спеціалізовані менеджери паролів, і не мають функцій автозаповнення, моніторингу витоків та безпечного обміну.',
-        'Вбудоване збереження паролів у браузері (Chrome, Firefox, Safari) — крок вперед порівняно з ручними методами. Сучасні браузери шифрують збережені паролі та можуть генерувати випадкові паролі. Однак вони вразливі, якщо хтось отримає доступ до вашої сесії пристрою, не підтримують кросбраузерність і зазвичай не пропонують просунутих функцій (безпечні нотатки, зберігання документів, екстрений доступ), які надають спеціалізовані менеджери.',
-        'Підхід з "палацом пам\'яті" або ментальним алгоритмом — де ви виводите паролі з персональної формули, застосованої до кожного сайту — здається розумним, але провалюється на практиці. Як тільки зловмисник бачить два-три ваших паролі з різних витоків, шаблон стає очевидним, і всі ваші акаунти компрометуються одночасно.',
+        'Вбудоване збереження паролів у браузері (Chrome, Firefox, Safari) це крок вперед порівняно з ручними методами. Сучасні браузери шифрують збережені паролі та можуть генерувати випадкові паролі. Однак вони вразливі, якщо хтось отримає доступ до вашої сесії пристрою, не підтримують кросбраузерність і зазвичай не пропонують просунутих функцій (безпечні нотатки, зберігання документів, екстрений доступ), які надають спеціалізовані менеджери.',
+        'Підхід з "палацом пам\'яті" або ментальним алгоритмом (де ви виводите паролі з персональної формули, застосованої до кожного сайту) здається розумним, але провалюється на практиці. Як тільки зловмисник бачить два-три ваших паролі з різних витоків, шаблон стає очевидним, і всі ваші акаунти компрометуються одночасно.',
       ],
     },
     {
       heading: 'Порівняння безпеки: що насправді захищає вас',
       paragraphs: [
-        'Спеціалізовані менеджери паролів використовують шифрування AES-256 або XChaCha20 з архітектурою zero-knowledge — компанія не може прочитати ваші паролі, навіть якщо примушена законом. Вони виводять ключі шифрування з вашого мастер-пароля за допомогою повільних функцій виведення ключів (PBKDF2 з 600 000+ ітераціями або, ще краще, Argon2id), які роблять brute-force атаки обчислювально неможливими.',
+        'Спеціалізовані менеджери паролів використовують шифрування AES-256 або XChaCha20 з архітектурою zero-knowledge, тож компанія не може прочитати ваші паролі, навіть якщо примушена законом. Вони виводять ключі шифрування з вашого мастер-пароля за допомогою повільних функцій виведення ключів (PBKDF2 з 600 000+ ітераціями або, ще краще, Argon2id), які роблять brute-force атаки обчислювально неможливими.',
         'У 2023 році LastPass зазнав серйозного витоку, де були вкрадені зашифровані сховища. Хоча жоден пароль не був розшифрований (за умови, що користувачі мали надійні мастер-паролі), інцидент підкреслив важливість вибору менеджера з надійним виведенням ключів та збереження вашого мастер-пароля по-справжньому надійним (15+ символів або парольна фраза з 5+ слів).',
-        'Ручні методи не мають шифрування за замовчуванням, моніторингу витоків, автоматичної генерації та захисту від підглядання через плече або фізичної крадіжки. Єдина перевага — офлайн-зберігання неможливо зламати дистанційно — нівелюється практичною неможливістю підтримувати унікальні складні паролі вручну для 100+ акаунтів.',
+        'Ручні методи не мають шифрування за замовчуванням, моніторингу витоків, автоматичної генерації та захисту від підглядання через плече або фізичної крадіжки. Єдина перевага (офлайн-зберігання неможливо зламати дистанційно) нівелюється практичною неможливістю підтримувати унікальні складні паролі вручну для 100+ акаунтів.',
       ],
       bullets: [
         'Шифрування AES-256 / XChaCha20: тільки менеджери паролів',
@@ -154,7 +154,7 @@ export const ua: LocalizedArticleContent = {
     {
       heading: 'Гід з міграції: перехід на менеджер паролів',
       paragraphs: [
-        'Крок 1: Оберіть менеджер паролів та створіть акаунт. Встановіть надійний мастер-пароль за методом парольної фрази (5+ випадкових слів). Увімкніть двофакторну аутентифікацію на самому акаунті менеджера — це ваш найкритичніший акаунт.',
+        'Крок 1: Оберіть менеджер паролів та створіть акаунт. Встановіть надійний мастер-пароль за методом парольної фрази (5+ випадкових слів). Увімкніть двофакторну аутентифікацію на самому акаунті менеджера: це ваш найкритичніший акаунт.',
         'Крок 2: Встановіть розширення для браузера та мобільний застосунок. Більшість менеджерів пропонують імпорт в один клік з браузерів (Chrome, Firefox, Safari) та інших менеджерів. Цей імпорт захоплює ваші існуючі збережені паролі як початкову точку.',
         'Крок 3: Надайте пріоритет зміні паролів для найбільш чутливих акаунтів: електронна пошта, банкінг, хмарне сховище та соціальні мережі. Використовуйте генератор паролів для створення випадкових паролів довжиною 20+ символів. Це також ідеальний час для увімкнення MFA на цих акаунтах.',
         'Крок 4: Протягом наступних кількох тижнів оновлюйте решту паролів по мірі природного входу на кожен сайт. Ваш менеджер відмітить слабкі, повторювані або скомпрометовані паролі. Прагніть усунути всі повторювані паролі протягом 30 днів.',
@@ -164,9 +164,9 @@ export const ua: LocalizedArticleContent = {
     {
       heading: 'Наша рекомендація',
       paragraphs: [
-        'Для більшості користувачів Bitwarden пропонує найкращий баланс безпеки, функцій та вартості. Його кодова база з відкритим кодом вселяє довіру, безкоштовний рівень дійсно корисний, а преміум-рівень за $10/рік — найдоступніший варіант з просунутими функціями. Якщо ви віддаєте перевагу більш відшліфованому інтерфейсу і не проти платити більше, 1Password — чудовий вибір.',
+        'Для більшості користувачів Bitwarden пропонує найкращий баланс безпеки, функцій та вартості. Його кодова база з відкритим кодом вселяє довіру, безкоштовний рівень дійсно корисний, а преміум-рівень за $10/рік це найдоступніший варіант з просунутими функціями. Якщо ви віддаєте перевагу більш відшліфованому інтерфейсу і не проти платити більше, 1Password це чудовий вибір.',
         'Якщо вам потрібне повністю офлайн-зберігання та максимальний контроль, KeePass з надійним мастер-паролем та зашифрованою хмарною синхронізацією (через Syncthing або аналог) забезпечує безпеку без довіри будь-якій третій стороні. Цей підхід вимагає більше технічного налаштування, але дає вам повний суверенітет над вашими даними.',
-        'Що б ви не обрали, будь-який менеджер паролів є драматично кращим за ручне зберігання. Найбільше покращення безпеки, яке може зробити більшість людей — це прийняти менеджер паролів та усунути повторне використання паролів на всіх своїх акаунтах.',
+        'Що б ви не обрали, будь-який менеджер паролів є драматично кращим за ручне зберігання. Найбільше покращення безпеки, яке може зробити більшість людей це прийняти менеджер паролів та усунути повторне використання паролів на всіх своїх акаунтах.',
       ],
     },
   ],
@@ -204,16 +204,16 @@ export const es: LocalizedArticleContent = {
     {
       heading: 'Métodos de almacenamiento manual: riesgos y realidades',
       paragraphs: [
-        'Escribir contraseñas en un cuaderno físico es más seguro de lo que muchos suponen — no se puede hackear remotamente. Sin embargo, falla a escala: no puedes generar contraseñas verdaderamente aleatorias a mano, buscar entre páginas es lento, y el cuaderno puede perderse, ser robado o destruido por fuego o agua.',
+        'Escribir contraseñas en un cuaderno físico es más seguro de lo que muchos suponen: no se puede hackear remotamente. Sin embargo, falla a escala: no puedes generar contraseñas verdaderamente aleatorias a mano, buscar entre páginas es lento, y el cuaderno puede perderse, ser robado o destruido por fuego o agua.',
         'Las hojas de cálculo y archivos de texto (incluso cifrados con contraseña) proporcionan capacidad de búsqueda pero introducen riesgos serios. Un archivo sin cifrar en tu escritorio es accesible para cualquier malware. Incluso las hojas cifradas típicamente usan cifrado más débil que los gestores dedicados.',
         'El guardado integrado de contraseñas del navegador es un paso adelante respecto a los métodos manuales. Los navegadores modernos cifran las contraseñas guardadas y pueden generar contraseñas aleatorias. Sin embargo, son vulnerables si alguien accede a tu sesión de dispositivo.',
-        'El enfoque de "palacio de memoria" o algoritmo mental — donde derivas contraseñas de una fórmula personal — parece ingenioso pero falla en la práctica. Una vez que un atacante ve dos o tres de tus contraseñas de diferentes brechas, el patrón se vuelve obvio.',
+        'El enfoque de "palacio de memoria" o algoritmo mental (donde derivas contraseñas de una fórmula personal) parece ingenioso pero falla en la práctica. Una vez que un atacante ve dos o tres de tus contraseñas de diferentes brechas, el patrón se vuelve obvio.',
       ],
     },
     {
       heading: 'Comparación de seguridad: qué realmente te protege',
       paragraphs: [
-        'Los gestores dedicados usan cifrado AES-256 o XChaCha20 con arquitectura zero-knowledge — la empresa no puede leer tus contraseñas ni siquiera si lo ordena la ley. Derivan claves de cifrado de tu contraseña maestra usando funciones lentas de derivación de claves (PBKDF2 con 600.000+ iteraciones, o mejor aún, Argon2id).',
+        'Los gestores dedicados usan cifrado AES-256 o XChaCha20 con arquitectura zero-knowledge, así que la empresa no puede leer tus contraseñas ni siquiera si lo ordena la ley. Derivan claves de cifrado de tu contraseña maestra usando funciones lentas de derivación de claves (PBKDF2 con 600.000+ iteraciones, o mejor aún, Argon2id).',
         'En 2023, LastPass sufrió una brecha importante donde se robaron bóvedas cifradas. Aunque ninguna contraseña fue descifrada (asumiendo contraseñas maestras fuertes), el incidente destacó la importancia de elegir un gestor con derivación de claves robusta.',
         'Los métodos manuales no tienen cifrado por defecto, ni monitorización de brechas, ni generación automática, ni protección contra la observación por encima del hombro o el robo físico.',
       ],
@@ -229,7 +229,7 @@ export const es: LocalizedArticleContent = {
     {
       heading: 'Guía de migración: pasarse a un gestor de contraseñas',
       paragraphs: [
-        'Paso 1: Elige tu gestor y crea tu cuenta. Establece una contraseña maestra fuerte usando el método de frase (5+ palabras aleatorias). Activa la autenticación de dos factores en la cuenta del gestor — es tu cuenta más crítica.',
+        'Paso 1: Elige tu gestor y crea tu cuenta. Establece una contraseña maestra fuerte usando el método de frase (5+ palabras aleatorias). Activa la autenticación de dos factores en la cuenta del gestor: es tu cuenta más crítica.',
         'Paso 2: Instala la extensión del navegador y la app móvil. La mayoría ofrece importación en un clic desde navegadores y otros gestores.',
         'Paso 3: Prioriza cambiar contraseñas de tus cuentas más sensibles: correo, banca, almacenamiento cloud y redes sociales. Usa el generador para crear contraseñas aleatorias de 20+ caracteres.',
         'Paso 4: Durante las siguientes semanas, actualiza las contraseñas restantes al ir entrando a cada sitio. Tu gestor marcará contraseñas débiles, reutilizadas o filtradas.',
@@ -279,7 +279,7 @@ export const fr: LocalizedArticleContent = {
     {
       heading: 'Méthodes de stockage manuel : risques et réalités',
       paragraphs: [
-        'Écrire ses mots de passe dans un carnet physique est en réalité plus sûr que beaucoup ne le pensent — il ne peut pas être piraté à distance. Cependant, il ne résiste pas à la mise à l\'échelle : vous ne pouvez pas générer de mots de passe vraiment aléatoires à la main, et le carnet peut être perdu, volé ou détruit.',
+        'Écrire ses mots de passe dans un carnet physique est en réalité plus sûr que beaucoup ne le pensent : il ne peut pas être piraté à distance. Cependant, il ne résiste pas à la mise à l\'échelle : vous ne pouvez pas générer de mots de passe vraiment aléatoires à la main, et le carnet peut être perdu, volé ou détruit.',
         'Les tableurs et fichiers texte (même chiffrés) offrent la possibilité de recherche mais introduisent des risques sérieux. Un fichier non chiffré sur votre bureau est accessible à tout malware.',
         'La sauvegarde intégrée des navigateurs est un progrès par rapport aux méthodes manuelles. Les navigateurs modernes chiffrent les mots de passe enregistrés et peuvent générer des mots de passe aléatoires. Cependant, ils sont vulnérables si quelqu\'un accède à votre session.',
         'L\'approche du « palais de la mémoire » ou algorithme mental semble astucieuse mais échoue en pratique. Dès qu\'un attaquant voit deux ou trois de vos mots de passe de différentes fuites, le modèle devient évident.',
@@ -288,7 +288,7 @@ export const fr: LocalizedArticleContent = {
     {
       heading: 'Comparaison de sécurité : ce qui vous protège vraiment',
       paragraphs: [
-        'Les gestionnaires dédiés utilisent un chiffrement AES-256 ou XChaCha20 avec architecture zero-knowledge — l\'entreprise ne peut pas lire vos mots de passe même si la loi l\'exige. Ils dérivent les clés de chiffrement de votre mot de passe maître en utilisant des fonctions lentes de dérivation de clés.',
+        'Les gestionnaires dédiés utilisent un chiffrement AES-256 ou XChaCha20 avec architecture zero-knowledge, donc l\'entreprise ne peut pas lire vos mots de passe même si la loi l\'exige. Ils dérivent les clés de chiffrement de votre mot de passe maître en utilisant des fonctions lentes de dérivation de clés.',
         'En 2023, LastPass a subi une brèche majeure où des coffres chiffrés ont été volés. Bien qu\'aucun mot de passe n\'ait été déchiffré, l\'incident a souligné l\'importance de choisir un gestionnaire avec une dérivation de clés robuste.',
         'Les méthodes manuelles n\'ont pas de chiffrement par défaut, pas de surveillance des fuites, pas de génération automatique ni de protection contre l\'observation par-dessus l\'épaule.',
       ],
@@ -334,7 +334,7 @@ export const de: LocalizedArticleContent = {
     {
       heading: 'Warum Sie eine Strategie zur Passwortverwaltung brauchen',
       paragraphs: [
-        'Der Durchschnittsmensch verwaltet 2026 über 100 Online-Konten. Von Banking und E-Mail bis hin zu Streaming-Diensten und Essenslieferung — jedes Konto benötigt idealerweise ein einzigartiges, komplexes Passwort. Ohne durchdachte Strategie verfallen die meisten in gefährliche Gewohnheiten: dasselbe Passwort überall verwenden, einfache Variationen nutzen oder Passwörter auf Haftnotizen schreiben.',
+        'Der Durchschnittsmensch verwaltet 2026 über 100 Online-Konten. Von Banking und E-Mail bis hin zu Streaming-Diensten und Essenslieferung: jedes Konto benötigt idealerweise ein einzigartiges, komplexes Passwort. Ohne durchdachte Strategie verfallen die meisten in gefährliche Gewohnheiten: dasselbe Passwort überall verwenden, einfache Variationen nutzen oder Passwörter auf Haftnotizen schreiben.',
         'Eine NordPass-Studie von 2025 ergab, dass "123456" das weltweit am häufigsten verwendete Passwort bleibt und in über 4,5 Millionen geleakten Datensätzen auftaucht. Das zweithäufigste war "password." Diese schwachen Zugangsdaten werden von automatisierten Bots innerhalb von Minuten nach jedem Datenleck getestet.',
         'Die Frage ist nicht, ob Sie Passwörter verwalten müssen, sondern wie. Dieser Leitfaden vergleicht dedizierte Passwort-Manager mit manuellen Ansätzen, damit Sie eine fundierte Entscheidung treffen können.',
       ],
@@ -354,7 +354,7 @@ export const de: LocalizedArticleContent = {
     {
       heading: 'Manuelle Speichermethoden: Risiken und Realitäten',
       paragraphs: [
-        'Passwörter in ein physisches Notizbuch zu schreiben ist tatsächlich sicherer, als viele annehmen — es kann nicht aus der Ferne gehackt werden. Allerdings versagt es bei Skalierung: Sie können keine wirklich zufälligen Passwörter von Hand generieren, das Durchsuchen von Seiten ist langsam, und das Notizbuch kann verloren gehen, gestohlen oder durch Feuer oder Wasser zerstört werden.',
+        'Passwörter in ein physisches Notizbuch zu schreiben ist tatsächlich sicherer, als viele annehmen: es kann nicht aus der Ferne gehackt werden. Allerdings versagt es bei Skalierung: Sie können keine wirklich zufälligen Passwörter von Hand generieren, das Durchsuchen von Seiten ist langsam, und das Notizbuch kann verloren gehen, gestohlen oder durch Feuer oder Wasser zerstört werden.',
         'Tabellenkalkulationen und Textdateien (auch passwortgeschützt) bieten Durchsuchbarkeit, bergen aber ernsthafte Risiken. Eine unverschlüsselte Datei auf Ihrem Desktop ist für jede Malware zugänglich.',
         'Die integrierte Passwortspeicherung im Browser ist ein Fortschritt gegenüber manuellen Methoden. Moderne Browser verschlüsseln gespeicherte Passwörter und können zufällige Passwörter generieren. Sie sind jedoch anfällig, wenn jemand Zugang zu Ihrer Gerätesitzung erhält.',
         'Der „Gedächtnispalast"- oder mentale Algorithmus-Ansatz scheint clever, scheitert aber in der Praxis. Sobald ein Angreifer zwei oder drei Ihrer Passwörter aus verschiedenen Leaks sieht, wird das Muster offensichtlich.',
@@ -363,7 +363,7 @@ export const de: LocalizedArticleContent = {
     {
       heading: 'Sicherheitsvergleich: Was Sie wirklich schützt',
       paragraphs: [
-        'Dedizierte Passwort-Manager verwenden AES-256- oder XChaCha20-Verschlüsselung mit Zero-Knowledge-Architektur — das Unternehmen kann Ihre Passwörter nicht lesen, selbst wenn es gesetzlich dazu gezwungen wird.',
+        'Dedizierte Passwort-Manager verwenden AES-256- oder XChaCha20-Verschlüsselung mit Zero-Knowledge-Architektur, sodass das Unternehmen kann Ihre Passwörter nicht lesen, selbst wenn es gesetzlich dazu gezwungen wird.',
         'Im Jahr 2023 erlitt LastPass einen schwerwiegenden Breach, bei dem verschlüsselte Tresore gestohlen wurden. Obwohl keine Passwörter entschlüsselt wurden, unterstrich der Vorfall die Wichtigkeit der Wahl eines Managers mit starker Schlüsselableitung.',
         'Manuelle Methoden haben keine standardmäßige Verschlüsselung, kein Breach-Monitoring, keine automatische Generierung und keinen Schutz gegen Schulter-Surfen oder physischen Diebstahl.',
       ],
@@ -429,7 +429,7 @@ export const it: LocalizedArticleContent = {
     {
       heading: 'Metodi di archiviazione manuale: rischi e realtà',
       paragraphs: [
-        'Scrivere le password su un quaderno fisico è in realtà più sicuro di quanto molti pensino — non può essere hackerato da remoto. Tuttavia, fallisce su larga scala: non puoi generare password veramente casuali a mano, e il quaderno può essere perso, rubato o distrutto.',
+        'Scrivere le password su un quaderno fisico è in realtà più sicuro di quanto molti pensino: non può essere hackerato da remoto. Tuttavia, fallisce su larga scala: non puoi generare password veramente casuali a mano, e il quaderno può essere perso, rubato o distrutto.',
         'I fogli di calcolo e i file di testo (anche se crittografati) offrono la possibilità di ricerca ma introducono rischi seri. Un file non crittografato sul desktop è accessibile a qualsiasi malware.',
         'Il salvataggio integrato delle password del browser è un passo avanti rispetto ai metodi manuali. I browser moderni crittografano le password salvate e possono generare password casuali. Tuttavia, sono vulnerabili se qualcuno accede alla tua sessione.',
         'L\'approccio del "palazzo della memoria" o algoritmo mentale sembra ingegnoso ma fallisce nella pratica. Appena un attaccante vede due o tre delle tue password da diverse violazioni, lo schema diventa ovvio.',
@@ -438,7 +438,7 @@ export const it: LocalizedArticleContent = {
     {
       heading: 'Confronto sicurezza: cosa ti protegge davvero',
       paragraphs: [
-        'I gestori dedicati usano crittografia AES-256 o XChaCha20 con architettura zero-knowledge — l\'azienda non può leggere le tue password neanche se obbligata dalla legge.',
+        'I gestori dedicati usano crittografia AES-256 o XChaCha20 con architettura zero-knowledge, quindi l\'azienda non può leggere le tue password neanche se obbligata dalla legge.',
         'Nel 2023, LastPass ha subito una violazione importante in cui sono stati rubati vault crittografati. Sebbene nessuna password sia stata decifrata, l\'incidente ha evidenziato l\'importanza di scegliere un gestore con forte derivazione delle chiavi.',
         'I metodi manuali non hanno crittografia predefinita, nessun monitoraggio delle violazioni, nessuna generazione automatica e nessuna protezione contro l\'osservazione alle spalle o il furto fisico.',
       ],
@@ -504,7 +504,7 @@ export const pt: LocalizedArticleContent = {
     {
       heading: 'Métodos de armazenamento manual: riscos e realidades',
       paragraphs: [
-        'Anotar senhas em um caderno físico é mais seguro do que muitos supõem — não pode ser hackeado remotamente. Porém, falha em escala: você não pode gerar senhas verdadeiramente aleatórias à mão, e o caderno pode ser perdido, roubado ou destruído.',
+        'Anotar senhas em um caderno físico é mais seguro do que muitos supõem: não pode ser hackeado remotamente. Porém, falha em escala: você não pode gerar senhas verdadeiramente aleatórias à mão, e o caderno pode ser perdido, roubado ou destruído.',
         'Planilhas e arquivos de texto (mesmo criptografados) oferecem capacidade de busca mas introduzem riscos sérios. Um arquivo não criptografado na sua área de trabalho é acessível a qualquer malware.',
         'O salvamento integrado de senhas do navegador é um avanço em relação aos métodos manuais. Navegadores modernos criptografam senhas salvas e podem gerar senhas aleatórias. Porém, são vulneráveis se alguém acessar sua sessão.',
         'A abordagem do "palácio da memória" ou algoritmo mental parece engenhosa mas falha na prática. Assim que um atacante vê duas ou três das suas senhas de diferentes vazamentos, o padrão se torna óbvio.',
@@ -513,7 +513,7 @@ export const pt: LocalizedArticleContent = {
     {
       heading: 'Comparação de segurança: o que realmente te protege',
       paragraphs: [
-        'Gerenciadores dedicados usam criptografia AES-256 ou XChaCha20 com arquitetura zero-knowledge — a empresa não pode ler suas senhas mesmo se obrigada por lei.',
+        'Gerenciadores dedicados usam criptografia AES-256 ou XChaCha20 com arquitetura zero-knowledge, então a empresa não pode ler suas senhas mesmo se obrigada por lei.',
         'Em 2023, o LastPass sofreu uma violação importante onde cofres criptografados foram roubados. Embora nenhuma senha tenha sido descriptografada, o incidente destacou a importância de escolher um gerenciador com derivação de chaves robusta.',
         'Métodos manuais não têm criptografia padrão, monitoramento de vazamentos, geração automática nem proteção contra espionagem por cima do ombro ou roubo físico.',
       ],
@@ -559,7 +559,7 @@ export const ru: LocalizedArticleContent = {
     {
       heading: 'Зачем вам стратегия управления паролями',
       paragraphs: [
-        'Среднестатистический человек в 2026 году управляет более чем 100 онлайн-аккаунтами. От банкинга и почты до стриминговых сервисов и доставки еды — каждый аккаунт в идеале требует уникального сложного пароля. Без продуманной стратегии большинство людей впадают в опасные привычки: используют один пароль везде, простые вариации или записывают пароли на стикерах.',
+        'Среднестатистический человек в 2026 году управляет более чем 100 онлайн-аккаунтами. От банкинга и почты до стриминговых сервисов и доставки еды: каждый аккаунт в идеале требует уникального сложного пароля. Без продуманной стратегии большинство людей впадают в опасные привычки: используют один пароль везде, простые вариации или записывают пароли на стикерах.',
         'Исследование NordPass 2025 года показало, что "123456" остаётся самым распространённым паролем в мире, появляясь в более чем 4,5 миллионах наборов скомпрометированных учётных данных. Вторым по частоте был "password." Эти слабые данные тестируются автоматическими ботами в течение минут после любой утечки.',
         'Вопрос не в том, нужно ли управлять паролями, а в том, как. Это руководство сравнивает специализированные менеджеры паролей с ручными подходами, чтобы вы могли принять обоснованное решение.',
       ],
@@ -567,28 +567,28 @@ export const ru: LocalizedArticleContent = {
     {
       heading: 'ТОП-7 менеджеров паролей 2026 года',
       paragraphs: [
-        '1Password — золотой стандарт для персонального и семейного использования. Предлагает отполированный интерфейс на всех платформах, мониторинг утечек Watchtower, Travel Mode и мощные функции обмена. От $2.99/месяц.',
-        'Bitwarden — лучший вариант с открытым кодом и главный выбор для бюджетных пользователей. Бесплатный уровень включает неограниченные пароли на неограниченных устройствах. Премиум ($10/год) добавляет TOTP-аутентификацию, экстренный доступ и отчёты о здоровье хранилища.',
+        '1Password это золотой стандарт для персонального и семейного использования. Предлагает отполированный интерфейс на всех платформах, мониторинг утечек Watchtower, Travel Mode и мощные функции обмена. От $2.99/месяц.',
+        'Bitwarden это лучший вариант с открытым кодом и главный выбор для бюджетных пользователей. Бесплатный уровень включает неограниченные пароли на неограниченных устройствах. Премиум ($10/год) добавляет TOTP-аутентификацию, экстренный доступ и отчёты о здоровье хранилища.',
         'KeePass остаётся предпочтительным вариантом для полного офлайн-контроля. Ваша зашифрованная база данных никогда не покидает ваш компьютер.',
-        'Dashlane предлагает отличное обнаружение фишинга через встроенный VPN и мониторинг даркнета. Автоматически меняет пароли на поддерживаемых сайтах. Цена выше — $4.99/месяц, но включает VPN.',
+        'Dashlane предлагает отличное обнаружение фишинга через встроенный VPN и мониторинг даркнета. Автоматически меняет пароли на поддерживаемых сайтах. Цена выше: $4.99/месяц, но включает VPN.',
         'NordPass использует алгоритм шифрования XChaCha20 вместо более распространённого AES-256. Предлагает чистый интерфейс, биометрическую разблокировку и сканирование утечек.',
-        'Proton Pass — новейший серьёзный конкурент от создателей ProtonMail. Акцент на сквозном шифровании с zero-knowledge архитектурой и встроенным генератором email-псевдонимов.',
-        'Apple Keychain и Google Password Manager — встроенные опции, работающие в своих экосистемах без сбоев. Бесплатны, но ограничены платформами Apple или Google.',
+        'Proton Pass это новейший серьёзный конкурент от создателей ProtonMail. Акцент на сквозном шифровании с zero-knowledge архитектурой и встроенным генератором email-псевдонимов.',
+        'Apple Keychain и Google Password Manager это встроенные опции, работающие в своих экосистемах без сбоев. Бесплатны, но ограничены платформами Apple или Google.',
       ],
     },
     {
       heading: 'Ручные методы хранения: риски и реальность',
       paragraphs: [
-        'Записывание паролей в физический блокнот на самом деле безопаснее, чем многие думают — его нельзя взломать удалённо. Однако он не масштабируется: вы не можете генерировать действительно случайные пароли вручную, и блокнот может быть потерян, украден или уничтожен.',
+        'Записывание паролей в физический блокнот на самом деле безопаснее, чем многие думают: его нельзя взломать удалённо. Однако он не масштабируется: вы не можете генерировать действительно случайные пароли вручную, и блокнот может быть потерян, украден или уничтожен.',
         'Таблицы и текстовые файлы (даже зашифрованные) обеспечивают поиск, но создают серьёзные риски. Незашифрованный файл на рабочем столе доступен любому вредоносному ПО.',
-        'Встроенное сохранение паролей в браузере — шаг вперёд по сравнению с ручными методами. Современные браузеры шифруют сохранённые пароли и могут генерировать случайные. Однако они уязвимы, если кто-то получит доступ к вашей сессии.',
+        'Встроенное сохранение паролей в браузере это шаг вперёд по сравнению с ручными методами. Современные браузеры шифруют сохранённые пароли и могут генерировать случайные. Однако они уязвимы, если кто-то получит доступ к вашей сессии.',
         'Подход «дворца памяти» или ментального алгоритма кажется умным, но проваливается на практике. Как только злоумышленник видит два-три ваших пароля из разных утечек, паттерн становится очевидным.',
       ],
     },
     {
       heading: 'Сравнение безопасности: что действительно защищает',
       paragraphs: [
-        'Специализированные менеджеры используют шифрование AES-256 или XChaCha20 с zero-knowledge архитектурой — компания не может прочитать ваши пароли даже по решению суда.',
+        'Специализированные менеджеры используют шифрование AES-256 или XChaCha20 с zero-knowledge архитектурой, поэтому компания не может прочитать ваши пароли даже по решению суда.',
         'В 2023 году LastPass подвергся серьёзной утечке, при которой были украдены зашифрованные хранилища. Хотя ни один пароль не был расшифрован, инцидент подчеркнул важность выбора менеджера с надёжным выведением ключей.',
         'Ручные методы не имеют шифрования по умолчанию, мониторинга утечек, автоматической генерации и защиты от подглядывания или физической кражи.',
       ],
@@ -614,9 +614,9 @@ export const ru: LocalizedArticleContent = {
     {
       heading: 'Наша рекомендация',
       paragraphs: [
-        'Для большинства пользователей Bitwarden предлагает лучший баланс безопасности, функций и стоимости. Его открытый код вселяет доверие, бесплатный уровень действительно полезен, а премиум за $10/год — самый доступный вариант с продвинутыми функциями.',
+        'Для большинства пользователей Bitwarden предлагает лучший баланс безопасности, функций и стоимости. Его открытый код вселяет доверие, бесплатный уровень действительно полезен, а премиум за $10/год это самый доступный вариант с продвинутыми функциями.',
         'Если вам нужно полностью офлайн-хранение и максимальный контроль, KeePass с надёжным мастер-паролем и зашифрованной облачной синхронизацией обеспечивает безопасность без доверия третьим сторонам.',
-        'Что бы вы ни выбрали, любой менеджер паролей драматически лучше ручного хранения. Самое большое улучшение безопасности — это принять менеджер паролей и устранить повторное использование паролей.',
+        'Что бы вы ни выбрали, любой менеджер паролей драматически лучше ручного хранения. Самое большое улучшение безопасности это принять менеджер паролей и устранить повторное использование паролей.',
       ],
     },
   ],
@@ -626,7 +626,7 @@ export const zh: LocalizedArticleContent = {
   title: '密码管理器与手动存储：2026年完整对比',
   excerpt:
     '比较2026年顶级密码管理器与手动存储方法。 了解哪种方式最能保护您的账户，包括优缺点和迁移建议。 2026年，普通人管理着超过100个在线账户。',
-  seoTitle: '密码管理器vs手动存储 — 2026年Top 7对比 | generatepasswordto.me',
+  seoTitle: '密码管理器vs手动存储：2026年Top 7对比 | generatepasswordto.me',
   seoDescription:
     '2026年密码管理器（1Password、Bitwarden、KeePass、Dashlane、NordPass、Proton Pass）与手动存储的详细对比。 功能、安全性、价格和迁移指南。',
   keywords: ['密码管理器对比2026', '最佳密码管理器', '1Password vs Bitwarden', '密码保险库', '安全存储密码', '密码管理器指南'],
@@ -654,7 +654,7 @@ export const zh: LocalizedArticleContent = {
     {
       heading: '手动存储方法：风险与现实',
       paragraphs: [
-        '在实体笔记本上写密码实际上比很多人想的更安全——它不能被远程黑客攻击。但它无法扩展：你无法手动生成真正随机的密码，笔记本可能丢失、被盗或被水火毁坏。',
+        '在实体笔记本上写密码实际上比很多人想的更安全：它不能被远程黑客攻击。但它无法扩展：你无法手动生成真正随机的密码，笔记本可能丢失、被盗或被水火毁坏。',
         '电子表格和文本文件（即使加了密码）提供搜索功能但引入严重风险。桌面上未加密的文件对任何恶意软件都是可访问的。',
         '浏览器内置密码保存是手动方法的进步。现代浏览器加密保存的密码并能生成随机密码。但如果有人访问你的设备会话，它们就很脆弱。',
         '"记忆宫殿"或心算算法方法看起来聪明但实际上行不通。攻击者一旦从不同泄露中看到你的两三个密码，模式就变得明显了。',
@@ -663,7 +663,7 @@ export const zh: LocalizedArticleContent = {
     {
       heading: '安全对比：什么真正保护你',
       paragraphs: [
-        '专用密码管理器使用AES-256或XChaCha20加密配合零知识架构——即使被法律强制，公司也无法读取你的密码。',
+        '专用密码管理器使用AES-256或XChaCha20加密配合零知识架构，即使被法律强制，公司也无法读取你的密码。',
         '2023年，LastPass遭受重大泄露，加密保险库被盗。虽然没有密码被解密，但该事件突出了选择具有强密钥派生的管理器的重要性。',
         '手动方法没有默认加密、泄露监控、自动生成，也没有防止偷窥或物理盗窃的保护。',
       ],
@@ -701,7 +701,7 @@ export const ja: LocalizedArticleContent = {
   title: 'パスワードマネージャーvs手動保存：2026年完全比較',
   excerpt:
     '2026年のトップパスワードマネージャーと手動保存方法を比較します。 どのアプローチがアカウントを最も保護するか、長所、短所、移行のヒントをご紹介。',
-  seoTitle: 'パスワードマネージャーvs手動保存 — 2026年トップ7比較 | generatepasswordto.me',
+  seoTitle: 'パスワードマネージャーvs手動保存：2026年トップ7比較 | generatepasswordto.me',
   seoDescription:
     '2026年のパスワードマネージャー（1Password、Bitwarden、KeePass、Dashlane、NordPass、Proton Pass）と手動保存の詳細比較。 機能、セキュリティ、価格、移行ガイド。',
   keywords: ['パスワードマネージャー比較2026', '最良のパスワードマネージャー', '1Password vs Bitwarden', 'パスワード保管庫', 'パスワードを安全に保存', 'パスワードマネージャーガイド'],
@@ -729,7 +729,7 @@ export const ja: LocalizedArticleContent = {
     {
       heading: '手動保存方法：リスクと現実',
       paragraphs: [
-        '物理的なノートにパスワードを書くことは、多くの人が想定するよりも実は安全です——リモートでハッキングされることはありません。しかし、スケールには対応できません。手動で真にランダムなパスワードを生成できず、ノートは紛失、盗難、または火や水で破壊される可能性があります。',
+        '物理的なノートにパスワードを書くことは、多くの人が想定するよりも実は安全です。リモートでハッキングされることはありません。しかし、スケールには対応できません。手動で真にランダムなパスワードを生成できず、ノートは紛失、盗難、または火や水で破壊される可能性があります。',
         'スプレッドシートやテキストファイル（暗号化されていても）は検索性を提供しますが、深刻なリスクをもたらします。デスクトップ上の暗号化されていないファイルはあらゆるマルウェアからアクセス可能です。',
         'ブラウザの組み込みパスワード保存は手動方法からの進歩です。最新のブラウザは保存されたパスワードを暗号化し、ランダムなパスワードを生成できます。しかし、誰かがデバイスセッションにアクセスすると脆弱です。',
         '「記憶の宮殿」やメンタルアルゴリズムアプローチは賢く見えますが、実際には失敗します。攻撃者が異なる漏洩からあなたのパスワードを2つ3つ見れば、パターンは明らかになります。',
@@ -738,7 +738,7 @@ export const ja: LocalizedArticleContent = {
     {
       heading: 'セキュリティ比較：本当にあなたを守るもの',
       paragraphs: [
-        '専用のパスワードマネージャーはゼロ知識アーキテクチャでAES-256またはXChaCha20暗号化を使用します——法律で強制されても、企業はあなたのパスワードを読むことができません。',
+        '専用のパスワードマネージャーはゼロ知識アーキテクチャでAES-256またはXChaCha20暗号化を使用します。法律で強制されても、企業はあなたのパスワードを読むことができません。',
         '2023年、LastPassは暗号化されたボルトが盗まれる重大な侵害を受けました。パスワードは解読されませんでしたが、この事件は強力な鍵導出を持つマネージャーを選ぶ重要性を浮き彫りにしました。',
         '手動方法にはデフォルトの暗号化、漏洩モニタリング、自動生成、肩越しの覗き見や物理的盗難に対する保護がありません。',
       ],
@@ -784,7 +784,7 @@ export const pl: LocalizedArticleContent = {
     {
       heading: 'Dlaczego potrzebujesz strategii zarządzania hasłami',
       paragraphs: [
-        'Przeciętna osoba w 2026 roku zarządza ponad 100 kontami online. Od bankowości i e-maila po serwisy streamingowe i dostawę jedzenia — każde konto idealnie wymaga unikalnego, złożonego hasła. Bez przemyślanej strategii większość wpada w niebezpieczne nawyki: ponowne używanie tego samego hasła wszędzie, proste warianty lub zapisywanie haseł na karteczkach.',
+        'Przeciętna osoba w 2026 roku zarządza ponad 100 kontami online. Od bankowości i e-maila po serwisy streamingowe i dostawę jedzenia: każde konto idealnie wymaga unikalnego, złożonego hasła. Bez przemyślanej strategii większość wpada w niebezpieczne nawyki: ponowne używanie tego samego hasła wszędzie, proste warianty lub zapisywanie haseł na karteczkach.',
         'Badanie NordPass z 2025 roku wykazało, że "123456" pozostaje najpopularniejszym hasłem na świecie, pojawiając się w ponad 4,5 milionach zestawów wyciekłych danych uwierzytelniających. Drugim najpopularniejszym było "password."',
         'Pytanie nie brzmi, czy musisz zarządzać hasłami, ale jak. Ten przewodnik porównuje dedykowane menedżery haseł z podejściami ręcznymi, abyś mógł podjąć świadomą decyzję.',
       ],
@@ -804,7 +804,7 @@ export const pl: LocalizedArticleContent = {
     {
       heading: 'Ręczne metody przechowywania: ryzyka i realia',
       paragraphs: [
-        'Zapisywanie haseł w fizycznym notatniku jest w rzeczywistości bezpieczniejsze, niż wielu zakłada — nie można go zhakować zdalnie. Jednak nie skaluje się: nie możesz ręcznie generować naprawdę losowych haseł, a notatnik może zostać zgubiony, skradziony lub zniszczony.',
+        'Zapisywanie haseł w fizycznym notatniku jest w rzeczywistości bezpieczniejsze, niż wielu zakłada: nie można go zhakować zdalnie. Jednak nie skaluje się: nie możesz ręcznie generować naprawdę losowych haseł, a notatnik może zostać zgubiony, skradziony lub zniszczony.',
         'Arkusze kalkulacyjne i pliki tekstowe (nawet zaszyfrowane) zapewniają możliwość wyszukiwania, ale wprowadzają poważne ryzyka. Niezaszyfrowany plik na pulpicie jest dostępny dla każdego malware.',
         'Wbudowane zapisywanie haseł w przeglądarce to krok naprzód w stosunku do metod ręcznych. Nowoczesne przeglądarki szyfrują zapisane hasła i mogą generować losowe hasła. Są jednak podatne, jeśli ktoś uzyska dostęp do twojej sesji.',
         'Podejście „pałacu pamięci" lub algorytmu mentalnego wydaje się sprytne, ale zawodzi w praktyce. Gdy atakujący zobaczy dwa lub trzy twoje hasła z różnych wycieków, wzorzec staje się oczywisty.',
@@ -813,7 +813,7 @@ export const pl: LocalizedArticleContent = {
     {
       heading: 'Porównanie bezpieczeństwa: co naprawdę cię chroni',
       paragraphs: [
-        'Dedykowane menedżery używają szyfrowania AES-256 lub XChaCha20 z architekturą zero-knowledge — firma nie może czytać twoich haseł nawet na mocy prawa.',
+        'Dedykowane menedżery używają szyfrowania AES-256 lub XChaCha20 z architekturą zero-knowledge, więc firma nie może czytać twoich haseł nawet na mocy prawa.',
         'W 2023 roku LastPass doznał poważnego naruszenia, w którym skradziono zaszyfrowane sejfy. Choć żadne hasło nie zostało odszyfrowane, incydent podkreślił wagę wyboru menedżera z silną derywacją kluczy.',
         'Metody ręczne nie mają domyślnego szyfrowania, monitoringu naruszeń, automatycznego generowania ani ochrony przed podglądaniem czy kradzieżą fizyczną.',
       ],
@@ -875,7 +875,7 @@ export const vi: LocalizedArticleContent = {
       heading: 'Bảy trình quản lý mật khẩu hàng đầu 2026',
       paragraphs: [
         '1Password là chuẩn mực cho cá nhân và gia đình. Sản phẩm có giao diện chỉn chu trên mọi nền tảng, giám sát rò rỉ Watchtower, Travel Mode để qua biên giới mà không mang dữ liệu nhạy cảm và tính năng chia sẻ mạnh. Giá từ 2,99 USD/tháng cho cá nhân. 1Password đã qua nhiều đợt kiểm tra bảo mật độc lập và dùng Secret Key riêng bên cạnh mật khẩu chính để tăng bảo vệ.',
-        'Bitwarden là lựa chọn mã nguồn mở tốt nhất và phù hợp người tiết kiệm. Gói miễn phí có mật khẩu không giới hạn trên không giới hạn thiết bị — hiếm có năm 2026. Gói trả phí (10 USD/năm) thêm TOTP, truy cập khẩn cấp và báo cáo sức khỏe kho. Toàn bộ mã công khai trên GitHub; nền tảng đã đạt SOC 2 Type II và kiểm thử xâm nhập bên thứ ba.',
+        'Bitwarden là lựa chọn mã nguồn mở tốt nhất và phù hợp người tiết kiệm. Gói miễn phí có mật khẩu không giới hạn trên không giới hạn thiết bị, hiếm có năm 2026. Gói trả phí (10 USD/năm) thêm TOTP, truy cập khẩn cấp và báo cáo sức khỏe kho. Toàn bộ mã công khai trên GitHub; nền tảng đã đạt SOC 2 Type II và kiểm thử xâm nhập bên thứ ba.',
         'KeePass là lựa chọn ưu tiên cho người muốn kiểm soát ngoại tuyến hoàn toàn. Là giải pháp chỉ chạy cục bộ, cơ sở dữ liệu mã hóa không bao giờ chạm máy chủ đám mây. Sản phẩm hỗ trợ plugin tích hợp trình duyệt và đồng bộ qua kho đám mây của bạn (Dropbox, OneDrive, Syncthing). Đánh đổi là giao diện kém chỉn chu hơn và phải tự cấu hình đồng bộ.',
         'Dashlane chuyển sang hướng ưu tiên web và phát hiện lừa đảo trực tuyến tốt nhờ VPN tích hợp cùng giám sát dark web. Sản phẩm tự đổi mật khẩu trên trang hỗ trợ và có bảng điều khiển bảo mật toàn diện. Giá cao hơn, 4,99 USD/tháng, nhưng gồm quyền dùng VPN.',
         'NordPass do đội ngũ NordVPN phát triển, dùng mã hóa XChaCha20 thay vì AES-256 phổ biến hơn. Sản phẩm có giao diện gọn, mở khóa sinh trắc học và quét rò rỉ dữ liệu. Gói miễn phí cho mật khẩu không giới hạn trên một thiết bị tại một thời điểm.',
@@ -886,7 +886,7 @@ export const vi: LocalizedArticleContent = {
     {
       heading: 'Lưu trữ thủ công: rủi ro và thực tế',
       paragraphs: [
-        'Viết mật khẩu vào sổ giấy thực ra an toàn hơn nhiều người tưởng — không thể bị hack từ xa. Nhưng cách này thất bại khi mở rộng: bạn không thể tạo mật khẩu thật ngẫu nhiên bằng tay, tìm qua các trang rất chậm, và sổ có thể mất, bị trộm hoặc bị lửa, nước phá hủy. Nó còn khuyến khích dùng lại mật khẩu vì tạo và ghi chép thủ công rất mệt.',
+        'Viết mật khẩu vào sổ giấy thực ra an toàn hơn nhiều người tưởng: không thể bị hack từ xa. Nhưng cách này thất bại khi mở rộng: bạn không thể tạo mật khẩu thật ngẫu nhiên bằng tay, tìm qua các trang rất chậm, và sổ có thể mất, bị trộm hoặc bị lửa, nước phá hủy. Nó còn khuyến khích dùng lại mật khẩu vì tạo và ghi chép thủ công rất mệt.',
         'Bảng tính và tệp văn bản (kể cả có mật khẩu) cho phép tìm kiếm nhưng tạo rủi ro lớn. Tệp không mã hóa trên máy tính thì mọi mã độc đều đọc được. Bảng tính mã hóa cũng thường dùng mã hóa yếu hơn trình quản lý chuyên dụng và thiếu tự động điền, giám sát rò rỉ, chia sẻ an toàn.',
         'Lưu mật khẩu sẵn trong trình duyệt (Chrome, Firefox, Safari) tốt hơn cách thủ công. Trình duyệt hiện đại mã hóa mật khẩu đã lưu và có thể tạo mật khẩu ngẫu nhiên. Tuy nhiên, chúng dễ bị lộ nếu ai đó chiếm phiên thiết bị, không hỗ trợ đa trình duyệt và thường thiếu tính năng nâng cao (ghi chú an toàn, lưu tài liệu, truy cập khẩn cấp).',
         'Cách "cung điện ký ức" hay công thức cá nhân áp cho từng trang nghe thông minh nhưng thất bại trên thực tế. Khi kẻ tấn công thấy hai hoặc ba mật khẩu của bạn từ các vụ rò rỉ khác nhau, quy luật lộ ra và mọi tài khoản bị xâm phạm cùng lúc.',
@@ -895,9 +895,9 @@ export const vi: LocalizedArticleContent = {
     {
       heading: 'So sánh bảo mật: điều gì thực sự bảo vệ bạn',
       paragraphs: [
-        'Trình quản lý mật khẩu chuyên dụng dùng mã hóa AES-256 hoặc XChaCha20 với kiến trúc zero-knowledge — công ty không đọc được mật khẩu kể cả khi bị pháp luật buộc. Họ dẫn xuất khóa mã hóa từ mật khẩu chính bằng hàm chậm (PBKDF2 với 600.000+ vòng, hoặc tốt hơn là Argon2id), khiến tấn công vét cạn bất khả thi về tính toán.',
+        'Trình quản lý mật khẩu chuyên dụng dùng mã hóa AES-256 hoặc XChaCha20 với kiến trúc zero-knowledge, nên công ty không đọc được mật khẩu kể cả khi bị pháp luật buộc. Họ dẫn xuất khóa mã hóa từ mật khẩu chính bằng hàm chậm (PBKDF2 với 600.000+ vòng, hoặc tốt hơn là Argon2id), khiến tấn công vét cạn bất khả thi về tính toán.',
         'Năm 2023, LastPass bị rò rỉ lớn khi kho mã hóa bị đánh cắp. Không mật khẩu nào bị giải mã (với điều kiện người dùng có mật khẩu chính mạnh), nhưng sự cố cho thấy tầm quan trọng của việc chọn trình quản lý có dẫn xuất khóa mạnh và giữ mật khẩu chính thật sự mạnh (15+ ký tự hoặc cụm 5+ từ).',
-        'Cách thủ công không có mã hóa mặc định, không giám sát rò rỉ, không tự tạo mật khẩu và không chống nhìn trộm hay trộm vật lý. Lợi thế duy nhất — lưu ngoại tuyến không bị tấn công từ xa — bị vô hiệu bởi việc gần như không thể duy trì thủ công mật khẩu phức tạp riêng cho 100+ tài khoản.',
+        'Cách thủ công không có mã hóa mặc định, không giám sát rò rỉ, không tự tạo mật khẩu và không chống nhìn trộm hay trộm vật lý. Lợi thế duy nhất (lưu ngoại tuyến không bị tấn công từ xa) bị vô hiệu bởi việc gần như không thể duy trì thủ công mật khẩu phức tạp riêng cho 100+ tài khoản.',
       ],
       bullets: [
         'Mã hóa AES-256 / XChaCha20: chỉ trình quản lý mật khẩu',
@@ -911,7 +911,7 @@ export const vi: LocalizedArticleContent = {
     {
       heading: 'Hướng dẫn chuyển sang trình quản lý mật khẩu',
       paragraphs: [
-        'Bước 1: chọn trình quản lý và tạo tài khoản. Đặt mật khẩu chính mạnh bằng phương pháp cụm mật khẩu (5+ từ ngẫu nhiên). Bật xác thực hai yếu tố cho chính tài khoản trình quản lý — đây là tài khoản quan trọng nhất.',
+        'Bước 1: chọn trình quản lý và tạo tài khoản. Đặt mật khẩu chính mạnh bằng phương pháp cụm mật khẩu (5+ từ ngẫu nhiên). Bật xác thực hai yếu tố cho chính tài khoản trình quản lý: đây là tài khoản quan trọng nhất.',
         'Bước 2: cài tiện ích trình duyệt và ứng dụng di động. Hầu hết trình quản lý cho nhập một chạm từ trình duyệt (Chrome, Firefox, Safari) và từ trình quản lý khác, lấy mật khẩu đã lưu làm điểm khởi đầu.',
         'Bước 3: ưu tiên đổi mật khẩu cho tài khoản nhạy cảm nhất trước: email, ngân hàng, lưu trữ đám mây và mạng xã hội. Dùng trình tạo mật khẩu để tạo mật khẩu ngẫu nhiên 20+ ký tự. Đây cũng là lúc bật MFA cho các tài khoản này.',
         'Bước 4: trong vài tuần tiếp theo, cập nhật mật khẩu còn lại khi bạn đăng nhập từng trang. Trình quản lý sẽ gắn cờ mật khẩu yếu, dùng lại hoặc bị rò rỉ. Đặt mục tiêu xóa hết mật khẩu dùng lại trong 30 ngày.',
@@ -921,7 +921,7 @@ export const vi: LocalizedArticleContent = {
     {
       heading: 'Tổng quan giá',
       paragraphs: [
-        'Bitwarden Free cho mật khẩu không giới hạn trên không giới hạn thiết bị — lựa chọn miễn phí tốt nhất. Bitwarden Premium 10 USD/năm thêm TOTP, truy cập khẩn cấp và báo cáo sức khỏe kho. 1Password 2,99 USD/tháng mang trải nghiệm chỉn chu nhất với Watchtower và Travel Mode. Dashlane 4,99 USD/tháng gồm VPN. NordPass Premium 1,99 USD/tháng. Proton Pass Plus 3,99 USD/tháng có bí danh email.',
+        'Bitwarden Free cho mật khẩu không giới hạn trên không giới hạn thiết bị, lựa chọn miễn phí tốt nhất. Bitwarden Premium 10 USD/năm thêm TOTP, truy cập khẩn cấp và báo cáo sức khỏe kho. 1Password 2,99 USD/tháng mang trải nghiệm chỉn chu nhất với Watchtower và Travel Mode. Dashlane 4,99 USD/tháng gồm VPN. NordPass Premium 1,99 USD/tháng. Proton Pass Plus 3,99 USD/tháng có bí danh email.',
         'Với gia đình, 1Password Families (4,99 USD/tháng cho 5 người) và Bitwarden Families (3,33 USD/tháng cho 6 người) mang giá trị tốt nhất. Cả hai đều có kho chia sẻ và kho riêng cho từng thành viên.',
         'Lựa chọn tích hợp sẵn miễn phí (Apple Keychain, Google Password Manager, Firefox Lockwise) khóa bạn vào một hệ sinh thái. Nếu dùng cả iOS và Windows, hoặc Android và macOS, bạn cần trình quản lý chuyên dụng đa nền tảng.',
       ],

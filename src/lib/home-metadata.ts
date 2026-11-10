@@ -63,8 +63,8 @@ const localizedMetaTitles: Record<string, string> = {
 };
 
 const localizedMetaDescriptions: Record<string, string> = {
-  en: 'Free online password generator: create strong, random passwords or memorable passphrases that meet NIST 800-63B. Generated locally in your browser — nothing is sent to a server.',
-  ua: 'Безкоштовний генератор паролів онлайн: створюйте надійні випадкові паролі або парольні фрази за NIST 800-63B. Генерація локально у браузері — дані не надсилаються.',
+  en: 'Free online password generator: create strong, random passwords or memorable passphrases that meet NIST 800-63B. Generated locally in your browser, nothing is sent to a server.',
+  ua: 'Безкоштовний генератор паролів онлайн: створюйте надійні випадкові паролі або парольні фрази за NIST 800-63B. Генерація локально у браузері, дані не надсилаються.',
   es: 'Generador de contraseñas online gratis: crea contraseñas aleatorias seguras o frases memorables según NIST 800-63B. Generado en tu navegador, sin enviar datos.',
   fr: 'Générateur de mots de passe gratuit : créez des mots de passe forts et aléatoires ou des phrases secrètes selon NIST 800-63B. Généré dans votre navigateur.',
   de: 'Kostenloser Passwort-Generator: starke, zufällige Passwörter oder merkbare Passphrasen nach NIST 800-63B. Lokal im Browser erzeugt – ohne Speicherung.',

@@ -140,7 +140,7 @@ export default function NavigationProgress() {
       role="status"
       aria-live="polite"
       aria-label={loadingText}
-      className="fixed inset-0 z-[9999] grid place-items-center bg-black/20 backdrop-blur-[2px]"
+      className="fixed inset-0 z-[9999] grid place-items-center bg-black/20"
     >
       <div className="flex items-center gap-3 rounded-full bg-white/90 px-4 py-2 shadow-lg dark:bg-[#1c1c1c]/90">
         <span className="inline-block h-5 w-5 animate-spin rounded-full border-[3px] border-[#2A4E63] border-r-transparent" />

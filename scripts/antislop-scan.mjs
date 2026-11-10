@@ -49,8 +49,8 @@ const PATTERNS = {
 
 // Legitimate uses that must not fail the check (tested against the surrounding context).
 const ALLOW = [
-  /phone unlock/i, /biometric unlock/i, /overall package/i, /overall analytics/i,
-  /dérivation de clés robuste/i, /è importante/i, /重要です/, /importance/i, /khuyến nghị/i,
+  /phone unlock/i, /biometric unlock/i, /device unlocks?/i, /overall package/i, /overall analytics/i,
+  /dérivation de clés robuste/i, /è importante/i, /es importante/i, /điều quan trọng là/i, /重要です/, /importance/i, /khuyến nghị/i,
 ];
 
 const MIN_LEN = { ja: 6, zh: 6 };
@@ -84,9 +84,52 @@ function extractUi() {
   return result;
 }
 
+function walkFiles(dir, out = []) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name !== 'node_modules' && entry.name !== '.next' && entry.name !== 'fonts') walkFiles(full, out);
+    } else {
+      out.push(full);
+    }
+  }
+  return out;
+}
+
+// Page copy lives outside the article files. Only ASCII strings are checked,
+// because the same page holds every locale and non-Latin text would trip the
+// English patterns by accident.
+function extractPageStrings() {
+  const result = [];
+  const pages = walkFiles(path.join(ROOT, 'src/app')).filter((f) => /page\.tsx$/.test(f));
+  for (const file of pages) {
+    const src = fs.readFileSync(file, 'utf8');
+    for (const m of src.matchAll(/'((?:[^'\\]|\\.){40,})'/g)) {
+      if (/^[\x20-\x7E‘’“”…]+$/.test(m[1])) result.push(m[1]);
+    }
+  }
+  return result;
+}
+
+// R-02: the em dash is forbidden everywhere in src, not just in prose.
+function findEmDashes() {
+  const exts = /\.(ts|tsx|js|jsx|mjs|css|json|md|html)$/;
+  const found = [];
+  for (const file of walkFiles(path.join(ROOT, 'src'))) {
+    if (!exts.test(file)) continue;
+    const src = fs.readFileSync(file, 'utf8');
+    if (!src.includes('\u2014')) continue;
+    src.split('\n').forEach((line, i) => {
+      if (line.includes('\u2014')) found.push(`${path.relative(ROOT, file)}:${i + 1}`);
+    });
+  }
+  return found;
+}
+
 const corpus = {};
 for (const [loc, list] of Object.entries(extractArticles())) corpus[loc] = (corpus[loc] || []).concat(list);
 for (const [loc, list] of Object.entries(extractUi())) corpus[loc] = (corpus[loc] || []).concat(list);
+corpus.en = (corpus.en || []).concat(extractPageStrings());
 
 let failures = 0;
 const rows = [];
@@ -117,4 +160,12 @@ if (failures) {
   console.error(`\nFAIL: ${failures} slop pattern(s) found. Fix or allowlist in scripts/antislop-scan.mjs.`);
   process.exit(1);
 }
-console.log('\nOK: no non-allowlisted slop patterns.');
+
+const emDashes = findEmDashes();
+if (emDashes.length) {
+  console.error(`\nFAIL (R-02): ${emDashes.length} em dash line(s) in src.`);
+  for (const where of emDashes.slice(0, 20)) console.error(`  ${where}`);
+  process.exit(1);
+}
+
+console.log('\nOK: no non-allowlisted slop patterns, no em dashes in src.');

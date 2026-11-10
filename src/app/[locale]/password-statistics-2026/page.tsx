@@ -29,7 +29,7 @@ const COPY: Record<Locale, {
 }> = {
   en: {
     slug: 'password-statistics-2026',
-    title: 'Password security statistics 2026 — entropy, crack time and search demand',
+    title: 'Password security statistics 2026: entropy, crack time and search demand',
     description: 'Original 2026 data: how password length and passphrase word count translate into entropy and crack time, plus 437 real search queries across 11 languages.',
     h1: 'Password security statistics 2026',
     intro:
@@ -44,7 +44,7 @@ const COPY: Record<Locale, {
     ],
     passTitle: 'Passphrase word count vs entropy (EFF large wordlist, 7,776 words)',
     passRows: [
-      ['3 words', '~39 bits', 'Weak — avoid'],
+      ['3 words', '~39 bits', 'Weak, avoid'],
       ['4 words', '~52 bits', 'Comparable to an 8-character password'],
       ['5 words', '~65 bits', 'Better than 10 random characters'],
       ['6 words', '~78 bits', 'Comparable to 12 random characters'],
@@ -63,19 +63,19 @@ const COPY: Record<Locale, {
     ],
     methodTitle: 'Method',
     method:
-      'Entropy = log2(alphabet size) × length, with a 94-character alphabet (letters, digits, symbols). Passphrase entropy = log2(7776) × words ≈ 12.9 × words. Crack times assume 10¹² guesses per second, i.e. a modern multi-GPU offline attack against a fast hash — online attacks against a rate-limited login are orders of magnitude slower. All generation on this site uses the Web Crypto API in your browser; nothing is sent to a server.',
+      'Entropy = log2(alphabet size) × length, with a 94-character alphabet (letters, digits, symbols). Passphrase entropy = log2(7776) × words ≈ 12.9 × words. Crack times assume 10¹² guesses per second, i.e. a modern multi-GPU offline attack against a fast hash, while online attacks against a rate-limited login are orders of magnitude slower. All generation on this site uses the Web Crypto API in your browser; nothing is sent to a server.',
     sourcesTitle: 'Sources',
     sources: [
-      { label: 'NIST SP 800-63B — Digital Identity Guidelines', href: 'https://pages.nist.gov/800-63-4/sp800-63b.html' },
+      { label: 'NIST SP 800-63B: Digital Identity Guidelines', href: 'https://pages.nist.gov/800-63-4/sp800-63b.html' },
       { label: 'OWASP Authentication Cheat Sheet', href: 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html' },
-      { label: 'EFF — Deep Dive: EFF’s New Wordlists for Random Passphrases', href: 'https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases' },
-      { label: 'Have I Been Pwned — Pwned Passwords', href: 'https://haveibeenpwned.com/Passwords' },
+      { label: 'EFF, Deep Dive: EFF’s New Wordlists for Random Passphrases', href: 'https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases' },
+      { label: 'Have I Been Pwned: Pwned Passwords', href: 'https://haveibeenpwned.com/Passwords' },
     ],
-    cta: { label: 'Generate a password with these settings →', href: '/en' },
+    cta: { label: 'Generate a password with these settings', href: '/en' },
   },
   ua: {
     slug: 'password-statistics-2026',
-    title: 'Статистика безпеки паролів 2026 — ентропія, час злому та попит',
+    title: 'Статистика безпеки паролів 2026: ентропія, час злому та попит',
     description: 'Оригінальні дані 2026: як довжина пароля та кількість слів у фразі впливають на ентропію й час злому, плюс 437 реальних запитів 11 мовами.',
     h1: 'Статистика безпеки паролів 2026',
     intro:
@@ -90,7 +90,7 @@ const COPY: Record<Locale, {
     ],
     passTitle: 'Кількість слів у фразі vs ентропія (EFF large wordlist, 7 776 слів)',
     passRows: [
-      ['3 слова', '~39 бітів', 'Слабко — не варто'],
+      ['3 слова', '~39 бітів', 'Слабко, не варто'],
       ['4 слова', '~52 біти', 'Порівнянно з 8-символьним паролем'],
       ['5 слів', '~65 бітів', 'Краще за 10 випадкових символів'],
       ['6 слів', '~78 бітів', 'Порівнянно з 12 випадковими символами'],
@@ -109,19 +109,19 @@ const COPY: Record<Locale, {
     ],
     methodTitle: 'Методика',
     method:
-      'Ентропія = log2(розмір набору) × довжина, для набору з 94 символів (літери, цифри, символи). Ентропія фрази = log2(7776) × кількість слів ≈ 12,9 × слів. Час злому розраховано для 10¹² спроб за секунду — сучасна офлайн-атака на швидкий хеш; онлайн-атаки на вхід із обмеженням спроб у рази повільніші. Уся генерація на сайті відбувається через Web Crypto API у вашому браузері; нічого не надсилається на сервер.',
+      'Ентропія = log2(розмір набору) × довжина, для набору з 94 символів (літери, цифри, символи). Ентропія фрази = log2(7776) × кількість слів ≈ 12,9 × слів. Час злому розраховано для 10¹² спроб за секунду, тобто сучасна офлайн-атака на швидкий хеш, а онлайн-атаки на вхід із обмеженням спроб у рази повільніші. Уся генерація на сайті відбувається через Web Crypto API у вашому браузері; нічого не надсилається на сервер.',
     sourcesTitle: 'Джерела',
     sources: [
-      { label: 'NIST SP 800-63B — Digital Identity Guidelines', href: 'https://pages.nist.gov/800-63-4/sp800-63b.html' },
+      { label: 'NIST SP 800-63B: Digital Identity Guidelines', href: 'https://pages.nist.gov/800-63-4/sp800-63b.html' },
       { label: 'OWASP Authentication Cheat Sheet', href: 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html' },
-      { label: 'EFF — нові списки слів для парольних фраз', href: 'https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases' },
-      { label: 'Have I Been Pwned — Pwned Passwords', href: 'https://haveibeenpwned.com/Passwords' },
+      { label: 'EFF: нові списки слів для парольних фраз', href: 'https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases' },
+      { label: 'Have I Been Pwned: Pwned Passwords', href: 'https://haveibeenpwned.com/Passwords' },
     ],
-    cta: { label: 'Згенерувати пароль із цими параметрами →', href: '/ua' },
+    cta: { label: 'Згенерувати пароль із цими параметрами', href: '/ua' },
   },
   vi: {
     slug: 'password-statistics-2026',
-    title: 'Thống kê bảo mật mật khẩu 2026 — entropy, thời gian bẻ khóa và nhu cầu tìm kiếm',
+    title: 'Thống kê bảo mật mật khẩu 2026: entropy, thời gian bẻ khóa và nhu cầu tìm kiếm',
     description: 'Dữ liệu gốc năm 2026: độ dài mật khẩu và số từ trong cụm mật khẩu quy đổi thành entropy và thời gian bẻ khóa, cùng 437 truy vấn tìm kiếm thật bằng 11 ngôn ngữ.',
     h1: 'Thống kê bảo mật mật khẩu 2026',
     intro:
@@ -136,7 +136,7 @@ const COPY: Record<Locale, {
     ],
     passTitle: 'Số từ trong cụm mật khẩu so với entropy (danh sách EFF lớn, 7.776 từ)',
     passRows: [
-      ['3 từ', '~39 bit', 'Yếu — nên tránh'],
+      ['3 từ', '~39 bit', 'Yếu, nên tránh'],
       ['4 từ', '~52 bit', 'Tương đương mật khẩu 8 ký tự'],
       ['5 từ', '~65 bit', 'Tốt hơn 10 ký tự ngẫu nhiên'],
       ['6 từ', '~78 bit', 'Tương đương 12 ký tự ngẫu nhiên'],
@@ -155,15 +155,15 @@ const COPY: Record<Locale, {
     ],
     methodTitle: 'Phương pháp',
     method:
-      'Entropy = log2(kích thước bộ ký tự) × độ dài, với bộ 94 ký tự (chữ cái, chữ số, ký hiệu). Entropy cụm mật khẩu = log2(7776) × số từ ≈ 12,9 × số từ. Thời gian bẻ khóa giả định 10¹² lần thử mỗi giây, tức một cuộc tấn công ngoại tuyến bằng nhiều GPU nhắm vào hàm băm nhanh — tấn công trực tuyến vào trang đăng nhập có giới hạn số lần thử chậm hơn nhiều bậc. Mọi thao tác tạo mật khẩu trên trang này dùng Web Crypto API trong trình duyệt của bạn; không có gì được gửi tới máy chủ.',
+      'Entropy = log2(kích thước bộ ký tự) × độ dài, với bộ 94 ký tự (chữ cái, chữ số, ký hiệu). Entropy cụm mật khẩu = log2(7776) × số từ ≈ 12,9 × số từ. Thời gian bẻ khóa giả định 10¹² lần thử mỗi giây, tức một cuộc tấn công ngoại tuyến bằng nhiều GPU nhắm vào hàm băm nhanh, còn tấn công trực tuyến vào trang đăng nhập có giới hạn số lần thử chậm hơn nhiều bậc. Mọi thao tác tạo mật khẩu trên trang này dùng Web Crypto API trong trình duyệt của bạn; không có gì được gửi tới máy chủ.',
     sourcesTitle: 'Nguồn tham khảo',
     sources: [
-      { label: 'NIST SP 800-63B — Digital Identity Guidelines', href: 'https://pages.nist.gov/800-63-4/sp800-63b.html' },
+      { label: 'NIST SP 800-63B: Digital Identity Guidelines', href: 'https://pages.nist.gov/800-63-4/sp800-63b.html' },
       { label: 'OWASP Authentication Cheat Sheet', href: 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html' },
-      { label: 'EFF — Deep Dive: EFF’s New Wordlists for Random Passphrases', href: 'https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases' },
-      { label: 'Have I Been Pwned — Pwned Passwords', href: 'https://haveibeenpwned.com/Passwords' },
+      { label: 'EFF, Deep Dive: EFF’s New Wordlists for Random Passphrases', href: 'https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases' },
+      { label: 'Have I Been Pwned: Pwned Passwords', href: 'https://haveibeenpwned.com/Passwords' },
     ],
-    cta: { label: 'Tạo mật khẩu với các thiết lập này →', href: '/vi' },
+    cta: { label: 'Tạo mật khẩu với các thiết lập này', href: '/vi' },
   },
 };
 
@@ -260,7 +260,7 @@ export default async function PasswordStatisticsPage({ params }: { params: Promi
           <h2 className="mt-8 text-2xl font-semibold text-[#071016] dark:text-[#e0e0e0]">{copy.passTitle}</h2>
           <ul className="mt-3 list-disc pl-5 space-y-1 text-[#374151] dark:text-[#c7c7c7]">
             {copy.passRows.map((r) => (
-              <li key={r[0]}><strong>{r[0]}</strong> — {r[1]}. {r[2]}</li>
+              <li key={r[0]}><strong>{r[0]}</strong>: {r[1]}. {r[2]}</li>
             ))}
           </ul>
 
@@ -268,7 +268,7 @@ export default async function PasswordStatisticsPage({ params }: { params: Promi
           <p className="mt-2 text-[#374151] dark:text-[#c7c7c7] leading-7">{copy.demandIntro}</p>
           <ul className="mt-3 list-disc pl-5 space-y-1 text-[#374151] dark:text-[#c7c7c7]">
             {copy.demandRows.map((r) => (
-              <li key={r[0]}>{r[0]} — <strong>{r[1]}</strong></li>
+              <li key={r[0]}>{r[0]}: <strong>{r[1]}</strong></li>
             ))}
           </ul>
 

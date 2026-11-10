@@ -20,7 +20,7 @@ export const en: LocalizedArticleContent = {
       heading: 'Why Your Team Needs a Written Password Policy',
       paragraphs: [
         'A written password policy transforms security from individual guesswork into organizational standard practice. Without one, team members use wildly different approaches: some use password managers with 20-character random passwords while others reuse "CompanyName2026" across every service. A clear policy eliminates this inconsistency and provides legal protection by demonstrating due diligence.',
-        'Regulatory frameworks including PCI DSS, SOC 2, HIPAA, GDPR, and ISO 27001 require documented access control policies. During an audit or breach investigation, the first question is often "show me your password policy." Not having one — or having an outdated one — can result in compliance failures, higher fines, and greater liability.',
+        'Regulatory frameworks including PCI DSS, SOC 2, HIPAA, GDPR, and ISO 27001 require documented access control policies. During an audit or breach investigation, the first question is often "show me your password policy." Not having one, or having an outdated one, can result in compliance failures, higher fines, and greater liability.',
         'The policy template below is designed for teams of 5-500 people. It covers the essential requirements while remaining practical enough for daily use. Adapt the specific values (minimum lengths, rotation periods, tool choices) to your organization\'s risk profile and regulatory requirements.',
       ],
     },
@@ -47,7 +47,7 @@ export const en: LocalizedArticleContent = {
       paragraphs: [
         'All team members must use the organization\'s approved password manager for all work-related accounts. The approved manager must: use AES-256 or XChaCha20 encryption; implement zero-knowledge architecture; have completed a third-party security audit within the past 24 months; support all platforms used by the team; and provide administrative controls for policy enforcement.',
         'Recommended options for teams: 1Password Business ($7.99/user/month) provides the most comprehensive admin controls, Watchtower breach monitoring, and travel mode. Bitwarden Teams ($4/user/month) offers excellent value with open-source transparency. Dashlane Business ($8/user/month) includes a VPN and dark web monitoring.',
-        'Each team member must generate unique random passwords of at least 16 characters for every account. Password reuse across any accounts is prohibited. The password manager\'s built-in password generator must be used — human-created passwords are not permitted for work accounts.',
+        'Each team member must generate unique random passwords of at least 16 characters for every account. Password reuse across any accounts is prohibited. The password manager\'s built-in password generator must be used; human-created passwords are not permitted for work accounts.',
         'Master password requirements: the password manager master password must be a passphrase of at least 6 random words or a random password of at least 20 characters. This master password must be unique (not used for any other purpose) and must not be stored digitally outside the user\'s own memory. A paper backup may be kept in a locked personal safe during the initial memorization period.',
       ],
     },
@@ -56,7 +56,7 @@ export const en: LocalizedArticleContent = {
       paragraphs: [
         'MFA is mandatory for all work accounts that support it. There are no exceptions for any user, including executives and temporary staff. MFA must be enabled within 24 hours of account creation. Accounts without MFA enabled after 48 hours will be suspended until MFA is configured.',
         'Approved MFA methods, in order of preference: FIDO2/WebAuthn hardware security keys (YubiKey 5 series, Google Titan); TOTP authenticator apps (Google Authenticator, Authy, Microsoft Authenticator); push notifications from the approved password manager; SMS-based codes (permitted only when no other method is available for a specific service).',
-        'Hardware key requirements: team members with access to production systems, customer data, or financial systems must use hardware security keys as their primary MFA method. The organization provides two keys per qualifying employee — one for daily use and one backup stored securely at home. Lost keys must be reported within 2 hours.',
+        'Hardware key requirements: team members with access to production systems, customer data, or financial systems must use hardware security keys as their primary MFA method. The organization provides two keys per qualifying employee: one for daily use and one backup stored securely at home. Lost keys must be reported within 2 hours.',
         'Backup and recovery: all MFA backup codes must be stored in the team password manager as a secure note. Each user must have at least two functional MFA methods registered for every critical account (e.g., hardware key + TOTP app). Recovery procedures are documented and tested annually.',
       ],
     },
@@ -65,7 +65,7 @@ export const en: LocalizedArticleContent = {
       paragraphs: [
         'Standard user accounts: passwords are NOT rotated on a fixed schedule. Consistent with NIST 800-63B guidance, mandatory periodic rotation is counterproductive. Passwords are changed only when: there is evidence of compromise; the password appears in a new breach database; the employee\'s role changes significantly; or the employee departs the organization.',
         'Administrative accounts: passwords are rotated every 180 days and immediately upon any suspicion of compromise. Admin passwords must be generated by the password manager (minimum 24 characters, fully random) and must never be shared.',
-        'Service accounts and API keys: rotated every 90 days. All service account credentials must be stored in a secrets management system (HashiCorp Vault, AWS Secrets Manager, or equivalent) — never in source code, configuration files, or environment variables in shared repositories. Hard-coded credentials are a terminable offense.',
+        'Service accounts and API keys: rotated every 90 days. All service account credentials must be stored in a secrets management system (HashiCorp Vault, AWS Secrets Manager, or equivalent), never in source code, configuration files, or environment variables in shared repositories. Hard-coded credentials are a terminable offense.',
         'Departing employees: all passwords and access tokens associated with a departing employee must be rotated or revoked within 4 hours of departure notification. The IT team maintains a checklist of all systems requiring credential rotation when an employee leaves.',
       ],
     },
@@ -73,7 +73,7 @@ export const en: LocalizedArticleContent = {
       heading: 'Section 5: Incident Response for Credential Compromise',
       paragraphs: [
         'When a credential compromise is suspected or confirmed, the following procedure applies. Immediate (within 30 minutes): disable the compromised account; rotate the compromised credential; check for unauthorized access in audit logs; enable enhanced monitoring on the affected systems.',
-        'Short-term (within 24 hours): determine the scope of compromise — what data was the account authorized to access? Review all actions taken by the compromised account in the past 30 days. If the compromised password was reused (a policy violation), rotate all accounts using that password. Notify affected parties as required by applicable regulations.',
+        'Short-term (within 24 hours): determine the scope of compromise: what data was the account authorized to access? Review all actions taken by the compromised account in the past 30 days. If the compromised password was reused (a policy violation), rotate all accounts using that password. Notify affected parties as required by applicable regulations.',
         'Post-incident (within 7 days): conduct a root cause analysis documenting how the compromise occurred, what controls failed, and what process improvements are needed. Update the password policy if the incident reveals gaps. Provide targeted security training to the affected employee. Document the incident for compliance records.',
         'Breach notification timelines: GDPR requires notification within 72 hours of discovery; PCI DSS requires immediate notification to the payment brands; state-level breach notification laws vary. The legal team must be notified within 2 hours of any suspected breach involving customer data.',
       ],
@@ -97,7 +97,7 @@ export const en: LocalizedArticleContent = {
     {
       heading: 'Adopting This Template',
       paragraphs: [
-        'To implement this policy: first, get leadership buy-in by presenting the cost of credential-related breaches versus the cost of a password manager subscription. IBM reports the average breach costs $4.88 million — your password manager subscription is a fraction of a percent of that risk.',
+        'To implement this policy: first, get leadership buy-in by presenting the cost of credential-related breaches versus the cost of a password manager subscription. IBM reports the average breach costs $4.88 million, so your password manager subscription is a fraction of a percent of that risk.',
         'Second, select and deploy your password manager before announcing the policy. Pre-configure team vaults, import any existing shared credentials, and create onboarding documentation. The smoother the transition, the higher the adoption rate.',
         'Third, announce the policy with a grace period (typically 30 days) for full compliance. During this period, provide hands-on help sessions where team members can set up their password managers, generate new passwords, and configure MFA with guidance from IT staff.',
         'Finally, review and update this policy at least annually. Security threats evolve, new tools emerge, and regulatory requirements change. Each review should incorporate lessons learned from any incidents during the previous year and feedback from team members about practical challenges.',
@@ -152,8 +152,8 @@ export const ua: LocalizedArticleContent = {
       heading: 'Розділ 2: Вимоги до менеджера паролів',
       paragraphs: [
         'Всі члени команди повинні використовувати затверджений менеджер паролів організації для всіх робочих акаунтів. Затверджений менеджер повинен: використовувати AES-256 або XChaCha20 шифрування; мати архітектуру zero-knowledge; пройти сторонній аудит безпеки протягом останніх 24 місяців.',
-        'Рекомендовані опції: 1Password Business ($7.99/користувач/місяць) — найповніший адмін-контроль та Watchtower. Bitwarden Teams ($4/користувач/місяць) — відмінна вартість з відкритим кодом. Dashlane Business ($8/користувач/місяць) — включає VPN.',
-        'Кожен член команди повинен генерувати унікальні випадкові паролі довжиною щонайменше 16 символів. Повторне використання паролів заборонене. Генератор менеджера паролів повинен використовуватися — створені людиною паролі не дозволені для робочих акаунтів.',
+        'Рекомендовані опції: 1Password Business ($7.99/користувач/місяць): найповніший адмін-контроль та Watchtower. Bitwarden Teams ($4/користувач/місяць): відмінна вартість з відкритим кодом. Dashlane Business ($8/користувач/місяць): включає VPN.',
+        'Кожен член команди повинен генерувати унікальні випадкові паролі довжиною щонайменше 16 символів. Повторне використання паролів заборонене. Генератор менеджера паролів повинен використовуватися; створені людиною паролі не дозволені для робочих акаунтів.',
         'Мастер-пароль: парольна фраза з мінімум 6 випадкових слів або випадковий пароль з мінімум 20 символів. Повинен бути унікальним та не зберігатися цифрово поза пам\'яттю користувача.',
       ],
     },
@@ -171,17 +171,17 @@ export const ua: LocalizedArticleContent = {
       paragraphs: [
         'Стандартні акаунти: паролі НЕ ротуються за фіксованим графіком. Відповідно до NIST 800-63B, обов\'язкова періодична ротація контрпродуктивна. Паролі змінюються лише при доказах компрометації, появі у базах витоків, суттєвій зміні ролі або звільненні.',
         'Адміністративні акаунти: ротація кожні 180 днів та негайно при підозрі компрометації. Мінімум 24 символи, повністю випадкові, ніколи не передаються.',
-        'Сервісні акаунти та API-ключі: ротація кожні 90 днів. Зберігаються у системі управління секретами (HashiCorp Vault, AWS Secrets Manager) — ніколи у коді або конфігураційних файлах.',
+        'Сервісні акаунти та API-ключі: ротація кожні 90 днів. Зберігаються у системі управління секретами (HashiCorp Vault, AWS Secrets Manager), ніколи у коді або конфігураційних файлах.',
         'Звільнення працівників: всі паролі та токени доступу повинні бути ротовані або відкликані протягом 4 годин після повідомлення про звільнення.',
       ],
     },
     {
       heading: 'Розділ 5: Реагування на інциденти',
       paragraphs: [
-        'При підозрі або підтвердженні компрометації: негайно (30 хвилин) — вимкнути акаунт, ротувати облікові дані, перевірити аудит-логи, увімкнути посилений моніторинг.',
-        'Короткостроково (24 години) — визначити обсяг компрометації, переглянути дії за останні 30 днів, ротувати всі акаунти з повторюваним паролем, повідомити заінтересовані сторони.',
-        'Після інциденту (7 днів) — провести аналіз кореневих причин, оновити політику паролів, провести цільове навчання, задокументувати інцидент.',
-        'Терміни повідомлення: GDPR — 72 години; PCI DSS — негайно; юридична команда — 2 години при витоку даних клієнтів.',
+        'При підозрі або підтвердженні компрометації: негайно (30 хвилин): вимкнути акаунт, ротувати облікові дані, перевірити аудит-логи, увімкнути посилений моніторинг.',
+        'Короткостроково (24 години): визначити обсяг компрометації, переглянути дії за останні 30 днів, ротувати всі акаунти з повторюваним паролем, повідомити заінтересовані сторони.',
+        'Після інциденту (7 днів): провести аналіз кореневих причин, оновити політику паролів, провести цільове навчання, задокументувати інцидент.',
+        'Терміни повідомлення: GDPR: 72 години; PCI DSS: негайно; юридична команда: 2 години при витоку даних клієнтів.',
       ],
     },
     {
@@ -189,7 +189,7 @@ export const ua: LocalizedArticleContent = {
       paragraphs: [
         'Всі працівники проходять навчання з безпеки паролів протягом першого тижня та щорічно. Навчання охоплює: використання менеджера паролів; створення парольних фраз; розпізнавання фішингу; поводження з MFA-пристроями; процедуру звітування про інциденти.',
         'Відповідність перевіряється через щоквартальні аудити панелі здоров\'я менеджера паролів. Метрики: відсоток унікальних паролів; середня довжина; кількість паролів у базах витоків; рівень впровадження MFA; час усунення проблем.',
-        'Порушення політики: перше — додаткове навчання та попередження; друге — офіційна догана та обов\'язкова сесія; третє — обмежений доступ. Навмисні порушення (передача паролів, вимкнення MFA, жорстке кодування секретів) можуть призвести до негайних дисциплінарних дій.',
+        'Порушення політики: перше: додаткове навчання та попередження; друге: офіційна догана та обов\'язкова сесія; третє: обмежений доступ. Навмисні порушення (передача паролів, вимкнення MFA, жорстке кодування секретів) можуть призвести до негайних дисциплінарних дій.',
       ],
       bullets: [
         'Навчання з безпеки в перший тиждень + щорічне оновлення',
@@ -225,7 +225,7 @@ export const es: LocalizedArticleContent = {
     { heading: 'Sección 3: Política MFA', paragraphs: ['MFA obligatorio para todas las cuentas laborales sin excepciones. Debe habilitarse dentro de 24 horas de creación.', 'Métodos aprobados por prioridad: FIDO2/WebAuthn (YubiKey, Titan); TOTP (Google Authenticator, Authy); Push del gestor; SMS (solo si no hay alternativa).', 'Empleados con acceso a producción deben usar llaves de hardware. La organización proporciona dos llaves por empleado.'] },
     { heading: 'Sección 4: Rotación y ciclo de vida', paragraphs: ['Cuentas estándar: NO se rotan por calendario (NIST 800-63B). Solo se cambian ante evidencia de compromiso.', 'Cuentas administrativas: rotación cada 180 días y ante sospecha de compromiso. Mínimo 24 caracteres.', 'Cuentas de servicio y API: rotación cada 90 días vía gestión de secretos (HashiCorp Vault, AWS Secrets Manager).', 'Al salir un empleado: todas las credenciales rotadas o revocadas en 4 horas.'] },
     { heading: 'Sección 5: Respuesta a incidentes', paragraphs: ['Inmediato (30 min): deshabilitar cuenta, rotar credenciales, revisar logs.', 'Corto plazo (24h): determinar alcance, revisar actividad 30 días, rotar cuentas con contraseña reutilizada, notificar.', 'Post-incidente (7 días): análisis de causa raíz, actualizar política, capacitación dirigida, documentar.'] },
-    { heading: 'Sección 6: Capacitación y cumplimiento', paragraphs: ['Capacitación en la primera semana y anualmente. Cubre: uso del gestor, creación de frases, detección de phishing, manejo de MFA, reporte de incidentes.', 'Auditorías trimestrales del panel de salud del gestor. Métricas: unicidad, longitud, filtraciones, adopción MFA.', 'Violaciones: primera — capacitación adicional; segunda — amonestación formal; tercera — acceso restringido.'], bullets: ['Capacitación en primera semana + actualización anual', 'Auditorías trimestrales de salud', 'Métricas: unicidad, longitud, filtraciones, MFA', 'Disciplina progresiva', 'Acción inmediata por violaciones intencionales', 'Documentar toda capacitación'] },
+    { heading: 'Sección 6: Capacitación y cumplimiento', paragraphs: ['Capacitación en la primera semana y anualmente. Cubre: uso del gestor, creación de frases, detección de phishing, manejo de MFA, reporte de incidentes.', 'Auditorías trimestrales del panel de salud del gestor. Métricas: unicidad, longitud, filtraciones, adopción MFA.', 'Violaciones: primera: capacitación adicional; segunda: amonestación formal; tercera: acceso restringido.'], bullets: ['Capacitación en primera semana + actualización anual', 'Auditorías trimestrales de salud', 'Métricas: unicidad, longitud, filtraciones, MFA', 'Disciplina progresiva', 'Acción inmediata por violaciones intencionales', 'Documentar toda capacitación'] },
     { heading: 'Implementación de esta plantilla', paragraphs: ['Obtener apoyo ejecutivo presentando el costo de brechas ($4.88M) vs suscripción al gestor.', 'Elegir y desplegar el gestor antes de anunciar la política. Preconfigurar bóvedas, importar credenciales.', 'Anunciar con período de gracia (30 días). Sesiones de ayuda con soporte IT.', 'Revisar y actualizar anualmente.'] },
   ],
 };
@@ -323,7 +323,7 @@ export const ru: LocalizedArticleContent = {
 export const zh: LocalizedArticleContent = {
   title: '团队密码策略模板：即用型框架',
   excerpt: '基于NIST 800-63B和PCI DSS v4. 0的密码策略模板。 涵盖密码管理器、MFA、轮换、事件响应和培训。',
-  seoTitle: '团队密码策略模板 — NIST/PCI DSS框架 | generatepasswordto.me',
+  seoTitle: '团队密码策略模板：NIST/PCI DSS框架 | generatepasswordto.me',
   seoDescription: '基于NIST 800-63B和PCI DSS v4. 0的密码策略模板。 涵盖密码管理器、MFA、轮换、事件响应和培训。',
   keywords: ['密码策略模板', '团队密码策略', '密码安全模板', 'NIST密码策略', 'PCI DSS模板', '企业安全策略'],
   sections: [
@@ -341,7 +341,7 @@ export const zh: LocalizedArticleContent = {
 export const ja: LocalizedArticleContent = {
   title: 'チームパスワードポリシーテンプレート：すぐに使えるフレームワーク',
   excerpt: 'NIST 800-63BとPCI DSS v4. 0に基づくパスワードポリシーテンプレート。 パスワードマネージャー、MFA、ローテーション、インシデント対応、トレーニングを網羅。',
-  seoTitle: 'チームパスワードポリシーテンプレート — NIST/PCI DSSフレームワーク | generatepasswordto.me',
+  seoTitle: 'チームパスワードポリシーテンプレート：NIST/PCI DSSフレームワーク | generatepasswordto.me',
   seoDescription: 'NIST 800-63BとPCI DSS v4. 0に基づくパスワードポリシーテンプレート。 パスワードマネージャー、MFA、ローテーション、インシデント対応、トレーニングを網羅。',
   keywords: ['パスワードポリシーテンプレート', 'チームパスワードポリシー', 'パスワードセキュリティテンプレート', 'NISTパスワードポリシー', 'PCI DSSテンプレート', '企業セキュリティポリシー'],
   sections: [
@@ -378,7 +378,7 @@ export const vi: LocalizedArticleContent = {
   title: 'Mẫu chính sách mật khẩu nhóm: khung sẵn dùng',
   excerpt:
     'Dùng khung chính sách toàn diện này để chuẩn hóa bảo mật mật khẩu trong tổ chức. Gồm mẫu sẵn dùng theo NIST 800-63B, PCI DSS v4. 0 và đào tạo nhân viên.',
-  seoTitle: 'Mẫu chính sách mật khẩu nhóm: khung sẵn dùng — mật khẩu mạnh nhất',
+  seoTitle: 'Mẫu chính sách mật khẩu nhóm: khung sẵn dùng, mật khẩu mạnh nhất',
   seoDescription:
     'Mẫu chính sách mật khẩu nhóm sẵn dùng theo NIST 800-63B và PCI DSS v4. 0: tạo mật khẩu mạnh, lưu trữ, xoay vòng, MFA, ứng phó sự cố và đào tạo nhân viên.',
   keywords: [
@@ -428,7 +428,7 @@ export const vi: LocalizedArticleContent = {
       paragraphs: [
         'Mọi thành viên phải dùng trình quản lý mật khẩu được tổ chức phê duyệt cho mọi tài khoản công việc. Trình quản lý được duyệt phải: dùng mã hóa AES-256 hoặc XChaCha20; có kiến trúc zero-knowledge; đã qua kiểm tra bảo mật độc lập trong 24 tháng gần nhất; hỗ trợ mọi nền tảng nhóm dùng; và có kiểm soát quản trị để áp chính sách.',
         'Lựa chọn khuyến nghị: 1Password Business (7,99 USD/người/tháng) có kiểm soát quản trị toàn diện nhất, giám sát rò rỉ Watchtower và travel mode. Bitwarden Teams (4 USD/người/tháng) giá trị tốt với mã nguồn mở minh bạch. Dashlane Business (8 USD/người/tháng) gồm VPN và giám sát dark web.',
-        'Mỗi thành viên phải tạo mật khẩu ngẫu nhiên riêng ít nhất 16 ký tự cho mọi tài khoản. Cấm dùng lại mật khẩu giữa bất kỳ tài khoản nào. Phải dùng trình tạo tích hợp của trình quản lý — mật khẩu do người tạo không được phép cho tài khoản công việc.',
+        'Mỗi thành viên phải tạo mật khẩu ngẫu nhiên riêng ít nhất 16 ký tự cho mọi tài khoản. Cấm dùng lại mật khẩu giữa bất kỳ tài khoản nào. Phải dùng trình tạo tích hợp của trình quản lý; mật khẩu do người tạo không được phép cho tài khoản công việc.',
         'Yêu cầu mật khẩu chính: cụm ít nhất 6 từ ngẫu nhiên hoặc mật khẩu ngẫu nhiên ít nhất 20 ký tự. Mật khẩu chính phải duy nhất (không dùng cho mục đích khác) và không được lưu kỹ thuật số ngoài trí nhớ người dùng. Có thể giữ bản giấy trong két cá nhân có khóa trong thời gian đầu luyện nhớ.',
       ],
     },
@@ -437,7 +437,7 @@ export const vi: LocalizedArticleContent = {
       paragraphs: [
         'MFA là bắt buộc cho mọi tài khoản công việc hỗ trợ. Không có ngoại lệ cho bất kỳ ai, kể cả lãnh đạo và nhân viên tạm thời. MFA phải được bật trong 24 giờ sau khi tạo tài khoản. Tài khoản chưa bật MFA sau 48 giờ sẽ bị tạm ngưng cho đến khi cấu hình xong.',
         'Phương thức MFA được duyệt, theo thứ tự ưu tiên: khóa bảo mật phần cứng FIDO2/WebAuthn (YubiKey 5, Google Titan); ứng dụng TOTP (Google Authenticator, Authy, Microsoft Authenticator); thông báo đẩy từ trình quản lý mật khẩu được duyệt; mã SMS (chỉ khi dịch vụ cụ thể không còn cách nào khác).',
-        'Yêu cầu khóa phần cứng: thành viên truy cập hệ thống sản phẩm, dữ liệu khách hàng hoặc hệ thống tài chính phải dùng khóa phần cứng làm MFA chính. Tổ chức cấp hai khóa cho mỗi nhân viên đủ điều kiện — một dùng hằng ngày, một dự phòng cất an toàn ở nhà. Mất khóa phải báo trong 2 giờ.',
+        'Yêu cầu khóa phần cứng: thành viên truy cập hệ thống sản phẩm, dữ liệu khách hàng hoặc hệ thống tài chính phải dùng khóa phần cứng làm MFA chính. Tổ chức cấp hai khóa cho mỗi nhân viên đủ điều kiện: một dùng hằng ngày, một dự phòng cất an toàn ở nhà. Mất khóa phải báo trong 2 giờ.',
         'Dự phòng và khôi phục: mọi mã dự phòng MFA phải lưu trong trình quản lý mật khẩu nhóm dưới dạng ghi chú an toàn. Mỗi người phải đăng ký ít nhất hai phương thức MFA hoạt động cho mọi tài khoản quan trọng (ví dụ khóa phần cứng + ứng dụng TOTP). Quy trình khôi phục được ghi lại và kiểm tra hằng năm.',
       ],
     },
@@ -446,7 +446,7 @@ export const vi: LocalizedArticleContent = {
       paragraphs: [
         'Tài khoản người dùng thường: KHÔNG xoay vòng theo lịch cố định. Theo hướng dẫn NIST 800-63B, xoay vòng định kỳ bắt buộc phản tác dụng. Chỉ đổi khi: có bằng chứng bị xâm phạm; mật khẩu xuất hiện trong cơ sở dữ liệu rò rỉ mới; vai trò nhân viên thay đổi đáng kể; hoặc nhân viên rời tổ chức.',
         'Tài khoản quản trị: xoay vòng mỗi 180 ngày và ngay khi nghi bị xâm phạm. Mật khẩu quản trị phải do trình quản lý tạo (tối thiểu 24 ký tự, hoàn toàn ngẫu nhiên) và không bao giờ chia sẻ.',
-        'Tài khoản dịch vụ và khóa API: xoay vòng mỗi 90 ngày. Mọi thông tin tài khoản dịch vụ phải lưu trong hệ thống quản lý bí mật (HashiCorp Vault, AWS Secrets Manager hoặc tương đương) — không bao giờ trong mã nguồn, tệp cấu hình hoặc biến môi trường ở kho chung. Gắn cứng thông tin đăng nhập là lỗi có thể bị sa thải.',
+        'Tài khoản dịch vụ và khóa API: xoay vòng mỗi 90 ngày. Mọi thông tin tài khoản dịch vụ phải lưu trong hệ thống quản lý bí mật (HashiCorp Vault, AWS Secrets Manager hoặc tương đương), không bao giờ trong mã nguồn, tệp cấu hình hoặc biến môi trường ở kho chung. Gắn cứng thông tin đăng nhập là lỗi có thể bị sa thải.',
         'Nhân viên rời tổ chức: mọi mật khẩu và token truy cập liên quan phải được xoay vòng hoặc thu hồi trong 4 giờ sau thông báo nghỉ việc. Nhóm CNTT giữ danh sách kiểm tra mọi hệ thống cần xoay thông tin khi nhân viên rời đi.',
       ],
     },
@@ -454,7 +454,7 @@ export const vi: LocalizedArticleContent = {
       heading: 'Phần 5: Ứng phó sự cố rò rỉ thông tin đăng nhập',
       paragraphs: [
         'Khi nghi ngờ hoặc xác nhận thông tin đăng nhập bị xâm phạm, áp dụng quy trình sau. Ngay lập tức (trong 30 phút): vô hiệu hóa tài khoản bị xâm phạm; xoay thông tin bị lộ; kiểm tra log kiểm toán tìm truy cập trái phép; bật giám sát tăng cường trên hệ thống bị ảnh hưởng.',
-        'Ngắn hạn (trong 24 giờ): xác định phạm vi xâm phạm — tài khoản được quyền truy cập dữ liệu gì? Xem mọi hành động của tài khoản trong 30 ngày qua. Nếu mật khẩu bị lộ được dùng lại (vi phạm chính sách), xoay mọi tài khoản dùng mật khẩu đó. Thông báo cho bên liên quan theo quy định.',
+        'Ngắn hạn (trong 24 giờ): xác định phạm vi xâm phạm: tài khoản được quyền truy cập dữ liệu gì? Xem mọi hành động của tài khoản trong 30 ngày qua. Nếu mật khẩu bị lộ được dùng lại (vi phạm chính sách), xoay mọi tài khoản dùng mật khẩu đó. Thông báo cho bên liên quan theo quy định.',
         'Sau sự cố (trong 7 ngày): phân tích nguyên nhân gốc, ghi lại cách xâm phạm xảy ra, kiểm soát nào thất bại và cần cải tiến gì. Cập nhật chính sách mật khẩu nếu sự cố lộ khoảng trống. Đào tạo bảo mật có mục tiêu cho nhân viên bị ảnh hưởng. Ghi hồ sơ sự cố để tuân thủ.',
         'Thời hạn thông báo rò rỉ: GDPR yêu cầu thông báo trong 72 giờ sau khi phát hiện; PCI DSS yêu cầu báo ngay cho các thương hiệu thanh toán; luật thông báo rò rỉ cấp bang khác nhau. Nhóm pháp lý phải được thông báo trong 2 giờ khi nghi rò rỉ liên quan dữ liệu khách hàng.',
       ],
@@ -478,7 +478,7 @@ export const vi: LocalizedArticleContent = {
     {
       heading: 'Áp dụng mẫu này',
       paragraphs: [
-        'Để triển khai: trước hết, thuyết phục lãnh đạo bằng cách so chi phí rò rỉ thông tin đăng nhập với chi phí đăng ký trình quản lý mật khẩu. IBM báo cáo chi phí rò rỉ trung bình 4,88 triệu USD — đăng ký trình quản lý chỉ là một phần nhỏ của rủi ro đó.',
+        'Để triển khai: trước hết, thuyết phục lãnh đạo bằng cách so chi phí rò rỉ thông tin đăng nhập với chi phí đăng ký trình quản lý mật khẩu. IBM báo cáo chi phí rò rỉ trung bình 4,88 triệu USD, nên đăng ký trình quản lý chỉ là một phần nhỏ của rủi ro đó.',
         'Thứ hai, chọn và triển khai trình quản lý mật khẩu trước khi công bố chính sách. Cấu hình sẵn kho nhóm, nhập thông tin chia sẻ hiện có và tạo tài liệu hướng dẫn. Chuyển đổi càng mượt, tỷ lệ áp dụng càng cao.',
         'Thứ ba, công bố chính sách kèm thời gian ân hạn (thường 30 ngày) để tuân thủ đầy đủ. Trong thời gian này, tổ chức buổi hỗ trợ trực tiếp để thành viên thiết lập trình quản lý, tạo mật khẩu mới và cấu hình MFA với hướng dẫn của CNTT.',
         'Cuối cùng, xem xét và cập nhật chính sách ít nhất hằng năm. Mối đe dọa thay đổi, công cụ mới xuất hiện và quy định cũng đổi. Mỗi lần rà soát nên gồm bài học từ sự cố năm trước và phản hồi của thành viên về khó khăn thực tế.',

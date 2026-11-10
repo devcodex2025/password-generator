@@ -37,7 +37,7 @@ export const en: LocalizedArticleContent = {
       paragraphs: [
         'PCI DSS v4.0 Requirement 8.4.2 mandates MFA for all access to the cardholder data environment (CDE), not just remote access as previously required. This is one of the most impactful changes. Every person accessing systems that store, process, or transmit cardholder data must authenticate with at least two of the three factors: knowledge (password), possession (token, smart card), or inherence (biometric).',
         'Requirement 8.4.3 extends MFA to all remote network access originating from outside the entity\'s network. This applies to VPN connections, remote desktop sessions, and any administrative access from external locations. The MFA must be implemented at the network or system level, not just the application level.',
-        'For MFA implementation, PCI DSS requires that the authentication factors be independent — compromising one factor should not affect the integrity of other factors. The standard also requires that MFA cannot be bypassed by any user, including administrators. Replay resistance is mandatory: each authentication attempt must produce a unique, time-limited token.',
+        'For MFA implementation, PCI DSS requires that the authentication factors be independent: compromising one factor should not affect the integrity of other factors. The standard also requires that MFA cannot be bypassed by any user, including administrators. Replay resistance is mandatory: each authentication attempt must produce a unique, time-limited token.',
       ],
     },
     {
@@ -60,7 +60,7 @@ export const en: LocalizedArticleContent = {
       heading: 'Practical Implementation for Teams',
       paragraphs: [
         'Deploying a password manager across your team is the most effective way to meet PCI DSS password requirements while maintaining productivity. 1Password Business, Bitwarden Organizations, or Dashlane Business provide centralized policy enforcement, shared vaults for team credentials, automatic password generation meeting length and complexity requirements, and audit trails for compliance documentation.',
-        'For service accounts and application credentials, use a secrets management solution like HashiCorp Vault, AWS Secrets Manager, or Azure Key Vault. These tools provide automatic rotation, access logging, and encryption at rest — addressing Requirements 8.6.2, 8.6.3, and 8.3.1 in one solution.',
+        'For service accounts and application credentials, use a secrets management solution like HashiCorp Vault, AWS Secrets Manager, or Azure Key Vault. These tools provide automatic rotation, access logging, and encryption at rest, addressing Requirements 8.6.2, 8.6.3, and 8.3.1 in one solution.',
         'Document your password policy in writing, including: minimum length (12+ characters), complexity requirements, change frequency (90 days for users, 12 months for service accounts), MFA deployment scope, lockout thresholds, and session timeout settings. This documentation is required for PCI DSS compliance assessments.',
         'Train your team annually on password security practices. PCI DSS Requirement 12.6 mandates security awareness training that covers safe password creation, recognizing phishing attempts, and proper handling of authentication credentials. Track completion and keep records for audit purposes.',
       ],
@@ -106,7 +106,7 @@ export const ua: LocalizedArticleContent = {
     {
       heading: 'Розуміння PCI DSS та чому це важливо',
       paragraphs: [
-        'Payment Card Industry Data Security Standard (PCI DSS) — це набір вимог безпеки, розроблених для захисту даних власників карток. Будь-яка організація, що обробляє, зберігає або передає інформацію кредитних карток, повинна відповідати цим вимогам. Версія 4.0, випущена у березні 2022 з обов\'язковим терміном відповідності 31 березня 2025 (та розширеними вимогами до березня 2026), вводить значні зміни у вимогах до аутентифікації.',
+        'Payment Card Industry Data Security Standard (PCI DSS) це набір вимог безпеки, розроблених для захисту даних власників карток. Будь-яка організація, що обробляє, зберігає або передає інформацію кредитних карток, повинна відповідати цим вимогам. Версія 4.0, випущена у березні 2022 з обов\'язковим терміном відповідності 31 березня 2025 (та розширеними вимогами до березня 2026), вводить значні зміни у вимогах до аутентифікації.',
         'Невідповідність може призвести до штрафів від $5 000 до $100 000 на місяць, підвищених комісій за транзакції, втрати можливості обробляти карткові платежі та відповідальності за збитки від шахрайства. Окрім штрафів, витік даних власників карток руйнує довіру клієнтів і може призвести до колективних позовів.',
         'PCI DSS v4.0 більш тісно узгоджується з сучасними практиками безпеки, включаючи рекомендації NIST 800-63B. Він визнає, що жорсткі застарілі правила паролів часто знижують безпеку, заохочуючи передбачувану поведінку користувачів.',
       ],
@@ -138,7 +138,7 @@ export const ua: LocalizedArticleContent = {
     {
       heading: 'Блокування акаунтів та управління сесіями',
       paragraphs: [
-        'Вимога 8.3.4 вимагає тимчасового блокування акаунтів після не більше 10 невдалих спроб входу. Тривалість блокування — щонайменше 30 хвилин або до розблокування адміністратором.',
+        'Вимога 8.3.4 вимагає тимчасового блокування акаунтів після не більше 10 невдалих спроб входу. Тривалість блокування: щонайменше 30 хвилин або до розблокування адміністратором.',
         'Тайм-аут неактивності сесії (Вимога 8.2.8) вимагає автоматичного завершення сесій після 15 хвилин неактивності.',
         'PCI DSS v4.0 також вимагає шифрування всіх облікових даних при передачі та зберіганні. Паролі ніколи не повинні зберігатися у зворотному шифруванні або відкритому тексті.',
       ],
@@ -146,7 +146,7 @@ export const ua: LocalizedArticleContent = {
     {
       heading: 'Практичне впровадження для команд',
       paragraphs: [
-        'Розгортання менеджера паролів по всій команді — найефективніший спосіб задовольнити вимоги PCI DSS, зберігаючи продуктивність. 1Password Business, Bitwarden Organizations або Dashlane Business забезпечують централізоване застосування політик, спільні сховища та аудит-трейли.',
+        'Розгортання менеджера паролів по всій команді це найефективніший спосіб задовольнити вимоги PCI DSS, зберігаючи продуктивність. 1Password Business, Bitwarden Organizations або Dashlane Business забезпечують централізоване застосування політик, спільні сховища та аудит-трейли.',
         'Для сервісних акаунтів використовуйте рішення для управління секретами, такі як HashiCorp Vault, AWS Secrets Manager або Azure Key Vault. Ці інструменти забезпечують автоматичну ротацію, журналювання доступу та шифрування.',
         'Задокументуйте політику паролів у письмовому вигляді та проводьте щорічне навчання команди з безпеки паролів.',
       ],
@@ -164,10 +164,10 @@ export const ua: LocalizedArticleContent = {
     {
       heading: 'Поширені помилки при забезпеченні відповідності',
       paragraphs: [
-        'Спільні акаунти — часта знахідка аудиту. PCI DSS Вимога 8.2.1 вимагає призначення унікального ID кожному користувачу. Спільні адмін-акаунти та загальні командні логіни повинні бути усунені.',
+        'Спільні акаунти це часта знахідка аудиту. PCI DSS Вимога 8.2.1 вимагає призначення унікального ID кожному користувачу. Спільні адмін-акаунти та загальні командні логіни повинні бути усунені.',
         'Жорстко закодовані паролі у коді застосунку порушують Вимогу 8.6.2. Проскануйте кодову базу на вбудовані облікові дані та перенесіть їх у змінні середовища або менеджер секретів.',
         'Паролі вендорів за замовчуванням повинні бути змінені до введення будь-якої системи в продакшн (Вимога 2.1.1). Це включає мережеве обладнання, програмні установки, сервери баз даних та IoT-пристрої.',
-        'Неадекватне журналювання — ще одна поширена помилка. PCI DSS вимагає журналювання всіх подій аутентифікації з мітками часу та ідентифікацією користувачів. Ці журнали повинні переглядатися щодня та зберігатися щонайменше один рік.',
+        'Неадекватне журналювання це ще одна поширена помилка. PCI DSS вимагає журналювання всіх подій аутентифікації з мітками часу та ідентифікацією користувачів. Ці журнали повинні переглядатися щодня та зберігатися щонайменше один рік.',
       ],
     },
   ],
@@ -182,7 +182,7 @@ export const es: LocalizedArticleContent = {
   sections: [
     { heading: 'Entendiendo PCI DSS y por qué importa', paragraphs: ['PCI DSS es un conjunto de requisitos de seguridad diseñados para proteger datos de tarjetahabientes. La versión 4.0 introduce cambios significativos en requisitos de autenticación, con fecha límite de cumplimiento en marzo 2026.', 'El incumplimiento puede resultar en multas de $5.000 a $100.000 mensuales, pérdida de la capacidad de procesar pagos y responsabilidad por pérdidas de fraude.', 'PCI DSS v4.0 se alinea más con prácticas modernas como NIST 800-63B, ofreciendo más flexibilidad en cómo se cumplen los requisitos.'] },
     { heading: 'Longitud y complejidad en PCI DSS v4.0', paragraphs: ['El Requisito 8.3.6 especifica que las contraseñas deben tener al menos 12 caracteres (aumentado desde el mínimo previo de 7). Si el sistema no soporta 12, el mínimo absoluto es 8, pero debe documentarse.', 'Para complejidad, se requiere que las contraseñas contengan caracteres numéricos y alfabéticos. Esto es menos exigente que muchas políticas legacy.', 'PCI DSS v4.0 introduce un "enfoque personalizado" que permite mecanismos alternativos si se puede demostrar seguridad equivalente mediante un análisis de riesgo documentado.'] },
-    { heading: 'Requisitos de autenticación multifactor', paragraphs: ['El Requisito 8.4.2 exige MFA para todo acceso al entorno de datos de tarjetahabientes (CDE), no solo acceso remoto. Cada persona debe autenticarse con al menos dos de tres factores.', 'El Requisito 8.4.3 extiende MFA a todo acceso remoto desde fuera de la red. Aplica a VPN, escritorio remoto y acceso administrativo externo.', 'Los factores deben ser independientes — comprometer uno no debe afectar la integridad de otros. El MFA no puede ser evadido por ningún usuario, incluidos administradores.'] },
+    { heading: 'Requisitos de autenticación multifactor', paragraphs: ['El Requisito 8.4.2 exige MFA para todo acceso al entorno de datos de tarjetahabientes (CDE), no solo acceso remoto. Cada persona debe autenticarse con al menos dos de tres factores.', 'El Requisito 8.4.3 extiende MFA a todo acceso remoto desde fuera de la red. Aplica a VPN, escritorio remoto y acceso administrativo externo.', 'Los factores deben ser independientes: comprometer uno no debe afectar la integridad de otros. El MFA no puede ser evadido por ningún usuario, incluidos administradores.'] },
     { heading: 'Políticas de cambio y rotación de contraseñas', paragraphs: ['El Requisito 8.3.9 exige que las contraseñas se cambien cada 90 días. Esto difiere de NIST 800-63B. Sin embargo, el enfoque personalizado permite eliminar la rotación periódica si se implementa análisis continuo de seguridad.', 'La nueva contraseña no puede ser igual a las últimas cuatro (Requisito 8.3.7).', 'Para cuentas de servicio, las contraseñas deben cambiarse al menos cada 12 meses y ante sospecha de compromiso. Las contraseñas hardcodeadas están explícitamente prohibidas.'] },
     { heading: 'Bloqueo de cuentas y gestión de sesiones', paragraphs: ['Bloqueo temporal tras máximo 10 intentos inválidos, por al menos 30 minutos (Requisito 8.3.4).', 'Timeout de sesión inactiva tras 15 minutos (Requisito 8.2.8).', 'Todas las credenciales deben cifrarse durante transmisión y almacenamiento. Nunca almacenar en texto plano o cifrado reversible.'] },
     { heading: 'Implementación práctica para equipos', paragraphs: ['Desplegar un gestor de contraseñas (1Password Business, Bitwarden Organizations) es la forma más efectiva de cumplir. Proporcionan enforcement centralizado, bóvedas compartidas y pistas de auditoría.', 'Para cuentas de servicio, usar soluciones de gestión de secretos como HashiCorp Vault o AWS Secrets Manager.', 'Documentar la política por escrito y realizar capacitación anual de seguridad (Requisito 12.6).'], bullets: ['Desplegar gestor de contraseñas para el equipo', 'Gestión de secretos para cuentas de servicio', 'Documentar la política completa por escrito', 'Capacitación anual de seguridad con registros', 'MFA en todos los puntos de acceso al CDE', 'Bloqueo automático tras 10 intentos fallidos', 'Timeout de sesión inactiva de 15 minutos', 'Revisión trimestral de la política'] },
@@ -210,7 +210,7 @@ export const fr: LocalizedArticleContent = {
 export const de: LocalizedArticleContent = {
   title: 'PCI DSS Passwortanforderungen für Teams 2026',
   excerpt: 'Was PCI DSS v4. 0 von Passwortkontrollen erwartet und wie Sie den Team-Workflow anpassen. Authentifizierungsanforderungen, Passwortrichtlinien und Implementierungsstrategien.',
-  seoTitle: 'PCI DSS Passwortanforderungen für Teams 2026 — PCI Passwortlänge',
+  seoTitle: 'PCI DSS Passwortanforderungen für Teams 2026: PCI Passwortlänge',
   seoDescription: 'Was PCI DSS v4. 0 von Passwortkontrollen erwartet und wie Sie den Team-Workflow anpassen. Vollständiger Leitfaden zu PCI DSS v4. 0 Passwortanforderungen.',
   keywords: ['PCI DSS Passwortanforderungen', 'PCI Compliance Passwortrichtlinie', 'PCI DSS v4.0 Authentifizierung', 'Zahlungssicherheit Passwörter', 'PCI Passwortlänge', 'Compliance Passwort-Leitfaden'],
   sections: [
@@ -261,24 +261,24 @@ export const pt: LocalizedArticleContent = {
 export const ru: LocalizedArticleContent = {
   title: 'Требования PCI DSS к паролям для команд в 2026',
   excerpt: 'Что PCI DSS v4. 0 ожидает от контроля паролей и как настроить рабочий процесс команды. Требования аутентификации, политики и стратегии внедрения.',
-  seoTitle: 'Требования PCI DSS к паролям для команд в 2026 — длина пароля PCI',
+  seoTitle: 'Требования PCI DSS к паролям для команд в 2026: длина пароля PCI',
   seoDescription: 'Полное руководство по требованиям PCI DSS v4. 0 к паролям. Минимальная длина, обязательный MFA, сервисные аккаунты, ротация и стратегии для команд.',
   keywords: ['требования PCI DSS к паролям', 'соответствие PCI пароли', 'аутентификация PCI DSS v4.0', 'безопасность платежей пароли', 'длина пароля PCI', 'руководство соответствие паролей'],
   sections: [
-    { heading: 'Понимание PCI DSS и почему это важно', paragraphs: ['PCI DSS — набор требований безопасности для защиты данных держателей карт. Версия 4.0 вводит значительные изменения, крайний срок соответствия — март 2026.', 'Несоответствие может привести к штрафам от $5 000 до $100 000 в месяц и потере возможности обрабатывать платежи.', 'PCI DSS v4.0 больше соответствует современным практикам, включая NIST 800-63B.'] },
+    { heading: 'Понимание PCI DSS и почему это важно', paragraphs: ['PCI DSS это набор требований безопасности для защиты данных держателей карт. Версия 4.0 вводит значительные изменения, крайний срок соответствия: март 2026.', 'Несоответствие может привести к штрафам от $5 000 до $100 000 в месяц и потере возможности обрабатывать платежи.', 'PCI DSS v4.0 больше соответствует современным практикам, включая NIST 800-63B.'] },
     { heading: 'Длина и сложность в PCI DSS v4.0', paragraphs: ['Требование 8.3.6: минимум 12 символов (увеличено с 7). Абсолютный минимум 8 с документацией.', 'Пароли должны содержать цифры и буквы.', '«Настраиваемый подход» позволяет альтернативные механизмы с документированным анализом рисков.'] },
     { heading: 'Требования многофакторной аутентификации', paragraphs: ['Требование 8.4.2: MFA для всего доступа к CDE, не только удалённого.', 'Требование 8.4.3: MFA для всего удалённого сетевого доступа.', 'Факторы должны быть независимыми, и MFA нельзя обойти никому.'] },
     { heading: 'Политики смены и ротации паролей', paragraphs: ['Смена каждые 90 дней (Требование 8.3.9). Настраиваемый подход позволяет отказ от ротации при непрерывном мониторинге.', 'Новый пароль не может быть среди последних 4 (Требование 8.3.7).', 'Сервисные аккаунты: смена минимум раз в 12 месяцев. Жёстко закодированные пароли запрещены.'] },
     { heading: 'Блокировка аккаунтов и управление сессиями', paragraphs: ['Блокировка после максимум 10 неудачных попыток на минимум 30 минут.', 'Таймаут неактивной сессии через 15 минут.', 'Все учётные данные должны шифроваться при передаче и хранении.'] },
-    { heading: 'Практическое внедрение для команд', paragraphs: ['Развёртывание командного менеджера паролей (1Password Business, Bitwarden Organizations) — наиболее эффективное решение.', 'Для сервисных аккаунтов: управление секретами (HashiCorp Vault, AWS Secrets Manager).', 'Документировать политику и проводить ежегодное обучение (Требование 12.6).'], bullets: ['Командный менеджер паролей', 'Управление секретами для сервисных аккаунтов', 'Документирование полной политики', 'Ежегодное обучение безопасности', 'MFA на всех точках доступа к CDE', 'Автоблокировка после 10 попыток', 'Таймаут неактивной сессии 15 минут', 'Квартальный пересмотр политики'] },
-    { heading: 'Распространённые ошибки соответствия', paragraphs: ['Общие аккаунты нарушают Требование 8.2.1 (уникальный ID для каждого).', 'Жёстко закодированные пароли нарушают Требование 8.6.2.', 'Пароли вендоров по умолчанию должны быть изменены до продакшна (Требование 2.1.1).', 'Неадекватное журналирование — ещё одна частая ошибка.'] },
+    { heading: 'Практическое внедрение для команд', paragraphs: ['Развёртывание командного менеджера паролей (1Password Business, Bitwarden Organizations): наиболее эффективное решение.', 'Для сервисных аккаунтов: управление секретами (HashiCorp Vault, AWS Secrets Manager).', 'Документировать политику и проводить ежегодное обучение (Требование 12.6).'], bullets: ['Командный менеджер паролей', 'Управление секретами для сервисных аккаунтов', 'Документирование полной политики', 'Ежегодное обучение безопасности', 'MFA на всех точках доступа к CDE', 'Автоблокировка после 10 попыток', 'Таймаут неактивной сессии 15 минут', 'Квартальный пересмотр политики'] },
+    { heading: 'Распространённые ошибки соответствия', paragraphs: ['Общие аккаунты нарушают Требование 8.2.1 (уникальный ID для каждого).', 'Жёстко закодированные пароли нарушают Требование 8.6.2.', 'Пароли вендоров по умолчанию должны быть изменены до продакшна (Требование 2.1.1).', 'Неадекватное журналирование это ещё одна частая ошибка.'] },
   ],
 };
 
 export const zh: LocalizedArticleContent = {
   title: '2026年团队PCI DSS密码要求',
   excerpt: 'PCI DSS v4. 0对密码控制的要求以及如何调整团队工作流程。 涵盖认证要求、密码策略和实施策略。 PCI DSS是保护持卡人数据的安全要求集。',
-  seoTitle: 'PCI DSS密码要求2026 — 团队合规指南 | generatepasswordto.me',
+  seoTitle: 'PCI DSS密码要求2026：团队合规指南 | generatepasswordto.me',
   seoDescription: 'PCI DSS v4. 0对密码控制的要求以及如何调整团队工作流程。 涵盖认证要求、密码策略和实施策略。 PCI DSS v4.',
   keywords: ['PCI DSS密码要求', 'PCI合规密码策略', 'PCI DSS v4.0认证', '支付安全密码', 'PCI密码长度', '合规密码指南'],
   sections: [
@@ -295,7 +295,7 @@ export const zh: LocalizedArticleContent = {
 export const ja: LocalizedArticleContent = {
   title: '2026年チーム向けPCI DSSパスワード要件',
   excerpt: 'PCI DSS v4. 0がパスワード管理に求めること、UXを損なわずにチームワークフローを適合させる方法。 認証要件、ポリシー、実装戦略を解説。',
-  seoTitle: 'PCI DSSパスワード要件2026 — チームコンプライアンスガイド | generatepasswordto.me',
+  seoTitle: 'PCI DSSパスワード要件2026：チームコンプライアンスガイド | generatepasswordto.me',
   seoDescription: 'PCI DSS v4. 0パスワード要件の完全ガイド。 最小長、MFA義務化、サービスアカウント、ローテーション、チーム戦略。',
   keywords: ['PCI DSSパスワード要件', 'PCIコンプライアンスパスワード', 'PCI DSS v4.0認証', '決済セキュリティパスワード', 'PCIパスワード長', 'コンプライアンスパスワードガイド'],
   sections: [
@@ -330,7 +330,7 @@ export const vi: LocalizedArticleContent = {
   title: 'Yêu cầu mật khẩu PCI DSS cho nhóm năm 2026',
   excerpt:
     'PCI DSS v4. 0 yêu cầu gì với kiểm soát mật khẩu và cách căn chỉnh quy trình nhóm mà không hại trải nghiệm. Gồm xác thực, chính sách và cách triển khai thực tế.',
-  seoTitle: 'Yêu cầu mật khẩu PCI DSS cho nhóm năm 2026 — mật khẩu mạnh là gì',
+  seoTitle: 'Yêu cầu mật khẩu PCI DSS cho nhóm năm 2026: mật khẩu mạnh là gì',
   seoDescription:
     'Hướng dẫn PCI DSS v4. 0 về mật khẩu: độ dài tối thiểu, MFA bắt buộc, kiểm soát tài khoản dịch vụ, đổi mật khẩu định kỳ và cách tạo mật khẩu mạnh cho nhóm.',
   keywords: [
@@ -370,7 +370,7 @@ export const vi: LocalizedArticleContent = {
       paragraphs: [
         'Yêu cầu 8.4.2 buộc MFA cho mọi truy cập vào môi trường dữ liệu chủ thẻ (CDE), không chỉ truy cập từ xa như trước. Mọi người truy cập hệ thống lưu, xử lý hoặc truyền dữ liệu chủ thẻ phải xác thực bằng ít nhất hai trong ba yếu tố: kiến thức (mật khẩu), sở hữu (token, thẻ thông minh) hoặc sinh trắc học.',
         'Yêu cầu 8.4.3 mở rộng MFA cho mọi truy cập mạng từ xa từ ngoài mạng của tổ chức. Điều này áp dụng cho VPN, phiên desktop từ xa và mọi truy cập quản trị từ vị trí bên ngoài. MFA phải được triển khai ở cấp mạng hoặc hệ thống, không chỉ cấp ứng dụng.',
-        'Với triển khai MFA, PCI DSS yêu cầu các yếu tố độc lập — xâm phạm một yếu tố không ảnh hưởng tính toàn vẹn của yếu tố khác. Tiêu chuẩn cũng yêu cầu MFA không thể bị bỏ qua bởi bất kỳ ai, kể cả quản trị viên. Chống phát lại là bắt buộc: mỗi lần xác thực phải tạo token duy nhất, giới hạn thời gian.',
+        'Với triển khai MFA, PCI DSS yêu cầu các yếu tố độc lập: xâm phạm một yếu tố không ảnh hưởng tính toàn vẹn của yếu tố khác. Tiêu chuẩn cũng yêu cầu MFA không thể bị bỏ qua bởi bất kỳ ai, kể cả quản trị viên. Chống phát lại là bắt buộc: mỗi lần xác thực phải tạo token duy nhất, giới hạn thời gian.',
       ],
     },
     {
@@ -393,7 +393,7 @@ export const vi: LocalizedArticleContent = {
       heading: 'Triển khai thực tế cho nhóm',
       paragraphs: [
         'Triển khai trình quản lý mật khẩu cho cả nhóm là cách hiệu quả nhất đáp ứng PCI DSS mà vẫn giữ năng suất. 1Password Business, Bitwarden Organizations hoặc Dashlane Business cung cấp áp chính sách tập trung, kho chia sẻ cho thông tin nhóm, tạo mật khẩu tự động đúng độ dài và phức tạp, cùng nhật ký kiểm tra cho hồ sơ tuân thủ.',
-        'Với tài khoản dịch vụ và thông tin ứng dụng, dùng giải pháp quản lý bí mật như HashiCorp Vault, AWS Secrets Manager hoặc Azure Key Vault. Các công cụ này xoay vòng tự động, ghi log truy cập và mã hóa khi lưu — đáp ứng Yêu cầu 8.6.2, 8.6.3 và 8.3.1 trong một giải pháp.',
+        'Với tài khoản dịch vụ và thông tin ứng dụng, dùng giải pháp quản lý bí mật như HashiCorp Vault, AWS Secrets Manager hoặc Azure Key Vault. Các công cụ này xoay vòng tự động, ghi log truy cập và mã hóa khi lưu, đáp ứng Yêu cầu 8.6.2, 8.6.3 và 8.3.1 trong một giải pháp.',
         'Ghi chính sách mật khẩu bằng văn bản, gồm: độ dài tối thiểu (12+ ký tự), yêu cầu phức tạp, tần suất đổi (90 ngày cho người dùng, 12 tháng cho tài khoản dịch vụ), phạm vi MFA, ngưỡng khóa và thời gian hết hạn phiên. Hồ sơ này bắt buộc cho đánh giá tuân thủ PCI DSS.',
         'Đào tạo nhóm hằng năm về thực hành bảo mật mật khẩu. Yêu cầu 12.6 buộc đào tạo nhận thức bảo mật gồm tạo mật khẩu an toàn, nhận diện lừa đảo và xử lý đúng thông tin xác thực. Theo dõi hoàn thành và lưu hồ sơ để kiểm tra.',
       ],

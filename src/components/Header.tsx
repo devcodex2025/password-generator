@@ -13,7 +13,7 @@ import { getAvailableLanguages } from '../utils/languageUtils';
 import { getLinkLabel, type LinkLabelKey } from '@/utils/linkTranslations';
 import { startNavigationLoading } from '@/lib/navigation-events';
 
-/* ── Lazy-loaded heavy dependencies (perf: saves ~1.4 MB from initial bundle) ── */
+/* Lazy-loaded heavy dependencies: about 1.4 MB kept out of the initial bundle. */
 const Drawer = lazy(() => import('@mui/material/Drawer'));
 const List = lazy(() => import('@mui/material/List'));
 const ListItem = lazy(() => import('@mui/material/ListItem'));
@@ -22,7 +22,7 @@ const Select = lazy(() => import('@mui/material/Select'));
 const MenuItem = lazy(() => import('@mui/material/MenuItem'));
 const Flag = lazy(() => import('react-world-flags'));
 
-/* Theme icons and their button are tiny — importing them directly avoids an
+/* Theme icons and their button are tiny, so importing them directly avoids an
    empty Suspense fallback that left a blank control in the header on first
    paint (and a reserved-but-invisible slot in the CLS entries). */
 import IconButton from '@mui/material/IconButton';

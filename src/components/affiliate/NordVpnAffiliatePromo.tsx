@@ -1,6 +1,7 @@
 'use client';
 
-import { Shield, ExternalLink } from 'lucide-react';
+import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
+import OpenInNewOutlinedIcon from '@mui/icons-material/OpenInNewOutlined';
 import { getVpnAffiliateStrings } from './vpn-affiliate-i18n';
 import { cn } from '@/lib/utils';
 import { resolveAffiliateUrl } from '@/content/affiliate/links';
@@ -9,13 +10,13 @@ import { useGeoCountry } from './useGeoCountry';
 interface NordVpnAffiliatePromoProps {
   locale: string;
   className?: string;
-  /** Where this block is rendered вЂ” used for analytics and sub-id attribution */
+  /** Where this block is rendered, used for analytics and sub-id attribution */
   placement?: string;
 }
 
-/* в”Ђв”Ђ Affiliate link (resolved from the central registry) в”Ђв”Ђ */
+/* Affiliate link (resolved from the central registry). */
 
-/* в”Ђв”Ђ Analytics helper в”Ђв”Ђ */
+/* Analytics helper. */
 
 function trackClick(label: string, locale: string, placement: string) {
   try {
@@ -35,7 +36,7 @@ function trackClick(label: string, locale: string, placement: string) {
   }
 }
 
-/* в”Ђв”Ђ Comparison data в”Ђв”Ђ */
+/* Comparison data. */
 
 interface ComparisonRow {
   featureKey: keyof ReturnType<typeof getVpnAffiliateStrings>;
@@ -56,7 +57,7 @@ function getRows(t: ReturnType<typeof getVpnAffiliateStrings>): ComparisonRow[] 
   ];
 }
 
-/* в”Ђв”Ђ Component в”Ђв”Ђ */
+/* Component. */
 
 export default function NordVpnAffiliatePromo({ locale, className = '', placement = 'vpn-inline' }: NordVpnAffiliatePromoProps) {
   const t = getVpnAffiliateStrings(locale);
@@ -66,7 +67,7 @@ export default function NordVpnAffiliatePromo({ locale, className = '', placemen
 
   return (
     <section
-      className={cn('mt-10 rounded-3xl border border-[#E5F6FF] dark:border-[#374151] bg-gradient-to-br from-white via-[#f7fbff] to-[#eef7ff] dark:from-[#171717] dark:via-[#1a1f2e] dark:to-[#171717] p-6 md:p-8 shadow-sm', className)}
+      className={cn('mt-10 rounded-3xl border border-[#E5F6FF] dark:border-[#374151] bg-[#f7fbff] dark:bg-[#171717] p-6 md:p-8 shadow-sm', className)}
       aria-label={t.heading}
     >
       {/* Heading */}
@@ -138,7 +139,7 @@ export default function NordVpnAffiliatePromo({ locale, className = '', placemen
           onClick={() => trackClick('get_nordvpn', locale, placement)}
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#05a9ff] hover:bg-[#38beff] !text-[#0a1e2a] font-semibold py-3 px-6 transition-all duration-200 shadow-md hover:shadow-lg"
         >
-          <Shield className="w-5 h-5" aria-hidden="true" />
+          <ShieldOutlinedIcon sx={{ fontSize: 20 }} aria-hidden="true" />
           {t.ctaGetNordVpn}
         </a>
         <a
@@ -148,7 +149,7 @@ export default function NordVpnAffiliatePromo({ locale, className = '', placemen
           onClick={() => trackClick('learn_more_nordvpn', locale, placement)}
           className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#05a9ff] !text-[#38beff] hover:bg-[#05a9ff] hover:!text-[#0a1e2a] font-semibold py-3 px-6 transition-all duration-200"
         >
-          <ExternalLink className="w-5 h-5" aria-hidden="true" />
+          <OpenInNewOutlinedIcon sx={{ fontSize: 20 }} aria-hidden="true" />
           {t.ctaLearnMore}
         </a>
       </div>

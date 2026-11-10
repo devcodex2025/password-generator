@@ -2,7 +2,8 @@
 
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { X, ShieldCheck } from 'lucide-react';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import { cn } from '@/lib/utils';
 import Button from '@/components/ui/Button';
 import { localeFontClass } from '@/lib/locale-font';
@@ -10,7 +11,7 @@ import { resolveAffiliateUrl } from '@/content/affiliate/links';
 import { announceModalOpen, subscribeModalOpen } from '@/lib/modal-coordination';
 import { useGeoCountry } from './useGeoCountry';
 
-/* ── Copy (kept local to avoid touching the shared lang.json) ── */
+/* Copy (kept local to avoid touching the shared lang.json). */
 
 type Copy = { title: string; body: string; cta: string; dismiss: string; ad: string };
 
@@ -24,7 +25,7 @@ const COPY: Record<string, Copy> = {
   },
   ua: {
     title: 'Пароль скопійовано. Де ви його збережете?',
-    body: 'Менеджер паролів збереже його зашифрованим і підставить наступного разу. Текстовий файл чи браузер — ні.',
+    body: 'Менеджер паролів збереже його зашифрованим і підставить наступного разу. Текстовий файл чи браузер: ні.',
     cta: 'Зберегти в NordPass',
     dismiss: 'У мене вже є менеджер',
     ad: 'Реклама · партнерське посилання',
@@ -66,7 +67,7 @@ const COPY: Record<string, Copy> = {
   },
   ru: {
     title: 'Пароль скопирован. Где вы его сохраните?',
-    body: 'Менеджер паролей сохранит его зашифрованным и подставит в следующий раз. Текстовый файл или браузер — нет.',
+    body: 'Менеджер паролей сохранит его зашифрованным и подставит в следующий раз. Текстовый файл или браузер: нет.',
     cta: 'Сохранить в NordPass',
     dismiss: 'У меня уже есть менеджер',
     ad: 'Реклама · партнёрская ссылка',
@@ -87,7 +88,7 @@ const COPY: Record<string, Copy> = {
   },
   pl: {
     title: 'Hasło skopiowane. Gdzie je zapiszesz?',
-    body: 'Menedżer haseł zapisze je zaszyfrowane i uzupełni następnym razem. Plik tekstowy czy przeglądarka — nie.',
+    body: 'Menedżer haseł zapisze je zaszyfrowane i uzupełni następnym razem. Plik tekstowy czy przeglądarka: nie.',
     cta: 'Zapisz w NordPass',
     dismiss: 'Mam już menedżera',
     ad: 'Reklama · link afiliacyjny',
@@ -190,7 +191,7 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-start gap-3">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EAF8FF] text-[#2A4E63] dark:bg-[#05a9ff]/15 dark:text-[#38beff]">
-              <ShieldCheck className="h-6 w-6" aria-hidden="true" />
+              <ShieldOutlinedIcon sx={{ fontSize: 24 }} aria-hidden="true" />
             </span>
             <h2
               id="save-password-modal-title"
@@ -206,7 +207,7 @@ export default function SavePasswordModal({ locale, open, onClose }: SavePasswor
             aria-label={c.dismiss}
             className="shrink-0"
           >
-            <X className="h-5 w-5" aria-hidden="true" />
+            <CloseOutlinedIcon sx={{ fontSize: 20 }} aria-hidden="true" />
           </Button>
         </div>
 

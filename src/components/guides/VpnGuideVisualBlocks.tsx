@@ -1,20 +1,18 @@
-import {
-  ArrowRight,
-  Building2,
-  ClipboardCheck,
-  Globe2,
-  KeyRound,
-  Lock,
-  MapPin,
-  Radar,
-  Router,
-  Server,
-  Shield,
-  ShieldAlert,
-  Sparkles,
-  Wifi,
-  XCircle,
-} from 'lucide-react';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined';
+import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined';
+import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
+import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+import RadarOutlinedIcon from '@mui/icons-material/RadarOutlined';
+import RouterOutlinedIcon from '@mui/icons-material/RouterOutlined';
+import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
+import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
+import GppMaybeOutlinedIcon from '@mui/icons-material/GppMaybeOutlined';
+import QueryStatsOutlinedIcon from '@mui/icons-material/QueryStatsOutlined';
+import WifiOutlinedIcon from '@mui/icons-material/WifiOutlined';
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import { getVpnGuideVisualStrings } from '@/lib/vpn-guide-visuals-i18n';
 
 export type VpnGuideVisualBlockId =
@@ -31,7 +29,7 @@ interface VpnGuideVisualBlocksProps {
 }
 
 const cardBase =
-  'rounded-2xl border border-[#D1E9FF]/80 dark:border-[#2a3f55] bg-gradient-to-br from-[#f8fcff] to-[#eef6ff] dark:from-[#141c28] dark:to-[#0f1620] p-4 shadow-sm';
+  'rounded-2xl border border-[#D1E9FF]/80 dark:border-[#2a3f55] bg-[#f8fcff] dark:bg-[#141c28] p-4 shadow-sm';
 
 export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBlocksProps) {
   const t = getVpnGuideVisualStrings(locale);
@@ -40,7 +38,7 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
     return (
       <aside className="not-prose mt-6" aria-label={t.statsTitle}>
         <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-[#2A4E63] dark:text-[#9ecbff]">
-          <Sparkles className="h-4 w-4 shrink-0 text-sky-500" aria-hidden />
+          <QueryStatsOutlinedIcon sx={{ fontSize: 16 }} className="shrink-0 text-sky-500" aria-hidden="true" />
           {t.statsTitle}
         </div>
         <div className="mt-3 grid gap-3 sm:grid-cols-3">
@@ -65,14 +63,14 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
     return (
       <figure className="not-prose mt-6 overflow-hidden rounded-2xl border border-[#D1E9FF] dark:border-[#2a3f55] bg-[#f0f8ff] dark:bg-[#0d1520] p-5 md:p-6">
         <figcaption className="flex flex-wrap items-center gap-2 text-base font-semibold text-[#071016] dark:text-[#e8f4ff]">
-          <Router className="h-5 w-5 text-sky-500" aria-hidden />
+          <RouterOutlinedIcon sx={{ fontSize: 20 }} className="text-sky-500" aria-hidden="true" />
           {t.tunnelTitle}
         </figcaption>
         <p className="mt-2 text-sm text-[#374151] dark:text-[#a8bfd4]">{t.tunnelCaption}</p>
 
         <div className="mt-6 flex flex-col items-stretch gap-4 lg:flex-row lg:items-center lg:gap-2">
           <div className="flex flex-1 flex-col items-center justify-center rounded-xl border border-sky-200/80 bg-white/90 px-4 py-5 dark:border-sky-900/50 dark:bg-[#151b24]">
-            <Shield className="h-8 w-8 text-sky-600 dark:text-sky-400" aria-hidden />
+            <ShieldOutlinedIcon sx={{ fontSize: 32 }} className="text-sky-600 dark:text-sky-400" aria-hidden="true" />
             <span className="mt-2 text-center text-sm font-medium text-[#071016] dark:text-[#e0e7ef]">{t.tunnelYou}</span>
             <span className="mt-1 flex flex-wrap justify-center gap-1.5 text-xs text-[#0369a1] dark:text-[#7dd3fc]">
               <span className="rounded-full bg-sky-100 px-2 py-0.5 dark:bg-sky-950/80">{t.tunnelBadgeIp}</span>
@@ -80,13 +78,12 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
           </div>
 
           <div className="flex items-center justify-center lg:w-10">
-            <ArrowRight className="h-6 w-6 text-sky-400 lg:rotate-0 rotate-90" aria-hidden />
+            <ArrowForwardIcon sx={{ fontSize: 24 }} className="rotate-90 text-sky-400 lg:rotate-0" aria-hidden="true" />
           </div>
 
-          <div className="relative flex-[1.35] overflow-hidden rounded-xl border-2 border-dashed border-sky-400/70 bg-gradient-to-r from-sky-500/10 via-cyan-500/10 to-sky-500/10 px-4 py-6 dark:border-sky-600/60">
-            <div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_8px,rgba(14,165,233,0.06)_8px,rgba(14,165,233,0.06)_10px)] dark:bg-[repeating-linear-gradient(90deg,transparent,transparent_8px,rgba(56,189,248,0.05)_8px,rgba(56,189,248,0.05)_10px)]" />
+          <div className="relative flex-[1.35] overflow-hidden rounded-xl border-2 border-dashed border-sky-400/70 bg-sky-500/10 px-4 py-6 dark:border-sky-600/60 dark:bg-sky-400/5">
             <div className="relative flex flex-col items-center text-center">
-              <Lock className="h-7 w-7 text-sky-600 dark:text-sky-300" aria-hidden />
+              <LockOutlinedIcon sx={{ fontSize: 28 }} className="text-sky-600 dark:text-sky-300" aria-hidden="true" />
               <span className="mt-2 text-sm font-semibold text-[#0c4a6e] dark:text-[#bae6fd]">{t.tunnelEncrypted}</span>
               <span className="mt-1 rounded-full bg-white/80 px-2 py-0.5 text-xs text-[#0369a1] dark:bg-sky-950/60 dark:text-[#7dd3fc]">
                 {t.tunnelBadgeDns}
@@ -95,20 +92,20 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
           </div>
 
           <div className="flex items-center justify-center lg:w-10">
-            <ArrowRight className="h-6 w-6 text-sky-400 lg:rotate-0 rotate-90" aria-hidden />
+            <ArrowForwardIcon sx={{ fontSize: 24 }} className="rotate-90 text-sky-400 lg:rotate-0" aria-hidden="true" />
           </div>
 
           <div className="flex flex-1 flex-col items-center justify-center rounded-xl border border-sky-200/80 bg-white/90 px-4 py-5 dark:border-sky-900/50 dark:bg-[#151b24]">
-            <Server className="h-8 w-8 text-sky-600 dark:text-sky-400" aria-hidden />
+            <DnsOutlinedIcon sx={{ fontSize: 32 }} className="text-sky-600 dark:text-sky-400" aria-hidden="true" />
             <span className="mt-2 text-center text-sm font-medium text-[#071016] dark:text-[#e0e7ef]">{t.tunnelVpnServer}</span>
           </div>
 
           <div className="flex items-center justify-center lg:w-10">
-            <ArrowRight className="h-6 w-6 text-sky-400 lg:rotate-0 rotate-90" aria-hidden />
+            <ArrowForwardIcon sx={{ fontSize: 24 }} className="rotate-90 text-sky-400 lg:rotate-0" aria-hidden="true" />
           </div>
 
           <div className="flex flex-1 flex-col items-center justify-center rounded-xl border border-emerald-200/80 bg-white/90 px-4 py-5 dark:border-emerald-900/40 dark:bg-[#151b24]">
-            <Globe2 className="h-8 w-8 text-emerald-600 dark:text-emerald-400" aria-hidden />
+            <PublicOutlinedIcon sx={{ fontSize: 32 }} className="text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
             <span className="mt-2 text-center text-sm font-medium text-[#071016] dark:text-[#e0e7ef]">{t.tunnelOpenInternet}</span>
           </div>
         </div>
@@ -129,11 +126,11 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
 
   if (block === 'scenarios') {
     const items = [
-      { icon: Wifi, title: t.scenarioWifiTitle, desc: t.scenarioWifiDesc, tone: 'sky' as const },
-      { icon: Radar, title: t.scenarioIspTitle, desc: t.scenarioIspDesc, tone: 'violet' as const },
-      { icon: Building2, title: t.scenarioRemoteTitle, desc: t.scenarioRemoteDesc, tone: 'amber' as const },
-      { icon: MapPin, title: t.scenarioGeoTitle, desc: t.scenarioGeoDesc, tone: 'emerald' as const },
-      { icon: ShieldAlert, title: t.scenarioLimitTitle, desc: t.scenarioLimitDesc, tone: 'rose' as const },
+      { icon: WifiOutlinedIcon, title: t.scenarioWifiTitle, desc: t.scenarioWifiDesc, tone: 'sky' as const },
+      { icon: RadarOutlinedIcon, title: t.scenarioIspTitle, desc: t.scenarioIspDesc, tone: 'violet' as const },
+      { icon: ApartmentOutlinedIcon, title: t.scenarioRemoteTitle, desc: t.scenarioRemoteDesc, tone: 'amber' as const },
+      { icon: PlaceOutlinedIcon, title: t.scenarioGeoTitle, desc: t.scenarioGeoDesc, tone: 'emerald' as const },
+      { icon: GppMaybeOutlinedIcon, title: t.scenarioLimitTitle, desc: t.scenarioLimitDesc, tone: 'rose' as const },
     ];
     const toneRing: Record<string, string> = {
       sky: 'text-sky-600 dark:text-sky-400',
@@ -145,7 +142,7 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
     return (
       <aside className="not-prose mt-6" aria-label={t.scenariosTitle}>
         <h3 className="flex items-center gap-2 text-lg font-semibold text-[#071016] dark:text-[#e8f4ff]">
-          <MapPin className="h-5 w-5 text-sky-500" aria-hidden />
+          <PlaceOutlinedIcon sx={{ fontSize: 20 }} className="text-sky-500" aria-hidden="true" />
           {t.scenariosTitle}
         </h3>
         <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -154,7 +151,7 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
               key={title}
               className="rounded-2xl border border-[#D1E9FF]/80 dark:border-[#2a3f55] bg-white dark:bg-[#141a22] p-4 shadow-sm transition-shadow hover:shadow-md"
             >
-              <Icon className={`h-6 w-6 ${toneRing[tone]}`} aria-hidden />
+              <Icon sx={{ fontSize: 24 }} className={toneRing[tone]} aria-hidden="true" />
               <div className="mt-2 font-semibold text-[#071016] dark:text-[#e4edf7]">{title}</div>
               <p className="mt-1 text-sm leading-relaxed text-[#374151] dark:text-[#a8bfd4]">{desc}</p>
             </div>
@@ -166,13 +163,13 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
 
   if (block === 'defense') {
     const layers = [
-      { icon: Lock, title: t.defensePassword, desc: t.defensePasswordDesc },
-      { icon: KeyRound, title: t.defense2fa, desc: t.defense2faDesc },
-      { icon: Shield, title: t.defenseVpn, desc: t.defenseVpnDesc },
+      { icon: LockOutlinedIcon, title: t.defensePassword, desc: t.defensePasswordDesc },
+      { icon: KeyOutlinedIcon, title: t.defense2fa, desc: t.defense2faDesc },
+      { icon: ShieldOutlinedIcon, title: t.defenseVpn, desc: t.defenseVpnDesc },
     ];
     return (
       <aside className="not-prose mt-6" aria-label={t.defenseTitle}>
-        <div className="rounded-2xl border border-[#D1E9FF] dark:border-[#2a3f55] bg-gradient-to-br from-[#f8fcff] via-white to-[#f0f9ff] dark:from-[#121820] dark:via-[#141c28] dark:to-[#0f1620] p-5 md:p-6">
+        <div className="rounded-2xl border border-[#D1E9FF] dark:border-[#2a3f55] bg-[#f8fcff] dark:bg-[#121820] p-5 md:p-6">
           <h3 className="text-lg font-semibold text-[#071016] dark:text-[#e8f4ff]">{t.defenseTitle}</h3>
           <p className="mt-1 text-sm text-[#374151] dark:text-[#a8bfd4]">{t.defenseSubtitle}</p>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
@@ -180,13 +177,13 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
               <div key={title} className="relative">
                 {i < layers.length - 1 ? (
                   <div
-                    className="absolute right-0 top-1/2 z-0 hidden h-0.5 w-[calc(50%+0.75rem)] -translate-y-1/2 translate-x-1/2 bg-gradient-to-r from-sky-300 to-sky-100 dark:from-sky-700 dark:to-sky-900 md:block"
+                    className="absolute right-0 top-1/2 z-0 hidden h-0.5 w-[calc(50%+0.75rem)] -translate-y-1/2 translate-x-1/2 bg-sky-200 dark:bg-sky-800 md:block"
                     aria-hidden
                   />
                 ) : null}
                 <div className="relative z-10 flex flex-col items-center rounded-xl border border-sky-100 bg-white/95 px-4 py-5 text-center dark:border-sky-900/40 dark:bg-[#1a222e]">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sky-100 dark:bg-sky-950/80">
-                    <Icon className="h-6 w-6 text-sky-700 dark:text-sky-300" aria-hidden />
+                    <Icon sx={{ fontSize: 24 }} className="text-sky-700 dark:text-sky-300" aria-hidden="true" />
                   </div>
                   <div className="mt-3 text-sm font-semibold text-[#071016] dark:text-[#e4edf7]">{title}</div>
                   <p className="mt-1 text-xs leading-relaxed text-[#374151] dark:text-[#9fb3c8]">{desc}</p>
@@ -201,18 +198,18 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
 
   if (block === 'checklist') {
     const rows = [
-      { icon: ClipboardCheck, text: t.checklistAudit },
-      { icon: MapPin, text: t.checklistJurisdiction },
-      { icon: ShieldAlert, text: t.checklistKill },
-      { icon: Router, text: t.checklistProtocol },
-      { icon: Globe2, text: t.checklistServers },
-      { icon: ArrowRight, text: t.checklistSplit },
-      { icon: Radar, text: t.checklistDns },
+      { icon: TaskAltOutlinedIcon, text: t.checklistAudit },
+      { icon: PlaceOutlinedIcon, text: t.checklistJurisdiction },
+      { icon: GppMaybeOutlinedIcon, text: t.checklistKill },
+      { icon: RouterOutlinedIcon, text: t.checklistProtocol },
+      { icon: PublicOutlinedIcon, text: t.checklistServers },
+      { icon: ArrowForwardIcon, text: t.checklistSplit },
+      { icon: RadarOutlinedIcon, text: t.checklistDns },
     ];
     return (
       <aside className="not-prose mt-6" aria-label={t.checklistTitle}>
         <h3 className="flex items-center gap-2 text-lg font-semibold text-[#071016] dark:text-[#e8f4ff]">
-          <ClipboardCheck className="h-5 w-5 text-sky-500" aria-hidden />
+          <TaskAltOutlinedIcon sx={{ fontSize: 20 }} className="text-sky-500" aria-hidden="true" />
           {t.checklistTitle}
         </h3>
         <ul className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -222,7 +219,7 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
               className="flex gap-3 rounded-xl border border-[#e0f2fe] bg-[#fafdff] px-3 py-3 dark:border-[#2a3f55] dark:bg-[#161d28]"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sky-100 dark:bg-sky-950/80">
-                <Icon className="h-4 w-4 text-sky-700 dark:text-sky-300" aria-hidden />
+                <Icon sx={{ fontSize: 16 }} className="text-sky-700 dark:text-sky-300" aria-hidden="true" />
               </span>
               <span className="text-sm leading-snug text-[#374151] dark:text-[#b8c9dc]">{text}</span>
             </li>
@@ -245,19 +242,19 @@ export default function VpnGuideVisualBlocks({ locale, block }: VpnGuideVisualBl
           {rows.map(({ claim, truth }) => (
             <div
               key={claim}
-              className="grid gap-3 rounded-2xl border border-[#fecaca]/80 bg-gradient-to-r from-rose-50/90 to-white p-4 dark:border-rose-900/40 dark:from-[#2a1518] dark:to-[#1a1a22] md:grid-cols-[1fr_auto_1fr] md:items-center"
+              className="grid gap-3 rounded-2xl border border-[#fecaca]/80 bg-rose-50/60 p-4 dark:border-rose-900/40 dark:bg-[#231417] md:grid-cols-[1fr_auto_1fr] md:items-center"
             >
               <div className="flex gap-2 md:flex-col md:gap-1">
                 <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wide text-rose-600 dark:text-rose-400">
-                  <XCircle className="h-4 w-4" aria-hidden />
+                  <CancelOutlinedIcon sx={{ fontSize: 16 }} aria-hidden="true" />
                   {t.mythFiction}
                 </span>
                 <p className="text-sm font-medium text-[#071016] dark:text-[#f1f5f9]">{claim}</p>
               </div>
-              <ArrowRight className="hidden h-5 w-5 shrink-0 text-sky-400 md:block" aria-hidden />
+              <ArrowForwardIcon sx={{ fontSize: 20 }} className="hidden shrink-0 text-sky-400 md:block" aria-hidden="true" />
               <div className="flex gap-2 md:flex-col md:gap-1">
                 <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
-                  <Shield className="h-4 w-4" aria-hidden />
+                  <ShieldOutlinedIcon sx={{ fontSize: 16 }} aria-hidden="true" />
                   {t.mythFact}
                 </span>
                 <p className="text-sm text-[#374151] dark:text-[#b8c9dc]">{truth}</p>

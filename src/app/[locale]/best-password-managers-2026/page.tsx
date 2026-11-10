@@ -80,7 +80,7 @@ export async function generateMetadata({
   };
 }
 
-/* ── Breadcrumb i18n ── */
+/* Breadcrumb translations. */
 
 const breadcrumbHome: Record<string, string> = {
   en: 'Home', ua: 'Головна', es: 'Inicio', fr: 'Accueil', de: 'Startseite',
@@ -408,7 +408,7 @@ export default async function BestPasswordManagersPage({
   const t = getAffiliateStrings(locale);
   const canonical = `${baseUrl}/${locale}/best-password-managers-2026`;
 
-  /* ── JSON-LD: Product ──
+  /* JSON-LD: Product
      No aggregateRating / review on purpose: self-serving review markup is
      ineligible for rich results and risks a structured-data manual action. */
   const productJsonLd = {

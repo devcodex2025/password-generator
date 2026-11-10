@@ -14,7 +14,7 @@ function t(key: string, language: string): string {
   return entry?.[language] ?? entry?.['en'] ?? key;
 }
 
-/* ── Post-result CTA copy (kept local to avoid touching the shared lang.json) ── */
+/* Post-result CTA copy (kept local to avoid touching the shared lang.json). */
 const CTA_TITLE: Record<string, string> = {
   en: 'Keep passwords in one place and audit them automatically.',
   ua: 'Тримайте паролі в одному місці й перевіряйте їх автоматично.',
@@ -45,7 +45,7 @@ const CTA_BUTTON: Record<string, string> = {
 
 /** Affiliate target for the post-result CTA (resolved in the component). */
 
-/* ── Data-source attribution (trust block): HIBP + Troy Hunt ── */
+/* Data-source attribution (trust block): HIBP and Troy Hunt. */
 const SOURCE_LABEL: Record<string, string> = {
   en: 'Data source',
   ua: 'Джерело даних',
@@ -61,17 +61,17 @@ const SOURCE_LABEL: Record<string, string> = {
 };
 
 const SOURCE_DESC: Record<string, string> = {
-  en: 'Powered by the open Pwned Passwords database — billions of real credentials surfaced in public data breaches.',
-  ua: 'Працює на відкритій базі Pwned Passwords — мільярди справжніх паролів, викритих у публічних витоках даних.',
+  en: 'Powered by the open Pwned Passwords database: billions of real credentials surfaced in public data breaches.',
+  ua: 'Працює на відкритій базі Pwned Passwords: мільярди справжніх паролів, викритих у публічних витоках даних.',
   es: 'Funciona con la base abierta Pwned Passwords: miles de millones de contraseñas reales filtradas en fugas públicas de datos.',
   fr: 'Fonctionne avec la base ouverte Pwned Passwords : des milliards de mots de passe réels révélés par des fuites publiques de données.',
   de: 'Basiert auf der offenen Pwned-Passwords-Datenbank – Milliarden echter Passwörter aus öffentlich bekannten Datenschutzlecks.',
   it: 'Funziona con la base aperta Pwned Passwords: miliardi di password reali esposte in violazioni pubbliche di dati.',
   pt: 'Funciona com a base aberta Pwned Passwords: bilhões de senhas reais expostas em vazamentos públicos de dados.',
-  ru: 'Работает на открытой базе Pwned Passwords — миллиарды настоящих паролей из публичных утечек данных.',
-  zh: '基于开放的 Pwned Passwords 数据库——收录公开数据泄露中的数十亿条真实密码。',
+  ru: 'Работает на открытой базе Pwned Passwords: миллиарды настоящих паролей из публичных утечек данных.',
+  zh: '基于开放的 Pwned Passwords 数据库，收录公开数据泄露中的数十亿条真实密码。',
   ja: 'オープンな Pwned Passwords データベースを利用。公表された情報漏洩における数十億件の実際のパスワードを収録。',
-  pl: 'Działa na otwartej bazie Pwned Passwords — miliardy prawdziwych haseł ujawnionych w publicznych wyciekach danych.',
+  pl: 'Działa na otwartej bazie Pwned Passwords: miliardy prawdziwych haseł ujawnionych w publicznych wyciekach danych.',
 };
 
 const AUTHOR_BIO: Record<string, string> = {
@@ -300,8 +300,8 @@ export default function PasswordBreachCheck({ language }: PasswordBreachCheckPro
                 {SOURCE_DESC[language] ?? SOURCE_DESC.en}
               </p>
               <p className={`mt-1 text-[14px] ${isDarkMode ? 'text-[#b0b0b0]' : 'text-[#4B5563]'}`}>
-                <span className={`font-semibold ${isDarkMode ? 'text-[#e0e0e0]' : 'text-[#071016]'}`}>Troy Hunt</span>
-                {' '}— {AUTHOR_BIO[language] ?? AUTHOR_BIO.en}
+                <span className={`font-semibold ${isDarkMode ? 'text-[#e0e0e0]' : 'text-[#071016]'}`}>Troy Hunt.</span>{' '}
+                {AUTHOR_BIO[language] ?? AUTHOR_BIO.en}
               </p>
             </div>
           </div>

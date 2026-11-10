@@ -9,7 +9,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 // How the actions render, from the width of the password field (px):
 // 'menu' = copy + a "more" dropdown, 'icons' = three icons, 'labels' = three labelled buttons.
-// ponytail: fixed widths, not measured text — a very long translation may need a bigger LABELS_MIN.
+// Fixed widths, not measured text: a very long translation may need a bigger LABELS_MIN.
 const ICONS_MIN = 400;
 const LABELS_MIN = 760;
 type Density = 'menu' | 'icons' | 'labels';

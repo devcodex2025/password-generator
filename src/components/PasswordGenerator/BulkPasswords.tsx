@@ -30,7 +30,7 @@ interface BulkPasswordsProps {
     generate: (count: number, event: BulkGenerationEvent) => Promise<string[] | null>;
     maxQuantity: number;
     onClose: () => void;
-    onCopy: (passwords: string[]) => void;
+    onCopy: (passwords: string[]) => Promise<boolean>;
     onDownload: (passwords: string[]) => void;
     /** GA hook for actions handled here; the caller adds ui_language and surface. */
     track: (event: string, params?: Record<string, string | number>) => void;
@@ -62,11 +62,10 @@ export default function BulkPasswords({ generate, maxQuantity, onClose, onCopy, 
     const toolbarRef = useRef<HTMLDivElement>(null);
     const showLabel = useDensity(toolbarRef) === 'labels';
 
-    // Focus the field on open and hand focus back to the opener on close.
+    // Focus the quantity field on open. Focus returns to the Bulk button when
+    // the parent clears `inert`, so it is handled there, not here.
     useEffect(() => {
-        const opener = document.activeElement as HTMLElement | null;
         inputRef.current?.focus();
-        return () => opener?.focus();
     }, []);
 
     // Every quantity change (debounced) or Generate replaces the list; a stale response is dropped.
@@ -97,8 +96,9 @@ export default function BulkPasswords({ generate, maxQuantity, onClose, onCopy, 
         setQuantity(clamped);
     };
 
-    const handleCopy = () => {
-        onCopy(passwords);
+    const handleCopy = async () => {
+        const copiedOk = await onCopy(passwords);
+        if (!copiedOk) return;
         setCopied(true);
         setTimeout(() => setCopied(false), 1000);
     };

@@ -5,7 +5,7 @@
   color-scheme: light;
 
   /* Semantic surface/text/border tokens. The MUI palette points at these, so a
-     theme switch only redefines the variables — no theme object is rebuilt. */
+     theme switch only redefines the variables; no theme object is rebuilt. */
   --surface-1: #ffffff;
   --surface-2: #ffffff;
   --text-1: #071016;
@@ -39,6 +39,8 @@
   --primary-color: #2A4E63;
   --secondary-color: #E5F6FF;
   --accent-color: #05a9ff;
+  /* Hover and dark-theme focus token. Not a second brand accent. */
+  --accent-hover: #38beff;
   --success-color: #05a9ff;
   
   /* Status Colors */

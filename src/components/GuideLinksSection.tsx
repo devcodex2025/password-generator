@@ -42,43 +42,39 @@ export default function GuideLinksSection({ language }: GuideLinksSectionProps) 
         <p className={`text-[16px] mb-6 ${isDarkMode ? 'text-[#b0b0b0]' : 'text-[#4B5563]'}`}>
           {t('guide_links_subtitle', language)}
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Guides read as a list, not a third card grid: title on the left,
+            summary on the right, one row per guide. */}
+        <ul className={`divide-y ${isDarkMode ? 'divide-[#374151]' : 'divide-[#E5F6FF]'}`}>
           {guideLinks.map((guide) => (
-            <Link
-              key={guide.slug}
-              href={`/${locale}/guides/${guide.slug}`}
-              className={`group block rounded-xl p-4 transition-all duration-200 hover:-translate-y-0.5 ${
-                isDarkMode
-                  ? 'bg-[#2a2a2a] hover:bg-[#333] border border-[#374151] hover:border-[#38beff]'
-                  : 'bg-[#F8FDFF] hover:bg-[#E5F6FF] border border-[#E5F6FF] hover:border-[#2A4E63]'
-              }`}
-            >
-              <h3 className={`text-[15px] font-semibold mb-1 transition-colors ${
-                isDarkMode
-                  ? 'text-[#38beff] group-hover:text-[#d7f2ff]'
-                  : 'text-[#2A4E63] group-hover:text-[#1f3b4c]'
-              }`}>
-                {t(guide.titleKey, language)}
-              </h3>
-              <p className={`text-[13px] leading-relaxed ${isDarkMode ? 'text-[#9ca3af]' : 'text-[#6B7280]'}`}>
-                {t(guide.descKey, language)}
-              </p>
-            </Link>
+            <li key={guide.slug}>
+              <Link
+                href={`/${locale}/guides/${guide.slug}`}
+                className={`group flex flex-col gap-1 py-4 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2A4E63] dark:focus-visible:outline-[#38beff] sm:flex-row sm:items-baseline sm:justify-between sm:gap-8`}
+              >
+                <h3 className={`text-[16px] font-semibold transition-colors ${
+                  isDarkMode
+                    ? 'text-[#e0e0e0] group-hover:text-[#38beff]'
+                    : 'text-[#2A4E63] group-hover:text-[#05a9ff]'
+                }`}>
+                  {t(guide.titleKey, language)}
+                </h3>
+                <p className={`text-[14px] leading-relaxed sm:max-w-[62%] sm:text-right ${isDarkMode ? 'text-[#9ca3af]' : 'text-[#6B7280]'}`}>
+                  {t(guide.descKey, language)}
+                </p>
+              </Link>
+            </li>
           ))}
-        </div>
-        <div className="mt-6 text-center">
+        </ul>
+        <div className="mt-6">
           <Link
             href={`/${locale}/guides`}
-            className={`inline-flex min-h-11 items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-[15px] transition-all duration-200 ${
+            className={`inline-flex min-h-11 items-center px-6 py-2.5 rounded-xl font-semibold text-[15px] transition-colors duration-200 ${
               isDarkMode
                 ? 'bg-[#05a9ff] !text-[#0a1929] hover:bg-[#38beff]'
                 : 'bg-[#2A4E63] text-white hover:bg-[#1f3b4c]'
             }`}
           >
             {t('guide_links_view_all', language)}
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
           </Link>
         </div>
       </div>

@@ -366,7 +366,7 @@ export function isBookmarkPromptHidden(state, now = Date.now()) {
 
 /**
  * Build the parameter bag shared by every bookmark analytics event.
- * Only coarse platform facts are included — never passwords or page content.
+ * Only coarse platform facts are included, never passwords or page content.
  *
  * @param {import('./bookmarkTypes').PlatformInfo | null} platform
  * @param {string} uiLanguage

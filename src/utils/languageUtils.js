@@ -1,8 +1,8 @@
 import lang from '../components/lang.json';
 
-// Функція для отримання всіх доступних мов з lang.json
+// Collect every language code from lang.json.
 export const getAvailableLanguages = () => {
-  // Знаходимо перший ключ, який має об'єкт з мовами
+  // The first key that holds a language object defines the available codes.
   const firstKeyWithLanguages = Object.keys(lang).find(key => 
     typeof lang[key] === 'object' && lang[key] !== null
   );
@@ -11,11 +11,11 @@ export const getAvailableLanguages = () => {
     return [];
   }
   
-  // Отримуємо всі ключі мов з першого об'єкта
+  // Read the language keys from that first object.
   return Object.keys(lang[firstKeyWithLanguages]);
 };
 
-// Мапа кодів країн для прапорців
+// Country codes for the flag icons.
 const countryCodeMap = {
   'en': '840', // USA
   'ua': '804', // Ukraine
@@ -31,7 +31,7 @@ const countryCodeMap = {
   'vi': '704', // Vietnam
 };
 
-// Мапа назв мов
+// Language display names.
 const languageNamesMap = {
   'en': 'English',
   'ua': 'Українська',
@@ -47,7 +47,7 @@ const languageNamesMap = {
   'vi': 'Tiếng Việt',
 };
 
-// Функція для отримання об'єкта мов з інформацією про прапорці та назвами
+// Build the language list with flags and display names.
 export const getLanguagesWithFlags = () => {
   const availableLanguages = getAvailableLanguages();
   
@@ -58,7 +58,7 @@ export const getLanguagesWithFlags = () => {
   }));
 };
 
-// Функція для отримання перекладу "Виберіть мову" для кожної мови
+// Localized "choose a language" label.
 export const getLanguageSelectionText = (language) => {
   const languageSelectionMap = {
     'en': 'Choose language',
@@ -78,7 +78,7 @@ export const getLanguageSelectionText = (language) => {
   return languageSelectionMap[language] || 'Choose language';
 };
 
-// Функція для отримання перекладу "Тема" для кожної мови
+// Localized theme label.
 export const getThemeText = (language) => {
   const themeMap = {
     'en': 'Theme',

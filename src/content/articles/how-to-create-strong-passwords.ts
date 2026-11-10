@@ -32,7 +32,7 @@ export const en: LocalizedArticleContent = {
       heading: 'Understanding Password Entropy',
       paragraphs: [
         'Entropy is a mathematical measure of how unpredictable a password is. It is measured in bits: a password with 40 bits of entropy has 2^40 (about 1 trillion) possible combinations. Security experts generally recommend a minimum of 60 bits for standard accounts and 80+ bits for high-value targets like banking or email.',
-        'The formula is straightforward: entropy = log2(pool_size^length). A 12-character password using uppercase letters (26), lowercase letters (26), digits (10), and symbols (33) draws from a pool of 95 characters. That gives approximately 79 bits of entropy — solid protection against offline attacks.',
+        'The formula is straightforward: entropy = log2(pool_size^length). A 12-character password using uppercase letters (26), lowercase letters (26), digits (10), and symbols (33) draws from a pool of 95 characters. That gives approximately 79 bits of entropy: solid protection against offline attacks.',
         'However, entropy assumes the password is truly random. A password like "Password123!" technically uses all four character classes but has near-zero effective entropy because it follows a predictable pattern. Attackers maintain dictionaries of millions of such common patterns and test them first.',
       ],
       bullets: [
@@ -51,10 +51,10 @@ export const en: LocalizedArticleContent = {
         'Use the generator length presets as a starting point: 12 characters for everyday accounts, 16 for anything stored in a password manager, and 20 for a master password or admin console. Eight characters is a fallback only for legacy systems that reject longer values; pair it with multi-factor authentication.',
       ],
       bullets: [
-        '8 characters — ~52 bits — example: N7#vQ2!a — low-value or legacy accounts only',
-        '12 characters — ~79 bits — example: K9$pL2@xQ4!m — practical minimum for email, work and shopping',
-        '16 characters — ~105 bits — example: R4#tY8!kL2@pW6$z — default for password-manager-generated passwords',
-        '20 characters — ~131 bits — example: H3$nB7@vC1!xZ5#qM9% — master passwords, crypto wallets and admin access',
+        '8 characters: ~52 bits. Example N7#vQ2!a. Low-value or legacy accounts only',
+        '12 characters: ~79 bits. Example K9$pL2@xQ4!m. Practical minimum for email, work and shopping',
+        '16 characters: ~105 bits. Example R4#tY8!kL2@pW6$z. Default for password-manager-generated passwords',
+        '20 characters: ~131 bits. Example H3$nB7@vC1!xZ5#qM9%. Master passwords, crypto wallets and admin access',
       ],
     },
     {
@@ -63,7 +63,7 @@ export const en: LocalizedArticleContent = {
         '**What does a good 12-character password look like?** A random example is K9$pL2@xQ4!m. It mixes upper- and lowercase letters, digits and symbols, but the decisive part is that it was generated randomly. Do not reuse this exact string; generate a new password for every account.',
         '**Is a 12-character password strong enough?** For most personal accounts, 12 random characters (about 79 bits) is the practical minimum. Use 16 characters for passwords stored in a manager and 20 for master passwords, crypto wallets and administrator access. Eight characters is not enough for email or banking in 2026.',
         '**What is a good 8-character password?** An 8-character random string such as N7#vQ2!a is far better than a memorable word, but modern hardware still cracks it in minutes to hours. If a system caps passwords at 8 characters, use a unique random value and enable two-factor authentication.',
-        '**How can I check password strength without exposing the password?** Use the strength meter in the generator on this page — it runs locally in your browser. Do not paste real passwords into random checker sites. For breach checks, use a service that supports k-anonymity, such as Have I Been Pwned, and change the password if it appears there.',
+        '**How can I check password strength without exposing the password?** Use the strength meter in the generator on this page: it runs locally in your browser. Do not paste real passwords into random checker sites. For breach checks, use a service that supports k-anonymity, such as Have I Been Pwned, and change the password if it appears there.',
         '**Should I use a passphrase or a random password?** Use a 5–7 word passphrase for the one password you must memorize, such as your password-manager master password or computer login. Use a 16–20 character random password for everything stored in a manager. The passphrase guide explains the entropy trade-off in detail.',
         '**Does this apply to Wi-Fi passwords?** Yes. Your router password should be a unique random string of 16–20 characters, not your email password. The Wi-Fi password guide covers changing it on the router and finding saved networks on Windows, Android and iPhone.',
       ],
@@ -77,14 +77,14 @@ export const en: LocalizedArticleContent = {
     {
       heading: 'What makes a password strong (and what does not)',
       paragraphs: [
-        'Four properties drive real strength: length, true randomness, uniqueness per account, and the absence of the password in public breach data. Complexity rules that sacrifice length for symbols do not compensate — "P@ssw0rd!" is still among the first guesses in every cracking tool.',
+        'Four properties drive real strength: length, true randomness, uniqueness per account, and the absence of the password in public breach data. Complexity rules that sacrifice length for symbols do not compensate: "P@ssw0rd!" is still among the first guesses in every cracking tool.',
         'A password that has appeared in any breach should be treated as compromised, even if the service never notified you. Checking a password against a breach corpus takes a second and is more valuable than adding one more symbol.',
       ],
       bullets: [
         'Strong: a 16-character random string from a CSPRNG, stored in a password manager',
         'Strong: a 5–6 word passphrase with a random separator and one capitalized word',
         'Weak: personal data, keyboard patterns (qwerty, 1qaz2wsx) or dictionary words',
-        'Weak: leet substitutions (a→@, e→3, o→0) — every cracking tool includes them',
+        'Weak: leet substitutions (a→@, e→3, o→0): every cracking tool includes them',
         'Weak: the same password reused across accounts, regardless of its length',
       ],
     },
@@ -93,22 +93,22 @@ export const en: LocalizedArticleContent = {
       paragraphs: [
         'The National Institute of Standards and Technology (NIST) updated its Digital Identity Guidelines (SP 800-63B) to reflect modern research on password security. These guidelines have become the gold standard for organizations worldwide.',
         'Key NIST recommendations include: allow passwords up to 64 characters; require a minimum of 8 characters (12+ recommended); do NOT enforce arbitrary complexity rules (like requiring uppercase + number + symbol); do NOT require periodic password changes unless there is evidence of compromise; screen passwords against known breached password lists; and support paste functionality in password fields.',
-        'The reasoning behind dropping complexity rules is compelling: forced complexity leads users to create predictable patterns like "Spring2026!" or "P@ssw0rd" — passwords that satisfy rules but are trivially cracked. Instead, NIST emphasizes length and unpredictability as the primary drivers of security.',
+        'The reasoning behind dropping complexity rules is compelling: forced complexity leads users to create predictable patterns like "Spring2026!" or "P@ssw0rd", passwords that satisfy rules but are trivially cracked. Instead, NIST emphasizes length and unpredictability as the primary drivers of security.',
         'NIST also recommends that organizations implement rate limiting on login attempts, use multi-factor authentication (MFA), and hash stored passwords with modern algorithms like Argon2id or bcrypt with appropriate work factors.',
       ],
     },
     {
       heading: 'The Passphrase Approach: Memorable and Secure',
       paragraphs: [
-        'A passphrase is a sequence of random words strung together, such as "correct-horse-battery-staple" (the famous XKCD example). When generated properly — using a word list of at least 7,776 entries (like the EFF Diceware list) — each word adds approximately 12.9 bits of entropy.',
-        'A four-word passphrase provides roughly 52 bits of entropy, while a six-word passphrase reaches approximately 78 bits — comparable to a random 12-character password but far easier to type and remember. For critical accounts, use five or six words.',
-        'Important rules for passphrases: use a truly random word selection method (dice or a cryptographic random generator — never pick words yourself); avoid famous quotes, song lyrics, or book titles; add a separator character between words (hyphens, dots, or spaces); and consider capitalizing one random word or inserting a digit for additional entropy without sacrificing memorability.',
+        'A passphrase is a sequence of random words strung together, such as "correct-horse-battery-staple" (the famous XKCD example). When generated properly, using a word list of at least 7,776 entries (like the EFF Diceware list), each word adds approximately 12.9 bits of entropy.',
+        'A four-word passphrase provides roughly 52 bits of entropy, while a six-word passphrase reaches approximately 78 bits, comparable to a random 12-character password but far easier to type and remember. For critical accounts, use five or six words.',
+        'Important rules for passphrases: use a truly random word selection method (dice or a cryptographic random generator; never pick words yourself); avoid famous quotes, song lyrics, or book titles; add a separator character between words (hyphens, dots, or spaces); and consider capitalizing one random word or inserting a digit for additional entropy without sacrificing memorability.',
       ],
       bullets: [
-        '4 words: ~52 bits — suitable for medium-risk accounts',
-        '5 words: ~65 bits — good for most personal accounts',
-        '6 words: ~78 bits — strong for email and financial accounts',
-        '7 words: ~90 bits — excellent for master passwords and crypto wallets',
+        '4 words: ~52 bits, suitable for medium-risk accounts',
+        '5 words: ~65 bits, good for most personal accounts',
+        '6 words: ~78 bits, strong for email and financial accounts',
+        '7 words: ~90 bits, excellent for master passwords and crypto wallets',
       ],
     },
     {
@@ -117,7 +117,7 @@ export const en: LocalizedArticleContent = {
         'For everyday accounts, use a password manager to generate and store unique random passwords of 16 or more characters. Your password manager handles the complexity, so each password can be maximally random without any memorization burden.',
         'For your master password (the one password you must memorize), use the passphrase method: roll dice or use a cryptographic generator to select 5-7 random words from a large word list. Write it down and store the paper in a secure physical location until you have it memorized, then destroy the paper.',
         'For accounts where you cannot use a password manager (such as your computer login or phone PIN), create a passphrase that is easy to type quickly. Practice typing it several times to build muscle memory. A passphrase like "maple-thunder-giraffe-socket-22" is both strong and typeable.',
-        'Never reuse passwords across accounts. If one service is breached, attackers will automatically try those credentials on hundreds of other sites — a technique called credential stuffing. A unique password for each account limits the blast radius of any single breach.',
+        'Never reuse passwords across accounts. If one service is breached, attackers will automatically try those credentials on hundreds of other sites, a technique called credential stuffing. A unique password for each account limits the blast radius of any single breach.',
       ],
     },
     {
@@ -147,7 +147,7 @@ export const en: LocalizedArticleContent = {
     {
       heading: 'Beyond Passwords: Multi-Factor Authentication',
       paragraphs: [
-        'Even the strongest password can be compromised through phishing, keyloggers, or server-side breaches. Multi-factor authentication (MFA) adds a second verification step — typically a time-based one-time password (TOTP) from an app like Google Authenticator or Authy, or a hardware security key like YubiKey.',
+        'Even the strongest password can be compromised through phishing, keyloggers, or server-side breaches. Multi-factor authentication (MFA) adds a second verification step: typically a time-based one-time password (TOTP) from an app like Google Authenticator or Authy, or a hardware security key like YubiKey.',
         'Enable MFA on every account that supports it, prioritizing email (your recovery hub), banking, cloud storage, and social media. Hardware security keys (FIDO2/WebAuthn) provide the strongest protection against phishing because they verify the actual website domain before authenticating.',
         'Store your MFA backup codes in your password manager or in a separate secure location. Losing access to your MFA device without backup codes can permanently lock you out of your accounts.',
       ],
@@ -186,8 +186,8 @@ export const ua: LocalizedArticleContent = {
     {
       heading: 'Розуміння ентропії пароля',
       paragraphs: [
-        'Ентропія — це математична міра непередбачуваності пароля. Вона вимірюється в бітах: пароль з 40 бітами ентропії має 2^40 (приблизно 1 трильйон) можливих комбінацій. Експерти з безпеки зазвичай рекомендують мінімум 60 бітів для стандартних акаунтів і 80+ бітів для високоцінних цілей, таких як банкінг або електронна пошта.',
-        'Формула проста: ентропія = log2(розмір_набору^довжина). 12-символьний пароль з використанням великих літер (26), малих літер (26), цифр (10) і символів (33) має набір з 95 символів. Це дає приблизно 79 бітів ентропії — надійний захист від офлайн-атак.',
+        'Ентропія це математична міра непередбачуваності пароля. Вона вимірюється в бітах: пароль з 40 бітами ентропії має 2^40 (приблизно 1 трильйон) можливих комбінацій. Експерти з безпеки зазвичай рекомендують мінімум 60 бітів для стандартних акаунтів і 80+ бітів для високоцінних цілей, таких як банкінг або електронна пошта.',
+        'Формула проста: ентропія = log2(розмір_набору^довжина). 12-символьний пароль з використанням великих літер (26), малих літер (26), цифр (10) і символів (33) має набір з 95 символів. Це дає приблизно 79 бітів ентропії: надійний захист від офлайн-атак.',
         'Однак ентропія передбачає, що пароль є дійсно випадковим. Пароль на кшталт "Password123!" технічно використовує всі чотири класи символів, але має майже нульову ефективну ентропію, оскільки слідує передбачуваному шаблону. Зловмисники підтримують словники з мільйонів таких поширених шаблонів і перевіряють їх першими.',
       ],
       bullets: [
@@ -200,26 +200,26 @@ export const ua: LocalizedArticleContent = {
     {
       heading: 'Довжина пароля: 8 vs 12 vs 16 vs 20 символів',
       paragraphs: [
-        'Довжина — найефективніший важіль впливу на надійність пароля. За набору з 94 символів (літери, цифри, символи) кожен додатковий символ додає близько 6,5 біта ентропії, тобто простір перебору подвоюється приблизно кожні 1,1 символу.',
+        'Довжина це найефективніший важіль впливу на надійність пароля. За набору з 94 символів (літери, цифри, символи) кожен додатковий символ додає близько 6,5 біта ентропії, тобто простір перебору подвоюється приблизно кожні 1,1 символу.',
         'Що це означає на практиці для випадково згенерованого пароля (значення ентропії припускають криптографічно стійкий генератор і відсутність шаблонів):',
-        'Наведені нижче приклади — випадкові рядки лише для ілюстрації. Не використовуйте їх у своїх акаунтах: важливий сам принцип, а не конкретні символи. Пароль на 12 символів надійний тому, що кожен знак обрано випадково, а не тому, що в ньому є символ.',
-        'У генераторі обирайте пресет довжини: 12 символів — для повсякденних акаунтів, 16 — для паролів у менеджері, 20 — для мастер-пароля та адмін-доступу. Вісім символів — лише запасний варіант для старих систем, які не приймають довші паролі; у такому разі ввімкніть двофакторну автентифікацію.',
+        'Наведені нижче приклади це випадкові рядки лише для ілюстрації. Не використовуйте їх у своїх акаунтах: важливий сам принцип, а не конкретні символи. Пароль на 12 символів надійний тому, що кожен знак обрано випадково, а не тому, що в ньому є символ.',
+        'У генераторі обирайте пресет довжини: 12 символів для повсякденних акаунтів, 16 для паролів у менеджері, 20 для мастер-пароля та адмін-доступу. Вісім символів лише запасний варіант для старих систем, які не приймають довші паролі; у такому разі ввімкніть двофакторну автентифікацію.',
       ],
       bullets: [
-        '8 символів — ~52 біти — приклад: N7#vQ2!a — лише для маловажливих або старих систем',
-        '12 символів — ~79 бітів — приклад: K9$pL2@xQ4!m — практичний мінімум для пошти, роботи й покупок',
-        '16 символів — ~105 бітів — приклад: R4#tY8!kL2@pW6$z — стандарт для паролів із менеджера паролів',
-        '20 символів — ~131 біт — приклад: H3$nB7@vC1!xZ5#qM9% — мастер-пароль, криптогаманці й адмін-доступ',
+        '8 символів: ~52 біти. Приклад N7#vQ2!a. Лише для маловажливих або старих систем',
+        '12 символів: ~79 бітів. Приклад K9$pL2@xQ4!m. Практичний мінімум для пошти, роботи й покупок',
+        '16 символів: ~105 бітів. Приклад R4#tY8!kL2@pW6$z. Стандарт для паролів із менеджера паролів',
+        '20 символів: ~131 біт. Приклад H3$nB7@vC1!xZ5#qM9%. Мастер-пароль, криптогаманці й адмін-доступ',
       ],
     },
     {
       heading: 'Часті запитання: пароль на 12 символів, приклади й перевірка надійності',
       paragraphs: [
-        '**Як виглядає надійний пароль із 12 символів?** Ось випадковий приклад: K9$pL2@xQ4!m. У ньому є великі й малі літери, цифри та символи, але головне — його згенеровано випадково. Не повторюйте цей рядок: для кожного акаунта створюйте новий пароль.',
-        '**Чи достатньо 12 символів?** Для більшості особистих акаунтів 12 випадкових символів (приблизно 79 бітів) — практичний мінімум. Для паролів у менеджері беріть 16 символів, а для мастер-пароля, криптогаманця й адмін-доступу — 20. Восьми символів у 2026 році недостатньо для пошти чи банкінгу.',
+        '**Як виглядає надійний пароль із 12 символів?** Ось випадковий приклад: K9$pL2@xQ4!m. У ньому є великі й малі літери, цифри та символи, але головне: його згенеровано випадково. Не повторюйте цей рядок: для кожного акаунта створюйте новий пароль.',
+        '**Чи достатньо 12 символів?** Для більшості особистих акаунтів 12 випадкових символів (приблизно 79 бітів) це практичний мінімум. Для паролів у менеджері беріть 16 символів, а для мастер-пароля, криптогаманця й адмін-доступу 20. Восьми символів у 2026 році недостатньо для пошти чи банкінгу.',
         '**Який пароль із 8 символів можна вважати надійним?** Випадковий рядок на кшталт N7#vQ2!a значно кращий за слово, яке легко запам\'ятати, але сучасне обладнання все одно перебере його за хвилини або години. Якщо система обмежує довжину вісьмома символами, створіть унікальний випадковий пароль і ввімкніть двофакторну автентифікацію.',
         '**Як перевірити пароль, не передаючи його третім сторонам?** Скористайтеся індикатором надійності в генераторі на цій сторінці: він працює локально у браузері. Не вставляйте справжні паролі на випадкові сайти перевірки. Для перевірки витоків використовуйте сервіс із підтримкою k-анонімності, наприклад Have I Been Pwned, і змініть пароль, якщо він там є.',
-        '**Що краще: парольна фраза чи випадковий пароль?** Парольну фразу з 5–7 слів використовуйте там, де пароль треба пам\'ятати: мастер-пароль менеджера або вхід до комп\'ютера. Для решти акаунтів беріть випадковий пароль із 16–20 символів. Детальніше про компроміс ентропії — у гіді про парольні фрази.',
+        '**Що краще: парольна фраза чи випадковий пароль?** Парольну фразу з 5–7 слів використовуйте там, де пароль треба пам\'ятати: мастер-пароль менеджера або вхід до комп\'ютера. Для решти акаунтів беріть випадковий пароль із 16–20 символів. Детальніше про компроміс ентропії в гіді про парольні фрази.',
         '**Чи стосується це паролів Wi-Fi?** Так. Пароль роутера має бути унікальним випадковим рядком на 16–20 символів, а не паролем від пошти. Як змінити його на роутері та знайти збережені мережі у Windows, Android чи iPhone, описано в гіді про паролі Wi-Fi.',
       ],
       bullets: [
@@ -230,16 +230,16 @@ export const ua: LocalizedArticleContent = {
       ],
     },
     {
-      heading: 'Що робить пароль сильним (а що — ні)',
+      heading: 'Що робить пароль сильним (а що ні)',
       paragraphs: [
-        'Реальну стійкість визначають чотири властивості: довжина, справжня випадковість, унікальність для кожного акаунта та відсутність пароля в публічних базах витоків. Правила складності, які жертвують довжиною заради символів, цього не компенсують — "P@ssw0rd!" усе одно серед перших здогадок будь-якого інструмента злому.',
+        'Реальну стійкість визначають чотири властивості: довжина, справжня випадковість, унікальність для кожного акаунта та відсутність пароля в публічних базах витоків. Правила складності, які жертвують довжиною заради символів, цього не компенсують: "P@ssw0rd!" усе одно серед перших здогадок будь-якого інструмента злому.',
         'Пароль, який з\'явився в будь-якому витоку, слід вважати скомпрометованим, навіть якщо сервіс вам не повідомляв. Перевірка пароля за базою витоків займає секунду і дає більше користі, ніж ще один символ у паролі.',
       ],
       bullets: [
         'Сильний: 16 випадкових символів від криптографічно стійкого генератора, збережені в менеджері паролів',
         'Сильний: парольна фраза з 5–6 слів із випадковим роздільником та однією великою літерою',
         'Слабкий: персональні дані, клавіатурні шаблони (qwerty, 1qaz2wsx) або словникові слова',
-        'Слабкий: заміни на кшталт a→@, e→3, o→0 — вони є в кожному інструменті злому',
+        'Слабкий: заміни на кшталт a→@, e→3, o→0: вони є в кожному інструменті злому',
         'Слабкий: той самий пароль на різних акаунтах, незалежно від його довжини',
       ],
     },
@@ -248,22 +248,22 @@ export const ua: LocalizedArticleContent = {
       paragraphs: [
         'Національний інститут стандартів і технологій (NIST) оновив свої Рекомендації з цифрової ідентичності (SP 800-63B), щоб відобразити сучасні дослідження безпеки паролів. Ці рекомендації стали золотим стандартом для організацій у всьому світі.',
         'Ключові рекомендації NIST: дозволяти паролі довжиною до 64 символів; вимагати мінімум 8 символів (рекомендовано 12+); НЕ нав\'язувати довільні правила складності (на кшталт обов\'язкових великих літер + цифр + символів); НЕ вимагати періодичної зміни паролів, якщо немає доказів компрометації; перевіряти паролі за списками відомих витоків; підтримувати функцію вставки у полях паролів.',
-        'Обґрунтування відмови від правил складності переконливе: примусова складність змушує користувачів створювати передбачувані шаблони на кшталт "Spring2026!" або "P@ssw0rd" — паролі, що задовольняють правила, але тривіально зламуються. Натомість NIST наголошує на довжині та непередбачуваності як основних факторах безпеки.',
+        'Обґрунтування відмови від правил складності переконливе: примусова складність змушує користувачів створювати передбачувані шаблони на кшталт "Spring2026!" або "P@ssw0rd" паролі, що задовольняють правила, але тривіально зламуються. Натомість NIST наголошує на довжині та непередбачуваності як основних факторах безпеки.',
         'NIST також рекомендує організаціям впроваджувати обмеження частоти спроб входу, використовувати багатофакторну аутентифікацію (MFA) та хешувати збережені паролі сучасними алгоритмами, такими як Argon2id або bcrypt з відповідними параметрами складності.',
       ],
     },
     {
       heading: 'Парольні фрази: запам\'ятовувані та безпечні',
       paragraphs: [
-        'Парольна фраза — це послідовність випадкових слів, з\'єднаних разом, наприклад "correct-horse-battery-staple" (знаменитий приклад XKCD). При правильній генерації — з використанням списку мінімум 7 776 слів (як EFF Diceware) — кожне слово додає приблизно 12,9 біта ентропії.',
-        'Фраза з чотирьох слів забезпечує приблизно 52 біти ентропії, тоді як фраза з шести слів досягає приблизно 78 бітів — порівнянно з випадковим 12-символьним паролем, але набагато легше для введення та запам\'ятовування. Для критично важливих акаунтів використовуйте п\'ять або шість слів.',
-        'Важливі правила для парольних фраз: використовуйте дійсно випадковий метод вибору слів (кубики або криптографічний генератор випадкових чисел — ніколи не обирайте слова самостійно); уникайте відомих цитат, текстів пісень або назв книг; додавайте символ-роздільник між словами (дефіси, крапки або пробіли); розгляньте можливість написання одного випадкового слова з великої літери або вставки цифри для додаткової ентропії без втрати запам\'ятовуваності.',
+        'Парольна фраза це послідовність випадкових слів, з\'єднаних разом, наприклад "correct-horse-battery-staple" (знаменитий приклад XKCD). При правильній генерації, з використанням списку мінімум 7 776 слів (як EFF Diceware), кожне слово додає приблизно 12,9 біта ентропії.',
+        'Фраза з чотирьох слів забезпечує приблизно 52 біти ентропії, тоді як фраза з шести слів досягає приблизно 78 бітів, порівнянно з випадковим 12-символьним паролем, але набагато легше для введення та запам\'ятовування. Для критично важливих акаунтів використовуйте п\'ять або шість слів.',
+        'Важливі правила для парольних фраз: використовуйте дійсно випадковий метод вибору слів (кубики або криптографічний генератор випадкових чисел: ніколи не обирайте слова самостійно); уникайте відомих цитат, текстів пісень або назв книг; додавайте символ-роздільник між словами (дефіси, крапки або пробіли); розгляньте можливість написання одного випадкового слова з великої літери або вставки цифри для додаткової ентропії без втрати запам\'ятовуваності.',
       ],
       bullets: [
-        '4 слова: ~52 біти — підходить для акаунтів середнього ризику',
-        '5 слів: ~65 бітів — добре для більшості персональних акаунтів',
-        '6 слів: ~78 бітів — надійно для пошти та фінансових акаунтів',
-        '7 слів: ~90 бітів — відмінно для мастер-паролів та криптогаманців',
+        '4 слова: ~52 біти, підходить для акаунтів середнього ризику',
+        '5 слів: ~65 бітів, добре для більшості персональних акаунтів',
+        '6 слів: ~78 бітів, надійно для пошти та фінансових акаунтів',
+        '7 слів: ~90 бітів, відмінно для мастер-паролів та криптогаманців',
       ],
     },
     {
@@ -272,13 +272,13 @@ export const ua: LocalizedArticleContent = {
         'Для повсякденних акаунтів використовуйте менеджер паролів для генерації та зберігання унікальних випадкових паролів довжиною від 16 символів. Менеджер паролів бере на себе всю складність, тому кожен пароль може бути максимально випадковим без необхідності запам\'ятовування.',
         'Для мастер-пароля (єдиного пароля, який вам потрібно запам\'ятати) використовуйте метод парольної фрази: киньте кубики або використовуйте криптографічний генератор для вибору 5-7 випадкових слів з великого списку слів. Запишіть його та зберігайте папір у безпечному фізичному місці, поки не запам\'ятаєте, потім знищте папір.',
         'Для акаунтів, де ви не можете використовувати менеджер паролів (наприклад, вхід у комп\'ютер або PIN телефону), створіть парольну фразу, яку легко набирати швидко. Потренуйтеся набирати її кілька разів, щоб розвинути м\'язову пам\'ять. Фраза на кшталт "клен-грім-жирафа-розетка-22" одночасно надійна та зручна для набору.',
-        'Ніколи не використовуйте паролі повторно для різних акаунтів. Якщо один сервіс зазнає витоку, зловмисники автоматично спробують ці облікові дані на сотнях інших сайтів — техніка, яка називається credential stuffing. Унікальний пароль для кожного акаунту обмежує наслідки будь-якого окремого витоку.',
+        'Ніколи не використовуйте паролі повторно для різних акаунтів. Якщо один сервіс зазнає витоку, зловмисники автоматично спробують ці облікові дані на сотнях інших сайтів, техніка, яка називається credential stuffing. Унікальний пароль для кожного акаунту обмежує наслідки будь-якого окремого витоку.',
       ],
     },
     {
       heading: 'Поширені помилки при створенні паролів',
       paragraphs: [
-        'Використання особистої інформації — найпоширеніша та найнебезпечніша помилка. Імена членів сім\'ї, домашніх тварин, дати народження, річниці, номери телефонів та адреси — все це легко знайти через соціальні мережі. Зловмисники створюють персоналізовані словники з ваших публічних даних перед будь-якою спробою brute-force атаки.',
+        'Використання особистої інформації це найпоширеніша та найнебезпечніша помилка. Імена членів сім\'ї, домашніх тварин, дати народження, річниці, номери телефонів та адреси: все це легко знайти через соціальні мережі. Зловмисники створюють персоналізовані словники з ваших публічних даних перед будь-якою спробою brute-force атаки.',
         'Клавіатурні шаблони на кшталт "qwerty", "123456", "zxcvbn" або "1qaz2wsx" виглядають безпечними, бо здаються випадковими, але вони серед перших шаблонів, які перевіряють інструменти злому. Так само прості підстановки (@ замість a, 3 замість e, 0 замість o) практично не додають безпеки, бо кожен інструмент злому включає ці leet-speak трансформації.',
         'Інкрементування паролів при примусовій зміні (Password1 → Password2 → Password3) не дає реального покращення безпеки. Якщо зловмисник отримає будь-яку версію, він тривіально вгадає інші. Саме тому NIST тепер рекомендує відмовитися від обов\'язкової періодичної зміни паролів.',
       ],
@@ -294,15 +294,15 @@ export const ua: LocalizedArticleContent = {
     {
       heading: 'Менеджери паролів: найкраща інвестиція в безпеку',
       paragraphs: [
-        'Менеджер паролів генерує, зберігає та автоматично заповнює унікальні випадкові паролі для кожного акаунту. Серед провідних рішень — 1Password, Bitwarden (з відкритим кодом) та KeePass (офлайн). Кожен використовує шифрування AES-256 для захисту вашого сховища, з мастер-паролем як ключем розшифрування.',
-        'Основна перевага — повне усунення повторного використання паролів. З менеджером паролів кожен акаунт отримує унікальний випадковий пароль довжиною 20+ символів. Вам потрібно запам\'ятати лише один надійний мастер-пароль. Більшість менеджерів також попереджають, коли паролі з\'являються у відомих базах витоків.',
-        'Обирайте менеджер, який підтримує ваші пристрої та браузери, пропонує екстрений доступ для довірених контактів та пройшов незалежний аудит безпеки. Bitwarden — чудовий безкоштовний варіант з відкритим кодом, який будь-хто може перевірити. Для команд 1Password Business або Bitwarden Organizations надають можливості спільного сховища.',
+        'Менеджер паролів генерує, зберігає та автоматично заповнює унікальні випадкові паролі для кожного акаунту. Серед провідних рішень: 1Password, Bitwarden (з відкритим кодом) та KeePass (офлайн). Кожен використовує шифрування AES-256 для захисту вашого сховища, з мастер-паролем як ключем розшифрування.',
+        'Основна перевага це повне усунення повторного використання паролів. З менеджером паролів кожен акаунт отримує унікальний випадковий пароль довжиною 20+ символів. Вам потрібно запам\'ятати лише один надійний мастер-пароль. Більшість менеджерів також попереджають, коли паролі з\'являються у відомих базах витоків.',
+        'Обирайте менеджер, який підтримує ваші пристрої та браузери, пропонує екстрений доступ для довірених контактів та пройшов незалежний аудит безпеки. Bitwarden це чудовий безкоштовний варіант з відкритим кодом, який будь-хто може перевірити. Для команд 1Password Business або Bitwarden Organizations надають можливості спільного сховища.',
       ],
     },
     {
       heading: 'Окрім паролів: багатофакторна аутентифікація',
       paragraphs: [
-        'Навіть найнадійніший пароль може бути скомпрометований через фішинг, кейлогери або витоки на стороні сервера. Багатофакторна аутентифікація (MFA) додає другий крок перевірки — зазвичай одноразовий пароль на основі часу (TOTP) з програми, такої як Google Authenticator або Authy, або апаратний ключ безпеки, такий як YubiKey.',
+        'Навіть найнадійніший пароль може бути скомпрометований через фішинг, кейлогери або витоки на стороні сервера. Багатофакторна аутентифікація (MFA) додає другий крок перевірки: зазвичай одноразовий пароль на основі часу (TOTP) з програми, такої як Google Authenticator або Authy, або апаратний ключ безпеки, такий як YubiKey.',
         'Увімкніть MFA на кожному акаунті, який це підтримує, надаючи пріоритет електронній пошті (вашому центру відновлення), банкінгу, хмарному сховищу та соціальним мережам. Апаратні ключі безпеки (FIDO2/WebAuthn) забезпечують найнадійніший захист від фішингу, оскільки вони перевіряють фактичний домен веб-сайту перед аутентифікацією.',
         'Зберігайте резервні коди MFA у вашому менеджері паролів або в окремому безпечному місці. Втрата доступу до пристрою MFA без резервних кодів може назавжди заблокувати ваші акаунти.',
       ],
@@ -342,7 +342,7 @@ export const es: LocalizedArticleContent = {
       heading: 'Entendiendo la entropía de contraseñas',
       paragraphs: [
         'La entropía es una medida matemática de cuán impredecible es una contraseña. Se mide en bits: una contraseña con 40 bits de entropía tiene 2^40 (aproximadamente 1 billón) combinaciones posibles. Los expertos en seguridad generalmente recomiendan un mínimo de 60 bits para cuentas estándar y 80+ bits para objetivos de alto valor como banca o correo electrónico.',
-        'La fórmula es directa: entropía = log2(tamaño_del_conjunto^longitud). Una contraseña de 12 caracteres usando mayúsculas (26), minúsculas (26), dígitos (10) y símbolos (33) tiene un conjunto de 95 caracteres. Esto da aproximadamente 79 bits de entropía — protección sólida contra ataques fuera de línea.',
+        'La fórmula es directa: entropía = log2(tamaño_del_conjunto^longitud). Una contraseña de 12 caracteres usando mayúsculas (26), minúsculas (26), dígitos (10) y símbolos (33) tiene un conjunto de 95 caracteres. Esto da aproximadamente 79 bits de entropía: protección sólida contra ataques fuera de línea.',
         'Sin embargo, la entropía asume que la contraseña es verdaderamente aleatoria. Una contraseña como "Password123!" técnicamente usa las cuatro clases de caracteres pero tiene una entropía efectiva casi nula porque sigue un patrón predecible. Los atacantes mantienen diccionarios de millones de estos patrones comunes y los prueban primero.',
       ],
       bullets: [
@@ -361,10 +361,10 @@ export const es: LocalizedArticleContent = {
         'En el generador, elige el ajuste de longitud: 12 caracteres para cuentas cotidianas, 16 para contraseñas guardadas en un gestor y 20 para la contraseña maestra o el acceso de administrador. Ocho caracteres es solo un recurso para sistemas antiguos que rechazan valores más largos; en ese caso activa la autenticación de dos factores.',
       ],
       bullets: [
-        '8 caracteres — ~52 bits — ejemplo: N7#vQ2!a — solo cuentas de bajo valor o sistemas antiguos',
-        '12 caracteres — ~79 bits — ejemplo: K9$pL2@xQ4!m — mínimo práctico para correo, trabajo y compras',
-        '16 caracteres — ~105 bits — ejemplo: R4#tY8!kL2@pW6$z — valor recomendado para contraseñas creadas por un gestor',
-        '20 caracteres — ~131 bits — ejemplo: H3$nB7@vC1!xZ5#qM9% — contraseñas maestras, carteras cripto y acceso de administrador',
+        '8 caracteres: ~52 bits. Ejemplo N7#vQ2!a. Solo cuentas de bajo valor o sistemas antiguos',
+        '12 caracteres: ~79 bits. Ejemplo K9$pL2@xQ4!m. Mínimo práctico para correo, trabajo y compras',
+        '16 caracteres: ~105 bits. Ejemplo R4#tY8!kL2@pW6$z. Valor recomendado para contraseñas creadas por un gestor',
+        '20 caracteres: ~131 bits. Ejemplo H3$nB7@vC1!xZ5#qM9%. Contraseñas maestras, carteras cripto y acceso de administrador',
       ],
     },
     {
@@ -403,22 +403,22 @@ export const es: LocalizedArticleContent = {
       paragraphs: [
         'El Instituto Nacional de Estándares y Tecnología (NIST) actualizó sus Directrices de Identidad Digital (SP 800-63B) para reflejar la investigación moderna sobre seguridad de contraseñas. Estas directrices se han convertido en el estándar de oro para organizaciones en todo el mundo.',
         'Las recomendaciones clave de NIST incluyen: permitir contraseñas de hasta 64 caracteres; requerir un mínimo de 8 caracteres (12+ recomendado); NO imponer reglas de complejidad arbitrarias (como requerir mayúscula + número + símbolo); NO requerir cambios periódicos de contraseña a menos que haya evidencia de compromiso; verificar contraseñas contra listas de contraseñas filtradas conocidas; y soportar la función de pegado en campos de contraseña.',
-        'La razón detrás de eliminar las reglas de complejidad es convincente: la complejidad forzada lleva a los usuarios a crear patrones predecibles como "Spring2026!" o "P@ssw0rd" — contraseñas que satisfacen las reglas pero se descifran trivialmente. En cambio, NIST enfatiza la longitud y la impredecibilidad como los principales factores de seguridad.',
+        'La razón detrás de eliminar las reglas de complejidad es convincente: la complejidad forzada lleva a los usuarios a crear patrones predecibles como "Spring2026!" o "P@ssw0rd", contraseñas que satisfacen las reglas pero se descifran trivialmente. En cambio, NIST enfatiza la longitud y la impredecibilidad como los principales factores de seguridad.',
         'NIST también recomienda que las organizaciones implementen limitación de velocidad en intentos de inicio de sesión, usen autenticación multifactor (MFA) y almacenen contraseñas con hash usando algoritmos modernos como Argon2id o bcrypt con factores de trabajo apropiados.',
       ],
     },
     {
       heading: 'El enfoque de frases de contraseña: memorables y seguras',
       paragraphs: [
-        'Una frase de contraseña es una secuencia de palabras aleatorias unidas, como "correct-horse-battery-staple" (el famoso ejemplo de XKCD). Cuando se genera correctamente — usando una lista de al menos 7.776 palabras (como la lista EFF Diceware) — cada palabra añade aproximadamente 12,9 bits de entropía.',
-        'Una frase de cuatro palabras proporciona aproximadamente 52 bits de entropía, mientras que una de seis palabras alcanza aproximadamente 78 bits — comparable a una contraseña aleatoria de 12 caracteres pero mucho más fácil de escribir y recordar. Para cuentas críticas, usa cinco o seis palabras.',
-        'Reglas importantes para frases de contraseña: usa un método de selección verdaderamente aleatorio (dados o un generador criptográfico — nunca elijas palabras tú mismo); evita citas famosas, letras de canciones o títulos de libros; añade un carácter separador entre palabras (guiones, puntos o espacios); y considera poner en mayúscula una palabra aleatoria o insertar un dígito para entropía adicional sin sacrificar memorabilidad.',
+        'Una frase de contraseña es una secuencia de palabras aleatorias unidas, como "correct-horse-battery-staple" (el famoso ejemplo de XKCD). Cuando se genera correctamente, usando una lista de al menos 7.776 palabras (como la lista EFF Diceware), cada palabra añade aproximadamente 12,9 bits de entropía.',
+        'Una frase de cuatro palabras proporciona aproximadamente 52 bits de entropía, mientras que una de seis palabras alcanza aproximadamente 78 bits, comparable a una contraseña aleatoria de 12 caracteres pero mucho más fácil de escribir y recordar. Para cuentas críticas, usa cinco o seis palabras.',
+        'Reglas importantes para frases de contraseña: usa un método de selección verdaderamente aleatorio (dados o un generador criptográfico; nunca elijas palabras tú mismo); evita citas famosas, letras de canciones o títulos de libros; añade un carácter separador entre palabras (guiones, puntos o espacios); y considera poner en mayúscula una palabra aleatoria o insertar un dígito para entropía adicional sin sacrificar memorabilidad.',
       ],
       bullets: [
-        '4 palabras: ~52 bits — adecuado para cuentas de riesgo medio',
-        '5 palabras: ~65 bits — bueno para la mayoría de cuentas personales',
-        '6 palabras: ~78 bits — fuerte para correo y cuentas financieras',
-        '7 palabras: ~90 bits — excelente para contraseñas maestras y billeteras cripto',
+        '4 palabras: ~52 bits, adecuado para cuentas de riesgo medio',
+        '5 palabras: ~65 bits, bueno para la mayoría de cuentas personales',
+        '6 palabras: ~78 bits, fuerte para correo y cuentas financieras',
+        '7 palabras: ~90 bits, excelente para contraseñas maestras y billeteras cripto',
       ],
     },
     {
@@ -427,7 +427,7 @@ export const es: LocalizedArticleContent = {
         'Para cuentas cotidianas, usa un gestor de contraseñas para generar y almacenar contraseñas aleatorias únicas de 16 o más caracteres. Tu gestor se encarga de la complejidad, así que cada contraseña puede ser máximamente aleatoria sin necesidad de memorización.',
         'Para tu contraseña maestra (la única que debes memorizar), usa el método de frase de contraseña: lanza dados o usa un generador criptográfico para seleccionar 5-7 palabras aleatorias de una lista grande. Anótala y guarda el papel en un lugar físico seguro hasta memorizarla, luego destruye el papel.',
         'Para cuentas donde no puedes usar un gestor (como el inicio de sesión de tu ordenador o PIN del teléfono), crea una frase fácil de teclear rápidamente. Practica escribirla varias veces para desarrollar memoria muscular. Una frase como "arce-trueno-jirafa-enchufe-22" es fuerte y fácil de teclear.',
-        'Nunca reutilices contraseñas entre cuentas. Si un servicio sufre una brecha, los atacantes probarán automáticamente esas credenciales en cientos de otros sitios — una técnica llamada credential stuffing. Una contraseña única para cada cuenta limita el radio de explosión de cualquier brecha individual.',
+        'Nunca reutilices contraseñas entre cuentas. Si un servicio sufre una brecha, los atacantes probarán automáticamente esas credenciales en cientos de otros sitios, una técnica llamada credential stuffing. Una contraseña única para cada cuenta limita el radio de explosión de cualquier brecha individual.',
       ],
     },
     {
@@ -457,7 +457,7 @@ export const es: LocalizedArticleContent = {
     {
       heading: 'Más allá de las contraseñas: autenticación multifactor',
       paragraphs: [
-        'Incluso la contraseña más fuerte puede verse comprometida por phishing, keyloggers o brechas del lado del servidor. La autenticación multifactor (MFA) añade un segundo paso de verificación — típicamente una contraseña temporal basada en tiempo (TOTP) de una app como Google Authenticator o Authy, o una llave de seguridad de hardware como YubiKey.',
+        'Incluso la contraseña más fuerte puede verse comprometida por phishing, keyloggers o brechas del lado del servidor. La autenticación multifactor (MFA) añade un segundo paso de verificación: típicamente una contraseña temporal basada en tiempo (TOTP) de una app como Google Authenticator o Authy, o una llave de seguridad de hardware como YubiKey.',
         'Activa MFA en cada cuenta que lo soporte, priorizando correo electrónico (tu centro de recuperación), banca, almacenamiento en la nube y redes sociales. Las llaves de seguridad de hardware (FIDO2/WebAuthn) proporcionan la protección más fuerte contra phishing porque verifican el dominio real del sitio web antes de autenticar.',
         'Guarda tus códigos de respaldo MFA en tu gestor de contraseñas o en otra ubicación segura separada. Perder acceso a tu dispositivo MFA sin códigos de respaldo puede bloquearte permanentemente de tus cuentas.',
       ],
@@ -497,7 +497,7 @@ export const fr: LocalizedArticleContent = {
       heading: 'Comprendre l\'entropie des mots de passe',
       paragraphs: [
         'L\'entropie est une mesure mathématique de l\'imprévisibilité d\'un mot de passe. Elle se mesure en bits : un mot de passe avec 40 bits d\'entropie possède 2^40 (environ 1 billion) combinaisons possibles. Les experts en sécurité recommandent généralement un minimum de 60 bits pour les comptes standard et 80+ bits pour les cibles à haute valeur comme la banque ou le courriel.',
-        'La formule est simple : entropie = log2(taille_du_pool^longueur). Un mot de passe de 12 caractères utilisant des majuscules (26), des minuscules (26), des chiffres (10) et des symboles (33) puise dans un ensemble de 95 caractères. Cela donne environ 79 bits d\'entropie — une protection solide contre les attaques hors ligne.',
+        'La formule est simple : entropie = log2(taille_du_pool^longueur). Un mot de passe de 12 caractères utilisant des majuscules (26), des minuscules (26), des chiffres (10) et des symboles (33) puise dans un ensemble de 95 caractères. Cela donne environ 79 bits d\'entropie : une protection solide contre les attaques hors ligne.',
         'Cependant, l\'entropie suppose que le mot de passe est véritablement aléatoire. Un mot de passe comme "Password123!" utilise techniquement les quatre classes de caractères mais a une entropie effective quasi nulle car il suit un modèle prévisible. Les attaquants maintiennent des dictionnaires de millions de tels modèles courants et les testent en premier.',
       ],
       bullets: [
@@ -516,10 +516,10 @@ export const fr: LocalizedArticleContent = {
         'Dans le générateur, choisissez le préréglage de longueur : 12 caractères pour les comptes du quotidien, 16 pour les mots de passe conservés dans un gestionnaire et 20 pour le mot de passe maître ou l\'accès administrateur. Huit caractères ne sont qu\'un repli pour les systèmes anciens qui refusent les valeurs plus longues ; activez alors la double authentification.',
       ],
       bullets: [
-        '8 caractères — ~52 bits — exemple : N7#vQ2!a — comptes sans enjeu ou systèmes anciens uniquement',
-        '12 caractères — ~79 bits — exemple : K9$pL2@xQ4!m — minimum pratique pour le courriel, le travail et les achats',
-        '16 caractères — ~105 bits — exemple : R4#tY8!kL2@pW6$z — valeur recommandée pour les mots de passe générés par un gestionnaire',
-        '20 caractères — ~131 bits — exemple : H3$nB7@vC1!xZ5#qM9% — mots de passe maîtres, portefeuilles crypto et accès administrateur',
+        '8 caractères : ~52 bits. Exemple N7#vQ2!a. Comptes sans enjeu ou systèmes anciens uniquement',
+        '12 caractères : ~79 bits. Exemple K9$pL2@xQ4!m. Minimum pratique pour le courriel, le travail et les achats',
+        '16 caractères : ~105 bits. Exemple R4#tY8!kL2@pW6$z. Valeur recommandée pour les mots de passe générés par un gestionnaire',
+        '20 caractères : ~131 bits. Exemple H3$nB7@vC1!xZ5#qM9%. Mots de passe maîtres, portefeuilles crypto et accès administrateur',
       ],
     },
     {
@@ -549,7 +549,7 @@ export const fr: LocalizedArticleContent = {
         'Fort : 16 caractères aléatoires issus d\'un CSPRNG, stockés dans un gestionnaire de mots de passe',
         'Fort : une phrase de 5–6 mots avec un séparateur aléatoire et un mot capitalisé',
         'Faible : données personnelles, motifs de clavier (qwerty, 1qaz2wsx) ou mots du dictionnaire',
-        'Faible : substitutions leet (a→@, e→3, o→0) — tous les outils les incluent',
+        'Faible : substitutions leet (a→@, e→3, o→0) : tous les outils les incluent',
         'Faible : le même mot de passe réutilisé sur plusieurs comptes, quelle que soit sa longueur',
       ],
     },
@@ -558,22 +558,22 @@ export const fr: LocalizedArticleContent = {
       paragraphs: [
         'Le National Institute of Standards and Technology (NIST) a mis à jour ses directives d\'identité numérique (SP 800-63B) pour refléter la recherche moderne sur la sécurité des mots de passe. Ces directives sont devenues la référence pour les organisations du monde entier.',
         'Les recommandations clés du NIST incluent : autoriser les mots de passe jusqu\'à 64 caractères ; exiger un minimum de 8 caractères (12+ recommandé) ; NE PAS imposer de règles de complexité arbitraires (comme exiger majuscule + chiffre + symbole) ; NE PAS exiger de changements périodiques de mot de passe sauf en cas de preuve de compromission ; vérifier les mots de passe contre les listes de fuites connues ; et prendre en charge la fonction coller dans les champs de mot de passe.',
-        'La raison de l\'abandon des règles de complexité est convaincante : la complexité forcée amène les utilisateurs à créer des modèles prévisibles comme "Spring2026!" ou "P@ssw0rd" — des mots de passe qui satisfont les règles mais sont trivialement craqués. Au lieu de cela, le NIST met l\'accent sur la longueur et l\'imprévisibilité comme principaux facteurs de sécurité.',
+        'La raison de l\'abandon des règles de complexité est convaincante : la complexité forcée amène les utilisateurs à créer des modèles prévisibles comme "Spring2026!" ou "P@ssw0rd", des mots de passe qui satisfont les règles mais sont trivialement craqués. Au lieu de cela, le NIST met l\'accent sur la longueur et l\'imprévisibilité comme principaux facteurs de sécurité.',
         'Le NIST recommande également que les organisations mettent en place une limitation du nombre de tentatives de connexion, utilisent l\'authentification multifacteur (MFA) et hachent les mots de passe stockés avec des algorithmes modernes comme Argon2id ou bcrypt avec des facteurs de travail appropriés.',
       ],
     },
     {
       heading: 'L\'approche par phrase secrète : mémorable et sécurisée',
       paragraphs: [
-        'Une phrase secrète est une séquence de mots aléatoires enchaînés, comme "correct-horse-battery-staple" (le célèbre exemple XKCD). Lorsqu\'elle est générée correctement — en utilisant une liste d\'au moins 7 776 mots (comme la liste EFF Diceware) — chaque mot ajoute environ 12,9 bits d\'entropie.',
-        'Une phrase de quatre mots fournit environ 52 bits d\'entropie, tandis qu\'une phrase de six mots atteint environ 78 bits — comparable à un mot de passe aléatoire de 12 caractères mais beaucoup plus facile à taper et à retenir. Pour les comptes critiques, utilisez cinq ou six mots.',
-        'Règles importantes pour les phrases secrètes : utilisez une méthode de sélection véritablement aléatoire (dés ou un générateur cryptographique — ne choisissez jamais les mots vous-même) ; évitez les citations célèbres, paroles de chansons ou titres de livres ; ajoutez un séparateur entre les mots (tirets, points ou espaces) ; et envisagez de mettre une majuscule à un mot aléatoire ou d\'insérer un chiffre pour une entropie supplémentaire sans sacrifier la mémorabilité.',
+        'Une phrase secrète est une séquence de mots aléatoires enchaînés, comme "correct-horse-battery-staple" (le célèbre exemple XKCD). Lorsqu\'elle est générée correctement, en utilisant une liste d\'au moins 7 776 mots (comme la liste EFF Diceware), chaque mot ajoute environ 12,9 bits d\'entropie.',
+        'Une phrase de quatre mots fournit environ 52 bits d\'entropie, tandis qu\'une phrase de six mots atteint environ 78 bits, comparable à un mot de passe aléatoire de 12 caractères mais beaucoup plus facile à taper et à retenir. Pour les comptes critiques, utilisez cinq ou six mots.',
+        'Règles importantes pour les phrases secrètes : utilisez une méthode de sélection véritablement aléatoire (dés ou un générateur cryptographique; ne choisissez jamais les mots vous-même) ; évitez les citations célèbres, paroles de chansons ou titres de livres ; ajoutez un séparateur entre les mots (tirets, points ou espaces) ; et envisagez de mettre une majuscule à un mot aléatoire ou d\'insérer un chiffre pour une entropie supplémentaire sans sacrifier la mémorabilité.',
       ],
       bullets: [
-        '4 mots : ~52 bits — adapté aux comptes à risque moyen',
-        '5 mots : ~65 bits — bon pour la plupart des comptes personnels',
-        '6 mots : ~78 bits — solide pour le courriel et les comptes financiers',
-        '7 mots : ~90 bits — excellent pour les mots de passe maîtres et les portefeuilles crypto',
+        '4 mots : ~52 bits, adapté aux comptes à risque moyen',
+        '5 mots : ~65 bits, bon pour la plupart des comptes personnels',
+        '6 mots : ~78 bits, solide pour le courriel et les comptes financiers',
+        '7 mots : ~90 bits, excellent pour les mots de passe maîtres et les portefeuilles crypto',
       ],
     },
     {
@@ -582,7 +582,7 @@ export const fr: LocalizedArticleContent = {
         'Pour les comptes quotidiens, utilisez un gestionnaire de mots de passe pour générer et stocker des mots de passe aléatoires uniques de 16 caractères ou plus. Votre gestionnaire gère la complexité, donc chaque mot de passe peut être maximalement aléatoire sans aucun effort de mémorisation.',
         'Pour votre mot de passe maître (le seul que vous devez mémoriser), utilisez la méthode de phrase secrète : lancez des dés ou utilisez un générateur cryptographique pour sélectionner 5-7 mots aléatoires d\'une grande liste. Notez-le et conservez le papier dans un endroit physique sûr jusqu\'à ce que vous l\'ayez mémorisé, puis détruisez le papier.',
         'Pour les comptes où vous ne pouvez pas utiliser de gestionnaire (comme votre connexion ordinateur ou le PIN de téléphone), créez une phrase facile à taper rapidement. Entraînez-vous à la taper plusieurs fois pour développer la mémoire musculaire. Une phrase comme "érable-tonnerre-girafe-prise-22" est à la fois forte et facile à taper.',
-        'Ne réutilisez jamais les mots de passe entre les comptes. Si un service subit une fuite, les attaquants essaieront automatiquement ces identifiants sur des centaines d\'autres sites — une technique appelée credential stuffing. Un mot de passe unique pour chaque compte limite le rayon d\'impact de toute fuite individuelle.',
+        'Ne réutilisez jamais les mots de passe entre les comptes. Si un service subit une fuite, les attaquants essaieront automatiquement ces identifiants sur des centaines d\'autres sites, une technique appelée credential stuffing. Un mot de passe unique pour chaque compte limite le rayon d\'impact de toute fuite individuelle.',
       ],
     },
     {
@@ -612,7 +612,7 @@ export const fr: LocalizedArticleContent = {
     {
       heading: 'Au-delà des mots de passe : authentification multifacteur',
       paragraphs: [
-        'Même le mot de passe le plus fort peut être compromis par le phishing, les keyloggers ou les fuites côté serveur. L\'authentification multifacteur (MFA) ajoute une seconde étape de vérification — généralement un mot de passe temporaire basé sur le temps (TOTP) depuis une application comme Google Authenticator ou Authy, ou une clé de sécurité matérielle comme YubiKey.',
+        'Même le mot de passe le plus fort peut être compromis par le phishing, les keyloggers ou les fuites côté serveur. L\'authentification multifacteur (MFA) ajoute une seconde étape de vérification : généralement un mot de passe temporaire basé sur le temps (TOTP) depuis une application comme Google Authenticator ou Authy, ou une clé de sécurité matérielle comme YubiKey.',
         'Activez la MFA sur chaque compte qui la prend en charge, en priorité sur le courriel (votre centre de récupération), la banque, le stockage cloud et les réseaux sociaux. Les clés de sécurité matérielles (FIDO2/WebAuthn) offrent la protection la plus forte contre le phishing car elles vérifient le domaine réel du site web avant l\'authentification.',
         'Conservez vos codes de secours MFA dans votre gestionnaire de mots de passe ou dans un autre emplacement sécurisé séparé. Perdre l\'accès à votre appareil MFA sans codes de secours peut vous bloquer définitivement hors de vos comptes.',
       ],
@@ -652,7 +652,7 @@ export const de: LocalizedArticleContent = {
       heading: 'Passwort-Entropie verstehen',
       paragraphs: [
         'Entropie ist ein mathematisches Maß dafür, wie unvorhersehbar ein Passwort ist. Sie wird in Bits gemessen: Ein Passwort mit 40 Bits Entropie hat 2^40 (etwa 1 Billion) mögliche Kombinationen. Sicherheitsexperten empfehlen im Allgemeinen mindestens 60 Bits für Standardkonten und 80+ Bits für hochwertige Ziele wie Banking oder E-Mail.',
-        'Die Formel ist einfach: Entropie = log2(Pool-Größe^Länge). Ein 12-Zeichen-Passwort mit Großbuchstaben (26), Kleinbuchstaben (26), Ziffern (10) und Symbolen (33) schöpft aus einem Pool von 95 Zeichen. Das ergibt ungefähr 79 Bits Entropie — solider Schutz gegen Offline-Angriffe.',
+        'Die Formel ist einfach: Entropie = log2(Pool-Größe^Länge). Ein 12-Zeichen-Passwort mit Großbuchstaben (26), Kleinbuchstaben (26), Ziffern (10) und Symbolen (33) schöpft aus einem Pool von 95 Zeichen. Das ergibt ungefähr 79 Bits Entropie: solider Schutz gegen Offline-Angriffe.',
         'Entropie setzt jedoch voraus, dass das Passwort wirklich zufällig ist. Ein Passwort wie "Password123!" verwendet technisch alle vier Zeichenklassen, hat aber nahezu null effektive Entropie, da es einem vorhersehbaren Muster folgt. Angreifer pflegen Wörterbücher mit Millionen solcher gängigen Muster und testen sie zuerst.',
       ],
       bullets: [
@@ -665,16 +665,16 @@ export const de: LocalizedArticleContent = {
     {
       heading: 'Passwortlänge: 8 vs. 12 vs. 16 vs. 20 Zeichen',
       paragraphs: [
-        'Die Länge ist der wirksamste Hebel für die Passwortstärke. Bei einem Zeichenvorrat von 94 Zeichen (Buchstaben, Ziffern, Sonderzeichen) bringt jedes zusätzliche Zeichen etwa 6,5 Bit Entropie — der Suchraum verdoppelt sich also ungefähr alle 1,1 Zeichen.',
+        'Die Länge ist der wirksamste Hebel für die Passwortstärke. Bei einem Zeichenvorrat von 94 Zeichen (Buchstaben, Ziffern, Sonderzeichen) bringt jedes zusätzliche Zeichen etwa 6,5 Bit Entropie: der Suchraum verdoppelt sich also ungefähr alle 1,1 Zeichen.',
         'Was das für ein zufällig erzeugtes Passwort praktisch bedeutet (die Werte setzen einen kryptografisch sicheren Generator und keine wiederverwendeten Muster voraus):',
         'Die folgenden Beispiele sind zufällige Zeichenfolgen nur zur Veranschaulichung. Verwenden Sie sie nie in einem Konto. Entscheidend ist das Muster, nicht die konkreten Zeichen. Ein Passwort mit 12 Zeichen ist stark, weil jedes Zeichen zufällig gewählt wurde, nicht weil zufällig ein Sonderzeichen enthalten ist.',
         'Wählen Sie im Generator die Längenvorgabe: 12 Zeichen für Alltagskonten, 16 für Passwörter im Passwortmanager und 20 für das Master-Passwort oder den Admin-Zugang. Acht Zeichen sind nur ein Notbehelf für alte Systeme, die längere Werte ablehnen; aktivieren Sie dann die Zwei-Faktor-Authentifizierung.',
       ],
       bullets: [
-        '8 Zeichen — ~52 Bit — Beispiel: N7#vQ2!a — nur Konten mit geringem Wert oder Altsysteme',
-        '12 Zeichen — ~79 Bit — Beispiel: K9$pL2@xQ4!m — praktisches Minimum für E-Mail, Arbeit und Einkäufe',
-        '16 Zeichen — ~105 Bit — Beispiel: R4#tY8!kL2@pW6$z — Standard für Passwörter aus einem Passwortmanager',
-        '20 Zeichen — ~131 Bit — Beispiel: H3$nB7@vC1!xZ5#qM9% — Master-Passwörter, Krypto-Wallets und Admin-Zugänge',
+        '8 Zeichen: ~52 Bit. Beispiel N7#vQ2!a. Nur Konten mit geringem Wert oder Altsysteme',
+        '12 Zeichen: ~79 Bit. Beispiel K9$pL2@xQ4!m. Praktisches Minimum für E-Mail, Arbeit und Einkäufe',
+        '16 Zeichen: ~105 Bit. Beispiel R4#tY8!kL2@pW6$z. Standard für Passwörter aus einem Passwortmanager',
+        '20 Zeichen: ~131 Bit. Beispiel H3$nB7@vC1!xZ5#qM9%. Master-Passwörter, Krypto-Wallets und Admin-Zugänge',
       ],
     },
     {
@@ -697,14 +697,14 @@ export const de: LocalizedArticleContent = {
     {
       heading: 'Was ein Passwort stark macht (und was nicht)',
       paragraphs: [
-        'Vier Eigenschaften bestimmen die tatsächliche Stärke: Länge, echte Zufälligkeit, Einmaligkeit pro Konto und die Abwesenheit des Passworts in öffentlichen Leaks. Komplexitätsregeln, die Länge zugunsten von Sonderzeichen opfern, gleichen das nicht aus — "P@ssw0rd!" gehört weiterhin zu den ersten Vermutungen jedes Knacktools.',
-        'Ein Passwort, das in einem Leak aufgetaucht ist, muss als kompromittiert gelten — auch wenn der Dienst Sie nie informiert hat. Die Prüfung gegen eine Leak-Datenbank dauert eine Sekunde und bringt mehr als ein weiteres Sonderzeichen.',
+        'Vier Eigenschaften bestimmen die tatsächliche Stärke: Länge, echte Zufälligkeit, Einmaligkeit pro Konto und die Abwesenheit des Passworts in öffentlichen Leaks. Komplexitätsregeln, die Länge zugunsten von Sonderzeichen opfern, gleichen das nicht aus: "P@ssw0rd!" gehört weiterhin zu den ersten Vermutungen jedes Knacktools.',
+        'Ein Passwort, das in einem Leak aufgetaucht ist, muss als kompromittiert gelten, auch wenn der Dienst Sie nie informiert hat. Die Prüfung gegen eine Leak-Datenbank dauert eine Sekunde und bringt mehr als ein weiteres Sonderzeichen.',
       ],
       bullets: [
         'Stark: 16 zufällige Zeichen aus einem CSPRNG, im Passwortmanager gespeichert',
         'Stark: eine Passphrase aus 5–6 Wörtern mit zufälligem Trenner und einem großgeschriebenen Wort',
         'Schwach: persönliche Daten, Tastaturmuster (qwerty, 1qaz2wsx) oder Wörterbuchwörter',
-        'Schwach: Leet-Ersetzungen (a→@, e→3, o→0) — jedes Knacktool enthält sie',
+        'Schwach: Leet-Ersetzungen (a→@, e→3, o→0): jedes Knacktool enthält sie',
         'Schwach: dasselbe Passwort auf mehreren Konten, unabhängig von der Länge',
       ],
     },
@@ -713,22 +713,22 @@ export const de: LocalizedArticleContent = {
       paragraphs: [
         'Das National Institute of Standards and Technology (NIST) hat seine Digital Identity Guidelines (SP 800-63B) aktualisiert, um die moderne Forschung zur Passwortsicherheit widerzuspiegeln. Diese Richtlinien sind zum Goldstandard für Organisationen weltweit geworden.',
         'Die wichtigsten NIST-Empfehlungen umfassen: Passwörter bis zu 64 Zeichen zulassen; ein Minimum von 8 Zeichen verlangen (12+ empfohlen); KEINE willkürlichen Komplexitätsregeln erzwingen (wie Großbuchstabe + Zahl + Symbol); KEINE periodischen Passwortänderungen verlangen, es sei denn, es gibt Hinweise auf eine Kompromittierung; Passwörter gegen bekannte Breach-Listen prüfen; und die Einfügefunktion in Passwortfeldern unterstützen.',
-        'Die Begründung für den Verzicht auf Komplexitätsregeln ist überzeugend: Erzwungene Komplexität führt dazu, dass Benutzer vorhersehbare Muster wie "Spring2026!" oder "P@ssw0rd" erstellen — Passwörter, die die Regeln erfüllen, aber trivial geknackt werden. Stattdessen betont NIST Länge und Unvorhersehbarkeit als primäre Sicherheitsfaktoren.',
+        'Die Begründung für den Verzicht auf Komplexitätsregeln ist überzeugend: Erzwungene Komplexität führt dazu, dass Benutzer vorhersehbare Muster wie "Spring2026!" oder "P@ssw0rd" erstellen, Passwörter, die die Regeln erfüllen, aber trivial geknackt werden. Stattdessen betont NIST Länge und Unvorhersehbarkeit als primäre Sicherheitsfaktoren.',
         'NIST empfiehlt außerdem, dass Organisationen Rate-Limiting bei Anmeldeversuchen implementieren, Multi-Faktor-Authentifizierung (MFA) verwenden und gespeicherte Passwörter mit modernen Algorithmen wie Argon2id oder bcrypt mit angemessenen Work-Faktoren hashen.',
       ],
     },
     {
       heading: 'Der Passphrasen-Ansatz: einprägsam und sicher',
       paragraphs: [
-        'Eine Passphrase ist eine Folge zufälliger Wörter, die aneinandergereiht werden, wie "correct-horse-battery-staple" (das berühmte XKCD-Beispiel). Bei korrekter Generierung — unter Verwendung einer Wortliste mit mindestens 7.776 Einträgen (wie die EFF-Diceware-Liste) — fügt jedes Wort ungefähr 12,9 Bits Entropie hinzu.',
-        'Eine Vier-Wort-Passphrase bietet ungefähr 52 Bits Entropie, während eine Sechs-Wort-Passphrase ungefähr 78 Bits erreicht — vergleichbar mit einem zufälligen 12-Zeichen-Passwort, aber viel einfacher zu tippen und zu merken. Für kritische Konten verwenden Sie fünf oder sechs Wörter.',
-        'Wichtige Regeln für Passphrasen: Verwenden Sie eine wirklich zufällige Auswahlmethode (Würfel oder ein kryptographischer Zufallsgenerator — wählen Sie nie selbst Wörter aus); vermeiden Sie berühmte Zitate, Songtexte oder Buchtitel; fügen Sie ein Trennzeichen zwischen den Wörtern ein (Bindestriche, Punkte oder Leerzeichen); und erwägen Sie, ein zufälliges Wort großzuschreiben oder eine Ziffer einzufügen für zusätzliche Entropie ohne Einbuße bei der Merkbarkeit.',
+        'Eine Passphrase ist eine Folge zufälliger Wörter, die aneinandergereiht werden, wie "correct-horse-battery-staple" (das berühmte XKCD-Beispiel). Bei korrekter Generierung, unter Verwendung einer Wortliste mit mindestens 7.776 Einträgen (wie die EFF-Diceware-Liste), fügt jedes Wort ungefähr 12,9 Bits Entropie hinzu.',
+        'Eine Vier-Wort-Passphrase bietet ungefähr 52 Bits Entropie, während eine Sechs-Wort-Passphrase ungefähr 78 Bits erreicht, vergleichbar mit einem zufälligen 12-Zeichen-Passwort, aber viel einfacher zu tippen und zu merken. Für kritische Konten verwenden Sie fünf oder sechs Wörter.',
+        'Wichtige Regeln für Passphrasen: Verwenden Sie eine wirklich zufällige Auswahlmethode (Würfel oder ein kryptographischer Zufallsgenerator; wählen Sie nie selbst Wörter aus); vermeiden Sie berühmte Zitate, Songtexte oder Buchtitel; fügen Sie ein Trennzeichen zwischen den Wörtern ein (Bindestriche, Punkte oder Leerzeichen); und erwägen Sie, ein zufälliges Wort großzuschreiben oder eine Ziffer einzufügen für zusätzliche Entropie ohne Einbuße bei der Merkbarkeit.',
       ],
       bullets: [
-        '4 Wörter: ~52 Bits — geeignet für Konten mit mittlerem Risiko',
-        '5 Wörter: ~65 Bits — gut für die meisten persönlichen Konten',
-        '6 Wörter: ~78 Bits — stark für E-Mail und Finanzkonten',
-        '7 Wörter: ~90 Bits — hervorragend für Master-Passwörter und Krypto-Wallets',
+        '4 Wörter: ~52 Bits, geeignet für Konten mit mittlerem Risiko',
+        '5 Wörter: ~65 Bits, gut für die meisten persönlichen Konten',
+        '6 Wörter: ~78 Bits, stark für E-Mail und Finanzkonten',
+        '7 Wörter: ~90 Bits, hervorragend für Master-Passwörter und Krypto-Wallets',
       ],
     },
     {
@@ -737,7 +737,7 @@ export const de: LocalizedArticleContent = {
         'Für alltägliche Konten verwenden Sie einen Passwort-Manager, um einzigartige zufällige Passwörter mit 16 oder mehr Zeichen zu generieren und zu speichern. Ihr Passwort-Manager übernimmt die Komplexität, sodass jedes Passwort maximal zufällig sein kann, ohne dass Sie es sich merken müssen.',
         'Für Ihr Master-Passwort (das einzige Passwort, das Sie sich merken müssen) verwenden Sie die Passphrasen-Methode: Würfeln Sie oder verwenden Sie einen kryptographischen Generator, um 5-7 zufällige Wörter aus einer großen Wortliste auszuwählen. Schreiben Sie es auf und bewahren Sie das Papier an einem sicheren physischen Ort auf, bis Sie es auswendig können, dann vernichten Sie das Papier.',
         'Für Konten, bei denen Sie keinen Passwort-Manager verwenden können (wie Ihre Computer-Anmeldung oder Telefon-PIN), erstellen Sie eine Passphrase, die schnell zu tippen ist. Üben Sie das Tippen mehrmals, um Muskelgedächtnis aufzubauen. Eine Phrase wie "ahorn-donner-giraffe-steckdose-22" ist sowohl stark als auch gut tippbar.',
-        'Verwenden Sie Passwörter niemals bei mehreren Konten wieder. Wenn ein Dienst gehackt wird, probieren Angreifer diese Zugangsdaten automatisch bei Hunderten anderer Websites aus — eine Technik namens Credential Stuffing. Ein einzigartiges Passwort für jedes Konto begrenzt den Schaden jedes einzelnen Datenlecks.',
+        'Verwenden Sie Passwörter niemals bei mehreren Konten wieder. Wenn ein Dienst gehackt wird, probieren Angreifer diese Zugangsdaten automatisch bei Hunderten anderer Websites aus, eine Technik namens Credential Stuffing. Ein einzigartiges Passwort für jedes Konto begrenzt den Schaden jedes einzelnen Datenlecks.',
       ],
     },
     {
@@ -767,7 +767,7 @@ export const de: LocalizedArticleContent = {
     {
       heading: 'Über Passwörter hinaus: Multi-Faktor-Authentifizierung',
       paragraphs: [
-        'Selbst das stärkste Passwort kann durch Phishing, Keylogger oder serverseitige Datenlecks kompromittiert werden. Die Multi-Faktor-Authentifizierung (MFA) fügt einen zweiten Verifizierungsschritt hinzu — typischerweise ein zeitbasiertes Einmalpasswort (TOTP) aus einer App wie Google Authenticator oder Authy oder ein Hardware-Sicherheitsschlüssel wie YubiKey.',
+        'Selbst das stärkste Passwort kann durch Phishing, Keylogger oder serverseitige Datenlecks kompromittiert werden. Die Multi-Faktor-Authentifizierung (MFA) fügt einen zweiten Verifizierungsschritt hinzu: typischerweise ein zeitbasiertes Einmalpasswort (TOTP) aus einer App wie Google Authenticator oder Authy oder ein Hardware-Sicherheitsschlüssel wie YubiKey.',
         'Aktivieren Sie MFA bei jedem Konto, das es unterstützt, wobei Sie E-Mail (Ihr Wiederherstellungszentrum), Banking, Cloud-Speicher und soziale Medien priorisieren. Hardware-Sicherheitsschlüssel (FIDO2/WebAuthn) bieten den stärksten Phishing-Schutz, da sie die tatsächliche Website-Domain vor der Authentifizierung überprüfen.',
         'Bewahren Sie Ihre MFA-Backup-Codes in Ihrem Passwort-Manager oder an einem separaten sicheren Ort auf. Den Zugang zu Ihrem MFA-Gerät ohne Backup-Codes zu verlieren, kann Sie dauerhaft aus Ihren Konten aussperren.',
       ],
@@ -807,7 +807,7 @@ export const it: LocalizedArticleContent = {
       heading: 'Comprendere l\'entropia delle password',
       paragraphs: [
         'L\'entropia è una misura matematica di quanto sia imprevedibile una password. Si misura in bit: una password con 40 bit di entropia ha 2^40 (circa 1 bilione) combinazioni possibili. Gli esperti di sicurezza raccomandano generalmente un minimo di 60 bit per account standard e 80+ bit per obiettivi di alto valore come il banking o l\'email.',
-        'La formula è semplice: entropia = log2(dimensione_pool^lunghezza). Una password di 12 caratteri che usa lettere maiuscole (26), minuscole (26), cifre (10) e simboli (33) attinge da un pool di 95 caratteri. Ciò dà approssimativamente 79 bit di entropia — una protezione solida contro attacchi offline.',
+        'La formula è semplice: entropia = log2(dimensione_pool^lunghezza). Una password di 12 caratteri che usa lettere maiuscole (26), minuscole (26), cifre (10) e simboli (33) attinge da un pool di 95 caratteri. Ciò dà approssimativamente 79 bit di entropia: una protezione solida contro attacchi offline.',
         'Tuttavia, l\'entropia presuppone che la password sia veramente casuale. Una password come "Password123!" utilizza tecnicamente tutte e quattro le classi di caratteri ma ha un\'entropia effettiva quasi nulla perché segue uno schema prevedibile. Gli attaccanti mantengono dizionari di milioni di tali schemi comuni e li testano per primi.',
       ],
       bullets: [
@@ -826,10 +826,10 @@ export const it: LocalizedArticleContent = {
         'Nel generatore scegli la lunghezza predefinita: 12 caratteri per gli account quotidiani, 16 per le password salvate in un gestore e 20 per la password master o l\'accesso amministratore. Otto caratteri sono solo un ripiego per i sistemi vecchi che rifiutano valori più lunghi; in quel caso attiva l\'autenticazione a due fattori.',
       ],
       bullets: [
-        '8 caratteri — ~52 bit — esempio: N7#vQ2!a — solo account di scarso valore o sistemi legacy',
-        '12 caratteri — ~79 bit — esempio: K9$pL2@xQ4!m — minimo pratico per email, lavoro e acquisti',
-        '16 caratteri — ~105 bit — esempio: R4#tY8!kL2@pW6$z — valore consigliato per password generate da un gestore',
-        '20 caratteri — ~131 bit — esempio: H3$nB7@vC1!xZ5#qM9% — password master, wallet crypto e accesso amministratore',
+        '8 caratteri: ~52 bit. Esempio N7#vQ2!a. Solo account di scarso valore o sistemi legacy',
+        '12 caratteri: ~79 bit. Esempio K9$pL2@xQ4!m. Minimo pratico per email, lavoro e acquisti',
+        '16 caratteri: ~105 bit. Esempio R4#tY8!kL2@pW6$z. Valore consigliato per password generate da un gestore',
+        '20 caratteri: ~131 bit. Esempio H3$nB7@vC1!xZ5#qM9%. Password master, wallet crypto e accesso amministratore',
       ],
     },
     {
@@ -859,7 +859,7 @@ export const it: LocalizedArticleContent = {
         'Forte: 16 caratteri casuali da un CSPRNG, salvati in un gestore di password',
         'Forte: una passphrase di 5–6 parole con separatore casuale e una parola maiuscola',
         'Debole: dati personali, pattern di tastiera (qwerty, 1qaz2wsx) o parole da dizionario',
-        'Debole: sostituzioni leet (a→@, e→3, o→0) — ogni tool di cracking le include',
+        'Debole: sostituzioni leet (a→@, e→3, o→0): ogni tool di cracking le include',
         'Debole: la stessa password riutilizzata su più account, indipendentemente dalla lunghezza',
       ],
     },
@@ -868,22 +868,22 @@ export const it: LocalizedArticleContent = {
       paragraphs: [
         'Il National Institute of Standards and Technology (NIST) ha aggiornato le sue Digital Identity Guidelines (SP 800-63B) per riflettere la ricerca moderna sulla sicurezza delle password. Queste linee guida sono diventate il gold standard per le organizzazioni di tutto il mondo.',
         'Le raccomandazioni chiave del NIST includono: consentire password fino a 64 caratteri; richiedere un minimo di 8 caratteri (12+ raccomandato); NON imporre regole di complessità arbitrarie (come richiedere maiuscola + numero + simbolo); NON richiedere cambi periodici della password a meno che non ci siano prove di compromissione; verificare le password contro liste di password violate note; e supportare la funzionalità di incolla nei campi password.',
-        'La ragione per l\'abbandono delle regole di complessità è convincente: la complessità forzata porta gli utenti a creare schemi prevedibili come "Spring2026!" o "P@ssw0rd" — password che soddisfano le regole ma vengono decifrate banalmente. Invece, il NIST enfatizza lunghezza e imprevedibilità come i principali fattori di sicurezza.',
+        'La ragione per l\'abbandono delle regole di complessità è convincente: la complessità forzata porta gli utenti a creare schemi prevedibili come "Spring2026!" o "P@ssw0rd", password che soddisfano le regole ma vengono decifrate banalmente. Invece, il NIST enfatizza lunghezza e imprevedibilità come i principali fattori di sicurezza.',
         'Il NIST raccomanda inoltre che le organizzazioni implementino il rate limiting sui tentativi di accesso, utilizzino l\'autenticazione multifattore (MFA) e memorizzino le password con hash usando algoritmi moderni come Argon2id o bcrypt con fattori di lavoro appropriati.',
       ],
     },
     {
       heading: 'L\'approccio passphrase: memorizzabile e sicuro',
       paragraphs: [
-        'Una passphrase è una sequenza di parole casuali concatenate, come "correct-horse-battery-staple" (il famoso esempio XKCD). Quando generata correttamente — usando una lista di almeno 7.776 parole (come la lista EFF Diceware) — ogni parola aggiunge approssimativamente 12,9 bit di entropia.',
-        'Una passphrase di quattro parole fornisce circa 52 bit di entropia, mentre una di sei parole raggiunge circa 78 bit — comparabile a una password casuale di 12 caratteri ma molto più facile da digitare e ricordare. Per account critici, usate cinque o sei parole.',
-        'Regole importanti per le passphrase: usate un metodo di selezione veramente casuale (dadi o un generatore crittografico — non scegliete mai le parole da soli); evitate citazioni famose, testi di canzoni o titoli di libri; aggiungete un carattere separatore tra le parole (trattini, punti o spazi); e considerate di mettere in maiuscolo una parola casuale o inserire una cifra per entropia aggiuntiva senza sacrificare la memorizzabilità.',
+        'Una passphrase è una sequenza di parole casuali concatenate, come "correct-horse-battery-staple" (il famoso esempio XKCD). Quando generata correttamente, usando una lista di almeno 7.776 parole (come la lista EFF Diceware), ogni parola aggiunge approssimativamente 12,9 bit di entropia.',
+        'Una passphrase di quattro parole fornisce circa 52 bit di entropia, mentre una di sei parole raggiunge circa 78 bit, comparabile a una password casuale di 12 caratteri ma molto più facile da digitare e ricordare. Per account critici, usate cinque o sei parole.',
+        'Regole importanti per le passphrase: usate un metodo di selezione veramente casuale (dadi o un generatore crittografico; non scegliete mai le parole da soli); evitate citazioni famose, testi di canzoni o titoli di libri; aggiungete un carattere separatore tra le parole (trattini, punti o spazi); e considerate di mettere in maiuscolo una parola casuale o inserire una cifra per entropia aggiuntiva senza sacrificare la memorizzabilità.',
       ],
       bullets: [
-        '4 parole: ~52 bit — adatto per account a rischio medio',
-        '5 parole: ~65 bit — buono per la maggior parte degli account personali',
-        '6 parole: ~78 bit — forte per email e conti finanziari',
-        '7 parole: ~90 bit — eccellente per password master e wallet crypto',
+        '4 parole: ~52 bit, adatto per account a rischio medio',
+        '5 parole: ~65 bit, buono per la maggior parte degli account personali',
+        '6 parole: ~78 bit, forte per email e conti finanziari',
+        '7 parole: ~90 bit, eccellente per password master e wallet crypto',
       ],
     },
     {
@@ -892,7 +892,7 @@ export const it: LocalizedArticleContent = {
         'Per gli account quotidiani, usate un gestore di password per generare e memorizzare password casuali uniche di 16 o più caratteri. Il vostro gestore gestisce la complessità, così ogni password può essere massimamente casuale senza alcuno sforzo di memorizzazione.',
         'Per la vostra password master (l\'unica password che dovete memorizzare), usate il metodo passphrase: lanciate dadi o usate un generatore crittografico per selezionare 5-7 parole casuali da una grande lista. Scrivetela e conservate il foglio in un luogo fisico sicuro finché non l\'avrete memorizzata, poi distruggete il foglio.',
         'Per account dove non potete usare un gestore (come l\'accesso al computer o il PIN del telefono), create una passphrase facile da digitare velocemente. Esercitatevi a digitarla più volte per sviluppare la memoria muscolare. Una frase come "acero-tuono-giraffa-presa-22" è sia forte che facile da digitare.',
-        'Non riutilizzate mai le password tra diversi account. Se un servizio subisce una violazione, gli attaccanti proveranno automaticamente quelle credenziali su centinaia di altri siti — una tecnica chiamata credential stuffing. Una password unica per ogni account limita il raggio d\'impatto di qualsiasi singola violazione.',
+        'Non riutilizzate mai le password tra diversi account. Se un servizio subisce una violazione, gli attaccanti proveranno automaticamente quelle credenziali su centinaia di altri siti, una tecnica chiamata credential stuffing. Una password unica per ogni account limita il raggio d\'impatto di qualsiasi singola violazione.',
       ],
     },
     {
@@ -922,7 +922,7 @@ export const it: LocalizedArticleContent = {
     {
       heading: 'Oltre le password: autenticazione multifattore',
       paragraphs: [
-        'Anche la password più forte può essere compromessa tramite phishing, keylogger o violazioni lato server. L\'autenticazione multifattore (MFA) aggiunge un secondo passaggio di verifica — tipicamente una password temporanea basata sul tempo (TOTP) da un\'app come Google Authenticator o Authy, o una chiave di sicurezza hardware come YubiKey.',
+        'Anche la password più forte può essere compromessa tramite phishing, keylogger o violazioni lato server. L\'autenticazione multifattore (MFA) aggiunge un secondo passaggio di verifica: tipicamente una password temporanea basata sul tempo (TOTP) da un\'app come Google Authenticator o Authy, o una chiave di sicurezza hardware come YubiKey.',
         'Attivate l\'MFA su ogni account che lo supporta, dando priorità all\'email (il vostro centro di recupero), al banking, all\'archiviazione cloud e ai social media. Le chiavi di sicurezza hardware (FIDO2/WebAuthn) offrono la protezione più forte contro il phishing perché verificano il dominio effettivo del sito web prima dell\'autenticazione.',
         'Conservate i vostri codici di backup MFA nel vostro gestore di password o in un\'altra posizione sicura separata. Perdere l\'accesso al dispositivo MFA senza codici di backup può bloccarvi permanentemente dai vostri account.',
       ],
@@ -962,7 +962,7 @@ export const pt: LocalizedArticleContent = {
       heading: 'Entendendo a entropia de senhas',
       paragraphs: [
         'Entropia é uma medida matemática de quão imprevisível uma senha é. É medida em bits: uma senha com 40 bits de entropia tem 2^40 (aproximadamente 1 trilhão) combinações possíveis. Especialistas em segurança geralmente recomendam um mínimo de 60 bits para contas padrão e 80+ bits para alvos de alto valor como banking ou email.',
-        'A fórmula é direta: entropia = log2(tamanho_do_pool^comprimento). Uma senha de 12 caracteres usando letras maiúsculas (26), minúsculas (26), dígitos (10) e símbolos (33) utiliza um pool de 95 caracteres. Isso dá aproximadamente 79 bits de entropia — proteção sólida contra ataques offline.',
+        'A fórmula é direta: entropia = log2(tamanho_do_pool^comprimento). Uma senha de 12 caracteres usando letras maiúsculas (26), minúsculas (26), dígitos (10) e símbolos (33) utiliza um pool de 95 caracteres. Isso dá aproximadamente 79 bits de entropia: proteção sólida contra ataques offline.',
         'No entanto, a entropia assume que a senha é verdadeiramente aleatória. Uma senha como "Password123!" tecnicamente usa todas as quatro classes de caracteres, mas tem entropia efetiva quase zero porque segue um padrão previsível. Atacantes mantêm dicionários de milhões de tais padrões comuns e os testam primeiro.',
       ],
       bullets: [
@@ -981,10 +981,10 @@ export const pt: LocalizedArticleContent = {
         'No gerador, escolha a predefinição de comprimento: 12 caracteres para contas do dia a dia, 16 para senhas guardadas em um gerenciador e 20 para a senha mestra ou acesso de administrador. Oito caracteres são apenas um recurso para sistemas antigos que recusam valores maiores; nesse caso, ative a autenticação de dois fatores.',
       ],
       bullets: [
-        '8 caracteres — ~52 bits — exemplo: N7#vQ2!a — apenas contas de baixo valor ou sistemas antigos',
-        '12 caracteres — ~79 bits — exemplo: K9$pL2@xQ4!m — mínimo prático para email, trabalho e compras',
-        '16 caracteres — ~105 bits — exemplo: R4#tY8!kL2@pW6$z — valor recomendado para senhas criadas por um gerenciador',
-        '20 caracteres — ~131 bits — exemplo: H3$nB7@vC1!xZ5#qM9% — senhas mestras, carteiras cripto e acesso de administrador',
+        '8 caracteres: ~52 bits. Exemplo N7#vQ2!a. Apenas contas de baixo valor ou sistemas antigos',
+        '12 caracteres: ~79 bits. Exemplo K9$pL2@xQ4!m. Mínimo prático para email, trabalho e compras',
+        '16 caracteres: ~105 bits. Exemplo R4#tY8!kL2@pW6$z. Valor recomendado para senhas criadas por um gerenciador',
+        '20 caracteres: ~131 bits. Exemplo H3$nB7@vC1!xZ5#qM9%. Senhas mestras, carteiras cripto e acesso de administrador',
       ],
     },
     {
@@ -1014,7 +1014,7 @@ export const pt: LocalizedArticleContent = {
         'Forte: 16 caracteres aleatórios de um CSPRNG, guardados num gestor de senhas',
         'Forte: uma frase-passe de 5–6 palavras com separador aleatório e uma palavra em maiúscula',
         'Fraca: dados pessoais, padrões de teclado (qwerty, 1qaz2wsx) ou palavras do dicionário',
-        'Fraca: substituições leet (a→@, e→3, o→0) — todas as ferramentas as incluem',
+        'Fraca: substituições leet (a→@, e→3, o→0): todas as ferramentas as incluem',
         'Fraca: a mesma senha reutilizada em várias contas, independentemente do comprimento',
       ],
     },
@@ -1023,22 +1023,22 @@ export const pt: LocalizedArticleContent = {
       paragraphs: [
         'O National Institute of Standards and Technology (NIST) atualizou suas Digital Identity Guidelines (SP 800-63B) para refletir a pesquisa moderna sobre segurança de senhas. Essas diretrizes se tornaram o padrão ouro para organizações em todo o mundo.',
         'As principais recomendações do NIST incluem: permitir senhas de até 64 caracteres; exigir um mínimo de 8 caracteres (12+ recomendado); NÃO impor regras de complexidade arbitrárias (como exigir maiúscula + número + símbolo); NÃO exigir alterações periódicas de senha a menos que haja evidência de comprometimento; verificar senhas contra listas de senhas vazadas conhecidas; e suportar a funcionalidade de colar em campos de senha.',
-        'A razão para abandonar regras de complexidade é convincente: complexidade forçada leva os usuários a criar padrões previsíveis como "Spring2026!" ou "P@ssw0rd" — senhas que satisfazem as regras mas são trivialmente quebradas. Em vez disso, o NIST enfatiza comprimento e imprevisibilidade como os principais fatores de segurança.',
+        'A razão para abandonar regras de complexidade é convincente: complexidade forçada leva os usuários a criar padrões previsíveis como "Spring2026!" ou "P@ssw0rd", senhas que satisfazem as regras mas são trivialmente quebradas. Em vez disso, o NIST enfatiza comprimento e imprevisibilidade como os principais fatores de segurança.',
         'O NIST também recomenda que as organizações implementem limitação de taxa em tentativas de login, usem autenticação multifator (MFA) e armazenem senhas com hash usando algoritmos modernos como Argon2id ou bcrypt com fatores de trabalho apropriados.',
       ],
     },
     {
       heading: 'A abordagem de frases-senha: memoráveis e seguras',
       paragraphs: [
-        'Uma frase-senha é uma sequência de palavras aleatórias unidas, como "correct-horse-battery-staple" (o famoso exemplo XKCD). Quando gerada corretamente — usando uma lista de pelo menos 7.776 palavras (como a lista EFF Diceware) — cada palavra adiciona aproximadamente 12,9 bits de entropia.',
-        'Uma frase-senha de quatro palavras fornece aproximadamente 52 bits de entropia, enquanto uma de seis palavras alcança aproximadamente 78 bits — comparável a uma senha aleatória de 12 caracteres, mas muito mais fácil de digitar e lembrar. Para contas críticas, use cinco ou seis palavras.',
-        'Regras importantes para frases-senha: use um método de seleção verdadeiramente aleatório (dados ou um gerador criptográfico — nunca escolha palavras você mesmo); evite citações famosas, letras de músicas ou títulos de livros; adicione um caractere separador entre as palavras (hifens, pontos ou espaços); e considere capitalizar uma palavra aleatória ou inserir um dígito para entropia adicional sem sacrificar a memorabilidade.',
+        'Uma frase-senha é uma sequência de palavras aleatórias unidas, como "correct-horse-battery-staple" (o famoso exemplo XKCD). Quando gerada corretamente, usando uma lista de pelo menos 7.776 palavras (como a lista EFF Diceware), cada palavra adiciona aproximadamente 12,9 bits de entropia.',
+        'Uma frase-senha de quatro palavras fornece aproximadamente 52 bits de entropia, enquanto uma de seis palavras alcança aproximadamente 78 bits, comparável a uma senha aleatória de 12 caracteres, mas muito mais fácil de digitar e lembrar. Para contas críticas, use cinco ou seis palavras.',
+        'Regras importantes para frases-senha: use um método de seleção verdadeiramente aleatório (dados ou um gerador criptográfico; nunca escolha palavras você mesmo); evite citações famosas, letras de músicas ou títulos de livros; adicione um caractere separador entre as palavras (hifens, pontos ou espaços); e considere capitalizar uma palavra aleatória ou inserir um dígito para entropia adicional sem sacrificar a memorabilidade.',
       ],
       bullets: [
-        '4 palavras: ~52 bits — adequado para contas de risco médio',
-        '5 palavras: ~65 bits — bom para a maioria das contas pessoais',
-        '6 palavras: ~78 bits — forte para email e contas financeiras',
-        '7 palavras: ~90 bits — excelente para senhas mestras e carteiras cripto',
+        '4 palavras: ~52 bits, adequado para contas de risco médio',
+        '5 palavras: ~65 bits, bom para a maioria das contas pessoais',
+        '6 palavras: ~78 bits, forte para email e contas financeiras',
+        '7 palavras: ~90 bits, excelente para senhas mestras e carteiras cripto',
       ],
     },
     {
@@ -1047,7 +1047,7 @@ export const pt: LocalizedArticleContent = {
         'Para contas do dia a dia, use um gerenciador de senhas para gerar e armazenar senhas aleatórias únicas de 16 ou mais caracteres. Seu gerenciador cuida da complexidade, então cada senha pode ser maximamente aleatória sem nenhum esforço de memorização.',
         'Para sua senha mestra (a única senha que você precisa memorizar), use o método de frase-senha: lance dados ou use um gerador criptográfico para selecionar 5-7 palavras aleatórias de uma lista grande. Anote-a e guarde o papel em um local físico seguro até memorizar, depois destrua o papel.',
         'Para contas onde não pode usar um gerenciador (como o login do computador ou PIN do telefone), crie uma frase-senha fácil de digitar rapidamente. Pratique digitá-la várias vezes para desenvolver memória muscular. Uma frase como "bordo-trovão-girafa-tomada-22" é forte e fácil de digitar.',
-        'Nunca reutilize senhas entre contas. Se um serviço sofrer uma violação, os atacantes tentarão automaticamente essas credenciais em centenas de outros sites — uma técnica chamada credential stuffing. Uma senha única para cada conta limita o raio de impacto de qualquer violação individual.',
+        'Nunca reutilize senhas entre contas. Se um serviço sofrer uma violação, os atacantes tentarão automaticamente essas credenciais em centenas de outros sites, uma técnica chamada credential stuffing. Uma senha única para cada conta limita o raio de impacto de qualquer violação individual.',
       ],
     },
     {
@@ -1077,7 +1077,7 @@ export const pt: LocalizedArticleContent = {
     {
       heading: 'Além das senhas: autenticação multifator',
       paragraphs: [
-        'Mesmo a senha mais forte pode ser comprometida por phishing, keyloggers ou violações do lado do servidor. A autenticação multifator (MFA) adiciona uma segunda etapa de verificação — tipicamente uma senha temporária baseada em tempo (TOTP) de um app como Google Authenticator ou Authy, ou uma chave de segurança de hardware como YubiKey.',
+        'Mesmo a senha mais forte pode ser comprometida por phishing, keyloggers ou violações do lado do servidor. A autenticação multifator (MFA) adiciona uma segunda etapa de verificação: tipicamente uma senha temporária baseada em tempo (TOTP) de um app como Google Authenticator ou Authy, ou uma chave de segurança de hardware como YubiKey.',
         'Ative a MFA em cada conta que a suporte, priorizando email (seu centro de recuperação), banking, armazenamento em nuvem e redes sociais. Chaves de segurança de hardware (FIDO2/WebAuthn) proporcionam a proteção mais forte contra phishing porque verificam o domínio real do site antes de autenticar.',
         'Guarde seus códigos de backup MFA no seu gerenciador de senhas ou em outro local seguro separado. Perder acesso ao seu dispositivo MFA sem códigos de backup pode bloquear você permanentemente das suas contas.',
       ],
@@ -1108,16 +1108,16 @@ export const ru: LocalizedArticleContent = {
     {
       heading: 'Почему надёжность пароля по-прежнему важна в 2026 году',
       paragraphs: [
-        'Несмотря на развитие биометрии и passkeys, пароли остаются основным методом аутентификации для подавляющего большинства онлайн-аккаунтов. Согласно отчёту Verizon Data Breach Investigations 2025, более 80% взломов связаны со слабыми или украденными учётными данными. Это означает, что ваш пароль зачастую — единственный барьер между вашими личными данными и злоумышленником.',
+        'Несмотря на развитие биометрии и passkeys, пароли остаются основным методом аутентификации для подавляющего большинства онлайн-аккаунтов. Согласно отчёту Verizon Data Breach Investigations 2025, более 80% взломов связаны со слабыми или украденными учётными данными. Это означает, что ваш пароль зачастую единственный барьер между вашими личными данными и злоумышленником.',
         'Современные атакующие используют инструменты brute-force с GPU-ускорением, проверяющие миллиарды комбинаций паролей в секунду. Простой 8-символьный пароль из строчных букв можно взломать менее чем за 5 минут. Однако правильно составленный 16-символьный пароль из смешанных типов символов потребует столетий для взлома с текущими технологиями.',
-        'Хорошая новость в том, что создание надёжного пароля не требует запоминания случайных строк символов. Современные подходы — парольные фразы и менеджеры паролей — делают безопасность одновременно доступной и практичной. Это руководство проведёт вас через каждую технику, рекомендованную ведущими стандартами безопасности.',
+        'Хорошая новость в том, что создание надёжного пароля не требует запоминания случайных строк символов. Современные подходы: парольные фразы и менеджеры паролей делают безопасность одновременно доступной и практичной. Это руководство проведёт вас через каждую технику, рекомендованную ведущими стандартами безопасности.',
       ],
     },
     {
       heading: 'Понимание энтропии пароля',
       paragraphs: [
-        'Энтропия — это математическая мера непредсказуемости пароля. Она измеряется в битах: пароль с 40 битами энтропии имеет 2^40 (около 1 триллиона) возможных комбинаций. Эксперты по безопасности обычно рекомендуют минимум 60 бит для стандартных аккаунтов и 80+ бит для высокоценных целей, таких как банкинг или электронная почта.',
-        'Формула проста: энтропия = log2(размер_набора^длина). 12-символьный пароль из прописных букв (26), строчных букв (26), цифр (10) и символов (33) использует набор из 95 символов. Это даёт примерно 79 бит энтропии — надёжная защита от офлайн-атак.',
+        'Энтропия это математическая мера непредсказуемости пароля. Она измеряется в битах: пароль с 40 битами энтропии имеет 2^40 (около 1 триллиона) возможных комбинаций. Эксперты по безопасности обычно рекомендуют минимум 60 бит для стандартных аккаунтов и 80+ бит для высокоценных целей, таких как банкинг или электронная почта.',
+        'Формула проста: энтропия = log2(размер_набора^длина). 12-символьный пароль из прописных букв (26), строчных букв (26), цифр (10) и символов (33) использует набор из 95 символов. Это даёт примерно 79 бит энтропии: надёжная защита от офлайн-атак.',
         'Однако энтропия предполагает, что пароль действительно случаен. Пароль вроде "Password123!" технически использует все четыре класса символов, но имеет почти нулевую эффективную энтропию, так как следует предсказуемому шаблону. Атакующие поддерживают словари из миллионов таких распространённых шаблонов и проверяют их в первую очередь.',
       ],
       bullets: [
@@ -1130,26 +1130,26 @@ export const ru: LocalizedArticleContent = {
     {
       heading: 'Длина пароля: 8 vs 12 vs 16 vs 20 символов',
       paragraphs: [
-        'Длина — самый эффективный рычаг для усиления пароля. При наборе из 94 символов (буквы, цифры, символы) каждый дополнительный символ добавляет около 6,5 бит энтропии, то есть пространство перебора удваивается примерно каждые 1,1 символа.',
+        'Длина это самый эффективный рычаг для усиления пароля. При наборе из 94 символов (буквы, цифры, символы) каждый дополнительный символ добавляет около 6,5 бит энтропии, то есть пространство перебора удваивается примерно каждые 1,1 символа.',
         'Вот что это значит на практике для случайно сгенерированного пароля (значения предполагают криптографически стойкий генератор и отсутствие шаблонов):',
-        'Примеры ниже — случайные строки только для иллюстрации. Никогда не используйте их в своих аккаунтах: важен сам принцип, а не конкретные символы. Пароль из 12 символов надёжен потому, что каждый знак выбран случайно, а не потому, что в нём есть символ.',
-        'В генераторе выбирайте предустановленную длину: 12 символов — для повседневных аккаунтов, 16 — для паролей в менеджере, 20 — для мастер-пароля и админ-доступа. Восемь символов — лишь запасной вариант для старых систем, которые не принимают более длинные значения; в этом случае включите двухфакторную аутентификацию.',
+        'Примеры ниже: случайные строки только для иллюстрации. Никогда не используйте их в своих аккаунтах: важен сам принцип, а не конкретные символы. Пароль из 12 символов надёжен потому, что каждый знак выбран случайно, а не потому, что в нём есть символ.',
+        'В генераторе выбирайте предустановленную длину: 12 символов для повседневных аккаунтов, 16 для паролей в менеджере, 20 для мастер-пароля и админ-доступа. Восемь символов лишь запасной вариант для старых систем, которые не принимают более длинные значения; в этом случае включите двухфакторную аутентификацию.',
       ],
       bullets: [
-        '8 символов — ~52 бита — пример: N7#vQ2!a — только малозначимые аккаунты или старые системы',
-        '12 символов — ~79 бит — пример: K9$pL2@xQ4!m — практический минимум для почты, работы и покупок',
-        '16 символов — ~105 бит — пример: R4#tY8!kL2@pW6$z — стандарт для паролей из менеджера паролей',
-        '20 символов — ~131 бит — пример: H3$nB7@vC1!xZ5#qM9% — мастер-пароль, криптокошельки и админ-доступ',
+        '8 символов: ~52 бита. Пример N7#vQ2!a. Только малозначимые аккаунты или старые системы',
+        '12 символов: ~79 бит. Пример K9$pL2@xQ4!m. Практический минимум для почты, работы и покупок',
+        '16 символов: ~105 бит. Пример R4#tY8!kL2@pW6$z. Стандарт для паролей из менеджера паролей',
+        '20 символов: ~131 бит. Пример H3$nB7@vC1!xZ5#qM9%. Мастер-пароль, криптокошельки и админ-доступ',
       ],
     },
     {
       heading: 'Частые вопросы: пароль из 12 символов, примеры и проверка надёжности',
       paragraphs: [
-        '**Как выглядит надёжный пароль из 12 символов?** Случайный пример: K9$pL2@xQ4!m. В нём есть заглавные и строчные буквы, цифры и символы, но главное — он сгенерирован случайно. Не повторяйте эту строку: для каждого аккаунта создавайте новый пароль.',
-        '**Достаточно ли 12 символов?** Для большинства личных аккаунтов 12 случайных символов (около 79 бит) — практический минимум. Для паролей в менеджере берите 16 символов, а для мастер-пароля, криптокошелька и админ-доступа — 20. Восьми символов в 2026 году недостаточно для почты или банка.',
+        '**Как выглядит надёжный пароль из 12 символов?** Случайный пример: K9$pL2@xQ4!m. В нём есть заглавные и строчные буквы, цифры и символы, но главное: он сгенерирован случайно. Не повторяйте эту строку: для каждого аккаунта создавайте новый пароль.',
+        '**Достаточно ли 12 символов?** Для большинства личных аккаунтов 12 случайных символов (около 79 бит) это практический минимум. Для паролей в менеджере берите 16 символов, а для мастер-пароля, криптокошелька и админ-доступа 20. Восьми символов в 2026 году недостаточно для почты или банка.',
         '**Какой пароль из 8 символов можно считать надёжным?** Случайная строка вроде N7#vQ2!a намного лучше запоминающегося слова, но современное оборудование всё равно перебирает её за минуты или часы. Если система ограничивает пароль восемью символами, создайте уникальный случайный пароль и включите двухфакторную аутентификацию.',
         '**Как проверить пароль, не передавая его третьим сторонам?** Используйте индикатор надёжности в генераторе на этой странице: он работает локально в браузере. Не вставляйте настоящие пароли на случайные сайты проверки. Для проверки утечек используйте сервис с поддержкой k-анонимности, например Have I Been Pwned, и смените пароль, если он там есть.',
-        '**Что лучше: парольная фраза или случайный пароль?** Парольную фразу из 5–7 слов используйте там, где пароль нужно запоминать: мастер-пароль менеджера или вход в компьютер. Для остальных аккаунтов берите случайный пароль из 16–20 символов. Подробнее о компромиссе энтропии — в руководстве о парольных фразах.',
+        '**Что лучше: парольная фраза или случайный пароль?** Парольную фразу из 5–7 слов используйте там, где пароль нужно запоминать: мастер-пароль менеджера или вход в компьютер. Для остальных аккаунтов берите случайный пароль из 16–20 символов. Подробнее о компромиссе энтропии в руководстве о парольных фразах.',
         '**Относится ли это к паролям Wi-Fi?** Да. Пароль роутера должен быть уникальной случайной строкой из 16–20 символов, а не паролем от почты. Как сменить его на роутере и найти сохранённые сети в Windows, Android и iPhone, описано в руководстве по паролям Wi-Fi.',
       ],
       bullets: [
@@ -1160,16 +1160,16 @@ export const ru: LocalizedArticleContent = {
       ],
     },
     {
-      heading: 'Что делает пароль надёжным (а что — нет)',
+      heading: 'Что делает пароль надёжным (а что нет)',
       paragraphs: [
-        'Реальную стойкость определяют четыре свойства: длина, настоящая случайность, уникальность для каждого аккаунта и отсутствие пароля в публичных утечках. Правила сложности, которые жертвуют длиной ради символов, этого не компенсируют — "P@ssw0rd!" по-прежнему среди первых догадок любого инструмента взлома.',
+        'Реальную стойкость определяют четыре свойства: длина, настоящая случайность, уникальность для каждого аккаунта и отсутствие пароля в публичных утечках. Правила сложности, которые жертвуют длиной ради символов, этого не компенсируют: "P@ssw0rd!" по-прежнему среди первых догадок любого инструмента взлома.',
         'Пароль, появившийся в любой утечке, следует считать скомпрометированным, даже если сервис вас не уведомлял. Проверка по базе утечек занимает секунду и полезнее, чем ещё один символ.',
       ],
       bullets: [
         'Надёжный: 16 случайных символов от криптографически стойкого генератора, сохранённые в менеджере паролей',
         'Надёжный: парольная фраза из 5–6 слов со случайным разделителем и одним заглавным словом',
         'Слабый: персональные данные, клавиатурные шаблоны (qwerty, 1qaz2wsx) или словарные слова',
-        'Слабый: замены вида a→@, e→3, o→0 — они есть в каждом инструменте взлома',
+        'Слабый: замены вида a→@, e→3, o→0: они есть в каждом инструменте взлома',
         'Слабый: один и тот же пароль на разных аккаунтах, независимо от длины',
       ],
     },
@@ -1178,22 +1178,22 @@ export const ru: LocalizedArticleContent = {
       paragraphs: [
         'Национальный институт стандартов и технологий (NIST) обновил свои Рекомендации по цифровой идентификации (SP 800-63B), отражая современные исследования безопасности паролей. Эти рекомендации стали золотым стандартом для организаций по всему миру.',
         'Ключевые рекомендации NIST включают: разрешать пароли до 64 символов; требовать минимум 8 символов (рекомендуется 12+); НЕ навязывать произвольные правила сложности (вроде обязательных заглавных букв + цифр + символов); НЕ требовать периодической смены паролей без доказательств компрометации; проверять пароли по спискам известных утечек; и поддерживать вставку в поля паролей.',
-        'Обоснование отказа от правил сложности убедительно: принудительная сложность заставляет пользователей создавать предсказуемые шаблоны вроде "Spring2026!" или "P@ssw0rd" — пароли, которые формально соответствуют правилам, но тривиально взламываются. Вместо этого NIST делает акцент на длине и непредсказуемости как главных факторах безопасности.',
+        'Обоснование отказа от правил сложности убедительно: принудительная сложность заставляет пользователей создавать предсказуемые шаблоны вроде "Spring2026!" или "P@ssw0rd", пароли, которые формально соответствуют правилам, но тривиально взламываются. Вместо этого NIST делает акцент на длине и непредсказуемости как главных факторах безопасности.',
         'NIST также рекомендует организациям внедрять ограничение частоты попыток входа, использовать многофакторную аутентификацию (MFA) и хешировать сохранённые пароли современными алгоритмами, такими как Argon2id или bcrypt с соответствующими параметрами сложности.',
       ],
     },
     {
       heading: 'Парольные фразы: запоминаемые и безопасные',
       paragraphs: [
-        'Парольная фраза — это последовательность случайных слов, соединённых вместе, например "correct-horse-battery-staple" (знаменитый пример XKCD). При правильной генерации — с использованием списка минимум 7 776 слов (как EFF Diceware) — каждое слово добавляет примерно 12,9 бит энтропии.',
-        'Фраза из четырёх слов обеспечивает примерно 52 бита энтропии, а из шести слов — примерно 78 бит, что сопоставимо со случайным 12-символьным паролем, но гораздо проще для набора и запоминания. Для критически важных аккаунтов используйте пять или шесть слов.',
-        'Важные правила для парольных фраз: используйте по-настоящему случайный метод выбора (кубики или криптографический генератор — никогда не выбирайте слова сами); избегайте известных цитат, текстов песен или названий книг; добавляйте разделитель между словами (дефисы, точки или пробелы); рассмотрите написание одного случайного слова с заглавной буквы или вставку цифры для дополнительной энтропии без ущерба для запоминаемости.',
+        'Парольная фраза это последовательность случайных слов, соединённых вместе, например "correct-horse-battery-staple" (знаменитый пример XKCD). При правильной генерации, с использованием списка минимум 7 776 слов (как EFF Diceware), каждое слово добавляет примерно 12,9 бит энтропии.',
+        'Фраза из четырёх слов обеспечивает примерно 52 бита энтропии, а из шести слов примерно 78 бит, что сопоставимо со случайным 12-символьным паролем, но гораздо проще для набора и запоминания. Для критически важных аккаунтов используйте пять или шесть слов.',
+        'Важные правила для парольных фраз: используйте по-настоящему случайный метод выбора (кубики или криптографический генератор; никогда не выбирайте слова сами); избегайте известных цитат, текстов песен или названий книг; добавляйте разделитель между словами (дефисы, точки или пробелы); рассмотрите написание одного случайного слова с заглавной буквы или вставку цифры для дополнительной энтропии без ущерба для запоминаемости.',
       ],
       bullets: [
-        '4 слова: ~52 бита — подходит для аккаунтов среднего риска',
-        '5 слов: ~65 бит — хорошо для большинства личных аккаунтов',
-        '6 слов: ~78 бит — надёжно для почты и финансовых аккаунтов',
-        '7 слов: ~90 бит — отлично для мастер-паролей и криптокошельков',
+        '4 слова: ~52 бита, подходит для аккаунтов среднего риска',
+        '5 слов: ~65 бит, хорошо для большинства личных аккаунтов',
+        '6 слов: ~78 бит, надёжно для почты и финансовых аккаунтов',
+        '7 слов: ~90 бит, отлично для мастер-паролей и криптокошельков',
       ],
     },
     {
@@ -1202,13 +1202,13 @@ export const ru: LocalizedArticleContent = {
         'Для повседневных аккаунтов используйте менеджер паролей для генерации и хранения уникальных случайных паролей длиной от 16 символов. Менеджер берёт на себя всю сложность, поэтому каждый пароль может быть максимально случайным без необходимости запоминания.',
         'Для мастер-пароля (единственного пароля, который нужно запомнить) используйте метод парольной фразы: бросьте кубики или используйте криптографический генератор для выбора 5-7 случайных слов из большого списка. Запишите его и храните бумагу в безопасном физическом месте, пока не запомните, затем уничтожьте бумагу.',
         'Для аккаунтов, где нельзя использовать менеджер паролей (вход в компьютер или PIN телефона), создайте парольную фразу, которую легко быстро набирать. Потренируйтесь набирать её несколько раз для развития мышечной памяти. Фраза вроде "клён-гром-жираф-розетка-22" одновременно надёжная и удобная для набора.',
-        'Никогда не используйте пароли повторно для разных аккаунтов. Если один сервис подвергнется утечке, злоумышленники автоматически попробуют эти учётные данные на сотнях других сайтов — техника, называемая credential stuffing. Уникальный пароль для каждого аккаунта ограничивает последствия любой отдельной утечки.',
+        'Никогда не используйте пароли повторно для разных аккаунтов. Если один сервис подвергнется утечке, злоумышленники автоматически попробуют эти учётные данные на сотнях других сайтов, техника, называемая credential stuffing. Уникальный пароль для каждого аккаунта ограничивает последствия любой отдельной утечки.',
       ],
     },
     {
       heading: 'Распространённые ошибки при создании паролей',
       paragraphs: [
-        'Использование личной информации — самая распространённая и опасная ошибка. Имена членов семьи, домашних животных, дни рождения, годовщины, номера телефонов и адреса легко обнаруживаются через социальные сети. Атакующие составляют персонализированные словари из ваших публичных данных перед любой попыткой brute-force атаки.',
+        'Использование личной информации это самая распространённая и опасная ошибка. Имена членов семьи, домашних животных, дни рождения, годовщины, номера телефонов и адреса легко обнаруживаются через социальные сети. Атакующие составляют персонализированные словари из ваших публичных данных перед любой попыткой brute-force атаки.',
         'Клавиатурные шаблоны вроде "qwerty", "123456", "zxcvbn" или "1qaz2wsx" кажутся безопасными, потому что выглядят случайными, но они среди первых шаблонов, проверяемых инструментами взлома. Так же простые подстановки (@ вместо a, 3 вместо e, 0 вместо o) практически не добавляют безопасности, так как все инструменты взлома включают эти leet-speak преобразования.',
         'Инкрементирование паролей при принудительной смене (Password1 → Password2 → Password3) не даёт реального улучшения безопасности. Если злоумышленник получит любую версию, он тривиально угадает остальные. Именно поэтому NIST теперь рекомендует отказаться от обязательной периодической смены паролей.',
       ],
@@ -1225,14 +1225,14 @@ export const ru: LocalizedArticleContent = {
       heading: 'Менеджеры паролей: лучшая инвестиция в безопасность',
       paragraphs: [
         'Менеджер паролей генерирует, хранит и автоматически заполняет уникальные случайные пароли для каждого аккаунта. Ведущие решения включают 1Password, Bitwarden (с открытым кодом) и KeePass (офлайн). Каждый использует шифрование AES-256 для защиты вашего хранилища, а мастер-пароль служит ключом расшифровки.',
-        'Главное преимущество — полное устранение повторного использования паролей. С менеджером каждый аккаунт получает уникальный случайный пароль длиной 20+ символов. Вам нужно запомнить только один надёжный мастер-пароль. Большинство менеджеров также предупреждают, когда пароли обнаруживаются в известных базах утечек.',
-        'Выбирайте менеджер, который поддерживает ваши устройства и браузеры, предлагает экстренный доступ для доверенных контактов и прошёл независимый аудит безопасности. Bitwarden — отличный бесплатный вариант с открытым кодом, который может проверить любой. Для команд 1Password Business или Bitwarden Organizations предоставляют возможности общего хранилища.',
+        'Главное преимущество это полное устранение повторного использования паролей. С менеджером каждый аккаунт получает уникальный случайный пароль длиной 20+ символов. Вам нужно запомнить только один надёжный мастер-пароль. Большинство менеджеров также предупреждают, когда пароли обнаруживаются в известных базах утечек.',
+        'Выбирайте менеджер, который поддерживает ваши устройства и браузеры, предлагает экстренный доступ для доверенных контактов и прошёл независимый аудит безопасности. Bitwarden это отличный бесплатный вариант с открытым кодом, который может проверить любой. Для команд 1Password Business или Bitwarden Organizations предоставляют возможности общего хранилища.',
       ],
     },
     {
       heading: 'За пределами паролей: многофакторная аутентификация',
       paragraphs: [
-        'Даже самый надёжный пароль может быть скомпрометирован через фишинг, кейлогеры или утечки на стороне сервера. Многофакторная аутентификация (MFA) добавляет второй шаг проверки — обычно одноразовый пароль на основе времени (TOTP) из приложения вроде Google Authenticator или Authy, или аппаратный ключ безопасности, такой как YubiKey.',
+        'Даже самый надёжный пароль может быть скомпрометирован через фишинг, кейлогеры или утечки на стороне сервера. Многофакторная аутентификация (MFA) добавляет второй шаг проверки: обычно одноразовый пароль на основе времени (TOTP) из приложения вроде Google Authenticator или Authy, или аппаратный ключ безопасности, такой как YubiKey.',
         'Включите MFA на каждом аккаунте, который его поддерживает, отдавая приоритет электронной почте (вашему центру восстановления), банкингу, облачному хранилищу и социальным сетям. Аппаратные ключи безопасности (FIDO2/WebAuthn) обеспечивают наиболее сильную защиту от фишинга, поскольку проверяют реальный домен веб-сайта перед аутентификацией.',
         'Храните резервные коды MFA в менеджере паролей или в отдельном безопасном месте. Потеря доступа к устройству MFA без резервных кодов может навсегда заблокировать ваши аккаунты.',
       ],
@@ -1244,7 +1244,7 @@ export const zh: LocalizedArticleContent = {
   title: '2026年如何创建强密码：完整指南',
   excerpt:
     '了解如何使用NIST、OWASP和网络安全专家推荐的现代技术创建真正安全的密码。 本指南涵盖熵值、密码管理器、密码短语和常见错误。',
-  seoTitle: '2026年如何创建强密码 — NIST指南 | generatepasswordto.me',
+  seoTitle: '2026年如何创建强密码：NIST指南 | generatepasswordto.me',
   seoDescription:
     '2026年创建强密码的实用指南。 涵盖NIST 800-63B指南、熵值计算、密码短语、密码管理器以及最大安全性的分步说明。',
   keywords: [
@@ -1272,7 +1272,7 @@ export const zh: LocalizedArticleContent = {
       heading: '理解密码熵值',
       paragraphs: [
         '熵值是衡量密码不可预测性的数学指标。以比特为单位：拥有40比特熵值的密码有2^40（约1万亿）种可能组合。安全专家通常建议标准账户至少60比特，银行或电子邮件等高价值目标至少80比特以上。',
-        '公式很简单：熵值 = log2(字符池大小^长度)。一个使用大写字母(26)、小写字母(26)、数字(10)和符号(33)的12字符密码从95个字符的池中取值。这大约提供79比特的熵值——对离线攻击有可靠的保护。',
+        '公式很简单：熵值 = log2(字符池大小^长度)。一个使用大写字母(26)、小写字母(26)、数字(10)和符号(33)的12字符密码从95个字符的池中取值。这大约提供79比特的熵值：对离线攻击有可靠的保护。',
         '然而，熵值假设密码是真正随机的。像"Password123!"这样的密码虽然在技术上使用了所有四种字符类别，但因为遵循可预测的模式，其有效熵值几乎为零。攻击者维护着数百万这类常见模式的字典，并首先测试它们。',
       ],
       bullets: [
@@ -1291,10 +1291,10 @@ export const zh: LocalizedArticleContent = {
         '在生成器中选择长度预设：12 位用于日常账户，16 位用于密码管理器保存的密码，20 位用于主密码或管理员访问。8 位只适合拒绝更长密码的旧系统；这种情况下请同时开启双重身份验证。',
       ],
       bullets: [
-        '8 个字符 — 约 52 位 — 示例：N7#vQ2!a — 仅限低价值账户或旧系统',
-        '12 个字符 — 约 79 位 — 示例：K9$pL2@xQ4!m — 邮箱、工作与购物账户的实用最低标准',
-        '16 个字符 — 约 105 位 — 示例：R4#tY8!kL2@pW6$z — 密码管理器生成密码的推荐默认值',
-        '20 个字符 — 约 131 位 — 示例：H3$nB7@vC1!xZ5#qM9% — 主密码、加密钱包和管理员访问',
+        '8 个字符：约 52 位。示例：N7#vQ2!a。仅限低价值账户或旧系统',
+        '12 个字符：约 79 位。示例：K9$pL2@xQ4!m。邮箱、工作与购物账户的实用最低标准',
+        '16 个字符：约 105 位。示例：R4#tY8!kL2@pW6$z。密码管理器生成密码的推荐默认值',
+        '20 个字符：约 131 位。示例：H3$nB7@vC1!xZ5#qM9%。主密码、加密钱包和管理员访问',
       ],
     },
     {
@@ -1317,14 +1317,14 @@ export const zh: LocalizedArticleContent = {
     {
       heading: '什么让密码变强（什么不会）',
       paragraphs: [
-        '真正决定强度的是四个特性：长度、真正的随机性、每个账户唯一，以及密码未出现在公开泄露数据中。为符号牺牲长度的复杂度规则并不能弥补——"P@ssw0rd!" 依然排在所有破解工具的前几个猜测里。',
+        '真正决定强度的是四个特性：长度、真正的随机性、每个账户唯一，以及密码未出现在公开泄露数据中。为符号牺牲长度的复杂度规则并不能弥补："P@ssw0rd!" 依然排在所有破解工具的前几个猜测里。',
         '任何出现在泄露事件中的密码都应视为已泄露，即使服务方从未通知你。用泄露数据库检查只需一秒，比再多加一个符号更有价值。',
       ],
       bullets: [
         '强：由 CSPRNG 生成的 16 位随机字符，保存在密码管理器中',
         '强：5–6 个随机单词组成、带随机分隔符且其中一个单词大写的口令短语',
         '弱：个人资料、键盘模式（qwerty、1qaz2wsx）或词典单词',
-        '弱：leet 替换（a→@、e→3、o→0）——所有破解工具都包含这些规则',
+        '弱：leet 替换（a→@、e→3、o→0）：所有破解工具都包含这些规则',
         '弱：在多个账户重复使用同一个密码，无论其长度',
       ],
     },
@@ -1333,22 +1333,22 @@ export const zh: LocalizedArticleContent = {
       paragraphs: [
         '美国国家标准与技术研究院(NIST)更新了其数字身份指南(SP 800-63B)，以反映现代密码安全研究。这些指南已成为全球组织的黄金标准。',
         'NIST的关键建议包括：允许最长64个字符的密码；要求最少8个字符（建议12个以上）；不要强制执行任意复杂性规则（如要求大写字母+数字+符号）；除非有泄露证据，不要要求定期更改密码；对照已知泄露密码列表检查密码；支持密码字段的粘贴功能。',
-        '放弃复杂性规则的理由令人信服：强制复杂性导致用户创建可预测的模式，如"Spring2026!"或"P@ssw0rd"——这些密码满足规则但极易被破解。相反，NIST强调长度和不可预测性是安全的主要驱动因素。',
+        '放弃复杂性规则的理由令人信服：强制复杂性导致用户创建可预测的模式，如"Spring2026!"或"P@ssw0rd"，这些密码满足规则但极易被破解。相反，NIST强调长度和不可预测性是安全的主要驱动因素。',
         'NIST还建议组织对登录尝试实施速率限制，使用多因素认证(MFA)，并使用Argon2id或bcrypt等现代算法以适当的工作因子对存储的密码进行哈希处理。',
       ],
     },
     {
       heading: '密码短语方法：易记且安全',
       paragraphs: [
-        '密码短语是将随机单词串在一起的序列，如"correct-horse-battery-staple"（著名的XKCD示例）。当正确生成时——使用至少7,776个词条的词表（如EFF Diceware列表）——每个词大约增加12.9比特的熵值。',
-        '四个词的密码短语提供约52比特的熵值，六个词的短语达到约78比特——与12字符的随机密码相当，但更容易输入和记忆。对于关键账户，使用五到六个词。',
-        '密码短语的重要规则：使用真正随机的选词方法（骰子或密码学随机生成器——永远不要自己选词）；避免名言、歌词或书名；在词之间添加分隔符（连字符、点或空格）；考虑将一个随机词大写或插入数字，以在不牺牲可记忆性的情况下增加熵值。',
+        '密码短语是将随机单词串在一起的序列，如"correct-horse-battery-staple"（著名的XKCD示例）。当正确生成时：使用至少7,776个词条的词表（如EFF Diceware列表），每个词大约增加12.9比特的熵值。',
+        '四个词的密码短语提供约52比特的熵值，六个词的短语达到约78比特，与12字符的随机密码相当，但更容易输入和记忆。对于关键账户，使用五到六个词。',
+        '密码短语的重要规则：使用真正随机的选词方法（骰子或密码学随机生成器，永远不要自己选词）；避免名言、歌词或书名；在词之间添加分隔符（连字符、点或空格）；考虑将一个随机词大写或插入数字，以在不牺牲可记忆性的情况下增加熵值。',
       ],
       bullets: [
-        '4个词：~52比特——适合中等风险账户',
-        '5个词：~65比特——适合大多数个人账户',
-        '6个词：~78比特——适合电子邮件和金融账户',
-        '7个词：~90比特——适合主密码和加密钱包',
+        '4个词：~52比特，适合中等风险账户',
+        '5个词：~65比特，适合大多数个人账户',
+        '6个词：~78比特，适合电子邮件和金融账户',
+        '7个词：~90比特，适合主密码和加密钱包',
       ],
     },
     {
@@ -1357,7 +1357,7 @@ export const zh: LocalizedArticleContent = {
         '对于日常账户，使用密码管理器生成和存储16个或更多字符的唯一随机密码。密码管理器处理所有复杂性，因此每个密码都可以最大程度随机，无需记忆负担。',
         '对于主密码（您必须记住的唯一密码），使用密码短语方法：掷骰子或使用密码学生成器从大型词表中选择5-7个随机词。将其写下来并存放在安全的物理位置，直到记住为止，然后销毁纸张。',
         '对于无法使用密码管理器的账户（如电脑登录或手机PIN），创建一个容易快速输入的密码短语。多次练习输入以建立肌肉记忆。像"枫树-雷电-长颈鹿-插座-22"这样的短语既强大又易于输入。',
-        '永远不要在不同账户间重复使用密码。如果一个服务发生泄露，攻击者会自动在数百个其他网站上尝试这些凭证——这种技术称为凭证填充。每个账户使用唯一密码可以限制任何单次泄露的影响范围。',
+        '永远不要在不同账户间重复使用密码。如果一个服务发生泄露，攻击者会自动在数百个其他网站上尝试这些凭证，这种技术称为凭证填充。每个账户使用唯一密码可以限制任何单次泄露的影响范围。',
       ],
     },
     {
@@ -1387,7 +1387,7 @@ export const zh: LocalizedArticleContent = {
     {
       heading: '超越密码：多因素认证',
       paragraphs: [
-        '即使最强的密码也可能通过钓鱼、键盘记录器或服务器端泄露被攻破。多因素认证(MFA)添加了第二个验证步骤——通常是来自Google Authenticator或Authy等应用的基于时间的一次性密码(TOTP)，或YubiKey等硬件安全密钥。',
+        '即使最强的密码也可能通过钓鱼、键盘记录器或服务器端泄露被攻破。多因素认证(MFA)添加了第二个验证步骤，通常是来自Google Authenticator或Authy等应用的基于时间的一次性密码(TOTP)，或YubiKey等硬件安全密钥。',
         '在每个支持MFA的账户上启用它，优先考虑电子邮件（您的恢复中心）、银行、云存储和社交媒体。硬件安全密钥(FIDO2/WebAuthn)提供最强的反钓鱼保护，因为它们在认证前验证实际的网站域名。',
         '将您的MFA备份代码保存在密码管理器或另一个安全的单独位置。在没有备份代码的情况下丢失MFA设备的访问权限可能会永久锁定您的账户。',
       ],
@@ -1399,7 +1399,7 @@ export const ja: LocalizedArticleContent = {
   title: '2026年に強力なパスワードを作成する方法：完全ガイド',
   excerpt:
     'NIST、OWASP、サイバーセキュリティ専門家が推奨する最新技術を使用して、本当に安全なパスワードを作成する方法を学びましょう。 このガイドではエントロピー、パスワードマネージャー、パスフレーズ、よくある間違いについて解説します。',
-  seoTitle: '2026年に強力なパスワードを作成する方法 — NISTガイドライン | generatepasswordto.me',
+  seoTitle: '2026年に強力なパスワードを作成する方法：NISTガイドライン | generatepasswordto.me',
   seoDescription:
     '2026年版の強力なパスワード作成実践ガイド。 NIST 800-63Bガイドライン、エントロピー計算、パスフレーズ、パスワードマネージャー、最大限のセキュリティのためのステップバイステップ手順を網羅。',
   keywords: [
@@ -1446,10 +1446,10 @@ export const ja: LocalizedArticleContent = {
         'ジェネレーターでは長さのプリセットを選びます。日常的なアカウントは12文字、パスワードマネージャーに保存するものは16文字、マスターパスワードや管理者アクセスは20文字が目安です。8文字は長い値を受け付けない古いシステム向けの最後の手段で、その場合は二要素認証も有効にしてください。',
       ],
       bullets: [
-        '8文字 — 約52ビット — 例：N7#vQ2!a — 価値の低いアカウントまたは旧システムのみ',
-        '12文字 — 約79ビット — 例：K9$pL2@xQ4!m — メール・仕事・ショッピングの実用的な最低ライン',
-        '16文字 — 約105ビット — 例：R4#tY8!kL2@pW6$z — パスワードマネージャー生成パスワードの推奨値',
-        '20文字 — 約131ビット — 例：H3$nB7@vC1!xZ5#qM9% — マスターパスワード、暗号資産ウォレット、管理者アクセス',
+        '8文字：約52ビット。例：N7#vQ2!a。価値の低いアカウントまたは旧システムのみ',
+        '12文字：約79ビット。例：K9$pL2@xQ4!m。メール・仕事・ショッピングの実用的な最低ライン',
+        '16文字：約105ビット。例：R4#tY8!kL2@pW6$z。パスワードマネージャー生成パスワードの推奨値',
+        '20文字：約131ビット。例：H3$nB7@vC1!xZ5#qM9%。マスターパスワード、暗号資産ウォレット、管理者アクセス',
       ],
     },
     {
@@ -1495,15 +1495,15 @@ export const ja: LocalizedArticleContent = {
     {
       heading: 'パスフレーズアプローチ：覚えやすく安全',
       paragraphs: [
-        'パスフレーズとは、「correct-horse-battery-staple」（有名なXKCDの例）のようなランダムな単語をつなげた配列です。適切に生成された場合——少なくとも7,776語のワードリスト（EFF Dicewareリストなど）を使用——各単語は約12.9ビットのエントロピーを追加します。',
+        'パスフレーズとは、「correct-horse-battery-staple」（有名なXKCDの例）のようなランダムな単語をつなげた配列です。適切に生成された場合：少なくとも7,776語のワードリスト（EFF Dicewareリストなど）を使用、各単語は約12.9ビットのエントロピーを追加します。',
         '4語のパスフレーズは約52ビットのエントロピーを提供し、6語のパスフレーズは約78ビットに達します。これはランダムな12文字パスワードに匹敵しますが、入力と記憶がはるかに簡単です。重要なアカウントには5語または6語を使用してください。',
-        'パスフレーズの重要なルール：本当にランダムな選択方法を使用する（サイコロまたは暗号学的乱数生成器——自分で単語を選ばない）；有名な引用、歌詞、書籍タイトルを避ける；単語間に区切り文字を追加する（ハイフン、ピリオド、スペース）；記憶しやすさを犠牲にせずに追加のエントロピーのために、ランダムな単語を1つ大文字にするか数字を挿入することを検討する。',
+        'パスフレーズの重要なルール：本当にランダムな選択方法を使用する（サイコロまたは暗号学的乱数生成器、自分で単語を選ばない）；有名な引用、歌詞、書籍タイトルを避ける；単語間に区切り文字を追加する（ハイフン、ピリオド、スペース）；記憶しやすさを犠牲にせずに追加のエントロピーのために、ランダムな単語を1つ大文字にするか数字を挿入することを検討する。',
       ],
       bullets: [
-        '4語：~52ビット — 中リスクアカウントに適切',
-        '5語：~65ビット — ほとんどの個人アカウントに良い',
-        '6語：~78ビット — メールと金融アカウントに強力',
-        '7語：~90ビット — マスターパスワードと暗号通貨ウォレットに最適',
+        '4語：~52ビット、中リスクアカウントに適切',
+        '5語：~65ビット、ほとんどの個人アカウントに良い',
+        '6語：~78ビット、メールと金融アカウントに強力',
+        '7語：~90ビット、マスターパスワードと暗号通貨ウォレットに最適',
       ],
     },
     {
@@ -1582,7 +1582,7 @@ export const pl: LocalizedArticleContent = {
       heading: 'Zrozumienie entropii haseł',
       paragraphs: [
         'Entropia to matematyczna miara nieprzewidywalności hasła. Mierzy się ją w bitach: hasło z 40 bitami entropii ma 2^40 (około 1 biliona) możliwych kombinacji. Eksperci ds. bezpieczeństwa generalnie zalecają minimum 60 bitów dla standardowych kont i 80+ bitów dla celów o wysokiej wartości, takich jak bankowość czy e-mail.',
-        'Formuła jest prosta: entropia = log2(rozmiar_puli^długość). 12-znakowe hasło używające wielkich liter (26), małych liter (26), cyfr (10) i symboli (33) czerpie z puli 95 znaków. To daje około 79 bitów entropii — solidna ochrona przed atakami offline.',
+        'Formuła jest prosta: entropia = log2(rozmiar_puli^długość). 12-znakowe hasło używające wielkich liter (26), małych liter (26), cyfr (10) i symboli (33) czerpie z puli 95 znaków. To daje około 79 bitów entropii: solidna ochrona przed atakami offline.',
         'Jednak entropia zakłada, że hasło jest naprawdę losowe. Hasło takie jak "Password123!" technicznie używa wszystkich czterech klas znaków, ale ma niemal zerową efektywną entropię, ponieważ podąża za przewidywalnym wzorem. Atakujący utrzymują słowniki milionów takich popularnych wzorców i testują je w pierwszej kolejności.',
       ],
       bullets: [
@@ -1597,23 +1597,23 @@ export const pl: LocalizedArticleContent = {
       paragraphs: [
         'Długość to najskuteczniejsza dźwignia wzmacniania hasła. Przy zestawie 94 znaków (litery, cyfry, symbole) każdy dodatkowy znak dodaje około 6,5 bitu entropii, czyli przestrzeń poszukiwań podwaja się mniej więcej co 1,1 znaku.',
         'Co to oznacza w praktyce dla losowo wygenerowanego hasła (wartości zakładają kryptograficznie bezpieczny generator i brak powtarzanych wzorców):',
-        'Poniższe przykłady to losowe ciągi wyłącznie ilustracyjne — nigdy nie używaj ich w żadnym koncie. Liczy się wzorzec, a nie konkretne znaki. Hasło 12-znakowe jest silne, bo każdy znak wybrano losowo, a nie dlatego, że zawiera symbol.',
+        'Poniższe przykłady to losowe ciągi wyłącznie ilustracyjne: nigdy nie używaj ich w żadnym koncie. Liczy się wzorzec, a nie konkretne znaki. Hasło 12-znakowe jest silne, bo każdy znak wybrano losowo, a nie dlatego, że zawiera symbol.',
         'W generatorze wybierz ustawienie długości: 12 znaków dla codziennych kont, 16 dla haseł przechowywanych w menedżerze i 20 dla hasła głównego lub dostępu administratora. Osiem znaków to tylko rozwiązanie awaryjne dla starych systemów, które odrzucają dłuższe wartości; wtedy włącz uwierzytelnianie dwuskładnikowe.',
       ],
       bullets: [
-        '8 znaków — ~52 bity — przykład: N7#vQ2!a — tylko konta o niskiej wartości lub stare systemy',
-        '12 znaków — ~79 bitów — przykład: K9$pL2@xQ4!m — praktyczne minimum dla poczty, pracy i zakupów',
-        '16 znaków — ~105 bitów — przykład: R4#tY8!kL2@pW6$z — zalecana wartość dla haseł z menedżera haseł',
-        '20 znaków — ~131 bitów — przykład: H3$nB7@vC1!xZ5#qM9% — hasła główne, portfele krypto i dostęp administratora',
+        '8 znaków: ~52 bity. Przykład N7#vQ2!a. Tylko konta o niskiej wartości lub stare systemy',
+        '12 znaków: ~79 bitów. Przykład K9$pL2@xQ4!m. Praktyczne minimum dla poczty, pracy i zakupów',
+        '16 znaków: ~105 bitów. Przykład R4#tY8!kL2@pW6$z. Zalecana wartość dla haseł z menedżera haseł',
+        '20 znaków: ~131 bitów. Przykład H3$nB7@vC1!xZ5#qM9%. Hasła główne, portfele krypto i dostęp administratora',
       ],
     },
     {
       heading: 'Najczęstsze pytania: hasło 12 znaków, przykłady i sprawdzanie siły',
       paragraphs: [
-        '**Jak wygląda dobre hasło 12-znakowe?** Losowy przykład to K9$pL2@xQ4!m. Zawiera wielkie i małe litery, cyfry oraz symbole, ale najważniejsze jest to, że powstało losowo. Nie używaj tego ciągu ponownie — dla każdego konta wygeneruj nowe hasło.',
-        '**Czy 12 znaków wystarczy?** Dla większości kont osobistych 12 losowych znaków (około 79 bitów) to praktyczne minimum. Do haseł w menedżerze używaj 16 znaków, a do hasła głównego, portfeli krypto i dostępu administratora — 20. Osiem znaków nie wystarcza w 2026 roku do poczty ani bankowości.',
+        '**Jak wygląda dobre hasło 12-znakowe?** Losowy przykład to K9$pL2@xQ4!m. Zawiera wielkie i małe litery, cyfry oraz symbole, ale najważniejsze jest to, że powstało losowo. Nie używaj tego ciągu ponownie, dla każdego konta wygeneruj nowe hasło.',
+        '**Czy 12 znaków wystarczy?** Dla większości kont osobistych 12 losowych znaków (około 79 bitów) to praktyczne minimum. Do haseł w menedżerze używaj 16 znaków, a do hasła głównego, portfeli krypto i dostępu administratora 20. Osiem znaków nie wystarcza w 2026 roku do poczty ani bankowości.',
         '**Jakie hasło 8-znakowe jest dobre?** Losowy ciąg taki jak N7#vQ2!a jest znacznie lepszy od słowa łatwego do zapamiętania, ale współczesny sprzęt złamie go w minuty lub godziny. Jeśli system ogranicza hasło do 8 znaków, użyj unikalnej losowej wartości i włącz uwierzytelnianie dwuskładnikowe.',
-        '**Jak sprawdzić siłę hasła bez ujawniania go?** Skorzystaj ze wskaźnika siły w generatorze na tej stronie — działa lokalnie w przeglądarce. Nie wklejaj prawdziwych haseł do przypadkowych serwisów sprawdzających. Do sprawdzania wycieków użyj usługi obsługującej k-anonimowość, np. Have I Been Pwned, i zmień hasło, jeśli się tam pojawi.',
+        '**Jak sprawdzić siłę hasła bez ujawniania go?** Skorzystaj ze wskaźnika siły w generatorze na tej stronie, działa lokalnie w przeglądarce. Nie wklejaj prawdziwych haseł do przypadkowych serwisów sprawdzających. Do sprawdzania wycieków użyj usługi obsługującej k-anonimowość, np. Have I Been Pwned, i zmień hasło, jeśli się tam pojawi.',
         '**Fraza hasłowa czy losowe hasło?** Frazy złożonej z 5–7 słów używaj tam, gdzie hasło trzeba zapamiętać: hasło główne menedżera lub logowanie do komputera. Do pozostałych kont wybierz losowe hasło 16–20 znaków. Poradnik o frazach hasłowych wyjaśnia kompromis entropii.',
         '**Czy dotyczy to również hasła Wi-Fi?** Tak. Hasło routera powinno być unikalnym losowym ciągiem 16–20 znaków, a nie hasłem do poczty. Poradnik o hasłach Wi-Fi pokazuje, jak je zmienić w routerze i odnaleźć zapisane sieci w Windows, Androidzie i iPhone.',
       ],
@@ -1627,14 +1627,14 @@ export const pl: LocalizedArticleContent = {
     {
       heading: 'Co czyni hasło silnym (a co nie)',
       paragraphs: [
-        'O rzeczywistej sile decydują cztery właściwości: długość, prawdziwa losowość, unikalność dla każdego konta oraz brak hasła w publicznych wyciekach. Reguły złożoności, które poświęcają długość na rzecz symboli, tego nie wyrównują — "P@ssw0rd!" nadal jest wśród pierwszych zgadywanych przez każde narzędzie do łamania.',
+        'O rzeczywistej sile decydują cztery właściwości: długość, prawdziwa losowość, unikalność dla każdego konta oraz brak hasła w publicznych wyciekach. Reguły złożoności, które poświęcają długość na rzecz symboli, tego nie wyrównują: "P@ssw0rd!" nadal jest wśród pierwszych zgadywanych przez każde narzędzie do łamania.',
         'Hasło, które pojawiło się w jakimkolwiek wycieku, należy uznać za przejęte, nawet jeśli usługa nigdy o tym nie powiadomiła. Sprawdzenie w bazie wycieków zajmuje sekundę i daje więcej niż dodatkowy symbol.',
       ],
       bullets: [
         'Silne: 16 losowych znaków z CSPRNG, przechowywane w menedżerze haseł',
         'Silne: fraza hasłowa z 5–6 słów z losowym separatorem i jednym słowem wielką literą',
         'Słabe: dane osobowe, wzorce klawiatury (qwerty, 1qaz2wsx) lub słowa słownikowe',
-        'Słabe: podstawienia leet (a→@, e→3, o→0) — każde narzędzie je zawiera',
+        'Słabe: podstawienia leet (a→@, e→3, o→0): każde narzędzie je zawiera',
         'Słabe: to samo hasło używane na wielu kontach, niezależnie od długości',
       ],
     },
@@ -1643,22 +1643,22 @@ export const pl: LocalizedArticleContent = {
       paragraphs: [
         'National Institute of Standards and Technology (NIST) zaktualizował swoje wytyczne dotyczące tożsamości cyfrowej (SP 800-63B), aby odzwierciedlić nowoczesne badania nad bezpieczeństwem haseł. Te wytyczne stały się złotym standardem dla organizacji na całym świecie.',
         'Kluczowe zalecenia NIST obejmują: pozwalać na hasła do 64 znaków; wymagać minimum 8 znaków (zalecane 12+); NIE narzucać arbitralnych reguł złożoności (jak wymaganie wielkiej litery + cyfry + symbolu); NIE wymagać okresowych zmian haseł, chyba że istnieją dowody na kompromitację; sprawdzać hasła wobec znanych list wycieków; i wspierać funkcję wklejania w polach haseł.',
-        'Uzasadnienie rezygnacji z reguł złożoności jest przekonujące: wymuszona złożoność prowadzi użytkowników do tworzenia przewidywalnych wzorców jak "Spring2026!" lub "P@ssw0rd" — haseł, które spełniają reguły, ale są trywialnie łamane. Zamiast tego NIST podkreśla długość i nieprzewidywalność jako główne czynniki bezpieczeństwa.',
+        'Uzasadnienie rezygnacji z reguł złożoności jest przekonujące: wymuszona złożoność prowadzi użytkowników do tworzenia przewidywalnych wzorców jak "Spring2026!" lub "P@ssw0rd", haseł, które spełniają reguły, ale są trywialnie łamane. Zamiast tego NIST podkreśla długość i nieprzewidywalność jako główne czynniki bezpieczeństwa.',
         'NIST zaleca również, aby organizacje wdrożyły ograniczanie częstotliwości prób logowania, stosowały uwierzytelnianie wieloskładnikowe (MFA) i haszowały przechowywane hasła nowoczesnymi algorytmami, takimi jak Argon2id lub bcrypt z odpowiednimi parametrami złożoności.',
       ],
     },
     {
       heading: 'Podejście fraz hasłowych: łatwe do zapamiętania i bezpieczne',
       paragraphs: [
-        'Fraza hasłowa to sekwencja losowych słów połączonych razem, np. "correct-horse-battery-staple" (słynny przykład XKCD). Gdy jest prawidłowo wygenerowana — przy użyciu listy co najmniej 7 776 słów (jak lista EFF Diceware) — każde słowo dodaje około 12,9 bita entropii.',
-        'Czterowyrazowa fraza hasłowa zapewnia około 52 bitów entropii, podczas gdy sześciowyrazowa osiąga około 78 bitów — porównywalne z losowym 12-znakowym hasłem, ale znacznie łatwiejsze do wpisania i zapamiętania. Dla krytycznych kont używaj pięciu lub sześciu słów.',
-        'Ważne zasady dla fraz hasłowych: używaj naprawdę losowej metody wyboru (kostki lub generator kryptograficzny — nigdy nie wybieraj słów samodzielnie); unikaj znanych cytatów, tekstów piosenek lub tytułów książek; dodaj znak separatora między słowami (myślniki, kropki lub spacje); rozważ napisanie jednego losowego słowa wielką literą lub wstawienie cyfry dla dodatkowej entropii bez poświęcania zapamiętywalności.',
+        'Fraza hasłowa to sekwencja losowych słów połączonych razem, np. "correct-horse-battery-staple" (słynny przykład XKCD). Gdy jest prawidłowo wygenerowana, przy użyciu listy co najmniej 7 776 słów (jak lista EFF Diceware), każde słowo dodaje około 12,9 bita entropii.',
+        'Czterowyrazowa fraza hasłowa zapewnia około 52 bitów entropii, podczas gdy sześciowyrazowa osiąga około 78 bitów, porównywalne z losowym 12-znakowym hasłem, ale znacznie łatwiejsze do wpisania i zapamiętania. Dla krytycznych kont używaj pięciu lub sześciu słów.',
+        'Ważne zasady dla fraz hasłowych: używaj naprawdę losowej metody wyboru (kostki lub generator kryptograficzny; nigdy nie wybieraj słów samodzielnie); unikaj znanych cytatów, tekstów piosenek lub tytułów książek; dodaj znak separatora między słowami (myślniki, kropki lub spacje); rozważ napisanie jednego losowego słowa wielką literą lub wstawienie cyfry dla dodatkowej entropii bez poświęcania zapamiętywalności.',
       ],
       bullets: [
-        '4 słowa: ~52 bity — odpowiednie dla kont średniego ryzyka',
-        '5 słów: ~65 bitów — dobre dla większości kont osobistych',
-        '6 słów: ~78 bitów — silne dla e-maila i kont finansowych',
-        '7 słów: ~90 bitów — doskonałe dla haseł głównych i portfeli kryptowalut',
+        '4 słowa: ~52 bity, odpowiednie dla kont średniego ryzyka',
+        '5 słów: ~65 bitów, dobre dla większości kont osobistych',
+        '6 słów: ~78 bitów, silne dla e-maila i kont finansowych',
+        '7 słów: ~90 bitów, doskonałe dla haseł głównych i portfeli kryptowalut',
       ],
     },
     {
@@ -1667,7 +1667,7 @@ export const pl: LocalizedArticleContent = {
         'Dla codziennych kont używaj menedżera haseł do generowania i przechowywania unikalnych losowych haseł o długości 16 lub więcej znaków. Twój menedżer obsługuje złożoność, więc każde hasło może być maksymalnie losowe bez obciążenia pamięci.',
         'Dla hasła głównego (jedynego hasła, które musisz zapamiętać) użyj metody frazy hasłowej: rzuć kostkami lub użyj generatora kryptograficznego, aby wybrać 5-7 losowych słów z dużej listy. Zapisz je i przechowuj papier w bezpiecznym fizycznym miejscu, aż zapamiętasz, potem zniszcz papier.',
         'Dla kont, w których nie możesz użyć menedżera haseł (jak logowanie do komputera czy PIN telefonu), stwórz frazę hasłową łatwą do szybkiego wpisania. Przećwicz wpisywanie jej kilka razy, aby zbudować pamięć mięśniową. Fraza taka jak "klon-grzmot-żyrafa-gniazdko-22" jest jednocześnie silna i łatwa do wpisania.',
-        'Nigdy nie używaj haseł ponownie na różnych kontach. Jeśli jeden serwis zostanie naruszone, atakujący automatycznie wypróbują te poświadczenia na setkach innych stron — technika zwana credential stuffing. Unikalne hasło dla każdego konta ogranicza zakres szkód z każdego pojedynczego wycieku.',
+        'Nigdy nie używaj haseł ponownie na różnych kontach. Jeśli jeden serwis zostanie naruszone, atakujący automatycznie wypróbują te poświadczenia na setkach innych stron, technika zwana credential stuffing. Unikalne hasło dla każdego konta ogranicza zakres szkód z każdego pojedynczego wycieku.',
       ],
     },
     {
@@ -1697,7 +1697,7 @@ export const pl: LocalizedArticleContent = {
     {
       heading: 'Poza hasłami: uwierzytelnianie wieloskładnikowe',
       paragraphs: [
-        'Nawet najsilniejsze hasło może zostać skompromitowane przez phishing, keyloggery lub naruszenia po stronie serwera. Uwierzytelnianie wieloskładnikowe (MFA) dodaje drugi krok weryfikacji — zazwyczaj jednorazowe hasło oparte na czasie (TOTP) z aplikacji takiej jak Google Authenticator lub Authy, lub sprzętowy klucz bezpieczeństwa jak YubiKey.',
+        'Nawet najsilniejsze hasło może zostać skompromitowane przez phishing, keyloggery lub naruszenia po stronie serwera. Uwierzytelnianie wieloskładnikowe (MFA) dodaje drugi krok weryfikacji: zazwyczaj jednorazowe hasło oparte na czasie (TOTP) z aplikacji takiej jak Google Authenticator lub Authy, lub sprzętowy klucz bezpieczeństwa jak YubiKey.',
         'Włącz MFA na każdym koncie, które to obsługuje, priorytetowo traktując e-mail (twoje centrum odzyskiwania), bankowość, przechowywanie w chmurze i media społecznościowe. Sprzętowe klucze bezpieczeństwa (FIDO2/WebAuthn) zapewniają najsilniejszą ochronę przed phishingiem, ponieważ weryfikują rzeczywistą domenę strony internetowej przed uwierzytelnieniem.',
         'Przechowuj kody zapasowe MFA w swoim menedżerze haseł lub w oddzielnym bezpiecznym miejscu. Utrata dostępu do urządzenia MFA bez kodów zapasowych może trwale zablokować dostęp do twoich kont.',
       ],
@@ -1737,7 +1737,7 @@ export const vi: LocalizedArticleContent = {
       heading: 'Hiểu về entropy của mật khẩu',
       paragraphs: [
         'Entropy đo mức khó đoán của mật khẩu, tính bằng bit: 40 bit tương ứng 2^40 (khoảng 1 nghìn tỷ) tổ hợp. Chuyên gia khuyến nghị tối thiểu 60 bit cho tài khoản thông thường, 80 bit cho ngân hàng hoặc email.',
-        'Công thức: entropy = log2(pool_size^length). Mật khẩu 12 ký tự gồm chữ in hoa (26), chữ in thường (26), chữ số (10), ký hiệu (33), từ nhóm 95 ký tự, cho khoảng 79 bit — đủ chống tấn công ngoại tuyến.',
+        'Công thức: entropy = log2(pool_size^length). Mật khẩu 12 ký tự gồm chữ in hoa (26), chữ in thường (26), chữ số (10), ký hiệu (33), từ nhóm 95 ký tự, cho khoảng 79 bit: đủ chống tấn công ngoại tuyến.',
         'Entropy chỉ đúng khi mật khẩu thực sự ngẫu nhiên. "Password123!" dùng đủ bốn nhóm ký tự nhưng entropy hiệu dụng gần bằng không vì theo khuôn mẫu dễ đoán. Kẻ tấn công có từ điển hàng triệu khuôn mẫu, thử trước tiên.',
       ],
       bullets: [
@@ -1756,10 +1756,10 @@ export const vi: LocalizedArticleContent = {
         'Trong trình tạo, hãy chọn độ dài: 12 ký tự cho tài khoản hằng ngày, 16 ký tự cho mật khẩu lưu trong trình quản lý và 20 ký tự cho mật khẩu chính hoặc quyền quản trị. Tám ký tự chỉ là phương án dự phòng cho hệ thống cũ không nhận giá trị dài hơn; khi đó hãy bật xác thực hai yếu tố.',
       ],
       bullets: [
-        '8 ký tự — ~52 bit — ví dụ: N7#vQ2!a — chỉ tài khoản ít giá trị hoặc hệ thống cũ',
-        '12 ký tự — ~79 bit — ví dụ: K9$pL2@xQ4!m — tối thiểu thực tế cho email, công việc, mua sắm',
-        '16 ký tự — ~105 bit — ví dụ: R4#tY8!kL2@pW6$z — mặc định cho mật khẩu do trình quản lý tạo',
-        '20 ký tự — ~131 bit — ví dụ: H3$nB7@vC1!xZ5#qM9% — mật khẩu chính, ví tiền mã hóa, quyền quản trị',
+        '8 ký tự: ~52 bit. Ví dụ N7#vQ2!a. Chỉ tài khoản ít giá trị hoặc hệ thống cũ',
+        '12 ký tự: ~79 bit. Ví dụ K9$pL2@xQ4!m. Tối thiểu thực tế cho email, công việc, mua sắm',
+        '16 ký tự: ~105 bit. Ví dụ R4#tY8!kL2@pW6$z. Mặc định cho mật khẩu do trình quản lý tạo',
+        '20 ký tự: ~131 bit. Ví dụ H3$nB7@vC1!xZ5#qM9%. Mật khẩu chính, ví tiền mã hóa, quyền quản trị',
       ],
     },
     {
@@ -1782,14 +1782,14 @@ export const vi: LocalizedArticleContent = {
     {
       heading: 'Điều gì tạo nên mật khẩu mạnh (và điều gì không)',
       paragraphs: [
-        'Bốn thuộc tính quyết định độ mạnh: độ dài, tính ngẫu nhiên thật, tính duy nhất cho từng tài khoản và mật khẩu không nằm trong dữ liệu rò rỉ công khai. Quy tắc phức tạp đánh đổi độ dài lấy ký hiệu không bù được — "P@ssw0rd!" vẫn nằm trong những phỏng đoán đầu tiên của mọi công cụ bẻ khóa.',
+        'Bốn thuộc tính quyết định độ mạnh: độ dài, tính ngẫu nhiên thật, tính duy nhất cho từng tài khoản và mật khẩu không nằm trong dữ liệu rò rỉ công khai. Quy tắc phức tạp đánh đổi độ dài lấy ký hiệu không bù được: "P@ssw0rd!" vẫn nằm trong những phỏng đoán đầu tiên của mọi công cụ bẻ khóa.',
         'Mật khẩu từng xuất hiện trong bất kỳ vụ rò rỉ nào nên coi là đã bị xâm phạm, kể cả khi dịch vụ chưa thông báo. Kiểm tra với kho dữ liệu rò rỉ chỉ mất một giây, giá trị hơn thêm một ký hiệu.',
       ],
       bullets: [
         'Mạnh: chuỗi 16 ký tự ngẫu nhiên từ CSPRNG, lưu trong trình quản lý',
         'Mạnh: cụm 5–6 từ ngẫu nhiên, có dấu phân cách, một từ viết hoa',
         'Yếu: dữ liệu cá nhân, mẫu bàn phím (qwerty, 1qaz2wsx) hoặc từ điển',
-        'Yếu: thay thế kiểu leet (a→@, e→3, o→0) — công cụ bẻ khóa nào cũng có',
+        'Yếu: thay thế kiểu leet (a→@, e→3, o→0): công cụ bẻ khóa nào cũng có',
         'Yếu: dùng lại một mật khẩu cho nhiều tài khoản, bất kể độ dài',
       ],
     },
@@ -1798,7 +1798,7 @@ export const vi: LocalizedArticleContent = {
       paragraphs: [
         'Viện Tiêu chuẩn và Công nghệ Quốc gia Hoa Kỳ (NIST) cập nhật Hướng dẫn Nhận dạng Kỹ thuật số (SP 800-63B) theo nghiên cứu hiện đại về bảo mật mật khẩu. Đây là chuẩn vàng cho tổ chức toàn cầu.',
         'Khuyến nghị chính: cho phép mật khẩu tới 64 ký tự; tối thiểu 8 ký tự (khuyến nghị 12 trở lên); KHÔNG áp quy tắc phức tạp tùy ý (như bắt buộc chữ in hoa + chữ số + ký hiệu); KHÔNG bắt đổi mật khẩu định kỳ trừ khi có bằng chứng bị xâm phạm; đối chiếu danh sách mật khẩu đã rò rỉ; và cho phép dán vào ô mật khẩu.',
-        'Lý do: ép buộc phức tạp khiến người dùng tạo khuôn mẫu dễ đoán như "Spring2026!" hay "P@ssw0rd" — thỏa mãn quy tắc nhưng bị bẻ khóa dễ dàng. NIST nhấn mạnh độ dài và tính khó đoán là động lực chính của bảo mật.',
+        'Lý do: ép buộc phức tạp khiến người dùng tạo khuôn mẫu dễ đoán như "Spring2026!" hay "P@ssw0rd", thỏa mãn quy tắc nhưng bị bẻ khóa dễ dàng. NIST nhấn mạnh độ dài và tính khó đoán là động lực chính của bảo mật.',
         'NIST cũng khuyến nghị giới hạn số lần thử đăng nhập, dùng xác thực đa yếu tố (MFA) và băm mật khẩu lưu trữ bằng Argon2id hoặc bcrypt với hệ số công việc phù hợp.',
       ],
     },
@@ -1806,14 +1806,14 @@ export const vi: LocalizedArticleContent = {
       heading: 'Cách tiếp cận cụm mật khẩu: dễ nhớ và an toàn',
       paragraphs: [
         'Cụm mật khẩu là chuỗi từ ngẫu nhiên, như "correct-horse-battery-staple" (ví dụ nổi tiếng của XKCD). Tạo đúng cách bằng danh sách ít nhất 7.776 mục (như EFF Diceware), mỗi từ đóng góp khoảng 12,9 bit entropy.',
-        'Cụm bốn từ cho khoảng 52 bit, sáu từ đạt khoảng 78 bit — tương đương mật khẩu ngẫu nhiên 12 ký tự nhưng dễ gõ, dễ nhớ hơn. Tài khoản quan trọng nên dùng năm hoặc sáu từ.',
-        'Quy tắc: chọn từ thật ngẫu nhiên (xúc xắc hoặc trình tạo bằng mật mã — không tự chọn); tránh câu nói nổi tiếng, lời bài hát, tên sách; thêm dấu phân cách (gạch nối, dấu chấm, khoảng trắng); viết hoa một từ ngẫu nhiên hoặc chèn chữ số để tăng entropy mà vẫn dễ nhớ.',
+        'Cụm bốn từ cho khoảng 52 bit, sáu từ đạt khoảng 78 bit, tương đương mật khẩu ngẫu nhiên 12 ký tự nhưng dễ gõ, dễ nhớ hơn. Tài khoản quan trọng nên dùng năm hoặc sáu từ.',
+        'Quy tắc: chọn từ thật ngẫu nhiên (xúc xắc hoặc trình tạo bằng mật mã; không tự chọn); tránh câu nói nổi tiếng, lời bài hát, tên sách; thêm dấu phân cách (gạch nối, dấu chấm, khoảng trắng); viết hoa một từ ngẫu nhiên hoặc chèn chữ số để tăng entropy mà vẫn dễ nhớ.',
       ],
       bullets: [
-        '4 từ: ~52 bit — hợp tài khoản rủi ro trung bình',
-        '5 từ: ~65 bit — tốt cho hầu hết tài khoản cá nhân',
-        '6 từ: ~78 bit — mạnh cho email, tài khoản tài chính',
-        '7 từ: ~90 bit — xuất sắc cho mật khẩu chính, ví tiền mã hóa',
+        '4 từ: ~52 bit, hợp tài khoản rủi ro trung bình',
+        '5 từ: ~65 bit, tốt cho hầu hết tài khoản cá nhân',
+        '6 từ: ~78 bit, mạnh cho email, tài khoản tài chính',
+        '7 từ: ~90 bit, xuất sắc cho mật khẩu chính, ví tiền mã hóa',
       ],
     },
     {
@@ -1822,7 +1822,7 @@ export const vi: LocalizedArticleContent = {
         'Với tài khoản hằng ngày, dùng trình quản lý mật khẩu tạo và lưu mật khẩu ngẫu nhiên riêng từ 16 ký tự. Trình quản lý lo phần phức tạp, nên mỗi mật khẩu có thể ngẫu nhiên tối đa mà không cần ghi nhớ.',
         'Với mật khẩu chính (mật khẩu duy nhất bạn buộc phải nhớ), dùng cụm mật khẩu: gieo xúc xắc hoặc dùng trình tạo bằng mật mã chọn 5-7 từ ngẫu nhiên trong danh sách lớn. Viết ra giấy, cất an toàn đến khi nhớ rồi hủy.',
         'Với tài khoản không dùng được trình quản lý (như đăng nhập máy tính hoặc PIN điện thoại), tạo cụm mật khẩu dễ gõ nhanh. Luyện gõ vài lần để tạo phản xạ. Cụm như "maple-thunder-giraffe-socket-22" vừa mạnh vừa dễ gõ.',
-        'Không dùng lại mật khẩu giữa các tài khoản. Nếu một dịch vụ bị rò rỉ, kẻ tấn công thử thông tin đăng nhập đó trên hàng trăm trang khác — kỹ thuật nhồi thông tin đăng nhập. Mật khẩu riêng cho từng tài khoản giúp giới hạn thiệt hại.',
+        'Không dùng lại mật khẩu giữa các tài khoản. Nếu một dịch vụ bị rò rỉ, kẻ tấn công thử thông tin đăng nhập đó trên hàng trăm trang khác, kỹ thuật nhồi thông tin đăng nhập. Mật khẩu riêng cho từng tài khoản giúp giới hạn thiệt hại.',
       ],
     },
     {
@@ -1852,7 +1852,7 @@ export const vi: LocalizedArticleContent = {
     {
       heading: 'Ngoài mật khẩu: xác thực đa yếu tố',
       paragraphs: [
-        'Ngay cả mật khẩu mạnh nhất cũng có thể bị xâm phạm qua lừa đảo trực tuyến, keylogger hoặc rò rỉ phía máy chủ. Xác thực đa yếu tố (MFA) thêm bước xác minh thứ hai — thường là mật khẩu một lần theo thời gian (TOTP) từ ứng dụng như Google Authenticator hoặc Authy, hay khóa bảo mật phần cứng như YubiKey.',
+        'Ngay cả mật khẩu mạnh nhất cũng có thể bị xâm phạm qua lừa đảo trực tuyến, keylogger hoặc rò rỉ phía máy chủ. Xác thực đa yếu tố (MFA) thêm bước xác minh thứ hai: thường là mật khẩu một lần theo thời gian (TOTP) từ ứng dụng như Google Authenticator hoặc Authy, hay khóa bảo mật phần cứng như YubiKey.',
         'Bật MFA trên mọi tài khoản hỗ trợ, ưu tiên email (trung tâm khôi phục), ngân hàng, lưu trữ đám mây, mạng xã hội. Khóa bảo mật phần cứng (FIDO2/WebAuthn) bảo vệ tốt nhất trước lừa đảo trực tuyến nhờ xác minh đúng tên miền trước khi xác thực.',
         'Lưu mã dự phòng MFA trong trình quản lý mật khẩu hoặc nơi an toàn riêng. Mất thiết bị MFA mà không có mã dự phòng có thể khóa bạn vĩnh viễn khỏi tài khoản.',
       ],
