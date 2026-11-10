@@ -97,8 +97,10 @@ focus or open state.
 ## Layout decisions
 
 - **Generator first.** The hero is the tool itself, not a headline with a screenshot.
-- **Uneven argument cards.** The first "why choose us" argument (local generation and
-  open standards) is the strongest, so it takes more space than the other three.
+- **One accented argument card.** The first "why choose us" argument (local generation
+  and open standards) is the strongest, so it carries the accent border and a filled
+  icon. It keeps the same cell size: extra area reads as empty space, not as emphasis.
+  Four equal cells also keep the grid free of dangling holes at every breakpoint.
 - **Guides as a list.** Guides are a reading list, not a third card grid, so they are
   presented as rows with a date and a category. This breaks the rhythm on purpose and
   avoids three identical card sections in a row.

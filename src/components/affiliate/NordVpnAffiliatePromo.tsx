@@ -147,7 +147,7 @@ export default function NordVpnAffiliatePromo({ locale, className = '', placemen
           target="_blank"
           rel="sponsored noopener"
           onClick={() => trackClick('learn_more_nordvpn', locale, placement)}
-          className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#05a9ff] !text-[#38beff] hover:bg-[#05a9ff] hover:!text-[#0a1e2a] font-semibold py-3 px-6 transition-all duration-200"
+          className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#05a9ff] !text-[#2A4E63] dark:!text-[#38beff] hover:bg-[#05a9ff] hover:!text-[#0a1e2a] font-semibold py-3 px-6 transition-all duration-200"
         >
           <OpenInNewOutlinedIcon sx={{ fontSize: 20 }} aria-hidden="true" />
           {t.ctaLearnMore}
