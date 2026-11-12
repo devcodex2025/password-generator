@@ -130,7 +130,7 @@ export default function PasswordSettings({
                 <span className={`hero-muted-label text-[16px] sm:col-start-1 sm:row-start-1 md:text-[22px] ${mode === 'words' ? '' : 'sm:col-span-2'}`}>
                     {lengthLabel} {passwordLength}
                     {mode === 'chars' && selectedStandard !== 'custom' && (
-                        <span className="ml-2 text-[14px] md:text-[16px] text-[#4B5563] dark:text-[#b0b0b0]">≥ {standardMin}</span>
+                        <span className="ml-2 text-[14px] md:text-[16px]">≥ {standardMin}</span>
                     )}
                 </span>
                 <div className="flex min-w-0 w-full max-w-full items-center gap-1 sm:col-start-1 sm:row-start-2 sm:gap-3">
