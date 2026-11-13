@@ -76,6 +76,9 @@ Space separates groups; it is not applied uniformly to every element.
 
 - Flat surfaces first. A tinted background (`#E5F6FF` or a dark neutral) separates a
   block; decorative gradients are not used.
+- Mobile browser chrome (the address and status bar) carries the brand: `#E5F6FF`
+  in light mode and `#071016` in dark mode. It follows the theme chosen in the app,
+  not the operating system preference, because the two can disagree.
 - Blur is reserved for modal and overlay backdrops (at most two layers). No blur on
   navigation, progress bars or passive prompts.
 

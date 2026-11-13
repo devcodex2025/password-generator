@@ -6,6 +6,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import NavigationProgress from '@/components/NavigationProgress';
 import { Arsenal, Varela_Round, Noto_Sans, Noto_Sans_JP, Noto_Sans_SC } from 'next/font/google';
 import { buildHomeMetadata, SUPPORTED_LANGS, HTML_LANG_MAP } from '@/lib/home-metadata';
+import { BROWSER_THEME_DARK, BROWSER_THEME_LIGHT } from '@/lib/browser-theme';
 import HomeStructuredData from '@/components/seo/HomeStructuredData';
 import AdSenseLoader from '@/components/Advertising/AdSenseLoader';
 import CookieConsentMount from '@/components/CookieConsent/CookieConsentMount';
@@ -74,13 +75,12 @@ export function generateStaticParams() {
 // (prevents soft-404 garbage URLs such as /{search_term_string} or /$ from being indexed).
 export const dynamicParams = false;
 
+/* theme-color is rendered as a single meta tag in <head> below: a media-based
+   pair follows the OS preference, but the app theme is a stored user choice,
+   so both can disagree. */
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#121212' },
-  ],
 };
 
 /*
@@ -100,6 +100,10 @@ const THEME_INIT_SCRIPT = `
         : window.matchMedia('(prefers-color-scheme: dark)').matches;
       document.cookie = 'theme=' + (isDark ? 'dark' : 'light') + '; path=/; max-age=31536000; samesite=lax';
       document.documentElement.classList.toggle('dark', !!isDark);
+      var meta = document.getElementById('theme-color');
+      if (meta) {
+        meta.setAttribute('content', isDark ? '${BROWSER_THEME_DARK}' : '${BROWSER_THEME_LIGHT}');
+      }
     } catch (e) {}
   })();
 `;
@@ -118,6 +122,14 @@ export default async function LocaleLayout({
   return (
     <html lang={htmlLang} suppressHydrationWarning>
       <head>
+        {/* Mobile browser chrome. The init script keeps it in sync before the
+            first paint, so a dark-mode user never sees a light address bar. */}
+        <meta
+          id="theme-color"
+          name="theme-color"
+          content={BROWSER_THEME_LIGHT}
+          suppressHydrationWarning
+        />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}

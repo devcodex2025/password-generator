@@ -3,6 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { browserThemeColor } from '@/lib/browser-theme';
 
 interface ThemeContextType {
   isDarkMode: boolean;
@@ -60,11 +61,25 @@ const theme = createTheme({
    removal of the transition guard, short enough to be invisible. */
 const THEME_SWITCH_MS = 120;
 
-/* Keeps the pre-paint class in sync without touching storage, used on mount and
-   for OS-level preference changes. */
+/* The address bar is part of the theme: a stored choice can disagree with the
+   OS preference, so the meta tag is updated from the resolved theme, not from
+   a prefers-color-scheme media query. */
+function syncBrowserTheme(isDark: boolean) {
+  let meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+  if (!meta) {
+    meta = document.createElement('meta');
+    meta.name = 'theme-color';
+    document.head.appendChild(meta);
+  }
+  meta.content = browserThemeColor(isDark);
+}
+
+/* Keeps the pre-paint class and browser chrome in sync without touching
+   storage, used on mount and for OS-level preference changes. */
 function setDocumentDark(isDark: boolean) {
   if (typeof document === 'undefined') return;
   document.documentElement.classList.toggle('dark', isDark);
+  syncBrowserTheme(isDark);
 }
 
 /**
