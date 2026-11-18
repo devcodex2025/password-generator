@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
+import '@/components/i18n'; // registers the shared i18next instance
 import { useEffect, useRef, useState } from 'react';
 import Divider from '@mui/material/Divider';
 import ListItemIcon from '@mui/material/ListItemIcon';

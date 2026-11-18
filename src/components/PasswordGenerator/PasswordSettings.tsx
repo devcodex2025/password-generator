@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
+import '@/components/i18n'; // registers the shared i18next instance
 import type { ReactNode } from 'react';
 import { Slider } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
