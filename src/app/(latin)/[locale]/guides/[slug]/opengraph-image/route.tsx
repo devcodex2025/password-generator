@@ -21,7 +21,10 @@ const categoryIcons: Record<string, string> = {
   'incident-response': '\u{1F6A8}',
 };
 
-export function generateStaticParams({ params }: { params?: { locale?: string } } = {}) {
+// Next types the argument as required. A route handler has no parent generateStaticParams, so
+// `params` may be empty or missing at runtime: read it defensively (no parent locale = Latin only).
+export function generateStaticParams(arg: { params: { locale?: string } }) {
+  const params = arg?.params;
   return ARTICLE_CATALOG.flatMap((article) =>
     forParentLocale(getArticleLocales(article), params).map((locale) => ({ locale, slug: article.slug })),
   );

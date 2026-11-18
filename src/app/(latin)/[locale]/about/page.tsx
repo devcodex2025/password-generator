@@ -16,7 +16,7 @@ const hreflangMap: Record<string, string> = { ua: 'uk' };
 export const runtime = 'nodejs';
 export const revalidate = 3600;
 
-export function generateStaticParams({ params }: { params?: { locale?: string } } = {}) {
+export function generateStaticParams({ params }: { params: { locale: string } }) {
   return forParentLocale(STATIC_PAGE_LOCALES, params).map((locale) => ({ locale }));
 }
 

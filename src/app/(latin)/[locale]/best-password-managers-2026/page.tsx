@@ -12,7 +12,7 @@ const supportedLangs = ['en', 'ua', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh', 'j
 
 export const runtime = 'nodejs';
 
-export function generateStaticParams({ params }: { params?: { locale?: string } } = {}) {
+export function generateStaticParams({ params }: { params: { locale: string } }) {
   return forParentLocale(supportedLangs, params).map((locale) => ({ locale }));
 }
 

@@ -28,7 +28,7 @@ const ADS_DISCLOSURE: Record<string, string> = {
 export const runtime = 'nodejs';
 export const revalidate = 3600;
 
-export function generateStaticParams({ params }: { params?: { locale?: string } } = {}) {
+export function generateStaticParams({ params }: { params: { locale: string } }) {
   return forParentLocale(STATIC_PAGE_LOCALES, params).map((locale) => ({ locale }));
 }
 

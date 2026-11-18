@@ -60,7 +60,7 @@ const VPN_OFFER_GUIDES = new Set<string>([
 export const runtime = 'nodejs';
 export const revalidate = 3600;
 
-export function generateStaticParams({ params }: { params?: { locale?: string } } = {}) {
+export function generateStaticParams({ params }: { params: { locale: string } }) {
   // Only generate URLs for locales with a reviewed translation. An English
   // fallback at a localized URL is a duplicate page, not coverage.
   return ARTICLE_CATALOG.flatMap((article) =>
