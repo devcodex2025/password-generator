@@ -3,6 +3,9 @@
 import { useState, useEffect, useContext, useRef, Fragment, lazy, Suspense } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
+// Registers the shared i18next instance (initReactI18next) on server and client;
+// without it, pages that never import i18n (e.g. /de/guides) render raw keys.
+import './i18n';
 
 import Image from 'next/image';
 import Link from 'next/link';

@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
+import '@/components/i18n'; // registers the shared i18next instance
 import Button from '@/components/ui/Button';
 import { PASSWORD_STANDARDS as passwordStandards } from './generatorCore.mjs';
 

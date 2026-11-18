@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
+import '@/components/i18n'; // registers the shared i18next instance
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 
