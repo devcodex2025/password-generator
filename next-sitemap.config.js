@@ -206,6 +206,8 @@ module.exports = {
     // Never list generated OG-image routes as pages — they are PNG endpoints,
     // not indexable HTML. Keeps crawl budget on real pages only.
     if (/\/opengraph-image(\/|$)/.test(path)) return null;
+    // /cjk/* is the internal home of the zh and ja tree; the proxy 301s it to /zh and /ja.
+    if (path === '/cjk' || path.startsWith('/cjk/')) return null;
     // Only translated Vietnamese guide articles belong in the sitemap.
     const viGuideMatch = path.match(/^\/vi\/guides\/([^/]+)$/);
     if (viGuideMatch && !viTranslatedGuideSlugs.includes(viGuideMatch[1])) return null;

@@ -121,7 +121,16 @@ export async function generateMetadata({
       url: canonical,
       siteName: 'generatepasswordto.me',
       type: 'article',
-      images: [`${baseUrl}/${locale}/guides/${slug}/opengraph-image`],
+      // Explicit size and type: a route handler (unlike the opengraph-image file convention)
+      // does not add og:image:width/height/type on its own.
+      images: [
+        {
+          url: `${baseUrl}/${locale}/guides/${slug}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          type: 'image/png',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',

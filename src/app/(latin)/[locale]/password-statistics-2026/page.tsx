@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { forParentLocale } from '@/lib/cjk-locales';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import LocalizedPageShell from '@/components/LocalizedPageShell';
 import { homeHref } from '@/lib/locale-links';
@@ -172,8 +171,10 @@ export const runtime = 'nodejs';
 export const revalidate = 86400;
 export const dynamicParams = false;
 
-export function generateStaticParams({ params }: { params?: { locale?: string } } = {}) {
-  return forParentLocale(LOCALES, params).map((locale) => ({ locale }));
+// Curated set (en, ua, vi): returned as is, whatever the parent locale. zh and ja have no
+// stats page, so the CJK tree does not re-export this route and /zh|/ja/... stay 404.
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
