@@ -171,6 +171,8 @@ export const runtime = 'nodejs';
 export const revalidate = 86400;
 export const dynamicParams = false;
 
+// Curated set (en, ua, vi): returned as is, whatever the parent locale. zh and ja have no
+// stats page, so the CJK tree does not re-export this route and /zh|/ja/... stay 404.
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }

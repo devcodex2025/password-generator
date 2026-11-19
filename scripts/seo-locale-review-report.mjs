@@ -118,7 +118,7 @@ native speaker signs off.
    lockstep with the visible accordion in \`src/components/SeoAccordion.jsx\`.
 2. **P1.4 — password-manager platform sections.** Android, iPhone, Chrome and
    Google Password Manager sections are drafted in
-   \`src/app/[locale]/best-password-managers-2026/page.tsx\`. Review the localized
+   \`src/app/(latin)/[locale]/best-password-managers-2026/page.tsx\`. Review the localized
    copy, especially the Google Password Manager trade-offs.
 3. **P1.5 — Wi-Fi guide translations.** The guide ships in all 12 locales under
    \`src/content/articles/wifi-password-guide.ts\`. The routes, hub and sitemap are
